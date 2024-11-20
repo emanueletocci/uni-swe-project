@@ -16,13 +16,13 @@
 ![Doxygen](https://img.shields.io/badge/doxygen-2C4AA8?style=for-the-badge&logo=doxygen&logoColor=white)
 ![JUnit5](https://img.shields.io/badge/JUnit5-f5f5f5?style=for-the-badge&logo=junit5&logoColor=dc524a)
 
-<h2 id="collab"> Membri</h2>
+<h2 id="collab">🧑‍🤝‍🧑 Membri</h2>
 
 - [Emanuele Tocci](https://github.com/emanueletocci)
 - [Alessio Leo](https://github.com/Al3Leo)
 - [Claudia Montefusco](https://github.com/ClaudiaMontefusco3)
 - [Rossella Pale](https://github.com/rossellapale)
 
-<h2 id="docs"> Documentazione </h2>
+<h2 id="docs">📕 Documentazione </h2>
 
 
