@@ -26,3 +26,10 @@
 
 ###
 
+<h2 id="collab"> Membri </h2>
+- Emanuele Tocci
+- Alessio Leo
+- Claudia Montefusco
+- Rossella Pale
+<h2 id="docs"> Documentazione </h2>
+
