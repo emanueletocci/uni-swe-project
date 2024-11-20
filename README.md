@@ -18,10 +18,10 @@
 
 <h2 id="collab"> Membri</h2>
 
-- Emanuele Tocci
-- Alessio Leo
-- Claudia Montefusco
-- Rossella Pale
+- [Emanuele Tocci](https://github.com/emanueletocci)
+- [Alessio Leo](https://github.com/Al3Leo)
+- [Claudia Montefusco](https://github.com/ClaudiaMontefusco3)
+- [Rossella Pale](https://github.com/rossellapale)
 
 <h2 id="docs"> Documentazione </h2>
 
