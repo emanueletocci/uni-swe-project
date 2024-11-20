@@ -2,7 +2,7 @@
 <h1 align="center" style="font-weight: bold;">Rubrica Telefonica 💻</h1>
 
 <p align="center">
-<a href="#tech">Technologies</a>
+<a href="#tech">Tecnologie</a>
 <a href="#started">Getting Started</a>
 
 <a href="#colab">Collaborators</a>
