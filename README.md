@@ -2,7 +2,7 @@
 
 <p align="center">
   <a href="#tech">Tecnologie</a>
-  <a href="#colab">Membri</a>
+  <a href="#collab">Membri</a>
   <a href="#docs">Documentazione</a>
 </p>
 
