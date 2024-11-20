@@ -6,7 +6,7 @@
   <a href="#docs">Documentazione</a>
 </p>
 
-<p align="center">Simple description of what your project do or how to use it</p>
+<p align="center">Semplice rubrica telefonica realizzata in Java</p>
 
 <h2 id="tech">💻 Tecnologie usate</h2>
 
@@ -24,5 +24,5 @@
 - [Rossella Pale](https://github.com/rossellapale)
 
 <h2 id="docs">📕 Documentazione </h2>
-
+Inserire qui la documentazione....
 
