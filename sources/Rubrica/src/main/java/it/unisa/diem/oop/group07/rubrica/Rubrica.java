@@ -2,7 +2,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  */
 
-package it.unisa.diem.oop.group.rubrica;
+package it.unisa.diem.oop.group07.rubrica;
 
 /**
  *
