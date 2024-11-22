@@ -6,7 +6,7 @@
   <a href="#docs">Documentazione</a>
 </p>
 
-<p align="center">Semplice rubrica telefonica realizzata in Java</p>
+<p align="center">Semplice rubrica telefonica realizzata in Java che consente la gestione di contatti(nome, cognome, numero di telefoni e indirizzi e-mail), attraverso un'interfaccia grafica (GUI) realizzata in JavaFX.</p>
 
 <h2 id="tech">💻 Tecnologie usate</h2>
 
