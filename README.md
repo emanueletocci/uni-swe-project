@@ -25,8 +25,6 @@
 
 <h2 id="docs">📕 Documentazione</h2>
 
-<p align="left">
-  <a href="https://docs.google.com/document/d/1jKyEV_gxnbgjILj21dkqXaTgSgP6dwEA0LxO7k3-BeE/edit?usp=sharing" target="_blank">
-    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/01/Google_Docs_logo_%282014-2020%29.svg/94px-Google_Docs_logo_%282014-2020%29.svg.png" alt="Documentazione Google Docs" />
-  </a></p>
-</p>
+<a href="https://docs.google.com/document/d/1jKyEV_gxnbgjILj21dkqXaTgSgP6dwEA0LxO7k3-BeE/edit?usp=sharing" target="_blank">
+  <img src="https://img.shields.io/badge/googledocs-%230018A8.svg?style=for-the-badge&logo=googledocs&logoColor=<hex>">
+</a>
