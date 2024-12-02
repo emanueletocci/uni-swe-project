@@ -2,7 +2,7 @@
 
 <ClassDiagram name="classe1">
   <ClassDiagramComponents>
-    <Class name=" Contatto" package="" visibility="public" xPosition="313.0" yPosition="37.0">
+    <Class name=" Contatto" package="" visibility="public" xPosition="267.0" yPosition="15.0">
       <Fields>
         <Field name="nome" type="String" visibility="private"/>
         <Field name="cognome" type="String" visibility="private"/>
@@ -10,19 +10,21 @@
         <Field name="numero" type="String[]" visibility="private"/>
         <Field name="emergernza" type="Boolean" visibility="private"/>
         <Field name="preferiti" type="Boolean" visibility="private"/>
+        <Field name="compleanno" type="LocalDate" visibility="private"/>
+        <Field name="indirizzoResidenza" type="String" visibility="private"/>
       </Fields>
       <Constructors/>
       <Methods>
-        <Method name="setNome" returnType="String" visibility="public">
+        <Method name="setNome" returnType="void" visibility="public">
           <Argument type="String" name="nome"/>
         </Method>
-        <Method name="setCognome" returnType="String" visibility="public">
+        <Method name="setCognome" returnType="void" visibility="public">
           <Argument type="String" name="cognome"/>
         </Method>
-        <Method name="setEmail" returnType="String" visibility="public">
+        <Method name="setEmail" returnType="void" visibility="public">
           <Argument type="String" name="email"/>
         </Method>
-        <Method name="setNumero" returnType="String" visibility="public">
+        <Method name="setNumero" returnType="void" visibility="public">
           <Argument type="String" name="numero"/>
         </Method>
         <Method name="setPreferiti" returnType="Boolean" visibility="public">
@@ -39,6 +41,14 @@
         <Method name="getNumero" returnType="String" visibility="public"/>
         <Method name="isEmergenza" returnType="boolean" visibility="public"/>
         <Method name="isPreferiti" returnType="boolean" visibility="public"/>
+        <Method name="getCompleanno" returnType="LocalDate" visibility="public"/>
+        <Method name="setCompleanno" returnType="void" visibility="public">
+          <Argument type="String" name="compleanno"/>
+        </Method>
+        <Method name="getCompleanno" returnType="String" visibility="public"/>
+        <Method name="setIndirizzoDiResidenza" returnType="void" visibility="public">
+          <Argument type="String" name="indirizzoDiResidenza"/>
+        </Method>
       </Methods>
     </Class>
     <Class name="RubricaController" package="" visibility="public" xPosition="41.0" yPosition="341.0">
