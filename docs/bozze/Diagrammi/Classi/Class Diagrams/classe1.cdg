@@ -106,7 +106,7 @@
     <Interface name="VerificaInfo" package="" visibility="public" xPosition="742.0" yPosition="569.0">
       <Methods>
         <Method name="checkMail" returnType="boolean" visibility="public"/>
-        <Method name="chechkNumero" returnType="boolean" visibility="public"/>
+        <Method name="checkNumero" returnType="boolean" visibility="public"/>
         <Method name="checkInfo" returnType="boolean" visibility="public"/>
       </Methods>
     </Interface>
