@@ -12,19 +12,20 @@
         <Field name="preferiti" type="Boolean" visibility="private"/>
         <Field name="compleanno" type="LocalDate" visibility="private"/>
         <Field name="indirizzoResidenza" type="String" visibility="private"/>
+        <Field name="untitledField" type="Object" visibility="private"/>
       </Fields>
       <Constructors/>
       <Methods>
-        <Method name="setNome" returnType="void" visibility="public">
+        <Method name="setNome" returnType="String" visibility="public">
           <Argument type="String" name="nome"/>
         </Method>
-        <Method name="setCognome" returnType="void" visibility="public">
+        <Method name="setCognome" returnType="String" visibility="public">
           <Argument type="String" name="cognome"/>
         </Method>
-        <Method name="setEmail" returnType="void" visibility="public">
+        <Method name="setEmail" returnType="String" visibility="public">
           <Argument type="String" name="email"/>
         </Method>
-        <Method name="setNumero" returnType="void" visibility="public">
+        <Method name="setNumero" returnType="String" visibility="public">
           <Argument type="String" name="numero"/>
         </Method>
         <Method name="setPreferiti" returnType="Boolean" visibility="public">
@@ -42,21 +43,23 @@
         <Method name="isEmergenza" returnType="boolean" visibility="public"/>
         <Method name="isPreferiti" returnType="boolean" visibility="public"/>
         <Method name="getCompleanno" returnType="LocalDate" visibility="public"/>
-        <Method name="setCompleanno" returnType="void" visibility="public">
+        <Method name="setCompleanno" returnType="String" visibility="public">
           <Argument type="String" name="compleanno"/>
         </Method>
         <Method name="getCompleanno" returnType="String" visibility="public"/>
-        <Method name="setIndirizzoDiResidenza" returnType="void" visibility="public">
+        <Method name="setIndirizzoDiResidenza" returnType="String" visibility="public">
           <Argument type="String" name="indirizzoDiResidenza"/>
         </Method>
       </Methods>
     </Class>
-    <Class name="RubricaController" package="" visibility="public" xPosition="41.0" yPosition="341.0">
-      <Fields/>
+    <Class name="RubricaController" package="" visibility="public" xPosition="44.0" yPosition="336.0">
+      <Fields>
+        <Field name="view" type="RubricaView" visibility="private" isFinal="true"/>
+      </Fields>
       <Constructors/>
       <Methods/>
     </Class>
-    <Class name="RubricaView" package="" visibility="public" xPosition="69.0" yPosition="227.0">
+    <Class name="RubricaView" package="" visibility="public" xPosition="44.0" yPosition="225.0">
       <Fields/>
       <Constructors/>
       <Methods/>
@@ -90,7 +93,7 @@
         <Method name="rimuoviEmergenza" returnType="Contatto" visibility="public"/>
       </Methods>
     </Class>
-    <Class name="Preferiti" package="" visibility="public" xPosition="615.0" yPosition="326.0">
+    <Class name="Preferiti" package="" visibility="public" xPosition="635.0" yPosition="336.0">
       <Fields>
         <Field name="preferiti" type="Map" visibility="private"/>
       </Fields>
@@ -100,9 +103,16 @@
         <Method name="rimuoviContatto" returnType="Contatto" visibility="public"/>
       </Methods>
     </Class>
+    <Interface name="VerificaInfo" package="" visibility="public" xPosition="742.0" yPosition="569.0">
+      <Methods>
+        <Method name="checkMail" returnType="boolean" visibility="public"/>
+        <Method name="chechkNumero" returnType="boolean" visibility="public"/>
+        <Method name="checkInfo" returnType="boolean" visibility="public"/>
+      </Methods>
+    </Interface>
   </ClassDiagramComponents>
   <ClassDiagramRelations>
-    <IsRelation name="is" source="Preferiti" target="RubricaModel"/>
     <IsRelation name="is" source="Emergenze" target="RubricaModel"/>
+    <IsRelation name="is" source="Preferiti" target="RubricaModel"/>
   </ClassDiagramRelations>
 </ClassDiagram>
