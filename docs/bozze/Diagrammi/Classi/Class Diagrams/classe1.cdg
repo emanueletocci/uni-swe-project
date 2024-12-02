@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ClassDiagram name="classe1">
+  <ClassDiagramComponents>
+    <Class name=" Contatto" package="" visibility="public" xPosition="313.0" yPosition="37.0">
+      <Fields>
+        <Field name="nome" type="String" visibility="private"/>
+        <Field name="cognome" type="String" visibility="private"/>
+        <Field name="email" type="String[]" visibility="private"/>
+        <Field name="numero" type="String[]" visibility="private"/>
+        <Field name="emergernza" type="Boolean" visibility="private"/>
+        <Field name="preferiti" type="Boolean" visibility="private"/>
+      </Fields>
+      <Constructors/>
+      <Methods>
+        <Method name="setNome" returnType="String" visibility="public">
+          <Argument type="String" name="nome"/>
+        </Method>
+        <Method name="setCognome" returnType="String" visibility="public">
+          <Argument type="String" name="cognome"/>
+        </Method>
+        <Method name="setEmail" returnType="String" visibility="public">
+          <Argument type="String" name="email"/>
+        </Method>
+        <Method name="setNumero" returnType="String" visibility="public">
+          <Argument type="String" name="numero"/>
+        </Method>
+        <Method name="setPreferiti" returnType="Boolean" visibility="public">
+          <Argument type="Boolean" name="Preferiti"/>
+        </Method>
+        <Method name="setEmergenza" returnType="Boolean" visibility="public">
+          <Argument type="Boolean" name="emergenza"/>
+        </Method>
+        <Method name="creazioneContatto" returnType="void" visibility="public"/>
+        <Method name="modificaContatto" returnType="void" visibility="public"/>
+        <Method name="getNome" returnType="String" visibility="public"/>
+        <Method name="getCognome" returnType="String" visibility="public"/>
+        <Method name="getEmail" returnType="String" visibility="public"/>
+        <Method name="getNumero" returnType="String" visibility="public"/>
+        <Method name="isEmergenza" returnType="boolean" visibility="public"/>
+        <Method name="isPreferiti" returnType="boolean" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="RubricaController" package="" visibility="public" xPosition="41.0" yPosition="341.0">
+      <Fields/>
+      <Constructors/>
+      <Methods/>
+    </Class>
+    <Class name="RubricaView" package="" visibility="public" xPosition="69.0" yPosition="227.0">
+      <Fields/>
+      <Constructors/>
+      <Methods/>
+    </Class>
+    <Class name="RubricaModel" package="" visibility="public" xPosition="725.0" yPosition="15.0">
+      <Fields>
+        <Field name="rubrica" type="Map" visibility="private"/>
+        <Field name="view" type="RubricaView" visibility="private" isFinal="true"/>
+      </Fields>
+      <Constructors/>
+      <Methods>
+        <Method name="aggiungi" returnType="void" visibility="public"/>
+        <Method name="modifica" returnType="void" visibility="public"/>
+        <Method name="untitledMethod" returnType="void" visibility="public"/>
+        <Method name="Main" returnType="void" visibility="public"/>
+        <Method name="start" returnType="Stage" visibility="public">
+          <Argument type="Stage" name="primaryStage"/>
+        </Method>
+        <Method name="rimuovi" returnType="void" visibility="public"/>
+        <Method name="esporta" returnType="void" visibility="public"/>
+        <Method name="importa" returnType="void" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="Emergenze" package="" visibility="public" xPosition="833.0" yPosition="326.0">
+      <Fields/>
+      <Constructors/>
+      <Methods/>
+    </Class>
+    <Class name="Preferiti" package="" visibility="public" xPosition="621.0" yPosition="326.0">
+      <Fields/>
+      <Constructors/>
+      <Methods/>
+    </Class>
+  </ClassDiagramComponents>
+  <ClassDiagramRelations>
+    <IsRelation name="is" source="Preferiti" target="RubricaModel"/>
+    <IsRelation name="is" source="Emergenze" target="RubricaModel"/>
+  </ClassDiagramRelations>
+</ClassDiagram>
