@@ -34,13 +34,15 @@ class ContattoEsteso {
   + String setIndirizzoResidenza(String indirizzoResidenza)
   + String setSocialLinks(String socialLinks)
 }
-class RubricaModel {
+class Rubrica {
   - Map rubrica 
   - RubricaView view 
   + void {static} main()
   + Stage start(Stage primaryStage)
   + void aggiungiContatto()
   + void rimuoviContatto()
+  + void esportaRubrica()
+  + void importaRubrica()
 }
 
 class Preferiti {
@@ -56,7 +58,7 @@ class RubricaController{
 }
 
 Contatto <|-- ContattoEsteso
-RubricaModel <|-- Preferiti
-RubricaModel <|-- Emergenze
+Rubrica <|-- Preferiti
+Rubrica <|-- Emergenze
 
 @enduml
