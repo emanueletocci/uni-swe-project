@@ -1,0 +1,62 @@
+@startuml
+class Contatto {
+  - String nome
+  - String cognome
+  - String[] email
+  - int[] numero
+  - Boolean emergenza
+  - Boolean preferiti
+  + Contatto(String nome, String cognome, String email, int numero, Boolean emergenza, Boolean preferiti)
+  + String getNome()
+  + String getCognome()
+  + String getEmail()
+  + String getNumero()
+  + Boolean getEmergenza()
+  + Boolean getPreferiti()
+  + void setNome(String nome)
+  + void setCognome(String cognome)
+  + void setEmail(String email)
+  + void setNumero(int numero)
+  + void setEmergenza(Boolean emergenza)
+  + void setPreferiti(Boolean preferiti)
+  + Boolean isEmergenza()
+  + Boolean isPreferiti()
+  
+} 
+class ContattoEsteso {
+  - LocalDate compleanno
+  - String indirizzoResidenza
+  - String socialLinks
+  + ContattoEsteso(LocalDate compleanno, String indirizzoResidenza, String socialLinks)
+  + LocalDate getCompleanno()
+  + String getIndirizzoResidenza()
+  + LocalDate setCompleanno(LocalDate compleanno)
+  + String setIndirizzoResidenza(String indirizzoResidenza)
+  + String setSocialLinks(String socialLinks)
+}
+class RubricaModel {
+  - Map rubrica 
+  - RubricaView view 
+  + void {static} main()
+  + Stage start(Stage primaryStage)
+  + void aggiungiContatto()
+  + void rimuoviContatto()
+}
+
+class Preferiti {
+  - Map Preferiti
+}
+class Emergenze {
+  - Map emergenze 
+}
+
+class RubricaView 
+class RubricaController{
+  - RubricaView view
+}
+
+Contatto <|-- ContattoEsteso
+RubricaModel <|-- Preferiti
+RubricaModel <|-- Emergenze
+
+@enduml
