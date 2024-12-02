@@ -35,24 +35,25 @@ class ContattoEsteso {
   + String setSocialLinks(String socialLinks)
 }
 class Rubrica {
-  - Map rubrica 
-  - RubricaView view 
+  - Map rubrica
+  - RubricaView view
   + void {static} main()
   + Stage start(Stage primaryStage)
   + void aggiungiContatto()
   + void rimuoviContatto()
   + void esportaRubrica()
   + void importaRubrica()
+  + void ricercaContatto()
 }
 
 class Preferiti {
   - Map Preferiti
 }
 class Emergenze {
-  - Map emergenze 
+  - Map emergenze
 }
 
-class RubricaView 
+class RubricaView
 class RubricaController{
   - RubricaView view
 }
@@ -60,5 +61,6 @@ class RubricaController{
 Contatto <|-- ContattoEsteso
 Rubrica <|-- Preferiti
 Rubrica <|-- Emergenze
+Rubrica o-- "0..*" Contatto : contiene >
 
 @enduml
