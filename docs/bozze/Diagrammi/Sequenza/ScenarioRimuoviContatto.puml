@@ -1,0 +1,11 @@
+@startuml Rimozione contatto
+actor Utente
+Utente -> RubricaView : seleziona icona elimina
+RubricaView->Utente: mostra lista contatti da eliminare
+Utente->RubricaView: seleziona contatto da eliminare 
+RubricaView->RubricaController: rimuovi contatto selezionato
+RubricaController->Rubrica: rimuovicontatto
+Rubrica->Rubrica: elimina
+Rubrica->RubricaView: aggiorna lista
+RubricaView ->Utente: contatto eliminato
+@enduml

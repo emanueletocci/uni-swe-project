@@ -1,0 +1,20 @@
+@startuml 
+title Modifica Contatto
+actor Utente
+activate Utente
+skinparam sequenceMessageAlign center
+Utente -> RubricaView : seleziona contatto da modificare
+activate RubricaView
+RubricaView --> Utente: mostra campi da modificare
+Utente->RubricaView: selezione pulsante modifica
+RubricaView->RubricaController: modifica contatto
+activate RubricaController
+RubricaController->Rubrica: set attributi Contatto
+deactivate RubricaController
+activate Rubrica
+Rubrica->RubricaView: aggiorna vista contatto
+deactivate Rubrica
+RubricaView->Utente: mostra esito
+deactivate Utente
+deactivate RubricaView
+@enduml

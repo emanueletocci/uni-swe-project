@@ -1,0 +1,17 @@
+@startuml Aggiunta contatto
+actor Utente
+Utente -> RubricaView : seleziona icona creaContatto
+RubricaView->Utente: mostra campi da compilare
+Utente->RubricaView: aggiunge informazioni contatto
+RubricaView->RubricaController: invia informazioni da salvare
+RubricaController->RubricaController: controllo contatto soddisfa vincoli
+alt [vincoli soddisfatti]
+RubricaController->Rubrica: aggiungiContatto
+Rubrica->Rubrica: aggiungi
+Rubrica->RubricaView: aggiorna rubrica
+RubricaView->Utente: mostra lista aggiornata
+ else [vincoli non soddisfatti]
+RubricaController->RubricaView: mostra errore
+RubricaView->Utente: errore
+end
+@enduml
