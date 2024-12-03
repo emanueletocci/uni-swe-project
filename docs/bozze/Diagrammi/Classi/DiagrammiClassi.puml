@@ -21,8 +21,8 @@ class Contatto {
   + void setPreferiti(Boolean preferiti)
   + Boolean isEmergenza()
   + Boolean isPreferiti()
-
 }
+
 class ContattoEsteso {
   - LocalDate compleanno
   - String indirizzoResidenza
@@ -34,6 +34,7 @@ class ContattoEsteso {
   + String setIndirizzoResidenza(String indirizzoResidenza)
   + String setSocialLinks(String socialLinks)
 }
+
 class Rubrica {
   - Map rubrica
   - RubricaView view
@@ -51,17 +52,24 @@ class Rubrica {
 class Preferiti {
   - Map Preferiti
 }
+
 class Emergenze {
   - Map emergenze
 }
 
-class RubricaView
-class RubricaController{
+class RubricaView {
+
+}
+
+class RubricaController {
   - RubricaView view
+  - Rubrica rubrica
 }
 
 Contatto <|-- ContattoEsteso
+Rubrica o-- "0..*" Contatto : contiene >
 Rubrica <|-- Preferiti
 Rubrica <|-- Emergenze
-Rubrica o-- "0..*" Contatto : contiene >
+RubricaController *-- Rubrica
+RubricaController *-- RubricaView
 @enduml
