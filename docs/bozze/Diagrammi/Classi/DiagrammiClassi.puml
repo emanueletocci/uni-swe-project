@@ -1,4 +1,5 @@
 @startuml
+package Rubrica {
 class Contatto {
   - String nome
   - String cognome
@@ -38,32 +39,34 @@ class ContattoEsteso {
 class Rubrica {
   - Map rubrica
   - RubricaView view
+  + Rubrica()
   + void {static} main()
   + Stage start(Stage primaryStage)
-  + void aggiungiContatto()
-  + void rimuoviContatto()
+  + void aggiungiContatto(Contatto c)
+  + Contatto rimuoviContatto(Contatto c)
   + void esportaRubrica()
   + void importaRubrica()
-  + void ricercaContatto()
-  + void import(String filename)
-  + void export(String filename)
+  + Contatto ricercaContatto(Contatto c)
 }
 
 class Preferiti {
   - Map Preferiti
+  + Preferiti()
 }
 
 class Emergenze {
   - Map emergenze
+  + Emergenze()
 }
 
 class RubricaView {
-
+  + RubricaView()
 }
 
 class RubricaController {
-  - RubricaView view
+  - RubricaView view  
   - Rubrica rubrica
+  + RubricaController(RubricaView)
 }
 
 Contatto <|-- ContattoEsteso
@@ -72,4 +75,11 @@ Rubrica <|-- Preferiti
 Rubrica <|-- Emergenze
 RubricaController *-- Rubrica
 RubricaController *-- RubricaView
+}
+package Eccezioni {
+  class ContattoAssenteException{
+    ContattoAssenteException(Contatto c)
+  }
+}
+
 @enduml
