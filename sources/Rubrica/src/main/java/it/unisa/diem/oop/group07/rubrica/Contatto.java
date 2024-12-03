@@ -1,3 +1,12 @@
+
+
+/**
+ * @file Contatto.java
+ * @brief questo file contiene l'implementazione del contatto da inserire all'interno della rubrica telefonica
+ * @autor Gruppo07
+ * @date Dicembre, 2024
+ * @version 1.0
+ */
 package it.unisa.diem.oop.group07.rubrica;
 
 public class Contatto {
@@ -8,6 +17,9 @@ public class Contatto {
     private Boolean emergenza;
     private Boolean preferiti;
 
+/**
+ * @brief costruttore della classe Contatto
+ */
     public Contatto(String nome, String cognome, String[] emails, int[] numeri, Boolean emergenza, Boolean preferiti) {
         this.nome = nome;
         this.cognome = cognome;
