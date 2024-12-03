@@ -9,7 +9,7 @@ package it.unisa.diem.oop.group07.rubrica;
  * @author emanueletocci
  */
 public class Rubrica {
-
+    
     public static void main(String[] args) {
         System.out.println("Hello World!");
     }
