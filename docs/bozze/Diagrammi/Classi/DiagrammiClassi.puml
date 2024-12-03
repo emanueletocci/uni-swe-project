@@ -21,8 +21,8 @@ class Contatto {
   + void setPreferiti(Boolean preferiti)
   + Boolean isEmergenza()
   + Boolean isPreferiti()
-  
-} 
+
+}
 class ContattoEsteso {
   - LocalDate compleanno
   - String indirizzoResidenza
@@ -44,6 +44,8 @@ class Rubrica {
   + void esportaRubrica()
   + void importaRubrica()
   + void ricercaContatto()
+  + void import(String filename)
+  + void export(String filename)
 }
 
 class Preferiti {
@@ -62,5 +64,4 @@ Contatto <|-- ContattoEsteso
 Rubrica <|-- Preferiti
 Rubrica <|-- Emergenze
 Rubrica o-- "0..*" Contatto : contiene >
-
 @enduml
