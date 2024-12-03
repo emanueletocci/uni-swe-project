@@ -8,4 +8,49 @@ Bob --> Alice: Authentication Response
 
 Alice -> Bob: Another authentication Request
 Alice <-- Bob: another authentication Response
+
+@startuml Cancellazione contatto
+actor Utente
+Utente -> RubricaView : seleziona icona elimina
+RubricaView->Utente: mostra lista contatti da eliminare
+Utente->RubricaView: seleziona contatto da eliminare 
+RubricaView->RubricaController: rimuovi contatto selezionato
+RubricaController->Rubrica: rimuovicontatto
+Rubrica->Rubrica: elimina
+Rubrica->RubricaView: aggiorna lista
+RubricaView ->Utente: contatto eliminato
+@enduml
+
+
+@startuml Aggiunta contatto
+actor Utente
+Utente -> RubricaView : seleziona icona creaContatto
+RubricaView->Utente: mostra campi da compilare
+Utente->RubricaView: aggiunge informazioni contatto
+RubricaView->RubricaController: invia informazioni da salvare
+RubricaController->RubricaController: controllo contatto soddisfa vincoli
+alt [vincoli soddisfatti]
+RubricaController->Rubrica: aggiungiContatto
+Rubrica->Rubrica: aggiungi
+Rubrica->RubricaView: aggiorna rubrica
+RubricaView->Utente: mostra lista aggiornata
+ else [vincoli non soddisfatti]
+RubricaController->RubricaView: mostra errore
+RubricaView->Utente: errore
+end
+@enduml
+
+@startuml modifica contatto
+actor Utente
+Utente -> RubricaView : seleziona contatto da modificare
+RubricaView->Utente: mostra campi da modificare
+Utente->RubricaView: modifica campi 
+RubricaView->RubricaController: invia informazioni da modificare
+RubricaController->Rubrica: set valori contatto
+Rubrica->RubricaView: aggiorna vista contatto
+RubricaView->Utente: mostra esito
+@enduml
+
+
+
 @enduml
