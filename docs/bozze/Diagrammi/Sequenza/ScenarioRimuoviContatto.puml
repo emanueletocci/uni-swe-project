@@ -1,4 +1,5 @@
 @startuml Rimozione contatto
+autonumber
 actor Utente
 Utente -> RubricaView : seleziona icona elimina
 RubricaView->Utente: mostra lista contatti da eliminare

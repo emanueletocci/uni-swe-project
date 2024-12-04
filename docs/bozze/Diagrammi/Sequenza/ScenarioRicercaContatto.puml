@@ -1,6 +1,6 @@
 @startuml
 'https://plantuml.com/sequence-diagram
-
+autonumber
 actor Utente
 
 Utente -> RubricaView : Seleziona la casella di ricerca e digita una stringa

@@ -1,4 +1,5 @@
-@startuml 
+@startuml
+autonumber
 title Modifica Contatto
 actor Utente
 activate Utente

@@ -1,0 +1,51 @@
+@startuml
+'https://plantuml.com/sequence-diagram
+
+autonumber
+actor Utente
+Utente->RubricaView:clicca sulla toolbar il tasto "file"
+activate RubricaView
+RubricaView->RubricaController:notifica la scelta
+activate RubricaController
+RubricaController->RubricaView:aggiorna binding
+deactivate RubricaController
+RubricaView->Utente:apre il menu "file"
+deactivate RubricaView
+
+
+Utente->RubricaView:seleziona import
+activate RubricaView
+RubricaView->RubricaController:notifica la scelta
+activate RubricaController
+RubricaController->RubricaView:aggiorna binding
+deactivate RubricaController
+RubricaView->Utente:Mostra la schermata di importazione
+
+alt [Conferma]
+    Utente->RubricaView:Conferma di voler importare
+    RubricaView->RubricaController:notifica la scelta
+    activate RubricaController
+    RubricaController->Rubrica:chiede un import
+    activate Rubrica
+    Rubrica->Rubrica:import()
+    alt [import success]
+        Rubrica->RubricaController:notifica l'importazione
+        RubricaController->RubricaView:aggiorna binding
+        RubricaView->Utente:mostra un messaggio di conferma e torna alla home
+    else [import fail]
+        Rubrica->RubricaController:notifica l'errore
+        RubricaController->RubricaView:aggiorna binding
+        RubricaView->Utente:mostra un messaggio di errore e torna nella home
+    end
+    deactivate Rubrica
+    deactivate RubricaController
+else [annulla]
+    Utente->RubricaView:seleziona il bottone per annullare
+    RubricaView->RubricaController:notifica la scelta
+    activate RubricaController
+    RubricaController->RubricaView:aggiorna binding
+    deactivate RubricaController
+    RubricaView->Utente:torna nella home
+end
+
+@enduml
