@@ -1,7 +1,10 @@
 @startuml
-'https://plantuml.com/sequence-diagram
 autonumber
 actor Utente
+participant RubricaView
+participant RubricaController
+participant Rubrica
+participant Preferiti
 
 Utente->RubricaView : [Seleziona un contatto dalla lista]
 activate RubricaView

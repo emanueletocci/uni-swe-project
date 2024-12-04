@@ -1,7 +1,10 @@
 @startuml
-'https://plantuml.com/sequence-diagram
 autonumber
 actor Utente
+participant RubricaView
+participant RubricaController
+participant Rubrica
+participant Emergenza
 
 activate RubricaView
 Utente->RubricaView : Seleziona un contatto dalla lista
@@ -9,7 +12,7 @@ activate RubricaController
 RubricaView->RubricaController : Richiede la visualizzazione del contatto
 activate Rubrica
 RubricaController ->Rubrica : Recupera le informazioni del contatto
-Rubrica->ubrica : Fa una get sulla struttura dati
+Rubrica->Rubrica : Fa una get sulla struttura dati
 Rubrica->RubricaController : Passa le informazioni
 deactivate Rubrica
 RubricaController->RubricaView : Aggiorna il binding
