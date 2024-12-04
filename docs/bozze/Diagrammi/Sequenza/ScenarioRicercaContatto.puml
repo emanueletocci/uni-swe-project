@@ -1,4 +1,4 @@
-@startuml Ricerca Contatto
+@startuml
 'https://plantuml.com/sequence-diagram
 
 actor Utente
