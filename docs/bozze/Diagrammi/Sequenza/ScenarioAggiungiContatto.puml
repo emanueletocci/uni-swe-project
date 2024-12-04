@@ -9,7 +9,7 @@ Utente -> RubricaView : seleziona icona creaContatto
 RubricaView->Utente: mostra campi da compilare
 Utente->RubricaView: aggiunge informazioni contatto
 RubricaView->RubricaController: invia informazioni da salvare
-RubricaController->RubricaController: controllo contatto soddisfa vincoli
+RubricaController->RubricaController: controlo contatto soddisfa vincoli
 alt [vincoli soddisfatti]
 RubricaController->Rubrica: aggiungiContatto
 Rubrica->Rubrica: aggiungi
