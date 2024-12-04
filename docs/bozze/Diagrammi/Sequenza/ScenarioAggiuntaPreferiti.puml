@@ -3,20 +3,20 @@
 
 actor Utente
 
-Utente -> RubricaView : Seleziona un contatto dalla lista
-RubricaView -> RubricaController : Richiede la visualizzazione del contatto
-RubricaController -> Rubrica : Recupera le informazioni del contatto
-Rubrica->Rubrica:fa una get sulla struttura dati
-Rubrica -> RubricaController : Passa le informazioni
-RubricaController -> RubricaView : Aggiorna il binding
-RubricaView -> Utente : Mostra il contatto con tutte le informazioni
+Utente->RubricaView : Seleziona un contatto dalla lista
+RubricaView->RubricaController : Richiede la visualizzazione del contatto
+RubricaController->Rubrica : Recupera le informazioni del contatto
+Rubrica->Rubrica: fa una get sulla struttura dati
+Rubrica->RubricaController : Passa le informazioni
+RubricaController->RubricaView : Aggiorna il binding
+RubricaView->Utente : Mostra il contatto con tutte le informazioni
 
-Utente -> RubricaView : Clicca il tasto "Aggiungi ai preferiti"
-RubricaView -> RubricaController : Segnala l'evento di click
-RubricaController -> Rubrica : Aggiunge il contatto ai preferiti
-Rubrica -> Preferiti : Passa le informazioni del contatto
-Preferiti -> Preferiti : Aggiunge il contatto
-Preferiti -> RubricaController : Notifica l'aggiunta
-RubricaController -> RubricaView : Aggiorna il binding
-RubricaView -> Utente : Mostra l'icona dei preferiti aggiornata
+Utente->RubricaView : Clicca il tasto "Aggiungi ai preferiti"
+RubricaView->RubricaController : Segnala l'evento di click
+RubricaController->Rubrica : Aggiunge il contatto ai preferiti
+Rubrica->Preferiti : Passa le informazioni del contatto
+Preferiti->Preferiti : Aggiunge il contatto
+Preferiti->RubricaController : Notifica l'aggiunta
+RubricaController-> RubricaView : Aggiorna il binding
+RubricaView->Utente : Mostra l'icona dei preferiti aggiornata
 @enduml
