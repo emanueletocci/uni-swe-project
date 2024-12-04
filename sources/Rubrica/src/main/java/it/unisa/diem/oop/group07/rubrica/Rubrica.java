@@ -1,5 +1,5 @@
-package it.unisa.diem.oop.group07.rubrica;
 
+package it.unisa.diem.oop.group07.rubrica;
 import java.util.Map;
 
 public class Rubrica {
