@@ -2,6 +2,10 @@
 autonumber
 title Modifica Contatto
 actor Utente
+participant RubricaView
+participant RubricaController
+participant Rubrica
+
 activate Utente
 skinparam sequenceMessageAlign center
 Utente -> RubricaView : seleziona contatto da modificare

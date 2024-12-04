@@ -1,7 +1,9 @@
 @startuml
-'https://plantuml.com/sequence-diagram
 autonumber
 actor Utente
+participant RubricaView
+participant RubricaController
+participant Rubrica
 
 Utente -> RubricaView : Seleziona la casella di ricerca e digita una stringa
 RubricaView -> RubricaController : Passa la stringa al controller

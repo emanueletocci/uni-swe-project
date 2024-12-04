@@ -1,6 +1,10 @@
 @startuml Aggiunta contatto
 autonumber
 actor Utente
+participant RubricaView
+participant RubricaController
+participant Rubrica
+
 Utente -> RubricaView : seleziona icona creaContatto
 RubricaView->Utente: mostra campi da compilare
 Utente->RubricaView: aggiunge informazioni contatto

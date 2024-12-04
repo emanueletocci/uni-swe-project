@@ -1,9 +1,11 @@
 @startuml
-'https://plantuml.com/sequence-diagram
-
 autonumber
 actor Utente
 activate RubricaView
+participant RubricaView
+participant RubricaController
+participant Rubrica
+
 Utente->RubricaView:clicca sulla toolbar il tasto "file"
 RubricaView->RubricaController:notifica la scelta
 activate RubricaController
