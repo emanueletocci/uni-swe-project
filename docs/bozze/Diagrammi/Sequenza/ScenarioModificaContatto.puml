@@ -5,21 +5,20 @@ actor Utente
 participant RubricaView
 participant RubricaController
 participant Rubrica
-
 activate Utente
 skinparam sequenceMessageAlign center
-Utente -> RubricaView : seleziona contatto da modificare
+Utente -> RubricaView:[seleziona contatto da modificare]
 activate RubricaView
-RubricaView --> Utente: mostra campi da modificare
-Utente->RubricaView: selezione pulsante modifica
-RubricaView->RubricaController: modifica contatto
+RubricaView --> Utente:[mostra campi da modificare]
+Utente -> RubricaView:[selezione pulsante modifica]
+RubricaView -> RubricaController:[modifica contatto]
 activate RubricaController
-RubricaController->Rubrica: set attributi Contatto
+RubricaController -> Rubrica:[set attributi Contatto]
 deactivate RubricaController
 activate Rubrica
-Rubrica->RubricaView: aggiorna vista contatto
+Rubrica --> RubricaView: [aggiorna vista contatto]
 deactivate Rubrica
-RubricaView->Utente: mostra esito
+RubricaView --> Utente: [mostra esito]
 deactivate Utente
 deactivate RubricaView
 @enduml
