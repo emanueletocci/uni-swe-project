@@ -8,13 +8,13 @@
  * @version 1.0
  */
 package it.unisa.diem.oop.group07.rubrica;
-public class ContattoEsteso extends Contatto{
-    ///@brief data di compleanno del contatto esteso
+public class ContattoEsteso extends Contatto {
+    /// @brief data di compleanno del contatto esteso
     private LocalDate compleanno;
-     ///@brief indirizzo di residenza del contatto esteso
+    /// @brief indirizzo di residenza del contatto esteso
     private String indirizzoResidenza;
-     ///@brief link relativo al social del contatto esteso
-    private String socialLinks;
+    /// @brief link relativo al social del contatto esteso
+    private Hyperl socialLinks;
 
 
     /**
@@ -29,45 +29,46 @@ public class ContattoEsteso extends Contatto{
     }
 
 
-     /**
-     * @brief metodo getter per l'attributo "compleanno"
+    /**
      * @return attributo compleanno
+     * @brief metodo getter per l'attributo "compleanno"
      */
 
     public LocalDate getCompleanno() {
         return compleanno;
-    /**
-     * @brief metodo setter per l'attributo "compleanno"
-     */
-
-
-    public void setCompleanno(LocalDate compleanno) {
-        this.compleanno = compleanno;
-    }
-    /**
-     * @brief metodo getter per l'attributo "indirizzoResidenza"
-     * @return attributo indirizzoResidenza
-     */
-    public String getIndirizzoResidenza() {
-        return indirizzoResidenza;
-    }
-    /**
-     * @brief metodo setter per l'attributo "indirizzoResidenza"
-     */
-    public void setIndirizzoResidenza(String indirizzoResidenza) {
-        this.indirizzoResidenza = indirizzoResidenza;
-    }
-    /**
-     * @brief metodo getter per l'attributo "socialLinks"
-     * @return attributo indirizzoResidenza
-     */
-    public String getSocialLinks() {
-        return socialLinks;
-    }
         /**
-     * @brief metodo setter per l'attributo "socialLinks"
-     */
-    public void setSocialLinks(String socialLinks) {
-        this.socialLinks = socialLinks;
+         * @brief metodo setter per l'attributo "compleanno"
+         */
+
+
+        public void setCompleanno (LocalDate compleanno){
+            this.compleanno = compleanno;
+        }
+        /**
+         * @brief metodo getter per l'attributo "indirizzoResidenza"
+         * @return attributo indirizzoResidenza
+         */
+        public String getIndirizzoResidenza () {
+            return indirizzoResidenza;
+        }
+        /**
+         * @brief metodo setter per l'attributo "indirizzoResidenza"
+         */
+        public void setIndirizzoResidenza (String indirizzoResidenza){
+            this.indirizzoResidenza = indirizzoResidenza;
+        }
+        /**
+         * @brief metodo getter per l'attributo "socialLinks"
+         * @return attributo indirizzoResidenza
+         */
+        public String getSocialLinks () {
+            return socialLinks;
+        }
+        /**
+         * @brief metodo setter per l'attributo "socialLinks"
+         */
+        public void setSocialLinks (String socialLinks){
+            this.socialLinks = socialLinks;
+        }
     }
 }

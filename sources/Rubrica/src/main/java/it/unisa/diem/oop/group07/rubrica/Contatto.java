@@ -24,6 +24,8 @@ public class Contatto {
     private Boolean emergenza;
     /// @brief attributo booleano che indica se il contatto é un "contatto preferito" oppure no
     private Boolean preferiti;
+    /// @brief key di contatto per aggiungerlo alla map
+    private int id;
 
     /**
      * @brief costruttore della classe Contatto
@@ -59,6 +61,19 @@ public class Contatto {
      * @brief metodo getter per l'attributo "cognome"
      * @return attributo cognome
      */
+    /**
+     * @brief metodo setter per l'attributo "id"
+     */
+    public void setId(){
+        this.id=id;
+    }
+    /**
+     * @brief metodo getter per l'attributo "id"
+     * @return attributo id
+     */
+    public int getId(){
+        return id;
+    }
 
     public String getCognome() {
         return cognome;
