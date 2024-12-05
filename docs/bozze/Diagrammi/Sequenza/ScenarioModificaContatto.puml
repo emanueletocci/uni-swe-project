@@ -1,6 +1,6 @@
 @startuml
-autonumber
 title Modifica Contatto
+autonumber
 actor Utente
 participant RubricaView
 participant RubricaController

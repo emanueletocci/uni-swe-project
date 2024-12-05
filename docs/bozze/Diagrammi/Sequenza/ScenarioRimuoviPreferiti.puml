@@ -1,5 +1,6 @@
 @startuml
 'autonumber aggiunto per numerare i messaggi
+title Rimuovi contatto preferito
 autonumber
 actor Utente
 participant RubricaView

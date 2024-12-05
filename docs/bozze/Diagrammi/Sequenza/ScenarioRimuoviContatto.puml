@@ -1,4 +1,5 @@
 @startuml Rimozione contatto
+title RimuoviContatto
 autonumber
 actor Utente
 participant RubricaView

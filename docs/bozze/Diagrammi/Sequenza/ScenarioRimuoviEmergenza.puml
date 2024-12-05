@@ -1,4 +1,5 @@
 @startuml
+title Rimuovi Contatto di emergenza
 autonumber
 actor Utente
 participant RubricaView

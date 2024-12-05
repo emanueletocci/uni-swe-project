@@ -1,4 +1,5 @@
 @startuml
+title Ricerca Contatto
 autonumber
 actor Utente
 participant RubricaView

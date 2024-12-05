@@ -1,4 +1,5 @@
 @startuml
+title Esporta Rubrica
 autonumber
 actor Utente
 activate RubricaView

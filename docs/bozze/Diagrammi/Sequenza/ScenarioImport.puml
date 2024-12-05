@@ -1,4 +1,5 @@
 @startuml
+title Importa Rubrica
 autonumber
 actor Utente
 participant RubricaView
