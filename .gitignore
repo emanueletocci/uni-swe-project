@@ -1,2 +1,50 @@
-/sources/Rubrica/target/
-/.idea/*
+# Compilati da Maven
+/target/
+
+# File di configurazione IDE specifici (NetBeans)
+/nbproject/private/
+/build/
+/dist/
+
+# File di configurazione IDE specifici (IntelliJ IDEA)
+.idea/
+/*.iml
+/out/
+
+# File temporanei di sistema
+*.class
+*.log
+*.tmp
+*.swp
+*.swo
+*.bak
+*.orig
+*.rej
+
+
+# File di configurazione OS specifici
+*/.DS_Store
+*/Thumbs.db
+*/.AppleDouble
+*/.LSOverride
+
+*/desktop.ini
+*/.cache
+*/.log
+*/.goutputstream-*
+
+ehthumbs.db
+$RECYCLE.BIN/
+
+# Cache e file generati automaticamente da Maven
+.mvn/wrapper/maven-wrapper.jar
+.mvn/wrapper/maven-wrapper.properties
+.mvn/wrapper/MavenWrapperDownloader.java
+mvn-*.log
+
+# File di backup IDE
+*.iws
+*.ipr
+
+# File relativi a librerie generate localmente
+lib/
