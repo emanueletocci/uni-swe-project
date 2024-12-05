@@ -1,5 +1,3 @@
-
-
 /**
  * @file ContattoEsteso.java
  * @brief questo file aggiunge informazioni aggiuntive al Contatto: compeanno, indirizzo di residenza e socialLinks.
@@ -7,12 +5,19 @@
  * @date Dicembre, 2024
  * @version 1.0
  */
-package it.unisa.diem.oop.group07.rubrica;
+
+package it.unisa.diem.group07.rubrica.model;
+import it.unisa.diem.group07.rubrica.model.Contatto;
+import java.time.LocalDate;
+
 public class ContattoEsteso extends Contatto {
+    /// @brief indirizzi email del contatto
+    private String[] emails;
     /// @brief data di compleanno del contatto esteso
     private LocalDate compleanno;
     /// @brief indirizzo di residenza del contatto esteso
     private String indirizzoResidenza;
+    /// @brief vettore contente i numeri telefonici associati al contatto
     /// @brief link relativo al social del contatto esteso
     private Hyperl socialLinks;
 
@@ -39,7 +44,6 @@ public class ContattoEsteso extends Contatto {
         /**
          * @brief metodo setter per l'attributo "compleanno"
          */
-
 
         public void setCompleanno (LocalDate compleanno){
             this.compleanno = compleanno;
@@ -69,6 +73,22 @@ public class ContattoEsteso extends Contatto {
          */
         public void setSocialLinks (String socialLinks){
             this.socialLinks = socialLinks;
+        }
+        /**
+         * @brief metodo getter per l'attributo "emails"
+         * @return lista degli indirizzi email in formato stringa
+         */
+
+        public String[] getEmails() {
+            return emails;
+        }
+
+        /**
+         * @brief metodo setter per l'attributo "emails"
+         */
+
+        public void setEmails(String[] emails) {
+            this.emails = emails;
         }
     }
 }

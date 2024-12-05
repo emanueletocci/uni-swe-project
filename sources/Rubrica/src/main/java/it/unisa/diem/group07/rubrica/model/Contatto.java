@@ -1,5 +1,3 @@
-
-
 /**
  * @file Contatto.java
  * @brief questo file contiene l'implementazione del contatto da inserire all'interno della rubrica telefonica
@@ -8,65 +6,52 @@
  * @version 1.0
  */
 
-package it.unisa.diem.oop.group07.rubrica;
+package it.unisa.diem.group07.rubrica.model;
 
 public class Contatto {
 
-    /// @brief nome del contatto
-    private String nome;
-    /// @brief cognome del contatto
-    private String cognome;
-    /// @brief vettore contente gli indirizzi email associati al contatto 
-    private String[] emails;
-    /// @brief vettore contente i numeri telefonici associati al contatto
-    private int[] numeri;
-    /// @brief attributo booleano che indica se il contatto é un "contatto di emergenza" oppure no
-    private Boolean emergenza;
-    /// @brief attributo booleano che indica se il contatto é un "contatto preferito" oppure no
-    private Boolean preferiti;
-    /// @brief key di contatto per aggiungerlo alla map
+    /**
+     * @brief identificativo univoco (key) del contatto
+     */
     private int id;
+
+    /**
+     * @brief nome del contatto
+     */
+    private String nome;
+
+    /**
+     * @brief cognome del contatto
+     */
+    private String cognome;
+
+    /**
+     * @brief numeri telefonici del contatto
+     */
+    private int[] numeri;
+
+    /**
+     * @brief attributo booleano che indica se il contatto é un "contatto di emergenza" oppure no
+     */
+    private Boolean emergenza;
+
+    /**
+     * @brief attributo booleano che indica se il contatto é un "contatto preferito" oppure no
+     */
+    private Boolean preferito;
 
     /**
      * @brief costruttore della classe Contatto
      */
-
-    public Contatto(String nome, String cognome, String[] emails, int[] numeri, Boolean emergenza, Boolean preferiti) {
+    public Contatto(int id, String nome, String cognome, int[] numeri, Boolean emergenza, Boolean preferito) {
+        this.id = id;
         this.nome = nome;
         this.cognome = cognome;
-        this.emails = emails;
         this.numeri = numeri;
         this.emergenza = emergenza;
-        this.preferiti = preferiti;
+        this.preferito = preferito;
     }
 
-    /**
-     * @brief metodo getter per l'attributo "nome"
-     * @return attributo nome
-     */
-
-    public String getNome() {
-        return nome;
-    }
-
-    /**
-     * @brief metodo setter per l'attributo "nome"
-     */
-
-    public void setNome(String nome) {
-        this.nome = nome;
-    }
-
-    /**
-     * @brief metodo getter per l'attributo "cognome"
-     * @return attributo cognome
-     */
-    /**
-     * @brief metodo setter per l'attributo "id"
-     */
-    public void setId(){
-        this.id=id;
-    }
     /**
      * @brief metodo getter per l'attributo "id"
      * @return attributo id
@@ -75,6 +60,32 @@ public class Contatto {
         return id;
     }
 
+    /**
+     * @brief metodo setter per l'attributo "id"
+     */
+    public void setId(){
+        this.id=id;
+    }
+
+    /**
+     * @brief metodo getter per l'attributo "nome"
+     * @return attributo nome
+     */
+    public String getNome() {
+        return nome;
+    }
+
+    /**
+     * @brief metodo setter per l'attributo "nome"
+     */
+    public void setNome(String nome) {
+        this.nome = nome;
+    }
+
+    /**
+     * @brief metodo getter per l'attributo "cognome"
+     * @return attributo cognome
+     */
     public String getCognome() {
         return cognome;
     }
@@ -82,33 +93,14 @@ public class Contatto {
     /**
      * @brief metodo setter per l'attributo "cognome"
      */
-
     public void setCognome(String cognome) {
         this.cognome = cognome;
-    }
-
-    /**
-     * @brief metodo getter per l'attributo "emails"
-     * @return lista degli indirizzi email in formato stringa
-     */
-
-    public String[] getEmails() {
-        return emails;
-    }
-
-    /**
-     * @brief metodo setter per l'attributo "emails"
-     */
-
-    public void setEmails(String[] emails) {
-        this.emails = emails;
     }
 
     /**
      * @brief metodo getter per l'attributo "numeri"
      * @return lista dei numeri telefonici in formato stringa
      */
-    
     public int[] getNumeri() {
         return numeri;
     }
@@ -116,7 +108,6 @@ public class Contatto {
     /**
      * @brief metodo setter per l'attributo "numeri"
      */
-
     public void setNumeri(int[] numeri) {
         this.numeri = numeri;
     }
@@ -125,7 +116,6 @@ public class Contatto {
      * @brief metodo getter per l'attributo "emergenza"
      * @return attributo emergenza
      */
-
     public Boolean getEmergenza() {
         return emergenza;
     }
@@ -133,25 +123,30 @@ public class Contatto {
     /**
      * @brief metodo setter per l'attributo "emergenza"
      */
-
     public void setEmergenza(Boolean emergenza) {
         this.emergenza = emergenza;
     }
 
     /**
-     * @brief metodo getter per l'attributo "preferiti"
-     * @return attributo preferiti
+     * @brief metodo getter per l'attributo "preferito"
+     * @return attributo preferito
      */
-    
-    public Boolean getPreferiti() {
-        return preferiti;
+    public Boolean getPreferito() {
+        return preferito;
     }
 
     /**
-     * @brief metodo setter per l'attributo "preferiti"
+     * @brief metodo setter per l'attributo "preferito"
      */
+    public void setPreferito(Boolean preferito) {
+        this.preferito = preferito;
+    }
 
-    public void setPreferiti(Boolean preferiti) {
-        this.preferiti = preferiti;
+    /**
+     * @brief metodo per la verifica del numero telefonico del contatto
+     * @return "true" se il numero inserito é valido, "false" altrimenti
+     */
+    public Boolean controllaTelefono(String telefono){
+        return true;
     }
 }
