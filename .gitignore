@@ -48,3 +48,4 @@ mvn-*.log
 
 # File relativi a librerie generate localmente
 lib/
+/sources/Rubrica/target/
