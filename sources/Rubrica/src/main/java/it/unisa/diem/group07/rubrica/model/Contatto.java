@@ -13,6 +13,7 @@ public class Contatto {
     /**
      * @brief identificativo univoco (key) del contatto
      */
+
     private static int id=0;
 
     /**
@@ -41,21 +42,15 @@ public class Contatto {
     private Boolean preferito;
 
     /**
-     * @brief attributo di tipo array String che contiene fino a 3 email di un contatto
-     */
-    private String[] emails;
-
-    /**
      * @brief costruttore della classe Contatto
      */
-    public Contatto(int id, String nome, String cognome, int[] numeri, Boolean emergenza, Boolean preferito, String[] emails) {
+    public Contatto(int id, String nome, String cognome, int[] telefoni, Boolean emergenza, Boolean preferito) {
         this.id = id;
         this.nome = nome;
         this.cognome = cognome;
-        this.telefoni = numeri;
+        this.telefoni = telefoni;
         this.emergenza = emergenza;
         this.preferito = preferito;
-        this.emails=emails;
         id++;
     }
 
@@ -108,15 +103,15 @@ public class Contatto {
      * @brief metodo getter per l'attributo "numeri"
      * @return lista dei numeri telefonici in formato stringa
      */
-    public int[] getNumeri() {
-        return numeri;
+    public int[] getTelefoni() {
+        return telefoni;
     }
 
     /**
      * @brief metodo setter per l'attributo "numeri"
      */
-    public void setNumeri(int[] numeri) {
-        this.numeri = numeri;
+    public void setTelefoni(int[] numeri) {
+        this.telefoni = numeri;
     }
 
     /**

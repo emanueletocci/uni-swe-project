@@ -4,14 +4,19 @@ import it.unisa.diem.group07.rubrica.model.Contatto;
 import it.unisa.diem.group07.rubrica.model.Rubrica;
 import java.net.URL;
 import java.util.ResourceBundle;
+import javafx.beans.property.SimpleStringProperty;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.collections.ObservableMap;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
+import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.image.ImageView;
 
 /**
@@ -25,53 +30,53 @@ import javafx.scene.image.ImageView;
 
 public class MainController implements Initializable{
 
-    @FXML
-    private TextField cellulare;
-
-    @FXML
-    private TextField cognome;
+ @FXML
+    private TextField cellulareField;
 
     @FXML
     private TableColumn<String, String> cognomeClm;
 
     @FXML
-    private TextField compleanno;
+    private TextField cognomeField;
 
     @FXML
-    private TextField email;
+    private TextField compleannoField;
 
     @FXML
-    private TextField emailIcloud;
+    private TextField emailField;
 
     @FXML
-    private TextField emailLavoro;
+    private TextField emailIcloudField;
+
+    @FXML
+    private TextField emailLavoroField;
 
     @FXML
     private TextField fullname;
 
     @FXML
-    private TextField id;
+    private TextField idField;
 
     @FXML
     private ImageView imgcontatto;
 
     @FXML
-    private TextField indirizzo;
+    private TextField indirizzoField;
 
     @FXML
     private TableColumn<String, String> nomeClm;
 
     @FXML
-    private TextField nomeId;
+    private TextField nomeField;
 
     @FXML
-    private TextField note;
+    private TextField noteField;
 
     @FXML
-    private TextField numeroCasa;
+    private TextField numeroCasaField;
 
     @FXML
-    private TextField numeroUfficio;
+    private TextField numeroUfficioField;
 
     @FXML
     private Button preferiti;
@@ -101,43 +106,78 @@ public class MainController implements Initializable{
     private TableView<Contatto> rubricaTable;
 
     @FXML
-    private TextField social;
-     
-    private ObservableMap<Integer, Contatto> rubrica;
-      
-      public MainController(Rubrica rubrica){
-        this.rubrica=rubrica;
-    }
+    private TextField socialField;
+
+    private ObservableList<Contatto> rubrica;
+    private Rubrica rubricamodel;
+ 
+    @Override
+    public void initialize(URL url, ResourceBundle rb){
+        rubricamodel=new Rubrica();
+        rubrica = FXCollections.observableArrayList(rubricamodel.getContatti());
+        cognomeClm.setCellValueFactory(new PropertyValueFactory("cognome"));
+        nomeClm.setCellValueFactory(new PropertyValueFactory("nome"));
+        rubricaTable.setItems(rubrica);
+}
+ 
 
     /// @brief metodo che permette la ricerca del Contatto inserito
     @FXML
     void CercaContatto(ActionEvent event) {
-        
-
+   
     }
     /// @brief metodo che permette di creare un nuovo Contatto
+    ///crea contatto viene utilizzato quando nella CreazioneView viene cliccato il pulsante aggiungi
+    
     @FXML
     void CreaContatto(ActionEvent event) {
-        int[] numeri=new int[3];
-        String numeri1=cellulare.getText();
-        String numeri2=numeroCasa.getText();
-        String numeri3=numeroUfficio.getText();
+       int[] numeri=new int[3];
+        String numeri1=cellulareField.getText();
+        String numeri2=numeroCasaField.getText();
+        String numeri3=numeroUfficioField.getText();
         numeri[0]=Integer.parseInt(numeri1);
         numeri[1]=Integer.parseInt(numeri2);
         numeri[2]=Integer.parseInt(numeri3);
+
         
         String[] emails=new String[3];
-        emails[0]=email.getText();
-        emails[1]=emailLavoro.getText();
-        emails[2]=emailIcloud.getText();
+        emails[0]=emailField.getText();
+        emails[1]=emailLavoroField.getText();
+        emails[2]=emailIcloudField.getText();
         
-        String idStringa=id.getText();
-        int idvalue=Integer.parseInt(idStringa);
-        String name=nomeId.getText();
-        String username=cognome.getText();
+        String idStringa=idField.getText();
+        int idValue=Integer.parseInt(idStringa);
+        String name=nomeField.getText();
+        String surname=cognomeField.getText();
         
-        rubrica.add(new Contatto (idvalue, name, username,numeri , false, false, emails));
-
+       try{
+           if(name.isEmpty() && surname.isEmpty()){
+               throw new IllegalArgumentException("ERROR:IL CONTATTO DEVE AVERE O NOME O COGNOME ");
+           }
+           Contatto nuovoContatto= new Contatto(idValue, name, surname,false, false,emails, numeri);
+           rubricamodel.aggiungiContatto(nuovoContatto);
+           rubrica.add(nuovoContatto);
+           nomeField.clear();
+           cognomeField.clear();
+           emailField.clear();
+           emailLavoroField.clear();
+           emailIcloudField.clear();
+           cellulareField.clear();
+           numeroCasaField.clear();
+           numeroUfficioField.clear();
+           idField.clear();
+       }catch(IllegalArgumentException e){
+           mostraErrore(e.getMessage());
+       }
+      
+    }
+    public void mostraErrore(String messaggio){
+        Alert alert=new Alert(Alert.AlertType.ERROR);
+        alert.setTitle("Errore");
+        alert.setHeaderText("Devi inserire un nome o un cognome per creare un contatto");
+        alert.setContentText(messaggio);
+        alert.showAndWait();
+        
     }
 /// @brief metodo per la eliminazione di un Contatto dalla rubrica
     @FXML
