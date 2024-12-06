@@ -8,6 +8,7 @@
 
 package it.unisa.diem.group07.rubrica.model;
 import it.unisa.diem.group07.rubrica.model.Contatto;
+import javafx.scene.control.Hyperlink;
 import java.time.LocalDate;
 
 public class ContattoEsteso extends Contatto {

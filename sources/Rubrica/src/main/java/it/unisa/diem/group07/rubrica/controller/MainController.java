@@ -101,7 +101,7 @@ public class MainController {
         numeri[0]=Integer.parseInt(numeri1);
         numeri[1]=Integer.parseInt(numeri2);
         numeri[2]=Integer.parseInt(numeri3);
-        rubrica.addListener(new Contatto (nomeId.getText(), cognome.getText(),numeri , )));
+        rubrica.addListener(new Contatto (nomeId.getText(), cognome.getText(),numeri)));
 
     }
 /// @brief metodo per la eliminazione di un Contatto dalla rubrica
