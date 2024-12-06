@@ -2,10 +2,15 @@ package it.unisa.diem.group07.rubrica.controller;
 
 import it.unisa.diem.group07.rubrica.model.Contatto;
 import it.unisa.diem.group07.rubrica.model.Rubrica;
+import java.net.URL;
+import java.util.ResourceBundle;
 import javafx.collections.ObservableMap;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
+import javafx.scene.control.TableColumn;
+import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import javafx.scene.image.ImageView;
 
@@ -18,12 +23,16 @@ import javafx.scene.image.ImageView;
  * @version 1.0
  */
 
-public class MainController {
+public class MainController implements Initializable{
+
     @FXML
     private TextField cellulare;
 
     @FXML
     private TextField cognome;
+
+    @FXML
+    private TableColumn<String, String> cognomeClm;
 
     @FXML
     private TextField compleanno;
@@ -41,10 +50,16 @@ public class MainController {
     private TextField fullname;
 
     @FXML
+    private TextField id;
+
+    @FXML
     private ImageView imgcontatto;
 
     @FXML
     private TextField indirizzo;
+
+    @FXML
+    private TableColumn<String, String> nomeClm;
 
     @FXML
     private TextField nomeId;
@@ -59,6 +74,9 @@ public class MainController {
     private TextField numeroUfficio;
 
     @FXML
+    private Button preferiti;
+
+    @FXML
     private Button pulsanteCerca;
 
     @FXML
@@ -66,6 +84,9 @@ public class MainController {
 
     @FXML
     private Button pulsanteElimina;
+
+    @FXML
+    private Button pulsanteEmergenza;
 
     @FXML
     private Button pulsanteExport;
@@ -77,9 +98,12 @@ public class MainController {
     private Button pulsanteModifica;
 
     @FXML
+    private TableView<Contatto> rubricaTable;
+
+    @FXML
     private TextField social;
-    
-      ObservableMap<Integer, Contatto> rubrica;
+     
+    private ObservableMap<Integer, Contatto> rubrica;
       
       public MainController(Rubrica rubrica){
         this.rubrica=rubrica;
@@ -101,7 +125,18 @@ public class MainController {
         numeri[0]=Integer.parseInt(numeri1);
         numeri[1]=Integer.parseInt(numeri2);
         numeri[2]=Integer.parseInt(numeri3);
-        rubrica.addListener(new Contatto (nomeId.getText(), cognome.getText(),numeri , )));
+        
+        String[] emails=new String[3];
+        emails[0]=email.getText();
+        emails[1]=emailLavoro.getText();
+        emails[2]=emailIcloud.getText();
+        
+        String idStringa=id.getText();
+        int idvalue=Integer.parseInt(idStringa);
+        String name=nomeId.getText();
+        String username=cognome.getText();
+        
+        rubrica.add(new Contatto (idvalue, name, username,numeri , false, false, emails));
 
     }
 /// @brief metodo per la eliminazione di un Contatto dalla rubrica
@@ -124,6 +159,29 @@ public class MainController {
     void ModificaContatto(ActionEvent event) {
 
     }
+@FXML
+    void aggiungiPreferiti(ActionEvent event) {
 
+    }
+    @FXML
+    void AggiungiEmergenza(ActionEvent event) {
 
+    }
+        @FXML
+    void aggiungiId(ActionEvent event) {
+
+    }
+
+    @FXML
+    void aggiornaNome(TableColumn.CellEditEvent<String,String> event) {
+        Contatto s=rubricaTable.getSelectionModel().getSelectedItem();
+        s.setNome(event.getNewValue());
+        
+        //handleall
+    }    
+
+    @Override
+    public void initialize(URL location, ResourceBundle resources) {
+
+    }
 }
