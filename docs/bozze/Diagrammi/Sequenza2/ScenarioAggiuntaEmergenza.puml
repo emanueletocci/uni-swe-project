@@ -1,0 +1,41 @@
+@startuml
+title Aggiungi Emergenza
+autonumber
+actor Utente
+participant RubricaView
+participant RubricaController
+participant Rubrica
+participant Emergenza
+
+Utente -> RubricaView : [Seleziona un contatto dalla lista]
+activate RubricaView
+RubricaView -> RubricaController : [Richiede la visualizzazione del contatto]
+activate RubricaController
+RubricaController -> Rubrica : []Recupera le informazioni del contatto]
+activate Rubrica
+Rubrica --> Rubrica : get()
+Rubrica --> RubricaController : [Passa le informazioni]
+deactivate Rubrica
+RubricaController --> RubricaView : [Aggiorna il binding]
+deactivate RubricaController
+RubricaView --> Utente : [Mostra il contatto con tutte le informazioni]
+deactivate RubricaView
+
+Utente -> RubricaView : [Clicca il tasto "Aggiungi ai contatti d'emergenza"]
+activate RubricaView
+RubricaView -> RubricaController : [Segnala l'evento di click]
+activate RubricaController
+RubricaController -> Rubrica : [Aggiunge il contatto ai contatti d'emergenza]
+activate Rubrica
+Rubrica -> Emergenza : [Passa le informazioni del contatto]
+deactivate Rubrica
+activate Emergenza
+Emergenza --> Emergenza : [Aggiunge il contatto]
+
+Emergenza --> RubricaController : [Notifica l'aggiunta]
+deactivate Emergenza
+RubricaController --> RubricaView : [Aggiorna il binding]
+deactivate RubricaController
+RubricaView --> Utente : [Mostra l'icona dei contatti d'emergenza aggiornata]
+deactivate RubricaView
+@enduml

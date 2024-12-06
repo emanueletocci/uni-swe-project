@@ -1,0 +1,53 @@
+@startuml
+title Esporta Rubrica
+autonumber
+actor Utente
+activate RubricaView
+participant RubricaView
+participant RubricaController
+participant Rubrica
+
+Utente->RubricaView:[clicca sulla toolbar il tasto "file"]
+RubricaView->RubricaController:[notifica la scelta]
+activate RubricaController
+RubricaController-->RubricaView:[aggiorna binding]
+deactivate RubricaController
+RubricaView-->Utente:[apre il menu "file"]
+deactivate RubricaView
+
+Utente->RubricaView:[seleziona export]
+activate RubricaView
+RubricaView->RubricaController:[notifica la scelta]
+activate RubricaController
+RubricaController -->RubricaView:[aggiorna binding]
+deactivate RubricaController
+RubricaView-->Utente:[Mostra la schermata di salvataggio]
+
+alt [Conferma]
+    Utente->RubricaView:[Conferma di voler esportare]
+    RubricaView->RubricaController:[notifica la scelta]
+    activate RubricaController
+    RubricaController->Rubrica:[chiede un export]
+    activate Rubrica
+    Rubrica->Rubrica:export()
+    alt [export success]
+        Rubrica-->RubricaController:[notifica l'esportazione]
+        RubricaController-->RubricaView:[aggiorna binding]
+        RubricaView-->Utente:[mostra un messaggio di conferma e torna alla home]
+    else [export fail]
+        Rubrica-->RubricaController:throw new ExportFileException()
+        RubricaController-->RubricaView:[aggiorna binding]
+        RubricaView-->Utente:[mostra un messaggio di errore e torna nella home]
+    end
+    deactivate Rubrica
+    deactivate RubricaController
+else [annulla]
+    Utente->RubricaView:[seleziona il bottone per annullare]
+    RubricaView->RubricaController:[notifica la scelta]
+    activate RubricaController
+    RubricaController-->RubricaView:[aggiorna binding]
+    deactivate RubricaController
+    RubricaView-->Utente:[torna nella home]
+end
+
+@enduml

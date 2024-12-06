@@ -1,0 +1,24 @@
+@startuml Aggiunta contatto
+title Aggiungi Contatto
+autonumber
+actor Utente
+participant RubricaView
+participant RubricaController
+participant ModificaContattoView
+participant ModificaContattoController
+participant Rubrica
+
+Utente -> RubricaView : [click "Nuovo Contatto"]
+Utente->ModificaContattoView: [inserisce informazioni sul contatto]
+ModificaContattoView -> ModificaContattoController : [invia informazioni sul contatto]
+ModificaContattoController -> Rubrica : aggiungiContatto()
+alt [vincoli soddisfatti]
+RubricaController->Rubrica: [richiesta di aggiunta]
+Rubrica->Rubrica: add()
+Rubrica-->RubricaView: [aggiorna rubrica]
+RubricaView-->Utente: [mostra lista aggiornata]
+else [vincoli non soddisfatti]
+RubricaController-->RubricaView: throw new VincoliException()
+RubricaView-->Utente: [errore]
+end
+@enduml
