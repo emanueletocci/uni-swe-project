@@ -15,10 +15,11 @@ import java.io.IOException;
 public class MainApp extends Application {
 
     private static Scene scene;
+    private String viewRubrica = "RubricaView.fxml";
 
     @Override
     public void start(Stage stage) throws IOException {
-        scene = new Scene(loadFXML("primary"), 640, 480);
+        scene = new Scene(loadFXML(viewRubrica), 640, 480);
         stage.setScene(scene);
         stage.show();
     }

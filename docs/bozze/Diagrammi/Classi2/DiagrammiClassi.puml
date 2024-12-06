@@ -36,7 +36,7 @@ package Rubrica {
         }
 
         class Contatto{
-            - int id
+            - static int id
             - String nome
             - String cognome
             - String[] emails
