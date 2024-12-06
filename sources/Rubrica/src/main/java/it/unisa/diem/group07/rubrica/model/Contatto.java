@@ -8,6 +8,8 @@
 
 package it.unisa.diem.group07.rubrica.model;
 
+import java.util.Comparator;
+
 public class Contatto {
 
     /**
@@ -46,8 +48,8 @@ public class Contatto {
      */
     public Contatto(int id, String nome, String cognome, int[] telefoni, Boolean emergenza, Boolean preferito) {
         this.id = id;
-        this.nome = nome;
-        this.cognome = cognome;
+        this.nome = nome !=null? nome :"" ;
+        this.cognome = cognome!=null? nome :"";
         this.telefoni = telefoni;
         this.emergenza = emergenza;
         this.preferito = preferito;
@@ -150,5 +152,21 @@ public class Contatto {
      */
     public Boolean controllaTelefono(String telefono){
         return true;
+    }
+    
+    
+    
+    /*public static Comparator<Contatto> ordinaAlfabetico(){
+        return new Comparator<Contatto>(){
+        @Override
+        public int compare(Contatto c1, Contatto c2){
+         int risultato=c1.getNome().compareToIgnoreCase(c2.getNome());
+         if(risultato!=0){
+             return risultato;
+         }
+         return c1.getCognome().compareToIgnoreCase(c2.getCognome());
+        }
+    };*/
+        
     }
 }

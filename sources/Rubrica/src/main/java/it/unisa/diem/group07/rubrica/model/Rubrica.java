@@ -27,7 +27,7 @@ public class Rubrica {
      */
 
     public Rubrica(){
-        this.rubrica = new Map<Integer, Contatto>();
+        this.rubrica = new HashMap<Integer, Contatto>();
     }
 
     /**
@@ -58,7 +58,7 @@ public class Rubrica {
     }
     /**
      *  @brief metodo restituisce tutti i contatti come una Collection
-     *  @return Collection<Contatto>: una lista dei contatti della rubrica
+     *  @return Collectio<Contatto>: una lista dei contatti della rubrica
      */
     public Collection<Contatto> getContatti(){
         return rubrica.values();

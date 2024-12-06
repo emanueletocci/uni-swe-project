@@ -10,7 +10,10 @@ import javafx.collections.ObservableList;
 import javafx.collections.ObservableMap;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.TableColumn;
@@ -18,6 +21,7 @@ import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.image.ImageView;
+import javafx.stage.Stage;
 
 /**
  * @file MainController.java
@@ -29,54 +33,53 @@ import javafx.scene.image.ImageView;
  */
 
 public class MainController implements Initializable{
-
- @FXML
-    private TextField cellulareField;
+    @FXML
+    private TextField cellulareFieldMain;
 
     @FXML
     private TableColumn<String, String> cognomeClm;
 
     @FXML
-    private TextField cognomeField;
+    private TextField cognomeFieldMain;
 
     @FXML
-    private TextField compleannoField;
+    private TextField compleannoFieldMain;
 
     @FXML
-    private TextField emailField;
+    private TextField emailFieldMain;
 
     @FXML
-    private TextField emailIcloudField;
+    private TextField emailIcloudFieldMain;
 
     @FXML
-    private TextField emailLavoroField;
+    private TextField emailLavoroFieldMain;
 
     @FXML
     private TextField fullname;
 
     @FXML
-    private TextField idField;
+    private TextField idFieldMain;
 
     @FXML
     private ImageView imgcontatto;
 
     @FXML
-    private TextField indirizzoField;
+    private TextField indirizzoFieldMain;
 
     @FXML
     private TableColumn<String, String> nomeClm;
 
     @FXML
-    private TextField nomeField;
+    private TextField nomeFieldMain;
 
     @FXML
-    private TextField noteField;
+    private TextField noteFieldMain;
 
     @FXML
-    private TextField numeroCasaField;
+    private TextField numeroCasaFieldMain;
 
     @FXML
-    private TextField numeroUfficioField;
+    private TextField numeroUfficioFieldMain;
 
     @FXML
     private Button preferiti;
@@ -85,7 +88,7 @@ public class MainController implements Initializable{
     private Button pulsanteCerca;
 
     @FXML
-    private Button pulsanteCrea;
+    private Button pulsanteCreazioneView;
 
     @FXML
     private Button pulsanteElimina;
@@ -106,8 +109,17 @@ public class MainController implements Initializable{
     private TableView<Contatto> rubricaTable;
 
     @FXML
-    private TextField socialField;
-
+    private TextField socialFieldMain;
+    
+    /////////////////////////////////
+    
+    
+   //FXML PER LA CREAZIONEVIEW 
+    
+    
+    
+///////////////////////
+    
     private ObservableList<Contatto> rubrica;
     private Rubrica rubricamodel;
  
@@ -126,9 +138,21 @@ public class MainController implements Initializable{
     void CercaContatto(ActionEvent event) {
    
     }
-    /// @brief metodo che permette di creare un nuovo Contatto
-    ///crea contatto viene utilizzato quando nella CreazioneView viene cliccato il pulsante aggiungi
     
+    @FXML
+    void apriCreazioneContatto (ActionEvent event) throws Exception{
+    FXMLLoader caricamento= new FXMLLoader(getClass().getResource("../../../../../../../../resources/it/unisa/diem/group07/rubrica/view/CreazioneContattoView"));
+Parent rootCreazione= caricamento.load();
+Stage stage=new Stage();
+stage.setTitle("Creazione contatto");
+Scene scene=new Scene(rootCreazione);
+stage.setScene(scene);
+stage.show();
+    }
+    
+    
+    /// @brief metodo che permette di creare un nuovo Contatto
+    ///crea contatto viene utilizzato quando nella CreazioneView viene cliccato il pulsante aggiungi   
     @FXML
     void CreaContatto(ActionEvent event) {
        int[] numeri=new int[3];
@@ -152,7 +176,7 @@ public class MainController implements Initializable{
         
        try{
            if(name.isEmpty() && surname.isEmpty()){
-               throw new IllegalArgumentException("ERROR:IL CONTATTO DEVE AVERE O NOME O COGNOME ");
+               throw new IllegalArgumentException("IL CONTATTO DEVE AVERE O NOME O COGNOME ");
            }
            Contatto nuovoContatto= new Contatto(idValue, name, surname,false, false,emails, numeri);
            rubricamodel.aggiungiContatto(nuovoContatto);
@@ -171,22 +195,28 @@ public class MainController implements Initializable{
        }
       
     }
+    
+ //da aggiungere nel diagramma delle classi    
     public void mostraErrore(String messaggio){
         Alert alert=new Alert(Alert.AlertType.ERROR);
         alert.setTitle("Errore");
-        alert.setHeaderText("Devi inserire un nome o un cognome per creare un contatto");
+        alert.setHeaderText("Operazione non valida");
         alert.setContentText(messaggio);
         alert.showAndWait();
-        
     }
+    
+    
 /// @brief metodo per la eliminazione di un Contatto dalla rubrica
     @FXML
     void EliminaContatto(ActionEvent event) {
+        Contatto c=rubricaTable.getSelectionModel().getSelectedItem();
+        rubricamodel.rimuoviContatto(c);
+}
 
-    }
 /// @brief metodo per Export di Contatti della Rubrica
     @FXML
     void ExportRubrica(ActionEvent event) {
+        
 
     }
 /// @brief metodo per Import di Contatti nella Rubrica
@@ -216,12 +246,7 @@ public class MainController implements Initializable{
     void aggiornaNome(TableColumn.CellEditEvent<String,String> event) {
         Contatto s=rubricaTable.getSelectionModel().getSelectedItem();
         s.setNome(event.getNewValue());
-        
         //handleall
     }    
 
-    @Override
-    public void initialize(URL location, ResourceBundle resources) {
-
-    }
 }
