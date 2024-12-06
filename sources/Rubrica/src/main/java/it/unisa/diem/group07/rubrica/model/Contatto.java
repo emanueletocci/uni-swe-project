@@ -13,7 +13,7 @@ public class Contatto {
     /**
      * @brief identificativo univoco (key) del contatto
      */
-    private int id;
+    private static int id=0;
 
     /**
      * @brief nome del contatto
@@ -28,7 +28,7 @@ public class Contatto {
     /**
      * @brief numeri telefonici del contatto
      */
-    private int[] numeri;
+    private int[] telefoni;
 
     /**
      * @brief attributo booleano che indica se il contatto é un "contatto di emergenza" oppure no
@@ -41,15 +41,22 @@ public class Contatto {
     private Boolean preferito;
 
     /**
+     * @brief attributo di tipo array String che contiene fino a 3 email di un contatto
+     */
+    private String[] emails;
+
+    /**
      * @brief costruttore della classe Contatto
      */
-    public Contatto(int id, String nome, String cognome, int[] numeri, Boolean emergenza, Boolean preferito) {
+    public Contatto(int id, String nome, String cognome, int[] numeri, Boolean emergenza, Boolean preferito, String emails) {
         this.id = id;
         this.nome = nome;
         this.cognome = cognome;
         this.numeri = numeri;
         this.emergenza = emergenza;
         this.preferito = preferito;
+        this.emails=emails;
+        id++;
     }
 
     /**

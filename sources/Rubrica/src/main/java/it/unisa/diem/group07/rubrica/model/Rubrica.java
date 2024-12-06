@@ -52,6 +52,8 @@ public class Rubrica {
      *  @return contatto trovato
      */
 
-    public Contatto ricercaContatto(Contatto c){}
+    public Contatto ricercaContatto(Contatto c){
+        return rubrica.get(c.getId);
+    }
 
 }
