@@ -1,5 +1,5 @@
 @startuml
-title AggiungePreferito
+title Aggiungi Preferito
 autonumber
 actor Utente
 participant RubricaView

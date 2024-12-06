@@ -23,15 +23,14 @@
 
 
 # File di configurazione OS specifici
-*/.DS_Store
-*/Thumbs.db
-*/.AppleDouble
-*/.LSOverride
-
-*/desktop.ini
-*/.cache
-*/.log
-*/.goutputstream-*
+.DS_Store
+Thumbs.db
+.AppleDouble
+.LSOverride
+desktop.ini
+.cache
+.log
+.goutputstream-*
 
 ehthumbs.db
 $RECYCLE.BIN/

@@ -1,5 +1,5 @@
 @startuml Aggiunta contatto
-title Aggiugngi Contatto
+title Aggiungi Contatto
 autonumber
 actor Utente
 participant RubricaView
@@ -16,7 +16,7 @@ RubricaController->Rubrica: [richiesta di aggiunta]
 Rubrica->Rubrica: add()
 Rubrica-->RubricaView: [aggiorna rubrica]
 RubricaView-->Utente: [mostra lista aggiornata]
- else [vincoli non soddisfatti]
+else [vincoli non soddisfatti]
 RubricaController-->RubricaView: throw new VincoliException()
 RubricaView-->Utente: [errore]
 end

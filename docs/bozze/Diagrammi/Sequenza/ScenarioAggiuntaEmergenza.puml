@@ -1,5 +1,5 @@
 @startuml
-title AggiungiEmergenza
+title Aggiungi Emergenza
 autonumber
 actor Utente
 participant RubricaView
