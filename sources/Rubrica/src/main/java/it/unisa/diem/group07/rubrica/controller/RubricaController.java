@@ -8,12 +8,13 @@ package it.unisa.diem.group07.rubrica.controller;
  */
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 
-public class RubricaController extends MainController{
+public class RubricaController extends MainController implements Initializable{
    
 
     @FXML
@@ -76,33 +77,34 @@ public class RubricaController extends MainController{
     @FXML
     private TextField social;
 
+    /// @brief metodo che permette la ricerca del Contatto inserito
     @FXML
     void CercaContatto(ActionEvent event) {
 
     }
-
+    /// @brief metodo che permette di creare un nuovo Contatto
     @FXML
     void CreaContatto(ActionEvent event) {
 
     }
-
+/// @brief metodo per la eliminazione di un Contatto dalla rubrica
     @FXML
-    void EliminaContatto(MouseEvent event) {
+    void EliminaContatto(ActionEvent event) {
 
     }
-
+/// @brief metodo per Export di Contatti della Rubrica
     @FXML
     void ExportRubrica(ActionEvent event) {
 
     }
-
+/// @brief metodo per Import di Contatti nella Rubrica
     @FXML
     void ImportRubrica(ActionEvent event) {
 
     }
-
+/// @brief metodo per modificare un Contatto della Rubrica
     @FXML
-    void ModificaContatto(MouseEvent event) {
+    void ModificaContatto(ActionEvent event) {
 
     }
 

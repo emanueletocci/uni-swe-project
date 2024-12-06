@@ -48,11 +48,11 @@ public class Contatto {
     /**
      * @brief costruttore della classe Contatto
      */
-    public Contatto(int id, String nome, String cognome, int[] numeri, Boolean emergenza, Boolean preferito, String emails) {
+    public Contatto(int id, String nome, String cognome, int[] numeri, Boolean emergenza, Boolean preferito, String[] emails) {
         this.id = id;
         this.nome = nome;
         this.cognome = cognome;
-        this.numeri = numeri;
+        this.telefoni = numeri;
         this.emergenza = emergenza;
         this.preferito = preferito;
         this.emails=emails;

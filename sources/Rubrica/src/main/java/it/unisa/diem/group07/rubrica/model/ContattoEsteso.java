@@ -19,7 +19,7 @@ public class ContattoEsteso extends Contatto {
     private String indirizzoResidenza;
     /// @brief vettore contente i numeri telefonici associati al contatto
     /// @brief link relativo al social del contatto esteso
-    private Hyperl socialLinks;
+    private Hyperlink socialLinks;
 
 
     /**
