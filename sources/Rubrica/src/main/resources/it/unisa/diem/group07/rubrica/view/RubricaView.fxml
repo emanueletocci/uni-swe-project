@@ -394,7 +394,7 @@
                                              <graphic>
                                                 <ImageView fitHeight="18.0" fitWidth="17.0" onDragDetected="#ModificaContatto" pickOnBounds="true" preserveRatio="true">
                                                    <image>
-                                                      <Image url="@../../../../../../../../../../../../../../Downloads/icons8-modificare-48.png" />
+                                                      <Image url="@icon/icons8-modificare-48.png" />
                                                    </image>
                                                 </ImageView>
                                              </graphic>
@@ -403,7 +403,7 @@
                                              <graphic>
                                                 <ImageView fitHeight="18.0" fitWidth="17.0" onDragDetected="#EliminaContatto" pickOnBounds="true" preserveRatio="true">
                                                    <image>
-                                                      <Image url="@../../../../../../../../../../../../../../Downloads/icons8-elimina-48.png" />
+                                                      <Image url="@icon/icons8-elimina-48.png" />
                                                    </image>
                                                 </ImageView>
                                              </graphic>
