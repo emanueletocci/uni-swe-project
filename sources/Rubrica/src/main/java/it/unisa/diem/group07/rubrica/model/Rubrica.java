@@ -20,26 +20,27 @@ public class Rubrica {
      *  @brief struttura dati della rubrica
      */
 
-    ObservableMap<Integer, Contatto> rubrica;
+    private Map<Integer, Contatto> rubrica;
 
     /**
      *  @brief costruttore della rubrica
      */
 
     public Rubrica(){
-        rubrica = new ObservableMap<Integer, Contatto>();
+        this.rubrica = new Map<Integer, Contatto>();
     }
 
     /**
      * @brief metodo per l'aggiunta di un contatto alla rubrica
+     * @param c: il contatto da aggiungere
      */
     public void aggiungiContatto(Contatto c){
-        rubrica.put(c.getId, c);
+        rubrica.put(c.getId(), c);
     }
 
     /**
      * @brief metodo per la rimozione di un contatto dalla rubrica
-     * @reuturn contatto rimosso
+     * @return contatto rimosso
      */
 
     public Contatto rimuoviContatto(Contatto c){
@@ -53,7 +54,14 @@ public class Rubrica {
      */
 
     public Contatto ricercaContatto(Contatto c){
-        return rubrica.get(c.getId);
+        return rubrica.get(c.getId());
+    }
+    /**
+     *  @brief metodo restituisce tutti i contatti come una Collection
+     *  @return Collection<Contatto>: una lista dei contatti della rubrica
+     */
+    public Collection<Contatto> getContatti(){
+        return rubrica.values();
     }
 
 }

@@ -153,7 +153,7 @@
                                                             <Insets />
                                                          </HBox.margin>
                                                       </Label>
-                                                      <TextField fx:id="id" onAction="#aggiungiId" prefHeight="21.0" prefWidth="200.0">
+                                                      <TextField fx:id="idField" onAction="#aggiungiId" prefHeight="21.0" prefWidth="200.0">
                                                          <font>
                                                             <Font size="9.5" />
                                                          </font>
@@ -173,7 +173,7 @@
                                                             <Insets />
                                                          </HBox.margin>
                                                       </Label>
-                                                      <TextField fx:id="nomeId" prefHeight="11.0" prefWidth="185.0">
+                                                      <TextField fx:id="nomeField" prefHeight="11.0" prefWidth="185.0">
                                                          <font>
                                                             <Font size="9.5" />
                                                          </font>
@@ -193,7 +193,7 @@
                                                             <Insets />
                                                          </HBox.margin>
                                                       </Label>
-                                                      <TextField fx:id="cognome" alignment="CENTER" prefHeight="11.0" prefWidth="174.0">
+                                                      <TextField fx:id="cognomeField" alignment="CENTER" prefHeight="11.0" prefWidth="174.0">
                                                          <font>
                                                             <Font size="9.5" />
                                                          </font>
@@ -213,7 +213,7 @@
                                                             <Insets />
                                                          </HBox.margin>
                                                       </Label>
-                                                      <TextField fx:id="cellulare" prefHeight="11.0" prefWidth="179.0">
+                                                      <TextField fx:id="cellulareField" prefHeight="11.0" prefWidth="179.0">
                                                          <font>
                                                             <Font size="9.5" />
                                                          </font>
@@ -233,7 +233,7 @@
                                                             <Insets />
                                                          </HBox.margin>
                                                       </Label>
-                                                      <TextField fx:id="numeroCasa" prefHeight="11.0" prefWidth="146.0">
+                                                      <TextField fx:id="numeroCasaField" prefHeight="11.0" prefWidth="146.0">
                                                          <font>
                                                             <Font size="9.5" />
                                                          </font>
@@ -253,7 +253,7 @@
                                                             <Insets />
                                                          </HBox.margin>
                                                       </Label>
-                                                      <TextField fx:id="numeroUfficio" prefHeight="21.0" prefWidth="140.0">
+                                                      <TextField fx:id="numeroUfficioField" prefHeight="21.0" prefWidth="140.0">
                                                          <font>
                                                             <Font size="9.5" />
                                                          </font>
@@ -273,7 +273,7 @@
                                                             <Insets />
                                                          </HBox.margin>
                                                       </Label>
-                                                      <TextField fx:id="email" prefHeight="11.0" prefWidth="194.0">
+                                                      <TextField fx:id="emailField" prefHeight="11.0" prefWidth="194.0">
                                                          <font>
                                                             <Font size="9.5" />
                                                          </font>
@@ -293,7 +293,7 @@
                                                             <Insets />
                                                          </HBox.margin>
                                                       </Label>
-                                                      <TextField fx:id="emailLavoro" prefHeight="11.0" prefWidth="150.0">
+                                                      <TextField fx:id="emailLavoroField" prefHeight="11.0" prefWidth="150.0">
                                                          <font>
                                                             <Font size="9.5" />
                                                          </font>
@@ -313,7 +313,7 @@
                                                             <Insets />
                                                          </HBox.margin>
                                                       </Label>
-                                                      <TextField fx:id="emailIcloud" prefHeight="11.0" prefWidth="160.0">
+                                                      <TextField fx:id="emailIcloudField" prefHeight="11.0" prefWidth="160.0">
                                                          <font>
                                                             <Font size="9.5" />
                                                          </font>
@@ -333,7 +333,7 @@
                                                             <Insets />
                                                          </HBox.margin>
                                                       </Label>
-                                                      <TextField fx:id="compleanno" prefHeight="11.0" prefWidth="162.0">
+                                                      <TextField fx:id="compleannoField" prefHeight="11.0" prefWidth="162.0">
                                                          <font>
                                                             <Font size="9.5" />
                                                          </font>
@@ -353,7 +353,7 @@
                                                             <Insets />
                                                          </HBox.margin>
                                                       </Label>
-                                                      <TextField fx:id="indirizzo" prefHeight="11.0" prefWidth="178.0">
+                                                      <TextField fx:id="indirizzoField" prefHeight="11.0" prefWidth="178.0">
                                                          <font>
                                                             <Font size="9.0" />
                                                          </font>
@@ -373,7 +373,7 @@
                                                             <Insets />
                                                          </HBox.margin>
                                                       </Label>
-                                                      <TextField fx:id="social" prefHeight="19.0" prefWidth="189.0">
+                                                      <TextField fx:id="socialField" prefHeight="19.0" prefWidth="189.0">
                                                          <font>
                                                             <Font size="9.0" />
                                                          </font>
@@ -393,7 +393,7 @@
                                                             <Insets />
                                                          </HBox.margin>
                                                       </Label>
-                                                      <TextField fx:id="note" prefHeight="34.0" prefWidth="189.0">
+                                                      <TextField fx:id="noteField" prefHeight="34.0" prefWidth="189.0">
                                                          <font>
                                                             <Font size="9.0" />
                                                          </font>
