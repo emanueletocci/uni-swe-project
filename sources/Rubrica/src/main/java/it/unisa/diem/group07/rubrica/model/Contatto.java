@@ -49,11 +49,11 @@ public class Contatto {
     /**
      * @brief costruttore della classe Contatto
      */
-    public Contatto(int id, String nome, String cognome, String[] emails, int[] telefoni, Boolean emergenza, Boolean preferito) {
+    public Contatto(int id, String nome, String cognome, int [] telefoni, String[] emails, boolean emergenza, boolean preferito) {
         this.id = id;
         this.nome = nome !=null? nome :"" ;
         this.cognome = cognome!=null? nome :"";
-        this.emails=emails;
+        this.emails= emails;
         this.telefoni = telefoni;
         this.emergenza = emergenza;
         this.preferito = preferito;

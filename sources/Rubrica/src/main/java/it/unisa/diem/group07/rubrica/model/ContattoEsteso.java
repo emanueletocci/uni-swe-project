@@ -27,8 +27,8 @@ public class ContattoEsteso extends Contatto {
      * @brief costruttore della classe Contatto Esteso
      */
 
-    public ContattoEsteso(int id, String nome, String cognome, String[] emails, int[] numeri, Boolean emergenza, Boolean preferiti, LocalDate compleanno, String indirizzoResidenza, String socialLinks) {
-        super(id, nome, cognome, emails, numeri, emergenza, preferiti);
+    public ContattoEsteso(int id, String nome, String cognome, int[] telefoni, String [] emails, Boolean emergenza, Boolean preferito, LocalDate compleanno, String indirizzoResidenza, String socialLinks) {
+        super(id, nome, cognome, telefoni, emails, emergenza, preferito);
         this.compleanno = compleanno;
         this.indirizzoResidenza = indirizzoResidenza;
         this.socialLinks = socialLinks;
