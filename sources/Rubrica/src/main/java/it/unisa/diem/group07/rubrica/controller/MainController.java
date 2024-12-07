@@ -175,23 +175,23 @@ stage.show();
     @FXML
     void CreaContatto(ActionEvent event) {
        int[] numeri=new int[3];
-        String numeri1=cellulareField.getText();
-        String numeri2=numeroCasaField.getText();
-        String numeri3=numeroUfficioField.getText();
+        String numeri1=cellulareFieldMain.getText();
+        String numeri2=numeroCasaFieldMain.getText();
+        String numeri3=numeroUfficioFieldMain.getText();
         numeri[0]=Integer.parseInt(numeri1);
         numeri[1]=Integer.parseInt(numeri2);
         numeri[2]=Integer.parseInt(numeri3);
 
         
         String[] emails=new String[3];
-        emails[0]=emailField.getText();
-        emails[1]=emailLavoroField.getText();
-        emails[2]=emailIcloudField.getText();
+        emails[0]=emailFieldMain.getText();
+        emails[1]=emailLavoroFieldMain.getText();
+        emails[2]=emailIcloudFieldMain.getText();
         
-        String idStringa=idField.getText();
+        String idStringa=idFieldMain.getText();
         int idValue=Integer.parseInt(idStringa);
-        String name=nomeField.getText();
-        String surname=cognomeField.getText();
+        String name=nomeFieldMain.getText();
+        String surname=cognomeFieldMain.getText();
         
        try{
            if(name.isEmpty() && surname.isEmpty()){
@@ -200,15 +200,15 @@ stage.show();
            Contatto nuovoContatto= new Contatto(idValue, name, surname,false, false,emails, numeri);
            rubricamodel.aggiungiContatto(nuovoContatto);
            rubrica.add(nuovoContatto);
-           nomeField.clear();
-           cognomeField.clear();
-           emailField.clear();
-           emailLavoroField.clear();
-           emailIcloudField.clear();
-           cellulareField.clear();
-           numeroCasaField.clear();
-           numeroUfficioField.clear();
-           idField.clear();
+           nomeFieldMain.clear();
+           cognomeFieldMain.clear();
+           emailFieldMain.clear();
+           emailLavoroFieldMain.clear();
+           emailIcloudFieldMain.clear();
+           cellulareFieldMain.clear();
+           numeroCasaFieldMain.clear();
+           numeroUfficioFieldMain.clear();
+           idFieldMain.clear();
        }catch(IllegalArgumentException e){
            mostraErrore(e.getMessage());
        }
