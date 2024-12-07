@@ -112,6 +112,9 @@ public class MainController implements Initializable{
 
     @FXML
     private TextField socialFieldMain;
+                                  
+    @FXML
+    private TextField barraRicerca;
     
     /////////////////////////////////
     
