@@ -19,7 +19,7 @@
 <?import javafx.scene.shape.Line?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" prefHeight="469.0" prefWidth="606.0" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller">
+<AnchorPane id="AnchorPane" prefHeight="469.0" prefWidth="606.0" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="provapackage.Controller">
     <stylesheets>
         <URL value="@../../../../../../java/it/unisa/diem/oop/group07/rubrica/programmazione%20ad%20oggetti/ingegneriasoftwar/src/ingegneriasoftwar/dashboard.css" />
     </stylesheets>

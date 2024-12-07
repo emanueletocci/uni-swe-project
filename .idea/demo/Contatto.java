@@ -7,91 +7,47 @@
  */
 
 
+package provapackage;
+
 public class Contatto {
-
-    private static int id=0;
-
+    private int id=0;
+    private int idContatto;
     private String nome;
-
     private String cognome;
+    private String telefono;
+    private String email;
+    private String indirizzo;
+    private String compleanno;
+    private String sitoWeb;
 
-    private int[] telefoni;
-
-    private Boolean emergenza;
-
-    private Boolean preferito;
-
-    private String[] emails;
-
-    public Contatto(String nome, String cognome, String[] emails, int[] telefoni, Boolean emergenza, Boolean preferito) {
-        this.nome = nome != null ? nome : "";
-        this.cognome = cognome != null ? cognome : "";
-        this.telefoni = telefoni != null ? telefoni : new int[3]; // Inizializza se telefoni è null
-        this.emails = emails != null ? emails : new String[3]; // Inizializza se emails è null
-        this.emergenza = emergenza;
-        this.preferito = preferito;
-        this.id = id;
-        id++; // Incrementa l'id statico per il prossimo contatto
-    }
-    public Contatto(String nome) {
+    public Contatto(String nome, String cognome, String telefono, String email, String compleanno, String indirizzo, String sitoWeb) {
         this.nome = nome;
-    }
-
-    public int getId(){
-        return id;
-    }
-
-    public void setId(){
-        this.id=id;
-    }
-
-    public String getNome() {
-        return nome;
-    }
-
-    public void setNome(String nome) {
-        this.nome = nome;
-    }
-
-    public String getCognome() {
-        return cognome;
-    }
-
-    public void setCognome(String cognome) {
         this.cognome = cognome;
+        this.telefono = telefono;
+        this.email = email;
+        this.compleanno = compleanno;
+        this.indirizzo = indirizzo;
+        this.sitoWeb = sitoWeb;
+        this.idContatto=id;
+        id++;
     }
 
-    public int[] getTelefoni() {
-        return telefoni;
-    }
+    // Getters e Setters
+    public int getId() { return idContatto; }
+    public String getNome() { return nome; }
+    public String getCognome() { return cognome; }
+    public String getTelefono() { return telefono; }
+    public String getEmail() { return email; }
+    public String getIndirizzo() { return indirizzo; }
+    public String getCompleanno() { return compleanno; }
+    public String getSitoWeb() { return sitoWeb; }
 
-    public void setTelefoni(int[] numeri) {
-        this.telefoni = numeri;
-    }
-
-    public Boolean getEmergenza() {
-        return emergenza;
-    }
-
-    public void setEmergenza(Boolean emergenza) {
-        this.emergenza = emergenza;
-    }
-
-    public Boolean getPreferito() {
-        return preferito;
-    }
-
-    public void setPreferito(Boolean preferito) {
-        this.preferito = preferito;
-    }
-
-
-    public Boolean controllaTelefono(String telefono){
-        return true;
-    }
-
-
-
-
-
+    public void setId(int id) { this.id = id; }
+    public void setNome(String nome) { this.nome = nome; }
+    public void setCognome(String cognome) { this.cognome = cognome; }
+    public void setTelefono(String telefono) { this.telefono = telefono; }
+    public void setEmail(String email) { this.email = email; }
+    public void setIndirizzo(String indirizzo) { this.indirizzo = indirizzo; }
+    public void setCompleanno(String compleanno) { this.compleanno = compleanno; }
+    public void setSitoWeb(String sitoWeb) { this.sitoWeb = sitoWeb; }
 }

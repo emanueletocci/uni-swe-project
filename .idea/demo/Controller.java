@@ -1,10 +1,14 @@
-
+package provapackage;
 
 import javafx.beans.property.SimpleStringProperty;
 import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.collections.ObservableMap;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
@@ -13,19 +17,22 @@ import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.image.ImageView;
 import javafx.fxml.Initializable;
 import javafx.scene.input.MouseEvent;
+import javafx.stage.Modality;
+import javafx.stage.Stage;
 
 import java.net.URL;
 import java.util.ResourceBundle;
 
+
 public class Controller implements Initializable{
 
-    private ObservableMap<Integer, Contatto> rubrica;
+    private ObservableList<Contatto> rubrica;
 
     @FXML // fx:id="cellulareField"
     private TextField cellulareField; // Value injected by FXMLLoader
 
     @FXML // fx:id="cognomeClm"
-    private TableColumn<?, ?> cognomeClm; // Value injected by FXMLLoader
+    private TableColumn<Contatto, String> cognomeClm; // Value injected by FXMLLoader
 
     @FXML // fx:id="cognomeField"
     private TextField cognomeField; // Value injected by FXMLLoader
@@ -55,7 +62,7 @@ public class Controller implements Initializable{
     private TextField indirizzoField; // Value injected by FXMLLoader
 
     @FXML // fx:id="nomeClm"
-    private TableColumn<?, ?> nomeClm; // Value injected by FXMLLoader
+    private TableColumn<Contatto, String> nomeClm; // Value injected by FXMLLoader
 
     @FXML // fx:id="nomeField"
     private TextField nomeField; // Value injected by FXMLLoader
@@ -94,10 +101,29 @@ public class Controller implements Initializable{
 
     @FXML
     void CreaContatto(ActionEvent event) {
-        Contatto temp=new Contatto(nomeField.getText());
-        rubrica.put(Integer.valueOf(idField.getText()), temp);
+        try {
+            // Carica il file FXML della nuova view
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("ViewCreazioneContatto.fxml"));
+            Parent root = loader.load();
+            // Ottieni il controller della nuova view
+            ControllerCreazione controllerCreazione = loader.getController();
+            // Passa la rubrica al controller di creazione
+            controllerCreazione.setRubrica(rubrica);
+            // Crea un nuovo Stage per la nuova finestra
+            Stage nuovoStage = new Stage();
+            nuovoStage.setScene(new Scene(root));
+            nuovoStage.setTitle("Crea Nuovo Contatto");
+            nuovoStage.initModality(Modality.APPLICATION_MODAL);
+            // Mostra la finestra e attende la chiusura
+            nuovoStage.showAndWait();
+            // Aggiorna la TableView con i nuovi dati
+            rubricaTable.setItems(FXCollections.observableArrayList(rubrica));
+            for(Contatto c:rubrica)
+                System.out.println(c.getNome());
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
-
     @FXML
     void EliminaContatto(MouseEvent event) {
 
@@ -120,16 +146,20 @@ public class Controller implements Initializable{
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        // Inizializza la rubrica come una mappa osservabile
-        rubrica = FXCollections.observableHashMap();
 
-        // Imposta la colonna "Nome" per visualizzare il nome dell'oggetto
-        //nomeClm.setCellValueFactory(s -> new SimpleStringProperty(s.getValue().getName()));
+        rubrica = FXCollections.observableArrayList();
+        nomeClm.setCellValueFactory(s -> { return new SimpleStringProperty(s.getValue().getNome());  });
+        cognomeClm.setCellValueFactory(new PropertyValueFactory("cognome"));
+        rubricaTable.setItems(rubrica);
 
-        // Imposta la colonna "Cognome" per visualizzare il cognome dell'oggetto
-        cognomeClm.setCellValueFactory(new PropertyValueFactory<>("surname"));
-
-        // Collega la rubrica alla TableView
-        rubricaTable.setItems(FXCollections.observableArrayList(rubrica.values()));
+        rubricaTable.getSelectionModel().selectedItemProperty().addListener((observable, oldValue, newValue) -> {
+            if (newValue != null) {
+                // Aggiorna i campi con i dati del contatto selezionato
+                nomeField.setText(newValue.getNome());
+                cognomeField.setText(newValue.getCognome());
+                // Aggiorna gli altri campi similmente
+            }
+        });
     }
+
 }
