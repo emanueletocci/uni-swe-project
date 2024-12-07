@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-
+<!--versione 7 dic-->
 <?import java.net.URL?>
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
@@ -12,7 +12,6 @@
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.effect.BoxBlur?>
-<?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.HBox?>
@@ -20,9 +19,9 @@
 <?import javafx.scene.shape.Line?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" prefHeight="469.0" prefWidth="606.0" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ingegneriasoftwar.DashboardController">
+<AnchorPane id="AnchorPane" prefHeight="469.0" prefWidth="606.0" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="provapackage.Controller">
    <stylesheets>
-      <URL value="@../../../../../../../java/it/unisa/diem/oop/group07/rubrica/programmazione%20ad%20oggetti/ingegneriasoftwar/src/ingegneriasoftwar/dashboard.css" />
+      <URL value="@../../../../../../java/it/unisa/diem/oop/group07/rubrica/programmazione%20ad%20oggetti/ingegneriasoftwar/src/ingegneriasoftwar/dashboard.css" />
    </stylesheets>
    <children>
       <SplitPane dividerPositions="0.05627705627705628" orientation="VERTICAL" prefHeight="469.0" prefWidth="606.0">
@@ -33,27 +32,26 @@
                      <menus>
                         <Menu mnemonicParsing="false" text="File">
                            <items>
-                              <MenuItem mnemonicParsing="false" text="Close" />
+                              <MenuItem mnemonicParsing="false" text="Import" />
+                              <MenuItem mnemonicParsing="false" text="Export" />
                            </items>
                         </Menu>
                         <Menu mnemonicParsing="false" text="Modifica">
                            <items>
-                              <MenuItem mnemonicParsing="false" text="Delete" />
+                              <MenuItem mnemonicParsing="false" text="Modifica contatto" />
+                              <MenuItem mnemonicParsing="false" text="Elimina contatto" />
                            </items>
                         </Menu>
                         <Menu mnemonicParsing="false" text="Finestra">
                            <items>
-                              <MenuItem mnemonicParsing="false" text="About" />
-                           </items>
-                        </Menu>
-                        <Menu mnemonicParsing="false" text="Impostazione">
-                           <items>
-                              <MenuItem mnemonicParsing="false" text="Delete" />
+                              <MenuItem mnemonicParsing="false" text="Rubrica Standard" />
+                              <MenuItem mnemonicParsing="false" text="Contatti Preferiti" />
+                              <MenuItem mnemonicParsing="false" text="Contatti d'emergenza" />
                            </items>
                         </Menu>
                         <Menu mnemonicParsing="false" text="Aiuto">
                            <items>
-                              <MenuItem mnemonicParsing="false" text="Delete" />
+                              <MenuItem mnemonicParsing="false" text="qualcosa tipo mailto:" />
                            </items>
                         </Menu>
                      </menus>
@@ -62,30 +60,11 @@
             </AnchorPane>
             <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
                <children>
-                  <SplitPane dividerPositions="0.0774487471526196" layoutY="-9.0" orientation="VERTICAL" prefHeight="450.0" prefWidth="606.0">
+                  <SplitPane layoutY="-9.0" orientation="VERTICAL" prefHeight="450.0" prefWidth="606.0">
                      <items>
-                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="25.0" prefWidth="604.0">
-                           <children>
-                              <Label layoutX="8.0" layoutY="13.0" text="Rubrica">
-                                 <font>
-                                    <Font name="Tahoma Bold" size="12.0" />
-                                 </font>
-                              </Label>
-                              <Button fx:id="pulsanteImport" layoutX="67.0" layoutY="9.0" mnemonicParsing="false" onAction="#ImportRubrica" prefHeight="21.0" prefWidth="86.0" text="Import Rubrica">
-                                 <font>
-                                    <Font size="10.0" />
-                                 </font>
-                              </Button>
-                              <Button fx:id="pulsanteExport" layoutX="163.0" layoutY="10.0" mnemonicParsing="false" onAction="#ExportRubrica" prefHeight="21.0" prefWidth="86.0" text="Export Rubrica">
-                                 <font>
-                                    <Font size="10.0" />
-                                 </font>
-                              </Button>
-                           </children>
-                        </AnchorPane>
                         <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
                            <children>
-                              <SplitPane dividerPositions="0.51010101010101" prefHeight="410.0" prefWidth="600.0">
+                              <SplitPane dividerPositions="0.5008361204013378" prefHeight="410.0" prefWidth="600.0">
                                  <items>
                                     <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
                                        <children>
@@ -93,29 +72,38 @@
                                              <items>
                                                 <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="25.0" prefWidth="300.0">
                                                    <children>
-                                                      <Button fx:id="pulsanteCrea" layoutX="111.0" layoutY="3.0" mnemonicParsing="false" onAction="#CreaContatto" prefHeight="21.0" prefWidth="79.0" text="Crea Contatto">
+                                                      <Button fx:id="pulsanteCrea" layoutX="111.0" layoutY="3.0" mnemonicParsing="false" onAction="#CreaContatto" prefHeight="21.0" prefWidth="79.0" text="Crea Contatto" AnchorPane.topAnchor="6.0">
                                                          <font>
                                                             <Font size="10.0" />
                                                          </font>
+                                                         <padding>
+                                                            <Insets top="3.0" />
+                                                         </padding>
                                                       </Button>
-                                                      <Button fx:id="pulsanteCerca" layoutX="200.0" layoutY="4.0" mnemonicParsing="false" onAction="#CercaContatto" prefHeight="21.0" prefWidth="86.0" text="Cerca Contatto">
+                                                      <Button fx:id="pulsanteCerca" layoutX="200.0" layoutY="4.0" mnemonicParsing="false" onAction="#CercaContatto" prefHeight="21.0" prefWidth="86.0" text="Cerca Contatto" AnchorPane.topAnchor="6.0">
                                                          <font>
                                                             <Font size="10.0" />
                                                          </font>
+                                                         <padding>
+                                                            <Insets top="3.0" />
+                                                         </padding>
                                                       </Button>
                                                       <Label layoutX="6.0" layoutY="6.0" text="Contatti">
                                                          <font>
                                                             <Font name="Tahoma Bold" size="12.0" />
                                                          </font>
+                                                         <padding>
+                                                            <Insets top="3.0" />
+                                                         </padding>
                                                       </Label>
                                                    </children>
                                                 </AnchorPane>
                                                 <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
                                                    <children>
-                                                      <TableView prefHeight="378.0" prefWidth="300.0">
+                                                      <TableView fx:id="rubricaTable" prefHeight="378.0" prefWidth="300.0">
                                                          <columns>
-                                                            <TableColumn prefWidth="150.0" text="Nome" />
-                                                            <TableColumn prefWidth="150.0" text="Cognome" />
+                                                            <TableColumn fx:id="nomeClm" onEditCommit="#aggiornaNome" prefWidth="150.0" text="Nome" />
+                                                            <TableColumn fx:id="cognomeClm" prefWidth="150.0" text="Cognome" />
                                                          </columns>
                                                       </TableView>
                                                    </children>
@@ -131,9 +119,29 @@
                                                 <BoxBlur />
                                              </effect>
                                           </Line>
-                                          <VBox layoutY="100.0" prefHeight="305.0" prefWidth="288.0" spacing="2.5" AnchorPane.rightAnchor="0.0">
+                                          <VBox layoutY="84.0" prefHeight="321.0" prefWidth="288.0" spacing="2.5" AnchorPane.rightAnchor="0.0">
                                              <children>
-                                                <HBox prefHeight="10.0" prefWidth="288.0" spacing="10.0">
+                                                <HBox prefHeight="10.0" prefWidth="288.0" spacing="58.0">
+                                                   <children>
+                                                      <Label alignment="CENTER" contentDisplay="CENTER" lineSpacing="1.0" prefHeight="21.0" prefWidth="22.0" text="Id:" textAlignment="CENTER" textFill="#1b0808">
+                                                         <font>
+                                                            <Font size="9.5" />
+                                                         </font>
+                                                         <HBox.margin>
+                                                            <Insets />
+                                                         </HBox.margin>
+                                                      </Label>
+                                                      <TextField fx:id="idField" alignment="CENTER" onAction="#aggiungiId" prefHeight="17.0" prefWidth="175.0">
+                                                         <font>
+                                                            <Font size="9.5" />
+                                                         </font>
+                                                      </TextField>
+                                                   </children>
+                                                   <padding>
+                                                      <Insets left="10.0" />
+                                                   </padding>
+                                                </HBox>
+                                                <HBox prefHeight="10.0" prefWidth="288.0" spacing="44.0">
                                                    <children>
                                                       <Label alignment="CENTER" contentDisplay="CENTER" lineSpacing="1.0" prefHeight="24.0" prefWidth="36.0" text="Nome:" textAlignment="CENTER" textFill="#1b0808">
                                                          <font>
@@ -143,7 +151,7 @@
                                                             <Insets />
                                                          </HBox.margin>
                                                       </Label>
-                                                      <TextField fx:id="nomeId" prefHeight="11.0" prefWidth="185.0">
+                                                      <TextField fx:id="nomeField" prefHeight="11.0" prefWidth="175.0">
                                                          <font>
                                                             <Font size="9.5" />
                                                          </font>
@@ -153,9 +161,9 @@
                                                       <Insets left="10.0" />
                                                    </padding>
                                                 </HBox>
-                                                <HBox prefHeight="10.0" prefWidth="255.0" spacing="10.0">
+                                                <HBox prefHeight="10.0" prefWidth="255.0" spacing="31.0">
                                                    <children>
-                                                      <Label alignment="CENTER" contentDisplay="CENTER" lineSpacing="1.0" prefHeight="24.0" prefWidth="46.0" text="Cognome:" textAlignment="CENTER" textFill="#1b0808">
+                                                      <Label alignment="CENTER" contentDisplay="CENTER" lineSpacing="1.0" prefHeight="17.0" prefWidth="49.0" text="Cognome:" textAlignment="CENTER" textFill="#1b0808">
                                                          <font>
                                                             <Font size="9.5" />
                                                          </font>
@@ -163,7 +171,7 @@
                                                             <Insets />
                                                          </HBox.margin>
                                                       </Label>
-                                                      <TextField fx:id="cognome" alignment="CENTER" prefHeight="11.0" prefWidth="174.0">
+                                                      <TextField fx:id="cognomeField" alignment="CENTER" prefHeight="11.0" prefWidth="175.0">
                                                          <font>
                                                             <Font size="9.5" />
                                                          </font>
@@ -173,9 +181,9 @@
                                                       <Insets left="10.0" />
                                                    </padding>
                                                 </HBox>
-                                                <HBox prefHeight="11.0" prefWidth="255.0" spacing="10.0">
+                                                <HBox prefHeight="11.0" prefWidth="255.0" spacing="35.0">
                                                    <children>
-                                                      <Label alignment="CENTER" contentDisplay="CENTER" lineSpacing="1.0" prefHeight="24.0" prefWidth="41.0" text="Cellulare:" textAlignment="CENTER" textFill="#1b0808">
+                                                      <Label alignment="CENTER" contentDisplay="CENTER" lineSpacing="1.0" prefHeight="17.0" prefWidth="45.0" text="Cellulare:" textAlignment="CENTER" textFill="#1b0808">
                                                          <font>
                                                             <Font size="9.5" />
                                                          </font>
@@ -183,7 +191,7 @@
                                                             <Insets />
                                                          </HBox.margin>
                                                       </Label>
-                                                      <TextField fx:id="cellulare" prefHeight="11.0" prefWidth="179.0">
+                                                      <TextField fx:id="cellulareField" prefHeight="11.0" prefWidth="175.0">
                                                          <font>
                                                             <Font size="9.5" />
                                                          </font>
@@ -193,7 +201,7 @@
                                                       <Insets left="10.0" />
                                                    </padding>
                                                 </HBox>
-                                                <HBox prefHeight="15.0" prefWidth="255.0" spacing="10.0">
+                                                <HBox prefHeight="15.0" prefWidth="255.0" spacing="6.0">
                                                    <children>
                                                       <Label alignment="CENTER" contentDisplay="CENTER" lineSpacing="1.0" prefHeight="24.0" prefWidth="74.0" text="Numero di casa:" textAlignment="CENTER" textFill="#1b0808">
                                                          <font>
@@ -203,7 +211,7 @@
                                                             <Insets />
                                                          </HBox.margin>
                                                       </Label>
-                                                      <TextField fx:id="numeroCasa" prefHeight="11.0" prefWidth="146.0">
+                                                      <TextField fx:id="numeroCasaField" prefHeight="11.0" prefWidth="175.0">
                                                          <font>
                                                             <Font size="9.5" />
                                                          </font>
@@ -213,7 +221,7 @@
                                                       <Insets left="10.0" />
                                                    </padding>
                                                 </HBox>
-                                                <HBox prefHeight="15.0" prefWidth="255.0" spacing="10.0">
+                                                <HBox prefHeight="15.0" prefWidth="255.0">
                                                    <children>
                                                       <Label alignment="CENTER" contentDisplay="CENTER" lineSpacing="1.0" prefHeight="24.0" prefWidth="80.0" text="Numero di ufficio:" textAlignment="CENTER" textFill="#1b0808">
                                                          <font>
@@ -223,7 +231,7 @@
                                                             <Insets />
                                                          </HBox.margin>
                                                       </Label>
-                                                      <TextField fx:id="numeroUfficio" prefHeight="21.0" prefWidth="140.0">
+                                                      <TextField fx:id="numeroUfficioField" prefHeight="21.0" prefWidth="175.0">
                                                          <font>
                                                             <Font size="9.5" />
                                                          </font>
@@ -233,9 +241,9 @@
                                                       <Insets left="10.0" />
                                                    </padding>
                                                 </HBox>
-                                                <HBox prefHeight="15.0" prefWidth="255.0" spacing="10.0">
+                                                <HBox prefHeight="15.0" prefWidth="255.0" spacing="46.0">
                                                    <children>
-                                                      <Label alignment="CENTER" contentDisplay="CENTER" lineSpacing="1.0" prefHeight="24.0" prefWidth="27.0" text="Email:" textAlignment="CENTER" textFill="#1b0808">
+                                                      <Label alignment="CENTER" contentDisplay="CENTER" lineSpacing="1.0" prefHeight="17.0" prefWidth="34.0" text="Email:" textAlignment="CENTER" textFill="#1b0808">
                                                          <font>
                                                             <Font size="9.5" />
                                                          </font>
@@ -243,7 +251,7 @@
                                                             <Insets />
                                                          </HBox.margin>
                                                       </Label>
-                                                      <TextField fx:id="email" prefHeight="11.0" prefWidth="194.0">
+                                                      <TextField fx:id="emailField" prefHeight="11.0" prefWidth="175.0">
                                                          <font>
                                                             <Font size="9.5" />
                                                          </font>
@@ -253,9 +261,9 @@
                                                       <Insets left="10.0" />
                                                    </padding>
                                                 </HBox>
-                                                <HBox prefHeight="15.0" prefWidth="255.0" spacing="10.0">
+                                                <HBox prefHeight="15.0" prefWidth="255.0" spacing="11.0">
                                                    <children>
-                                                      <Label alignment="CENTER" contentDisplay="CENTER" lineSpacing="1.0" prefHeight="24.0" prefWidth="72.0" text="Email di lavoro:" textAlignment="CENTER" textFill="#1b0808">
+                                                      <Label alignment="CENTER" contentDisplay="CENTER" lineSpacing="1.0" prefHeight="17.0" prefWidth="69.0" text="Email di lavoro:" textAlignment="CENTER" textFill="#1b0808">
                                                          <font>
                                                             <Font size="9.5" />
                                                          </font>
@@ -263,7 +271,7 @@
                                                             <Insets />
                                                          </HBox.margin>
                                                       </Label>
-                                                      <TextField fx:id="emailLavoro" prefHeight="11.0" prefWidth="150.0">
+                                                      <TextField fx:id="emailLavoroField" prefHeight="11.0" prefWidth="175.0">
                                                          <font>
                                                             <Font size="9.5" />
                                                          </font>
@@ -273,9 +281,9 @@
                                                       <Insets left="10.0" />
                                                    </padding>
                                                 </HBox>
-                                                <HBox prefHeight="15.0" prefWidth="255.0" spacing="10.0">
+                                                <HBox prefHeight="15.0" prefWidth="255.0" spacing="20.0">
                                                    <children>
-                                                      <Label alignment="CENTER" contentDisplay="CENTER" lineSpacing="1.0" prefHeight="24.0" prefWidth="61.0" text="Email Icloud:" textAlignment="CENTER" textFill="#1b0808">
+                                                      <Label alignment="CENTER" contentDisplay="CENTER" lineSpacing="1.0" prefHeight="17.0" prefWidth="60.0" text="Email Icloud:" textAlignment="CENTER" textFill="#1b0808">
                                                          <font>
                                                             <Font size="9.5" />
                                                          </font>
@@ -283,7 +291,7 @@
                                                             <Insets />
                                                          </HBox.margin>
                                                       </Label>
-                                                      <TextField fx:id="emailIcloud" prefHeight="11.0" prefWidth="160.0">
+                                                      <TextField fx:id="emailIcloudField" prefHeight="11.0" prefWidth="175.0">
                                                          <font>
                                                             <Font size="9.5" />
                                                          </font>
@@ -293,9 +301,9 @@
                                                       <Insets left="10.0" />
                                                    </padding>
                                                 </HBox>
-                                                <HBox prefHeight="15.0" prefWidth="255.0" spacing="10.0">
+                                                <HBox prefHeight="15.0" prefWidth="255.0" spacing="18.0">
                                                    <children>
-                                                      <Label alignment="CENTER" contentDisplay="CENTER" lineSpacing="1.0" prefHeight="24.0" prefWidth="60.0" text="Compleanno:" textAlignment="CENTER" textFill="#1b0808">
+                                                      <Label alignment="CENTER" contentDisplay="CENTER" lineSpacing="1.0" prefHeight="17.0" prefWidth="62.0" text="Compleanno:" textAlignment="CENTER" textFill="#1b0808">
                                                          <font>
                                                             <Font size="9.5" />
                                                          </font>
@@ -303,7 +311,7 @@
                                                             <Insets />
                                                          </HBox.margin>
                                                       </Label>
-                                                      <TextField fx:id="compleanno" prefHeight="11.0" prefWidth="162.0">
+                                                      <TextField fx:id="compleannoField" prefHeight="11.0" prefWidth="175.0">
                                                          <font>
                                                             <Font size="9.5" />
                                                          </font>
@@ -313,9 +321,9 @@
                                                       <Insets left="10.0" />
                                                    </padding>
                                                 </HBox>
-                                                <HBox prefHeight="15.0" prefWidth="255.0" spacing="10.0">
+                                                <HBox prefHeight="15.0" prefWidth="255.0" spacing="34.0">
                                                    <children>
-                                                      <Label alignment="CENTER" contentDisplay="CENTER" lineSpacing="1.0" prefHeight="24.0" prefWidth="42.0" text="Indirizzo:" textAlignment="CENTER" textFill="#1b0808">
+                                                      <Label alignment="CENTER" contentDisplay="CENTER" lineSpacing="1.0" prefHeight="17.0" prefWidth="46.0" text="Indirizzo:" textAlignment="CENTER" textFill="#1b0808">
                                                          <font>
                                                             <Font size="9.5" />
                                                          </font>
@@ -323,7 +331,7 @@
                                                             <Insets />
                                                          </HBox.margin>
                                                       </Label>
-                                                      <TextField fx:id="indirizzo" prefHeight="11.0" prefWidth="178.0">
+                                                      <TextField fx:id="indirizzoField" prefHeight="11.0" prefWidth="175.0">
                                                          <font>
                                                             <Font size="9.0" />
                                                          </font>
@@ -333,9 +341,9 @@
                                                       <Insets left="10.0" />
                                                    </padding>
                                                 </HBox>
-                                                <HBox prefHeight="15.0" prefWidth="255.0" spacing="10.0">
+                                                <HBox prefHeight="15.0" prefWidth="255.0" spacing="44.0">
                                                    <children>
-                                                      <Label alignment="CENTER" contentDisplay="CENTER" lineSpacing="1.0" prefHeight="19.0" prefWidth="31.0" text="Social:" textAlignment="CENTER" textFill="#1b0808">
+                                                      <Label alignment="CENTER" contentDisplay="CENTER" lineSpacing="1.0" prefHeight="17.0" prefWidth="36.0" text="Social:" textAlignment="CENTER" textFill="#1b0808">
                                                          <font>
                                                             <Font size="9.5" />
                                                          </font>
@@ -343,7 +351,7 @@
                                                             <Insets />
                                                          </HBox.margin>
                                                       </Label>
-                                                      <TextField fx:id="social" prefHeight="19.0" prefWidth="189.0">
+                                                      <TextField fx:id="socialField" prefHeight="19.0" prefWidth="175.0">
                                                          <font>
                                                             <Font size="9.0" />
                                                          </font>
@@ -353,9 +361,9 @@
                                                       <Insets left="10.0" />
                                                    </padding>
                                                 </HBox>
-                                                <HBox prefHeight="42.0" prefWidth="288.0" spacing="10.0">
+                                                <HBox prefHeight="87.0" prefWidth="288.0" spacing="49.0">
                                                    <children>
-                                                      <Label alignment="CENTER" contentDisplay="CENTER" lineSpacing="1.0" prefHeight="19.0" prefWidth="30.0" text="Note:" textAlignment="CENTER" textFill="#1b0808">
+                                                      <Label alignment="CENTER" contentDisplay="CENTER" lineSpacing="1.0" prefHeight="19.0" prefWidth="31.0" text="Note:" textAlignment="CENTER" textFill="#1b0808">
                                                          <font>
                                                             <Font size="9.5" />
                                                          </font>
@@ -363,7 +371,7 @@
                                                             <Insets />
                                                          </HBox.margin>
                                                       </Label>
-                                                      <TextField fx:id="note" prefHeight="34.0" prefWidth="189.0">
+                                                      <TextField fx:id="noteField" prefHeight="39.0" prefWidth="175.0">
                                                          <font>
                                                             <Font size="9.0" />
                                                          </font>
@@ -379,39 +387,35 @@
                                              <font>
                                                 <Font name="Tahoma Bold" size="12.0" />
                                              </font>
+                                             <padding>
+                                                <Insets top="10.0" />
+                                             </padding>
                                           </Label>
-                                          <HBox alignment="CENTER" layoutX="11.0" layoutY="31.0" prefHeight="57.0" prefWidth="271.0" spacing="40.0">
+                                          <HBox alignment="CENTER" layoutX="11.0" layoutY="31.0" prefHeight="50.0" prefWidth="263.0" spacing="12.0">
                                              <children>
-                                                <ImageView fx:id="imgcontatto" fitHeight="45.0" fitWidth="62.0" pickOnBounds="true" preserveRatio="true" />
-                                                <TextField fx:id="fullname">
+                                                <ImageView fx:id="imgcontatto" fitHeight="41.0" fitWidth="55.0" pickOnBounds="true" preserveRatio="true" />
+                                                <TextField fx:id="fullname" prefHeight="20.0" prefWidth="147.0">
                                                    <font>
                                                       <Font size="10.0" />
                                                    </font>
                                                 </TextField>
                                              </children>
                                           </HBox>
-                                          <Button fx:id="pulsanteModifica" layoutX="183.0" layoutY="2.0" mnemonicParsing="false" onAction="#ModificaContatto">
+                                          <Button fx:id="pulsanteModifica" layoutX="183.0" layoutY="2.0" mnemonicParsing="false" onAction="#ModificaContatto" AnchorPane.topAnchor="12.0">
                                              <graphic>
-                                                <ImageView fitHeight="18.0" fitWidth="17.0" onDragDetected="#ModificaContatto" pickOnBounds="true" preserveRatio="true">
-                                                   <image>
-                                                      <Image url="@icon/icons8-modificare-48.png" />
-                                                   </image>
-                                                </ImageView>
+                                                <ImageView fitHeight="18.0" fitWidth="17.0" onDragDetected="#ModificaContatto" pickOnBounds="true" preserveRatio="true" />
                                              </graphic>
                                           </Button>
-                                          <Button fx:id="pulsanteElimina" layoutX="230.0" layoutY="2.0" mnemonicParsing="false" onAction="#EliminaContatto" prefHeight="18.0" prefWidth="17.0">
+                                          <Button fx:id="pulsanteElimina" layoutX="230.0" layoutY="2.0" mnemonicParsing="false" onAction="#EliminaContatto" prefHeight="18.0" prefWidth="17.0" AnchorPane.topAnchor="12.0">
                                              <graphic>
-                                                <ImageView fitHeight="18.0" fitWidth="17.0" onDragDetected="#EliminaContatto" pickOnBounds="true" preserveRatio="true">
-                                                   <image>
-                                                      <Image url="@icon/icons8-elimina-48.png" />
-                                                   </image>
-                                                </ImageView>
+                                                <ImageView fitHeight="18.0" fitWidth="17.0" onDragDetected="#EliminaContatto" pickOnBounds="true" preserveRatio="true" />
                                              </graphic>
                                           </Button>
                                        </children>
                                     </AnchorPane>
                                  </items>
                               </SplitPane>
+                              <Label layoutX="247.0" layoutY="419.0" text="Rubrica Gruppo 07" />
                            </children>
                         </AnchorPane>
                      </items>
