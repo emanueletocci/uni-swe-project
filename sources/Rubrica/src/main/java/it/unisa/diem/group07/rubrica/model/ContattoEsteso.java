@@ -27,8 +27,8 @@ public class ContattoEsteso extends Contatto {
      * @brief costruttore della classe Contatto Esteso
      */
 
-    public ContattoEsteso(String nome, String cognome, String[] emails, int[] numeri, Boolean emergenza, Boolean preferiti, LocalDate compleanno, String indirizzoResidenza, String socialLinks) {
-        super(nome, cognome, emails, numeri, emergenza, preferiti);
+    public ContattoEsteso(int id, String nome, String cognome, String[] emails, int[] numeri, Boolean emergenza, Boolean preferiti, LocalDate compleanno, String indirizzoResidenza, String socialLinks) {
+        super(id, nome, cognome, emails, numeri, emergenza, preferiti);
         this.compleanno = compleanno;
         this.indirizzoResidenza = indirizzoResidenza;
         this.socialLinks = socialLinks;
@@ -42,6 +42,7 @@ public class ContattoEsteso extends Contatto {
 
     public LocalDate getCompleanno() {
         return compleanno;
+    }
         /**
          * @brief metodo setter per l'attributo "compleanno"
          */
@@ -91,5 +92,5 @@ public class ContattoEsteso extends Contatto {
         public void setEmails(String[] emails) {
             this.emails = emails;
         }
-    }
+    
 }

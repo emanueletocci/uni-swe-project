@@ -8,6 +8,7 @@
 
 package it.unisa.diem.group07.rubrica.model;
 import it.unisa.diem.group07.rubrica.model.Rubrica;
+import java.util.HashMap;
 import javafx.beans.Observable;
 import javafx.collections.ObservableMap;
 
@@ -18,6 +19,10 @@ public class RubricaEmergenze extends Rubrica {
     /**
      *  @brief struttura implementata per inserire i Contatti all'interno della sotto-rubrica "Emergenze"
      */
+    private Map<Integer, Contatto> emergenze;
+    
 
-    private ObservableMap<Integer, Contatto> emergenze;
+    public RubricaEmergenze() {
+        this.emergenze = new HashMap<>();
+    }
 }

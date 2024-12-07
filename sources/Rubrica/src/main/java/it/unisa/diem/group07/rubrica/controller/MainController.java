@@ -2,6 +2,8 @@ package it.unisa.diem.group07.rubrica.controller;
 
 import it.unisa.diem.group07.rubrica.model.Contatto;
 import it.unisa.diem.group07.rubrica.model.Rubrica;
+import it.unisa.diem.group07.rubrica.model.RubricaEmergenze;
+import it.unisa.diem.group07.rubrica.model.RubricaPreferiti;
 import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.beans.property.SimpleStringProperty;
@@ -122,6 +124,8 @@ public class MainController implements Initializable{
     
     private ObservableList<Contatto> rubrica;
     private Rubrica rubricamodel;
+    private RubricaPreferiti rPreferiti;
+    private RubricaEmergenze rEmergenze;
  
     @Override
     public void initialize(URL url, ResourceBundle rb){
@@ -133,10 +137,24 @@ public class MainController implements Initializable{
 }
  
 
+    ///BISOGNA AGGIUNGERE BARRA DI RICERCA E DARLE ID: barraRicerca
     /// @brief metodo che permette la ricerca del Contatto inserito
     @FXML
     void CercaContatto(ActionEvent event) {
-   
+        barraRicerca.textProperty().addListener((observable, oldValue, newValue)->cerca(newValue));
+    }
+    private void cerca(String contattoCercato){
+        if(contattoCercato== null || contattoCercato.isEmpty()){
+            rubricaTable.setItems(rubrica);
+        }else{
+            ObservableList<Contatto> ricercaLista=FXCollections.observableArrayList();
+            for(Contatto c: rubrica){
+                if(c.getNome().toLowerCase().contains(contattoCercato.toLowerCase()) || c.getCognome().toLowerCase().contains(contattoCercato.toLowerCase())){
+                    ricercaLista.add(c);
+                }
+            }
+            rubricaTable.setItems(ricercaLista);
+        }
     }
     
     @FXML
@@ -152,7 +170,8 @@ stage.show();
     
     
     /// @brief metodo che permette di creare un nuovo Contatto
-    ///crea contatto viene utilizzato quando nella CreazioneView viene cliccato il pulsante aggiungi   
+    ///crea contatto viene utilizzato quando nella CreazioneView viene cliccato il pulsante aggiungi 
+    ////òe fxml id devono essere cambiati nella Creazioneview
     @FXML
     void CreaContatto(ActionEvent event) {
        int[] numeri=new int[3];
@@ -237,16 +256,14 @@ stage.show();
     void AggiungiEmergenza(ActionEvent event) {
 
     }
-        @FXML
-    void aggiungiId(ActionEvent event) {
 
-    }
 
     @FXML
     void aggiornaNome(TableColumn.CellEditEvent<String,String> event) {
         Contatto s=rubricaTable.getSelectionModel().getSelectedItem();
         s.setNome(event.getNewValue());
         //handleall
-    }    
+    }   
+    private void handle
 
 }
