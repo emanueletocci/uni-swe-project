@@ -1,18 +1,7 @@
 
 package it.unisa.diem.group07.rubrica.model;
-import it.unisa.diem.group07.rubrica.model.Contatto;
-import javafx.beans.Observable;
+import javafx.collections.FXCollections;
 import javafx.collections.ObservableMap;
-
-import java.util.Map;
-
-import java.util.Map.Entry;
-import java.util.HashMap;
-import java.util.TreeMap;
-import java.util.LinkedHashMap;
-import java.util.Collection;
-import java.util.Set;
-import java.util.Iterator;
 
 public class Rubrica {
 
@@ -27,14 +16,14 @@ public class Rubrica {
      */
 
     public Rubrica(){
-        rubrica = new ObservableMap<Integer, Contatto>();
+        rubrica = FXCollections.observableHashMap();
     }
 
     /**
      * @brief metodo per l'aggiunta di un contatto alla rubrica
      */
     public void aggiungiContatto(Contatto c){
-        rubrica.put(c.getId, c);
+        rubrica.put(c.getId(), c);
     }
 
     /**
@@ -52,6 +41,8 @@ public class Rubrica {
      *  @return contatto trovato
      */
 
-    public Contatto ricercaContatto(Contatto c){}
+    public Contatto ricercaContatto(Contatto c){
+        return rubrica.get(c.getId());
+    }
 
 }
