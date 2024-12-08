@@ -30,9 +30,11 @@ public class ContattoEsteso extends Contatto {
 
     public ContattoEsteso(int id, String nome, String cognome, int[] numeri, Boolean emergenza, Boolean preferito, String[] emails, LocalDate compleanno, String indirizzoResidenza, Hyperlink socialLinks) {
         super(id, nome, cognome, numeri, emergenza, preferito);
+        this.emails = emails;
         this.compleanno = compleanno;
         this.indirizzoResidenza = indirizzoResidenza;
         this.socialLinks = socialLinks;
+        
     }
 
 
@@ -43,6 +45,7 @@ public class ContattoEsteso extends Contatto {
 
     public LocalDate getCompleanno() {
         return compleanno;
+    }
         /**
          * @brief metodo setter per l'attributo "compleanno"
          */
