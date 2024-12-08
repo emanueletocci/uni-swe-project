@@ -8,6 +8,8 @@
 
 package it.unisa.diem.group07.rubrica.model;
 import it.unisa.diem.group07.rubrica.model.Contatto;
+import javafx.scene.control.Hyperlink;
+
 import java.time.LocalDate;
 
 public class ContattoEsteso extends Contatto {
@@ -19,15 +21,15 @@ public class ContattoEsteso extends Contatto {
     private String indirizzoResidenza;
     /// @brief vettore contente i numeri telefonici associati al contatto
     /// @brief link relativo al social del contatto esteso
-    private Hyperl socialLinks;
+    private Hyperlink socialLinks;
 
 
     /**
      * @brief costruttore della classe Contatto Esteso
      */
 
-    public ContattoEsteso(String nome, String cognome, String[] emails, int[] numeri, Boolean emergenza, Boolean preferiti, LocalDate compleanno, String indirizzoResidenza, String socialLinks) {
-        super(nome, cognome, emails, numeri, emergenza, preferiti);
+    public ContattoEsteso(int id, String nome, String cognome, int[] numeri, Boolean emergenza, Boolean preferito, String[] emails, LocalDate compleanno, String indirizzoResidenza, Hyperlink socialLinks) {
+        super(id, nome, cognome, numeri, emergenza, preferito);
         this.compleanno = compleanno;
         this.indirizzoResidenza = indirizzoResidenza;
         this.socialLinks = socialLinks;
@@ -65,13 +67,13 @@ public class ContattoEsteso extends Contatto {
          * @brief metodo getter per l'attributo "socialLinks"
          * @return attributo indirizzoResidenza
          */
-        public String getSocialLinks () {
+        public Hyperlink getSocialLinks () {
             return socialLinks;
         }
         /**
          * @brief metodo setter per l'attributo "socialLinks"
          */
-        public void setSocialLinks (String socialLinks){
+        public void setSocialLinks (Hyperlink socialLinks){
             this.socialLinks = socialLinks;
         }
         /**
