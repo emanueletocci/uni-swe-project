@@ -12,8 +12,8 @@ import javafx.stage.Stage;
 
 import java.util.List;
 
-public class ControllerCreazione {
-    private List<Contatto> rubrica; // Riferimento alla rubrica condivisa
+public class ControllerModifica {
+
     @FXML
     private HBox HBox1;
 
@@ -25,9 +25,6 @@ public class ControllerCreazione {
 
     @FXML
     private Button aggiungi_telefono;
-
-    @FXML
-    private Button bottone_creazione;
 
     @FXML
     private Button bottone_imm;
@@ -51,6 +48,9 @@ public class ControllerCreazione {
     private TextField linkInsta;
 
     @FXML
+    private Button modificaBtn;
+
+    @FXML
     private TextField nome;
 
     @FXML
@@ -59,8 +59,11 @@ public class ControllerCreazione {
     @FXML
     private TextField telefono;
 
+    private List<Contatto> rubrica; // Riferimento alla rubrica condivisa
+    private Contatto contatto;
+
     @FXML
-    public void Crea(ActionEvent event) {
+    void Modifica(ActionEvent event) {
         // Ottieni i valori dai TextField
         String nomeText = nome.getText();
         String cognomeText = cognome.getText();
@@ -71,14 +74,22 @@ public class ControllerCreazione {
         String sitoWebText = linkInsta.getText();
         // Crea il nuovo contatto
         Contatto temp = new Contatto(nomeText, cognomeText, telefonoText, emailText, compleannoText, indirizzoText, sitoWebText);
-        rubrica.add(temp.getId(),temp);
+        rubrica.remove(contatto);
+        rubrica.add(temp);
         // Metodo close() al crea, trovato su github
         Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         stage.close();
     }
 
-    public void setRubrica(List<Contatto> rubrica) {
+    public void setRubrica(List<Contatto> rubrica, Contatto contatto) {
         this.rubrica = rubrica; //copia la struttura dati della precedente view (la main view)
+        this.contatto=contatto;
     }
+
+    /*@Override
+    public void initialize(URL url, ResourceBundle rb) {
+        // Codice basato sulla spiegazione di Greco
+        nome.setText(contatto.getNome());
+    }*/
 
 }

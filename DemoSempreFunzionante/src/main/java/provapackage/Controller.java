@@ -133,7 +133,27 @@ public class Controller implements Initializable{
 
     @FXML
     void ModificaContatto(MouseEvent event) {
-
+        try {
+            // Carica il file FXML della nuova view
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("ViewModifica.fxml"));
+            Parent root = loader.load();
+            // Ottieni il controller della nuova view
+            ControllerModifica controllerModifica = loader.getController();
+            // Passa la rubrica al controller di creazione
+            Contatto contatto = (Contatto) rubricaTable.getSelectionModel().getSelectedItem();
+            controllerModifica.setRubrica(rubrica, contatto);
+            // Solite robe per lo stage/scene
+            Stage nuovoStage = new Stage();
+            nuovoStage.setScene(new Scene(root));
+            nuovoStage.setTitle("Modifica Nuovo Contatto");
+            nuovoStage.initModality(Modality.APPLICATION_MODAL);
+            // Mostra la finestra e attende
+            nuovoStage.showAndWait();
+            // Aggiorna la TableView con i nuovi dati
+            rubricaTable.setItems(FXCollections.observableArrayList(rubrica));
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 
     @FXML
@@ -148,12 +168,10 @@ public class Controller implements Initializable{
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-
         // Codice basato sulla spiegazione di Greco
         rubrica = FXCollections.observableArrayList();
         nomeClm.setCellValueFactory(s -> { return new SimpleStringProperty(s.getValue().getNome());  });
         cognomeClm.setCellValueFactory(new PropertyValueFactory("cognome")); // Cerca getCognome
-
         rubricaTable.setItems(rubrica);
         // Metodo per prendere il valore del contratto selezionato
         rubricaTable.getSelectionModel().selectedItemProperty().addListener((observable, oldValue, newValue) -> {
@@ -170,5 +188,4 @@ public class Controller implements Initializable{
             }
         });
     }
-
 }
