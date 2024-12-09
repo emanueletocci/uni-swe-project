@@ -379,10 +379,10 @@ private void setEditableAll(boolean isEditable) {
             vcfb.append("BEGIN:VCARD\n");
             vcfb.append("VERSION:3.0\n");
         vcfb.append(c.getNome()).append(c.getCognome()).append("/n");
-        if (contatto.getTelefono1() != null) vcfb.append(contatto.getTelefono1()).append("\n");
-        if (contatto.getTelefono2() != null) vcfb.append(contatto.getTelefono2()).append("\n");
-        if (contatto.getTelefono3() != null) vcfb.append(contatto.getTelefono3()).append("\n");
-        if (contatto.getEmail1() != null) vcfb.append(contatto.getEmail1()).append("\n");
+        if (c.getTelefono1() != null) vcfb.append(c.getTelefono1()).append("\n");
+        if (c.getTelefono2() != null) vcfb.append(c.getTelefono2()).append("\n");
+        if (c.getTelefono3() != null) vcfb.append(c.getTelefono3()).append("\n");
+        if (c.getEmail1() != null) vcfb.append(c.getEmail1()).append("\n");
         return vcfb.toString();
       }
 }
