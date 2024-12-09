@@ -51,8 +51,8 @@ public class ContattoEsteso extends Contatto {
      * @brief costruttore della classe Contatto Esteso
      */
 
-    public ContattoEsteso(String nome, String cognome, String telefono1, String telefono2, String telefono3, String email1, String email2, String email3, LocalDate compleanno, String indirizzoResidenza, String website, String note) {
-        super(nome, cognome, telefono1, telefono2, telefono3);
+    public ContattoEsteso(String nome, String cognome, String telefono1, String telefono2, String telefono3, String email1, String email2, String email3, LocalDate compleanno, String indirizzoResidenza, String website, String note, Boolean preferito, Boolean emergenza) {
+        super(nome, cognome, telefono1, telefono2, telefono3, preferito, emergenza);
         this.email1 = email1;
         this.email2 = email2;
         this.email3 = email3;

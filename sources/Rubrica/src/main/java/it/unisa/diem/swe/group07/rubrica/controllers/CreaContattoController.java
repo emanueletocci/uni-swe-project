@@ -175,7 +175,7 @@ public class CreaContattoController {
         String noteText = note.getText();
 
         // Crea il nuovo contatto
-        ContattoEsteso temp = new ContattoEsteso(nomeText, cognomeText, telefonoText, telefono2Text, telefono3Text, emailText, email2Text, email3Text, compleannoText , indirizzoText, sitoWebText, noteText);
+        ContattoEsteso temp = new ContattoEsteso(nomeText, cognomeText, telefonoText, telefono2Text, telefono3Text, emailText, email2Text, email3Text, compleannoText , indirizzoText, sitoWebText, noteText, false, false);
         listaContatti.add(temp);
         Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         stage.close();

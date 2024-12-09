@@ -45,25 +45,25 @@ public class Contatto {
     /**
      * @brief attributo booleano che indica se il contatto é un "contatto di emergenza" oppure no
      */
-    //private Boolean emergenza;
+    private Boolean emergenza;
 
     /**
      * @brief attributo booleano che indica se il contatto é un "contatto preferito" oppure no
      */
-    //private Boolean preferito;
+    private Boolean preferito;
 
     /**
      * @brief costruttore della classe Contatto
      */
-    public Contatto(String nome, String cognome, String telefono1, String telefono2, String telefono3) {
+    public Contatto(String nome, String cognome, String telefono1, String telefono2, String telefono3, Boolean preferito, Boolean emergenza) {
         this.id = UUID.randomUUID();    //genera un id univoco (key) per l'oggetto istanziato
         this.nome = nome;
         this.cognome = cognome;
         this.telefono1 = telefono1;
         this.telefono2 = telefono2;
         this.telefono3 = telefono3;
-        //this.emergenza = emergenza;
-        //this.preferito = preferito;
+        this.emergenza = emergenza;
+        this.preferito = preferito;
     }
 
     /**
@@ -160,31 +160,31 @@ public class Contatto {
      * @brief metodo getter per l'attributo "emergenza"
      * @return attributo emergenza
      */
-//    public Boolean getEmergenza() {
-//        return emergenza;
-//    }
+    public Boolean getEmergenza() {
+        return emergenza;
+    }
 
     /**
      * @brief metodo setter per l'attributo "emergenza"
      */
-//    public void setEmergenza(Boolean emergenza) {
-//        this.emergenza = emergenza;
-//    }
+    public void setEmergenza(Boolean emergenza) {
+        this.emergenza = emergenza;
+    }
 
     /**
      * @brief metodo getter per l'attributo "preferito"
      * @return attributo preferito
      */
-//    public Boolean getPreferito() {
-//        return preferito;
-//    }
+    public Boolean getPreferito() {
+        return preferito;
+    }
 
     /**
      * @brief metodo setter per l'attributo "preferito"
      */
-//    public void setPreferito(Boolean preferito) {
-//        this.preferito = preferito;
-//    }
+    public void setPreferito(Boolean preferito) {
+        this.preferito = preferito;
+    }
 
     /**
      * @brief metodo per la verifica del numero telefonico del contatto

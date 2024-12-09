@@ -5,6 +5,7 @@ import java.net.URL;
 import java.time.LocalDate;
 import java.util.ResourceBundle;
 
+import it.unisa.diem.swe.group07.rubrica.models.Contatto;
 import javafx.scene.control.*;
 import it.unisa.diem.swe.group07.rubrica.models.ContattoEsteso;
 import it.unisa.diem.swe.group07.rubrica.models.Rubrica;
@@ -171,6 +172,14 @@ public class RubricaController implements Initializable{
      * @brief Lista Filtrata di contatti per la ricerca
      */
     private FilteredList<ContattoEsteso> filteredContatti;
+    /**
+     * @brief Lista Filtrata di contatti per la sotto-rubrica:preferiti
+     */
+    private FilteredList<ContattoEsteso> contattiFiltratiPreferiti;
+    /**
+     * @brief Lista Filtrata di contatti per la otto-rubrica:contatti d'emergenza
+     */
+    private FilteredList<ContattoEsteso> contattiFiltratiEmergenza;
     
     /**
      * @brief Metodo di inizializzazione della vista e dei dati.
@@ -181,10 +190,10 @@ public class RubricaController implements Initializable{
     @Override
     public void initialize(URL url, ResourceBundle rb){
         rubrica = new Rubrica();
-        rubrica.aggiungiContatto(new ContattoEsteso("Emanuele", "Tocci","+3933333333","+3933333333", "+3933333333", "prova@gmail.com", "prova@icloud.com", "prova@unisa.it", LocalDate.of(2020, 12, 12), "via Prova", "unisa.it", "informazioni aggiuntive"));
-        rubrica.aggiungiContatto(new ContattoEsteso("Claudia", "Montefusco","+3933333333","+3933333333", "+3933333333", "prova@gmail.com", "prova@icloud.com", "prova@unisa.it", LocalDate.of(2020, 12, 12), "via Prova", "unisa.it", "informazioni aggiuntive"));
-        rubrica.aggiungiContatto(new ContattoEsteso("Alessio", "Leo","+3933333333","+3933333333", "+3933333333", "prova@gmail.com", "prova@icloud.com", "prova@unisa.it", LocalDate.of(2020, 12, 12), "via Prova", "unisa.it", "informazioni aggiuntive"));
-        rubrica.aggiungiContatto(new ContattoEsteso("Rossella", "Pale","+3933333333","+3933333333", "+3933333333", "prova@gmail.com", "prova@icloud.com", "prova@unisa.it", LocalDate.of(2020, 12, 12), "via Prova", "unisa.it", "informazioni aggiuntive"));
+        rubrica.aggiungiContatto(new ContattoEsteso("Emanuele", "Tocci","+3933333333","+3933333333", "+3933333333", "prova@gmail.com", "prova@icloud.com", "prova@unisa.it", LocalDate.of(2020, 12, 12), "via Prova", "unisa.it", "informazioni aggiuntive" , false, false));
+        rubrica.aggiungiContatto(new ContattoEsteso("Claudia", "Montefusco","+3933333333","+3933333333", "+3933333333", "prova@gmail.com", "prova@icloud.com", "prova@unisa.it", LocalDate.of(2020, 12, 12), "via Prova", "unisa.it", "informazioni aggiuntive", false, false));
+        rubrica.aggiungiContatto(new ContattoEsteso("Alessio", "Leo","+3933333333","+3933333333", "+3933333333", "prova@gmail.com", "prova@icloud.com", "prova@unisa.it", LocalDate.of(2020, 12, 12), "via Prova", "unisa.it", "informazioni aggiuntive", false, false));
+        rubrica.aggiungiContatto(new ContattoEsteso("Rossella", "Pale","+3933333333","+3933333333", "+3933333333", "prova@gmail.com", "prova@icloud.com", "prova@unisa.it", LocalDate.of(2020, 12, 12), "via Prova", "unisa.it", "informazioni aggiuntive", true, false));
         
         // Inserire qui funzione Import/autoImport e rimuovere le aggiunte manuali dei contatti presenti sopra
 
@@ -357,8 +366,32 @@ private void setEditableAll(boolean isEditable) {
             rubrica.aggiornaContatto(contattoSelezionato);
             // Aggiorna la TableView e disabilita i TextField
             rubricaTable.refresh();
-
             pulsanteSalva.setDisable(true);
             setEditableAll(false);
+    }
+
+    @FXML
+    private void showRubrica(){
+        rubricaTable.setItems(listaContatti);
+    }
+    @FXML
+    private void showPreferiti(){
+        contattiFiltratiPreferiti = new FilteredList<>(listaContatti, contatto -> contatto.getPreferito());
+        rubricaTable.setItems(contattiFiltratiPreferiti);
+    }
+    @FXML
+    private void showEmergenza(){
+        contattiFiltratiEmergenza = new FilteredList<>(listaContatti, contatto -> contatto.getEmergenza());
+        rubricaTable.setItems(contattiFiltratiEmergenza);
+    }
+    @FXML
+    private void aggiungiPreferito(){
+        ContattoEsteso c = rubricaTable.getSelectionModel().getSelectedItem();
+        c.setPreferito(true);
+    }
+    @FXML
+    private void aggiungiEmergenza(){
+        ContattoEsteso c = rubricaTable.getSelectionModel().getSelectedItem();
+        c.setEmergenza(true);
     }
 }
