@@ -376,8 +376,8 @@ private void setEditableAll(boolean isEditable) {
      */
     private String formattaContatto(ContattoEsteso c) {
         StringBuilder vcfb = new StringBuilder();
-            vcfBuilder.append("BEGIN:VCARD\n");
-            vcfBuilder.append("VERSION:3.0\n");
+            vcfb.append("BEGIN:VCARD\n");
+            vcfb.append("VERSION:3.0\n");
         vcfb.append(c.getNome()).append(c.getCognome()).append("/n");
         if (contatto.getTelefono1() != null) vcfb.append(contatto.getTelefono1()).append("\n");
         if (contatto.getTelefono2() != null) vcfb.append(contatto.getTelefono2()).append("\n");
