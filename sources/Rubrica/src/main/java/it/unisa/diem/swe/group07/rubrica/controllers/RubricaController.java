@@ -1,9 +1,16 @@
 package it.unisa.diem.swe.group07.rubrica.controllers;
 
 import java.net.URL;
+import java.time.LocalDate;
 import java.util.ResourceBundle;
 
 import it.unisa.diem.swe.group07.rubrica.models.Contatto;
+
+import javafx.beans.property.SimpleStringProperty;
+import javafx.collections.FXCollections;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.*;
 import it.unisa.diem.swe.group07.rubrica.models.ContattoEsteso;
 import it.unisa.diem.swe.group07.rubrica.models.Rubrica;
@@ -14,6 +21,9 @@ import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.image.ImageView;
+import javafx.stage.FileChooser;
+import javafx.stage.Modality;
+import javafx.stage.Stage;
 
 /**
  * @file MainController.java
@@ -179,8 +189,7 @@ public class RubricaController implements Initializable{
         // Inserire qui funzione Import/autoImport e rimuovere le aggiunte manuali dei contatti presenti sopra
 
         // La lista osservabile é inizializzata a partire dagli elementi presenti nella rubrica
-        listaContatti = FXCollections.observableArrayList(rubrica.getContatti());
-
+        listaContatti = FXCollections.observableArrayList(this.getRubrica().getContatti());
         nomeClm.setCellValueFactory(s -> { return new SimpleStringProperty(s.getValue().getNome());  });
         cognomeClm.setCellValueFactory(s -> { return new SimpleStringProperty(s.getValue().getCognome());  });
         rubricaTable.setItems(listaContatti);
