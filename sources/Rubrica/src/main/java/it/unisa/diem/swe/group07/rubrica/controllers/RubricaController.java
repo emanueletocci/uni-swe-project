@@ -327,7 +327,7 @@ private void setEditableAll(boolean isEditable) {
             
     }
 
-        /**
+    /**
      * @brief Gestisce il salvataggio delle modifiche apportate a un contatto esistente.
      * @param e L'evento generato dal click sul pulsante di salvataggio.
      */

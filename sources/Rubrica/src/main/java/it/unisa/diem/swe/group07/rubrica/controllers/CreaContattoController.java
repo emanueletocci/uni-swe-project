@@ -27,7 +27,7 @@ import javafx.stage.FileChooser.ExtensionFilter;
 import java.time.LocalDate;
 
 
-public class CreaContattoController extends AbstractController{
+public class CreaContattoController extends AbstractController implements Initializable{
     /**
      * @brief bottone per aggiungere l'email
      */
@@ -119,26 +119,28 @@ public class CreaContattoController extends AbstractController{
      * @brief fileChooser
      */
     private FileChooser fileChooser = new FileChooser();
-            
-//    @Override
-//    public void initialize(URL location, ResourceBundle resources) {
-//        immagine.setImage(null);
-//        fileChooser.setInitialDirectory(new File("C:\\Users\\hp\\Desktop\\"));
-//    }
+
+
+    @Override
+    public void initialize(URL location, ResourceBundle resources) {
+        immagine.setImage(null);
+        fileChooser.setInitialDirectory(new File("C:\\Users\\hp\\Desktop\\"));
+    }
+
     /**
      * @brief metodo che permette di inserire un immagine di profile nella bottone_imm
      * @param event evento generato dal click sul pulsante pulsanteImmagine
      */
     @FXML
     void aggiungiImmagine(ActionEvent event) {
-        mostraMessaggioErrore("Oh no", "Questa funzione non é stata ancora implementata");
-//        fileChooser.setTitle("Scegli immagine di profilo:");
-//        fileChooser.getExtensionFilters().addAll(new ExtensionFilter("Image Files", "*.png", "*.jpg", "*.gif"));
-//        File img = fileChooser.showOpenDialog(new Stage());
-//        if (img != null) {
-//            Image immagineScelta=new Image(img.toURI().toString());
-//            immagine.setImage(immagineScelta);
-//        }
+        mostraMessaggioErrore("Oh no!", "Questa funzione non é stata ancora implementata!");
+        fileChooser.setTitle("Scegli immagine di profilo:");
+        fileChooser.getExtensionFilters().addAll(new ExtensionFilter("Image Files", "*.png", "*.jpg", "*.gif"));
+        File img = fileChooser.showOpenDialog(new Stage());
+        if (img != null) {
+            Image immagineScelta=new Image(img.toURI().toString());
+            immagine.setImage(immagineScelta);
+        }
     }
     /**
      * @brief metodo che preleva il valore dai Text Field creando il contatto ed aggiungendolo alla Lista+
