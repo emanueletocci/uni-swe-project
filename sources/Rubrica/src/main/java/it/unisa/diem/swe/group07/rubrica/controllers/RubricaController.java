@@ -1,29 +1,17 @@
 package it.unisa.diem.swe.group07.rubrica.controllers;
 
-import java.io.IOException;
 import java.net.URL;
-import java.time.LocalDate;
 import java.util.ResourceBundle;
-
 import javafx.scene.control.*;
 import it.unisa.diem.swe.group07.rubrica.models.ContattoEsteso;
 import it.unisa.diem.swe.group07.rubrica.models.Rubrica;
 import javafx.event.ActionEvent;
-import javafx.fxml.FXMLLoader;
-import javafx.scene.Node;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.collections.transformation.FilteredList;
-import javafx.beans.property.SimpleStringProperty;
-import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.image.ImageView;
-import javafx.scene.input.MouseEvent;
-import javafx.stage.Modality;
-import javafx.stage.Stage;
 
 /**
  * @file MainController.java
@@ -388,6 +376,8 @@ private void setEditableAll(boolean isEditable) {
      */
     private String formattaContatto(ContattoEsteso c) {
         StringBuilder vcfb = new StringBuilder();
+            vcfBuilder.append("BEGIN:VCARD\n");
+            vcfBuilder.append("VERSION:3.0\n");
         vcfb.append(c.getNome()).append(c.getCognome()).append("/n");
         if (contatto.getTelefono1() != null) vcfb.append(contatto.getTelefono1()).append("\n");
         if (contatto.getTelefono2() != null) vcfb.append(contatto.getTelefono2()).append("\n");
