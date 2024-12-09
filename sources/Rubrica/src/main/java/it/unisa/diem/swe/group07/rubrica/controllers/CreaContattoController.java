@@ -95,7 +95,8 @@ public class CreaContattoController {
     private List<ContattoEsteso> listaContatti; // Riferimento alla rubrica condivisa
 
         /**
-     * @brief metodo che preleva il valore dai Text Field creando il contatto ed aggiungendolo alla Lista
+     * @brief metodo che preleva il valore dai Text Field creando il contatto ed aggiungendolo alla Lista+
+     * @param event evento generato dal click sul pulsante Crea
      */
     @FXML
     public void Crea(ActionEvent event) { 
@@ -121,4 +122,5 @@ public class CreaContattoController {
     public void setListaContatti(List<ContattoEsteso> listaContatti) {
         this.listaContatti = listaContatti;
     }
+    
 }

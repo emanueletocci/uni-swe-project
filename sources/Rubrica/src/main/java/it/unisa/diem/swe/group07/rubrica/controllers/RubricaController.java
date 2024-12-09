@@ -203,9 +203,9 @@ private void setEditableAll(boolean isEditable) {
             pulsanteSalva.setDisable(false);//AGGIUNGI PULSANTE SALVA
                    
         }
+            
     }
-    @FXML
-    public void aggiornaNome(ActionEvent event) {}
+  
 
 
     @FXML

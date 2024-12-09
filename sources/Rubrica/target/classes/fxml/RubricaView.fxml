@@ -95,7 +95,7 @@
                                                                     <children>
                                                                         <TableView fx:id="rubricaTable" prefHeight="378.0" prefWidth="300.0">
                                                                             <columns>
-                                                                                <TableColumn fx:id="nomeClm" onEditCommit="#aggiornaNome" prefWidth="150.0" text="Nome" />
+                                                                                <TableColumn fx:id="nomeClm" prefWidth="150.0" text="Nome" />
                                                                                 <TableColumn fx:id="cognomeClm" prefWidth="150.0" text="Cognome" />
                                                                             </columns>
                                                                         </TableView>
