@@ -7,6 +7,7 @@
  */
 
 package it.unisa.diem.swe.group07.rubrica.models;
+
 import java.util.Objects;
 import java.util.UUID;
 
@@ -191,7 +192,8 @@ public class Contatto {
      * @return "true" se il numero inserito é valido, "false" altrimenti
      */
     public Boolean controllaTelefono(String telefono){
-        return true;
+        return telefono.matches("^\\+?[0-9]{6,15}$");
+        //regex: ^ inizio stringa, \\+ rappresenta il simbolo + (il primo backslash é per escape), ? indica che il simbolo precedente (+) é opzionale, [0-9]{6,15} si possono inserire da 6 a 15 cifre numeriche, $ fine della stringa
     }
 
     /**
@@ -227,4 +229,6 @@ public class Contatto {
     public int hashCode() {
         return Objects.hash(id, nome, cognome, telefono1, telefono2, telefono3);
     }
+
+
 }

@@ -10,13 +10,11 @@ public class Rubrica {
     /**
      *  @brief struttura dati della rubrica
      */
-
     private Map<UUID, ContattoEsteso> rubrica;
 
     /**
      *  @brief costruttore della rubrica
      */
-
     public Rubrica(){
         this.rubrica = new HashMap<UUID, ContattoEsteso>();
     }
@@ -33,7 +31,6 @@ public class Rubrica {
      * @brief metodo per la rimozione di un contatto dalla rubrica
      * @return contatto rimosso
      */
-
     public ContattoEsteso rimuoviContatto(ContattoEsteso c){
         return rubrica.remove(c.getId());
     }
