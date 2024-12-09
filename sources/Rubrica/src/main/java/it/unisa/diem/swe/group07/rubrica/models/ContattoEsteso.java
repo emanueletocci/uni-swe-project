@@ -83,8 +83,8 @@ public class ContattoEsteso extends Contatto {
     }
 
     /**
-     * @brief metodo getter per l'attributo "socialLinks"
-     * @return attributo indirizzoResidenza
+     * @brief metodo getter per l'attributo "sitoWeb"
+     * @return attributo sitoWeb
      */
     public String getSitoWeb() {
         return sitoWeb;
@@ -97,30 +97,55 @@ public class ContattoEsteso extends Contatto {
         this.sitoWeb = website;
     }
 
+    /**
+     * @brief metodo getter per l'attributo "email3"
+     * @return attributo email3
+     */
     public String getEmail3() {
         return email3;
     }
 
+    /**
+     * @brief metodo setter per l'attributo "email3"
+     */
     public void setEmail3(String email3) {
         this.email3 = email3;
     }
 
+    /**
+     * @brief metodo getter per l'attributo "email2"
+     * @return attributo email2
+     */
     public String getEmail2() {
         return email2;
     }
 
+    /**
+     * @brief metodo setter per l'attributo "email2"
+     */
     public void setEmail2(String email2) {
         this.email2 = email2;
     }
 
+    /**
+     * @brief metodo getter per l'attributo "email1"
+     * @return attributo email1
+     */
     public String getEmail1() {
         return email1;
     }
 
+    /**
+     * @brief metodo setter per l'attributo "email1"
+     */
     public void setEmail1(String email1) {
         this.email1 = email1;
     }
 
+    /**
+     * @brief metodo per la stampa degli attributi 
+     * @return attributi email1, email2, email3, compleanno, indirizzoResidenza e sitoWeb.
+     */
     @Override
     public String toString() {
         return super.toString() +
