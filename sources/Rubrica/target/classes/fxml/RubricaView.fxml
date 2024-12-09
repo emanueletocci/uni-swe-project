@@ -1,14 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import javafx.geometry.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.effect.*?>
-<?import javafx.scene.image.*?>
-<?import javafx.scene.layout.*?>
-<?import javafx.scene.shape.*?>
-<?import javafx.scene.text.*?>
-<?import java.net.URL?>
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
@@ -27,7 +18,7 @@
 <?import javafx.scene.shape.Line?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" prefHeight="469.0" prefWidth="606.0" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="it.unisa.diem.swe.group07.rubrica.controllers.RubricaController">
+<AnchorPane id="AnchorPane" prefHeight="469.0" prefWidth="606.0" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="it.unisa.diem.swe.group07.rubrica.controllers.RubricaController">
     <children>
         <SplitPane dividerPositions="0.05627705627705628" orientation="VERTICAL" prefHeight="469.0" prefWidth="606.0">
             <items>
@@ -93,14 +84,7 @@
                                                                                 <Insets top="3.0" />
                                                                             </padding>
                                                                         </Button>
-                                                                        <Button fx:id="pulsanteCerca" layoutX="200.0" layoutY="4.0" mnemonicParsing="false" onAction="#cercaContatto" prefHeight="21.0" prefWidth="86.0" style="-fx-background-color: white; -fx-border-radius: 5;" text="Cerca Contatto" textAlignment="CENTER" AnchorPane.topAnchor="6.0">
-                                                                            <font>
-                                                                                <Font name="System Bold" size="11.0" />
-                                                                            </font>
-                                                                            <padding>
-                                                                                <Insets top="3.0" />
-                                                                            </padding>
-                                                                        </Button>
+                                                      <TextField fx:id="pulsanteCerca" layoutX="202.0" layoutY="4.0" prefHeight="25.0" prefWidth="98.0" />
                                                                     </children>
                                                                 </AnchorPane>
                                                                 <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
@@ -196,7 +180,7 @@
                                                             <Insets />
                                                          </HBox.margin>
                                                       </Label>
-                                                      <TextField fx:id="telefono1Field2" editable="false" prefHeight="11.0" prefWidth="150.0">
+                                                      <TextField fx:id="telefono2Field" editable="false" prefHeight="11.0" prefWidth="150.0">
                                                          <font>
                                                             <Font size="9.5" />
                                                          </font>
@@ -216,7 +200,7 @@
                                                             <Insets />
                                                          </HBox.margin>
                                                       </Label>
-                                                      <TextField fx:id="telefono1Field1" editable="false" prefHeight="11.0" prefWidth="150.0">
+                                                      <TextField fx:id="telefono3Field" editable="false" prefHeight="11.0" prefWidth="150.0">
                                                          <font>
                                                             <Font size="9.5" />
                                                          </font>
@@ -256,7 +240,7 @@
                                                             <Insets />
                                                          </HBox.margin>
                                                       </Label>
-                                                      <TextField fx:id="email1Field11" editable="false" prefHeight="11.0" prefWidth="150.0">
+                                                      <TextField fx:id="email2Field" editable="false" prefHeight="11.0" prefWidth="150.0">
                                                          <font>
                                                             <Font size="9.5" />
                                                          </font>
@@ -276,7 +260,7 @@
                                                             <Insets />
                                                          </HBox.margin>
                                                       </Label>
-                                                      <TextField fx:id="email1Field1" editable="false" prefHeight="11.0" prefWidth="150.0">
+                                                      <TextField fx:id="email3Field" editable="false" prefHeight="11.0" prefWidth="150.0">
                                                          <font>
                                                             <Font size="9.5" />
                                                          </font>
@@ -316,7 +300,7 @@
                                                             <Insets />
                                                          </HBox.margin>
                                                       </Label>
-                                                      <TextField fx:id="compleannoField1" editable="false" prefHeight="11.0" prefWidth="150.0">
+                                                      <TextField editable="false" prefHeight="11.0" prefWidth="150.0">
                                                          <font>
                                                             <Font size="9.5" />
                                                          </font>
@@ -389,16 +373,9 @@
                                                                 </Label>
                                                             </children>
                                                         </HBox>
-                                                        <Button fx:id="pulsanteModifica" layoutX="183.0" layoutY="2.0" mnemonicParsing="false" onAction="#modificaContatto" AnchorPane.topAnchor="12.0">
-                                                            <graphic>
-                                                                <ImageView fitHeight="18.0" fitWidth="17.0" onDragDetected="#modificaContatto" pickOnBounds="true" preserveRatio="true" />
-                                                            </graphic>
-                                                        </Button>
-                                                        <Button fx:id="pulsanteElimina" layoutX="230.0" layoutY="2.0" mnemonicParsing="false" onAction="#eliminaContatto" prefHeight="18.0" prefWidth="17.0" AnchorPane.topAnchor="12.0">
-                                                            <graphic>
-                                                                <ImageView fitHeight="18.0" fitWidth="17.0" onDragDetected="#eliminaContatto" pickOnBounds="true" preserveRatio="true" />
-                                                            </graphic>
-                                                        </Button>
+                                                        <Button fx:id="pulsanteModifica" layoutX="183.0" layoutY="2.0" mnemonicParsing="false" onAction="#modificaContatto" AnchorPane.topAnchor="12.0" />
+                                                        <Button fx:id="pulsanteElimina" layoutX="230.0" layoutY="2.0" mnemonicParsing="false" onAction="#eliminaContatto" prefHeight="18.0" prefWidth="17.0" AnchorPane.topAnchor="12.0" />
+                                          <Button fx:id="pulsanteSalva" layoutX="132.0" layoutY="12.0" mnemonicParsing="false" onAction="#GestioneSalvaModifiche" prefHeight="19.0" prefWidth="45.0" text="Button" />
                                                     </children>
                                                 </AnchorPane>
                                             </items>

@@ -54,5 +54,12 @@ public class Rubrica {
     public Collection<ContattoEsteso> getContatti(){
         return rubrica.values();
     }
+    public void aggiornaContatto(ContattoEsteso contattoAggiornato) {
+        // Trova il contatto nella rubrica e sostituiscilo
+           if (rubrica.containsKey(contattoAggiornato.getId())) {
+        rubrica.put(contattoAggiornato.getId(), contattoAggiornato);
+        }
+    }
+    
 
 }
