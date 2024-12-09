@@ -181,12 +181,11 @@ public class RubricaController implements Initializable{
     @Override
     public void initialize(URL url, ResourceBundle rb){
         rubrica = new Rubrica();
-        rubrica.aggiungiContatto(new ContattoEsteso("Emanuele", "Tocci","+3933333333","+3933333333", "+3933333333", "prova@gmail.com", "prova@icloud.com", "prova@unisa.it", LocalDate.of(2020, 12, 12), "via Prova", "unisa.it"));
-        rubrica.aggiungiContatto(new ContattoEsteso("Claudia", "Montefusco","+3933333333","+3933333333", "+3933333333", "prova@gmail.com", "prova@icloud.com", "prova@unisa.it", LocalDate.of(2020, 12, 12), "via Prova", "unisa.it"));
-        rubrica.aggiungiContatto(new ContattoEsteso("Alessio", "Leo","+3933333333","+3933333333", "+3933333333", "prova@gmail.com", "prova@icloud.com", "prova@unisa.it", LocalDate.of(2020, 12, 12), "via Prova", "unisa.it"));
-        rubrica.aggiungiContatto(new ContattoEsteso("Rossella", "Pale","+3933333333","+3933333333", "+3933333333", "prova@gmail.com", "prova@icloud.com", "prova@unisa.it", LocalDate.of(2020, 12, 12), "via Prova", "unisa.it"));
-        rubrica.aggiungiContatto(new ContattoEsteso("Antonio", "Pale","+3933333333","+3933333333", "+3933333333", "prova@gmail.com", "prova@icloud.com", "prova@unisa.it", LocalDate.of(2020, 12, 12), "via Prova", "unisa.it"));
-
+        rubrica.aggiungiContatto(new ContattoEsteso("Emanuele", "Tocci","+3933333333","+3933333333", "+3933333333", "prova@gmail.com", "prova@icloud.com", "prova@unisa.it", LocalDate.of(2020, 12, 12), "via Prova", "unisa.it", "informazioni aggiuntive"));
+        rubrica.aggiungiContatto(new ContattoEsteso("Claudia", "Montefusco","+3933333333","+3933333333", "+3933333333", "prova@gmail.com", "prova@icloud.com", "prova@unisa.it", LocalDate.of(2020, 12, 12), "via Prova", "unisa.it", "informazioni aggiuntive"));
+        rubrica.aggiungiContatto(new ContattoEsteso("Alessio", "Leo","+3933333333","+3933333333", "+3933333333", "prova@gmail.com", "prova@icloud.com", "prova@unisa.it", LocalDate.of(2020, 12, 12), "via Prova", "unisa.it", "informazioni aggiuntive"));
+        rubrica.aggiungiContatto(new ContattoEsteso("Rossella", "Pale","+3933333333","+3933333333", "+3933333333", "prova@gmail.com", "prova@icloud.com", "prova@unisa.it", LocalDate.of(2020, 12, 12), "via Prova", "unisa.it", "informazioni aggiuntive"));
+        
         // Inserire qui funzione Import/autoImport e rimuovere le aggiunte manuali dei contatti presenti sopra
 
         // La lista osservabile é inizializzata a partire dagli elementi presenti nella rubrica
@@ -197,7 +196,7 @@ public class RubricaController implements Initializable{
         rubricaTable.setItems(listaContatti);
         
 
-// Listener per la selezione di un contatto
+        // Listener per la selezione di un contatto
         rubricaTable.getSelectionModel().selectedItemProperty().addListener((observable, oldValue, newValue) -> {
             if (newValue != null) {
                 mostraDettaglioContatti(newValue);
@@ -243,8 +242,7 @@ public class RubricaController implements Initializable{
      * @param contatto Il contatto selezionato da visualizzare.
      */ 
     private void mostraDettaglioContatti(ContattoEsteso contatto){
-    
-        this.contattoSelezionato=contatto;//AGGIORNO CONTATTO SELEZIONATO
+        this.contattoSelezionato=contatto;
         nomeField.setText(contatto.getNome());
         cognomeField.setText(contatto.getCognome());
         email1Field.setText(contatto.getEmail1());
@@ -254,7 +252,8 @@ public class RubricaController implements Initializable{
         telefono2Field.setText(contatto.getTelefono2());
         telefono3Field.setText(contatto.getTelefono3());
         indirizzoField.setText(contatto.getIndirizzoResidenza());
-        compleannoField.setValue(contatto.getCompleanno()); //setText(contatto.getCompleanno());
+        compleannoField.setValue(contatto.getCompleanno());
+        noteField.setText(contatto.getNote());//setText(contatto.getCompleanno());
 
 }
      /**
@@ -352,8 +351,9 @@ private void setEditableAll(boolean isEditable) {
             contattoSelezionato.setTelefono2(telefono2Field.getText());
             contattoSelezionato.setCompleanno(compleannoField.getValue());
             contattoSelezionato.setIndirizzoResidenza(indirizzoField.getText());
+            contattoSelezionato.setNote(noteField.getText());
             //contattoSelezionato.setSitoWeb(socialField.getText());
-            //contattoSelezionato.setNote(noteField.getText());
+            contattoSelezionato.setNote(noteField.getText());
             rubrica.aggiornaContatto(contattoSelezionato);
             // Aggiorna la TableView e disabilita i TextField
             rubricaTable.refresh();

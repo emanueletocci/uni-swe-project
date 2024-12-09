@@ -41,12 +41,17 @@ public class ContattoEsteso extends Contatto {
      * @brief link relativo al social del contatto esteso
      */
     private String sitoWeb;
+    
+    /**
+     * @brief note contenente informazioni aggiuntive riguardo al contatto
+     */
+    private String note;
 
     /**
      * @brief costruttore della classe Contatto Esteso
      */
 
-    public ContattoEsteso(String nome, String cognome, String telefono1, String telefono2, String telefono3, String email1, String email2, String email3, LocalDate compleanno, String indirizzoResidenza, String website) {
+    public ContattoEsteso(String nome, String cognome, String telefono1, String telefono2, String telefono3, String email1, String email2, String email3, LocalDate compleanno, String indirizzoResidenza, String website, String note) {
         super(nome, cognome, telefono1, telefono2, telefono3);
         this.email1 = email1;
         this.email2 = email2;
@@ -54,6 +59,7 @@ public class ContattoEsteso extends Contatto {
         this.compleanno = compleanno;
         this.indirizzoResidenza = indirizzoResidenza;
         this.sitoWeb = website;
+        this.note=note;
     }
 
     /**
@@ -145,6 +151,21 @@ public class ContattoEsteso extends Contatto {
     public void setEmail1(String email1) {
         this.email1 = email1;
     }
+    
+    /**
+     * @brief metodo getter per l'attributo "note"
+     * @return attributo email1
+     */
+    public String getNote() {
+        return note;
+    }
+
+    /**
+     * @brief metodo setter per l'attributo "note"
+     */
+    public void setNote(String note) {
+        this.note = note;
+    }
 
     /**
      * @brief metodo per la stampa degli attributi 
@@ -159,7 +180,9 @@ public class ContattoEsteso extends Contatto {
                 ", email3='" + email3 +
                 ", compleanno='" + compleanno +
                 ", indirizzoResidenza='" + indirizzoResidenza +
-                ", sitoWeb='" + sitoWeb;
+                ", sitoWeb='" + sitoWeb+
+                ", note='" + note;
+        
     }
 
     /**

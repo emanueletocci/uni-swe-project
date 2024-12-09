@@ -111,9 +111,10 @@ public class CreaContattoController {
         LocalDate compleannoText = compleanno.getValue();
         String indirizzoText = indirizzo.getText();
         String sitoWebText = sito_web.getText();
+        
 
         // Crea il nuovo contatto
-        ContattoEsteso temp = new ContattoEsteso(nomeText, cognomeText, telefonoText, telefonoText, telefonoText, emailText, emailText, emailText, compleannoText , indirizzoText, sitoWebText);
+        ContattoEsteso temp = new ContattoEsteso(nomeText, cognomeText, telefonoText, telefonoText, telefonoText, emailText, emailText, emailText, compleannoText , indirizzoText, sitoWebText, "note");
         listaContatti.add(temp);
         Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         stage.close();
