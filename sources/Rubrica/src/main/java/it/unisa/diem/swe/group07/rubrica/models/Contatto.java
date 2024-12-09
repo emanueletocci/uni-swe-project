@@ -60,9 +60,12 @@ public class Contatto {
         this.id = UUID.randomUUID();    //genera un id univoco (key) per l'oggetto istanziato
         this.nome = nome;
         this.cognome = cognome;
-        this.telefono1 = telefono1;
+        /*this.telefono1 = telefono1;
         this.telefono2 = telefono2;
-        this.telefono3 = telefono3;
+        this.telefono3 = telefono3;*/
+        this.telefono1 = telefono1 != null ? telefono1 : "";
+        this.telefono2 = telefono2 != null ? telefono2 : "";
+        this.telefono3 = telefono3 != null ? telefono3 : "";
         //this.emergenza = emergenza;
         //this.preferito = preferito;
     }
