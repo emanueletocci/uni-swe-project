@@ -7,17 +7,14 @@
  */
 
 package it.unisa.diem.swe.group07.rubrica.models;
+import java.util.Objects;
+
 public class Contatto {
 
     /**
      * @brief identificativo univoco (key) del contatto
      */
     private int id;
-
-    /**
-     * @brief variabile temporanea per il conteggio degli elementi istanziati
-     */
-    private static int counter = 0;
 
     /**
      * @brief nome del contatto
@@ -58,8 +55,7 @@ public class Contatto {
      * @brief costruttore della classe Contatto
      */
     public Contatto(String nome, String cognome, String telefono1, String telefono2, String telefono3) {
-        counter++;
-        id = counter;
+        //this.id = id.hashCode()
         this.nome = nome;
         this.cognome = cognome;
         this.telefono1 = telefono1;
@@ -208,5 +204,24 @@ public class Contatto {
                 ", telefono1=" + telefono1 +
                 ", telefono2=" + telefono2 +
                 ", telefono3=" + telefono3;
+    }
+
+    /**
+     * @brief metodo che consente di confrontare 2 contatti
+     * @return 'true' se i due contatti confrontati sono uguali, 'false' se sono diversi
+     */
+    @Override
+    public boolean equals(Object o) {
+        if (!(o instanceof Contatto)) return false;
+        Contatto contatto = (Contatto) o;
+        return id == contatto.id && Objects.equals ( nome, contatto.nome ) && Objects.equals ( cognome, contatto.cognome ) && Objects.equals ( telefono1, contatto.telefono1 ) && Objects.equals ( telefono2, contatto.telefono2 ) && Objects.equals ( telefono3, contatto.telefono3 );
+    }
+    /**
+     * @brief metodo per la creazione di un id (key) univoco associato ad ogni contatto
+     * @return id univoco
+     */
+    @Override
+    public int hashCode() {
+        return Objects.hash ( id, nome, cognome, telefono1, telefono2, telefono3 );
     }
 }

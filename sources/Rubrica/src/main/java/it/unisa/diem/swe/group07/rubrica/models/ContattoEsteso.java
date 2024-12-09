@@ -9,6 +9,7 @@
 package it.unisa.diem.swe.group07.rubrica.models;
 
 import java.time.LocalDate;
+import java.util.Objects;
 
 public class ContattoEsteso extends Contatto {
     /**
@@ -158,5 +159,26 @@ public class ContattoEsteso extends Contatto {
                 ", compleanno='" + compleanno +
                 ", indirizzoResidenza='" + indirizzoResidenza +
                 ", sitoWeb='" + sitoWeb;
+    }
+
+    /**
+     * @brief metodo che consente di confrontare 2 contatti
+     * @return 'true' se i due contatti confrontati sono uguali, 'false' se sono diversi
+     */
+    @Override
+    public boolean equals(Object o) {
+        if (!(o instanceof ContattoEsteso)) return false;
+        if (!super.equals ( o )) return false;
+        ContattoEsteso that = (ContattoEsteso) o;
+        return Objects.equals ( email1, that.email1 ) && Objects.equals ( email2, that.email2 ) && Objects.equals ( email3, that.email3 ) && Objects.equals ( compleanno, that.compleanno ) && Objects.equals ( indirizzoResidenza, that.indirizzoResidenza ) && Objects.equals ( sitoWeb, that.sitoWeb );
+    }
+
+    /**
+     * @brief metodo per la creazione di un id (key) univoco associato ad ogni contatto
+     * @return id univoco
+     */
+    @Override
+    public int hashCode() {
+        return Objects.hash ( super.hashCode (), email1, email2, email3, compleanno, indirizzoResidenza, sitoWeb );
     }
 }
