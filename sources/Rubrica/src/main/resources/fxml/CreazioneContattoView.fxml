@@ -9,43 +9,33 @@
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="719.0" prefWidth="500.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="it.unisa.diem.swe.group07.rubrica.controllers.CreaContattoController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="590.0" prefWidth="387.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="it.unisa.diem.swe.group07.rubrica.controllers.CreaContattoController">
     <children>
-        <VBox layoutX="43.0" layoutY="12.0" nodeOrientation="LEFT_TO_RIGHT" spacing="5.0" AnchorPane.bottomAnchor="20.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="20.0">
+        <VBox alignment="CENTER" layoutY="114.0" prefHeight="409.0" prefWidth="387.0" spacing="5.0" AnchorPane.bottomAnchor="67.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="114.0">
             <children>
-                <ImageView fx:id="immagine" fitHeight="150.0" fitWidth="130.0" pickOnBounds="true" preserveRatio="true">
-                    <VBox.margin>
-                        <Insets bottom="20.0" left="160.0" right="100.0" top="20.0" />
-                    </VBox.margin>
-                </ImageView>
-                <Button fx:id="bottone_imm" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" text="Aggiungi Foto">
-                    <VBox.margin>
-                        <Insets bottom="20.0" left="185.0" right="100.0" />
-                    </VBox.margin>
-                </Button>
-            <HBox fx:id="HBox121" prefWidth="460.0">
+            <HBox fx:id="HBox121" alignment="TOP_CENTER" prefHeight="26.0" prefWidth="414.0">
                <children>
                   <TextField fx:id="nome" prefHeight="26.0" prefWidth="260.0" promptText="Nome">
                      <HBox.margin>
-                        <Insets left="100.0" />
+                        <Insets />
                      </HBox.margin>
                   </TextField>
                </children>
             </HBox>
-            <HBox fx:id="HBox12" prefWidth="460.0">
+            <HBox fx:id="HBox12" alignment="TOP_CENTER" prefWidth="460.0">
                <children>
                   <TextField fx:id="cognome" prefHeight="26.0" prefWidth="260.0" promptText="Cognome">
                      <HBox.margin>
-                        <Insets left="100.0" />
+                        <Insets />
                      </HBox.margin>
                   </TextField>
                </children>
             </HBox>
-                <HBox fx:id="HBox1" prefWidth="460.0">
+                <HBox fx:id="HBox1" alignment="TOP_CENTER" prefWidth="460.0">
                     <children>
                         <TextField fx:id="telefono" prefHeight="26.0" prefWidth="260.0" promptText="Telefono 1">
                             <HBox.margin>
-                                <Insets left="100.0" />
+                                <Insets />
                             </HBox.margin>
                         </TextField>
                     </children>
@@ -53,29 +43,29 @@
                         <Insets />
                     </VBox.margin>
                 </HBox>
-            <HBox fx:id="HBox11" prefWidth="460.0">
+            <HBox fx:id="HBox11" alignment="TOP_CENTER" prefWidth="460.0">
                <children>
                   <TextField fx:id="telefono2" prefHeight="26.0" prefWidth="260.0" promptText="Telefono 2">
                      <HBox.margin>
-                        <Insets left="100.0" />
+                        <Insets />
                      </HBox.margin>
                   </TextField>
                </children>
             </HBox>
-            <HBox fx:id="HBox111" prefWidth="460.0">
+            <HBox fx:id="HBox111" alignment="TOP_CENTER" prefWidth="460.0">
                <children>
                   <TextField fx:id="telefono3" prefHeight="26.0" prefWidth="260.0" promptText="Telefono 3">
                      <HBox.margin>
-                        <Insets left="100.0" />
+                        <Insets />
                      </HBox.margin>
                   </TextField>
                </children>
             </HBox>
-                <HBox fx:id="HBox2" prefWidth="460.0">
+                <HBox fx:id="HBox2" alignment="TOP_CENTER" prefWidth="460.0">
                     <children>
                         <TextField fx:id="email" prefWidth="260.0" promptText="Email 1">
                             <HBox.margin>
-                                <Insets left="100.0" />
+                                <Insets />
                             </HBox.margin>
                         </TextField>
                     </children>
@@ -83,66 +73,64 @@
                         <Insets />
                     </VBox.margin>
                 </HBox>
-            <HBox fx:id="HBox21" prefWidth="460.0">
+            <HBox fx:id="HBox21" alignment="TOP_CENTER" prefWidth="460.0">
                <children>
                   <TextField fx:id="email2" prefWidth="260.0" promptText="Email 2">
                      <HBox.margin>
-                        <Insets left="100.0" />
+                        <Insets />
                      </HBox.margin>
                   </TextField>
                </children>
             </HBox>
-            <HBox fx:id="HBox22" prefWidth="460.0">
+            <HBox fx:id="HBox22" alignment="CENTER" prefWidth="460.0">
                <children>
                   <TextField fx:id="email3" prefWidth="260.0" promptText="Email 3">
                      <HBox.margin>
-                        <Insets left="100.0" />
+                        <Insets />
                      </HBox.margin>
                   </TextField>
                </children>
             </HBox>
-            <HBox fx:id="HBox221" prefWidth="460.0">
+            <HBox fx:id="HBox221" alignment="CENTER" prefWidth="460.0">
                <children>
                   <DatePicker fx:id="compleanno" prefHeight="25.0" prefWidth="259.0" promptText="AA/MM/GG">
                      <HBox.margin>
-                        <Insets left="100.0" />
+                        <Insets />
                      </HBox.margin>
                   </DatePicker>
                </children>
             </HBox>
-            <HBox fx:id="HBox2211" prefWidth="460.0">
+            <HBox fx:id="HBox2211" alignment="TOP_CENTER" prefWidth="460.0">
                <children>
                   <TextField fx:id="indirizzo" prefWidth="260.0" promptText="Indirizzo">
                      <HBox.margin>
-                        <Insets left="100.0" />
+                        <Insets />
                      </HBox.margin>
                   </TextField>
                </children>
             </HBox>
-            <HBox fx:id="HBox22111" prefWidth="460.0">
+            <HBox fx:id="HBox22111" alignment="TOP_CENTER" prefWidth="460.0">
                <children>
                   <TextField fx:id="sitoWeb" prefWidth="260.0" promptText="Sito Web">
                      <HBox.margin>
-                        <Insets left="100.0" />
+                        <Insets />
                      </HBox.margin>
                   </TextField>
                </children>
             </HBox>
-            <HBox fx:id="HBox22112" alignment="BOTTOM_LEFT" prefWidth="460.0">
+            <HBox fx:id="HBox22112" alignment="CENTER" prefWidth="460.0">
                <children>
                   <TextField fx:id="note" prefHeight="80.0" prefWidth="260.0" promptText="Note">
                      <HBox.margin>
-                        <Insets left="100.0" />
+                        <Insets />
                      </HBox.margin>
                   </TextField>
                </children>
             </HBox>
-                <Button fx:id="bottone_creazione" mnemonicParsing="false" onAction="#aggiungiContatto" style="-fx-border-radius: 25px; -fx-background-radius: 25px; -fx-font-weight: bold; -fx-background-color: black; -fx-border-color: white; -fx-border-width: 3px;" text="Crea Contatto" textFill="WHITE">
-                    <VBox.margin>
-                        <Insets left="185.0" />
-                    </VBox.margin>
-                </Button>
             </children>
         </VBox>
+          <Button fx:id="bottone_creazione" alignment="CENTER" layoutX="143.0" layoutY="529.0" mnemonicParsing="false" onAction="#aggiungiContatto" style="-fx-border-radius: 25px; -fx-background-radius: 25px; -fx-font-weight: bold; -fx-background-color: black; -fx-border-color: white; -fx-border-width: 3px;" text="Crea Contatto" textFill="WHITE" />
+          <ImageView fx:id="immagine" fitHeight="79.0" fitWidth="92.0" layoutX="148.0" layoutY="27.0" pickOnBounds="true" preserveRatio="true" />
+          <Button fx:id="bottone_imm" alignment="CENTER" contentDisplay="CENTER" layoutX="272.0" layoutY="54.0" mnemonicParsing="false" onAction="#AggiungiImmagine" text="Aggiungi Foto" />
     </children>
 </AnchorPane>
