@@ -361,7 +361,7 @@ private void setEditableAll(boolean isEditable) {
        File file = fs.showSaveDialog(null);
        try(FileWriter fw = new FileWriter(file) ) {
            for(ContattoEsteso contatto : rubrica.getContatti()) {
-               fw.write();
+               fw.write(formattaContatto(c));
                
            }
            
