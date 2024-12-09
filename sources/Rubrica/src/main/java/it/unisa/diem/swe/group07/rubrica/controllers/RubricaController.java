@@ -361,4 +361,39 @@ private void setEditableAll(boolean isEditable) {
             pulsanteSalva.setDisable(true);
             setEditableAll(false);
     }
+     /**
+     * @brief metodo che crea una stringa vCard e la scriva su un file con estensione .vcf
+     * @param e evento generato dal bottone
+     */
+    @FXML
+    private void exportVCF(ActionEvent event) {
+       FileChooser fs = new FileChooser();
+       fs.setTitle("Export della Rubrica in formato .vcf");
+       fs.getExtensionFilters().add(new FileChooser.ExtensionFilter("vCard Files", ".vcf"));
+       
+       File file = fs.showSaveDialog(null);
+       try(FileWriter fw = new FileWriter(file) ) {
+           for(ContattoEsteso contatto : rubrica.getContatti()) {
+               fw.write();
+               
+           }
+           
+       }catch(IOException e) {
+           mostraMessaggioErrore("errore di esportazione");
+       }
+    }
+    /**
+     * @brief metodo che formatta un contatto esteso in formato vCard.
+     * @param c contattoEsteso da formattare in Vcard
+     * @return una Stringa rappresentante il contatto in formato vCard
+     */
+    private String formattaContatto(ContattoEsteso c) {
+        StringBuilder vcfb = new StringBuilder();
+        vcfb.append(c.getNome()).append(c.getCognome()).append("/n");
+        if (contatto.getTelefono1() != null) vcfb.append(contatto.getTelefono1()).append("\n");
+        if (contatto.getTelefono2() != null) vcfb.append(contatto.getTelefono2()).append("\n");
+        if (contatto.getTelefono3() != null) vcfb.append(contatto.getTelefono3()).append("\n");
+        if (contatto.getEmail1() != null) vcfb.append(contatto.getEmail1()).append("\n");
+        return vcfb.toString();
+      }
 }
