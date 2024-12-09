@@ -60,7 +60,7 @@ public class Contatto {
         this.id = UUID.randomUUID();    //genera un id univoco (key) per l'oggetto istanziato
         this.nome = nome;
         this.cognome = cognome;
-        /*this.telefono1 = telefono1;
+        /*this.telefono1 = telefono1;VEDETE SE DEVONO ESSERE ELIMINATE
         this.telefono2 = telefono2;
         this.telefono3 = telefono3;*/
         this.telefono1 = telefono1 != null ? telefono1 : "";
@@ -196,7 +196,9 @@ public class Contatto {
      */
     public Boolean controllaTelefono(String telefono){
         return telefono.matches("^\\+?[0-9]{6,15}$");
-        //regex: ^ inizio stringa, \\+ rappresenta il simbolo + (il primo backslash é per escape), ? indica che il simbolo precedente (+) é opzionale, [0-9]{6,15} si possono inserire da 6 a 15 cifre numeriche, $ fine della stringa
+     //^ inizio stringa, \\+ rappresenta il simbolo + (il primo backslash é per escape), 
+     //? indica che il simbolo precedente (+) é opzionale, [0-9]{6,15} 
+     //si possono inserire da 6 a 15 cifre numeriche, $ fine della stringa
     }
 
     /**

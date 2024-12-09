@@ -201,9 +201,10 @@ public class CreaContattoController implements Initializable{
         String indirizzoText = indirizzo.getText();
         String sitoWebText = sitoWeb.getText();
         String noteText = note.getText();
+        Image imgText=immagine.getImage();
 
         // Crea il nuovo contatto
-        ContattoEsteso temp = new ContattoEsteso(nomeText, cognomeText, telefonoText, telefono2Text, telefono3Text, emailText, email2Text, email3Text, compleannoText , indirizzoText, sitoWebText, noteText);
+        ContattoEsteso temp = new ContattoEsteso(nomeText, cognomeText, telefonoText, telefono2Text, telefono3Text, emailText, email2Text, email3Text, compleannoText , indirizzoText, sitoWebText, noteText, imgText);
         listaContatti.add(temp);
         Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         stage.close();
@@ -229,6 +230,7 @@ public class CreaContattoController implements Initializable{
 
     /**
      * @brief metodo verificare che almeno un TextField tra nome e cognome è stato sovrascritto
+     * 
      */
     private boolean validaCampiObbligatori() {
         // Un contatto deve avere necessariamente almeno nome o cognome (tutti gli altri campi possono essere vuoti)
