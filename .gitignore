@@ -26,6 +26,7 @@ local.properties
 .settings/
 .loadpath
 .recommenders
+*.lst
 
 # External tool builders
 .externalToolBuilders/
@@ -175,6 +176,8 @@ $RECYCLE.BIN/
 build/
 !**/src/main/**/build/
 !**/src/test/**/build/
+.netbeans_automatic_build
+
 
 ### VS Code ###
 .vscode/
