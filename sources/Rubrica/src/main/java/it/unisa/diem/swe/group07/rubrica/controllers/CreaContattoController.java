@@ -62,17 +62,17 @@ public class CreaContattoController {
      * @brief bottone per aggiungere l'email
      */
     @FXML
-    private Button aggiungi_email;
+    private Button aggiungiEmail;
     /**
      * @brief bottone per aggiungere il numero telefonico
      */
     @FXML
-    private Button aggiungi_telefono;
+    private Button aggiungiTelefono;
        /**
      * @brief bottone per effettuare la creazione di un contatto
      */
     @FXML
-    private Button bottone_creazione;
+    private Button pulsanteCrea;
        /**
      * @brief bottone per inserire l'immagine
      */
@@ -97,12 +97,12 @@ public class CreaContattoController {
      * @brief  Text Field per l'email del contatto
      */
     @FXML
-    private TextField emai2;
+    private TextField email2;
     /**
      * @brief  Text Field per l'email del contatto
      */
     @FXML
-    private TextField emai3;
+    private TextField email3;
     /**
      * @brief immagine da inserire
      */
@@ -122,7 +122,7 @@ public class CreaContattoController {
      * @brief Text Field per il sito web del contatto
      */
     @FXML
-    private TextField sito_web;
+    private TextField sitoWeb;
     /**
      * @brief Text Field per il numero telefonico del contatto
      */
@@ -138,12 +138,12 @@ public class CreaContattoController {
      */
     @FXML
     private TextField telefono3;
+
     /**
      * @brief Text Field per le note
      */
     @FXML
     private TextField note;
-    
 
     /**
      * @brief struttura per gestire una Lista di Contatti
@@ -155,25 +155,25 @@ public class CreaContattoController {
      * @param event evento generato dal click sul pulsante Crea
      */
     @FXML
-    public void AggiungiContatto(ActionEvent event) {
+    public void aggiungiContatto(ActionEvent event) {
         //Verifico che i campi obbligatori sono stati sovrascritti
-        if (!validaCampiObbligatori()) {
-        mostraMessaggioErrore("Errore di validazione", "Devi inserire almeno un nome o un cognome.");
-        return;
-    }
+        if (!validaCampiObbligatori())
+            mostraMessaggioErrore("Errore di validazione", "Devi inserire almeno un nome o un cognome.");
+
         // Ottieni i valori dai TextField
         String nomeText = nome.getText();
         String cognomeText = cognome.getText();
         String telefonoText = telefono.getText();
-        String telefono2Text = telefono.getText();
-        String telefono3Text = telefono.getText();
+        String telefono2Text = telefono2.getText();
+        String telefono3Text = telefono3.getText();
         String emailText = email.getText();
-        String email3Text = email.getText();
-        String email2Text = email.getText();
+        String email2Text = email2.getText();
+        String email3Text = email3.getText();
         LocalDate compleannoText = compleanno.getValue();
         String indirizzoText = indirizzo.getText();
-        String sitoWebText = sito_web.getText();
+        String sitoWebText = sitoWeb.getText();
         String noteText = note.getText();
+
         // Crea il nuovo contatto
         ContattoEsteso temp = new ContattoEsteso(nomeText, cognomeText, telefonoText, telefono2Text, telefono3Text, emailText, email2Text, email3Text, compleannoText , indirizzoText, sitoWebText, noteText);
         listaContatti.add(temp);
@@ -186,23 +186,23 @@ public class CreaContattoController {
      * @brief metodo per mostrare messaggio di errore
      */
     private void mostraMessaggioErrore(String titolo, String messaggio) {
-    Alert alert = new Alert(Alert.AlertType.ERROR);
-    alert.setTitle(titolo);
-    alert.setContentText(messaggio);
-    alert.showAndWait();
+        Alert alert = new Alert(Alert.AlertType.ERROR);
+        alert.setTitle(titolo);
+        alert.setContentText(messaggio);
+        alert.showAndWait();
     }
+
     /**
      * @brief metodo setter per listaContatti
      */
     public void setListaContatti(List<ContattoEsteso> listaContatti) {
         this.listaContatti = listaContatti;
     }
+
     /**
      * @brief metodo verificare che almeno un TextField tra nome e cognome è stato sovrascritto
      */
     private boolean validaCampiObbligatori() {
-    return (nome.getText() != null && !nome.getText().trim().isEmpty()) ||
-           (cognome.getText() != null && !cognome.getText().trim().isEmpty());
-}
-
+        return (nome.getText() != null && !nome.getText().trim().isEmpty()) || (cognome.getText() != null && !cognome.getText().trim().isEmpty());
+    }
 }

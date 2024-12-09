@@ -214,7 +214,35 @@ public class RubricaController implements Initializable{
             filtraContatti(newValue);
         });
     }
-   
+
+    /**
+     * @brief Crea un nuovo contatto e aggiorna la TableView con i nuovi contatti.
+     * @param event L'evento generato dal click sul pulsante di creazione.
+     */
+
+    @FXML
+    public void creaContatto(ActionEvent event) {
+        try {
+            // Carica il file FXML della nuova view
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml/CreazioneContattoView.fxml"));
+            Parent root = loader.load();
+            // Ottieni il controller della nuova view
+            CreaContattoController controllerCreazione = loader.getController();
+            controllerCreazione.setListaContatti(listaContatti);
+            // Solite robe per lo stage/scene
+            Stage nuovoStage = new Stage();
+            nuovoStage.setScene(new Scene(root));
+            nuovoStage.setTitle("Crea Nuovo Contatto");
+            nuovoStage.initModality(Modality.APPLICATION_MODAL);
+            // Mostra la finestra e attende
+            nuovoStage.showAndWait();
+            // Aggiorna tableView con i nuovi dati
+            rubricaTable.setItems(FXCollections.observableArrayList(listaContatti));
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
     /**
      * @brief Metodo per filtrare i contatti in base al nome o al cognome.
      * @param c Stringa di ricerca.
@@ -279,13 +307,13 @@ private void setEditableAll(boolean isEditable) {
      */
     @FXML
     public void eliminaContatto(ActionEvent event) {
-    ContattoEsteso c= rubricaTable.getSelectionModel().getSelectedItem();
-        if(c!=null){
-        rubrica.rimuoviContatto(c);
-         // Rimuovi il contatto dalla lista osservabile
-        listaContatti.remove(c);;
-         // Aggiorna la TableView (opzionale, perché ObservableList lo fa automaticamente)
-        rubricaTable.refresh();
+    ContattoEsteso c = rubricaTable.getSelectionModel().getSelectedItem();
+        if (c!=null){
+            rubrica.rimuoviContatto(c);
+             // Rimuovi il contatto dalla lista osservabile
+            listaContatti.remove(c);;
+             // Aggiorna la TableView (opzionale, perché ObservableList lo fa automaticamente)
+            rubricaTable.refresh();
         }
     }
 
@@ -306,35 +334,7 @@ private void setEditableAll(boolean isEditable) {
         }
             
     }
-  
 
-    /**
-     * @brief Crea un nuovo contatto e aggiorna la TableView con i nuovi contatti.
-     * @param event L'evento generato dal click sul pulsante di creazione.
-     */
-    
-    @FXML
-    public void creaContatto(ActionEvent event) {
-        try {
-            // Carica il file FXML della nuova view
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml/CreazioneContattoView.fxml"));
-            Parent root = loader.load();
-            // Ottieni il controller della nuova view
-            CreaContattoController controllerCreazione = loader.getController();
-            controllerCreazione.setListaContatti(listaContatti);
-            // Solite robe per lo stage/scene
-            Stage nuovoStage = new Stage();
-            nuovoStage.setScene(new Scene(root));
-            nuovoStage.setTitle("Crea Nuovo Contatto");
-            nuovoStage.initModality(Modality.APPLICATION_MODAL);
-            // Mostra la finestra e attende
-            nuovoStage.showAndWait();
-            // Aggiorna tableView con i nuovi dati
-            rubricaTable.setItems(FXCollections.observableArrayList(listaContatti));
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-    }
         /**
      * @brief Gestisce il salvataggio delle modifiche apportate a un contatto esistente.
      * @param e L'evento generato dal click sul pulsante di salvataggio.

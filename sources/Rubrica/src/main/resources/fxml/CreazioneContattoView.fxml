@@ -121,7 +121,7 @@
             </HBox>
             <HBox fx:id="HBox22111" prefWidth="460.0">
                <children>
-                  <TextField fx:id="sito_web" prefWidth="260.0" promptText="Sito Web">
+                  <TextField fx:id="sitoWeb" prefWidth="260.0" promptText="Sito Web">
                      <HBox.margin>
                         <Insets left="100.0" />
                      </HBox.margin>
@@ -137,7 +137,7 @@
                   </TextField>
                </children>
             </HBox>
-                <Button fx:id="bottone_creazione" mnemonicParsing="false" onAction="#AggiungiContatto" style="-fx-border-radius: 25px; -fx-background-radius: 25px; -fx-font-weight: bold; -fx-background-color: black; -fx-border-color: white; -fx-border-width: 3px;" text="Crea Contatto" textFill="WHITE">
+                <Button fx:id="bottone_creazione" mnemonicParsing="false" onAction="#aggiungiContatto" style="-fx-border-radius: 25px; -fx-background-radius: 25px; -fx-font-weight: bold; -fx-background-color: black; -fx-border-color: white; -fx-border-width: 3px;" text="Crea Contatto" textFill="WHITE">
                     <VBox.margin>
                         <Insets left="185.0" />
                     </VBox.margin>
