@@ -23,7 +23,6 @@ public class provaTest {
 
         ObservableList listaContatti = FXCollections.observableArrayList(r.getContatti());
         System.out.println("\nContatti: " + listaContatti.toString());
-
     }
 
 }

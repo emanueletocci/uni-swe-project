@@ -8,13 +8,14 @@
 
 package it.unisa.diem.swe.group07.rubrica.models;
 import java.util.Objects;
+import java.util.UUID;
 
 public class Contatto {
 
     /**
      * @brief identificativo univoco (key) del contatto
      */
-    private int id;
+    private UUID id;
 
     /**
      * @brief nome del contatto
@@ -55,7 +56,7 @@ public class Contatto {
      * @brief costruttore della classe Contatto
      */
     public Contatto(String nome, String cognome, String telefono1, String telefono2, String telefono3) {
-        //this.id = id.hashCode()
+        this.id = UUID.randomUUID();    //genera un id univoco (key) per l'oggetto istanziato
         this.nome = nome;
         this.cognome = cognome;
         this.telefono1 = telefono1;
@@ -69,7 +70,7 @@ public class Contatto {
      * @brief metodo getter per l'attributo "id"
      * @return attributo id
      */
-    public int getId(){
+    public UUID getId(){
         return id;
     }
 
@@ -199,7 +200,8 @@ public class Contatto {
      */
     @Override
     public String toString() {
-        return "\nnome=" + nome  +
+        return "\nid=" + id +
+                ", nome=" + nome  +
                 ", cognome=" + cognome +
                 ", telefono1=" + telefono1 +
                 ", telefono2=" + telefono2 +
@@ -214,14 +216,15 @@ public class Contatto {
     public boolean equals(Object o) {
         if (!(o instanceof Contatto)) return false;
         Contatto contatto = (Contatto) o;
-        return id == contatto.id && Objects.equals ( nome, contatto.nome ) && Objects.equals ( cognome, contatto.cognome ) && Objects.equals ( telefono1, contatto.telefono1 ) && Objects.equals ( telefono2, contatto.telefono2 ) && Objects.equals ( telefono3, contatto.telefono3 );
+        return Objects.equals(id, contatto.id) && Objects.equals(nome, contatto.nome) && Objects.equals(cognome, contatto.cognome) && Objects.equals(telefono1, contatto.telefono1) && Objects.equals(telefono2, contatto.telefono2) && Objects.equals(telefono3, contatto.telefono3);
     }
+
     /**
-     * @brief metodo per la creazione di un id (key) univoco associato ad ogni contatto
-     * @return id univoco
+     * @brief Calcola il valore hash per l'oggetto basandosi sui campi id, nome, cognome e telefoni
+     * @return valore hash dell'oggetto
      */
     @Override
     public int hashCode() {
-        return Objects.hash ( id, nome, cognome, telefono1, telefono2, telefono3 );
+        return Objects.hash(id, nome, cognome, telefono1, telefono2, telefono3);
     }
 }

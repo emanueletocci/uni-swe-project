@@ -1,9 +1,9 @@
 
 package it.unisa.diem.swe.group07.rubrica.models;
 import java.util.Map;
-
 import java.util.HashMap;
 import java.util.Collection;
+import java.util.UUID;
 
 public class Rubrica {
 
@@ -11,14 +11,14 @@ public class Rubrica {
      *  @brief struttura dati della rubrica
      */
 
-    private Map<Integer, ContattoEsteso> rubrica;
+    private Map<UUID, ContattoEsteso> rubrica;
 
     /**
      *  @brief costruttore della rubrica
      */
 
     public Rubrica(){
-        this.rubrica = new HashMap<Integer, ContattoEsteso>();
+        this.rubrica = new HashMap<UUID, ContattoEsteso>();
     }
 
     /**

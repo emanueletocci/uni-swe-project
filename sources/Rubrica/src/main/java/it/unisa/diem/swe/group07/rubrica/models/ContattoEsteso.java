@@ -150,6 +150,7 @@ public class ContattoEsteso extends Contatto {
      * @brief metodo per la stampa degli attributi 
      * @return attributi email1, email2, email3, compleanno, indirizzoResidenza e sitoWeb.
      */
+
     @Override
     public String toString() {
         return super.toString() +
@@ -162,23 +163,25 @@ public class ContattoEsteso extends Contatto {
     }
 
     /**
-     * @brief metodo che consente di confrontare 2 contatti
-     * @return 'true' se i due contatti confrontati sono uguali, 'false' se sono diversi
+     * @brief verifica l'uguaglianza tra due oggetti di tipo "ContattoEsteso"
+     * @param[in] "o" l'oggetto da confrontare
+     * @return 'true' se gli oggetti sono uguali, 'false' altrimenti
      */
+
     @Override
     public boolean equals(Object o) {
         if (!(o instanceof ContattoEsteso)) return false;
-        if (!super.equals ( o )) return false;
+        if (!super.equals(o)) return false;
         ContattoEsteso that = (ContattoEsteso) o;
-        return Objects.equals ( email1, that.email1 ) && Objects.equals ( email2, that.email2 ) && Objects.equals ( email3, that.email3 ) && Objects.equals ( compleanno, that.compleanno ) && Objects.equals ( indirizzoResidenza, that.indirizzoResidenza ) && Objects.equals ( sitoWeb, that.sitoWeb );
+        return Objects.equals(email1, that.email1) && Objects.equals(email2, that.email2) && Objects.equals(email3, that.email3) && Objects.equals(compleanno, that.compleanno) && Objects.equals(indirizzoResidenza, that.indirizzoResidenza) && Objects.equals(sitoWeb, that.sitoWeb);
     }
 
     /**
-     * @brief metodo per la creazione di un id (key) univoco associato ad ogni contatto
-     * @return id univoco
+     * Calcola il valore hash per l'oggetto basandosi sui campi id, nome, cognome e telefoni.
+     * @return il valore hash dell'oggetto
      */
     @Override
     public int hashCode() {
-        return Objects.hash ( super.hashCode (), email1, email2, email3, compleanno, indirizzoResidenza, sitoWeb );
+        return Objects.hash(super.hashCode(), email1, email2, email3, compleanno, indirizzoResidenza, sitoWeb);
     }
 }
