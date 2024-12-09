@@ -29,7 +29,7 @@ import java.time.LocalDate;
 import java.util.List;
 
 
-public class CreaContattoController implements Initializable{
+public class CreaContattoController extends AbstractController implements Initializable{
     //LE TOGLIEREMO DOPO DALLA VIEW questi id box che non servono
     @FXML
     private HBox HBox1;
@@ -43,7 +43,6 @@ public class CreaContattoController implements Initializable{
     @FXML
     private HBox HBox12;
 
-public class CreaContattoController extends AbstractController{
     /**
      * @brief bottone per aggiungere l'email
      */
@@ -134,7 +133,6 @@ public class CreaContattoController extends AbstractController{
     /**
      * @brief struttura per gestire una Lista di Contatti
      */
-    private List<ContattoEsteso> listaContatti; // Riferimento alla rubrica condivisa
     private FileChooser fileChooser = new FileChooser();
 
 
@@ -184,7 +182,7 @@ public class CreaContattoController extends AbstractController{
         String noteText = note.getText();
 
         // Crea il nuovo contatto
-        ContattoEsteso temp = new ContattoEsteso(nomeText, cognomeText, telefonoText, telefono2Text, telefono3Text, emailText, email2Text, email3Text, compleannoText , indirizzoText, sitoWebText, noteText);
+        ContattoEsteso temp = new ContattoEsteso(nomeText, cognomeText, telefonoText, telefono2Text, telefono3Text, emailText, email2Text, email3Text, compleannoText , indirizzoText, sitoWebText, noteText);        this.getListaContatti().add(temp);
         this.getListaContatti().add(temp);
         Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         stage.close();
@@ -198,13 +196,6 @@ public class CreaContattoController extends AbstractController{
         alert.setTitle(titolo);
         alert.setContentText(messaggio);
         alert.showAndWait();
-    }
-
-    /**
-     * @brief metodo setter per listaContatti
-     */
-    public void setListaContatti(List<ContattoEsteso> listaContatti) {
-        this.listaContatti = listaContatti;
     }
 
     /**
