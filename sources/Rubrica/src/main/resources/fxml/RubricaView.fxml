@@ -39,8 +39,8 @@
                                         <MenuItem fx:id="editBtn" mnemonicParsing="false" onAction="#eliminaContatto" text="Modifica contatto" />
                                         <MenuItem fx:id="del" mnemonicParsing="false" onAction="#eliminaContatto" text="Elimina contatto" />
                               <MenuItem mnemonicParsing="false" text="__________________" />
-                              <MenuItem fx:id="preferitoBtn" mnemonicParsing="false" onAction="#aggiungiPreferito" text="Aggiungi a Preferiti" />
-                              <MenuItem fx:id="emergenzaBtn" mnemonicParsing="false" onAction="#aggiungiEmergenza" text="Aggiungi a Contatti d'Emergenza" />
+                              <MenuItem fx:id="preferitoBtn" mnemonicParsing="false" onAction="#togglePreferiti" text="Toggle Preferiti" />
+                              <MenuItem fx:id="emergenzaBtn" mnemonicParsing="false" onAction="#toggleEmergenza" text="Toggle Contatti d'Emergenza" />
                                     </items>
                                 </Menu>
                                 <Menu mnemonicParsing="false" text="Finestra">

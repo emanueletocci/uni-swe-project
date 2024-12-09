@@ -8,6 +8,9 @@
 
 package it.unisa.diem.swe.group07.rubrica.models;
 
+import javafx.beans.property.BooleanProperty;
+import javafx.beans.property.SimpleBooleanProperty;
+
 import java.util.Objects;
 import java.util.UUID;
 
@@ -230,5 +233,18 @@ public class Contatto {
         return Objects.hash(id, nome, cognome, telefono1, telefono2, telefono3);
     }
 
-
+    /**
+     * controlla se un contatto è preferito
+     * @return Restituisce la proprietà che indica se il contatto è preferito.
+     */
+    public BooleanProperty isPreferito() {
+        return new SimpleBooleanProperty(getPreferito());
+    }
+    /**
+     * controlla se un contatto è d'emergenza
+     * @return Restituisce la proprietà che indica se il contatto è d'emergenza.
+     */
+    public BooleanProperty isEmergenza(){
+        return new SimpleBooleanProperty(getEmergenza());
+    }
 }

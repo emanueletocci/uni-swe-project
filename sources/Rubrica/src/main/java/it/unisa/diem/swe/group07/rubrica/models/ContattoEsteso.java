@@ -8,6 +8,8 @@
 
 package it.unisa.diem.swe.group07.rubrica.models;
 
+import javafx.beans.property.BooleanProperty;
+
 import java.time.LocalDate;
 import java.util.Objects;
 
