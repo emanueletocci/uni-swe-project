@@ -203,6 +203,7 @@ public class CreaContattoController {
      * @brief metodo verificare che almeno un TextField tra nome e cognome è stato sovrascritto
      */
     private boolean validaCampiObbligatori() {
+        // Un contatto deve avere necessariamente almeno nome o cognome (tutti gli altri campi possono essere vuoti)
         return (nome.getText() != null && !nome.getText().trim().isEmpty()) || (cognome.getText() != null && !cognome.getText().trim().isEmpty());
     }
 }
