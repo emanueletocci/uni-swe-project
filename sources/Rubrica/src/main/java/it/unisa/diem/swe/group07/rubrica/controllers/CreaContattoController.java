@@ -16,27 +16,54 @@ import javafx.scene.image.ImageView;
 import javafx.scene.layout.HBox;
 import javafx.event.ActionEvent;
 import javafx.stage.Stage;
+import javafx.scene.control.Alert;
 
 import java.time.LocalDate;
 import java.util.List;
 
 public class CreaContattoController {
-        /**
-     * @brief HBox1 layout container per aggiungere i nodi orizzontalmente
-     */
+    //LE TOGLIEREMO DOPO DALLA VIEW questi id box che non servono
     @FXML
     private HBox HBox1;
-       /**
-     * @brief HBox2 layout container per aggiungere i nodi orizzontalmente
-     */
+
+    @FXML
+    private HBox HBox11;
+
+    @FXML
+    private HBox HBox111;
+
+    @FXML
+    private HBox HBox12;
+
+    @FXML
+    private HBox HBox121;
+
     @FXML
     private HBox HBox2;
-       /**
+
+    @FXML
+    private HBox HBox21;
+
+    @FXML
+    private HBox HBox22;
+
+    @FXML
+    private HBox HBox221;
+
+    @FXML
+    private HBox HBox2211;
+
+    @FXML
+    private HBox HBox22111;
+
+    @FXML
+    private HBox HBox22112;
+    /**
      * @brief bottone per aggiungere l'email
      */
     @FXML
     private Button aggiungi_email;
-       /**
+    /**
      * @brief bottone per aggiungere il numero telefonico
      */
     @FXML
@@ -51,12 +78,12 @@ public class CreaContattoController {
      */
     @FXML
     private Button bottone_imm;
-       /**
+    /**
      * @brief  Text Field per il cognome del contatto
      */
     @FXML
     private TextField cognome;
-       /**
+    /**
      * @brief  Text Field per il compleanno del contatto
      */
     @FXML
@@ -66,65 +93,116 @@ public class CreaContattoController {
      */
     @FXML
     private TextField email;
-       /**
+    /**
+     * @brief  Text Field per l'email del contatto
+     */
+    @FXML
+    private TextField emai2;
+    /**
+     * @brief  Text Field per l'email del contatto
+     */
+    @FXML
+    private TextField emai3;
+    /**
      * @brief immagine da inserire
      */
     @FXML
     private ImageView immagine;
-       /**
+    /**
      * @brief Text Field per l'indirizzo del contatto
      */
     @FXML
     private TextField indirizzo;
-       /**
+    /**
      * @brief Text Field per il nome del contatto
      */
     @FXML
     private TextField nome;
-      /**
+    /**
      * @brief Text Field per il sito web del contatto
      */
     @FXML
     private TextField sito_web;
-        /**
+    /**
      * @brief Text Field per il numero telefonico del contatto
      */
     @FXML
     private TextField telefono;
+    /**
+     * @brief Text Field per il numero telefonico del contatto
+     */
+    @FXML
+    private TextField telefono2;
+    /**
+     * @brief Text Field per il numero telefonico del contatto
+     */
+    @FXML
+    private TextField telefono3;
+    /**
+     * @brief Text Field per le note
+     */
+    @FXML
+    private TextField note;
+    
 
     /**
      * @brief struttura per gestire una Lista di Contatti
      */
     private List<ContattoEsteso> listaContatti; // Riferimento alla rubrica condivisa
 
-        /**
+    /**
      * @brief metodo che preleva il valore dai Text Field creando il contatto ed aggiungendolo alla Lista+
      * @param event evento generato dal click sul pulsante Crea
      */
     @FXML
-    public void Crea(ActionEvent event) {
+    public void AggiungiContatto(ActionEvent event) {
+        //Verifico che i campi obbligatori sono stati sovrascritti
+        if (!validaCampiObbligatori()) {
+        mostraMessaggioErrore("Errore di validazione", "Devi inserire almeno un nome o un cognome.");
+        return;
+    }
         // Ottieni i valori dai TextField
         String nomeText = nome.getText();
         String cognomeText = cognome.getText();
         String telefonoText = telefono.getText();
+        String telefono2Text = telefono.getText();
+        String telefono3Text = telefono.getText();
         String emailText = email.getText();
+        String email3Text = email.getText();
+        String email2Text = email.getText();
         LocalDate compleannoText = compleanno.getValue();
         String indirizzoText = indirizzo.getText();
         String sitoWebText = sito_web.getText();
-        
-
+        String noteText = note.getText();
         // Crea il nuovo contatto
-        ContattoEsteso temp = new ContattoEsteso(nomeText, cognomeText, telefonoText, telefonoText, telefonoText, emailText, emailText, emailText, compleannoText , indirizzoText, sitoWebText, "note");
+        ContattoEsteso temp = new ContattoEsteso(nomeText, cognomeText, telefonoText, telefono2Text, telefono3Text, emailText, email2Text, email3Text, compleannoText , indirizzoText, sitoWebText, noteText);
         listaContatti.add(temp);
         Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         stage.close();
 
     }
-        /**
+    
+    /**
+     * @brief metodo per mostrare messaggio di errore
+     */
+    private void mostraMessaggioErrore(String titolo, String messaggio) {
+    Alert alert = new Alert(Alert.AlertType.ERROR);
+    alert.setTitle(titolo);
+    alert.setContentText(messaggio);
+    alert.showAndWait();
+    }
+    /**
      * @brief metodo setter per listaContatti
      */
     public void setListaContatti(List<ContattoEsteso> listaContatti) {
         this.listaContatti = listaContatti;
     }
+    /**
+     * @brief metodo verificare che almeno un TextField tra nome e cognome è stato sovrascritto
+     */
+    private boolean validaCampiObbligatori() {
+    return (nome.getText() != null && !nome.getText().trim().isEmpty()) ||
+           (cognome.getText() != null && !cognome.getText().trim().isEmpty());
+}
 
 }
