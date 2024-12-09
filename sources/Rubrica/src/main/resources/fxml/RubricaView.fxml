@@ -11,6 +11,7 @@
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.effect.BoxBlur?>
+<?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.HBox?>
@@ -76,15 +77,18 @@
                                                                                 <Insets top="3.0" />
                                                                             </padding>
                                                                         </Label>
-                                                                        <Button fx:id="pulsanteCrea" layoutX="85.0" layoutY="3.0" mnemonicParsing="false" onAction="#creaContatto" prefHeight="21.0" prefWidth="105.0" style="-fx-background-color: #3375E0; -fx-background-radius: 5;" text="Nuovo Contatto" textAlignment="CENTER" textFill="WHITE" textOverrun="CLIP" AnchorPane.topAnchor="6.0">
+                                                                        <Button fx:id="pulsanteCrea" layoutX="70.0" layoutY="7.0" mnemonicParsing="false" onAction="#creaContatto" prefHeight="19.0" prefWidth="98.0" style="-fx-background-color: #3375E0; -fx-background-radius: 5;" text="Nuovo Contatto" textAlignment="CENTER" textFill="WHITE" textOverrun="CLIP" AnchorPane.topAnchor="7.0">
                                                                             <font>
-                                                                                <Font name="System Bold" size="11.0" />
+                                                                                <Font name="System Bold" size="10.0" />
                                                                             </font>
                                                                             <padding>
                                                                                 <Insets top="3.0" />
                                                                             </padding>
                                                                         </Button>
-                                                      <TextField fx:id="pulsanteCerca" layoutX="202.0" layoutY="4.0" prefHeight="25.0" prefWidth="98.0" />
+                                                      <TextField fx:id="pulsanteCerca" layoutX="188.0" layoutY="7.0" prefHeight="16.0" prefWidth="98.0" promptText="Cerca">
+                                                         <font>
+                                                            <Font size="9.0" />
+                                                         </font></TextField>
                                                                     </children>
                                                                 </AnchorPane>
                                                                 <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
@@ -120,7 +124,7 @@
                                                                                 <Insets />
                                                                             </HBox.margin>
                                                                         </Label>
-                                                                        <TextField fx:id="nomeField" editable="false" prefHeight="11.0" prefWidth="150.0">
+                                                                        <TextField fx:id="nomeField" editable="false" prefHeight="11.0" prefWidth="150.0" promptText="Nome">
                                                                             <font>
                                                                                 <Font size="9.5" />
                                                                             </font>
@@ -140,7 +144,7 @@
                                                                                 <Insets />
                                                                             </HBox.margin>
                                                                         </Label>
-                                                                        <TextField fx:id="cognomeField" editable="false" prefHeight="11.0" prefWidth="150.0">
+                                                                        <TextField fx:id="cognomeField" editable="false" prefHeight="11.0" prefWidth="150.0" promptText="Cognome">
                                                                             <font>
                                                                                 <Font size="9.5" />
                                                                             </font>
@@ -160,7 +164,7 @@
                                                                                 <Insets />
                                                                             </HBox.margin>
                                                                         </Label>
-                                                                        <TextField fx:id="telefono1Field" editable="false" prefHeight="11.0" prefWidth="150.0">
+                                                                        <TextField fx:id="telefono1Field" editable="false" prefHeight="11.0" prefWidth="150.0" promptText="+33">
                                                                             <font>
                                                                                 <Font size="9.5" />
                                                                             </font>
@@ -180,7 +184,7 @@
                                                             <Insets />
                                                          </HBox.margin>
                                                       </Label>
-                                                      <TextField fx:id="telefono2Field" editable="false" prefHeight="11.0" prefWidth="150.0">
+                                                      <TextField fx:id="telefono2Field" editable="false" prefHeight="11.0" prefWidth="150.0" promptText="+33">
                                                          <font>
                                                             <Font size="9.5" />
                                                          </font>
@@ -200,7 +204,7 @@
                                                             <Insets />
                                                          </HBox.margin>
                                                       </Label>
-                                                      <TextField fx:id="telefono3Field" editable="false" prefHeight="11.0" prefWidth="150.0">
+                                                      <TextField fx:id="telefono3Field" editable="false" prefHeight="11.0" prefWidth="150.0" promptText="+33">
                                                          <font>
                                                             <Font size="9.5" />
                                                          </font>
@@ -220,7 +224,7 @@
                                                                                 <Insets />
                                                                             </HBox.margin>
                                                                         </Label>
-                                                                        <TextField fx:id="email1Field" editable="false" prefHeight="11.0" prefWidth="150.0">
+                                                                        <TextField fx:id="email1Field" editable="false" prefHeight="11.0" prefWidth="150.0" promptText="x@prova.dominio">
                                                                             <font>
                                                                                 <Font size="9.5" />
                                                                             </font>
@@ -240,7 +244,7 @@
                                                             <Insets />
                                                          </HBox.margin>
                                                       </Label>
-                                                      <TextField fx:id="email2Field" editable="false" prefHeight="11.0" prefWidth="150.0">
+                                                      <TextField fx:id="email2Field" editable="false" prefHeight="11.0" prefWidth="150.0" promptText="x@prova.dominio">
                                                          <font>
                                                             <Font size="9.5" />
                                                          </font>
@@ -260,7 +264,7 @@
                                                             <Insets />
                                                          </HBox.margin>
                                                       </Label>
-                                                      <TextField fx:id="email3Field" editable="false" prefHeight="11.0" prefWidth="150.0">
+                                                      <TextField fx:id="email3Field" editable="false" prefHeight="11.0" prefWidth="150.0" promptText="x@prova.dominio">
                                                          <font>
                                                             <Font size="9.5" />
                                                          </font>
@@ -280,7 +284,7 @@
                                                                                 <Insets />
                                                                             </HBox.margin>
                                                                         </Label>
-                                                                        <TextField fx:id="compleannoField" editable="false" prefHeight="11.0" prefWidth="150.0">
+                                                                        <TextField fx:id="compleannoField" editable="false" prefHeight="11.0" prefWidth="150.0" promptText="GG/MM/AA">
                                                                             <font>
                                                                                 <Font size="9.5" />
                                                                             </font>
@@ -300,7 +304,7 @@
                                                             <Insets />
                                                          </HBox.margin>
                                                       </Label>
-                                                      <TextField editable="false" prefHeight="11.0" prefWidth="150.0">
+                                                      <TextField editable="false" prefHeight="11.0" prefWidth="150.0" promptText="facebook.com">
                                                          <font>
                                                             <Font size="9.5" />
                                                          </font>
@@ -320,7 +324,7 @@
                                                                                 <Insets />
                                                                             </HBox.margin>
                                                                         </Label>
-                                                                        <TextField fx:id="indirizzoField" editable="false" prefHeight="11.0" prefWidth="150.0">
+                                                                        <TextField fx:id="indirizzoField" editable="false" prefHeight="11.0" prefWidth="150.0" promptText="Via/traversa">
                                                                             <font>
                                                                                 <Font size="9.0" />
                                                                             </font>
@@ -340,7 +344,7 @@
                                                                                 <Insets />
                                                                             </HBox.margin>
                                                                         </Label>
-                                                                        <TextField fx:id="noteField" editable="false" prefHeight="40.0" prefWidth="150.0">
+                                                                        <TextField fx:id="noteField" editable="false" prefHeight="40.0" prefWidth="150.0" promptText="Piu informazioni ">
                                                                             <font>
                                                                                 <Font size="9.0" />
                                                                             </font>
@@ -373,9 +377,26 @@
                                                                 </Label>
                                                             </children>
                                                         </HBox>
-                                                        <Button fx:id="pulsanteModifica" layoutX="183.0" layoutY="2.0" mnemonicParsing="false" onAction="#modificaContatto" AnchorPane.topAnchor="12.0" />
-                                                        <Button fx:id="pulsanteElimina" layoutX="230.0" layoutY="2.0" mnemonicParsing="false" onAction="#eliminaContatto" prefHeight="18.0" prefWidth="17.0" AnchorPane.topAnchor="12.0" />
-                                          <Button fx:id="pulsanteSalva" layoutX="132.0" layoutY="12.0" mnemonicParsing="false" onAction="#GestioneSalvaModifiche" prefHeight="19.0" prefWidth="45.0" text="Button" />
+                                                        <Button fx:id="pulsanteModifica" layoutX="189.0" layoutY="12.0" mnemonicParsing="false" onAction="#modificaContatto" AnchorPane.topAnchor="12.0">
+                                             <graphic>
+                                                <ImageView fitHeight="16.0" fitWidth="17.0" pickOnBounds="true" preserveRatio="true">
+                                                   <image>
+                                                      <Image url="@../../java/it/unisa/diem/swe/group07/rubrica/controllers/icon/process_16747334.png" />
+                                                   </image>
+                                                </ImageView>
+                                             </graphic></Button>
+                                                        <Button fx:id="pulsanteElimina" layoutX="230.0" layoutY="2.0" mnemonicParsing="false" onAction="#eliminaContatto" prefHeight="18.0" prefWidth="17.0" AnchorPane.topAnchor="12.0">
+                                             <graphic>
+                                                <ImageView fitHeight="16.0" fitWidth="17.0" pickOnBounds="true" preserveRatio="true">
+                                                   <image>
+                                                      <Image url="@../../../../../../../../../Downloads/trash-can_9844903.png" />
+                                                   </image>
+                                                </ImageView>
+                                             </graphic></Button>
+                                          <Button fx:id="pulsanteSalva" layoutX="128.0" layoutY="12.0" mnemonicParsing="false" onAction="#GestioneSalvaModifiche" prefHeight="25.0" prefWidth="49.0" text="Aggiorna">
+                                             <font>
+                                                <Font size="9.0" />
+                                             </font></Button>
                                                     </children>
                                                 </AnchorPane>
                                             </items>

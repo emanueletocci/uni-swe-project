@@ -180,7 +180,7 @@ private void setEditableAll(boolean isEditable) {
 }
 
     @FXML
-    public void eliminaContatto(MouseEvent event) {
+    public void eliminaContatto(ActionEvent event) {
     ContattoEsteso c= rubricaTable.getSelectionModel().getSelectedItem();
     if(c!=null){
     rubrica.rimuoviContatto(c);
@@ -250,6 +250,6 @@ private void setEditableAll(boolean isEditable) {
         rubricaTable.refresh();
         
         pulsanteSalva.setDisable(true);
-        //setEditableAll(false);
+        setEditableAll(false);
     }
 }
