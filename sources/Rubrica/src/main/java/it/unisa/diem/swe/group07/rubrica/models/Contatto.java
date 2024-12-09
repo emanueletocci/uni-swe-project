@@ -113,27 +113,48 @@ public class Contatto {
     public void setCognome(String cognome) {
         this.cognome = cognome;
     }
-
+     /**
+     * @brief metodo getter per l'attributo "telefono1"
+     * @return attributo telefono1
+     */
     public String getTelefono1() {
         return telefono1;
     }
 
+    
+    /**
+     * @brief metodo setter per l'attributo "telefono1"
+     */
     public void setTelefono1(String telefono1) {
         this.telefono1 = telefono1;
     }
 
+    /**
+     * @brief metodo getter per l'attributo "telefono2"
+     * @return attributo telefono2
+     */
     public String getTelefono2() {
         return telefono2;
     }
-
+    
+    /**
+     * @brief metodo setter per l'attributo "telefono2"
+     */
     public void setTelefono2(String telefono2) {
         this.telefono2 = telefono2;
     }
 
+     /**
+     * @brief metodo getter per l'attributo "telefono3"
+     * @return attributo telefono2
+     */
     public String getTelefono3() {
         return telefono3;
     }
-
+    
+    /**
+     * @brief metodo setter per l'attributo "telefono3"
+     */
     public void setTelefono3(String telefono3) {
         this.telefono3 = telefono3;
     }
@@ -176,6 +197,10 @@ public class Contatto {
         return true;
     }
 
+    /**
+     * @brief metodo per la stampa degli attributi 
+     * @return attributi nome, cognome, telefono1, telefono2, telefono3
+     */
     @Override
     public String toString() {
         return "\nnome=" + nome  +
