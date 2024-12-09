@@ -2,6 +2,7 @@ package it.unisa.diem.swe.group07.rubrica.controllers;
 
 import java.io.IOException;
 import java.net.URL;
+import java.time.LocalDate;
 import java.util.ResourceBundle;
 
 import javafx.scene.control.*;
@@ -80,7 +81,7 @@ public class RubricaController implements Initializable{
      * @brief Text Field per il compleanno del contatto nella Rubrica
      */
     @FXML // fx:id="compleannoField"
-    private TextField compleannoField; // Value injected by FXMLLoader
+    private DatePicker compleannoField; // Value injected by FXMLLoader
         /**
      * @brief Text Field per l'indirizzo del contatto nella Rubrica
      */
@@ -180,11 +181,11 @@ public class RubricaController implements Initializable{
     @Override
     public void initialize(URL url, ResourceBundle rb){
         rubrica = new Rubrica();
-        rubrica.aggiungiContatto(new ContattoEsteso("Emanuele", "Tocci","+3933333333","+3933333333", "+3933333333", "prova@gmail.com", "prova@icloud.com", "prova@unisa.it", "09 Giugno", "via Prova", "unisa.it"));
-        rubrica.aggiungiContatto(new ContattoEsteso("Claudia", "Montefusco","+3933333333","+3933333333", "+3933333333", "prova@gmail.com", "prova@icloud.com", "prova@unisa.it", "09 Giugno", "via Prova", "unisa.it"));
-        rubrica.aggiungiContatto(new ContattoEsteso("Alessio", "Leo","+3933333333","+3933333333", "+3933333333", "prova@gmail.com", "prova@icloud.com", "prova@unisa.it", "09 Giugno", "via Prova", "unisa.it"));
-        rubrica.aggiungiContatto(new ContattoEsteso("Rossella", "Pale","+3933333333","+3933333333", "+3933333333", "prova@gmail.com", "prova@icloud.com", "prova@unisa.it", "09 Giugno", "via Prova", "unisa.it"));
-        rubrica.aggiungiContatto(new ContattoEsteso("Antonio", "Pale","+3933333333","+3933333333", "+3933333333", "prova@gmail.com", "prova@icloud.com", "prova@unisa.it", "09 Giugno", "via Prova", "unisa.it"));
+        rubrica.aggiungiContatto(new ContattoEsteso("Emanuele", "Tocci","+3933333333","+3933333333", "+3933333333", "prova@gmail.com", "prova@icloud.com", "prova@unisa.it", LocalDate.of(2020, 12, 12), "via Prova", "unisa.it"));
+        rubrica.aggiungiContatto(new ContattoEsteso("Claudia", "Montefusco","+3933333333","+3933333333", "+3933333333", "prova@gmail.com", "prova@icloud.com", "prova@unisa.it", LocalDate.of(2020, 12, 12), "via Prova", "unisa.it"));
+        rubrica.aggiungiContatto(new ContattoEsteso("Alessio", "Leo","+3933333333","+3933333333", "+3933333333", "prova@gmail.com", "prova@icloud.com", "prova@unisa.it", LocalDate.of(2020, 12, 12), "via Prova", "unisa.it"));
+        rubrica.aggiungiContatto(new ContattoEsteso("Rossella", "Pale","+3933333333","+3933333333", "+3933333333", "prova@gmail.com", "prova@icloud.com", "prova@unisa.it", LocalDate.of(2020, 12, 12), "via Prova", "unisa.it"));
+        rubrica.aggiungiContatto(new ContattoEsteso("Antonio", "Pale","+3933333333","+3933333333", "+3933333333", "prova@gmail.com", "prova@icloud.com", "prova@unisa.it", LocalDate.of(2020, 12, 12), "via Prova", "unisa.it"));
 
         // Inserire qui funzione Import/autoImport e rimuovere le aggiunte manuali dei contatti presenti sopra
 
@@ -253,7 +254,7 @@ public class RubricaController implements Initializable{
         telefono2Field.setText(contatto.getTelefono2());
         telefono3Field.setText(contatto.getTelefono3());
         indirizzoField.setText(contatto.getIndirizzoResidenza());
-        compleannoField.setText(contatto.getCompleanno());
+        compleannoField.setValue(contatto.getCompleanno()); //setText(contatto.getCompleanno());
 
 }
      /**
@@ -261,17 +262,17 @@ public class RubricaController implements Initializable{
      * @param isEditable Se true, i campi di testo sono resi editabili; se false, sono resi non editabili.
      */   
 private void setEditableAll(boolean isEditable) {
-    nomeField.setEditable(isEditable);
-    cognomeField.setEditable(isEditable);
-    email1Field.setEditable(isEditable);
-    email2Field.setEditable(isEditable);
-    email3Field.setEditable(isEditable);
-    telefono1Field.setEditable(isEditable);
-    telefono2Field.setEditable(isEditable);
-    telefono3Field.setEditable(isEditable);
-    indirizzoField.setEditable(isEditable);
-    compleannoField.setEditable(isEditable);
-    noteField.setEditable(isEditable);
+        nomeField.setEditable(isEditable);
+        cognomeField.setEditable(isEditable);
+        email1Field.setEditable(isEditable);
+        email2Field.setEditable(isEditable);
+        email3Field.setEditable(isEditable);
+        telefono1Field.setEditable(isEditable);
+        telefono2Field.setEditable(isEditable);
+        telefono3Field.setEditable(isEditable);
+        indirizzoField.setEditable(isEditable);
+        compleannoField.setEditable(isEditable);
+        noteField.setEditable(isEditable);
 }
     /**
      * @brief Elimina un contatto selezionato dalla rubrica.
@@ -300,9 +301,8 @@ private void setEditableAll(boolean isEditable) {
             if (contattoSelezionato != null) {
             setEditableAll(true);
             //pulsanteCrea.setDisable(false);
-            
             pulsanteSalva.setDisable(false);//AGGIUNGI PULSANTE SALVA
-                   
+
         }
             
     }
@@ -341,23 +341,23 @@ private void setEditableAll(boolean isEditable) {
      */
         @FXML
     private void GestioneSalvaModifiche(ActionEvent e){
-      // Aggiorna i dati del contatto selezionato
-        contattoSelezionato.setNome(nomeField.getText());
-        contattoSelezionato.setCognome(cognomeField.getText());
-        contattoSelezionato.setEmail1(email1Field.getText());
-        contattoSelezionato.setEmail2(email2Field.getText());
-        contattoSelezionato.setTelefono3(telefono1Field.getText());
-        contattoSelezionato.setTelefono1(telefono2Field.getText());
-        contattoSelezionato.setTelefono2(telefono2Field.getText());
-        contattoSelezionato.setCompleanno(compleannoField.getText());
-        contattoSelezionato.setIndirizzoResidenza(indirizzoField.getText());
-        //contattoSelezionato.setSitoWeb(socialField.getText());
-        //contattoSelezionato.setNote(noteField.getText());
-        rubrica.aggiornaContatto(contattoSelezionato);
-        // Aggiorna la TableView e disabilita i TextField
-        rubricaTable.refresh();
-        
-        pulsanteSalva.setDisable(true);
-        setEditableAll(false);
+            // Aggiorna i dati del contatto selezionato
+            contattoSelezionato.setNome(nomeField.getText());
+            contattoSelezionato.setCognome(cognomeField.getText());
+            contattoSelezionato.setEmail1(email1Field.getText());
+            contattoSelezionato.setEmail2(email2Field.getText());
+            contattoSelezionato.setTelefono3(telefono1Field.getText());
+            contattoSelezionato.setTelefono1(telefono2Field.getText());
+            contattoSelezionato.setTelefono2(telefono2Field.getText());
+            contattoSelezionato.setCompleanno(compleannoField.getValue());
+            contattoSelezionato.setIndirizzoResidenza(indirizzoField.getText());
+            //contattoSelezionato.setSitoWeb(socialField.getText());
+            //contattoSelezionato.setNote(noteField.getText());
+            rubrica.aggiornaContatto(contattoSelezionato);
+            // Aggiorna la TableView e disabilita i TextField
+            rubricaTable.refresh();
+
+            pulsanteSalva.setDisable(true);
+            setEditableAll(false);
     }
 }
