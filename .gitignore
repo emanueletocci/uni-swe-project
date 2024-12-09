@@ -25,6 +25,7 @@
 *.bak
 *.orig
 *.rej
+*.lst
 
 
 # File di configurazione OS specifici
