@@ -281,21 +281,22 @@ private void setEditableAll(boolean isEditable) {
     @FXML
     public void eliminaContatto(ActionEvent event) {
     ContattoEsteso c= rubricaTable.getSelectionModel().getSelectedItem();
-    if(c!=null){
-    rubrica.rimuoviContatto(c);
-// Rimuovi il contatto dalla lista osservabile
-    listaContatti.remove(c);;
-     // Aggiorna la TableView (opzionale, perché ObservableList lo fa automaticamente)
-    rubricaTable.refresh();
+        if(c!=null){
+        rubrica.rimuoviContatto(c);
+         // Rimuovi il contatto dalla lista osservabile
+        listaContatti.remove(c);;
+         // Aggiorna la TableView (opzionale, perché ObservableList lo fa automaticamente)
+        rubricaTable.refresh();
+        }
     }
-    }
+
     /**
      * @brief Abilita i campi di testo per la modifica di un contatto selezionato.
      * @param event L'evento generato dal click sul pulsante di modifica.
      */
     //quando clicco sul pulsante modifica devo far in modo che i campi
-//siano modificabili
-//e che il pulsante crea debba funzionare
+    //siano modificabili
+    //e che il pulsante crea debba funzionare
     @FXML
     public void modificaContatto(ActionEvent event) {
             if (contattoSelezionato != null) {
