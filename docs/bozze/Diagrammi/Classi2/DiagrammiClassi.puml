@@ -1,17 +1,27 @@
 @startuml
 package Rubrica {
+        class App {
+            - Scene scene
+            - Parent parent
+            + {static} main(String[] args)
+            + void start(Stage)
+        }
     package Controller{
-        class MainController{
-            MainController()
-        }
         class RubricaController{
-            RubricaController()
+            - ObservableList<ContattoEsteso> listaContatti 
+            - Rubrica rubrica
+            + initialize(URL url, ResourceBundle rb)
+            + creaContatto(ActionEvent event)
+            + eliminaContatto()
+            + modificaContatto()
+            + cercaContatto(ActionEvent event)
         }
-        class ModificaContattoController{
-            ModificaContattoController()
+        class CreaContattoController{
+            - ObservableList<ContattoEsteso> listaContatti 
+            + creaContattoController()
+            + public void Crea(ActionEvent)
+            + void setListaContatti(List<> listaContatti )
         }
-        MainController <|-- RubricaController
-        MainController <|-- ModificaContattoController
     }
     package Model{
         class Rubrica{
@@ -29,10 +39,6 @@ package Rubrica {
         class RubricaEmergenze{
             - ObservableMap emergenze
             + RubricaEmergenze(rubrica,emergenze)
-        }
-        class MainApp {
-            + {static} main(String[] args)
-            + start(Stage)
         }
 
         class Contatto{
