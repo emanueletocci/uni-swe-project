@@ -1,8 +1,6 @@
 package it.unisa.diem.swe.group07.rubrica.controllers;
 
-import java.io.IOException;
 import java.net.URL;
-import java.time.LocalDate;
 import java.util.ResourceBundle;
 
 import it.unisa.diem.swe.group07.rubrica.models.Contatto;
@@ -10,21 +8,12 @@ import javafx.scene.control.*;
 import it.unisa.diem.swe.group07.rubrica.models.ContattoEsteso;
 import it.unisa.diem.swe.group07.rubrica.models.Rubrica;
 import javafx.event.ActionEvent;
-import javafx.fxml.FXMLLoader;
-import javafx.scene.Node;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.collections.transformation.FilteredList;
-import javafx.beans.property.SimpleStringProperty;
-import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.image.ImageView;
-import javafx.scene.input.MouseEvent;
-import javafx.stage.Modality;
-import javafx.stage.Stage;
 
 /**
  * @file MainController.java
@@ -172,14 +161,6 @@ public class RubricaController implements Initializable{
      * @brief Lista Filtrata di contatti per la ricerca
      */
     private FilteredList<ContattoEsteso> filteredContatti;
-    /**
-     * @brief Lista Filtrata di contatti per la sotto-rubrica:preferiti
-     */
-    private FilteredList<ContattoEsteso> contattiFiltratiPreferiti;
-    /**
-     * @brief Lista Filtrata di contatti per la otto-rubrica:contatti d'emergenza
-     */
-    private FilteredList<ContattoEsteso> contattiFiltratiEmergenza;
     
     /**
      * @brief Metodo di inizializzazione della vista e dei dati.
@@ -203,7 +184,6 @@ public class RubricaController implements Initializable{
         nomeClm.setCellValueFactory(s -> { return new SimpleStringProperty(s.getValue().getNome());  });
         cognomeClm.setCellValueFactory(s -> { return new SimpleStringProperty(s.getValue().getCognome());  });
         rubricaTable.setItems(listaContatti);
-        
 
         // Listener per la selezione di un contatto
         rubricaTable.getSelectionModel().selectedItemProperty().addListener((observable, oldValue, newValue) -> {
@@ -366,6 +346,7 @@ private void setEditableAll(boolean isEditable) {
             rubrica.aggiornaContatto(contattoSelezionato);
             // Aggiorna la TableView e disabilita i TextField
             rubricaTable.refresh();
+
             pulsanteSalva.setDisable(true);
             setEditableAll(false);
     }
@@ -394,4 +375,41 @@ private void setEditableAll(boolean isEditable) {
         ContattoEsteso c = rubricaTable.getSelectionModel().getSelectedItem();
         c.setEmergenza(true);
     }
+     /**
+     * @brief metodo che crea una stringa vCard e la scriva su un file con estensione .vcf
+     * @param e evento generato dal bottone
+     */
+    @FXML
+    private void exportVCF(ActionEvent event) {
+       FileChooser fs = new FileChooser();
+       fs.setTitle("Export della Rubrica in formato .vcf");
+       fs.getExtensionFilters().add(new FileChooser.ExtensionFilter("vCard Files", ".vcf"));
+
+       File file = fs.showSaveDialog(null);
+       try(FileWriter fw = new FileWriter(file) ) {
+           for(ContattoEsteso contatto : rubrica.getContatti()) {
+               fw.write();
+
+           }
+
+       }catch(IOException e) {
+           mostraMessaggioErrore("errore di esportazione");
+       }
+    }
+    /**
+     * @brief metodo che formatta un contatto esteso in formato vCard.
+     * @param c contattoEsteso da formattare in Vcard
+     * @return una Stringa rappresentante il contatto in formato vCard
+     */
+    private String formattaContatto(ContattoEsteso c) {
+        StringBuilder vcfb = new StringBuilder();
+            vcfb.append("BEGIN:VCARD\n");
+            vcfb.append("VERSION:3.0\n");
+        vcfb.append(c.getNome()).append(c.getCognome()).append("/n");
+        if (contatto.getTelefono1() != null) vcfb.append(contatto.getTelefono1()).append("\n");
+        if (contatto.getTelefono2() != null) vcfb.append(contatto.getTelefono2()).append("\n");
+        if (contatto.getTelefono3() != null) vcfb.append(contatto.getTelefono3()).append("\n");
+        if (contatto.getEmail1() != null) vcfb.append(contatto.getEmail1()).append("\n");
+        return vcfb.toString();
+      }
 }
