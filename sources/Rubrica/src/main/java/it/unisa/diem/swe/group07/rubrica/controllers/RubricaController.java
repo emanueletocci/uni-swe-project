@@ -210,11 +210,10 @@ public class RubricaController extends AbstractController implements Initializab
 
         // La lista osservabile é inizializzata a partire dagli elementi presenti nella rubrica
         this.getListaContatti().addAll(this.getRubrica().getContatti());
-        
+
         nomeClm.setCellValueFactory(s -> { return new SimpleStringProperty(s.getValue().getNome());  });
         cognomeClm.setCellValueFactory(s -> { return new SimpleStringProperty(s.getValue().getCognome());  });
         rubricaTable.setItems(this.getListaContatti());
-
 
         // Listener per la selezione di un contatto
         rubricaTable.getSelectionModel().selectedItemProperty().addListener((observable, oldValue, newValue) -> {
@@ -257,7 +256,7 @@ public class RubricaController extends AbstractController implements Initializab
             // Mostra la finestra e attende
             nuovoStage.showAndWait();
             // Aggiorna tableView con i nuovi dati
-            rubricaTable.setItems(FXCollections.observableArrayList(this.getListaContatti()));
+            rubricaTable.setItems(this.getListaContatti());
         } catch (Exception e) {
             e.printStackTrace();
         }
