@@ -1,24 +1,30 @@
-@startuml Aggiunta contatto
+@startuml
 title Aggiungi Contatto
 autonumber
 actor Utente
 participant RubricaView
 participant RubricaController
-participant ModificaContattoView
-participant ModificaContattoController
-participant Rubrica
+participant CreazioneContattoView
+participant CreaContattoController
+collections Rubrica
 
-Utente -> RubricaView : [click "Nuovo Contatto"]
-Utente->ModificaContattoView: [inserisce informazioni sul contatto]
-ModificaContattoView -> ModificaContattoController : [invia informazioni sul contatto]
-ModificaContattoController -> Rubrica : aggiungiContatto()
+activate Utente
+Utente->CreaContattoController: [inserisci informazioni]
+Utente->CreaContattoController: [clicca "Crea Contatto"]
+activate CreaContattoController
+CreazioneContattoView-> CreaContattoController : [invia informazioni sul contatto]
+CreaContattoController-> CreaContattoController:  validaCampiObbligatori()
 alt [vincoli soddisfatti]
-RubricaController->Rubrica: [richiesta di aggiunta]
-Rubrica->Rubrica: add()
-Rubrica-->RubricaView: [aggiorna rubrica]
-RubricaView-->Utente: [mostra lista aggiornata]
-else [vincoli non soddisfatti]
-RubricaController-->RubricaView: throw new VincoliException()
+CreaContattoController-> Rubrica : handleAggiungiContatto()
+activate Rubrica
+else [vincoli non soddisfatti] 
+CreaContattoController-->RubricaView: mostraMessaggioErrore()
+activate RubricaView
+deactivate CreaContattoController
+deactivate Rubrica
 RubricaView-->Utente: [errore]
 end
+deactivate RubricaView
+deactivate Utente
+
 @enduml
