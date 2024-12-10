@@ -122,7 +122,7 @@ public class CreaContattoController extends AbstractController implements Initia
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         immagine.setImage(null);
-        fileChooser.setInitialDirectory(new File("C:\\Users\\hp\\Desktop\\"));
+        fileChooser.setInitialDirectory(new File("C:\\Users\\hp\\Desktop\\")); //aggiustare path
     }
 
     /**

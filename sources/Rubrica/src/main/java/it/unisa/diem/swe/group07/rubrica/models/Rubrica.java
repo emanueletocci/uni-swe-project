@@ -82,4 +82,22 @@ public class Rubrica {
         return "\nRubrica\n" + rubrica.values();
     }
 
+    public String getVcard(ContattoEsteso c){
+        StringBuffer sb=new StringBuffer();
+        sb.append("VERSION:3.0");
+        sb.append("\n");
+        sb.append("FN:");
+        sb.append(c.getNome()+" "+c.getCognome());
+        sb.append("\n");
+        sb.append("BDAY:");
+        sb.append(c.getCompleanno());
+        sb.append("\n");
+        sb.append("GENDER:");
+        sb.append("\n");
+        sb.append("EMAIL;TYPE=work:");
+        sb.append(c.getEmail1());
+        sb.append("\n");
+        return sb.toString();
+    }
+
 }
