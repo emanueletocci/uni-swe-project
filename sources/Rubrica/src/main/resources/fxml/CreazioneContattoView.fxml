@@ -10,10 +10,16 @@
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="590.0" prefWidth="387.0" style="-fx-background-color: #002442;" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="it.unisa.diem.swe.group07.rubrica.controllers.CreaContattoController">
+<AnchorPane minHeight="-Infinity" minWidth="-Infinity" prefHeight="590.0" prefWidth="387.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="it.unisa.diem.swe.group07.rubrica.controllers.CreaContattoController">
     <children>
         <VBox alignment="CENTER" layoutY="114.0" prefHeight="409.0" prefWidth="387.0" spacing="5.0" AnchorPane.bottomAnchor="67.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="114.0">
             <children>
+                <ImageView fx:id="immagine" fitHeight="79.0" fitWidth="92.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../img/avatarIcon.jpg" />
+               </image>
+            </ImageView>
+                <Button fx:id="bottone_imm" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#handleAggiungiImmagine" text="Aggiungi Foto" />
             <HBox alignment="TOP_CENTER" prefHeight="26.0" prefWidth="414.0">
                <children>
                   <TextField fx:id="nome" prefHeight="26.0" prefWidth="260.0" promptText="Nome">
@@ -128,13 +134,8 @@
                   </TextField>
                </children>
             </HBox>
+                <Button fx:id="bottone_creazione" alignment="CENTER" mnemonicParsing="false" onAction="#handleAggiungiContatto" text="Crea Contatto" textFill="WHITE" />
             </children>
         </VBox>
-          <Button fx:id="bottone_creazione" alignment="CENTER" layoutX="143.0" layoutY="529.0" mnemonicParsing="false" onAction="#handleAggiungiContatto" style="-fx-border-radius: 25px; -fx-background-radius: 25px; -fx-font-weight: bold; -fx-background-color: black; -fx-border-color: white; -fx-border-width: 3px;" text="Crea Contatto" textFill="WHITE" AnchorPane.topAnchor="539.0" />
-          <ImageView fx:id="immagine" fitHeight="79.0" fitWidth="92.0" layoutX="155.0" layoutY="18.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@../img/avatarIcon.jpg" />
-         </image></ImageView>
-          <Button fx:id="bottone_imm" alignment="CENTER" contentDisplay="CENTER" layoutX="272.0" layoutY="54.0" mnemonicParsing="false" onAction="#handleAggiungiImmagine" text="Aggiungi Foto" />
     </children>
 </AnchorPane>

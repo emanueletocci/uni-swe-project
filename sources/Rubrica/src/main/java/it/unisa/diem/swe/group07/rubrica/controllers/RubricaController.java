@@ -50,47 +50,47 @@ public class RubricaController extends AbstractController implements Initializab
      */
     @FXML // fx:id="cognomeField"
     private TextField cognomeField; // Value injected by FXMLLoader
-        /**
+    /**
      * @brief Text Field per il telefono del contatto nella Rubrica
      */
     @FXML // fx:id="telefono1Field"
     private TextField telefono1Field; // Value injected by FXMLLoader
-        /**
+    /**
      * @brief Text Field per il telefono2 del contatto nella Rubrica
      */
     @FXML // fx:id="telefono2Field"
     private TextField telefono2Field; // Value injected by FXMLLoader
-        /**
+    /**
      * @brief Text Field per il telefono3 del contatto nella Rubrica
      */
     @FXML // fx:id="telefono3Field"
     private TextField telefono3Field; // Value injected by FXMLLoader
-        /**
+    /**
      * @brief Text Field per l'email del contatto nella Rubrica
      */
     @FXML // fx:id="email1Field"
     private TextField email1Field; // Value injected by FXMLLoader
-        /**
+    /**
      * @brief Text Field per l'email2 del contatto nella Rubrica
      */
     @FXML // fx:id="email2Field"
     private TextField email2Field; // Value injected by FXMLLoader
-        /**
+    /**
      * @brief Text Field per l'email3 del contatto nella Rubrica
      */
     @FXML // fx:id="email3Field"
     private TextField email3Field; // Value injected by FXMLLoader
-        /**
+    /**
      * @brief Text Field per il compleanno del contatto nella Rubrica
      */
     @FXML // fx:id="compleannoField"
     private DatePicker compleannoField; // Value injected by FXMLLoader
-        /**
+    /**
      * @brief Text Field per l'indirizzo del contatto nella Rubrica
      */
     @FXML // fx:id="indirizzoField"
     private TextField indirizzoField; // Value injected by FXMLLoader
-        /**
+    /**
      * @brief Text Field per le note nella Rubrica
      */
     @FXML // fx:id="noteField"
@@ -169,26 +169,53 @@ public class RubricaController extends AbstractController implements Initializab
      */
     @FXML // fx:id="rubricaTable"
     private TableView<ContattoEsteso> rubricaTable; // Value injected by FXMLLoader
-    
+    /**
+     * @brief SplitPane
+     */
+    @FXML
+    private SplitPane splitPane;
+
+    /**
+     * @brief pulsante preferiti
+     */
     @FXML
     private Button preferitiFlag;
+
+    /**
+     * @brief pulsante emergenze
+     */
     @FXML
     private Button emergenzaFlag;
 
-        @FXML
+    /**
+     * @brief pulsante cancellazione contatto
+     */
+    @FXML
     private MenuItem del;
 
+    /**
+     * @brief pulsante che consente di mostrare la rubrica "Emergenze"
+     */
     @FXML
     private MenuItem showEmergenza;
 
+    /**
+     * @brief pulsante per mostrare la rubrica
+     */
     @FXML
     private MenuItem showRubrica;
 
+    /**
+     * @brief pulsante per modificare un contatto
+     */
     @FXML
     private MenuItem editBtn;
-     @FXML
-    private MenuItem helpBtn;
 
+    /**
+     * @brief pulsante di aiuto
+     */
+    @FXML
+    private MenuItem helpBtn;
 
     // Attributi
     /**
@@ -225,9 +252,15 @@ public class RubricaController extends AbstractController implements Initializab
 
         // La lista osservabile é inizializzata a partire dagli elementi presenti nella rubrica
         this.getListaContatti().addAll(this.getRubrica().getContatti());
+
+        // TEST - eliminare in seguito
         System.out.println("\n"+ getClass() + " - initialize ***\n");
         System.out.println("\n****RUBRICA***\n" + this.getRubrica().toString());
         System.out.println("\n***LISTA CONTATTI***\n" + this.getListaContatti().toString());
+        // FINE TEST - eliminare in seguito
+
+        nomeClm.setResizable(false);
+        cognomeClm.setResizable(false);
 
         nomeClm.setCellValueFactory(s -> { return new SimpleStringProperty(s.getValue().getNome());  });
         cognomeClm.setCellValueFactory(s -> { return new SimpleStringProperty(s.getValue().getCognome());  });
@@ -267,11 +300,13 @@ public class RubricaController extends AbstractController implements Initializab
             CreaContattoController controllerCreazione = loader.getController();
             controllerCreazione.setListaContatti(this.getListaContatti());
             controllerCreazione.setRubrica(this.getRubrica());
+
             // Solite robe per lo stage/scene
             Stage nuovoStage = new Stage();
             nuovoStage.setScene(new Scene(root));
-            nuovoStage.setTitle("Crea Nuovo Contatto");
+            nuovoStage.setTitle("Nuovo Contatto");
             nuovoStage.initModality(Modality.APPLICATION_MODAL);
+            nuovoStage.setResizable(false);
             // Mostra la finestra e attende
             nuovoStage.showAndWait();
             // Aggiorna tableView con i nuovi dati

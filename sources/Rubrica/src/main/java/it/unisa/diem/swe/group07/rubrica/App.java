@@ -21,14 +21,16 @@ public class App extends Application {
 
     @Override
     public void start(Stage stage) throws Exception {
-            root = FXMLLoader.load ( getClass ().getResource ( "/fxml/RubricaView.fxml" ) );
-            scene = new Scene ( root );
-            // Imposta la scena sullo stage
-            stage.setScene ( scene );
-            // Opzionalmente, imposta un titolo per la finestra
-            stage.setTitle ( "Rubrica Telefonica" );
-            // Mostra lo stage
-            stage.show ();
+        root = FXMLLoader.load ( getClass ().getResource ( "/fxml/RubricaView.fxml" ) );
+        scene = new Scene ( root );
+        // Imposta la scena sullo stage
+        stage.setScene ( scene );
+        // Opzionalmente, imposta un titolo per la finestra
+        stage.setTitle ( "Rubrica Telefonica" );
+        // Disabilita il ridimensionamento dello stage
+        stage.setResizable( false );
+        // Mostra lo stage
+        stage.show ();
     }
 
     public static void main(String[] args) {
