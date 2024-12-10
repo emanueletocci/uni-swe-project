@@ -174,6 +174,21 @@ public class RubricaController extends AbstractController implements Initializab
     private Button preferitiFlag;
     @FXML
     private Button emergenzaFlag;
+    
+        @FXML
+    private MenuItem del;
+        
+    @FXML
+    private MenuItem showEmergenza;
+
+    @FXML
+    private MenuItem showRubrica;
+
+    @FXML
+    private MenuItem editBtn;
+     @FXML
+    private MenuItem helpBtn;
+     
 
     // Attributi
         /**
