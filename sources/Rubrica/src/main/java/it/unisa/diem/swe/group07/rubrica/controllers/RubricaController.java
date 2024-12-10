@@ -1,6 +1,7 @@
 package it.unisa.diem.swe.group07.rubrica.controllers;
 
 import java.awt.*;
+import java.net.URI;
 import java.net.URL;
 import java.time.LocalDate;
 import java.util.ResourceBundle;
@@ -8,12 +9,15 @@ import java.util.ResourceBundle;
 import javafx.beans.binding.Bindings;
 import javafx.scene.control.*;
 import it.unisa.diem.swe.group07.rubrica.models.ContattoEsteso;
+import it.unisa.diem.swe.group07.rubrica.models.Rubrica;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.collections.transformation.FilteredList;
 import javafx.beans.property.SimpleStringProperty;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
@@ -170,6 +174,21 @@ public class RubricaController extends AbstractController implements Initializab
     private Button preferitiFlag;
     @FXML
     private Button emergenzaFlag;
+
+        @FXML
+    private MenuItem del;
+
+    @FXML
+    private MenuItem showEmergenza;
+
+    @FXML
+    private MenuItem showRubrica;
+
+    @FXML
+    private MenuItem editBtn;
+     @FXML
+    private MenuItem helpBtn;
+
 
     // Attributi
     /**
@@ -332,6 +351,7 @@ private void setEditableAll(boolean isEditable) {
         indirizzoField.setEditable(isEditable);
         compleannoField.setEditable(isEditable);
         noteField.setEditable(isEditable);
+        
 }
     /**
      * @brief Elimina un contatto selezionato dalla rubrica.
@@ -439,7 +459,7 @@ private void setEditableAll(boolean isEditable) {
     private void toggleEmergenza(){
         ContattoEsteso c = rubricaTable.getSelectionModel().getSelectedItem();
         if (c != null) {
-            c.setPreferito(!c.getPreferito());
+            c.setEmergenza(!c.getEmergenza());
             contattiFiltratiEmergenza.setPredicate(contatto -> contatto.getEmergenza());
             rubricaTable.refresh();
         }
