@@ -31,17 +31,7 @@ import java.util.List;
 
 public class CreaContattoController extends AbstractController implements Initializable{
     //LE TOGLIEREMO DOPO DALLA VIEW questi id box che non servono
-    @FXML
-    private HBox HBox1;
 
-    @FXML
-    private HBox HBox11;
-
-    @FXML
-    private HBox HBox111;
-
-    @FXML
-    private HBox HBox12;
 
     /**
      * @brief bottone per aggiungere l'email
