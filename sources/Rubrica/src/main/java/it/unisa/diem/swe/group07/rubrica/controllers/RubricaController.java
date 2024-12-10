@@ -37,7 +37,7 @@ import javafx.stage.Stage;
  * @version 1.0
  */
 
-public class RubricaController implements Initializable{
+public class RubricaController extends AbstractController implements Initializable{
 
     // TextFields
      /**
@@ -181,10 +181,6 @@ public class RubricaController implements Initializable{
      */
     private ObservableList<ContattoEsteso> listaContatti;
         /**
-     * @brief oggetto Rubrica
-     */
-    private Rubrica rubrica;
-        /**
      * @brief Contatto selelzionato nella Table View
      */
     private ContattoEsteso contattoSelezionato;
@@ -209,16 +205,15 @@ public class RubricaController implements Initializable{
      */
     @Override
     public void initialize(URL url, ResourceBundle rb){
-        rubrica = new Rubrica();
-        rubrica.aggiungiContatto(new ContattoEsteso("Emanuele", "Tocci","+3933333333","+3933333333", "+3933333333", "prova@gmail.com", "prova@icloud.com", "prova@unisa.it", LocalDate.of(2020, 12, 12), "via Prova", "unisa.it", "informazioni aggiuntive" , false, false));
-        rubrica.aggiungiContatto(new ContattoEsteso("Claudia", "Montefusco","+3933333333","+3933333333", "+3933333333", "prova@gmail.com", "prova@icloud.com", "prova@unisa.it", LocalDate.of(2020, 12, 12), "via Prova", "unisa.it", "informazioni aggiuntive", false, false));
-        rubrica.aggiungiContatto(new ContattoEsteso("Alessio", "Leo","+3933333333","+3933333333", "+3933333333", "prova@gmail.com", "prova@icloud.com", "prova@unisa.it", LocalDate.of(2020, 12, 12), "via Prova", "unisa.it", "informazioni aggiuntive", false, false));
-        rubrica.aggiungiContatto(new ContattoEsteso("Rossella", "Pale","+3933333333","+3933333333", "+3933333333", "prova@gmail.com", "prova@icloud.com", "prova@unisa.it", LocalDate.of(2020, 12, 12), "via Prova", "unisa.it", "informazioni aggiuntive", true, false));
+        this.getRubrica().aggiungiContatto(new ContattoEsteso("Emanuele", "Tocci","+3933333333","+3933333333", "+3933333333", "prova@gmail.com", "prova@icloud.com", "prova@unisa.it", LocalDate.of(2020, 12, 12), "via Prova", "unisa.it", "informazioni aggiuntive" , false, false));
+        this.getRubrica().aggiungiContatto(new ContattoEsteso("Claudia", "Montefusco","+3933333333","+3933333333", "+3933333333", "prova@gmail.com", "prova@icloud.com", "prova@unisa.it", LocalDate.of(2020, 12, 12), "via Prova", "unisa.it", "informazioni aggiuntive", false, false));
+        this.getRubrica().aggiungiContatto(new ContattoEsteso("Alessio", "Leo","+3933333333","+3933333333", "+3933333333", "prova@gmail.com", "prova@icloud.com", "prova@unisa.it", LocalDate.of(2020, 12, 12), "via Prova", "unisa.it", "informazioni aggiuntive", false, false));
+        this.getRubrica().aggiungiContatto(new ContattoEsteso("Rossella", "Pale","+3933333333","+3933333333", "+3933333333", "prova@gmail.com", "prova@icloud.com", "prova@unisa.it", LocalDate.of(2020, 12, 12), "via Prova", "unisa.it", "informazioni aggiuntive", true, false));
 
         // Inserire qui funzione Import/autoImport e rimuovere le aggiunte manuali dei contatti presenti sopra
 
         // La lista osservabile é inizializzata a partire dagli elementi presenti nella rubrica
-        listaContatti = FXCollections.observableArrayList(rubrica.getContatti());
+        listaContatti = FXCollections.observableArrayList(this.getRubrica().getContatti());
 
         nomeClm.setCellValueFactory(s -> { return new SimpleStringProperty(s.getValue().getNome());  });
         cognomeClm.setCellValueFactory(s -> { return new SimpleStringProperty(s.getValue().getCognome());  });
@@ -392,7 +387,7 @@ private void setEditableAll(boolean isEditable) {
             contattoSelezionato.setNote(noteField.getText());
             //contattoSelezionato.setSitoWeb(socialField.getText());
             contattoSelezionato.setNote(noteField.getText());
-            rubrica.aggiornaContatto(contattoSelezionato); //non posso parlo con la lista osservabile?
+            this.getRubrica().aggiornaContatto(contattoSelezionato); //non posso parlo con la lista osservabile?
             // Aggiorna la TableView e disabilita i TextField
             rubricaTable.refresh();
             pulsanteSalva.setDisable(true);

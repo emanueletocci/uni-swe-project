@@ -30,9 +30,6 @@ import java.util.List;
 
 
 public class CreaContattoController extends AbstractController implements Initializable{
-    //LE TOGLIEREMO DOPO DALLA VIEW questi id box che non servono
-
-
     /**
      * @brief bottone per aggiungere l'email
      */
@@ -119,13 +116,10 @@ public class CreaContattoController extends AbstractController implements Initia
      */
     @FXML
     private TextField note;
-
     /**
-     * @brief struttura per gestire una Lista di Contatti
+     * @brief fileChooser
      */
-    private List<ContattoEsteso> listaContatti; // Riferimento alla rubrica condivisa
     private FileChooser fileChooser = new FileChooser();
-
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
@@ -177,7 +171,7 @@ public class CreaContattoController extends AbstractController implements Initia
         // Crea il nuovo contatto
         ContattoEsteso temp = new ContattoEsteso(nomeText, cognomeText, telefonoText, telefono2Text, telefono3Text, emailText, email2Text, email3Text, compleannoText, indirizzoText, sitoWebText, noteText, false, false);
         // Aggiungi il contatto alla lista
-        listaContatti.add(temp);
+        this.getListaContatti().add(temp);
         // Chiudi la finestra
         Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         stage.close();
@@ -191,13 +185,6 @@ public class CreaContattoController extends AbstractController implements Initia
         alert.setTitle(titolo);
         alert.setContentText(messaggio);
         alert.showAndWait();
-    }
-
-    /**
-     * @brief metodo setter per listaContatti
-     */
-    public void setListaContatti(List<ContattoEsteso> listaContatti) {
-        this.listaContatti = listaContatti;
     }
 
     /**

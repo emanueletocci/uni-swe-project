@@ -19,6 +19,7 @@ public class Rubrica {
         this.rubrica = new HashMap<UUID, ContattoEsteso>();
     }
 
+
     /**
      * @brief metodo per l'aggiunta di un contatto alla rubrica
      * @param c: il contatto da aggiungere
