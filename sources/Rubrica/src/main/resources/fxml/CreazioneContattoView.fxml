@@ -13,7 +13,7 @@
     <children>
         <VBox alignment="CENTER" layoutY="114.0" prefHeight="409.0" prefWidth="387.0" spacing="5.0" AnchorPane.bottomAnchor="67.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="114.0">
             <children>
-            <HBox fx:id="HBox121" alignment="TOP_CENTER" prefHeight="26.0" prefWidth="414.0">
+            <HBox alignment="TOP_CENTER" prefHeight="26.0" prefWidth="414.0">
                <children>
                   <TextField fx:id="nome" prefHeight="26.0" prefWidth="260.0" promptText="Nome">
                      <HBox.margin>
@@ -22,7 +22,7 @@
                   </TextField>
                </children>
             </HBox>
-            <HBox fx:id="HBox12" alignment="TOP_CENTER" prefWidth="460.0">
+            <HBox alignment="TOP_CENTER" prefWidth="460.0">
                <children>
                   <TextField fx:id="cognome" prefHeight="26.0" prefWidth="260.0" promptText="Cognome">
                      <HBox.margin>
@@ -31,7 +31,7 @@
                   </TextField>
                </children>
             </HBox>
-                <HBox fx:id="HBox1" alignment="TOP_CENTER" prefWidth="460.0">
+                <HBox alignment="TOP_CENTER" prefWidth="460.0">
                     <children>
                         <TextField fx:id="telefono" prefHeight="26.0" prefWidth="260.0" promptText="Telefono 1">
                             <HBox.margin>
@@ -43,7 +43,7 @@
                         <Insets />
                     </VBox.margin>
                 </HBox>
-            <HBox fx:id="HBox11" alignment="TOP_CENTER" prefWidth="460.0">
+            <HBox alignment="TOP_CENTER" prefWidth="460.0">
                <children>
                   <TextField fx:id="telefono2" prefHeight="26.0" prefWidth="260.0" promptText="Telefono 2">
                      <HBox.margin>
@@ -52,7 +52,7 @@
                   </TextField>
                </children>
             </HBox>
-            <HBox fx:id="HBox111" alignment="TOP_CENTER" prefWidth="460.0">
+            <HBox alignment="TOP_CENTER" prefWidth="460.0">
                <children>
                   <TextField fx:id="telefono3" prefHeight="26.0" prefWidth="260.0" promptText="Telefono 3">
                      <HBox.margin>
@@ -61,7 +61,7 @@
                   </TextField>
                </children>
             </HBox>
-                <HBox fx:id="HBox2" alignment="TOP_CENTER" prefWidth="460.0">
+                <HBox alignment="TOP_CENTER" prefWidth="460.0">
                     <children>
                         <TextField fx:id="email" prefWidth="260.0" promptText="Email 1">
                             <HBox.margin>
@@ -73,7 +73,7 @@
                         <Insets />
                     </VBox.margin>
                 </HBox>
-            <HBox fx:id="HBox21" alignment="TOP_CENTER" prefWidth="460.0">
+            <HBox alignment="TOP_CENTER" prefWidth="460.0">
                <children>
                   <TextField fx:id="email2" prefWidth="260.0" promptText="Email 2">
                      <HBox.margin>
@@ -82,7 +82,7 @@
                   </TextField>
                </children>
             </HBox>
-            <HBox fx:id="HBox22" alignment="CENTER" prefWidth="460.0">
+            <HBox alignment="CENTER" prefWidth="460.0">
                <children>
                   <TextField fx:id="email3" prefWidth="260.0" promptText="Email 3">
                      <HBox.margin>
@@ -91,7 +91,7 @@
                   </TextField>
                </children>
             </HBox>
-            <HBox fx:id="HBox221" alignment="CENTER" prefWidth="460.0">
+            <HBox alignment="CENTER" prefWidth="460.0">
                <children>
                   <DatePicker fx:id="compleanno" prefHeight="25.0" prefWidth="259.0" promptText="AA/MM/GG">
                      <HBox.margin>
@@ -100,7 +100,7 @@
                   </DatePicker>
                </children>
             </HBox>
-            <HBox fx:id="HBox2211" alignment="TOP_CENTER" prefWidth="460.0">
+            <HBox alignment="TOP_CENTER" prefWidth="460.0">
                <children>
                   <TextField fx:id="indirizzo" prefWidth="260.0" promptText="Indirizzo">
                      <HBox.margin>
@@ -109,7 +109,7 @@
                   </TextField>
                </children>
             </HBox>
-            <HBox fx:id="HBox22111" alignment="TOP_CENTER" prefWidth="460.0">
+            <HBox alignment="TOP_CENTER" prefWidth="460.0">
                <children>
                   <TextField fx:id="sitoWeb" prefWidth="260.0" promptText="Sito Web">
                      <HBox.margin>
@@ -118,7 +118,7 @@
                   </TextField>
                </children>
             </HBox>
-            <HBox fx:id="HBox22112" alignment="CENTER" prefWidth="460.0">
+            <HBox alignment="CENTER" prefWidth="460.0">
                <children>
                   <TextField fx:id="note" prefHeight="80.0" prefWidth="260.0" promptText="Note">
                      <HBox.margin>
