@@ -4,21 +4,22 @@ autonumber
 actor Utente
 participant RubricaView
 participant RubricaController
-participant Rubrica
+collections Rubrica
 activate Utente
 skinparam sequenceMessageAlign center
-Utente -> RubricaView:[seleziona contatto da modificare]
+Utente->RubricaView: [click su pulsanteModifica]
 activate RubricaView
-RubricaView --> Utente:[mostra campi da modificare]
-Utente -> RubricaView:[selezione pulsante modifica]
-RubricaView -> RubricaController:[modifica contatto]
+RubricaView->RubricaController: [OnActionEvent event generato da pulsanteModifica]
 activate RubricaController
-RubricaController -> Rubrica:[set attributi Contatto]
+RubricaController -> RubricaController:handleModificaContatto(OnActioneEvent event)
+activate RubricaController
+deactivate RubricaController
+RubricaController->Rubrica: aggiornaContatto()
 deactivate RubricaController
 activate Rubrica
-Rubrica --> RubricaView: [aggiorna vista contatto]
 deactivate Rubrica
-RubricaView --> Utente: [mostra esito]
-deactivate Utente
+RubricaView->Utente:[view aggiornata]
 deactivate RubricaView
+deactivate Utente
+
 @enduml
