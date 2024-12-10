@@ -288,16 +288,13 @@ public class RubricaController extends AbstractController implements Initializab
      * @brief Metodo per filtrare i contatti in base al nome o al cognome.
      * @param c Stringa di ricerca.
      */
+
     //metodo per la ricerca del contatto
      private void filtraContatti(String c) {
-        if (c == null || c.trim().isEmpty()) {
-            // Se la query è vuota, mostra tutti i contatti
-            filteredContatti.setPredicate(p -> true);
-        } else {
-            // Converti la query in minuscolo per rendere la ricerca case-insensitive
-            String lowerCaseQuery = c.toLowerCase();
+         if((c != null) || (c.trim().isEmpty())){
+            String lowerCaseQuery = c.toLowerCase(); // Converte la query in minuscolo per rendere la ricerca case-insensitive
 
-            // Filtra i contatti per nome o cognome
+             // Filtra i contatti per nome o cognome
             filteredContatti.setPredicate(contatto -> {
                 boolean matchesNome = contatto.getNome() != null && contatto.getNome().toLowerCase().contains(lowerCaseQuery);
                 boolean matchesCognome = contatto.getCognome() != null && contatto.getCognome().toLowerCase().contains(lowerCaseQuery);
@@ -305,6 +302,7 @@ public class RubricaController extends AbstractController implements Initializab
             });
         }
     }
+
      /**
      * @brief Metodo per mostrare i dettagli di un contatto selezionato nella rubrica.
      * @param contatto Il contatto selezionato da visualizzare.
