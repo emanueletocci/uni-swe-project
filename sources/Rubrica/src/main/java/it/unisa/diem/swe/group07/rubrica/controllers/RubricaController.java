@@ -351,6 +351,7 @@ private void setEditableAll(boolean isEditable) {
         indirizzoField.setEditable(isEditable);
         compleannoField.setEditable(isEditable);
         noteField.setEditable(isEditable);
+        compleannoField.setEditable(isEditable);
         
 }
     /**
