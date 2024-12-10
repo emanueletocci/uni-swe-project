@@ -129,8 +129,8 @@
             </HBox>
             </children>
         </VBox>
-          <Button fx:id="bottone_creazione" alignment="CENTER" layoutX="143.0" layoutY="529.0" mnemonicParsing="false" onAction="#aggiungiContatto" style="-fx-border-radius: 25px; -fx-background-radius: 25px; -fx-font-weight: bold; -fx-background-color: black; -fx-border-color: white; -fx-border-width: 3px;" text="Crea Contatto" textFill="WHITE" />
+          <Button fx:id="bottone_creazione" alignment="CENTER" layoutX="143.0" layoutY="529.0" mnemonicParsing="false" onAction="#handleAggiungiContatto" style="-fx-border-radius: 25px; -fx-background-radius: 25px; -fx-font-weight: bold; -fx-background-color: black; -fx-border-color: white; -fx-border-width: 3px;" text="Crea Contatto" textFill="WHITE" />
           <ImageView fx:id="immagine" fitHeight="79.0" fitWidth="92.0" layoutX="148.0" layoutY="27.0" pickOnBounds="true" preserveRatio="true" />
-          <Button fx:id="bottone_imm" alignment="CENTER" contentDisplay="CENTER" layoutX="272.0" layoutY="54.0" mnemonicParsing="false" onAction="#aggiungiImmagine" text="Aggiungi Foto" />
+          <Button fx:id="bottone_imm" alignment="CENTER" contentDisplay="CENTER" layoutX="272.0" layoutY="54.0" mnemonicParsing="false" onAction="#handleAggiungiImmagine" text="Aggiungi Foto" />
     </children>
 </AnchorPane>

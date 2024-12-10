@@ -62,6 +62,7 @@ public class ContattoEsteso extends Contatto {
         this.indirizzoResidenza = indirizzoResidenza;
         this.sitoWeb = website;
         this.note=note;
+        this.setId(generaId());
     }
 
     /**
@@ -220,6 +221,10 @@ public class ContattoEsteso extends Contatto {
      */
     @Override
     public int hashCode() {
-        return Objects.hash(super.hashCode(), email1, email2, email3, compleanno, indirizzoResidenza, sitoWeb);
+        return Objects.hash(super.hashCode(), compleanno);
+    }
+    private Integer generaId(){
+        String query = this.getNome() + this.getCognome() + compleanno;
+        return query.hashCode();
     }
 }

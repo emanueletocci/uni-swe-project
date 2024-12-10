@@ -13,7 +13,9 @@ public abstract class AbstractController {
     public Rubrica getRubrica() {
         return rubrica;
     }
-
+    public void setRubrica(Rubrica rubrica) {
+        this.rubrica = rubrica;
+    }
     public ObservableList<ContattoEsteso> getListaContatti() {
         return listaContatti;
     }

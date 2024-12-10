@@ -19,7 +19,7 @@ public class Contatto {
     /**
      * @brief identificativo univoco (key) del contatto
      */
-    private UUID id;
+    private Integer id;
 
     /**
      * @brief nome del contatto
@@ -60,7 +60,6 @@ public class Contatto {
      * @brief costruttore della classe Contatto
      */
     public Contatto(String nome, String cognome, String telefono1, String telefono2, String telefono3, Boolean preferito, Boolean emergenza) {
-        this.id = UUID.randomUUID();    //genera un id univoco (key) per l'oggetto istanziato
         this.nome = nome;
         this.cognome = cognome;
         this.telefono1 = telefono1;
@@ -74,14 +73,14 @@ public class Contatto {
      * @brief metodo getter per l'attributo "id"
      * @return attributo id
      */
-    public UUID getId(){
+    public Integer getId(){
         return id;
     }
 
     /**
      * @brief metodo setter per l'attributo "id"
      */
-    public void setId(){
+    public void setId(Integer id){
         this.id=id;
     }
 
@@ -230,7 +229,7 @@ public class Contatto {
      */
     @Override
     public int hashCode() {
-        return Objects.hash(id, nome, cognome, telefono1, telefono2, telefono3);
+        return Objects.hash(nome, cognome);
     }
 
     /**

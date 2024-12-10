@@ -13,7 +13,6 @@ import javafx.scene.control.Button;
 import javafx.scene.control.DatePicker;
 import javafx.scene.control.TextField;
 import javafx.scene.image.ImageView;
-import javafx.scene.layout.HBox;
 import javafx.event.ActionEvent;
 import javafx.stage.Stage;
 import javafx.scene.control.Alert;
@@ -24,9 +23,8 @@ import javafx.scene.image.Image;
 import java.io.File;
 import javafx.stage.FileChooser;
 import javafx.stage.FileChooser.ExtensionFilter;
-import javafx.stage.Stage;
+
 import java.time.LocalDate;
-import java.util.List;
 
 
 public class CreaContattoController extends AbstractController implements Initializable{
@@ -132,7 +130,7 @@ public class CreaContattoController extends AbstractController implements Initia
      * @param event evento generato dal click sul pulsante pulsanteImmagine
      */
     @FXML
-    void aggiungiImmagine(ActionEvent event) {
+    void handleAggiungiImmagine(ActionEvent event) {
         mostraMessaggioErrore("Oh no!", "Questa funzione non é stata ancora implementata!");
         fileChooser.setTitle("Scegli immagine di profilo:");
         fileChooser.getExtensionFilters().addAll(new ExtensionFilter("Image Files", "*.png", "*.jpg", "*.gif"));
@@ -147,7 +145,7 @@ public class CreaContattoController extends AbstractController implements Initia
      * @param event evento generato dal click sul pulsante Crea
      */
     @FXML
-    public void aggiungiContatto(ActionEvent event) {
+    public void handleAggiungiContatto(ActionEvent event) {
         // Verifico che i campi obbligatori siano stati sovrascritti
         if (!validaCampiObbligatori()) {
             mostraMessaggioErrore("Errore di validazione", "Devi inserire almeno un nome o un cognome.");
@@ -170,8 +168,19 @@ public class CreaContattoController extends AbstractController implements Initia
 
         // Crea il nuovo contatto
         ContattoEsteso temp = new ContattoEsteso(nomeText, cognomeText, telefonoText, telefono2Text, telefono3Text, emailText, email2Text, email3Text, compleannoText, indirizzoText, sitoWebText, noteText, false, false);
-        // Aggiungi il contatto alla lista
-        this.getListaContatti().add(temp);
+
+        // Se il contatto puó essere aggiunto alla mappa, allora aggiungilo anche alla lista
+        if(this.getRubrica().aggiungiContattoEVerifica(temp))
+            this.getListaContatti().add(temp);
+        else
+            mostraMessaggioErrore("Contatto Duplicato!", "Il contatto che si sta cercando di aggiungere é giá presente in rubrica!");
+        // Modificare aggiungendo una logica ciclica che consente di non chiudere immediatamente la finestra bensí modificare i valori immessi dall'utente al fine di aggiungere un contatto valido
+
+        System.out.println("\n"+ getClass() + " - handleAggiungiContatto ***\n");
+        System.out.println("tempID = " + temp.getId());
+        System.out.println("\n****RUBRICA***\n" + this.getRubrica().toString());
+        System.out.println("\n***LISTA CONTATTI***\n" + this.getListaContatti().toString());
+
         // Chiudi la finestra
         Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         stage.close();
@@ -194,4 +203,5 @@ public class CreaContattoController extends AbstractController implements Initia
         // Un contatto deve avere necessariamente almeno nome o cognome (tutti gli altri campi possono essere vuoti)
         return (nome.getText() != null && !nome.getText().trim().isEmpty()) || (cognome.getText() != null && !cognome.getText().trim().isEmpty());
     }
+
 }

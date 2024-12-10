@@ -1,7 +1,6 @@
 package it.unisa.diem.swe.group07.rubrica.controllers;
 
 import java.awt.*;
-import java.net.URI;
 import java.net.URL;
 import java.time.LocalDate;
 import java.util.ResourceBundle;
@@ -9,15 +8,12 @@ import java.util.ResourceBundle;
 import javafx.beans.binding.Bindings;
 import javafx.scene.control.*;
 import it.unisa.diem.swe.group07.rubrica.models.ContattoEsteso;
-import it.unisa.diem.swe.group07.rubrica.models.Rubrica;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.collections.transformation.FilteredList;
 import javafx.beans.property.SimpleStringProperty;
-import javafx.collections.FXCollections;
-import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
@@ -201,15 +197,18 @@ public class RubricaController extends AbstractController implements Initializab
      */
     @Override
     public void initialize(URL url, ResourceBundle rb){
-        this.getRubrica().aggiungiContatto(new ContattoEsteso("Emanuele", "Tocci","+3933333333","+3933333333", "+3933333333", "prova@gmail.com", "prova@icloud.com", "prova@unisa.it", LocalDate.of(2020, 12, 12), "via Prova", "unisa.it", "informazioni aggiuntive" , false, false));
-        this.getRubrica().aggiungiContatto(new ContattoEsteso("Claudia", "Montefusco","+3933333333","+3933333333", "+3933333333", "prova@gmail.com", "prova@icloud.com", "prova@unisa.it", LocalDate.of(2020, 12, 12), "via Prova", "unisa.it", "informazioni aggiuntive", false, false));
-        this.getRubrica().aggiungiContatto(new ContattoEsteso("Alessio", "Leo","+3933333333","+3933333333", "+3933333333", "prova@gmail.com", "prova@icloud.com", "prova@unisa.it", LocalDate.of(2020, 12, 12), "via Prova", "unisa.it", "informazioni aggiuntive", false, false));
-        this.getRubrica().aggiungiContatto(new ContattoEsteso("Rossella", "Pale","+3933333333","+3933333333", "+3933333333", "prova@gmail.com", "prova@icloud.com", "prova@unisa.it", LocalDate.of(2020, 12, 12), "via Prova", "unisa.it", "informazioni aggiuntive", true, false));
+        this.getRubrica().aggiungiContattoEVerifica(new ContattoEsteso("Emanuele", "Tocci","+3933333333","+3933333333", "+3933333333", "prova@gmail.com", "prova@icloud.com", "prova@unisa.it", LocalDate.of(2020, 12, 12), "via Prova", "unisa.it", "informazioni aggiuntive" , false, false));
+        this.getRubrica().aggiungiContattoEVerifica(new ContattoEsteso("Claudia", "Montefusco","+3933333333","+3933333333", "+3933333333", "prova@gmail.com", "prova@icloud.com", "prova@unisa.it", LocalDate.of(2020, 12, 12), "via Prova", "unisa.it", "informazioni aggiuntive", false, false));
+        this.getRubrica().aggiungiContattoEVerifica(new ContattoEsteso("Alessio", "Leo","+3933333333","+3933333333", "+3933333333", "prova@gmail.com", "prova@icloud.com", "prova@unisa.it", LocalDate.of(2020, 12, 12), "via Prova", "unisa.it", "informazioni aggiuntive", false, false));
+        this.getRubrica().aggiungiContattoEVerifica(new ContattoEsteso("Rossella", "Pale","+3933333333","+3933333333", "+3933333333", "prova@gmail.com", "prova@icloud.com", "prova@unisa.it", LocalDate.of(2020, 12, 12), "via Prova", "unisa.it", "informazioni aggiuntive", true, false));
 
         // Inserire qui funzione Import/autoImport e rimuovere le aggiunte manuali dei contatti presenti sopra
 
         // La lista osservabile é inizializzata a partire dagli elementi presenti nella rubrica
         this.getListaContatti().addAll(this.getRubrica().getContatti());
+        System.out.println("\n"+ getClass() + " - initialize ***\n");
+        System.out.println("\n****RUBRICA***\n" + this.getRubrica().toString());
+        System.out.println("\n***LISTA CONTATTI***\n" + this.getListaContatti().toString());
 
         nomeClm.setCellValueFactory(s -> { return new SimpleStringProperty(s.getValue().getNome());  });
         cognomeClm.setCellValueFactory(s -> { return new SimpleStringProperty(s.getValue().getCognome());  });
@@ -235,12 +234,12 @@ public class RubricaController extends AbstractController implements Initializab
     }
 
     /**
-     * @brief Crea un nuovo contatto e aggiorna la TableView con i nuovi contatti.
-     * @param event L'evento generato dal click sul pulsante di creazione.
+     * @brief Gestore delle'evento 'Nuovo Contatto'. Il metodo carica la vista alternativa che consente la creazione del contatto e passa il controllo al "CreaContattoController", il controller che consente la creazione del contatto
+     * @param event L'evento generato dal click sul pulsante "Nuovo Contatto"
      */
 
     @FXML
-    public void creaContatto(ActionEvent event) {
+    public void handleNuovoContatto(ActionEvent event) {
         try {
             // Carica il file FXML della nuova view
             FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml/CreazioneContattoView.fxml"));
@@ -248,6 +247,7 @@ public class RubricaController extends AbstractController implements Initializab
             // Ottieni il controller della nuova view
             CreaContattoController controllerCreazione = loader.getController();
             controllerCreazione.setListaContatti(this.getListaContatti());
+            controllerCreazione.setRubrica(this.getRubrica());
             // Solite robe per lo stage/scene
             Stage nuovoStage = new Stage();
             nuovoStage.setScene(new Scene(root));
@@ -257,6 +257,9 @@ public class RubricaController extends AbstractController implements Initializab
             nuovoStage.showAndWait();
             // Aggiorna tableView con i nuovi dati
             rubricaTable.setItems(this.getListaContatti());
+            System.out.println("\n"+ getClass() + " - handleCreaConttato ***\n");
+            System.out.println("\n****RUBRICA***\n" + this.getRubrica().toString());
+            System.out.println("\n***LISTA CONTATTI***\n" + this.getListaContatti().toString());
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -266,7 +269,6 @@ public class RubricaController extends AbstractController implements Initializab
      * @brief Metodo per filtrare i contatti in base al nome o al cognome.
      * @param c Stringa di ricerca.
      */
-
     //metodo per la ricerca del contatto
      private void filtraContatti(String c) {
         if (c == null || c.trim().isEmpty()) {
@@ -290,6 +292,7 @@ public class RubricaController extends AbstractController implements Initializab
      */ 
     private void mostraDettaglioContatti(ContattoEsteso contatto){
         this.contattoSelezionato=contatto;
+
         nomeField.setText(contatto.getNome());
         cognomeField.setText(contatto.getCognome());
         email1Field.setText(contatto.getEmail1());
@@ -301,6 +304,7 @@ public class RubricaController extends AbstractController implements Initializab
         indirizzoField.setText(contatto.getIndirizzoResidenza());
         compleannoField.setValue(contatto.getCompleanno());
         noteField.setText(contatto.getNote());
+
         preferitiFlag.opacityProperty().bind(Bindings.when(contattoSelezionato.isPreferito())
                 .then(1.0) // Opacità al 100% quando isPreferiti è true
                 .otherwise(0.5)); // Opacità al 50% quando isPreferiti è false
@@ -308,7 +312,8 @@ public class RubricaController extends AbstractController implements Initializab
                 .then(1.0) // Opacità al 100% quando isPreferiti è true
                 .otherwise(0.5)); // Opacità al 50% quando isPreferiti è false
         //imgcontatto.setImage(contatto.getImmagineProfilo());
-        
+
+
 
 }
      /**
@@ -327,21 +332,27 @@ private void setEditableAll(boolean isEditable) {
         indirizzoField.setEditable(isEditable);
         compleannoField.setEditable(isEditable);
         noteField.setEditable(isEditable);
-        
 }
     /**
      * @brief Elimina un contatto selezionato dalla rubrica.
      * @param event L'evento generato dal click sul pulsante di eliminazione.
      */
     @FXML
-    public void eliminaContatto(ActionEvent event) {
-    ContattoEsteso c = rubricaTable.getSelectionModel().getSelectedItem();
+    public void handleEliminaContatto(ActionEvent event) {
+    ContattoEsteso c = rubricaTable.getSelectionModel().getSelectedItem();  //seleziona il contatto dalla TableView
         if (c!=null){
-            ///rubrica.rimuoviContatto(c); DA ELIMINARE SE TROVIAMO METODO PER AGGIUNGERE TUUTO ALLA RUBRICAMODEL ALLA FINE
-             // Rimuovi il contatto dalla lista osservabile
-            this.getListaContatti().remove(c);;
-             // Aggiorna la TableView (opzionale, perché ObservableList lo fa automaticamente)
+            // Se il contatto puó essere rimosso dalla rubrica allora rifletti le modifiche sulla lista
+            if(this.getRubrica().rimuoviContatto(c) != null){
+                this.getListaContatti().remove(c);
+            }
+            // Aggiorna la TableView (opzionale, perché ObservableList lo fa automaticamente)
             rubricaTable.refresh();
+
+            // TEST - rimuovere in seguito
+            System.out.println("\n"+ getClass() + " - handleEliminaContatto ***\n");
+            System.out.println("\n****RUBRICA***\n" + this.getRubrica().toString());
+            System.out.println("\n***LISTA CONTATTI***\n" + this.getListaContatti().toString());
+            // FINE TEST - rimuovere in seguito
         }
     }
 
@@ -352,13 +363,13 @@ private void setEditableAll(boolean isEditable) {
     //quando clicco sul pulsante modifica devo far in modo che i campi
     //siano modificabili
     //e che il pulsante crea debba funzionare
+
     @FXML
-    public void modificaContatto(ActionEvent event) {
-            if (contattoSelezionato != null) {
+    public void handleModificaContatto(ActionEvent event) {
+        if (contattoSelezionato != null) {
             setEditableAll(true);
             //pulsanteCrea.setDisable(false);
             pulsanteSalva.setDisable(false);//AGGIUNGI PULSANTE SALVA
-
         }
             
     }
@@ -368,7 +379,7 @@ private void setEditableAll(boolean isEditable) {
      * @param e L'evento generato dal click sul pulsante di salvataggio.
      */
         @FXML
-    private void GestioneSalvaModifiche(ActionEvent e){
+    private void gestioneSalvaModifiche(ActionEvent e){
             // Aggiorna i dati del contatto selezionato
             contattoSelezionato.setNome(nomeField.getText());
             contattoSelezionato.setCognome(cognomeField.getText());
@@ -382,11 +393,20 @@ private void setEditableAll(boolean isEditable) {
             contattoSelezionato.setNote(noteField.getText());
             //contattoSelezionato.setSitoWeb(socialField.getText());
             contattoSelezionato.setNote(noteField.getText());
-            this.getRubrica().aggiornaContatto(contattoSelezionato); //non posso parlo con la lista osservabile?
-            // Aggiorna la TableView e disabilita i TextField
-            rubricaTable.refresh();
-            pulsanteSalva.setDisable(true);
-            setEditableAll(false);
+
+            //TEST - rimuovere in seguito
+            System.out.println("\n"+ getClass() + " - gestioneSalvaModifiche ***\n");
+            System.out.println("\n****RUBRICA***\n" + this.getRubrica().toString());
+            System.out.println("\n***LISTA CONTATTI***\n" + this.getListaContatti().toString());
+            // FINE TEST
+
+            // Se il contatto selezionato puó essere rimosso dalla rubrica (Map), allora aggiorna la TableView
+            if(this.getRubrica().aggiornaContatto(contattoSelezionato)) {
+                // Aggiorna la TableView e disabilita i TextField
+                rubricaTable.refresh();
+                pulsanteSalva.setDisable(true);
+                setEditableAll(false);
+            }
     }
 
     /**
