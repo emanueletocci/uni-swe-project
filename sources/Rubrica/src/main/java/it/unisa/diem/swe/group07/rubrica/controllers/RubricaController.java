@@ -191,15 +191,11 @@ public class RubricaController extends AbstractController implements Initializab
      
 
     // Attributi
-        /**
-     * @brief Lista osservabile dei contatti da visualizzare nella TableView.
-     */
-    private ObservableList<ContattoEsteso> listaContatti;
-        /**
+    /**
      * @brief Contatto selelzionato nella Table View
      */
     private ContattoEsteso contattoSelezionato;
-        /**
+    /**
      * @brief Lista Filtrata di contatti per la ricerca
      */
     private FilteredList<ContattoEsteso> filteredContatti;
@@ -228,12 +224,11 @@ public class RubricaController extends AbstractController implements Initializab
         // Inserire qui funzione Import/autoImport e rimuovere le aggiunte manuali dei contatti presenti sopra
 
         // La lista osservabile é inizializzata a partire dagli elementi presenti nella rubrica
-        listaContatti = FXCollections.observableArrayList(this.getRubrica().getContatti());
+        this.getListaContatti().addAll(this.getRubrica().getContatti());
 
         nomeClm.setCellValueFactory(s -> { return new SimpleStringProperty(s.getValue().getNome());  });
         cognomeClm.setCellValueFactory(s -> { return new SimpleStringProperty(s.getValue().getCognome());  });
-        rubricaTable.setItems(listaContatti);
-
+        rubricaTable.setItems(this.getListaContatti());
 
         // Listener per la selezione di un contatto
         rubricaTable.getSelectionModel().selectedItemProperty().addListener((observable, oldValue, newValue) -> {
@@ -246,7 +241,7 @@ public class RubricaController extends AbstractController implements Initializab
         pulsanteSalva.setDisable(true);
 
         // Collegamento della lista filtrata alla TableView
-        filteredContatti = new FilteredList<>(listaContatti, p -> true);
+        filteredContatti = new FilteredList<>(this.getListaContatti(), p -> true);
         rubricaTable.setItems(filteredContatti);
         // Listener sulla barra di ricerca
         pulsanteCerca.textProperty().addListener((observable, oldValue, newValue) -> {
@@ -267,7 +262,7 @@ public class RubricaController extends AbstractController implements Initializab
             Parent root = loader.load();
             // Ottieni il controller della nuova view
             CreaContattoController controllerCreazione = loader.getController();
-            controllerCreazione.setListaContatti(listaContatti);
+            controllerCreazione.setListaContatti(this.getListaContatti());
             // Solite robe per lo stage/scene
             Stage nuovoStage = new Stage();
             nuovoStage.setScene(new Scene(root));
@@ -276,7 +271,7 @@ public class RubricaController extends AbstractController implements Initializab
             // Mostra la finestra e attende
             nuovoStage.showAndWait();
             // Aggiorna tableView con i nuovi dati
-            rubricaTable.setItems(FXCollections.observableArrayList(listaContatti));
+            rubricaTable.setItems(this.getListaContatti());
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -359,7 +354,7 @@ private void setEditableAll(boolean isEditable) {
         if (c!=null){
             ///rubrica.rimuoviContatto(c); DA ELIMINARE SE TROVIAMO METODO PER AGGIUNGERE TUUTO ALLA RUBRICAMODEL ALLA FINE
              // Rimuovi il contatto dalla lista osservabile
-            listaContatti.remove(c);;
+            this.getListaContatti().remove(c);;
              // Aggiorna la TableView (opzionale, perché ObservableList lo fa automaticamente)
             rubricaTable.refresh();
         }
@@ -414,14 +409,14 @@ private void setEditableAll(boolean isEditable) {
      */
     @FXML
     private void showRubrica(){
-        rubricaTable.setItems(listaContatti);
+        rubricaTable.setItems(this.getListaContatti());
     }
     /**
      * @brief metodo per collegare a rubrica table la vista della sotto-rubrica: preferiti
      */
     @FXML
     private void showPreferiti(){
-        contattiFiltratiPreferiti = new FilteredList<>(listaContatti, contatto -> contatto.getPreferito());
+        contattiFiltratiPreferiti = new FilteredList<>(this.getListaContatti(), contatto -> contatto.getPreferito());
         rubricaTable.setItems(contattiFiltratiPreferiti);
     }
     /**
@@ -429,7 +424,7 @@ private void setEditableAll(boolean isEditable) {
      */
     @FXML
     private void showEmergenza(){
-        contattiFiltratiEmergenza = new FilteredList<>(listaContatti, contatto -> contatto.getEmergenza());
+        contattiFiltratiEmergenza = new FilteredList<>(this.getListaContatti(), contatto -> contatto.getEmergenza());
         rubricaTable.setItems(contattiFiltratiEmergenza);
     }
     /**
