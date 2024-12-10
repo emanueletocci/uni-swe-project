@@ -38,16 +38,19 @@
                                     <items>
                                         <MenuItem fx:id="editBtn" mnemonicParsing="false" onAction="#eliminaContatto" text="Modifica contatto" />
                                         <MenuItem fx:id="del" mnemonicParsing="false" onAction="#eliminaContatto" text="Elimina contatto" />
+                              <MenuItem mnemonicParsing="false" text="__________________" />
+                              <MenuItem fx:id="preferitoBtn" mnemonicParsing="false" onAction="#togglePreferiti" text="Toggle Preferiti" />
+                              <MenuItem fx:id="emergenzaBtn" mnemonicParsing="false" onAction="#toggleEmergenza" text="Toggle Contatti d'Emergenza" />
                                     </items>
                                 </Menu>
                                 <Menu mnemonicParsing="false" text="Finestra">
                                     <items>
-                                        <MenuItem mnemonicParsing="false" text="Rubrica Standard" />
-                                        <MenuItem mnemonicParsing="false" text="Contatti Preferiti" />
-                                        <MenuItem mnemonicParsing="false" text="Contatti d'emergenza" />
+                                        <MenuItem fx:id="showRubrica" mnemonicParsing="false" onAction="#showRubrica" text="Rubrica Standard" />
+                                        <MenuItem fx:id="preferitiBtn" mnemonicParsing="false" onAction="#showPreferiti" text="Contatti Preferiti" />
+                                        <MenuItem fx:id="showEmergenza" mnemonicParsing="false" onAction="#showEmergenza" text="Contatti d'emergenza" />
                                     </items>
                                 </Menu>
-                                <Menu mnemonicParsing="false" text="Aiuto">
+                                <Menu mnemonicParsing="false" text="?">
                                     <items>
                                         <MenuItem mnemonicParsing="false" text="qualcosa tipo mailto:" />
                                     </items>

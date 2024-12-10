@@ -8,6 +8,9 @@
 
 package it.unisa.diem.swe.group07.rubrica.models;
 
+import javafx.beans.property.BooleanProperty;
+import javafx.beans.property.SimpleBooleanProperty;
+
 import java.util.Objects;
 import java.util.UUID;
 
@@ -46,28 +49,25 @@ public class Contatto {
     /**
      * @brief attributo booleano che indica se il contatto é un "contatto di emergenza" oppure no
      */
-    //private Boolean emergenza;
+    private Boolean emergenza;
 
     /**
      * @brief attributo booleano che indica se il contatto é un "contatto preferito" oppure no
      */
-    //private Boolean preferito;
+    private Boolean preferito;
 
     /**
      * @brief costruttore della classe Contatto
      */
-    public Contatto(String nome, String cognome, String telefono1, String telefono2, String telefono3) {
+    public Contatto(String nome, String cognome, String telefono1, String telefono2, String telefono3, Boolean preferito, Boolean emergenza) {
         this.id = UUID.randomUUID();    //genera un id univoco (key) per l'oggetto istanziato
         this.nome = nome;
         this.cognome = cognome;
-        /*this.telefono1 = telefono1;VEDETE SE DEVONO ESSERE ELIMINATE
+        this.telefono1 = telefono1;
         this.telefono2 = telefono2;
-        this.telefono3 = telefono3;*/
-        this.telefono1 = telefono1 != null ? telefono1 : "";
-        this.telefono2 = telefono2 != null ? telefono2 : "";
-        this.telefono3 = telefono3 != null ? telefono3 : "";
-        //this.emergenza = emergenza;
-        //this.preferito = preferito;
+        this.telefono3 = telefono3;
+        this.emergenza = emergenza;
+        this.preferito = preferito;
     }
 
     /**
@@ -164,31 +164,31 @@ public class Contatto {
      * @brief metodo getter per l'attributo "emergenza"
      * @return attributo emergenza
      */
-//    public Boolean getEmergenza() {
-//        return emergenza;
-//    }
+    public Boolean getEmergenza() {
+        return emergenza;
+    }
 
     /**
      * @brief metodo setter per l'attributo "emergenza"
      */
-//    public void setEmergenza(Boolean emergenza) {
-//        this.emergenza = emergenza;
-//    }
+    public void setEmergenza(Boolean emergenza) {
+        this.emergenza = emergenza;
+    }
 
     /**
      * @brief metodo getter per l'attributo "preferito"
      * @return attributo preferito
      */
-//    public Boolean getPreferito() {
-//        return preferito;
-//    }
+    public Boolean getPreferito() {
+        return preferito;
+    }
 
     /**
      * @brief metodo setter per l'attributo "preferito"
      */
-//    public void setPreferito(Boolean preferito) {
-//        this.preferito = preferito;
-//    }
+    public void setPreferito(Boolean preferito) {
+        this.preferito = preferito;
+    }
 
     /**
      * @brief metodo per la verifica del numero telefonico del contatto
@@ -196,9 +196,7 @@ public class Contatto {
      */
     public Boolean controllaTelefono(String telefono){
         return telefono.matches("^\\+?[0-9]{6,15}$");
-     //^ inizio stringa, \\+ rappresenta il simbolo + (il primo backslash é per escape), 
-     //? indica che il simbolo precedente (+) é opzionale, [0-9]{6,15} 
-     //si possono inserire da 6 a 15 cifre numeriche, $ fine della stringa
+        //regex: ^ inizio stringa, \\+ rappresenta il simbolo + (il primo backslash é per escape), ? indica che il simbolo precedente (+) é opzionale, [0-9]{6,15} si possono inserire da 6 a 15 cifre numeriche, $ fine della stringa
     }
 
     /**
@@ -235,5 +233,18 @@ public class Contatto {
         return Objects.hash(id, nome, cognome, telefono1, telefono2, telefono3);
     }
 
-
+    /**
+     * controlla se un contatto è preferito
+     * @return Restituisce la proprietà che indica se il contatto è preferito.
+     */
+    public BooleanProperty isPreferito() {
+        return new SimpleBooleanProperty(getPreferito());
+    }
+    /**
+     * controlla se un contatto è d'emergenza
+     * @return Restituisce la proprietà che indica se il contatto è d'emergenza.
+     */
+    public BooleanProperty isEmergenza(){
+        return new SimpleBooleanProperty(getEmergenza());
+    }
 }

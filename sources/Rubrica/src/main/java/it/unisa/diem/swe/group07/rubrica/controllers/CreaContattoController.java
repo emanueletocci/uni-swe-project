@@ -29,7 +29,7 @@ import java.time.LocalDate;
 import java.util.List;
 
 
-public class CreaContattoController implements Initializable{
+public class CreaContattoController extends AbstractController implements Initializable{
     //LE TOGLIEREMO DOPO DALLA VIEW questi id box che non servono
     @FXML
     private HBox HBox1;
@@ -43,29 +43,6 @@ public class CreaContattoController implements Initializable{
     @FXML
     private HBox HBox12;
 
-    @FXML
-    private HBox HBox121;
-
-    @FXML
-    private HBox HBox2;
-
-    @FXML
-    private HBox HBox21;
-
-    @FXML
-    private HBox HBox22;
-
-    @FXML
-    private HBox HBox221;
-
-    @FXML
-    private HBox HBox2211;
-
-    @FXML
-    private HBox HBox22111;
-
-    @FXML
-    private HBox HBox22112;
     /**
      * @brief bottone per aggiungere l'email
      */
@@ -156,27 +133,29 @@ public class CreaContattoController implements Initializable{
     /**
      * @brief struttura per gestire una Lista di Contatti
      */
-    private List<ContattoEsteso> listaContatti; // Riferimento alla rubrica condivisa
     private FileChooser fileChooser = new FileChooser();
-            
+
+
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-    immagine.setImage(null);
-    fileChooser.setInitialDirectory(new File("C:\\Users\\hp\\Desktop\\"));
+        immagine.setImage(null);
+        fileChooser.setInitialDirectory(new File("C:\\Users\\hp\\Desktop\\"));
     }
+
     /**
      * @brief metodo che permette di inserire un immagine di profile nella bottone_imm
      * @param event evento generato dal click sul pulsante pulsanteImmagine
      */
     @FXML
-    void AggiungiImmagine(ActionEvent event) {
-    fileChooser.setTitle("Scegli immagine di profilo:");
-    fileChooser.getExtensionFilters().addAll(new ExtensionFilter("Image Files", "*.png", "*.jpg", "*.gif"));
-    File img = fileChooser.showOpenDialog(new Stage());
-    if (img != null) {
-    Image immagineScelta=new Image(img.toURI().toString());
-    immagine.setImage(immagineScelta);
-    };
+    void aggiungiImmagine(ActionEvent event) {
+        mostraMessaggioErrore("Oh no!", "Questa funzione non é stata ancora implementata!");
+        fileChooser.setTitle("Scegli immagine di profilo:");
+        fileChooser.getExtensionFilters().addAll(new ExtensionFilter("Image Files", "*.png", "*.jpg", "*.gif"));
+        File img = fileChooser.showOpenDialog(new Stage());
+        if (img != null) {
+            Image immagineScelta=new Image(img.toURI().toString());
+            immagine.setImage(immagineScelta);
+        }
     }
     /**
      * @brief metodo che preleva il valore dai Text Field creando il contatto ed aggiungendolo alla Lista+
@@ -201,14 +180,12 @@ public class CreaContattoController implements Initializable{
         String indirizzoText = indirizzo.getText();
         String sitoWebText = sitoWeb.getText();
         String noteText = note.getText();
-        Image imgText=immagine.getImage();
 
         // Crea il nuovo contatto
-        ContattoEsteso temp = new ContattoEsteso(nomeText, cognomeText, telefonoText, telefono2Text, telefono3Text, emailText, email2Text, email3Text, compleannoText , indirizzoText, sitoWebText, noteText, imgText);
-        listaContatti.add(temp);
+        ContattoEsteso temp = new ContattoEsteso(nomeText, cognomeText, telefonoText, telefono2Text, telefono3Text, emailText, email2Text, email3Text, compleannoText , indirizzoText, sitoWebText, noteText);        this.getListaContatti().add(temp);
+        this.getListaContatti().add(temp);
         Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         stage.close();
-
     }
     
     /**
@@ -222,15 +199,7 @@ public class CreaContattoController implements Initializable{
     }
 
     /**
-     * @brief metodo setter per listaContatti
-     */
-    public void setListaContatti(List<ContattoEsteso> listaContatti) {
-        this.listaContatti = listaContatti;
-    }
-
-    /**
      * @brief metodo verificare che almeno un TextField tra nome e cognome è stato sovrascritto
-     * 
      */
     private boolean validaCampiObbligatori() {
         // Un contatto deve avere necessariamente almeno nome o cognome (tutti gli altri campi possono essere vuoti)

@@ -7,7 +7,9 @@
  */
 
 package it.unisa.diem.swe.group07.rubrica.models;
-import javafx.scene.image.Image;
+
+import javafx.beans.property.BooleanProperty;
+
 import java.time.LocalDate;
 import java.util.Objects;
 
@@ -46,47 +48,21 @@ public class ContattoEsteso extends Contatto {
      * @brief note contenente informazioni aggiuntive riguardo al contatto
      */
     private String note;
-    /**
-     * @brief immagine di profilo del contatto
-     */
-    private Image immagineProfilo;
 
     /**
      * @brief costruttore della classe Contatto Esteso
      */
 
-    public ContattoEsteso(String nome, String cognome, String telefono1, String telefono2, String telefono3, String email1, String email2, String email3, LocalDate compleanno, String indirizzoResidenza, String website, String note, Image immagineProfilo) {
-        super(nome, cognome, telefono1, telefono2, telefono3);
-        /*this.email1 = email1;  VEDETE SE DEVONO ESSERE ELIMINATE
+    public ContattoEsteso(String nome, String cognome, String telefono1, String telefono2, String telefono3, String email1, String email2, String email3, LocalDate compleanno, String indirizzoResidenza, String website, String note, Boolean preferito, Boolean emergenza) {
+        super(nome, cognome, telefono1, telefono2, telefono3, preferito, emergenza);
+        this.email1 = email1;
         this.email2 = email2;
         this.email3 = email3;
         this.compleanno = compleanno;
         this.indirizzoResidenza = indirizzoResidenza;
         this.sitoWeb = website;
-        this.note=note;*/
-        this.compleanno=compleanno;
-        this.indirizzoResidenza = indirizzoResidenza != null ? indirizzoResidenza : "";
-        this.email1 = email1 != null ? email1 : "";
-        this.email2 = email2 != null ? email2 : "";
-        this.email3 = email3 != null ? email3 : "";
-        this.note = note != null ? note : "";
-        this.sitoWeb = website != null ? website : "";
-        this.immagineProfilo = immagineProfilo;
+        this.note=note;
     }
-     /**
-     * @brief metodo getter per l'attributo "immagineProfilo"
-     * @return attributo immagineProfilo
-     */
-    public Image getImmagineProfilo() {
-        return immagineProfilo;
-    }
-    /**
-     * @brief metodo setter per l'attributo "immagineProfilo"
-     */
-    public void setimmagineProfilo (Image immagineProfilo){
-        this.immagineProfilo = immagineProfilo;
-    }
-
 
     /**
      * @return attributo compleanno
@@ -198,6 +174,10 @@ public class ContattoEsteso extends Contatto {
      * @return "true" se l'email inserita é valida (contiene @), "false" altrimenti
      */
     public Boolean controllaEmail(String email){
+        /*
+         * https://www.baeldung.com/java-email-validation-regex
+         * regex: ^ inizio stringa, (.+) sequenza di uno o piú caratteri qualunque (tranne newLine) che precedono la "@", (\\S+) sequenza di caratteri qualsiasi escluso lo spazio, $ fine della stringa
+         */
         return email.matches("^(.+)@(\\S+) $");
     }
 

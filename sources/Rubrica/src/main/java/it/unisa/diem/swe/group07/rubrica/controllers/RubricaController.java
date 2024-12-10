@@ -4,22 +4,20 @@ import java.net.URL;
 import java.time.LocalDate;
 import java.util.ResourceBundle;
 
-import javafx.beans.property.SimpleStringProperty;
-import javafx.collections.FXCollections;
-import javafx.fxml.FXMLLoader;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
 import javafx.scene.control.*;
 import it.unisa.diem.swe.group07.rubrica.models.ContattoEsteso;
 import it.unisa.diem.swe.group07.rubrica.models.Rubrica;
 import javafx.event.ActionEvent;
-import javafx.scene.control.*;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.collections.transformation.FilteredList;
+import javafx.beans.property.SimpleStringProperty;
+import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.image.ImageView;
-import javafx.stage.FileChooser;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
 
@@ -90,7 +88,16 @@ public class RubricaController implements Initializable{
      */
     @FXML // fx:id="noteField"
     private TextField noteField; // Value injected by FXMLLoader
-    
+    /**
+     * @brief Menu Item per aggiunta e rimozione dei contatti d'emergenza
+     */
+    @FXML
+    private MenuItem emergenzaBtn;
+    /**
+     * @brief Menu Item per aggiunta e rimozione dei preferiti
+     */
+    @FXML
+    private MenuItem preferitiBtn;
    
 //    @FXML // fx:id="sitoWebField" Se si rimuove il commento non si avvia lol
 //    private TextField sitoField; // Value injected by FXMLLoader
@@ -122,6 +129,11 @@ public class RubricaController implements Initializable{
      */
      @FXML
     private Button pulsanteSalva;
+    /**
+     * @brief label di aggiungi/rimuovi ai preferiti
+     */
+    @FXML
+    private Label preferitiLabel;
 
 
     // Altri componenti FXML
@@ -169,6 +181,14 @@ public class RubricaController implements Initializable{
      * @brief Lista Filtrata di contatti per la ricerca
      */
     private FilteredList<ContattoEsteso> filteredContatti;
+    /**
+     * @brief Lista Filtrata di contatti per la sotto-rubrica:preferiti
+     */
+    private FilteredList<ContattoEsteso> contattiFiltratiPreferiti;
+    /**
+     * @brief Lista Filtrata di contatti per la otto-rubrica:contatti d'emergenza
+     */
+    private FilteredList<ContattoEsteso> contattiFiltratiEmergenza;
     
     /**
      * @brief Metodo di inizializzazione della vista e dei dati.
@@ -179,11 +199,11 @@ public class RubricaController implements Initializable{
     @Override
     public void initialize(URL url, ResourceBundle rb){
         rubrica = new Rubrica();
-        rubrica.aggiungiContatto(new ContattoEsteso("Emanuele", "Tocci","+3933333333","+3933333333", "+3933333333", "prova@gmail.com", "prova@icloud.com", "prova@unisa.it", LocalDate.of(2020, 12, 12), "via Prova", "unisa.it", "informazioni aggiuntive", null));
-        rubrica.aggiungiContatto(new ContattoEsteso("Claudia", "Montefusco","+3933333333","+3933333333", "+3933333333", "prova@gmail.com", "prova@icloud.com", "prova@unisa.it", LocalDate.of(2020, 12, 12), "via Prova", "unisa.it", "informazioni aggiuntive", null));
-        rubrica.aggiungiContatto(new ContattoEsteso("Alessio", "Leo","+3933333333","+3933333333", "+3933333333", "prova@gmail.com", "prova@icloud.com", "prova@unisa.it", LocalDate.of(2020, 12, 12), "via Prova", "unisa.it", "informazioni aggiuntive", null));
-        rubrica.aggiungiContatto(new ContattoEsteso("Rossella", "Pale","+3933333333","+3933333333", "+3933333333", "prova@gmail.com", "prova@icloud.com", "prova@unisa.it", LocalDate.of(2020, 12, 12), "via Prova", "unisa.it", "informazioni aggiuntive", null));
-        
+        rubrica.aggiungiContatto(new ContattoEsteso("Emanuele", "Tocci","+3933333333","+3933333333", "+3933333333", "prova@gmail.com", "prova@icloud.com", "prova@unisa.it", LocalDate.of(2020, 12, 12), "via Prova", "unisa.it", "informazioni aggiuntive" , false, false));
+        rubrica.aggiungiContatto(new ContattoEsteso("Claudia", "Montefusco","+3933333333","+3933333333", "+3933333333", "prova@gmail.com", "prova@icloud.com", "prova@unisa.it", LocalDate.of(2020, 12, 12), "via Prova", "unisa.it", "informazioni aggiuntive", false, false));
+        rubrica.aggiungiContatto(new ContattoEsteso("Alessio", "Leo","+3933333333","+3933333333", "+3933333333", "prova@gmail.com", "prova@icloud.com", "prova@unisa.it", LocalDate.of(2020, 12, 12), "via Prova", "unisa.it", "informazioni aggiuntive", false, false));
+        rubrica.aggiungiContatto(new ContattoEsteso("Rossella", "Pale","+3933333333","+3933333333", "+3933333333", "prova@gmail.com", "prova@icloud.com", "prova@unisa.it", LocalDate.of(2020, 12, 12), "via Prova", "unisa.it", "informazioni aggiuntive", true, false));
+
         // Inserire qui funzione Import/autoImport e rimuovere le aggiunte manuali dei contatti presenti sopra
 
         // La lista osservabile é inizializzata a partire dagli elementi presenti nella rubrica
@@ -193,21 +213,22 @@ public class RubricaController implements Initializable{
         cognomeClm.setCellValueFactory(s -> { return new SimpleStringProperty(s.getValue().getCognome());  });
         rubricaTable.setItems(listaContatti);
 
+
         // Listener per la selezione di un contatto
         rubricaTable.getSelectionModel().selectedItemProperty().addListener((observable, oldValue, newValue) -> {
             if (newValue != null) {
                 mostraDettaglioContatti(newValue);
             }
         });
-        
-      setEditableAll(false);
-      pulsanteSalva.setDisable(true);
-      
-      // Collegamento della lista filtrata alla TableView
+
+        setEditableAll(false);
+        pulsanteSalva.setDisable(true);
+
+        // Collegamento della lista filtrata alla TableView
         filteredContatti = new FilteredList<>(listaContatti, p -> true);
         rubricaTable.setItems(filteredContatti);
         // Listener sulla barra di ricerca
-        pulsanteCerca.textProperty().addListener((observable, oldValue, newValue) -> { 
+        pulsanteCerca.textProperty().addListener((observable, oldValue, newValue) -> {
             filtraContatti(newValue);
         });
     }
@@ -335,7 +356,7 @@ private void setEditableAll(boolean isEditable) {
             
     }
 
-        /**
+    /**
      * @brief Gestisce il salvataggio delle modifiche apportate a un contatto esistente.
      * @param e L'evento generato dal click sul pulsante di salvataggio.
      */
@@ -357,8 +378,55 @@ private void setEditableAll(boolean isEditable) {
             rubrica.aggiornaContatto(contattoSelezionato); //non posso parlo con la lista osservabile?
             // Aggiorna la TableView e disabilita i TextField
             rubricaTable.refresh();
-
             pulsanteSalva.setDisable(true);
             setEditableAll(false);
+    }
+
+    /**
+     * @brief metodo per collegare a rubrica table la vista di tutta la rubrica
+     */
+    @FXML
+    private void showRubrica(){
+        rubricaTable.setItems(listaContatti);
+    }
+    /**
+     * @brief metodo per collegare a rubrica table la vista della sotto-rubrica: preferiti
+     */
+    @FXML
+    private void showPreferiti(){
+        contattiFiltratiPreferiti = new FilteredList<>(listaContatti, contatto -> contatto.getPreferito());
+        rubricaTable.setItems(contattiFiltratiPreferiti);
+    }
+    /**
+     * @brief metodo per collegare a rubrica table la vista della sotto-rubrica: contatti d'emergenza
+     */
+    @FXML
+    private void showEmergenza(){
+        contattiFiltratiEmergenza = new FilteredList<>(listaContatti, contatto -> contatto.getEmergenza());
+        rubricaTable.setItems(contattiFiltratiEmergenza);
+    }
+    /**
+     * @brief metodo per aggiungere alla sotto-rubrica preferiti il contatto selezionato
+     */
+    @FXML
+    private void aggiungiPreferito(){
+        ContattoEsteso c = rubricaTable.getSelectionModel().getSelectedItem();
+        c.setPreferito(true);
+    }
+    /**
+     * @brief metodo per aggiungere e rimuovere alla sotto-rubrica preferiti il contatto selezionato
+     */
+    @FXML
+    private void toggleEmergenza(){
+        ContattoEsteso c = rubricaTable.getSelectionModel().getSelectedItem();
+        c.setEmergenza(!c.getEmergenza());
+    }
+    /**
+     * @brief metodo per rimuovere dalla sotto-rubrica preferiti il contatto selezionato
+     */
+    @FXML
+    private void togglePreferiti(){
+        ContattoEsteso c = rubricaTable.getSelectionModel().getSelectedItem();
+        c.setPreferito(!c.getPreferito());
     }
 }
