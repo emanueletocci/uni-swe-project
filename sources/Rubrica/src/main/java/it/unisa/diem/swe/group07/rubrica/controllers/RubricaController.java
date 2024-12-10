@@ -4,6 +4,7 @@ import java.net.URL;
 import java.time.LocalDate;
 import java.util.ResourceBundle;
 
+import javafx.beans.binding.Bindings;
 import javafx.scene.control.*;
 import it.unisa.diem.swe.group07.rubrica.models.ContattoEsteso;
 import it.unisa.diem.swe.group07.rubrica.models.Rubrica;
@@ -133,7 +134,7 @@ public class RubricaController implements Initializable{
      * @brief label di aggiungi/rimuovi ai preferiti
      */
     @FXML
-    private Label preferitiLabel;
+    private Label favoritesBtn;
 
 
     // Altri componenti FXML
@@ -163,6 +164,8 @@ public class RubricaController implements Initializable{
     @FXML // fx:id="rubricaTable"
     private TableView<ContattoEsteso> rubricaTable; // Value injected by FXMLLoader
     
+    @FXML
+    private Button preferitiFlag;
 
     // Attributi
         /**
@@ -300,7 +303,10 @@ public class RubricaController implements Initializable{
         indirizzoField.setText(contatto.getIndirizzoResidenza());
         compleannoField.setValue(contatto.getCompleanno());
         noteField.setText(contatto.getNote());
-        imgcontatto.setImage(contatto.getImmagineProfilo());
+        preferitiFlag.opacityProperty().bind(Bindings.when(contattoSelezionato.isPreferito())
+                .then(1.0) // Opacità al 100% quando isPreferiti è true
+                .otherwise(0.5)); // Opacità al 50% quando isPreferiti è false
+        //imgcontatto.setImage(contatto.getImmagineProfilo());
         
 
 }
@@ -406,27 +412,27 @@ private void setEditableAll(boolean isEditable) {
         rubricaTable.setItems(contattiFiltratiEmergenza);
     }
     /**
-     * @brief metodo per aggiungere alla sotto-rubrica preferiti il contatto selezionato
-     */
-    @FXML
-    private void aggiungiPreferito(){
-        ContattoEsteso c = rubricaTable.getSelectionModel().getSelectedItem();
-        c.setPreferito(true);
-    }
-    /**
      * @brief metodo per aggiungere e rimuovere alla sotto-rubrica preferiti il contatto selezionato
      */
     @FXML
     private void toggleEmergenza(){
         ContattoEsteso c = rubricaTable.getSelectionModel().getSelectedItem();
-        c.setEmergenza(!c.getEmergenza());
+        if (c != null) {
+            c.setPreferito(!c.getPreferito());
+            contattiFiltratiEmergenza.setPredicate(contatto -> contatto.getEmergenza());
+            rubricaTable.refresh();
+        }
     }
     /**
      * @brief metodo per rimuovere dalla sotto-rubrica preferiti il contatto selezionato
      */
     @FXML
-    private void togglePreferiti(){
+    private void togglePreferiti() {
         ContattoEsteso c = rubricaTable.getSelectionModel().getSelectedItem();
-        c.setPreferito(!c.getPreferito());
+        if (c != null) {
+            c.setPreferito(!c.getPreferito());
+            contattiFiltratiPreferiti.setPredicate(contatto -> contatto.getPreferito());
+            rubricaTable.refresh();
+        }
     }
 }

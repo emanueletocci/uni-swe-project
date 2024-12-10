@@ -359,15 +359,15 @@
                                                                 </HBox>
                                                             </children>
                                                         </VBox>
-                                                        <Label layoutX="8.0" layoutY="6.0" text="Dettagli Contatto">
+                                                        <Label layoutX="8.0" layoutY="6.0" prefHeight="25.0" prefWidth="90.0" text="Dettagli Contatto">
                                                             <font>
-                                                                <Font name="Tahoma Bold" size="12.0" />
+                                                                <Font name="Tahoma Bold" size="10.0" />
                                                             </font>
                                                             <padding>
                                                                 <Insets top="10.0" />
                                                             </padding>
                                                         </Label>
-                                                        <Button fx:id="pulsanteModifica" layoutX="189.0" layoutY="12.0" mnemonicParsing="false" onAction="#modificaContatto" style="-fx-background-color: white; -fx-background-radius: 15; -fx-border-radius: 15; -fx-border-color: black;" AnchorPane.topAnchor="12.0">
+                                                        <Button fx:id="pulsanteModifica" layoutX="152.0" layoutY="10.0" mnemonicParsing="false" onAction="#modificaContatto" style="-fx-background-color: white; -fx-background-radius: 15; -fx-border-radius: 15; -fx-border-color: black;" AnchorPane.topAnchor="10.0">
                                              <graphic>
                                                 <ImageView fitHeight="16.0" fitWidth="17.0" pickOnBounds="true" preserveRatio="true">
                                                    <image>
@@ -375,7 +375,7 @@
                                                    </image>
                                                 </ImageView>
                                              </graphic></Button>
-                                                        <Button fx:id="pulsanteElimina" layoutX="230.0" layoutY="2.0" mnemonicParsing="false" onAction="#eliminaContatto" prefHeight="18.0" prefWidth="17.0" style="-fx-background-color: white; -fx-background-radius: 15; -fx-border-radius: 15; -fx-border-color: black;" AnchorPane.topAnchor="12.0">
+                                                        <Button fx:id="pulsanteElimina" layoutX="190.0" layoutY="16.0" mnemonicParsing="false" onAction="#eliminaContatto" prefHeight="18.0" prefWidth="17.0" style="-fx-background-color: white; -fx-background-radius: 15; -fx-border-radius: 15; -fx-border-color: black;" AnchorPane.topAnchor="10.0">
                                              <graphic>
                                                 <ImageView fitHeight="16.0" fitWidth="17.0" pickOnBounds="true" preserveRatio="true">
                                                    <image>
@@ -383,7 +383,7 @@
                                                    </image>
                                                 </ImageView>
                                              </graphic></Button>
-                                          <Button fx:id="pulsanteSalva" layoutX="128.0" layoutY="12.0" mnemonicParsing="false" onAction="#GestioneSalvaModifiche" prefHeight="25.0" prefWidth="49.0" style="-fx-font-weight: bold; -fx-background-color: #09de37;" text="Salva">
+                                          <Button fx:id="pulsanteSalva" layoutX="98.0" layoutY="11.0" mnemonicParsing="false" onAction="#GestioneSalvaModifiche" prefHeight="25.0" prefWidth="49.0" style="-fx-font-weight: bold; -fx-background-color: #09de37;" text="Salva">
                                              <font>
                                                 <Font size="9.0" />
                                              </font></Button>
@@ -393,6 +393,15 @@
                                                 <Font size="11.0" />
                                              </font>
                                           </Label>
+                                          <Button fx:id="preferitiFlag" layoutX="230.0" layoutY="9.0" mnemonicParsing="false" onAction="#togglePreferiti" opacity="0.5" prefHeight="27.0" prefWidth="23.0" AnchorPane.topAnchor="10.0">
+                                             <graphic>
+                                                <ImageView fitHeight="32.0" fitWidth="16.0" pickOnBounds="true" preserveRatio="true">
+                                                   <image>
+                                                      <Image url="@../img/favoriteIcon.png" />
+                                                   </image>
+                                                </ImageView>
+                                             </graphic>
+                                          </Button>
                                                     </children>
                                                 </AnchorPane>
                                             </items>
