@@ -164,9 +164,11 @@ public class CreaContattoController extends AbstractController implements Initia
      */
     @FXML
     public void aggiungiContatto(ActionEvent event) {
-        //Verifico che i campi obbligatori sono stati sovrascritti
-        if (!validaCampiObbligatori())
+        // Verifico che i campi obbligatori siano stati sovrascritti
+        if (!validaCampiObbligatori()) {
             mostraMessaggioErrore("Errore di validazione", "Devi inserire almeno un nome o un cognome.");
+            return; // Interrompe l'esecuzione in caso di errore
+        }
 
         // Ottieni i valori dai TextField
         String nomeText = nome.getText();
@@ -183,8 +185,10 @@ public class CreaContattoController extends AbstractController implements Initia
         String noteText = note.getText();
 
         // Crea il nuovo contatto
-        ContattoEsteso temp = new ContattoEsteso(nomeText, cognomeText, telefonoText, telefono2Text, telefono3Text, emailText, email2Text, email3Text, compleannoText , indirizzoText, sitoWebText, noteText, false, false);        this.getListaContatti().add(temp);
-        this.getListaContatti().add(temp);
+        ContattoEsteso temp = new ContattoEsteso(nomeText, cognomeText, telefonoText, telefono2Text, telefono3Text, emailText, email2Text, email3Text, compleannoText, indirizzoText, sitoWebText, noteText, false, false);
+        // Aggiungi il contatto alla lista
+        listaContatti.add(temp);
+        // Chiudi la finestra
         Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         stage.close();
     }

@@ -1,5 +1,7 @@
 package it.unisa.diem.swe.group07.rubrica.controllers;
 
+import java.awt.*;
+import java.net.URI;
 import java.net.URL;
 import java.time.LocalDate;
 import java.util.ResourceBundle;
@@ -18,6 +20,10 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Button;
+import javafx.scene.control.Label;
+import javafx.scene.control.MenuItem;
+import javafx.scene.control.TextField;
 import javafx.scene.image.ImageView;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
@@ -166,6 +172,8 @@ public class RubricaController implements Initializable{
     
     @FXML
     private Button preferitiFlag;
+    @FXML
+    private Button emergenzaFlag;
 
     // Attributi
         /**
@@ -306,6 +314,9 @@ public class RubricaController implements Initializable{
         preferitiFlag.opacityProperty().bind(Bindings.when(contattoSelezionato.isPreferito())
                 .then(1.0) // Opacità al 100% quando isPreferiti è true
                 .otherwise(0.5)); // Opacità al 50% quando isPreferiti è false
+        emergenzaFlag.opacityProperty().bind(Bindings.when(contattoSelezionato.isEmergenza())
+                .then(1.0) // Opacità al 100% quando isPreferiti è true
+                .otherwise(0.5)); // Opacità al 50% quando isPreferiti è false
         //imgcontatto.setImage(contatto.getImmagineProfilo());
         
 
@@ -434,5 +445,19 @@ private void setEditableAll(boolean isEditable) {
             contattiFiltratiPreferiti.setPredicate(contatto -> contatto.getPreferito());
             rubricaTable.refresh();
         }
+    }
+
+    private static void openWebpage(String urlString) {
+        try {
+            Desktop desktop = Desktop.getDesktop();
+            desktop.browse(new URL(urlString).toURI());
+        } catch (Exception e) {
+            System.err.println("Errore durante l'apertura del link.");
+            e.printStackTrace();
+        }
+    }
+    @FXML
+    private void openGit(){
+        openWebpage("https://github.com/emanueletocci/uni-swe-project");
     }
 }
