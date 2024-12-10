@@ -216,7 +216,7 @@ public class RubricaController extends AbstractController implements Initializab
      */
     @Override
     public void initialize(URL url, ResourceBundle rb){
-        this.getRubrica().aggiungiContatto(new ContattoEsteso("Emanuele", "Tocci","+3933333333","+3933333333", "+3933333333", "prova@gmail.com", "prova@icloud.com", "prova@unisa.it", LocalDate.of(2020, 12, 12), "via Prova", "unisa.it", "informazioni aggiuntive" , false, false));
+        this.getRubrica().aggiungiContatto(new ContattoEsteso("Emanuele", "Tocci","+3933333333","+3933333333", "+3933333333", "prova@gmail.com", "prova@icloud.com", "prova@unisa.it", LocalDate.of(2020, 12, 12), "via Prova", "unisa.it", "informazioni aggiuntive" , false, true));
         this.getRubrica().aggiungiContatto(new ContattoEsteso("Claudia", "Montefusco","+3933333333","+3933333333", "+3933333333", "prova@gmail.com", "prova@icloud.com", "prova@unisa.it", LocalDate.of(2020, 12, 12), "via Prova", "unisa.it", "informazioni aggiuntive", false, false));
         this.getRubrica().aggiungiContatto(new ContattoEsteso("Alessio", "Leo","+3933333333","+3933333333", "+3933333333", "prova@gmail.com", "prova@icloud.com", "prova@unisa.it", LocalDate.of(2020, 12, 12), "via Prova", "unisa.it", "informazioni aggiuntive", false, false));
         this.getRubrica().aggiungiContatto(new ContattoEsteso("Rossella", "Pale","+3933333333","+3933333333", "+3933333333", "prova@gmail.com", "prova@icloud.com", "prova@unisa.it", LocalDate.of(2020, 12, 12), "via Prova", "unisa.it", "informazioni aggiuntive", true, false));
@@ -434,7 +434,7 @@ private void setEditableAll(boolean isEditable) {
     private void toggleEmergenza(){
         ContattoEsteso c = rubricaTable.getSelectionModel().getSelectedItem();
         if (c != null) {
-            c.setPreferito(!c.getPreferito());
+            c.setEmergenza(!c.getEmergenza());
             contattiFiltratiEmergenza.setPredicate(contatto -> contatto.getEmergenza());
             rubricaTable.refresh();
         }
