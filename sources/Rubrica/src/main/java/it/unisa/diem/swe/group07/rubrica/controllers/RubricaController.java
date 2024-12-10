@@ -299,7 +299,9 @@ public class RubricaController implements Initializable{
         telefono3Field.setText(contatto.getTelefono3());
         indirizzoField.setText(contatto.getIndirizzoResidenza());
         compleannoField.setValue(contatto.getCompleanno());
-        noteField.setText(contatto.getNote());//setText(contatto.getCompleanno());
+        noteField.setText(contatto.getNote());
+        imgcontatto.setImage(contatto.getImmagineProfilo());
+        
 
 }
      /**
@@ -318,6 +320,7 @@ private void setEditableAll(boolean isEditable) {
         indirizzoField.setEditable(isEditable);
         compleannoField.setEditable(isEditable);
         noteField.setEditable(isEditable);
+        
 }
     /**
      * @brief Elimina un contatto selezionato dalla rubrica.
@@ -327,7 +330,7 @@ private void setEditableAll(boolean isEditable) {
     public void eliminaContatto(ActionEvent event) {
     ContattoEsteso c = rubricaTable.getSelectionModel().getSelectedItem();
         if (c!=null){
-            rubrica.rimuoviContatto(c);
+            ///rubrica.rimuoviContatto(c); DA ELIMINARE SE TROVIAMO METODO PER AGGIUNGERE TUUTO ALLA RUBRICAMODEL ALLA FINE
              // Rimuovi il contatto dalla lista osservabile
             listaContatti.remove(c);;
              // Aggiorna la TableView (opzionale, perché ObservableList lo fa automaticamente)
@@ -372,7 +375,7 @@ private void setEditableAll(boolean isEditable) {
             contattoSelezionato.setNote(noteField.getText());
             //contattoSelezionato.setSitoWeb(socialField.getText());
             contattoSelezionato.setNote(noteField.getText());
-            rubrica.aggiornaContatto(contattoSelezionato);
+            rubrica.aggiornaContatto(contattoSelezionato); //non posso parlo con la lista osservabile?
             // Aggiorna la TableView e disabilita i TextField
             rubricaTable.refresh();
             pulsanteSalva.setDisable(true);

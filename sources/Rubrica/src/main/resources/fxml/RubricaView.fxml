@@ -288,7 +288,7 @@
                                                                                 <Insets />
                                                                             </HBox.margin>
                                                                         </Label>
-                                                      <DatePicker fx:id="compleannoField" editable="false" maxHeight="11.0" minHeight="17.0" prefHeight="15.0" prefWidth="150.0" />
+                                                      <DatePicker fx:id="compleannoField" editable="false" maxHeight="11.0" minHeight="17.0" prefHeight="15.0" prefWidth="150.0" promptText="AA/MM/GG" />
                                                                     </children>
                                                                     <padding>
                                                                         <Insets left="10.0" />
@@ -367,16 +367,6 @@
                                                                 <Insets top="10.0" />
                                                             </padding>
                                                         </Label>
-                                                        <HBox alignment="CENTER" layoutX="11.0" layoutY="31.0" prefHeight="50.0" prefWidth="263.0" spacing="12.0">
-                                                            <children>
-                                                                <ImageView fx:id="imgcontatto" fitHeight="41.0" fitWidth="55.0" pickOnBounds="true" preserveRatio="true" />
-                                                                <Label fx:id="fullname" style="-fx-font-weight: bold;">
-                                                                    <font>
-                                                                        <Font size="18.0" />
-                                                                    </font>
-                                                                </Label>
-                                                            </children>
-                                                        </HBox>
                                                         <Button fx:id="pulsanteModifica" layoutX="189.0" layoutY="12.0" mnemonicParsing="false" onAction="#modificaContatto" style="-fx-background-color: white; -fx-background-radius: 15; -fx-border-radius: 15; -fx-border-color: black;" AnchorPane.topAnchor="12.0">
                                              <graphic>
                                                 <ImageView fitHeight="16.0" fitWidth="17.0" pickOnBounds="true" preserveRatio="true">
@@ -397,6 +387,12 @@
                                              <font>
                                                 <Font size="9.0" />
                                              </font></Button>
+                                                          <ImageView fx:id="imgcontatto" fitHeight="41.0" fitWidth="55.0" layoutX="33.0" layoutY="38.0" pickOnBounds="true" preserveRatio="true" />
+                                          <Label fx:id="fullname" layoutX="125.0" layoutY="50.0" prefHeight="17.0" prefWidth="105.0" text="Nome Cognome">
+                                             <font>
+                                                <Font size="11.0" />
+                                             </font>
+                                          </Label>
                                                     </children>
                                                 </AnchorPane>
                                             </items>
