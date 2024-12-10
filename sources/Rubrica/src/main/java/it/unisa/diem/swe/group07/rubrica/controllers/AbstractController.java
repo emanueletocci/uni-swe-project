@@ -2,19 +2,23 @@ package it.unisa.diem.swe.group07.rubrica.controllers;
 import it.unisa.diem.swe.group07.rubrica.models.ContattoEsteso;
 import it.unisa.diem.swe.group07.rubrica.models.Rubrica;
 import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 
 import java.util.List;
 
 public abstract class AbstractController {
     private Rubrica rubrica = new Rubrica();
-    private List<ContattoEsteso> listaContatti;
+    private ObservableList<ContattoEsteso> listaContatti = FXCollections.observableArrayList();
+
     public Rubrica getRubrica() {
         return rubrica;
     }
-    public List<ContattoEsteso> getListaContatti() {
+
+    public ObservableList<ContattoEsteso> getListaContatti() {
         return listaContatti;
     }
-    public void setListaContatti(List<ContattoEsteso> listaContatti) {
+
+    public void setListaContatti(ObservableList<ContattoEsteso> listaContatti) {
         this.listaContatti = listaContatti;
     }
 }
