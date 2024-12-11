@@ -32,6 +32,7 @@ public class Contatto {
     private String cognome;
 
     /**
+     *
      * @brief numeri telefonici del contatto
      */
     private String telefono1;

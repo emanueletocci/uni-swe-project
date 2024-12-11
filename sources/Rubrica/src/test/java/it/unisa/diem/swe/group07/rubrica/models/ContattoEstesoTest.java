@@ -63,8 +63,8 @@ public void testGetterESetter() {
 
 @Test
 public void TestToString() {
-    String s = "Contatto [nome=Claudia, cognome=Montefusco, telefono1=+3933333333, telefono2=+3933333333, telefono3=+3933333333, preferito=false, emergenza =false," +
-                "email1='prova@gmail.com', email2='prova@icloud.com', email3='prova@unisa.it', compleanno=2020-12-12, indirizzoResidenza='via Prova', sitoWeb='unisa.it', note='note' ]";
+    String s = "\nid=0, nome=Claudia, cognome=Montefusco, telefono1=+3933333333, telefono2=+3933333333, telefono3=+3933333333, preferito=false, emergenza=false" +
+               ", email1='prova@gmail.com, email2='prova@icloud.com, email3='prova@unisa.it, compleanno='2020-12-12, indirizzoResidenza='via Prova, sitoWeb='unisa.it, note='note";
     assertEquals(s, ce.toString());
 }
 
