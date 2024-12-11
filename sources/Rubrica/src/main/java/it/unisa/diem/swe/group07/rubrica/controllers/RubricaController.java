@@ -508,7 +508,6 @@ private void setEditableAll(boolean isEditable) {
         ContattoEsteso c = rubricaTable.getSelectionModel().getSelectedItem();
         if (c != null) {
             c.setEmergenza(!c.getEmergenza());
-            contattiFiltratiEmergenza.setPredicate(contatto -> contatto.getEmergenza());
             rubricaTable.refresh();
         }
     }
@@ -520,7 +519,6 @@ private void setEditableAll(boolean isEditable) {
         ContattoEsteso c = rubricaTable.getSelectionModel().getSelectedItem();
         if (c != null) {
             c.setPreferito(!c.getPreferito());
-            contattiFiltratiPreferiti.setPredicate(contatto -> contatto.getPreferito());
             rubricaTable.refresh();
         }
     }
@@ -590,9 +588,10 @@ private void setEditableAll(boolean isEditable) {
         alert.setContentText(messaggio);
         alert.showAndWait();
     }
-    
+
+    /*
     @FXML
     public void importRubrica() {
         
-    }
+    }*/
 }
