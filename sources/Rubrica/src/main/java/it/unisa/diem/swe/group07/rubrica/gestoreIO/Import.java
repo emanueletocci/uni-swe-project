@@ -9,6 +9,13 @@ import java.util.Collection;
 import java.util.List;
 import java.util.Map;
 
+/**
+ * @file Import.java
+ * @brief importa i contatti da un file .vcf e li aggiunge ad una rubrica
+ * @autor Gruppo07
+ * @date Dicembre, 2024
+ * @version 1.0
+ */
 public class Import {
     public static void importRubricaDaVcf(Rubrica r, String nomefile) throws IOException {
       try(BufferedReader br = new BufferedReader(new FileReader(nomefile)))   {
@@ -20,6 +27,7 @@ public class Import {
                 ce = new ContattoEsteso();
             }else if(line.sb("FN:") && ce != null) {
                 ce.setNome(sb.toString());
+                //da completare
             }
              
           

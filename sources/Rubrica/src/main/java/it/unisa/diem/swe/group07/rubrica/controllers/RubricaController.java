@@ -224,6 +224,12 @@ public class RubricaController extends AbstractController implements Initializab
      */
     @FXML
     private MenuItem exportBtn;
+    
+     /**
+     * @brief pulsante di import
+     */
+    @FXML
+    private MenuItem importBtn;
 
     // Attributi
     /**
@@ -541,7 +547,6 @@ private void setEditableAll(boolean isEditable) {
     
         /**
      * @brief metodo per l'export della Rubrica in un file .vcf
-         * @return restituisce un file .vcf
      */
     @FXML
     private void exportRubrica(){
@@ -559,7 +564,6 @@ private void setEditableAll(boolean isEditable) {
     
     /**
      * @brief metodo per l'export del contatto selezionato in un file .vcf
-     * @return restituisce un file .vcf
      */
     @FXML
     public void exportContatto(){
@@ -585,5 +589,10 @@ private void setEditableAll(boolean isEditable) {
         alert.setTitle(titolo);
         alert.setContentText(messaggio);
         alert.showAndWait();
+    }
+    
+    @FXML
+    public void importRubrica() {
+        
     }
 }
