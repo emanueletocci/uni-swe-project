@@ -548,8 +548,8 @@ private void setEditableAll(boolean isEditable) {
      */
     @FXML
     private void exportRubrica(){
-        Export e=new Export(this.getRubrica());
-        e.esportaRubrica();
+        Export e=new Export();
+        e.esportaRubrica(this.getRubrica());
         mostraOperazioneCompletata(
                 "Export completato",
                 "La rubrica è stata esportato con successo\n\noutput: "
