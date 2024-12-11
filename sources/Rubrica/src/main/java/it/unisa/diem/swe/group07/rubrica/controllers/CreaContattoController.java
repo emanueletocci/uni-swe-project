@@ -141,8 +141,8 @@ public class CreaContattoController extends AbstractController implements Initia
         }
     }
     /**
-     * @brief metodo che preleva il valore dai Text Field creando il contatto ed aggiungendolo alla Lista+
-     * @param event evento generato dal click sul pulsante Crea
+     * @brief Il metodo preleva i valori dai Text Field, crea un contatto temporaneo e, se i valori inseriti dall'utente sono validi, lo aggiunge alla rubrica (e alla lista)
+     * @param event evento generato dal click sul pulsante "Crea Contatto"
      */
     @FXML
     public void handleAggiungiContatto(ActionEvent event) {
@@ -169,20 +169,20 @@ public class CreaContattoController extends AbstractController implements Initia
         if(!controllaTelefono(telefonoText)){
             mostraDialog ( Alert.AlertType.ERROR, "Telefono non valido!", "Il numero di telefono 1 inserito non é valido!" );
             return;
-        } else if (!controllaTelefono ( telefono2Text )){
+        } else if (!controllaTelefono (telefono2Text )){
             mostraDialog ( Alert.AlertType.ERROR, "Telefono non valido!", "Il numero di telefono 2 inserito non é valido!" );
             return;
         } else if (!controllaTelefono ( telefono3Text )){
-            mostraDialog ( Alert.AlertType.ERROR, "Telefono non valido!", "Il numero di telefono 2 inserito non é valido!" );
+            mostraDialog ( Alert.AlertType.ERROR, "Telefono non valido!", "Il numero di telefono 3 inserito non é valido!" );
             return;
         }
         if(!controllaEmail(emailText)){
             mostraDialog ( Alert.AlertType.ERROR, "Email non valida!", "L'indirizzo email 1 inserito non é valido!" );
             return;
-        } else if(!controllaEmail(emailText)) {
+        } else if(!controllaEmail(email2Text)) {
             mostraDialog ( Alert.AlertType.ERROR, "Email non valida!", "L'indirizzo email 2 inserito non é valido!" );
             return;
-        } else if(!controllaEmail(emailText)) {
+        } else if(!controllaEmail(email3Text)) {
             mostraDialog ( Alert.AlertType.ERROR, "Email non valida!", "L'indirizzo email 3 inserito non é valido!" );
             return;
         }

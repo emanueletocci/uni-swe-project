@@ -485,6 +485,8 @@ private void setEditableAll(boolean isEditable) {
     @FXML
     private void showRubrica(){
         rubricaTable.setItems(this.getListaContatti());
+        mostraDialog(Alert.AlertType.INFORMATION, "Rubrica", "Stai visualizzando la rubrica completa");
+
     }
     /**
      * @brief metodo per collegare a rubrica table la vista della sotto-rubrica: preferiti
@@ -493,6 +495,7 @@ private void setEditableAll(boolean isEditable) {
     private void showPreferiti(){
         contattiFiltratiPreferiti = new FilteredList<>(this.getListaContatti(), contatto -> contatto.getPreferito());
         rubricaTable.setItems(contattiFiltratiPreferiti);
+        mostraDialog(Alert.AlertType.INFORMATION, "Rubrica - Preferiti", "Stai visualizzando i contatti \"preferiti\" presenti in rubrica"); //Non mi fa impazzire
     }
     /**
      * @brief metodo per collegare a rubrica table la vista della sotto-rubrica: contatti d'emergenza
@@ -501,6 +504,8 @@ private void setEditableAll(boolean isEditable) {
     private void showEmergenza(){
         contattiFiltratiEmergenza = new FilteredList<>(this.getListaContatti(), contatto -> contatto.getEmergenza());
         rubricaTable.setItems(contattiFiltratiEmergenza);
+        mostraDialog(Alert.AlertType.INFORMATION, "Rubrica - Emergenze", "Stai visualizzando i contatti \"emergenza\" presenti in rubrica"); //Non mi fa impazzire
+
     }
     /**
      * @brief metodo per aggiungere e rimuovere alla sotto-rubrica preferiti il contatto selezionato
@@ -511,6 +516,9 @@ private void setEditableAll(boolean isEditable) {
         if (c != null) {
             c.setEmergenza(!c.getEmergenza());
             rubricaTable.refresh();
+            if(c.getEmergenza())
+                mostraDialog(Alert.AlertType.INFORMATION, "Aggiunta Emergenze", "Il contatto é stato aggiunto tra le emergenze");
+            else mostraDialog(Alert.AlertType.WARNING, "Rimozione Emergenze", "Il contatto é stato rimosso dalle emergenze");
         }
     }
     /**
@@ -521,6 +529,9 @@ private void setEditableAll(boolean isEditable) {
         ContattoEsteso c = rubricaTable.getSelectionModel().getSelectedItem();
         if (c != null) {
             c.setPreferito(!c.getPreferito());
+            if(c.getPreferito())
+                mostraDialog(Alert.AlertType.INFORMATION, "Aggiunta Preferiti", "Il contatto é stato aggiunto tra i preferiti");
+            else mostraDialog(Alert.AlertType.WARNING, "Rimozione Preferiti", "Il contatto é stato rimosso dai preferiti");
             rubricaTable.refresh();
         }
     }
