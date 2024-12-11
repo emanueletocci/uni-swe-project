@@ -1,0 +1,136 @@
+@startuml
+
+
+
+class AbstractController {
+  + AbstractController():
+  - listaContatti: ObservableList<ContattoEsteso>
+  - rubrica: Rubrica
+  + mostraDialog(AlertType, String, String): void
+   listaContatti: ObservableList<ContattoEsteso>
+   rubrica: Rubrica
+}
+
+
+class AbstractController {
+  + AbstractController():
+  - listaContatti: ObservableList<ContattoEsteso>
+  - rubrica: Rubrica
+  + mostraDialog(AlertType, String, String): void
+   listaContatti: ObservableList<ContattoEsteso>
+   rubrica: Rubrica
+}
+class CreaContattoController {
+  + CreaContattoController():
+  + handleAggiungiContatto(ActionEvent): void
+  + controllaTelefono(String): Boolean
+  ~ handleAggiungiImmagine(ActionEvent): void
+  - validaCampiObbligatori(): boolean
+  + initialize(URL, ResourceBundle): void
+  - mostraMessaggioErrore(String, String): void
+  + controllaEmail(String): Boolean
+}
+interface Initializable << interface >> {
+  + initialize(URL, ResourceBundle): void
+}
+@startuml
+
+class AbstractController {
+  + AbstractController():
+  - listaContatti: ObservableList<ContattoEsteso>
+  - rubrica: Rubrica
+  + mostraDialog(AlertType, String, String): void
+   listaContatti: ObservableList<ContattoEsteso>
+   rubrica: Rubrica
+}
+interface Initializable << interface >> {
+  + initialize(URL, ResourceBundle): void
+}
+class RubricaController {
+  + RubricaController():
+  + exportContatto(): void
+  + initialize(URL, ResourceBundle): void
+  + handleNuovoContatto(ActionEvent): void
+  - toggleEmergenza(): void
+  - mostraOperazioneCompletata(String, String): void
+  - openWebpage(String): void
+  - showPreferiti(): void
+  - togglePreferiti(): void
+  - exportRubrica(): void
+  + handleModificaContatto(ActionEvent): void
+  - filtraContatti(String): void
+  - mostraDettaglioContatti(ContattoEsteso): void
+  - gestioneSalvaModifiche(ActionEvent): void
+  + handleEliminaContatto(ActionEvent): void
+  - showRubrica(): void
+  - showEmergenza(): void
+  - openGit(): void
+   editableAll: boolean
+}
+
+
+class Export {
+  + Export():
+  + esportaRubrica(Rubrica): void
+  + getVcard(ContattoEsteso): String
+  + esportaContatto(ContattoEsteso): void
+}
+
+class Contatto {
+  + Contatto(String, String, String, String, String, Boolean, Boolean):
+  - id: Integer
+  - telefono3: String
+  - telefono1: String
+  - nome: String
+  - preferito: Boolean
+  - telefono2: String
+  - cognome: String
+  - emergenza: Boolean
+  + equals(Object): boolean
+  + toString(): String
+  + isPreferito(): BooleanProperty
+  + hashCode(): int
+  + isEmergenza(): BooleanProperty
+   telefono2: String
+   telefono3: String
+   emergenza: Boolean
+   nome: String
+   preferito: Boolean
+   telefono1: String
+   cognome: String
+   id: Integer
+}
+class ContattoEsteso {
+  + ContattoEsteso(String, String, String, String, String, String, String, String, LocalDate, String, String, String, Boolean, Boolean):
+  - email2: String
+  - email3: String
+  - indirizzoResidenza: String
+  - note: String
+  - compleanno: LocalDate
+  - sitoWeb: String
+  - email1: String
+  + toString(): String
+  - generaId(): Integer
+  + equals(Object): boolean
+  + hashCode(): int
+   email3: String
+   email2: String
+   note: String
+   email1: String
+   indirizzoResidenza: String
+   sitoWeb: String
+   compleanno: LocalDate
+}
+class Rubrica {
+  + Rubrica():
+  + aggiungiContatto(ContattoEsteso): ContattoEsteso
+  + aggiungiContattoEVerifica(ContattoEsteso): Boolean
+  + toString(): String
+  + rimuoviContatto(ContattoEsteso): ContattoEsteso
+  + aggiornaContatto(ContattoEsteso): Boolean
+  + ricercaContatto(ContattoEsteso): ContattoEsteso
+   contatti: Collection<ContattoEsteso>
+}
+
+
+@enduml

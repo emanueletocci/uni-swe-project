@@ -1,0 +1,32 @@
+@startuml
+
+!theme plain
+top to bottom direction
+skinparam linetype ortho
+
+class Contatto {
+  + Contatto(String, String, String, String, String, Boolean, Boolean): 
+  - emergenza: Boolean
+  - cognome: String
+  - nome: String
+  - telefono3: String
+  - preferito: Boolean
+  - id: Integer
+  - telefono2: String
+  - telefono1: String
+  + toString(): String
+  + isEmergenza(): BooleanProperty
+  + hashCode(): int
+  + equals(Object): boolean
+  + isPreferito(): BooleanProperty
+   telefono2: String
+   telefono3: String
+   emergenza: Boolean
+   nome: String
+   preferito: Boolean
+   telefono1: String
+   cognome: String
+   id: Integer
+}
+
+@enduml
