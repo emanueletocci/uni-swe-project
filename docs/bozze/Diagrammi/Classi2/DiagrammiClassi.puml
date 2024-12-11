@@ -1,0 +1,85 @@
+@startuml
+package Rubrica {
+    package Controller{
+        class MainController{
+            MainController()
+        }
+        class RubricaController{
+            RubricaController()
+        }
+        class ModificaContattoController{
+            ModificaContattoController()
+        }
+        MainController <|-- RubricaController
+        MainController <|-- ModificaContattoController
+    }
+    package Model{
+        class Rubrica{
+            - ObservableMap rubrica
+            + Rubrica(rubrica)
+            + Boolean aggiungiContatto(Contatto c)
+            + Contatto rimuoviContatto(Contatto c)
+            + Contatto ricercaContatto(Contatto c)
+            + String toString()
+        }
+        class RubricaPreferiti{
+            - ObservableMap preferiti
+            + RubricaPreferiti(rubrica, preferiti)
+        }
+        class RubricaEmergenze{
+            - ObservableMap emergenze
+            + RubricaEmergenze(rubrica,emergenze)
+        }
+        class MainApp {
+            + {static} main(String[] args)
+            + start(Stage)
+        }
+
+        class Contatto{
+            - static int id
+            - String nome
+            - String cognome
+            - String[] emails
+            - int[] telefoni
+            + Contatto(int id, String nome, String cognome, String email, int numero, Boolean emergenza, Boolean preferiti)
+            + Contatto(int id, String nome)
+            + Contatto(int id, String cognome)
+            + controllaEmail(String email)
+            + controllaTelefono(String telefono)
+        }
+        class ContattoEsteso {
+            - LocalDate compleanno
+            - String indirizzoResidenza
+            - String sitoWeb
+            - String note
+            + ContattoEsteso(LocalDate compleanno, String indirizzoResidenza, String socialLinks)
+
+        }
+        Contatto <|-- ContattoEsteso
+        Rubrica <|-- RubricaEmergenze
+        Rubrica <|-- RubricaPreferiti
+
+    }
+
+  package Eccezioni {
+    class ContattoAssenteException{
+      + ContattoAssenteException()
+    }
+    class ContattoDuplicatoException{
+      + ContattoDuplicatoException()
+    }
+    class ExportFileException{
+      + ExportFileException()
+    }
+    class ImportFileException{
+      + ImportFileException()
+    }
+    class FormatoFileNonValidoException{
+        + FormatoFileNonValidoException()
+    }
+    class FileInesistenteException{
+        + FileInesistenteException()
+    }
+  }
+}
+@enduml

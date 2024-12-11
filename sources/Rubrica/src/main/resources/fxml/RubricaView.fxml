@@ -11,13 +11,11 @@
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.control.TextField?>
-<?import javafx.scene.effect.BoxBlur?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
-<?import javafx.scene.shape.Line?>
 <?import javafx.scene.text.Font?>
 
 <AnchorPane id="AnchorPane" prefHeight="469.0" prefWidth="606.0" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="it.unisa.diem.swe.group07.rubrica.controllers.RubricaController">
@@ -69,30 +67,38 @@
                                             <items>
                                                 <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
                                                     <children>
-                                                        <SplitPane dividerPositions="0.07635467980295567" orientation="VERTICAL" prefHeight="408.0" prefWidth="302.0">
+                                                        <SplitPane fx:id="splitPane" dividerPositions="0.1" orientation="VERTICAL" prefHeight="408.0" prefWidth="302.0">
                                                             <items>
                                                                 <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="25.0" prefWidth="300.0">
                                                                     <children>
-                                                                        <Label layoutX="6.0" layoutY="6.0" text="Contatti">
-                                                                            <font>
-                                                                                <Font name="Tahoma Bold" size="12.0" />
-                                                                            </font>
-                                                                            <padding>
-                                                                                <Insets top="3.0" />
-                                                                            </padding>
-                                                                        </Label>
-                                                                        <Button fx:id="pulsanteCrea" layoutX="70.0" layoutY="7.0" mnemonicParsing="false" onAction="#handleNuovoContatto" prefHeight="19.0" prefWidth="98.0" style="-fx-background-color: #3375E0; -fx-background-radius: 5;" text="Nuovo Contatto" textAlignment="CENTER" textFill="WHITE" textOverrun="CLIP" AnchorPane.topAnchor="7.0">
-                                                                            <font>
-                                                                                <Font name="System Bold" size="10.0" />
-                                                                            </font>
-                                                                            <padding>
-                                                                                <Insets top="3.0" />
-                                                                            </padding>
-                                                                        </Button>
-                                                      <TextField fx:id="pulsanteCerca" layoutX="188.0" layoutY="7.0" prefHeight="16.0" prefWidth="98.0" promptText="Cerca" AnchorPane.topAnchor="8.5">
-                                                         <font>
-                                                            <Font size="9.0" />
-                                                         </font></TextField>
+                                                      <HBox alignment="CENTER" prefWidth="295.0" spacing="10.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                                         <children>
+                                                                              <Label alignment="CENTER" style="-fx-font-weight: bold;" text="Contatti">
+                                                                                  <font>
+                                                                                      <Font name="Tahoma Bold" size="12.0" />
+                                                                                  </font>
+                                                                                  <padding>
+                                                                                      <Insets top="3.0" />
+                                                                                  </padding>
+                                                               <HBox.margin>
+                                                                  <Insets right="20.0" />
+                                                               </HBox.margin>
+                                                                              </Label>
+                                                                              <Button fx:id="pulsanteCrea" alignment="CENTER" mnemonicParsing="false" onAction="#handleNuovoContatto" prefHeight="25.0" prefWidth="98.0" style="-fx-background-color: #3375E0; -fx-background-radius: 5;" text="Nuovo Contatto" textAlignment="CENTER" textFill="WHITE" textOverrun="CLIP">
+                                                                                  <font>
+                                                                                      <Font name="System Bold" size="10.0" />
+                                                                                  </font>
+                                                                              </Button>
+                                                            <TextField fx:id="pulsanteCerca" prefHeight="16.0" prefWidth="98.0" promptText="Cerca">
+                                                               <font>
+                                                                  <Font size="9.0" />
+                                                               </font>
+                                                            </TextField>
+                                                         </children>
+                                                         <padding>
+                                                            <Insets top="5.0" />
+                                                         </padding>
+                                                      </HBox>
                                                                     </children>
                                                                 </AnchorPane>
                                                                 <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
@@ -111,13 +117,81 @@
                                                 </AnchorPane>
                                                 <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
                                                     <children>
-                                                        <Line endX="233.0" layoutX="44.0" layoutY="31.0" startX="-29.0" stroke="#ede7e0">
-                                                            <effect>
-                                                                <BoxBlur />
-                                                            </effect>
-                                                        </Line>
-                                                        <VBox alignment="BASELINE_RIGHT" layoutY="84.0" prefHeight="321.0" prefWidth="288.0" spacing="2.5" AnchorPane.rightAnchor="0.0">
+                                          <HBox alignment="TOP_CENTER" layoutX="-5.0" layoutY="7.0" prefHeight="401.0" prefWidth="295.0" spacing="8.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="5.0" AnchorPane.rightAnchor="5.0" AnchorPane.topAnchor="10.0">
+                                             <children>
+                                                              <Label alignment="TOP_CENTER" contentDisplay="CENTER" prefHeight="25.0" prefWidth="54.0" style="-fx-font-weight: bold;" text="Dettagli ">
+                                                                  <font>
+                                                                      <Font size="11.0" />
+                                                                  </font>
+                                                   <HBox.margin>
+                                                      <Insets />
+                                                   </HBox.margin>
+                                                   <padding>
+                                                      <Insets top="5.0" />
+                                                   </padding>
+                                                              </Label>
+                                                <Button fx:id="pulsanteSalva" mnemonicParsing="false" onAction="#gestioneSalvaModifiche" prefHeight="25.0" prefWidth="65.0" style="-fx-font-weight: bold; -fx-background-color: #3375E0;" text="Salva" textFill="WHITE">
+                                                   <font>
+                                                      <Font size="9.0" />
+                                                   </font>
+                                                </Button>
+                                                              <Button fx:id="pulsanteElimina" mnemonicParsing="false" onAction="#handleEliminaContatto" opacity="0.5" prefHeight="18.0" prefWidth="17.0">
+                                                   <graphic>
+                                                      <ImageView fitHeight="16.0" fitWidth="17.0" pickOnBounds="true" preserveRatio="true">
+                                                         <image>
+                                                            <Image url="@../img/delIcon.png" />
+                                                         </image>
+                                                      </ImageView>
+                                                   </graphic>
+                                                </Button>
+                                                              <Button fx:id="pulsanteModifica" mnemonicParsing="false" onAction="#handleModificaContatto" opacity="0.5">
+                                                   <graphic>
+                                                      <ImageView fitHeight="16.0" fitWidth="17.0" pickOnBounds="true" preserveRatio="true">
+                                                         <image>
+                                                            <Image url="@../img/editIcon.png" />
+                                                         </image>
+                                                      </ImageView>
+                                                   </graphic>
+                                                </Button>
+                                                <Button fx:id="preferitiFlag" mnemonicParsing="false" onAction="#togglePreferiti" opacity="0.5" prefHeight="27.0" prefWidth="23.0">
+                                                   <graphic>
+                                                      <ImageView fitHeight="32.0" fitWidth="16.0" pickOnBounds="true" preserveRatio="true">
+                                                         <image>
+                                                            <Image url="@../img/favoriteIcon.png" />
+                                                         </image>
+                                                      </ImageView>
+                                                   </graphic>
+                                                </Button>
+                                                <Button fx:id="emergenzaFlag" mnemonicParsing="false" onAction="#toggleEmergenza" opacity="0.5" prefHeight="27.0" prefWidth="34.0">
+                                                   <graphic>
+                                                      <ImageView fitHeight="18.0" fitWidth="37.0" pickOnBounds="true" preserveRatio="true">
+                                                         <image>
+                                                            <Image url="@../img/emergencyIcon.png" />
+                                                         </image>
+                                                      </ImageView>
+                                                   </graphic>
+                                                </Button>
+                                             </children>
+                                          </HBox>
+                                                        <VBox alignment="BASELINE_RIGHT" layoutY="49.0" prefHeight="356.0" prefWidth="288.0" spacing="2.5" AnchorPane.rightAnchor="0.0">
                                                             <children>
+                                                <HBox alignment="CENTER_LEFT" prefHeight="302.0" prefWidth="288.0" spacing="50.0">
+                                                   <children>
+                                                                      <ImageView fx:id="imgcontatto" fitHeight="72.0" fitWidth="117.0" pickOnBounds="true" preserveRatio="true">
+                                                         <image>
+                                                            <Image url="@../img/avatarIcon.jpg" />
+                                                         </image>
+                                                      </ImageView>
+                                                      <Label fx:id="fullname" prefHeight="17.0" prefWidth="105.0" text="Nome Cognome">
+                                                         <font>
+                                                            <Font size="11.0" />
+                                                         </font>
+                                                      </Label>
+                                                   </children>
+                                                   <VBox.margin>
+                                                      <Insets left="5.0" right="5.0" />
+                                                   </VBox.margin>
+                                                </HBox>
                                                                 <HBox alignment="CENTER_LEFT" prefHeight="10.0" prefWidth="288.0" spacing="44.0">
                                                                     <children>
                                                                         <Label lineSpacing="1.0" prefHeight="17.0" prefWidth="36.0" text="Nome:" textAlignment="CENTER" textFill="#1b0808">
@@ -137,6 +211,9 @@
                                                                     <padding>
                                                                         <Insets left="10.0" />
                                                                     </padding>
+                                                   <VBox.margin>
+                                                      <Insets top="15.0" />
+                                                   </VBox.margin>
                                                                 </HBox>
                                                                 <HBox alignment="CENTER_LEFT" prefHeight="10.0" prefWidth="255.0" spacing="31.0">
                                                                     <children>
@@ -168,7 +245,7 @@
                                                                                 <Insets />
                                                                             </HBox.margin>
                                                                         </Label>
-                                                                        <TextField fx:id="telefono1Field" editable="false" prefHeight="11.0" prefWidth="150.0" promptText="+33">
+                                                                        <TextField fx:id="telefono1Field" editable="false" prefHeight="11.0" prefWidth="150.0" promptText="+39">
                                                                             <font>
                                                                                 <Font size="9.5" />
                                                                             </font>
@@ -188,7 +265,7 @@
                                                             <Insets />
                                                          </HBox.margin>
                                                       </Label>
-                                                      <TextField fx:id="telefono2Field" editable="false" prefHeight="11.0" prefWidth="150.0" promptText="+33">
+                                                      <TextField fx:id="telefono2Field" editable="false" prefHeight="11.0" prefWidth="150.0" promptText="+39">
                                                          <font>
                                                             <Font size="9.5" />
                                                          </font>
@@ -208,7 +285,7 @@
                                                             <Insets />
                                                          </HBox.margin>
                                                       </Label>
-                                                      <TextField fx:id="telefono3Field" editable="false" prefHeight="11.0" prefWidth="150.0" promptText="+33">
+                                                      <TextField fx:id="telefono3Field" editable="false" prefHeight="11.0" prefWidth="150.0" promptText="+39">
                                                          <font>
                                                             <Font size="9.5" />
                                                          </font>
@@ -288,7 +365,7 @@
                                                                                 <Insets />
                                                                             </HBox.margin>
                                                                         </Label>
-                                                      <DatePicker fx:id="compleannoField" editable="false" maxHeight="11.0" minHeight="17.0" prefHeight="15.0" prefWidth="150.0" promptText="AA/MM/GG" />
+                                                      <DatePicker fx:id="compleannoField" minHeight="17.0" prefWidth="150.0" promptText="gg/mm/aa" showWeekNumbers="true" />
                                                                     </children>
                                                                     <padding>
                                                                         <Insets left="10.0" />
@@ -344,7 +421,7 @@
                                                                                 <Insets />
                                                                             </HBox.margin>
                                                                         </Label>
-                                                                        <TextField fx:id="noteField" editable="false" prefHeight="40.0" prefWidth="150.0" promptText="Piu informazioni ">
+                                                                        <TextField fx:id="noteField" editable="false" prefHeight="11.0" prefWidth="150.0" promptText="Piu informazioni ">
                                                                             <font>
                                                                                 <Font size="9.0" />
                                                                             </font>
@@ -354,11 +431,12 @@
                                                                         <Insets left="10.0" />
                                                                     </padding>
                                                    <VBox.margin>
-                                                      <Insets top="10.0" />
+                                                      <Insets />
                                                    </VBox.margin>
                                                                 </HBox>
                                                             </children>
                                                         </VBox>
+
                                                         <Label layoutX="8.0" layoutY="6.0" prefHeight="25.0" prefWidth="90.0" text="Dettagli Contatto">
                                                             <font>
                                                                 <Font name="Tahoma Bold" size="10.0" />
@@ -412,6 +490,7 @@
                                              </graphic>
                                           </Button>
                                           <Button fx:id="shareBtn" layoutX="214.0" layoutY="46.0" mnemonicParsing="false" onAction="#exportContatto" text="Condividi" />
+
                                                     </children>
                                                 </AnchorPane>
                                             </items>
