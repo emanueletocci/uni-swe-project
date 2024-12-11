@@ -223,7 +223,7 @@ public class Contatto {
      */
     @Override
     public int hashCode() {
-        return Objects.hash(nome.trim(), cognome.trim());
+        return Objects.hash(nome, cognome);
     }
 
     /**
