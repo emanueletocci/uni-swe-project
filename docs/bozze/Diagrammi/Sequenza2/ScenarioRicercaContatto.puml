@@ -4,17 +4,23 @@ autonumber
 actor Utente
 participant RubricaView
 participant RubricaController
-participant Rubrica
+collections Rubrica
+activate Utente
 Utente -> RubricaView: [Digita nel TextField pulsanteCerca]
-RubricaView -> RubricaController: 
-RubricaController -> Rubrica: [Cerca la stringa nella struttura dati]
-alt [Stringa presente]
-    Rubrica --> RubricaController: [Restituisce i dati del contatto corrispondente]
-    RubricaController --> RubricaView: [Aggiorna il binding con i dati]
-    RubricaView --> Utente: [Mostra il contatto a video]
-else [Stringa non presente]
-    Rubrica --> RubricaController: [Restituisce uno statusCode di errore]
-    RubricaController --> RubricaView: [Notifica l'errore]
-    RubricaView --> Utente: [Mostra un alert con il messaggio di errore] 
+activate RubricaView
+RubricaView -> RubricaController: chiama filtraContatti(String c)
+activate RubricaController
+RubricaController -> Rubrica: filtraContatti(String c)
+activate Rubrica
+
+
+opt [(c != null) || (c.trim().isEmpty())]
+Rubrica --> RubricaController: Ritorna lista filtrata
+deactivate Rubrica
+RubricaController --> RubricaView: Aggiorna lista visualizzata
+deactivate RubricaController
+RubricaView --> Utente: lista aggiornata
 end
+deactivate RubricaView
+deactivate Utente
 @enduml
