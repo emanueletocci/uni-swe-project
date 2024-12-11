@@ -9,16 +9,13 @@ activate Utente
 skinparam sequenceMessageAlign center
 Utente->RubricaView: [click su pulsanteModifica]
 activate RubricaView
-RubricaView->RubricaController: [OnActionEvent event generato da pulsanteModifica]
+RubricaView->RubricaController:[ActionEvent per la modifica]
 activate RubricaController
-RubricaController -> RubricaController:handleModificaContatto(OnActioneEvent event)
-activate RubricaController
-deactivate RubricaController
-RubricaController->Rubrica: aggiornaContatto()
-deactivate RubricaController
+RubricaController -> Rubrica:handleModificaContatto(OnActioneEvent event)
 activate Rubrica
 deactivate Rubrica
-RubricaView->Utente:[view aggiornata]
+RubricaController->RubricaView:[aggiorna view]
+deactivate RubricaController
 deactivate RubricaView
 deactivate Utente
 
