@@ -10,13 +10,25 @@ import java.util.Collection;
 import java.util.List;
 import java.util.Map;
 
+/*
+ * @file Export.java
+ * @brief esporta i contatti in un file .vcf
+ * @autor Gruppo07
+ * @date Dicembre, 2024
+ * @version 1.0
+ */
 public class Export {
-
+     /*
+    * @brief ccollezione contenente i contatti estesi
+    */
+    
     Collection<ContattoEsteso> lst;
+    /*
+    * @brief costruttore della classe Export
+    */
     public Export(Rubrica r){
         lst=r.getContatti();
     }
-    public Export(){}
 
     public String getVcard(ContattoEsteso c) {
         StringBuilder sb = new StringBuilder();
