@@ -1,6 +1,7 @@
 package it.unisa.diem.swe.group07.rubrica.controllers;
 
 import java.awt.*;
+import java.io.File;
 import java.net.URI;
 import java.net.URL;
 import java.time.LocalDate;
@@ -217,8 +218,7 @@ public class RubricaController extends AbstractController implements Initializab
      */
     @FXML
     private MenuItem helpBtn;
-      @FXML
-    private MenuItem helpBtn;
+
     @FXML
     private MenuItem exportBtn;
 
@@ -531,15 +531,35 @@ private void setEditableAll(boolean isEditable) {
     }
     @FXML
     private void exportRubrica(){
-        System.out.println("export start");
-        System.out.println(System.getProperty("user.dir"));
         Export e=new Export(this.getRubrica());
         e.esportaRubrica();
-        System.out.println("export end");
+        mostraOperazioneCompletata(
+                "Export completato",
+                "La rubrica è stata esportato con successo\n\noutput: "
+                        + System.getProperty("user.dir")
+                        + File.separator
+                        + "RubricaExport"
+                        + ".vcf"
+        );
     }
     @FXML
     public void exportContatto(){
         Export e=new Export();
-        e.esportaContatto(rubricaTable.getSelectionModel().getSelectedItem());
+        ContattoEsteso c=rubricaTable.getSelectionModel().getSelectedItem();
+        e.esportaContatto(c);
+        mostraOperazioneCompletata(
+                "Export completato",
+                "Il contatto è stato esportato con successo\noutput: "
+                        + System.getProperty("user.dir")
+                        + File.separator
+                        + c.getNome()
+                        + ".vcf"
+        );
+    }
+    private void mostraOperazioneCompletata(String titolo, String messaggio) {
+        Alert alert = new Alert(Alert.AlertType.INFORMATION);
+        alert.setTitle(titolo);
+        alert.setContentText(messaggio);
+        alert.showAndWait();
     }
 }

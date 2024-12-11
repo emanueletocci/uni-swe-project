@@ -23,14 +23,24 @@ public class Export {
         sb.append("BEGIN:VCARD\n");
         sb.append("VERSION:3.0\n");
         sb.append("FN:").append(c.getNome() != null ? c.getNome() : "").append(" ").append(c.getCognome() != null ? c.getCognome() : "").append("\n");
-        sb.append("BDAY:").append(c.getCompleanno() != null ? c.getCompleanno() : "").append("\n");
-        sb.append("EMAIL;TYPE=work:").append(c.getEmail1() != null ? c.getEmail1() : "").append("\n");
-        sb.append("END:VCARD").append("\n");
+        if (c.getTelefono1() != null) sb.append("TEL;TYPE=cell:").append(c.getTelefono1()).append("\n");
+        if (c.getTelefono2() != null) sb.append("TEL;TYPE=home:").append(c.getTelefono2()).append("\n");
+        if (c.getTelefono3() != null) sb.append("TEL;TYPE=work:").append(c.getTelefono3()).append("\n");
+        if (c.getEmail1() != null) sb.append("EMAIL;TYPE=work:").append(c.getEmail1()).append("\n");
+        if (c.getEmail2() != null) sb.append("EMAIL;TYPE=home:").append(c.getEmail2()).append("\n");
+        if (c.getEmail3() != null) sb.append("EMAIL;TYPE=other:").append(c.getEmail3()).append("\n");
+        if (c.getCompleanno() != null) sb.append("BDAY:").append(c.getCompleanno()).append("\n");
+        if (c.getIndirizzoResidenza() != null) sb.append("ADR;TYPE=home:").append(c.getIndirizzoResidenza()).append("\n");
+        if (c.getSitoWeb() != null) sb.append("URL:").append(c.getSitoWeb()).append("\n");
+        if (c.getNote() != null) sb.append("NOTE:").append(c.getNote()).append("\n");
+        if (c.getPreferito() != null && c.getPreferito()) sb.append("X-PREF:1\n");
+        if (c.getEmergenza() != null && c.getEmergenza()) sb.append("X-EMERG:1\n");
+        sb.append("END:VCARD\n");
         return sb.toString();
     }
 
     public void esportaRubrica() {
-        try (BufferedWriter writer = new BufferedWriter(new FileWriter("rubrica.vcf", StandardCharsets.UTF_8))) {
+        try (BufferedWriter writer = new BufferedWriter(new FileWriter("RubricaExport.vcf", StandardCharsets.UTF_8))) {
             for (ContattoEsteso contatto : lst) {
                 String vcard = getVcard(contatto);
                 writer.write(vcard);
