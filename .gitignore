@@ -203,3 +203,4 @@ README.html
 .idea
 .exercism
 /sources/Rubrica/nbproject/
+.DS_Store

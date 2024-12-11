@@ -209,8 +209,10 @@ public class Contatto {
                 ", cognome=" + cognome +
                 ", telefono1=" + telefono1 +
                 ", telefono2=" + telefono2 +
-                ", telefono3=" + telefono3;
-    }
+                ", telefono3=" + telefono3 +
+                ", preferito=" + preferito +
+                ", emergenza=" + emergenza;
+     }
 
     /**
      * @brief metodo che consente di confrontare 2 contatti
