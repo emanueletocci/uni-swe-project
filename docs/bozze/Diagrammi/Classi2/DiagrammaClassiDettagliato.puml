@@ -1,81 +1,70 @@
 @startuml
 
+package Rubrica {
 
 
-class AbstractController {
-  + AbstractController():
-  - listaContatti: ObservableList<ContattoEsteso>
-  - rubrica: Rubrica
-  + mostraDialog(AlertType, String, String): void
-   listaContatti: ObservableList<ContattoEsteso>
-   rubrica: Rubrica
+    package Controller{
+        class AbstractController {
+        + AbstractController():
+        - listaContatti: ObservableList<ContattoEsteso>
+        - rubrica: Rubrica
+        + mostraDialog(AlertType, String, String): void
+         listaContatti: ObservableList<ContattoEsteso>
+         rubrica: Rubrica
+    }
+    class CreaContattoController {
+        + CreaContattoController():
+        + handleAggiungiContatto(ActionEvent): void
+        + controllaTelefono(String): Boolean
+        ~ handleAggiungiImmagine(ActionEvent): void
+        - validaCampiObbligatori(): boolean
+        + initialize(URL, ResourceBundle): void
+        - mostraMessaggioErrore(String, String): void
+        + controllaEmail(String): Boolean
+    }
+
+    class RubricaController {
+        + RubricaController():
+        + exportContatto(): void
+        + initialize(URL, ResourceBundle): void
+        + handleNuovoContatto(ActionEvent): void
+        - toggleEmergenza(): void
+        - mostraOperazioneCompletata(String, String): void
+        - openWebpage(String): void
+        - showPreferiti(): void
+        - togglePreferiti(): void
+        - exportRubrica(): void
+        + handleModificaContatto(ActionEvent): void
+        - filtraContatti(String): void
+        - mostraDettaglioContatti(ContattoEsteso): void
+        - gestioneSalvaModifiche(ActionEvent): void
+        + handleEliminaContatto(ActionEvent): void
+        - showRubrica(): void
+        - showEmergenza(): void
+        - openGit(): void
+        editableAll: boolean
+    }
 }
 
-
-class AbstractController {
-  + AbstractController():
-  - listaContatti: ObservableList<ContattoEsteso>
-  - rubrica: Rubrica
-  + mostraDialog(AlertType, String, String): void
-   listaContatti: ObservableList<ContattoEsteso>
-   rubrica: Rubrica
-}
-class CreaContattoController {
-  + CreaContattoController():
-  + handleAggiungiContatto(ActionEvent): void
-  + controllaTelefono(String): Boolean
-  ~ handleAggiungiImmagine(ActionEvent): void
-  - validaCampiObbligatori(): boolean
-  + initialize(URL, ResourceBundle): void
-  - mostraMessaggioErrore(String, String): void
-  + controllaEmail(String): Boolean
-}
-interface Initializable << interface >> {
-  + initialize(URL, ResourceBundle): void
-}
-@startuml
-
-class AbstractController {
-  + AbstractController():
-  - listaContatti: ObservableList<ContattoEsteso>
-  - rubrica: Rubrica
-  + mostraDialog(AlertType, String, String): void
-   listaContatti: ObservableList<ContattoEsteso>
-   rubrica: Rubrica
-}
-interface Initializable << interface >> {
-  + initialize(URL, ResourceBundle): void
-}
-class RubricaController {
-  + RubricaController():
-  + exportContatto(): void
-  + initialize(URL, ResourceBundle): void
-  + handleNuovoContatto(ActionEvent): void
-  - toggleEmergenza(): void
-  - mostraOperazioneCompletata(String, String): void
-  - openWebpage(String): void
-  - showPreferiti(): void
-  - togglePreferiti(): void
-  - exportRubrica(): void
-  + handleModificaContatto(ActionEvent): void
-  - filtraContatti(String): void
-  - mostraDettaglioContatti(ContattoEsteso): void
-  - gestioneSalvaModifiche(ActionEvent): void
-  + handleEliminaContatto(ActionEvent): void
-  - showRubrica(): void
-  - showEmergenza(): void
-  - openGit(): void
-   editableAll: boolean
-}
+package gestoreIO{
+    class Export {
+        + Export():
+        + esportaRubrica(Rubrica): void
+        + getVcard(ContattoEsteso): String
+        + esportaContatto(ContattoEsteso): void
+    }
 
 
-class Export {
-  + Export():
-  + esportaRubrica(Rubrica): void
-  + getVcard(ContattoEsteso): String
-  + esportaContatto(ContattoEsteso): void
+    class Import {
+      + Import():
+      + importRubrica(Rubrica, String): void
+      + importaContatto(Contatto, String): void
+    }
+
+
 }
 
+package models{
 class Contatto {
   + Contatto(String, String, String, String, String, Boolean, Boolean):
   - id: Integer
@@ -132,5 +121,5 @@ class Rubrica {
    contatti: Collection<ContattoEsteso>
 }
 
-
+}
 @enduml
