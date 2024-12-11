@@ -6,6 +6,7 @@ import java.net.URL;
 import java.time.LocalDate;
 import java.util.ResourceBundle;
 
+import it.unisa.diem.swe.group07.rubrica.gestoreIO.Export;
 import javafx.beans.binding.Bindings;
 import javafx.scene.control.*;
 import it.unisa.diem.swe.group07.rubrica.models.ContattoEsteso;
@@ -186,9 +187,10 @@ public class RubricaController extends AbstractController implements Initializab
 
     @FXML
     private MenuItem editBtn;
-     @FXML
+    @FXML
     private MenuItem helpBtn;
-
+    @FXML
+    private MenuItem exportBtn;
 
     // Attributi
     /**
@@ -490,5 +492,18 @@ private void setEditableAll(boolean isEditable) {
     @FXML
     private void openGit(){
         openWebpage("https://github.com/emanueletocci/uni-swe-project");
+    }
+    @FXML
+    private void exportRubrica(){
+        System.out.println("export start");
+        System.out.println(System.getProperty("user.dir"));
+        Export e=new Export(this.getRubrica());
+        e.esportaRubrica();
+        System.out.println("export end");
+    }
+    @FXML
+    public void exportContatto(){
+        Export e=new Export();
+        e.esportaContatto(rubricaTable.getSelectionModel().getSelectedItem());
     }
 }
