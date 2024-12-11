@@ -13,22 +13,7 @@ import org.junit.jupiter.api.Test;
  * @author claud
  */
 public class ContattoTest {
-           public ContattoEstesoTest() {
-    }
+
+
     
-    @BeforeAll
-    public static void setUpClass() {
-    }
-    
-    @AfterAll
-    public static void tearDownClass() {
-    }
-    
-    @BeforeEach
-    public void setUp() {
-    }
-    
-    @AfterEach
-    public void tearDown() {
-    }
 }
