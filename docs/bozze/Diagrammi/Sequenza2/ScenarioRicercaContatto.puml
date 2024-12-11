@@ -1,26 +1,23 @@
 @startuml
-title Ricerca Contatto
+title Modifica Contatto
 autonumber
 actor Utente
 participant RubricaView
 participant RubricaController
 collections Rubrica
 activate Utente
-Utente -> RubricaView: [Digita nel TextField pulsanteCerca]
+skinparam sequenceMessageAlign center
+Utente->RubricaView: [click su pulsanteModifica]
 activate RubricaView
-RubricaView -> RubricaController: chiama filtraContatti(String c)
+RubricaView->RubricaController:[chiama la handleModificaContatto(OnActioneEvent event)]
 activate RubricaController
-RubricaController -> Rubrica: filtraContatti(String c)
+RubricaController -> Rubrica:handleModificaContatto(OnActioneEvent event)
 activate Rubrica
-
-
-opt [(c != null) || (c.trim().isEmpty())]
-Rubrica --> RubricaController: Ritorna lista filtrata
+Rubrica --> RubricaController: Ritorna il contatto modificato
 deactivate Rubrica
-RubricaController --> RubricaView: Aggiorna lista visualizzata
+RubricaController -->RubricaView:[aggiorna view]
 deactivate RubricaController
-RubricaView --> Utente: lista aggiornata
-end
 deactivate RubricaView
 deactivate Utente
+
 @enduml
