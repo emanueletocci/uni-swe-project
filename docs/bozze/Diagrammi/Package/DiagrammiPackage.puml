@@ -6,8 +6,5 @@
         package models {}
         package tests {}
         package eccezioni {}
-        package gestoreIO {
-            package vCard{}
-        }
-    }
+        package gestoreIO {}
 @enduml
