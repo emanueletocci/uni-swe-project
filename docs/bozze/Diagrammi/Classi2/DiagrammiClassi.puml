@@ -52,7 +52,7 @@ package Rubrica {
     - Boolean preferito
 
     + Contatto(String nome, String cognome, String telefono1, String telefono2, String telefono3, Boolean preferito, Boolean emergenza)
-    
+
     + getId(): Integer
     + setId(Integer id): void
     + String getNome()
@@ -74,17 +74,17 @@ package Rubrica {
     + toString(): String 
     + equals(Object o): boolean 
     + hashCode(): int
-
-
-        }
+ }
         class ContattoEsteso {
-            - LocalDate compleanno
-            - String indirizzoResidenza
-            - String sitoWeb
-            - String note
-            + ContattoEsteso(LocalDate compleanno, String indirizzoResidenza, String socialLinks)
-
-        }
+    -  email1: String
+    -  email2: String
+    -  email3: String
+    -  compleanno:LocalDate
+    -  indirizzoResidenza: String
+    -  sitoWeb: String
+    -  note: String
+    + ContattoEsteso( nome:String,  cognome: String,  telefono1:String,  telefono2: String,  telefono3:String,  email1:String,  email2:String,  email3:String,  compleanno:LocalDate,  indirizzoResidenza:String,  website:String,  note:String,  preferito:Boolean,  emergenza:Boolean)
+ }
         Contatto <|-- ContattoEsteso
         Rubrica <|-- RubricaEmergenze
         Rubrica <|-- RubricaPreferiti
