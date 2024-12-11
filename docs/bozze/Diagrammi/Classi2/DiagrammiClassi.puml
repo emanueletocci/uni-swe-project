@@ -41,17 +41,41 @@ package Rubrica {
             + RubricaEmergenze(rubrica,emergenze)
         }
 
-        class Contatto{
-            - int id
-            - String nome
-            - String cognome
-            - String[] emails
-            - int[] telefoni
-            + Contatto(int id, String nome, String cognome, String email, int numero, Boolean emergenza, Boolean preferiti)
-            + Contatto(int id, String nome)
-            + Contatto(int id, String cognome)
-            + controllaEmail(String email)
-            + controllaTelefono(String telefono)
+        class Contatto {
+    - Integer id
+    - String nome
+    - String cognome
+    - String telefono1
+    - String telefono2
+    - String telefono3
+    - Boolean emergenza
+    - Boolean preferito
+
+    + Contatto(String nome, String cognome, String telefono1, String telefono2, String telefono3, Boolean preferito, Boolean emergenza)
+    
+    + getId(): Integer
+    + setId(Integer id): void
+    + String getNome()
+    + setNome(String nome): void 
+    + getCognome(): String 
+    + setCognome(String cognome): void 
+    + String getTelefono1()
+    + setTelefono1(String telefono1): void
+    + getTelefono2(): String
+    + setTelefono2(String telefono2):void
+    + getTelefono3():String
+    + setTelefono3(String telefono3): void 
+    + getEmergenza(): Boolean 
+    + setEmergenza(Boolean emergenza): void 
+    + getPreferito(): Boolean
+    + setPreferito(Boolean preferito): void
+    + isPreferito(): BooleanProperty 
+    + isEmergenza(): BooleanProperty 
+    + toString(): String 
+    + equals(Object o): boolean 
+    + hashCode(): int
+
+
         }
         class ContattoEsteso {
             - LocalDate compleanno
