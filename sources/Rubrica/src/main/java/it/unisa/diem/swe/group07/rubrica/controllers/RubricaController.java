@@ -412,7 +412,8 @@ private void setEditableAll(boolean isEditable) {
             // Se il contatto puó essere rimosso dalla rubrica allora rifletti le modifiche sulla lista
             if(this.getRubrica().rimuoviContatto(c) != null){
                 this.getListaContatti().remove(c);
-            }
+                mostraDialog ( Alert.AlertType.INFORMATION, "Rimozione Contatto", "Contatto rimosso correttamente" );
+            } else mostraDialog ( Alert.AlertType.ERROR, "Errore Rimozione Contatto", "Si é verificato un errore durante la rimozione del contatto!" );
             // Aggiorna la TableView (opzionale, perché ObservableList lo fa automaticamente)
             rubricaTable.refresh();
 
@@ -459,7 +460,7 @@ private void setEditableAll(boolean isEditable) {
             contattoSelezionato.setCompleanno(compleannoField.getValue());
             contattoSelezionato.setIndirizzoResidenza(indirizzoField.getText());
             contattoSelezionato.setNote(noteField.getText());
-            //contattoSelezionato.setSitoWeb(socialField.getText());
+            //contattoSelezionato.setSitoWeb(.getText());
             contattoSelezionato.setNote(noteField.getText());
 
             //TEST - rimuovere in seguito
@@ -468,13 +469,14 @@ private void setEditableAll(boolean isEditable) {
             System.out.println("\n***LISTA CONTATTI***\n" + this.getListaContatti().toString());
             // FINE TEST
 
-            // Se il contatto selezionato puó essere rimosso dalla rubrica (Map), allora aggiorna la TableView
+            // Se il contatto selezionato puó essere aggiornato dalla rubrica (Map), allora aggiorna la TableView
             if(this.getRubrica().aggiornaContatto(contattoSelezionato)) {
                 // Aggiorna la TableView e disabilita i TextField
-                rubricaTable.refresh();
+                rubricaTable.refresh(); //la tableView si aggiorna automaticamente!
+                mostraDialog (Alert.AlertType.INFORMATION, "Salvataggio Modifiche", "Il contatto selezionato é stato correttamente aggiornato" );
                 pulsanteSalva.setDisable(true);
                 setEditableAll(false);
-            }
+            } else mostraDialog ( Alert.AlertType.ERROR, "Errore salvataggio modifiche", "Si é verificato un errore durante la modifica del contatto" );
     }
 
     /**
@@ -550,14 +552,13 @@ private void setEditableAll(boolean isEditable) {
     private void exportRubrica(){
         Export e=new Export();
         e.esportaRubrica(this.getRubrica());
-        mostraOperazioneCompletata(
+        mostraDialog( Alert.AlertType.INFORMATION,
                 "Export completato",
                 "La rubrica è stata esportato con successo\n\noutput: "
                         + System.getProperty("user.dir")
                         + File.separator
                         + "RubricaExport"
-                        + ".vcf"
-        );
+                        + ".vcf");
     }
     
     /**
@@ -568,26 +569,13 @@ private void setEditableAll(boolean isEditable) {
         Export e=new Export();
         ContattoEsteso c=rubricaTable.getSelectionModel().getSelectedItem();
         e.esportaContatto(c);
-        mostraOperazioneCompletata(
+        mostraDialog(Alert.AlertType.INFORMATION,
                 "Export completato",
                 "Il contatto è stato esportato con successo\noutput: "
                         + System.getProperty("user.dir")
                         + File.separator
                         + c.getNome()
-                        + ".vcf"
-        );
-    }
-
-     /**
-     * @brief metodo per mostrare a schermo un messaggio informativo sul completamento dell'operazione (informazione)
-     * @param titolo titolo dell'operazione
-     * @param messaggio contenuto del messaggio da mostrare
-     */
-    private void mostraOperazioneCompletata(String titolo, String messaggio) {
-        Alert alert = new Alert(Alert.AlertType.INFORMATION);
-        alert.setTitle(titolo);
-        alert.setContentText(messaggio);
-        alert.showAndWait();
+                        + ".vcf");
     }
 
     /*
