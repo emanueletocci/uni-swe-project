@@ -166,6 +166,27 @@ public class CreaContattoController extends AbstractController implements Initia
         String sitoWebText = sitoWeb.getText();
         String noteText = note.getText();
 
+        if(!controllaTelefono(telefonoText)){
+            mostraDialog ( Alert.AlertType.ERROR, "Telefono non valido!", "Il numero di telefono 1 inserito non é valido!" );
+            return;
+        } else if (!controllaTelefono ( telefono2Text )){
+            mostraDialog ( Alert.AlertType.ERROR, "Telefono non valido!", "Il numero di telefono 2 inserito non é valido!" );
+            return;
+        } else if (!controllaTelefono ( telefono3Text )){
+            mostraDialog ( Alert.AlertType.ERROR, "Telefono non valido!", "Il numero di telefono 2 inserito non é valido!" );
+            return;
+        }
+
+        if(!controllaEmail(emailText)){
+            mostraDialog ( Alert.AlertType.ERROR, "Email non valida!", "L'indirizzo email 1 inserito non é valido!" );
+            return;
+        } else if(!controllaEmail(emailText)) {
+            mostraDialog ( Alert.AlertType.ERROR, "Email non valida!", "L'indirizzo email 2 inserito non é valido!" );
+            return;
+        } else if(!controllaEmail(emailText)) {
+            mostraDialog ( Alert.AlertType.ERROR, "Email non valida!", "L'indirizzo email 3 inserito non é valido!" );
+            return;
+        }
         // Crea il nuovo contatto
         ContattoEsteso temp = new ContattoEsteso(nomeText, cognomeText, telefonoText, telefono2Text, telefono3Text, emailText, email2Text, email3Text, compleannoText, indirizzoText, sitoWebText, noteText, false, false);
 
@@ -202,6 +223,31 @@ public class CreaContattoController extends AbstractController implements Initia
     private boolean validaCampiObbligatori() {
         // Un contatto deve avere necessariamente almeno nome o cognome (tutti gli altri campi possono essere vuoti)
         return (nome.getText() != null && !nome.getText().trim().isEmpty()) || (cognome.getText() != null && !cognome.getText().trim().isEmpty());
+    }
+
+    /**
+     * @brief metodo per la verifica del numero telefonico del contatto
+     * @return "true" se il numero inserito é valido, "false" altrimenti
+     */
+    public Boolean controllaTelefono(String telefono){
+         if(telefono.matches("^\\+?[0-9]{6,15}$") || telefono.isEmpty ())
+             return true;
+         return false;
+        //regex: ^ inizio stringa, \\+ rappresenta il simbolo + (il primo backslash é per escape), ? indica che il simbolo precedente (+) é opzionale, [0-9]{6,15} si possono inserire da 6 a 15 cifre numeriche, $ fine della stringa
+    }
+
+    /**
+     * @brief metodo per la verifica dell'indirizzo email del contatto. Il metodo verifica solamente la presenta della "@" all'interno dell´email inserita
+     * @return "true" se l'email inserita é valida (contiene @), "false" altrimenti
+     */
+    public Boolean controllaEmail(String email) {
+        /*
+         * https://www.baeldung.com/java-email-validation-regex
+         * regex: ^ inizio stringa, (.+) sequenza di uno o piú caratteri qualunque (tranne newLine) che precedono la "@", (\\S+) sequenza di caratteri qualsiasi escluso lo spazio, $ fine della stringa
+         */
+        if (email.matches ( "^(.+)@(\\S+)$" ) || email.isEmpty ())
+            return true;
+        return false;
     }
 
 }

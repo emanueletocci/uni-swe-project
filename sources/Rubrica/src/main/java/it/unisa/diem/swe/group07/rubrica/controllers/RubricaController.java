@@ -543,13 +543,13 @@ private void setEditableAll(boolean isEditable) {
         openWebpage("https://github.com/emanueletocci/uni-swe-project");
     }
     
-        /**
+    /**
      * @brief metodo per l'export della Rubrica in un file .vcf
      */
     @FXML
     private void exportRubrica(){
-        Export e=new Export(this.getRubrica());
-        e.esportaRubrica();
+        Export e=new Export();
+        e.esportaRubrica(this.getRubrica());
         mostraOperazioneCompletata(
                 "Export completato",
                 "La rubrica è stata esportato con successo\n\noutput: "
@@ -577,6 +577,7 @@ private void setEditableAll(boolean isEditable) {
                         + ".vcf"
         );
     }
+
      /**
      * @brief metodo per mostrare a schermo un messaggio informativo sul completamento dell'operazione (informazione)
      * @param titolo titolo dell'operazione

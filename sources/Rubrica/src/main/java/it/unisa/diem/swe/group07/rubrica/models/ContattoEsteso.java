@@ -170,17 +170,6 @@ public class ContattoEsteso extends Contatto {
         this.note = note;
     }
 
-    /**
-     * @brief metodo per la verifica dell'indirizzo email del contatto. Il metodo verifica solamente la presenta della "@" all'interno dell´email inserita
-     * @return "true" se l'email inserita é valida (contiene @), "false" altrimenti
-     */
-    public Boolean controllaEmail(String email){
-        /*
-         * https://www.baeldung.com/java-email-validation-regex
-         * regex: ^ inizio stringa, (.+) sequenza di uno o piú caratteri qualunque (tranne newLine) che precedono la "@", (\\S+) sequenza di caratteri qualsiasi escluso lo spazio, $ fine della stringa
-         */
-        return email.matches("^(.+)@(\\S+) $");
-    }
 
     /**
      * @brief metodo per la stampa degli attributi 
