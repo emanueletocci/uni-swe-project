@@ -5,8 +5,8 @@ actor Utente
 participant RubricaView
 participant RubricaController
 participant Rubrica
-Utente -> RubricaView: [Seleziona la casella di ricerca e digita una stringa]
-RubricaView -> RubricaController: [Passa la stringa al controller]
+Utente -> RubricaView: [Digita nel TextField pulsanteCerca]
+RubricaView -> RubricaController: 
 RubricaController -> Rubrica: [Cerca la stringa nella struttura dati]
 alt [Stringa presente]
     Rubrica --> RubricaController: [Restituisce i dati del contatto corrispondente]
