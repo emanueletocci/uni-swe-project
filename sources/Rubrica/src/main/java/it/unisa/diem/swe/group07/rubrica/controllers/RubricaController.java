@@ -219,6 +219,9 @@ public class RubricaController extends AbstractController implements Initializab
     @FXML
     private MenuItem helpBtn;
 
+     /**
+     * @brief pulsante di export
+     */
     @FXML
     private MenuItem exportBtn;
 
@@ -515,7 +518,10 @@ private void setEditableAll(boolean isEditable) {
             rubricaTable.refresh();
         }
     }
-
+    /**
+     * @brief metodo per aprire la web page utilizzando l'URL specificato
+     * @param urlString url della web page da aprire
+     */
     private static void openWebpage(String urlString) {
         try {
             Desktop desktop = Desktop.getDesktop();
@@ -525,10 +531,17 @@ private void setEditableAll(boolean isEditable) {
             e.printStackTrace();
         }
     }
+    /**
+     * @brief metodo per aprire la repository Git del progetto in una pagina web
+     */
     @FXML
     private void openGit(){
         openWebpage("https://github.com/emanueletocci/uni-swe-project");
     }
+    
+        /**
+     * @brief metodo per l'export della Rubrica in un file .vcf
+     */
     @FXML
     private void exportRubrica(){
         Export e=new Export(this.getRubrica());
@@ -542,6 +555,10 @@ private void setEditableAll(boolean isEditable) {
                         + ".vcf"
         );
     }
+    
+    /**
+     * @brief metodo per l'export del contatto selezionato in un file .vcf
+     */
     @FXML
     public void exportContatto(){
         Export e=new Export();
@@ -556,6 +573,11 @@ private void setEditableAll(boolean isEditable) {
                         + ".vcf"
         );
     }
+     /**
+     * @brief metodo per mostrare a schermo un messaggio informativo sul completamento dell'operazione (informazione)
+     * @param titolo titolo dell'operazione
+     * @param messaggio contenuto del messaggio da mostrare
+     */
     private void mostraOperazioneCompletata(String titolo, String messaggio) {
         Alert alert = new Alert(Alert.AlertType.INFORMATION);
         alert.setTitle(titolo);
