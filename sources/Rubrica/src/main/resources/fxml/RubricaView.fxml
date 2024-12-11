@@ -29,7 +29,7 @@
                                 <Menu mnemonicParsing="false" text="File">
                                     <items>
                                         <MenuItem mnemonicParsing="false" text="Import" />
-                                        <MenuItem mnemonicParsing="false" text="Export" />
+                                        <MenuItem fx:id="editBtn" mnemonicParsing="false" onAction="#exportRubrica" text="Export" />
                                     </items>
                                 </Menu>
                                 <Menu mnemonicParsing="false" text="Edit">
@@ -436,6 +436,61 @@
                                                                 </HBox>
                                                             </children>
                                                         </VBox>
+
+                                                        <Label layoutX="8.0" layoutY="6.0" prefHeight="25.0" prefWidth="90.0" text="Dettagli Contatto">
+                                                            <font>
+                                                                <Font name="Tahoma Bold" size="10.0" />
+                                                            </font>
+                                                            <padding>
+                                                                <Insets top="10.0" />
+                                                            </padding>
+                                                        </Label>
+                                                        <Button fx:id="pulsanteModifica" layoutX="141.0" layoutY="11.0" mnemonicParsing="false" onAction="#handleModificaContatto" style="-fx-background-color: white; -fx-background-radius: 15; -fx-border-radius: 15; -fx-border-color: black;" AnchorPane.topAnchor="10.0">
+                                             <graphic>
+                                                <ImageView fitHeight="16.0" fitWidth="17.0" pickOnBounds="true" preserveRatio="true">
+                                                   <image>
+                                                      <Image url="@../img/editIcon.png" />
+                                                   </image>
+                                                </ImageView>
+                                             </graphic></Button>
+                                                        <Button fx:id="pulsanteElimina" layoutX="179.0" layoutY="10.0" mnemonicParsing="false" onAction="#handleEliminaContatto" prefHeight="18.0" prefWidth="17.0" style="-fx-background-color: white; -fx-background-radius: 15; -fx-border-radius: 15; -fx-border-color: black;" AnchorPane.topAnchor="10.0">
+                                             <graphic>
+                                                <ImageView fitHeight="16.0" fitWidth="17.0" pickOnBounds="true" preserveRatio="true">
+                                                   <image>
+                                                      <Image url="@../img/delIcon.png" />
+                                                   </image>
+                                                </ImageView>
+                                             </graphic></Button>
+                                          <Button fx:id="pulsanteSalva" layoutX="103.0" layoutY="10.0" mnemonicParsing="false" onAction="#gestioneSalvaModifiche" prefHeight="25.0" prefWidth="33.0" style="-fx-font-weight: bold; -fx-background-color: #09de37;" text="Salva" AnchorPane.topAnchor="10.0">
+                                             <font>
+                                                <Font size="9.0" />
+                                             </font></Button>
+                                                          <ImageView fx:id="imgcontatto" fitHeight="41.0" fitWidth="55.0" layoutX="33.0" layoutY="38.0" pickOnBounds="true" preserveRatio="true" />
+                                          <Label fx:id="fullname" layoutX="125.0" layoutY="50.0" prefHeight="17.0" prefWidth="105.0" text="Nome Cognome">
+                                             <font>
+                                                <Font size="11.0" />
+                                             </font>
+                                          </Label>
+                                          <Button fx:id="preferitiFlag" layoutX="222.0" layoutY="10.0" mnemonicParsing="false" onAction="#togglePreferiti" opacity="0.5" prefHeight="27.0" prefWidth="23.0" AnchorPane.topAnchor="10.0">
+                                             <graphic>
+                                                <ImageView fitHeight="32.0" fitWidth="16.0" pickOnBounds="true" preserveRatio="true">
+                                                   <image>
+                                                      <Image url="@../img/favoriteIcon.png" />
+                                                   </image>
+                                                </ImageView>
+                                             </graphic>
+                                          </Button>
+                                          <Button fx:id="emergenzaFlag" layoutX="257.0" layoutY="14.0" mnemonicParsing="false" onAction="#toggleEmergenza" opacity="0.5" prefHeight="26.0" prefWidth="34.0" AnchorPane.topAnchor="10.0">
+                                             <graphic>
+                                                <ImageView fitHeight="17.0" fitWidth="14.0" pickOnBounds="true" preserveRatio="true">
+                                                   <image>
+                                                      <Image url="@../img/emergencyIcon.png" />
+                                                   </image>
+                                                </ImageView>
+                                             </graphic>
+                                          </Button>
+                                          <Button fx:id="shareBtn" layoutX="214.0" layoutY="46.0" mnemonicParsing="false" onAction="#exportContatto" text="Condividi" />
+
                                                     </children>
                                                 </AnchorPane>
                                             </items>
