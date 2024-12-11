@@ -541,6 +541,7 @@ private void setEditableAll(boolean isEditable) {
     
         /**
      * @brief metodo per l'export della Rubrica in un file .vcf
+         * @return restituisce un file .vcf
      */
     @FXML
     private void exportRubrica(){
@@ -558,6 +559,7 @@ private void setEditableAll(boolean isEditable) {
     
     /**
      * @brief metodo per l'export del contatto selezionato in un file .vcf
+     * @return restituisce un file .vcf
      */
     @FXML
     public void exportContatto(){
