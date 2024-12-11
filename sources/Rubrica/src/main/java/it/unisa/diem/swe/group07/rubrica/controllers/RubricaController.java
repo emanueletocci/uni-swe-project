@@ -508,7 +508,6 @@ private void setEditableAll(boolean isEditable) {
         ContattoEsteso c = rubricaTable.getSelectionModel().getSelectedItem();
         if (c != null) {
             c.setEmergenza(!c.getEmergenza());
-            contattiFiltratiEmergenza.setPredicate(contatto -> contatto.getEmergenza());
             rubricaTable.refresh();
         }
     }
@@ -520,7 +519,6 @@ private void setEditableAll(boolean isEditable) {
         ContattoEsteso c = rubricaTable.getSelectionModel().getSelectedItem();
         if (c != null) {
             c.setPreferito(!c.getPreferito());
-            contattiFiltratiPreferiti.setPredicate(contatto -> contatto.getPreferito());
             rubricaTable.refresh();
         }
     }
@@ -550,8 +548,8 @@ private void setEditableAll(boolean isEditable) {
      */
     @FXML
     private void exportRubrica(){
-        Export e=new Export(this.getRubrica());
-        e.esportaRubrica();
+        Export e=new Export();
+        e.esportaRubrica(this.getRubrica());
         mostraOperazioneCompletata(
                 "Export completato",
                 "La rubrica è stata esportato con successo\n\noutput: "
@@ -591,9 +589,10 @@ private void setEditableAll(boolean isEditable) {
         alert.setContentText(messaggio);
         alert.showAndWait();
     }
-    
+
+    /*
     @FXML
     public void importRubrica() {
         
-    }
+    }*/
 }

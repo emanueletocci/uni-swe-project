@@ -10,14 +10,19 @@ import java.util.Collection;
 import java.util.List;
 import java.util.Map;
 
+/*
+ * @file Export.java
+ * @brief esporta i contatti in un file .vcf
+ * @autor Gruppo07
+ * @date Dicembre, 2024
+ * @version 1.0
+ */
 public class Export {
 
-    Collection<ContattoEsteso> lst;
-    public Export(Rubrica r){
-        lst=r.getContatti();
-    }
-    public Export(){}
-
+/**
+* @brief metodo per ottenere la formattazione conforme allo standard vCard da un contatto
+ * @return ritorna una stringa formattata per il vCard
+*/
     public String getVcard(ContattoEsteso c) {
         StringBuilder sb = new StringBuilder();
         sb.append("BEGIN:VCARD\n");
@@ -39,9 +44,13 @@ public class Export {
         return sb.toString();
     }
 
-    public void esportaRubrica() {
+    /**
+     * @param[in] r Rubrica presa in ingresso
+     * @brief metodo per fornire un file di output conforme allo standard vCard che contiene tutta la rubrica
+     */
+    public void esportaRubrica(Rubrica r) {
         try (BufferedWriter writer = new BufferedWriter(new FileWriter("RubricaExport.vcf", StandardCharsets.UTF_8))) {
-            for (ContattoEsteso contatto : lst) {
+            for (ContattoEsteso contatto : r.getContatti()) {
                 String vcard = getVcard(contatto);
                 writer.write(vcard);
             }
@@ -51,6 +60,10 @@ public class Export {
         }
     }
 
+    /**
+     * @param[in] contatto Il contatto selezionato e scelto per l'export
+     * @brief metodo per fornire un file di output conforme allo standard vCard che contiene tutta le informazioni del contatto
+     */
     public void esportaContatto(ContattoEsteso contatto){
         try (BufferedWriter writer = new BufferedWriter(new FileWriter(contatto.getNome()+".vcf", StandardCharsets.UTF_8))) {
             String vcard = getVcard(contatto);
