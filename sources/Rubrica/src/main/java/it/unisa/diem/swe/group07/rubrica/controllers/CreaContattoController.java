@@ -131,7 +131,7 @@ public class CreaContattoController extends AbstractController implements Initia
      */
     @FXML
     void handleAggiungiImmagine(ActionEvent event) {
-        mostraMessaggioErrore("Oh no!", "Questa funzione non é stata ancora implementata!");
+        mostraDialog ( Alert.AlertType.WARNING, "Funzione non presente", "Questa funzione non é stata ancora implementata!");
         fileChooser.setTitle("Scegli immagine di profilo:");
         fileChooser.getExtensionFilters().addAll(new ExtensionFilter("Image Files", "*.png", "*.jpg", "*.gif"));
         File img = fileChooser.showOpenDialog(new Stage());
@@ -146,26 +146,26 @@ public class CreaContattoController extends AbstractController implements Initia
      */
     @FXML
     public void handleAggiungiContatto(ActionEvent event) {
-        // Verifico che i campi obbligatori siano stati sovrascritti
-        if (!validaCampiObbligatori()) {
-            mostraMessaggioErrore("Errore di validazione", "Devi inserire almeno un nome o un cognome.");
+
+        // Ottieni i valori dai TextField e se sono presenti degli spazi, rimuovili
+        String nomeText = nome.getText().trim();
+        String cognomeText = cognome.getText().trim();
+        String telefonoText = telefono.getText().trim();
+        String telefono2Text = telefono2.getText().trim();
+        String telefono3Text = telefono3.getText().trim();
+        String emailText = email.getText().trim();
+        String email2Text = email2.getText().trim();
+        String email3Text = email3.getText().trim();
+        LocalDate compleannoText = compleanno.getValue();
+        String indirizzoText = indirizzo.getText().trim();
+        String sitoWebText = sitoWeb.getText().trim();
+        String noteText = note.getText().trim();
+
+        // Controlli sui campi inseriti dall'utente nella fase di creazione
+        if (!controllaCampiObbligatori (nomeText,cognomeText)){
+            mostraDialog ( Alert.AlertType.ERROR,"Errore di validazione", "Devi inserire almeno un nome o un cognome.");
             return; // Interrompe l'esecuzione in caso di errore
         }
-
-        // Ottieni i valori dai TextField
-        String nomeText = nome.getText();
-        String cognomeText = cognome.getText();
-        String telefonoText = telefono.getText();
-        String telefono2Text = telefono2.getText();
-        String telefono3Text = telefono3.getText();
-        String emailText = email.getText();
-        String email2Text = email2.getText();
-        String email3Text = email3.getText();
-        LocalDate compleannoText = compleanno.getValue();
-        String indirizzoText = indirizzo.getText();
-        String sitoWebText = sitoWeb.getText();
-        String noteText = note.getText();
-
         if(!controllaTelefono(telefonoText)){
             mostraDialog ( Alert.AlertType.ERROR, "Telefono non valido!", "Il numero di telefono 1 inserito non é valido!" );
             return;
@@ -176,7 +176,6 @@ public class CreaContattoController extends AbstractController implements Initia
             mostraDialog ( Alert.AlertType.ERROR, "Telefono non valido!", "Il numero di telefono 2 inserito non é valido!" );
             return;
         }
-
         if(!controllaEmail(emailText)){
             mostraDialog ( Alert.AlertType.ERROR, "Email non valida!", "L'indirizzo email 1 inserito non é valido!" );
             return;
@@ -194,8 +193,7 @@ public class CreaContattoController extends AbstractController implements Initia
         if(this.getRubrica().aggiungiContattoEVerifica(temp))
             this.getListaContatti().add(temp);
         else
-            mostraMessaggioErrore("Contatto Duplicato!", "Il contatto che si sta cercando di aggiungere é giá presente in rubrica!");
-        // Modificare aggiungendo una logica ciclica che consente di non chiudere immediatamente la finestra bensí modificare i valori immessi dall'utente al fine di aggiungere un contatto valido
+            mostraDialog( Alert.AlertType.ERROR,"Contatto Duplicato!", "Il contatto che si sta cercando di aggiungere é giá presente in rubrica!");
 
         System.out.println("\n"+ getClass() + " - handleAggiungiContatto ***\n");
         System.out.println("tempID = " + temp.getId());
@@ -206,31 +204,24 @@ public class CreaContattoController extends AbstractController implements Initia
         Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         stage.close();
     }
-    
-    /**
-     * @brief metodo per mostrare messaggio di errore
-     */
-    private void mostraMessaggioErrore(String titolo, String messaggio) {
-        Alert alert = new Alert(Alert.AlertType.ERROR);
-        alert.setTitle(titolo);
-        alert.setContentText(messaggio);
-        alert.showAndWait();
-    }
 
     /**
      * @brief metodo verificare che almeno un TextField tra nome e cognome è stato sovrascritto
      */
-    private boolean validaCampiObbligatori() {
-        // Un contatto deve avere necessariamente almeno nome o cognome (tutti gli altri campi possono essere vuoti)
-        return (nome.getText() != null && !nome.getText().trim().isEmpty()) || (cognome.getText() != null && !cognome.getText().trim().isEmpty());
-    }
+//    private boolean validaCampiObbligatori() {
+//        // Un contatto deve avere necessariamente almeno nome o cognome (tutti gli altri campi possono essere vuoti)
+//        return (nome.getText() != null && !nome.getText().trim().isEmpty()) || (cognome.getText() != null && !cognome.getText().trim().isEmpty());
+//    }
+    private Boolean controllaCampiObbligatori(String nome, String cognome) {
+        // Verifica che almeno uno tra nome o cognome sia valido
+        return (nome != null && !nome.trim().isEmpty()) || (cognome != null && !cognome.trim().isEmpty());    }
 
     /**
      * @brief metodo per la verifica del numero telefonico del contatto
      * @return "true" se il numero inserito é valido, "false" altrimenti
      */
     public Boolean controllaTelefono(String telefono){
-         if(telefono.matches("^\\+?[0-9]{6,15}$") || telefono.isEmpty ())
+         if(telefono.trim().matches("^\\+?[0-9]{6,15}$") || telefono.trim().isEmpty ())
              return true;
          return false;
         //regex: ^ inizio stringa, \\+ rappresenta il simbolo + (il primo backslash é per escape), ? indica che il simbolo precedente (+) é opzionale, [0-9]{6,15} si possono inserire da 6 a 15 cifre numeriche, $ fine della stringa
