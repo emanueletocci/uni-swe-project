@@ -545,7 +545,7 @@ private void setEditableAll(boolean isEditable) {
         openWebpage("https://github.com/emanueletocci/uni-swe-project");
     }
     
-        /**
+    /**
      * @brief metodo per l'export della Rubrica in un file .vcf
      */
     @FXML
@@ -579,6 +579,7 @@ private void setEditableAll(boolean isEditable) {
                         + ".vcf"
         );
     }
+
      /**
      * @brief metodo per mostrare a schermo un messaggio informativo sul completamento dell'operazione (informazione)
      * @param titolo titolo dell'operazione

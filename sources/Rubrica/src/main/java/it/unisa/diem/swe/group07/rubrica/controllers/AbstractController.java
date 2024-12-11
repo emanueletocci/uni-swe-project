@@ -3,6 +3,7 @@ import it.unisa.diem.swe.group07.rubrica.models.ContattoEsteso;
 import it.unisa.diem.swe.group07.rubrica.models.Rubrica;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import javafx.scene.control.Alert;
 
 import java.util.List;
 /**
@@ -49,5 +50,14 @@ public abstract class AbstractController {
      */
     public void setListaContatti(ObservableList<ContattoEsteso> listaContatti) {
         this.listaContatti = listaContatti;
+    }
+    /**
+     * @brief metodo che consenti di mostrare un generico dialog
+     */
+    public void mostraDialog(Alert.AlertType type, String titolo, String messaggio) {
+        Alert alert = new Alert(type);
+        alert.setTitle(titolo);
+        alert.setContentText(messaggio);
+        alert.showAndWait();
     }
 }
