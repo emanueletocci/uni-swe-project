@@ -2,29 +2,27 @@
 title Aggiungi Contatto
 autonumber
 actor Utente
-participant RubricaView
-participant RubricaController
 participant CreazioneContattoView
 participant CreaContattoController
 collections Rubrica
 
 activate Utente
-Utente->CreaContattoController: [inserisci informazioni]
+Utente->CreazioneContattoView: [inserisci informazioni]
 Utente->CreaContattoController: [clicca "Crea Contatto"]
 activate CreaContattoController
 CreazioneContattoView-> CreaContattoController : [invia informazioni sul contatto]
-CreaContattoController-> CreaContattoController:  validaCampiObbligatori()
+CreaContattoController-> CreaContattoController:  controllaCampiObbligatori()
+CreaContattoController-> CreaContattoController:  controllaTelefono()
+CreaContattoController-> CreaContattoController:  controllaEmail()
+
 alt [vincoli soddisfatti]
-CreaContattoController-> Rubrica : handleAggiungiContatto()
+CreaContattoController-> Rubrica : aggiungiContatto()
 activate Rubrica
 else [vincoli non soddisfatti] 
-CreaContattoController-->RubricaView: mostraMessaggioErrore()
-activate RubricaView
+CreaContattoController-->Utente: mostraDialog(ERROR)
 deactivate CreaContattoController
 deactivate Rubrica
-RubricaView-->Utente: [errore]
 end
-deactivate RubricaView
 deactivate Utente
 
 @enduml
