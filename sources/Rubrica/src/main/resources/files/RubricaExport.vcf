@@ -7,37 +7,22 @@ TEL;TYPE=work:+3933333333
 EMAIL;TYPE=work:prova@gmail.com
 EMAIL;TYPE=home:prova@icloud.com
 EMAIL;TYPE=other:prova@unisa.it
-BDAY:2020-12-12
+BDAY:2003-06-09
 ADR;TYPE=home:via Prova
 URL:unisa.it
-NOTE:informazioni aggiuntive
+NOTE:note
 END:VCARD
 BEGIN:VCARD
 VERSION:3.0
-FN:Claudia Montefusco
-TEL;TYPE=cell:+3933333333
-TEL;TYPE=home:+3933333333
+FN:Antonio Rossi
+TEL;TYPE=cell:+0234798123
+TEL;TYPE=home:
 TEL;TYPE=work:+3933333333
-EMAIL;TYPE=work:prova@gmail.com
+EMAIL;TYPE=work:
 EMAIL;TYPE=home:prova@icloud.com
 EMAIL;TYPE=other:prova@unisa.it
-BDAY:2020-12-12
+BDAY:2001-06-09
 ADR;TYPE=home:via Prova
 URL:unisa.it
-NOTE:informazioni aggiuntive
-END:VCARD
-BEGIN:VCARD
-VERSION:3.0
-FN:Rossella Pale
-TEL;TYPE=cell:+3933333333
-TEL;TYPE=home:+3933333333
-TEL;TYPE=work:+3933333333
-EMAIL;TYPE=work:prova@gmail.com
-EMAIL;TYPE=home:prova@icloud.com
-EMAIL;TYPE=other:prova@unisa.it
-BDAY:2020-12-12
-ADR;TYPE=home:via Prova
-URL:unisa.it
-NOTE:informazioni aggiuntive
-X-PREF:1
+NOTE:note
 END:VCARD
