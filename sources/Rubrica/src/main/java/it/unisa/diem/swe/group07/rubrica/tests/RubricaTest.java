@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package it.unisa.diem.swe.group07.rubrica.gestoreIO;
+package it.unisa.diem.swe.group07.rubrica.tests;
 
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.AfterAll;
@@ -12,29 +12,41 @@ import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
-/**
- *
- * @author claud
- */
-public class ExportTest {
-    
-    public ExportTest() {
-    }
-    
-    @BeforeAll
-    public static void setUpClass() {
-    }
-    
-    @AfterAll
-    public static void tearDownClass() {
-    }
-    
+public class RubricaTest {
+
     @BeforeEach
-    public void setUp() {
+    void setUp() {
     }
-    
+
     @AfterEach
-    public void tearDown() {
+    void tearDown() {
     }
-    
+
+    @Test
+    void aggiungiContatto() {
+    }
+
+    @Test
+    void aggiungiContattoEVerifica() {
+    }
+
+    @Test
+    void rimuoviContatto() {
+    }
+
+    @Test
+    void ricercaContatto() {
+    }
+
+    @Test
+    void getContatti() {
+    }
+
+    @Test
+    void aggiornaContatto() {
+    }
+
+    @Test
+    void testToString() {
+    }
 }
