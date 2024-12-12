@@ -1,3 +1,11 @@
+/**
+ * @file AbstractController.java
+ * @brief Il file contiene l'implementazione di un controller astratto che contiene il riferimento alla rubrica e alla lista osservabile. Il controller predispone
+ * alcuni metodi pubblici (mutator e 'mostraDialog'), direttamente accessibili dalle sottoclassi
+ * @autor Gruppo07
+ * @date Dicembre, 2024
+ */
+
 package it.unisa.diem.swe.group07.rubrica.controllers;
 import it.unisa.diem.swe.group07.rubrica.models.ContattoEsteso;
 import it.unisa.diem.swe.group07.rubrica.models.Rubrica;
@@ -5,54 +13,55 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.scene.control.Alert;
 
-import java.util.List;
-/**
- * @file AbstractController.java
- * @brief questo file contiene l'implementazione del Controller astratto che contiene il riferimento alla rubrica e alla lista
- * @autor Gruppo07
- * @date Dicembre, 2024
- * @version 1.0
- */
-
 public abstract class AbstractController {
+
     /**
-     * @brief attributo Rubrica
+     * @brief istanza della rubrica (Map)
      */
     private Rubrica rubrica = new Rubrica();
+
     /**
-     * @brief struttura che contiene la lista dei contatti
+     * @brief istanza della lista osservabile
      */
     private ObservableList<ContattoEsteso> listaContatti = FXCollections.observableArrayList();
+
      /**
      * @brief metodo getter dell'attributo rubrica
-     * @return attributo rubrica
+     * @return rubrica, Attributo rubrica
      */
     public Rubrica getRubrica() {
         return rubrica;
     }
+
     /**
      * @brief metodo setter dell'attributo rubrica
-     * @param rubrica 
+     * @param[in] rubrica, Attributo rubrica
      */
     public void setRubrica(Rubrica rubrica) {
         this.rubrica = rubrica;
     }
+
      /**
      * @brief metodo getter della struttura (lista osservabile)
-     * @return lista osservabile listaContatti
+     * @return listaContatti, La lista osservabile contenente i contatti
      */ 
     public ObservableList<ContattoEsteso> getListaContatti() {
         return listaContatti;
     }
+
     /**
      * @brief metodo setter della lista osservabile 
-     * @param listaContatti 
+     * @param[in] listaContatti, La lista osservabile contenente i contatti
      */
     public void setListaContatti(ObservableList<ContattoEsteso> listaContatti) {
         this.listaContatti = listaContatti;
     }
+
     /**
-     * @brief metodo che consenti di mostrare un generico dialog
+     * @brief metodo che consenti di mostrare un generico dialog.
+     * @param[in] tyoe, Tipo di Alert.
+     * @param[in] titolo, Titolo della finestra (dialog).
+     * @param[in] messaggio, Messaggio da mostrare nella finestra.
      */
     public void mostraDialog(Alert.AlertType type, String titolo, String messaggio) {
         Alert alert = new Alert(type);
