@@ -50,8 +50,5 @@ public class ImportTest {
         assertEquals("prova@gmail.com", contatto.getEmail1()); 
         // Eliminazione del file temporaneo 
         Files.delete(testFile);
-        
     }
-    
-    
 }
