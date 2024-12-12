@@ -71,8 +71,5 @@ public class ImportTest {
        
         // Eliminazione del file temporaneo 
         Files.delete(testFile);
-        
     }
-    
-    
 }

@@ -215,6 +215,8 @@ public class RubricaController extends AbstractController implements Initializab
     @FXML
     private MenuItem editBtn;
 
+    @FXML
+    private TextField linkField;
     /**
      * @brief pulsante di aiuto
      */
@@ -361,6 +363,8 @@ public class RubricaController extends AbstractController implements Initializab
     private void mostraDettaglioContatti(ContattoEsteso contatto){
         this.contattoSelezionato=contatto;
 
+        fullname.setText(contatto.getNome() + " " + contatto.getCognome());
+
         nomeField.setText(contatto.getNome());
         cognomeField.setText(contatto.getCognome());
         email1Field.setText(contatto.getEmail1());
@@ -369,6 +373,7 @@ public class RubricaController extends AbstractController implements Initializab
         telefono1Field.setText(contatto.getTelefono1());
         telefono2Field.setText(contatto.getTelefono2());
         telefono3Field.setText(contatto.getTelefono3());
+        linkField.setText(contatto.getSitoWeb());
         indirizzoField.setText(contatto.getIndirizzoResidenza());
         compleannoField.setValue(contatto.getCompleanno());
         noteField.setText(contatto.getNote());
@@ -377,8 +382,9 @@ public class RubricaController extends AbstractController implements Initializab
                 .then(1.0) // Opacità al 100% quando isPreferiti è true
                 .otherwise(0.5)); // Opacità al 50% quando isPreferiti è false
         emergenzaFlag.opacityProperty().bind(Bindings.when(contattoSelezionato.isEmergenza())
-                .then(1.0) // Opacità al 100% quando isPreferiti è true
-                .otherwise(0.5)); // Opacità al 50% quando isPreferiti è false
+                .then(1.0)
+                .otherwise(0.5));
+
         //imgcontatto.setImage(contatto.getImmagineProfilo());
 
 
@@ -462,7 +468,7 @@ private void setEditableAll(boolean isEditable) {
             contattoSelezionato.setCompleanno(compleannoField.getValue());
             contattoSelezionato.setIndirizzoResidenza(indirizzoField.getText());
             contattoSelezionato.setNote(noteField.getText());
-            //contattoSelezionato.setSitoWeb(.getText());
+            contattoSelezionato.setSitoWeb(linkField.getText());
             contattoSelezionato.setNote(noteField.getText());
 
             //TEST - rimuovere in seguito
@@ -585,9 +591,11 @@ private void setEditableAll(boolean isEditable) {
         mostraDialog(Alert.AlertType.INFORMATION,
                 "Export completato",
                 "Il contatto è stato esportato con successo\noutput: "
-                        + System.getProperty("user.dir")
+                        + "src/main/resources/files/"
                         + File.separator
                         + c.getNome()
+                        + c.getCognome()
+                        + c.getId()
                         + ".vcf");
     }
 
@@ -597,5 +605,7 @@ private void setEditableAll(boolean isEditable) {
         Import i=new Import();
         i.importVcard(this.getRubrica(), "RubricaImport.vcf");
         System.out.println("fine controller import");
+        System.out.println(this.getRubrica().getContatti());
+        rubricaTable.refresh();
     }
 }
