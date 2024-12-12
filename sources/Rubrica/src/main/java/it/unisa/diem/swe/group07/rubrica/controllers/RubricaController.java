@@ -342,9 +342,20 @@ public class RubricaController extends AbstractController implements Initializab
 
              // Filtra i contatti per nome o cognome
             filteredContatti.setPredicate(contatto -> {
-                boolean matchesNome = contatto.getNome() != null && contatto.getNome().toLowerCase().contains(lowerCaseQuery);
-                boolean matchesCognome = contatto.getCognome() != null && contatto.getCognome().toLowerCase().contains(lowerCaseQuery);
-                return matchesNome || matchesCognome;
+                String nome="";
+                String cognome="";
+                if(contatto.getNome()!=null){
+                    nome=contatto.getNome();
+                }
+                if(contatto.getCognome()!=null){
+                    cognome=contatto.getCognome();
+                }
+                
+                String nomecognome= nome + " "+cognome;
+                boolean matchesNomecognome=nomecognome.toLowerCase().startsWith(lowerCaseQuery);
+                String cognomenome= cognome+" "+nome;
+                boolean matchesCognomenome=cognomenome.toLowerCase().startsWith(lowerCaseQuery);
+                return matchesNomecognome||matchesCognomenome;
             });
         }
     }
