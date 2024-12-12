@@ -82,6 +82,4 @@ public class Rubrica {
         return "\nRubrica\n" + getContatti();
     }
 
-
-
 }
