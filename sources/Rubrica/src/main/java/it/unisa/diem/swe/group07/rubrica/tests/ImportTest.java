@@ -30,7 +30,6 @@ public class ImportTest {
     }
     @Test 
     public void testImportVcard() throws IOException{
-        //creazione file temporaneo del tipo vCard
         Path testFile = Files.createTempFile("testImport", ".vcf"); 
         String vcardContent = 
                 "BEGIN:VCARD\n" + 
@@ -45,13 +44,11 @@ public class ImportTest {
                 "ADR;TYPE=home: Fisciano "+
                 "URL: github.com "+
                 "NOTE: studentessa "+
-                "X-PREF:1 "
-                "X-EMERG:1 "
+                "X-PREF:1 "+
+                "X-EMERG:1 "+
                 "END:VCARD\n"; 
         Files.write(testFile, vcardContent.getBytes(StandardCharsets.UTF_8)); 
-        // Chiamata al metodo importVcard 
         i.importVcard(rubrica, testFile.toString()); 
-        // Verifica che il contatto sia stato aggiunto alla rubrica 
         assertEquals(1, rubrica.getContatti().size()); 
         ContattoEsteso contatto = rubrica.getContatti().get(0); 
         assertEquals("Rossella", contatto.getNome()); 
@@ -68,8 +65,6 @@ public class ImportTest {
         assertEquals("studentessa", contatto.getNote());
         assertEquals("1", contatto.getIsPrefetito());
         assertEquals("1", contatto.getIsEmergenza());
-       
-        // Eliminazione del file temporaneo 
         Files.delete(testFile);
     }
 }

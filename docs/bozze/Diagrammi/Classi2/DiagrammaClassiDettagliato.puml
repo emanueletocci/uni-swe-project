@@ -1,125 +1,250 @@
 @startuml
 
-package Rubrica {
+!theme plain
+top to bottom direction
+skinparam linetype ortho
 
-
-    package Controller{
-        class AbstractController {
-        + AbstractController():
-        - listaContatti: ObservableList<ContattoEsteso>
-        - rubrica: Rubrica
-        + mostraDialog(AlertType, String, String): void
-         listaContatti: ObservableList<ContattoEsteso>
-         rubrica: Rubrica
-    }
-    class CreaContattoController {
-        + CreaContattoController():
-        + handleAggiungiContatto(ActionEvent): void
-        + controllaTelefono(String): Boolean
-        ~ handleAggiungiImmagine(ActionEvent): void
-        - validaCampiObbligatori(): boolean
-        + initialize(URL, ResourceBundle): void
-        - mostraMessaggioErrore(String, String): void
-        + controllaEmail(String): Boolean
-    }
-
-    class RubricaController {
-        + RubricaController():
-        + exportContatto(): void
-        + initialize(URL, ResourceBundle): void
-        + handleNuovoContatto(ActionEvent): void
-        - toggleEmergenza(): void
-        - mostraOperazioneCompletata(String, String): void
-        - openWebpage(String): void
-        - showPreferiti(): void
-        - togglePreferiti(): void
-        - exportRubrica(): void
-        + handleModificaContatto(ActionEvent): void
-        - filtraContatti(String): void
-        - mostraDettaglioContatti(ContattoEsteso): void
-        - gestioneSalvaModifiche(ActionEvent): void
-        + handleEliminaContatto(ActionEvent): void
-        - showRubrica(): void
-        - showEmergenza(): void
-        - openGit(): void
-        editableAll: boolean
-    }
+class AbstractController {
+  + AbstractController():
+  - listaContatti: ObservableList<ContattoEsteso>
+  - rubrica: Rubrica
+  + setRubrica(Rubrica): void
+  + mostraDialog(AlertType, String, String): void
+  + getRubrica(): Rubrica
+  + getListaContatti(): ObservableList<ContattoEsteso>
+  + setListaContatti(ObservableList<ContattoEsteso>): void
 }
-
-package gestoreIO{
-    class Export {
-        + Export():
-        + esportaRubrica(Rubrica): void
-        + getVcard(ContattoEsteso): String
-        + esportaContatto(ContattoEsteso): void
-    }
-
-
-    class Import {
-      + Import():
-      + importRubrica(Rubrica, String): void
-      + importaContatto(Contatto, String): void
-    }
-
-
+class App {
+  + App():
+  - root: Parent
+  - scene: Scene
+  + start(Stage): void
+  + main(String[]): void
 }
-
-package models{
 class Contatto {
+  + Contatto():
   + Contatto(String, String, String, String, String, Boolean, Boolean):
-  - id: Integer
-  - telefono3: String
-  - telefono1: String
-  - nome: String
-  - preferito: Boolean
-  - telefono2: String
   - cognome: String
+  - preferito: Boolean
+  - telefono3: String
+  - nome: String
+  - telefono2: String
+  - telefono1: String
   - emergenza: Boolean
-  + equals(Object): boolean
+  - id: Integer
+  + setTelefono3(String): void
+  + setId(Integer): void
+  + getTelefono2(): String
   + toString(): String
-  + isPreferito(): BooleanProperty
-  + hashCode(): int
+  + setTelefono2(String): void
+  + getNome(): String
   + isEmergenza(): BooleanProperty
-   telefono2: String
-   telefono3: String
-   emergenza: Boolean
-   nome: String
-   preferito: Boolean
-   telefono1: String
-   cognome: String
-   id: Integer
+  + getTelefono3(): String
+  + setNome(String): void
+  + setCognome(String): void
+  + setTelefono1(String): void
+  + getEmergenza(): Boolean
+  + hashCode(): int
+  + getId(): Integer
+  + getPreferito(): Boolean
+  + setPreferito(Boolean): void
+  + getCognome(): String
+  + getTelefono1(): String
+  + setEmergenza(Boolean): void
+  + equals(Object): boolean
+  + isPreferito(): BooleanProperty
 }
 class ContattoEsteso {
   + ContattoEsteso(String, String, String, String, String, String, String, String, LocalDate, String, String, String, Boolean, Boolean):
-  - email2: String
+  + ContattoEsteso():
   - email3: String
-  - indirizzoResidenza: String
-  - note: String
-  - compleanno: LocalDate
-  - sitoWeb: String
+  - email2: String
   - email1: String
+  - indirizzoResidenza: String
+  - sitoWeb: String
+  - compleanno: LocalDate
+  - note: String
+  + setIndirizzoResidenza(String): void
+  + setEmail3(String): void
   + toString(): String
-  - generaId(): Integer
-  + equals(Object): boolean
+  + setNote(String): void
+  + getEmail2(): String
+  + setCompleanno(LocalDate): void
   + hashCode(): int
-   email3: String
-   email2: String
-   note: String
-   email1: String
-   indirizzoResidenza: String
-   sitoWeb: String
-   compleanno: LocalDate
+  + getSitoWeb(): String
+  + getEmail3(): String
+  + getNote(): String
+  - generaId(): Integer
+  + setSitoWeb(String): void
+  + getIndirizzoResidenza(): String
+  + setEmail2(String): void
+  + setEmail1(String): void
+  + getEmail1(): String
+  + equals(Object): boolean
+  + getCompleanno(): LocalDate
+}
+class ContattoEstesoTest {
+  + ContattoEstesoTest():
+  - ce: ContattoEsteso
+  + testContattoEstesoConstructor(): void
+  + TestToString(): void
+  + testGetterESetter(): void
+  + setUp(): void
+  + TestEquals(): void
+  + TestHashCode(): void
+}
+class ContattoTest {
+  + ContattoTest():
+  - c: Contatto
+  + TestContattoConstructor(): void
+  + TestisEmergenza(): void
+  + TesthashCode(): void
+  + TestisPreferito(): void
+  + Testequals(): void
+  + testGetterESetter(): void
+  + TesttoString(): void
+  + setUp(): void
+}
+class CreaContattoController {
+  + CreaContattoController():
+  - email2: TextField
+  - telefono: TextField
+  - email3: TextField
+  - immagine: ImageView
+  - aggiungiEmail: Button
+  - compleanno: DatePicker
+  - fileChooser: FileChooser
+  - email: TextField
+  - telefono3: TextField
+  - pulsanteCrea: Button
+  - bottone_imm: Button
+  - cognome: TextField
+  - indirizzo: TextField
+  - aggiungiTelefono: Button
+  - nome: TextField
+  - note: TextField
+  - telefono2: TextField
+  - sitoWeb: TextField
+  ~ handleAggiungiImmagine(ActionEvent): void
+  + handleAggiungiContatto(ActionEvent): void
+  + initialize(URL, ResourceBundle): void
+  + controllaEmail(String): Boolean
+  + controllaTelefono(String): Boolean
+  - controllaCampiObbligatori(String, String): Boolean
+}
+class Export {
+  + Export():
+  - path: String
+  + getVcard(ContattoEsteso): String
+  + esportaRubrica(Rubrica): void
+  + esportaContatto(ContattoEsteso): void
+}
+class ExportTest {
+  + ExportTest():
+  - c2: ContattoEsteso
+  - c: ContattoEsteso
+  - e: Export
+  - sb: StringBuffer
+  ~ testEsportaRubrica(): void
+  ~ setUp(): void
+  ~ testGetVcard(): void
+  ~ testEsportaContatto(): void
+}
+class Import {
+  + Import():
+  - path: String
+  + importVcard(Rubrica, String): void
 }
 class Rubrica {
   + Rubrica():
-  + aggiungiContatto(ContattoEsteso): ContattoEsteso
-  + aggiungiContattoEVerifica(ContattoEsteso): Boolean
-  + toString(): String
+  - rubrica: Map<Integer, ContattoEsteso>
+  + ricercaContatto(ContattoEsteso): ContattoEsteso
+  + getContatti(): Collection<ContattoEsteso>
   + rimuoviContatto(ContattoEsteso): ContattoEsteso
   + aggiornaContatto(ContattoEsteso): Boolean
-  + ricercaContatto(ContattoEsteso): ContattoEsteso
-   contatti: Collection<ContattoEsteso>
+  + toString(): String
+  + aggiungiContatto(ContattoEsteso): ContattoEsteso
+  + aggiungiContattoEVerifica(ContattoEsteso): Boolean
+}
+class RubricaController {
+  + RubricaController():
+  - cognomeClm: TableColumn<ContattoEsteso, String>
+  - preferitiFlag: Button
+  - indirizzoField: TextField
+  - importBtn: MenuItem
+  - pulsanteElimina: Button
+  - editBtn: MenuItem
+  - compleannoField: DatePicker
+  - linkField: TextField
+  - pulsanteCerca: TextField
+  - splitPane: SplitPane
+  - pulsanteCrea: Button
+  - showRubrica: MenuItem
+  - contattoSelezionato: ContattoEsteso
+  - contattiFiltratiPreferiti: FilteredList<ContattoEsteso>
+  - nomeClm: TableColumn<ContattoEsteso, String>
+  - nomeField: TextField
+  - pulsanteModifica: Button
+  - helpBtn: MenuItem
+  - emergenzaBtn: MenuItem
+  - fullname: Label
+  - preferitiBtn: MenuItem
+  - noteField: TextField
+  - favoritesBtn: Label
+  - rubricaTable: TableView<ContattoEsteso>
+  - emergenzaFlag: Button
+  - filteredContatti: FilteredList<ContattoEsteso>
+  - email1Field: TextField
+  - email3Field: TextField
+  - pulsanteSalva: Button
+  - showEmergenza: MenuItem
+  - cognomeField: TextField
+  - imgcontatto: ImageView
+  - exportBtn: MenuItem
+  - telefono1Field: TextField
+  - del: MenuItem
+  - contattiFiltratiEmergenza: FilteredList<ContattoEsteso>
+  - telefono2Field: TextField
+  - telefono3Field: TextField
+  - email2Field: TextField
+  - openWebpage(String): void
+  - toggleEmergenza(): void
+  - exportRubrica(): void
+  - showPreferiti(): void
+  + exportContatto(): void
+  - setEditableAll(boolean): void
+  + importRubrica(): void
+  + handleEliminaContatto(ActionEvent): void
+  - filtraContatti(String): void
+  - mostraDettaglioContatti(ContattoEsteso): void
+  - gestioneSalvaModifiche(ActionEvent): void
+  + handleNuovoContatto(ActionEvent): void
+  - showEmergenza(): void
+  - togglePreferiti(): void
+  - openGit(): void
+  + handleModificaContatto(ActionEvent): void
+  - showRubrica(): void
+  + initialize(URL, ResourceBundle): void
+}
+class RubricaTest {
+  + RubricaTest():
+  - c: ContattoEsteso
+  - r: Rubrica
+  ~ TestRimuoviContatto(): void
+  ~ TestRicercaContatto(): void
+  ~ TestGetContatti(): void
+  ~ TestAggiungiContatto(): void
+  ~ setUp(): void
+  ~ TestToString(): void
+  ~ TestAggiornaContatto(): void
+  ~ TestAggiungiContattoEVerifica(): void
+}
+class provaTest {
+  + provaTest():
+  + main(String[]): void
 }
 
-}
+ContattoEsteso          -[#000082,plain]-^  Contatto
+CreaContattoController  -[#000082,plain]-^  AbstractController
+RubricaController       -[#000082,plain]-^  AbstractController
 @enduml

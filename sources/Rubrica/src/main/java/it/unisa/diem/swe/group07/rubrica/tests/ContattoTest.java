@@ -26,10 +26,10 @@ public class ContattoTest {
     @Test
     public void TestContattoConstructor() {
         Assertions.assertEquals("nome", c.getNome());
-        Assertions.assertEquals("cognome", c.getNome());
-        Assertions.assertEquals("telefono1", c.getNome());
-        Assertions.assertEquals("telelfono2", c.getNome());
-        Assertions.assertEquals("telelfono3", c.getNome());
+        Assertions.assertEquals("cognome", c.getCognome());
+        Assertions.assertEquals("telefono1", c.getTelefono1());
+        Assertions.assertEquals("telelfono2", c.getTelefono2());
+        Assertions.assertEquals("telelfono3", c.getTelefono3());
         Assertions.assertTrue(c.getPreferito());
         Assertions.assertTrue(c.getEmergenza());
     }
@@ -45,10 +45,10 @@ public class ContattoTest {
         c.setEmergenza(true);
         
         Assertions.assertEquals("nome", c.getNome());
-        Assertions.assertEquals("cognome", c.getNome());
-        Assertions.assertEquals("telefono1", c.getNome());
-        Assertions.assertEquals("telelfono2", c.getNome());
-        Assertions.assertEquals("telelfono3", c.getNome());
+        Assertions.assertEquals("cognome", c.getCognome());
+        Assertions.assertEquals("telefono1", c.getTelefono1());
+        Assertions.assertEquals("telelfono2", c.getTelefono2());
+        Assertions.assertEquals("telelfono3", c.getTelefono3());
         Assertions.assertTrue(c.getPreferito());
         Assertions.assertTrue(c.getEmergenza());
     }
