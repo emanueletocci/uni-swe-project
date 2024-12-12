@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.DatePicker?>
 <?import javafx.scene.control.Label?>
@@ -28,17 +29,14 @@
                             <menus>
                                 <Menu mnemonicParsing="false" text="File">
                                     <items>
-                                        <MenuItem fx:id="importBtn" mnemonicParsing="false" onAction="#importRubrica" text="Import" />
-                                        <MenuItem fx:id="ExportBtn" mnemonicParsing="false" onAction="#exportRubrica" text="Export" />
+                                        <MenuItem fx:id="importBtn" mnemonicParsing="false" onAction="#importRubrica" text="Importa Rubrica" />
+                                        <MenuItem fx:id="ExportBtn" mnemonicParsing="false" onAction="#exportRubrica" text="Esporta Rubrica" />
                                     </items>
                                 </Menu>
-                                <Menu mnemonicParsing="false" text="Edit">
+                                <Menu mnemonicParsing="false" text="Modifica">
                                     <items>
                                         <MenuItem fx:id="editBtn" mnemonicParsing="false" onAction="#handleEliminaContatto" text="Modifica contatto" />
                                         <MenuItem fx:id="del" mnemonicParsing="false" onAction="#handleEliminaContatto" text="Elimina contatto" />
-                              <MenuItem mnemonicParsing="false" text="__________________" />
-                              <MenuItem fx:id="preferitoBtn" mnemonicParsing="false" onAction="#togglePreferiti" text="Toggle Preferiti" />
-                              <MenuItem fx:id="emergenzaBtn" mnemonicParsing="false" onAction="#toggleEmergenza" text="Toggle Contatti d'Emergenza" />
                                     </items>
                                 </Menu>
                                 <Menu mnemonicParsing="false" text="Finestra">
@@ -50,7 +48,7 @@
                                 </Menu>
                                 <Menu mnemonicParsing="false" text="?">
                                     <items>
-                                        <MenuItem fx:id="helpBtn" mnemonicParsing="false" onAction="#openGit" text="About our project" />
+                                        <MenuItem fx:id="helpBtn" mnemonicParsing="false" onAction="#openGit" text="Github" />
                                     </items>
                                 </Menu>
                             </menus>
@@ -73,7 +71,7 @@
                                                                     <children>
                                                       <HBox alignment="CENTER" prefWidth="295.0" spacing="10.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                                                          <children>
-                                                                              <Label alignment="CENTER" style="-fx-font-weight: bold;" text="Contatti">
+                                                                              <Label fx:id="contattiLabel" alignment="CENTER" style="-fx-font-weight: bold;" text="Contatti">
                                                                                   <font>
                                                                                       <Font name="Tahoma Bold" size="12.0" />
                                                                                   </font>
@@ -159,6 +157,9 @@
                                                          <image>
                                                             <Image url="@../img/favoriteIcon.png" />
                                                          </image>
+                                                         <cursor>
+                                                            <Cursor fx:constant="DEFAULT" />
+                                                         </cursor>
                                                       </ImageView>
                                                    </graphic>
                                                 </Button>
@@ -436,7 +437,7 @@
                                                                 </HBox>
                                                             </children>
                                                         </VBox>
-                                          <Button fx:id="shareBtn" layoutX="214.0" layoutY="46.0" mnemonicParsing="false" onAction="#exportContatto" text="Condividi" />
+                                          <Button fx:id="shareBtn" layoutX="214.0" layoutY="46.0" mnemonicParsing="false" onAction="#exportContatto" text="Esporta Contatto" AnchorPane.leftAnchor="170.0" />
 
                                                     </children>
                                                 </AnchorPane>

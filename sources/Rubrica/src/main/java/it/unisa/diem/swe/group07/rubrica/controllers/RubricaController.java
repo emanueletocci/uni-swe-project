@@ -1,27 +1,21 @@
 package it.unisa.diem.swe.group07.rubrica.controllers;
-
 import java.awt.*;
 import java.io.File;
 import java.io.IOException;
-import java.net.URI;
 import java.net.URL;
 import java.time.LocalDate;
 import java.util.ResourceBundle;
-
 import it.unisa.diem.swe.group07.rubrica.gestoreIO.Export;
 import it.unisa.diem.swe.group07.rubrica.gestoreIO.Import;
 import javafx.beans.binding.Bindings;
 import javafx.scene.control.*;
 import it.unisa.diem.swe.group07.rubrica.models.ContattoEsteso;
-import it.unisa.diem.swe.group07.rubrica.models.Rubrica;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.collections.transformation.FilteredList;
 import javafx.beans.property.SimpleStringProperty;
-import javafx.collections.FXCollections;
-import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
@@ -100,18 +94,16 @@ public class RubricaController extends AbstractController implements Initializab
     @FXML // fx:id="noteField"
     private TextField noteField; // Value injected by FXMLLoader
     /**
-     * @brief Menu Item per aggiunta e rimozione dei contatti d'emergenza
-     */
-    @FXML
-    private MenuItem emergenzaBtn;
-    /**
      * @brief Menu Item per aggiunta e rimozione dei preferiti
      */
     @FXML
     private MenuItem preferitiBtn;
-   
-//    @FXML // fx:id="sitoWebField" Se si rimuove il commento non si avvia lol
-//    private TextField sitoField; // Value injected by FXMLLoader
+
+    /**
+     * @brief Label "Contatti"
+     */
+    @FXML
+    private Label contattiLabel;
 
     // Buttons
     
@@ -493,8 +485,7 @@ private void setEditableAll(boolean isEditable) {
     @FXML
     private void showRubrica(){
         rubricaTable.setItems(this.getListaContatti());
-        mostraDialog(Alert.AlertType.INFORMATION, "Rubrica", "Stai visualizzando la rubrica completa");
-
+        contattiLabel.setText("Contatti");
     }
     /**
      * @brief metodo per collegare a rubrica table la vista della sotto-rubrica: preferiti
@@ -503,7 +494,7 @@ private void setEditableAll(boolean isEditable) {
     private void showPreferiti(){
         contattiFiltratiPreferiti = new FilteredList<>(this.getListaContatti(), contatto -> contatto.getPreferito());
         rubricaTable.setItems(contattiFiltratiPreferiti);
-        mostraDialog(Alert.AlertType.INFORMATION, "Rubrica - Preferiti", "Stai visualizzando i contatti \"preferiti\" presenti in rubrica"); //Non mi fa impazzire
+        contattiLabel.setText("Preferiti");
     }
     /**
      * @brief metodo per collegare a rubrica table la vista della sotto-rubrica: contatti d'emergenza
@@ -512,8 +503,7 @@ private void setEditableAll(boolean isEditable) {
     private void showEmergenza(){
         contattiFiltratiEmergenza = new FilteredList<>(this.getListaContatti(), contatto -> contatto.getEmergenza());
         rubricaTable.setItems(contattiFiltratiEmergenza);
-        mostraDialog(Alert.AlertType.INFORMATION, "Rubrica - Emergenze", "Stai visualizzando i contatti \"emergenza\" presenti in rubrica"); //Non mi fa impazzire
-
+        contattiLabel.setText("Emergenze");
     }
     /**
      * @brief metodo per aggiungere e rimuovere alla sotto-rubrica preferiti il contatto selezionato

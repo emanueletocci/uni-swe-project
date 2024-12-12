@@ -1,6 +1,6 @@
 /**
  * @file CreaContattoController.java
- * @brief questo file contiene l'implementazione del controller per la creazione di un contatto
+ * @brief Il file contiene l'implementazione del controller per la creazione di un nuovo contatto e l'aggiunta alla rubrica.
  * @autor Gruppo07
  * @date Dicembre, 2024
  * @version 1.0
@@ -19,27 +19,13 @@ import javafx.scene.control.Alert;
 import javafx.fxml.Initializable;
 import java.net.URL;
 import java.util.ResourceBundle;
-import javafx.scene.image.Image;
-import java.io.File;
 import javafx.stage.FileChooser;
-import javafx.stage.FileChooser.ExtensionFilter;
-
 import java.time.LocalDate;
 
 
 public class CreaContattoController extends AbstractController implements Initializable{
     /**
-     * @brief bottone per aggiungere l'email
-     */
-    @FXML
-    private Button aggiungiEmail;
-    /**
-     * @brief bottone per aggiungere il numero telefonico
-     */
-    @FXML
-    private Button aggiungiTelefono;
-       /**
-     * @brief bottone per effettuare la creazione di un contatto
+     * @brief pulsante per creare un nuovo contatto
      */
     @FXML
     private Button pulsanteCrea;
@@ -121,25 +107,8 @@ public class CreaContattoController extends AbstractController implements Initia
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-        immagine.setImage(null);
-        fileChooser.setInitialDirectory(new File("C:\\Users\\hp\\Desktop\\")); //aggiustare path
     }
 
-    /**
-     * @brief metodo che permette di inserire un immagine di profile nella bottone_imm
-     * @param event evento generato dal click sul pulsante pulsanteImmagine
-     */
-    @FXML
-    void handleAggiungiImmagine(ActionEvent event) {
-        mostraDialog ( Alert.AlertType.WARNING, "Funzione non presente", "Questa funzione non é stata ancora implementata!");
-        fileChooser.setTitle("Scegli immagine di profilo:");
-        fileChooser.getExtensionFilters().addAll(new ExtensionFilter("Image Files", "*.png", "*.jpg", "*.gif"));
-        File img = fileChooser.showOpenDialog(new Stage());
-        if (img != null) {
-            Image immagineScelta=new Image(img.toURI().toString());
-            immagine.setImage(immagineScelta);
-        }
-    }
     /**
      * @brief Il metodo preleva i valori dai Text Field, crea un contatto temporaneo e, se i valori inseriti dall'utente sono validi, lo aggiunge alla rubrica (e alla lista)
      * @param event evento generato dal click sul pulsante "Crea Contatto"
