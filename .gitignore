@@ -204,3 +204,4 @@ README.html
 .exercism
 /sources/Rubrica/nbproject/
 .DS_Store
+*.vcf
