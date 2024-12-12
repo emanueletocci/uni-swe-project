@@ -365,7 +365,7 @@
                                                                                 <Insets />
                                                                             </HBox.margin>
                                                                         </Label>
-                                                      <DatePicker fx:id="compleannoField" minHeight="17.0" prefWidth="150.0" promptText="gg/mm/aa" showWeekNumbers="true" />
+                                                      <DatePicker fx:id="compleannoField" minHeight="17.0" prefWidth="150.0" promptText="mm/gg/aa" />
                                                                     </children>
                                                                     <padding>
                                                                         <Insets left="10.0" />

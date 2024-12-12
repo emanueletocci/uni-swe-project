@@ -6,6 +6,12 @@ import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.IOException;
+import org.junit.jupiter.api.io.TempDir;
+import java.nio.file.InvalidPathException;
+import java.nio.file.Path;
 
 import java.time.LocalDate;
 
@@ -14,18 +20,15 @@ class ExportTest {
     private ContattoEsteso c2;
     private ContattoEsteso c3;
     private Export e;
+    private StringBuffer sb;
 
     @BeforeEach
     void setUp() {
         c = new ContattoEsteso("Emanuele", "Tocci", "+3933333333", "+3933333333", "+3933333333", "prova@gmail.com", "prova@icloud.com", "prova@unisa.it", LocalDate.of(2003, 6, 9), "via Prova", "unisa.it", "note", false, false);
         c2 = new ContattoEsteso("Antonio", "Rossi", "+3933333333", "+3933333333", "+3933333333", "prova@gmail.com", "prova@icloud.com", "prova@unisa.it", LocalDate.of(2001, 6, 9), "via Prova", "unisa.it", "note", false, false);
         e = new Export();
-    }
-
-    @Test
-    void testGetVcard() {
-        StringBuffer valoreAtteso = new StringBuffer();
-        valoreAtteso.append("BEGIN:VCARD\n")
+        sb = new StringBuffer();
+        sb.append("BEGIN:VCARD\n")
                 .append("VERSION:3.0\n")
                 .append("FN:Emanuele Tocci\n")
                 .append("TEL;TYPE=cell:+3933333333\n")
@@ -39,19 +42,29 @@ class ExportTest {
                 .append("URL:unisa.it\n")
                 .append("NOTE:note\n")
                 .append("END:VCARD\n");
-        String valoreAttuale = e.getVcard(c);
-        assertEquals(valoreAtteso.toString(), valoreAttuale);
-
-        String valoreAttuale2 = e.getVcard(c2);
-        assertNotEquals(valoreAtteso.toString(), valoreAttuale2);
     }
 
     @Test
-    void testEsportaRubrica() {
+    void testGetVcard() {
+        String valoreAtteso = sb.toString();
 
+        String valoreAttuale = e.getVcard(c);
+        assertEquals(valoreAtteso, valoreAttuale);
+
+        String valoreAttuale2 = e.getVcard(c2);
+        assertNotEquals(valoreAtteso, valoreAttuale2);
     }
+
+    @Test
+    void testEsportaRubrica() {}
+
 
     @Test
     void testEsportaContatto() {
+        /*
+         * 1. Verfica la creazione del file
+         * 2. Verfica che il contenuto del file sia quello corretto
+         */
     }
+
 }
