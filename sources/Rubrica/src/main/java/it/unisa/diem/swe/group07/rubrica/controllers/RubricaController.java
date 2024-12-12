@@ -561,7 +561,7 @@ private void setEditableAll(boolean isEditable) {
      */
     @FXML
     private void exportRubrica(){
-        Export e=new Export();
+        Export e = new Export();
         e.esportaRubrica(this.getRubrica());
         mostraDialog( Alert.AlertType.INFORMATION,
                 "Export completato",
@@ -577,7 +577,7 @@ private void setEditableAll(boolean isEditable) {
      */
     @FXML
     public void exportContatto(){
-        Export e=new Export();
+        Export e = new Export();
         ContattoEsteso c=rubricaTable.getSelectionModel().getSelectedItem();
         e.esportaContatto(c);
         mostraDialog(Alert.AlertType.INFORMATION,
