@@ -7,39 +7,120 @@ package Rubrica {
             + void start(Stage)
         }
     package Controller{
+          interface Initializable {
+          + initialize(URL url, ResourceBundle rb)
+}
+          class {abstract} AbstractController {
+    - Rubrica rubrica
+    - ObservableList<ContattoEsteso> listaContatti
+    + Rubrica getRubrica()
+    + setRubrica(rubrica: Rubrica): void
+    + getListaContatti(): ObservableList<ContattoEsteso> 
+    + setListaContatti(listaContatti: ObservableList<ContattoEsteso>): void
+    + void mostraDialog ():void
+}
         class RubricaController{
-            - ObservableList<ContattoEsteso> listaContatti 
-            - Rubrica rubrica
-            + initialize(URL url, ResourceBundle rb)
-            + creaContatto(ActionEvent event)
-            + eliminaContatto()
-            + modificaContatto()
-            + cercaContatto(ActionEvent event)
+    - ContattoEsteso contattoSelezionato
+    - FilteredList<ContattoEsteso> contattiFiltartiPreferiti
+    - FilteredList<ContattoEsteso> contattiFiltratiEmergenza
+    - TextField nomeField
+    - TextField cognomeField
+    - TextField telefono1Field
+    - TextField telefono2Field
+    - TextField telefono3Field
+    - TextField email1Field
+    - TextField email2Field
+    - TextField email3Field
+    - DatePicker compleannoField
+    - TextField indirizzoField
+    - TextField noteField
+    - MenuItem emergenzaBtn
+    - MenuItem preferitiBtn
+    - TextField pulsanteCerca
+    - Button pulsanteCrea
+    - Button pulsanteElimina
+    - Button pulsanteModifica
+    - Button pulsanteSalva
+    - Label favoritesBtn
+    - TableColumn<ContattoEsteso, String> cognomeClm
+    - Label fullname
+    - ImageView imgcontatto
+    - TableColumn<ContattoEsteso, String> nomeClm
+    - TableView<ContattoEsteso> rubricaTable
+    - SplitPane splitPane
+    - Button preferitiFlag
+    - Button emergenzaFlag
+    - MenuItem del
+    - MenuItem showEmergenza
+    - MenuItem showRubrica
+    - MenuItem editBtn
+    - MenuItem helpBtn
+    - MenuItem exportBtn
+    - MenuItem importBtn
+    + initialize(url: URL, rb: ResourceBundle): void
+    + handleNuovoContatto(ActionEvent event):void
+    - filtraContatti(String c): void
+    - mostraDettaglioContatti(contatto: ContattoEsteso): void
+    - setEditableAll(isEditable: boolean): void
+    + handleEliminaContatto(event: ActionEvent): void
+    + handleModificaContatto(event: ActionEvent): void
+    + gestioneSalvaModifiche(e: ActionEvent): void
+    - showRubrica(): void
+    - showPreferiti(): void
+    - showEmergenza(): void
+    - toggleEmergenza(): void
+    - togglePreferiti(): void
+    - {static} openWebpage(urlString: String):void
+    - openGit(): void
+    + importRubrica(): void
+    + exportRubrica(): void
+    + exportContatto(): void
         }
         class CreaContattoController{
-            - ObservableList<ContattoEsteso> listaContatti 
-            + creaContattoController()
-            + public void Crea(ActionEvent)
-            + void setListaContatti(List<> listaContatti )
-        }
+    - Button aggiungiEmail
+    - Button aggiungiTelefono
+    - Button pulsanteCrea
+    - Button bottone_imm
+    - TextField nome
+    - TextField cognome
+    - DatePicker compleanno
+    - TextField email
+    - TextField email2
+    - TextField email3
+    - TextField sitoWeb
+    - TextField note
+    - TextField telefono
+    - TextField telefono2
+    - TextField telefono3
+    - ImageView immagine
+    - TextField indirizzo
+    - FileChooser fileChooser
+    + initialize(url: URL, rb: ResourceBundle): void
+    + handleAggiungiImmagine(event: ActionEvent): void
+    + handleAggiungiContatto(event: ActionEvent): void
+    + controllaCampiObbligatori(nome: String,cognome: String): Boolean
+    + controllaTelefono(telefono: String): Boolean
+    + controllaEmail(email: String): Boolean
+}
+RubricaController --|> AbstractController
+RubricaController ..|> Initializable
+CreaContattoController --|> AbstractController
+CreaContattoController..|> Initializable
     }
+
+
     package Model{
-        class Rubrica{
-            - ObservableMap rubrica
-            + Rubrica(rubrica)
-            + Boolean aggiungiContatto(Contatto c)
-            + Contatto rimuoviContatto(Contatto c)
-            + Contatto ricercaContatto(Contatto c)
-            + String toString()
-        }
-        class RubricaPreferiti{
-            - ObservableMap preferiti
-            + RubricaPreferiti(rubrica, preferiti)
-        }
-        class RubricaEmergenze{
-            - ObservableMap emergenze
-            + RubricaEmergenze(rubrica,emergenze)
-        }
+class Rubrica {
+    - rubrica: Map<Integer, ContattoEsteso>
+    + Rubrica()
+    + aggiungiContatto(): ContattoEsteso
+    + aggiungiContattoEVerifica():Boolean
+    + rimuoviContatto(): ContattoEsteso
+    + ricercaContatto(): ContattoEsteso
+    + getContatti(): Collection<ContattoEsteso>
+    + aggiornaContatto(ContattoEsteso contattoAggiornato): Boolean
+    + toString(): String
+}
 
         class Contatto {
     - Integer id
@@ -50,31 +131,13 @@ package Rubrica {
     - String telefono3
     - Boolean emergenza
     - Boolean preferito
-
-    + Contatto(String nome, String cognome, String telefono1, String telefono2, String telefono3, Boolean preferito, Boolean emergenza)
-
-    + getId(): Integer
-    + setId(Integer id): void
-    + String getNome()
-    + setNome(String nome): void 
-    + getCognome(): String 
-    + setCognome(String cognome): void 
-    + String getTelefono1()
-    + setTelefono1(String telefono1): void
-    + getTelefono2(): String
-    + setTelefono2(String telefono2):void
-    + getTelefono3():String
-    + setTelefono3(String telefono3): void 
-    + getEmergenza(): Boolean 
-    + setEmergenza(Boolean emergenza): void 
-    + getPreferito(): Boolean
-    + setPreferito(Boolean preferito): void
+    + Contatto(nome: String, cognome: String, telefono1: String, telefono2: String, telefono3: String, preferito:Boolean, emergenza:Boolean)
     + isPreferito(): BooleanProperty 
     + isEmergenza(): BooleanProperty 
-    + toString(): String 
-    + equals(Object o): boolean 
+    + equals(o: Object): boolean 
     + hashCode(): int
  }
+
         class ContattoEsteso {
     -  email1: String
     -  email2: String
@@ -83,7 +146,7 @@ package Rubrica {
     -  indirizzoResidenza: String
     -  sitoWeb: String
     -  note: String
-    + ContattoEsteso( nome:String,  cognome: String,  telefono1:String,  telefono2: String,  telefono3:String,  email1:String,  email2:String,  email3:String,  compleanno:LocalDate,  indirizzoResidenza:String,  website:String,  note:String,  preferito:Boolean,  emergenza:Boolean)
+    + ContattoEsteso(nome: String, cognome: String, telefono1: String, telefono2: String, telefono3: String, email1: String, email2: String, email3: String, compleanno: LocalDate, indirizzoResidenza: String, website: String, note: String, preferito: Boolean, emergenza: Boolean)
  }
         Contatto <|-- ContattoEsteso
         Rubrica <|-- RubricaEmergenze
