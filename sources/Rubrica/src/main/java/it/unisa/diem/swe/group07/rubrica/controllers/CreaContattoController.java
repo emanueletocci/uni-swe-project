@@ -21,8 +21,15 @@ import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.stage.FileChooser;
 import java.time.LocalDate;
+import javafx.scene.control.Button;
+
 
 public class CreaContattoController extends AbstractController implements Initializable{
+      /**
+     * @brief TextField per il nome del contatto
+     */  
+        @FXML
+    private TextField nome;
     /**
      * @brief pulsante per creare un nuovo contatto
      */
