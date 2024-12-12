@@ -603,7 +603,7 @@ private void setEditableAll(boolean isEditable) {
     public void importRubrica() throws IOException {
         System.out.println("avvio controller import");
         Import i=new Import();
-        i.importVcard(this.getRubrica(), "RubricaImport.vcf");
+        i.importVcard(this.getRubrica(),this.getListaContatti(), "RubricaImport.vcf");
         System.out.println("fine controller import");
         System.out.println(this.getRubrica().getContatti());
         rubricaTable.refresh();

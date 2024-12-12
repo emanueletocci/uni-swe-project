@@ -41,6 +41,7 @@ public class Export {
         if (c.getNote() != null) sb.append("NOTE:").append(c.getNote()).append("\n");
         if (c.getPreferito() != null && c.getPreferito()) sb.append("X-PREF:1\n");
         if (c.getEmergenza() != null && c.getEmergenza()) sb.append("X-EMERG:1\n");
+        sb.append("UID:").append (c.getId()).append("\n");
         sb.append("END:VCARD\n");
         return sb.toString();
     }
