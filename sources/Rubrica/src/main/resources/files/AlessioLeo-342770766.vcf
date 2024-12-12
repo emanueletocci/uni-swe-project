@@ -11,4 +11,7 @@ BDAY:2020-12-12
 ADR;TYPE=home:via Prova
 URL:unisa.it
 NOTE:informazioni aggiuntive
+X-PREF:1
+X-EMERG:1
+UID:-342770766
 END:VCARD
