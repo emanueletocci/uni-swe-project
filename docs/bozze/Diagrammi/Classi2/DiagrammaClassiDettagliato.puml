@@ -4,7 +4,7 @@
 top to bottom direction
 skinparam linetype ortho
 
-class AbstractController {
+ abstract class AbstractController {
   + AbstractController():
   - listaContatti: ObservableList<ContattoEsteso>
   - rubrica: Rubrica
@@ -83,28 +83,8 @@ class ContattoEsteso {
   + equals(Object): boolean
   + getCompleanno(): LocalDate
 }
-class ContattoEstesoTest {
-  + ContattoEstesoTest():
-  - ce: ContattoEsteso
-  + testContattoEstesoConstructor(): void
-  + TestToString(): void
-  + testGetterESetter(): void
-  + setUp(): void
-  + TestEquals(): void
-  + TestHashCode(): void
-}
-class ContattoTest {
-  + ContattoTest():
-  - c: Contatto
-  + TestContattoConstructor(): void
-  + TestisEmergenza(): void
-  + TesthashCode(): void
-  + TestisPreferito(): void
-  + Testequals(): void
-  + testGetterESetter(): void
-  + TesttoString(): void
-  + setUp(): void
-}
+
+
 class CreaContattoController {
   + CreaContattoController():
   - email2: TextField
@@ -138,17 +118,7 @@ class Export {
   + getVcard(ContattoEsteso): String
   + esportaRubrica(Rubrica): void
   + esportaContatto(ContattoEsteso): void
-}
-class ExportTest {
-  + ExportTest():
-  - c2: ContattoEsteso
-  - c: ContattoEsteso
-  - e: Export
-  - sb: StringBuffer
-  ~ testEsportaRubrica(): void
-  ~ setUp(): void
-  ~ testGetVcard(): void
-  ~ testEsportaContatto(): void
+
 }
 class Import {
   + Import():
@@ -226,25 +196,12 @@ class RubricaController {
   - showRubrica(): void
   + initialize(URL, ResourceBundle): void
 }
-class RubricaTest {
-  + RubricaTest():
-  - c: ContattoEsteso
-  - r: Rubrica
-  ~ TestRimuoviContatto(): void
-  ~ TestRicercaContatto(): void
-  ~ TestGetContatti(): void
-  ~ TestAggiungiContatto(): void
-  ~ setUp(): void
-  ~ TestToString(): void
-  ~ TestAggiornaContatto(): void
-  ~ TestAggiungiContattoEVerifica(): void
-}
-class provaTest {
-  + provaTest():
-  + main(String[]): void
-}
 
-ContattoEsteso          -[#000082,plain]-^  Contatto
-CreaContattoController  -[#000082,plain]-^  AbstractController
-RubricaController       -[#000082,plain]-^  AbstractController
+Rubrica    "1" o-- "0..*"   Contatto
+Contatto     <|--           ContattoEsteso
+AbstractController  <|--   RubricaController
+AbstractController  <|--   CreaContattoController
+Rubrica -- AbstractController
+Import -- RubricaController
+Export -- RubricaController
 @enduml
