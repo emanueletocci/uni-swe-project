@@ -2,12 +2,14 @@ package it.unisa.diem.swe.group07.rubrica.controllers;
 
 import java.awt.*;
 import java.io.File;
+import java.io.IOException;
 import java.net.URI;
 import java.net.URL;
 import java.time.LocalDate;
 import java.util.ResourceBundle;
 
 import it.unisa.diem.swe.group07.rubrica.gestoreIO.Export;
+import it.unisa.diem.swe.group07.rubrica.gestoreIO.Import;
 import javafx.beans.binding.Bindings;
 import javafx.scene.control.*;
 import it.unisa.diem.swe.group07.rubrica.models.ContattoEsteso;
@@ -589,9 +591,9 @@ private void setEditableAll(boolean isEditable) {
                         + ".vcf");
     }
 
-    /*
     @FXML
-    public void importRubrica() {
-        
-    }*/
+    public void importRubrica() throws IOException {
+        Import i=new Import();
+        i.importVcard(this.getRubrica(), "RubricaImport.vcf");
+    }
 }

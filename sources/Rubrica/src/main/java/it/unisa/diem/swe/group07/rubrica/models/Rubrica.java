@@ -79,7 +79,7 @@ public class Rubrica {
 
     @Override
     public String toString() {
-        return "\nRubrica\n" + rubrica.values();
+        return "\nRubrica\n" + getContatti();
     }
 
 
