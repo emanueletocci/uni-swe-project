@@ -3,14 +3,14 @@ package Rubrica {
         class App {
             - Scene scene
             - Parent parent
-            + {static} main(String[] args)
-            + void start(Stage)
+            + {static} main(args: String[])
+            + void start(stage: Stage)
         }
     package Controller{
           interface Initializable {
           + initialize(URL url, ResourceBundle rb)
 }
-          class {abstract} AbstractController {
+          abstract class AbstractController {
     - Rubrica rubrica
     - ObservableList<ContattoEsteso> listaContatti
     + Rubrica getRubrica()
@@ -149,9 +149,7 @@ class Rubrica {
     + ContattoEsteso(nome: String, cognome: String, telefono1: String, telefono2: String, telefono3: String, email1: String, email2: String, email3: String, compleanno: LocalDate, indirizzoResidenza: String, website: String, note: String, preferito: Boolean, emergenza: Boolean)
  }
         Contatto <|-- ContattoEsteso
-        Rubrica <|-- RubricaEmergenze
-        Rubrica <|-- RubricaPreferiti
-
+Rubrica o-- Contatto
     }
 
   package Eccezioni {
