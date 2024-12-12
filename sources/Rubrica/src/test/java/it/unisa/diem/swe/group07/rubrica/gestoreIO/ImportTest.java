@@ -41,12 +41,12 @@ public class ImportTest {
                 "EMAIL;TYPE=work:prova@gmail.com " + 
                 "EMAIL;TYPE=home:prova@gmail.com "+
                 "EMAIL;TYPE=other:prova@gmail.com "+
-                "BDAY: 2003/04/24"+
-                "ADR;TYPE=home: Fisciano"
-                "URL: github.com"
-                "NOTE: studentessa"
-                "X-PREF:1"
-                "X-EMERG:1"
+                "BDAY: 2003/04/24 "+
+                "ADR;TYPE=home: Fisciano "+
+                "URL: github.com "+
+                "NOTE: studentessa "+
+                "X-PREF:1 "
+                "X-EMERG:1 "
                 "END:VCARD\n"; 
         Files.write(testFile, vcardContent.getBytes(StandardCharsets.UTF_8)); 
         // Chiamata al metodo importVcard 
@@ -60,8 +60,15 @@ public class ImportTest {
         assertEquals("+3933333333", contatto.getTelefono2());
         assertEquals("+3933333333", contatto.getTelefono3());
         assertEquals("prova@gmail.com", contatto.getEmail1()); 
-        assertEquals("prova@gmail.com", contatto.getEmail1());
-        assertEquals("prova@gmail.com", contatto.getEmail1());
+        assertEquals("prova@gmail.com", contatto.getEmail2());
+        assertEquals("prova@gmail.com", contatto.getEmail3());
+        assertEquals("2003/04/24", contatto.getCompleanno());
+        assertEquals("Fisciano", contatto.getIndirizzoResidenza());
+        assertEquals("github.com", contatto.getSitoWeb());
+        assertEquals("studentessa", contatto.getNote());
+        assertEquals("1", contatto.getIsPrefetito());
+        assertEquals("1", contatto.getIsEmergenza());
+       
         // Eliminazione del file temporaneo 
         Files.delete(testFile);
         
