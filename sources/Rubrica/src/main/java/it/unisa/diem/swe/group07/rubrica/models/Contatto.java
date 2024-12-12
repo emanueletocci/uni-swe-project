@@ -10,9 +10,7 @@ package it.unisa.diem.swe.group07.rubrica.models;
 
 import javafx.beans.property.BooleanProperty;
 import javafx.beans.property.SimpleBooleanProperty;
-
 import java.util.Objects;
-import java.util.UUID;
 
 public class Contatto {
 

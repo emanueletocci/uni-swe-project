@@ -23,6 +23,7 @@ import javafx.scene.control.Label;
 import javafx.scene.control.MenuItem;
 import javafx.scene.control.TextField;
 import javafx.scene.image.ImageView;
+import javafx.stage.FileChooser;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
 
@@ -558,43 +559,48 @@ private void setEditableAll(boolean isEditable) {
      * @brief metodo per l'export della Rubrica in un file .vcf
      */
     @FXML
-    private void exportRubrica(){
+    private void handleExportRubrica(){
+        FileChooser fileChooser = new FileChooser();
+        fileChooser.getExtensionFilters().add(new FileChooser.ExtensionFilter("VCF", "*.vcf"));
+        fileChooser.setTitle("Esporta Rubrica");
+        File file = fileChooser.showSaveDialog(new Stage());
+
         Export e = new Export();
-        e.esportaRubrica(this.getRubrica());
+        e.esportaRubrica(this.getRubrica(), file.getAbsolutePath());
+
         mostraDialog( Alert.AlertType.INFORMATION,
                 "Export completato",
-                "La rubrica è stata esportato con successo\n\noutput: "
-                        + System.getProperty("user.dir")
-                        + File.separator
-                        + "RubricaExport"
-                        + ".vcf");
+                "La rubrica è stata esportato con successo\noutput: " + file.getAbsolutePath()+".vcf");
     }
     
     /**
-     * @brief metodo per l'export del contatto selezionato in un file .vcf
+     * @brief metodo per la gestione dell'evento "Esporta Contatto". Il metodo apre una finestra che consente all'utente di selezionare un percorso in un cui salvare
+     * il file e chiama il metodo responsabile dell'export in formato .vcf
      */
     @FXML
-    public void exportContatto(){
-        Export e = new Export();
+    public void handleExportContatto(){
         ContattoEsteso c=rubricaTable.getSelectionModel().getSelectedItem();
-        e.esportaContatto(c);
+        FileChooser fileChooser = new FileChooser();
+        fileChooser.getExtensionFilters().add(new FileChooser.ExtensionFilter("VCF", "*.vcf"));
+        fileChooser.setTitle("Esporta Contatto");
+        File file = fileChooser.showSaveDialog(new Stage());
+
+        Export e = new Export();
+        e.esportaContatto(c, file.getAbsolutePath());
         mostraDialog(Alert.AlertType.INFORMATION,
                 "Export completato",
-                "Il contatto è stato esportato con successo\noutput: "
-                        + "src/main/resources/files/"
-                        + File.separator
-                        + c.getNome()
-                        + c.getCognome()
-                        + c.getId()
-                        + ".vcf");
+                "Il contatto è stato esportato con successo\noutput: " + file.getAbsolutePath() + ".vcf");
     }
 
     @FXML
-    public void importRubrica() throws IOException {
-        System.out.println("avvio controller import");
+    public void handleImportRubrica() throws IOException {
+        FileChooser fileChooser = new FileChooser();
+        fileChooser.getExtensionFilters().add(new FileChooser.ExtensionFilter("VCF", "*.vcf"));
+        fileChooser.setTitle("Selezionare file .vcf");
+        File file = fileChooser.showOpenDialog(new Stage());
+
         Import i=new Import();
-        i.importVcard(this.getRubrica(),this.getListaContatti(), "RubricaImport.vcf");
-        System.out.println("fine controller import");
+        i.importVcard(this.getRubrica(),this.getListaContatti(), file.getAbsolutePath());
         System.out.println(this.getRubrica().getContatti());
         rubricaTable.refresh();
     }

@@ -19,7 +19,6 @@ import java.time.format.DateTimeFormatter;
  * @version 1.0
  */
 public class Import {
-    private String path = "src/main/resources/files/";
     /**
      * @brief metodo per importare i contatti da un file vCard (.vcf) e aggiungerli a una rubrica
      * @param r la rubrica in cui importare i contatti
@@ -28,9 +27,8 @@ public class Import {
      */
     public void importVcard(Rubrica r, ObservableList lista, String nomefile) throws IOException {
         //aggiunta dello standard utf8 perché è l'unico accettato dai .vcf (fonte stackoverflow)
-        nomefile="AlessioLeo-342770766.vcf"; //test
 
-        try (BufferedReader br = new BufferedReader(new FileReader(path+nomefile, StandardCharsets.UTF_8))) {
+        try (BufferedReader br = new BufferedReader(new FileReader(nomefile, StandardCharsets.UTF_8))) {
             if (br.readLine() == null) {
                 System.out.println("Il file è vuoto");
                 return;
@@ -41,6 +39,8 @@ public class Import {
 
             while ((line = br.readLine()) != null) {
                 if (line.startsWith("BEGIN:VCARD")) {
+                    contatto = new ContattoEsteso();
+                } else if (line.startsWith("VERSION:3.0")) {
                     ; //nop
                 } else if (line.startsWith("FN:")) {
                     String[] n = line.substring(3).split(" "); //uso substring per togliere il tag vcard//tramite split al primo incice ho il nome
@@ -67,15 +67,16 @@ public class Import {
                 } else if (line.startsWith("NOTE:")) {
                     contatto.setNote(line.substring(5));
                 } else if (line.startsWith("X-PREF:1")) {
-                    contatto.setPreferito(true);
+                    contatto.setPreferito(Boolean.parseBoolean(line.substring(8)));
                 } else if (line.startsWith("X-EMERG:1")) {
-                    contatto.setEmergenza(true);
+                    contatto.setEmergenza(Boolean.parseBoolean(line.substring(9)));
                 } else if (line.startsWith("UID:")) {
-                    contatto.setId(Integer.parseInt (line. substring(4)));
+                    contatto.setId(Integer.parseInt(line.substring(4)));
                 } else if (line.startsWith("END:VCARD")) {
+                    System.out.println("\nAggiungo il contatto alla rubrica");
                     if(r.aggiungiContattoEVerifica(contatto))
                         lista.add(contatto);
-                }
+                } else System.out.println("\n\nErrore Lettura");
             }
             // TEST - eliminare in seguito
             System.out.println("\n"+ getClass() + " - import ***\n");

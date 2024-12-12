@@ -9,6 +9,7 @@ package it.unisa.diem.swe.group07.rubrica.controllers;
 import it.unisa.diem.swe.group07.rubrica.models.ContattoEsteso;
 import javafx.fxml.FXML;
 import javafx.scene.Node;
+import javafx.scene.control.Button;
 import javafx.scene.control.DatePicker;
 import javafx.scene.control.TextField;
 import javafx.scene.image.ImageView;
@@ -37,6 +38,11 @@ public class CreaContattoController extends AbstractController implements Initia
      */
     @FXML
     private TextField cognome;
+    /**
+     * @brief  Text Field per il cognome del contatto
+     */
+    @FXML
+    private TextField nome;
     /**
      * @brief  TextField per il compleanno del contatto
      */
@@ -170,10 +176,6 @@ public class CreaContattoController extends AbstractController implements Initia
     /**
      * @brief metodo verificare che almeno un TextField tra nome e cognome è stato sovrascritto
      */
-//    private boolean validaCampiObbligatori() {
-//        // Un contatto deve avere necessariamente almeno nome o cognome (tutti gli altri campi possono essere vuoti)
-//        return (nome.getText() != null && !nome.getText().trim().isEmpty()) || (cognome.getText() != null && !cognome.getText().trim().isEmpty());
-//    }
     private Boolean controllaCampiObbligatori(String nome, String cognome) {
         // Verifica che almeno uno tra nome o cognome sia valido
         return (nome != null && !nome.trim().isEmpty()) || (cognome != null && !cognome.trim().isEmpty());    }
