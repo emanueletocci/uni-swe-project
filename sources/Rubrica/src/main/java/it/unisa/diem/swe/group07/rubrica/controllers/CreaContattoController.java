@@ -46,11 +46,6 @@ public class CreaContattoController extends AbstractController implements Initia
     @FXML
     private TextField cognome;
     /**
-     * @brief  Text Field per il cognome del contatto
-     */
-    @FXML
-    private TextField nome;
-    /**
      * @brief  TextField per il compleanno del contatto
      */
     @FXML
