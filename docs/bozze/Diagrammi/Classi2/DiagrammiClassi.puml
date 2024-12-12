@@ -174,5 +174,16 @@ class Rubrica {
         + FileInesistenteException()
     }
   }
+  package gestoreIO{
+    class Export{
+      + getVcard(c: ContattoEsteso): String
+      + esportsRubrica(r: Rubrica): void
+      + esportaContatto(contatto: ContattoEsteso)
+    }
+    class Import{
+      + importRubrica(r: Rubrica, nomefile: String): void
+      + importaContatto(contatto: ContattoEsteso, nomefile: String): void
+    }
+  }
 }
 @enduml
