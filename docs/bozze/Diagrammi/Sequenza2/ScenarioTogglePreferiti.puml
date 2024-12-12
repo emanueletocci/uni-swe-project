@@ -1,0 +1,39 @@
+@startuml
+title Toggle Preferito
+autonumber
+actor Utente
+participant RubricaView
+participant RubricaController
+participant Rubrica
+
+Utente->RubricaView:[effettua un click sul icona dedicata ai preferiti]
+Activate Utente
+Activate RubricaView
+RubricaView->RubricaController:[passa la gestione al handler]
+deactivate RubricaView
+Activate RubricaController
+RubricaController->Rubrica:togglePreferiti()
+deActivate RubricaController
+Activate Rubrica
+alt [se il contatto ha la flag preferiti=false]
+Rubrica->Rubrica:setPreferiti(true)
+Rubrica-->RubricaController:[ritorna al controller]
+deactivate Rubrica
+Activate RubricaController
+RubricaController-->RubricaView:RubricaTable.Reflash()
+deactivate RubricaController
+Activate RubricaView
+else [altrimenti]
+Activate Rubrica
+Rubrica->Rubrica:setPreferiti(false)
+Rubrica-->RubricaController:[ritorna al controller]
+deactivate Rubrica
+Activate RubricaController
+RubricaController-->RubricaView:RubricaTable.Reflash()
+deactivate Rubrica
+deActivate RubricaController
+end
+RubricaView->Utente:[visualizza la rubrica aggiornata]
+deactivate RubricaView
+deactivate Utente
+@enduml

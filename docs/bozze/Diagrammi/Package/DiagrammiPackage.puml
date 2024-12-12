@@ -1,13 +1,12 @@
 @startuml
     title "Diagramma dei package"
     set separator none
-    package it.unisa.diem.swe.group07.rubrica {
-        package controllers{}
-        package models {}
-        package tests {}
-        package eccezioni {}
-        package gestoreIO {
-            package vCard{}
-        }
+    package it.unisa.diem.swe.group07{
+      package rubrica {
+          package controllers{}
+          package models {}
+          package tests {}
+          package gestoreIO {}
+      }
     }
 @enduml

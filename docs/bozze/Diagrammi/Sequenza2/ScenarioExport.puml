@@ -1,53 +1,29 @@
 @startuml
-title Esporta Rubrica
+title Export
 autonumber
 actor Utente
-activate RubricaView
 participant RubricaView
 participant RubricaController
 participant Rubrica
+participant ExportClass
 
-Utente->RubricaView:[clicca sulla toolbar il tasto "file"]
-RubricaView->RubricaController:[notifica la scelta]
-activate RubricaController
-RubricaController-->RubricaView:[aggiorna binding]
-deactivate RubricaController
-RubricaView-->Utente:[apre il menu "file"]
-deactivate RubricaView
-
-Utente->RubricaView:[seleziona export]
+Utente->RubricaView:[clicca il pulsante condividi]
 activate RubricaView
-RubricaView->RubricaController:[notifica la scelta]
+RubricaView->RubricaController:[passa l'evento al suo handler]
+deactivate RubricaView
 activate RubricaController
-RubricaController -->RubricaView:[aggiorna binding]
-deactivate RubricaController
-RubricaView-->Utente:[Mostra la schermata di salvataggio]
-
-alt [Conferma]
-    Utente->RubricaView:[Conferma di voler esportare]
-    RubricaView->RubricaController:[notifica la scelta]
-    activate RubricaController
-    RubricaController->Rubrica:[chiede un export]
-    activate Rubrica
-    Rubrica->Rubrica:export()
-    alt [export success]
-        Rubrica-->RubricaController:[notifica l'esportazione]
-        RubricaController-->RubricaView:[aggiorna binding]
-        RubricaView-->Utente:[mostra un messaggio di conferma e torna alla home]
-    else [export fail]
-        Rubrica-->RubricaController:throw new ExportFileException()
-        RubricaController-->RubricaView:[aggiorna binding]
-        RubricaView-->Utente:[mostra un messaggio di errore e torna nella home]
-    end
-    deactivate Rubrica
-    deactivate RubricaController
-else [annulla]
-    Utente->RubricaView:[seleziona il bottone per annullare]
-    RubricaView->RubricaController:[notifica la scelta]
-    activate RubricaController
-    RubricaController-->RubricaView:[aggiorna binding]
-    deactivate RubricaController
-    RubricaView-->Utente:[torna nella home]
-end
+RubricaController->Rubrica:getRubrica()
+activate Rubrica
+Rubrica-->RubricaController:return rubrica.value()
+deactivate Rubrica
+RubricaController->ExportClass:exportRubrica()
+activate ExportClass
+ExportClass->ExportClass:esportaRubrica()
+ExportClass->ExportClass:[salva il file .vcf]
+RubricaController-->RubricaView:mostraOperazioneCompletata()
+deactivate ExportClass
+activate RubricaView
+RubricaView-->Utente:[mostra un alert di conferma]
+deactivate RubricaView
 
 @enduml
