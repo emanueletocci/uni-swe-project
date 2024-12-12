@@ -69,6 +69,10 @@ public class Contatto {
         this.emergenza = emergenza;
         this.preferito = preferito;
     }
+    /**
+     * @brief costruttore della classe Contatto senza ingressi
+     */
+    public Contatto(){};
 
     /**
      * @brief metodo getter per l'attributo "id"

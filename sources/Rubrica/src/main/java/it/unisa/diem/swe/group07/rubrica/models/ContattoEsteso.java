@@ -66,6 +66,13 @@ public class ContattoEsteso extends Contatto {
     }
 
     /**
+     * @brief costruttore della classe Contatto Esteso senza ingressi
+     */
+    public ContattoEsteso(){
+        super();
+    };
+
+    /**
      * @return attributo compleanno
      * @brief metodo getter per l'attributo "compleanno"
      */
