@@ -12,11 +12,41 @@ import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
-/**
- *
- * @author claud
- */
 public class RubricaTest {
-    
-  
+
+    @BeforeEach
+    void setUp() {
+    }
+
+    @AfterEach
+    void tearDown() {
+    }
+
+    @Test
+    void aggiungiContatto() {
+    }
+
+    @Test
+    void aggiungiContattoEVerifica() {
+    }
+
+    @Test
+    void rimuoviContatto() {
+    }
+
+    @Test
+    void ricercaContatto() {
+    }
+
+    @Test
+    void getContatti() {
+    }
+
+    @Test
+    void aggiornaContatto() {
+    }
+
+    @Test
+    void testToString() {
+    }
 }

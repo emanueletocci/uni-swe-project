@@ -1,8 +1,9 @@
 
 package it.unisa.diem.swe.group07.rubrica.models;
 import static org.junit.jupiter.api.Assertions.*;
-import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.Test;
+
+import org.junit.jupiter.api.*;
+
 import java.time.LocalDate;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -90,5 +91,76 @@ public void TestHashCode() {
     assertEquals(ce.hashCode(), ce2.hashCode());
 }
 
-    
+
+    @AfterEach
+    void tearDown() {
+    }
+
+    @Test
+    void getCompleanno() {
+    }
+
+    @Test
+    void setCompleanno() {
+    }
+
+    @Test
+    void getIndirizzoResidenza() {
+    }
+
+    @Test
+    void setIndirizzoResidenza() {
+    }
+
+    @Test
+    void getSitoWeb() {
+    }
+
+    @Test
+    void setSitoWeb() {
+    }
+
+    @Test
+    void getEmail3() {
+    }
+
+    @Test
+    void setEmail3() {
+    }
+
+    @Test
+    void getEmail2() {
+    }
+
+    @Test
+    void setEmail2() {
+    }
+
+    @Test
+    void getEmail1() {
+    }
+
+    @Test
+    void setEmail1() {
+    }
+
+    @Test
+    void getNote() {
+    }
+
+    @Test
+    void setNote() {
+    }
+
+    @Test
+    void testToString1() {
+    }
+
+    @Test
+    void testEquals1() {
+    }
+
+    @Test
+    void testHashCode1() {
+    }
 }
