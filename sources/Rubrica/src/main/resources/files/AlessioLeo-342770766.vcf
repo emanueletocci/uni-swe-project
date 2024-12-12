@@ -1,0 +1,14 @@
+BEGIN:VCARD
+VERSION:3.0
+FN:Alessio Leo
+TEL;TYPE=cell:+3933333333
+TEL;TYPE=home:+3933333333
+TEL;TYPE=work:+3933333333
+EMAIL;TYPE=work:prova@gmail.com
+EMAIL;TYPE=home:prova@icloud.com
+EMAIL;TYPE=other:prova@unisa.it
+BDAY:2020-12-12
+ADR;TYPE=home:via Prova
+URL:unisa.it
+NOTE:informazioni aggiuntive
+END:VCARD
