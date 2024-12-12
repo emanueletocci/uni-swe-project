@@ -39,8 +39,8 @@ public class Export {
         if (c.getIndirizzoResidenza() != null) sb.append("ADR;TYPE=home:").append(c.getIndirizzoResidenza()).append("\n");
         if (c.getSitoWeb() != null) sb.append("URL:").append(c.getSitoWeb()).append("\n");
         if (c.getNote() != null) sb.append("NOTE:").append(c.getNote()).append("\n");
-        if (c.getPreferito() != null && c.getPreferito()) sb.append("X-PREF:1\n");
-        if (c.getEmergenza() != null && c.getEmergenza()) sb.append("X-EMERG:1\n");
+        if (c.getPreferito() != null) sb.append("X-PREF:1\n");
+        if (c.getEmergenza() != null) sb.append("X-EMERG:1\n");
         sb.append("UID:").append (c.getId()).append("\n");
         sb.append("END:VCARD\n");
         return sb.toString();
