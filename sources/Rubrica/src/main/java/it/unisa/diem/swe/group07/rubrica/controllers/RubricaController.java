@@ -1,3 +1,10 @@
+/**
+ * @file RubricaController.java
+ * @brief questo file contiene l'implementazione del Controller principale per la gestione della rubrica telefonica.
+ * @autor Gruppo07
+ * @date Dicembre, 2024
+ */
+
 package it.unisa.diem.swe.group07.rubrica.controllers;
 import java.awt.*;
 import java.io.File;
@@ -10,7 +17,6 @@ import it.unisa.diem.swe.group07.rubrica.gestoreIO.Import;
 import javafx.beans.binding.Bindings;
 import javafx.scene.control.*;
 import it.unisa.diem.swe.group07.rubrica.models.ContattoEsteso;
-import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
@@ -20,237 +26,141 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
-import javafx.scene.control.MenuItem;
 import javafx.scene.control.TextField;
-import javafx.scene.image.ImageView;
 import javafx.stage.FileChooser;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
 
-/**
- * @file MainController.java
- * @brief questo file contiene l'implementazione del Controller principale per la gestione della rubrica telefonica.
- *        questa classe gestisce l'interazione tra l'utente e il modello di dati della rubrica.
- * @autor Gruppo07
- * @date Dicembre, 2024
- * @version 1.0
- */
-
 public class RubricaController extends AbstractController implements Initializable{
-
-    // TextFields
      /**
-     * @brief Text Field per il nome del contatto nella Rubrica
-     */
-    @FXML // fx:id="nomeField"
-    private TextField nomeField; // Value injected by FXMLLoader
-    /**
-     * @brief Text Field per il cognome del contatto nella Rubrica
-     */
-    @FXML // fx:id="cognomeField"
-    private TextField cognomeField; // Value injected by FXMLLoader
-    /**
-     * @brief Text Field per il telefono del contatto nella Rubrica
-     */
-    @FXML // fx:id="telefono1Field"
-    private TextField telefono1Field; // Value injected by FXMLLoader
-    /**
-     * @brief Text Field per il telefono2 del contatto nella Rubrica
-     */
-    @FXML // fx:id="telefono2Field"
-    private TextField telefono2Field; // Value injected by FXMLLoader
-    /**
-     * @brief Text Field per il telefono3 del contatto nella Rubrica
-     */
-    @FXML // fx:id="telefono3Field"
-    private TextField telefono3Field; // Value injected by FXMLLoader
-    /**
-     * @brief Text Field per l'email del contatto nella Rubrica
-     */
-    @FXML // fx:id="email1Field"
-    private TextField email1Field; // Value injected by FXMLLoader
-    /**
-     * @brief Text Field per l'email2 del contatto nella Rubrica
-     */
-    @FXML // fx:id="email2Field"
-    private TextField email2Field; // Value injected by FXMLLoader
-    /**
-     * @brief Text Field per l'email3 del contatto nella Rubrica
-     */
-    @FXML // fx:id="email3Field"
-    private TextField email3Field; // Value injected by FXMLLoader
-    /**
-     * @brief Text Field per il compleanno del contatto nella Rubrica
-     */
-    @FXML // fx:id="compleannoField"
-    private DatePicker compleannoField; // Value injected by FXMLLoader
-    /**
-     * @brief Text Field per l'indirizzo del contatto nella Rubrica
-     */
-    @FXML // fx:id="indirizzoField"
-    private TextField indirizzoField; // Value injected by FXMLLoader
-    /**
-     * @brief Text Field per le note nella Rubrica
-     */
-    @FXML // fx:id="noteField"
-    private TextField noteField; // Value injected by FXMLLoader
-    /**
-     * @brief Menu Item per aggiunta e rimozione dei preferiti
+     * @brief Text Field per il nome del contatto nella Rubrica.
      */
     @FXML
-    private MenuItem preferitiBtn;
-
+    private TextField nomeField;
     /**
-     * @brief Label "Contatti"
+     * @brief Text Field per il cognome del contatto nella Rubrica.
+     */
+    @FXML
+    private TextField cognomeField;
+    /**
+     * @brief Text Field per il telefono del contatto nella Rubrica.
+     */
+    @FXML
+    private TextField telefono1Field;
+    /**
+     * @brief Text Field per il telefono2 del contatto nella Rubrica.
+     */
+    @FXML
+    private TextField telefono2Field;
+    /**
+     * @brief Text Field per il telefono3 del contatto nella Rubrica.
+     */
+    @FXML
+    private TextField telefono3Field;
+    /**
+     * @brief Text Field per l'email del contatto nella Rubrica.
+     */
+    @FXML
+    private TextField email1Field;
+    /**
+     * @brief Text Field per l'email2 del contatto nella Rubrica.
+     */
+    @FXML
+    private TextField email2Field;
+    /**
+     * @brief Text Field per l'email3 del contatto nella Rubrica.
+     */
+    @FXML
+    private TextField email3Field;
+    /**
+     * @brief Text Field per il compleanno del contatto nella Rubrica.
+     */
+    @FXML
+    private DatePicker compleannoField;
+    /**
+     * @brief Text Field per l'indirizzo del contatto nella Rubrica.
+     */
+    @FXML
+    private TextField indirizzoField;
+    /**
+     * @brief Text Field per le note nella Rubrica.
+     */
+    @FXML
+    private TextField noteField;
+    /**
+     * @brief Label "Contatti".
      */
     @FXML
     private Label contattiLabel;
 
-    // Buttons
-    
      /**
-     * @brief bottone per cercare un Contatto nella Rubrica
+     * @brief Barra di ricerca. Consente di cercare un contatto nella Rubrica.
      */
-    @FXML // fx:id="pulsanteCerca"
-    private TextField pulsanteCerca; // Value injected by FXMLLoader
-      /**
-     * @brief bottone per creare un Contatto nella Rubrica
-     */
-    @FXML // fx:id="pulsanteCrea"
-    private Button pulsanteCrea; // Value injected by FXMLLoader
-     /**
-     * @brief bottone per eliminare un Contatto nella Rubrica
-     */
-    @FXML // fx:id="pulsanteElimina"
-    private Button pulsanteElimina; // Value injected by FXMLLoader
+    @FXML
+    private TextField barraRicerca;
     /**
-     * @brief bottone per modificare un Contatto nella Rubrica
-     */
-    @FXML // fx:id="pulsanteModifica"
-    private Button pulsanteModifica; // Value injected by FXMLLoader
-      /**
-     * @brief bottone per salvare un Contatto nella Rubrica
+     * @brief Pulsante che consente di salvare le modifiche apportate ad un contatto giá presente in rubrica.
      */
      @FXML
     private Button pulsanteSalva;
-    /**
-     * @brief label di aggiungi/rimuovi ai preferiti
-     */
-    @FXML
-    private Label favoritesBtn;
-
-
-    // Altri componenti FXML
      /**
      * @brief Colonna per il cognome del contatto nella TableView.
      */
-    @FXML // fx:id="cognomeClm"
-    private TableColumn<ContattoEsteso, String> cognomeClm; // Value injected by FXMLLoader
+    @FXML
+    private TableColumn<ContattoEsteso, String> cognomeClm;
      /**
-     * @brief etichetta per visualizzare il nome completo del contatto
-     */
-    @FXML // fx:id="fullname"
-    private Label fullname; // Value injected by FXMLLoader
-      /**
-     * @brief immagine per il contatto selezionato
-     */
-    @FXML // fx:id="imgcontatto"
-    private ImageView imgcontatto; // Value injected by FXMLLoader
-      /**
-     * @brief colonna per il nome del contatto nella TableView
-     */
-    @FXML // fx:id="nomeClm"
-    private TableColumn<ContattoEsteso, String> nomeClm; // Value injected by FXMLLoader
-      /**
-     * @brief Table View che mostra la lista dei contatti
-     */
-    @FXML // fx:id="rubricaTable"
-    private TableView<ContattoEsteso> rubricaTable; // Value injected by FXMLLoader
-    /**
-     * @brief SplitPane
+     * @brief Label per visualizzare il nome completo del contatto.
      */
     @FXML
-    private SplitPane splitPane;
-
+    private Label fullname;
     /**
-     * @brief pulsante preferiti
+     * @brief Colonna per il nome del contatto nella TableView.
+     */
+    @FXML
+    private TableColumn<ContattoEsteso, String> nomeClm;
+      /**
+     * @brief TableView che mostra la lista dei contatti.
+     */
+    @FXML
+    private TableView<ContattoEsteso> rubricaTable;
+    /**
+     * @brief Pulsante che consente di aggiungere e rimuovere un contatto dai "preferiti".
      */
     @FXML
     private Button preferitiFlag;
-
     /**
-     * @brief pulsante emergenze
+     * @brief Pulsante che consente di aggiungere e rimuovere un contatto dalle "emergenze".
      */
     @FXML
     private Button emergenzaFlag;
-
     /**
-     * @brief pulsante cancellazione contatto
+     * @brief Text Field per il sito web del contatto nella Rubrica.
      */
-    @FXML
-    private MenuItem del;
-
-    /**
-     * @brief pulsante che consente di mostrare la rubrica "Emergenze"
-     */
-    @FXML
-    private MenuItem showEmergenza;
-
-    /**
-     * @brief pulsante per mostrare la rubrica
-     */
-    @FXML
-    private MenuItem showRubrica;
-
-    /**
-     * @brief pulsante per modificare un contatto
-     */
-    @FXML
-    private MenuItem editBtn;
-
     @FXML
     private TextField linkField;
-    /**
-     * @brief pulsante di aiuto
-     */
-    @FXML
-    private MenuItem helpBtn;
 
-     /**
-     * @brief pulsante di export
-     */
-    @FXML
-    private MenuItem exportBtn;
-    
-     /**
-     * @brief pulsante di import
-     */
-    @FXML
-    private MenuItem importBtn;
-
-    // Attributi
     /**
-     * @brief Contatto selelzionato nella Table View
+     * @brief Contatto selezionato nella Table View.
      */
     private ContattoEsteso contattoSelezionato;
     /**
-     * @brief Lista Filtrata di contatti per la ricerca
+     * @brief Lista Filtrata di contatti per la ricerca.
      */
     private FilteredList<ContattoEsteso> filteredContatti;
     /**
-     * @brief Lista Filtrata di contatti per la sotto-rubrica:preferiti
+     * @brief Lista Filtrata di contatti per la sotto-rubrica:preferiti.
      */
     private FilteredList<ContattoEsteso> contattiFiltratiPreferiti;
     /**
-     * @brief Lista Filtrata di contatti per la otto-rubrica:contatti d'emergenza
+     * @brief Lista Filtrata di contatti per la otto-rubrica:contatti d'emergenza.
      */
     private FilteredList<ContattoEsteso> contattiFiltratiEmergenza;
-    
+
     /**
      * @brief Metodo di inizializzazione della vista e dei dati.
      *        Imposta la lista dei contatti, la configurazione delle colonne della TableView e i listener per le interazioni dell'utente.
-     * @param url URL per il caricamento della vista.
-     * @param rb ResourceBundle per il caricamento delle risorse.
+     * @param[in] url, URL per il caricamento della vista.
+     * @param[in] rb, ResourceBundle per il caricamento delle risorse.
      */
     @Override
     public void initialize(URL url, ResourceBundle rb){
@@ -291,18 +201,17 @@ public class RubricaController extends AbstractController implements Initializab
         filteredContatti = new FilteredList<>(this.getListaContatti(), p -> true);
         rubricaTable.setItems(filteredContatti);
         // Listener sulla barra di ricerca
-        pulsanteCerca.textProperty().addListener((observable, oldValue, newValue) -> {
+        barraRicerca.textProperty().addListener((observable, oldValue, newValue) -> {
             filtraContatti(newValue);
         });
     }
 
     /**
-     * @brief Gestore delle'evento 'Nuovo Contatto'. Il metodo carica la vista alternativa che consente la creazione del contatto e passa il controllo al "CreaContattoController", il controller che consente la creazione del contatto
-     * @param event L'evento generato dal click sul pulsante "Nuovo Contatto"
+     * @brief Gestore delle'evento 'Nuovo Contatto'. Il metodo carica la vista alternativa che consente la creazione del contatto e passa il controllo al "CreaContattoController", il controller che consente la creazione del contatto.
      */
 
     @FXML
-    public void handleNuovoContatto(ActionEvent event) {
+    public void handleNuovoContatto() {
         try {
             // Carica il file FXML della nuova view
             FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml/CreazioneContattoView.fxml"));
@@ -332,7 +241,7 @@ public class RubricaController extends AbstractController implements Initializab
 
     /**
      * @brief Metodo per filtrare i contatti in base al nome o al cognome.
-     * @param c Stringa di ricerca.
+     * @param[in] c, Stringa di ricerca.
      */
 
     //metodo per la ricerca del contatto
@@ -351,7 +260,7 @@ public class RubricaController extends AbstractController implements Initializab
 
      /**
      * @brief Metodo per mostrare i dettagli di un contatto selezionato nella rubrica.
-     * @param contatto Il contatto selezionato da visualizzare.
+     * @param[in] contatto, Il contatto selezionato da visualizzare.
      */ 
     private void mostraDettaglioContatti(ContattoEsteso contatto){
         this.contattoSelezionato=contatto;
@@ -377,43 +286,36 @@ public class RubricaController extends AbstractController implements Initializab
         emergenzaFlag.opacityProperty().bind(Bindings.when(contattoSelezionato.isEmergenza())
                 .then(1.0)
                 .otherwise(0.5));
-
-        //imgcontatto.setImage(contatto.getImmagineProfilo());
-
-
-
 }
      /**
      * @brief Imposta se tutti i campi di testo sono editabili o meno.
-     * @param isEditable Se true, i campi di testo sono resi editabili; se false, sono resi non editabili.
+     * @param[in] isEditable, Se 'true', i campi di testo sono resi editabili; se 'false', sono resi non editabili.
      */   
-private void setEditableAll(boolean isEditable) {
-        nomeField.setEditable(isEditable);
-        cognomeField.setEditable(isEditable);
-        email1Field.setEditable(isEditable);
-        email2Field.setEditable(isEditable);
-        email3Field.setEditable(isEditable);
-        telefono1Field.setEditable(isEditable);
-        telefono2Field.setEditable(isEditable);
-        telefono3Field.setEditable(isEditable);
-        indirizzoField.setEditable(isEditable);
-        compleannoField.setEditable(isEditable);
-        noteField.setEditable(isEditable);
-        compleannoField.setEditable(isEditable);
-        
-}
+    private void setEditableAll(boolean isEditable) {
+            nomeField.setEditable(isEditable);
+            cognomeField.setEditable(isEditable);
+            email1Field.setEditable(isEditable);
+            email2Field.setEditable(isEditable);
+            email3Field.setEditable(isEditable);
+            telefono1Field.setEditable(isEditable);
+            telefono2Field.setEditable(isEditable);
+            telefono3Field.setEditable(isEditable);
+            indirizzoField.setEditable(isEditable);
+            compleannoField.setEditable(isEditable);
+            noteField.setEditable(isEditable);
+            compleannoField.setEditable(isEditable);
+    }
     /**
-     * @brief Elimina un contatto selezionato dalla rubrica.
-     * @param event L'evento generato dal click sul pulsante di eliminazione.
+     * @brief Gestore dell'evento relativo al click del pulsante "Elimina Contatto". Il metodo elimina un contatto dalla rubrica ed aggiorna
+     * la TableView.
      */
     @FXML
-    public void handleEliminaContatto(ActionEvent event) {
+    public void handleEliminaContatto() {
     ContattoEsteso c = rubricaTable.getSelectionModel().getSelectedItem();  //seleziona il contatto dalla TableView
         if (c!=null){
             // Se il contatto puó essere rimosso dalla rubrica allora rifletti le modifiche sulla lista
             if(this.getRubrica().rimuoviContatto(c) != null){
                 this.getListaContatti().remove(c);
-                mostraDialog ( Alert.AlertType.INFORMATION, "Rimozione Contatto", "Contatto rimosso correttamente" );
             } else mostraDialog ( Alert.AlertType.ERROR, "Errore Rimozione Contatto", "Si é verificato un errore durante la rimozione del contatto!" );
             // Aggiorna la TableView (opzionale, perché ObservableList lo fa automaticamente)
             rubricaTable.refresh();
@@ -427,42 +329,61 @@ private void setEditableAll(boolean isEditable) {
     }
 
     /**
-     * @brief Abilita i campi di testo per la modifica di un contatto selezionato.
-     * @param event L'evento generato dal click sul pulsante di modifica.
+     * @brief Gestore dell'evento relativo al click sul pulsante "Modifica". Abilita i campi di testo per la modifica di un contatto selezionato.
      */
-    //quando clicco sul pulsante modifica devo far in modo che i campi
-    //siano modificabili
-    //e che il pulsante crea debba funzionare
-
     @FXML
-    public void handleModificaContatto(ActionEvent event) {
+    public void handleModificaContatto() {
         if (contattoSelezionato != null) {
             setEditableAll(true);
             //pulsanteCrea.setDisable(false);
             pulsanteSalva.setDisable(false);//AGGIUNGI PULSANTE SALVA
         }
-            
     }
 
     /**
      * @brief Gestisce il salvataggio delle modifiche apportate a un contatto esistente.
-     * @param e L'evento generato dal click sul pulsante di salvataggio.
      */
         @FXML
-    private void gestioneSalvaModifiche(ActionEvent e){
-            // Aggiorna i dati del contatto selezionato
-            contattoSelezionato.setNome(nomeField.getText());
-            contattoSelezionato.setCognome(cognomeField.getText());
-            contattoSelezionato.setEmail1(email1Field.getText());
-            contattoSelezionato.setEmail2(email2Field.getText());
-            contattoSelezionato.setTelefono3(telefono1Field.getText());
-            contattoSelezionato.setTelefono1(telefono2Field.getText());
-            contattoSelezionato.setTelefono2(telefono2Field.getText());
-            contattoSelezionato.setCompleanno(compleannoField.getValue());
-            contattoSelezionato.setIndirizzoResidenza(indirizzoField.getText());
-            contattoSelezionato.setNote(noteField.getText());
-            contattoSelezionato.setSitoWeb(linkField.getText());
-            contattoSelezionato.setNote(noteField.getText());
+    private void gestioneSalvaModifiche(){
+            // Controlli sui campi inseriti dall'utente nella fase di creazione
+            if (!controllaCampiObbligatori (nomeField.getText(),cognomeField.getText())){
+                mostraDialog ( Alert.AlertType.ERROR,"Errore di validazione", "Devi inserire almeno un nome o un cognome.");
+                return; // Interrompe l'esecuzione in caso di errore
+            }
+            if(!controllaTelefono(telefono1Field.getText())){
+                mostraDialog ( Alert.AlertType.ERROR, "Telefono non valido!", "Il numero di telefono 1 inserito non é valido!" );
+                return;
+            } else if (!controllaTelefono (telefono2Field.getText() )){
+                mostraDialog ( Alert.AlertType.ERROR, "Telefono non valido!", "Il numero di telefono 2 inserito non é valido!" );
+                return;
+            } else if (!controllaTelefono ( telefono3Field.getText() )){
+                mostraDialog ( Alert.AlertType.ERROR, "Telefono non valido!", "Il numero di telefono 3 inserito non é valido!" );
+                return;
+            }
+            if(!controllaEmail(email1Field.getText())){
+                mostraDialog ( Alert.AlertType.ERROR, "Email non valida!", "L'indirizzo email 1 inserito non é valido!" );
+                return;
+            } else if(!controllaEmail(email2Field.getText())) {
+                mostraDialog ( Alert.AlertType.ERROR, "Email non valida!", "L'indirizzo email 2 inserito non é valido!" );
+                return;
+            } else if(!controllaEmail(email3Field.getText())) {
+                mostraDialog ( Alert.AlertType.ERROR, "Email non valida!", "L'indirizzo email 3 inserito non é valido!" );
+                return;
+            } else {
+                // Aggiorna i dati del contatto selezionato
+                contattoSelezionato.setNome(nomeField.getText());
+                contattoSelezionato.setCognome(cognomeField.getText());
+                contattoSelezionato.setEmail1(email1Field.getText());
+                contattoSelezionato.setEmail2(email2Field.getText());
+                contattoSelezionato.setTelefono3(telefono1Field.getText());
+                contattoSelezionato.setTelefono1(telefono2Field.getText());
+                contattoSelezionato.setTelefono2(telefono2Field.getText());
+                contattoSelezionato.setCompleanno(compleannoField.getValue());
+                contattoSelezionato.setIndirizzoResidenza(indirizzoField.getText());
+                contattoSelezionato.setNote(noteField.getText());
+                contattoSelezionato.setSitoWeb(linkField.getText());
+                contattoSelezionato.setNote(noteField.getText());
+            }
 
             //TEST - rimuovere in seguito
             System.out.println("\n"+ getClass() + " - gestioneSalvaModifiche ***\n");
@@ -481,7 +402,8 @@ private void setEditableAll(boolean isEditable) {
     }
 
     /**
-     * @brief metodo per collegare a rubrica table la vista di tutta la rubrica
+     * @brief gestore dell'evento relativo al click del pulsante "Finestra -> Rubrica Standard". Il metodo consente di
+     * aggiornare la TableView mostrando la "Rubrica Standard" ossia tutti i contatti presenti in rubrica.
      */
     @FXML
     private void showRubrica(){
@@ -489,7 +411,8 @@ private void setEditableAll(boolean isEditable) {
         contattiLabel.setText("Contatti");
     }
     /**
-     * @brief metodo per collegare a rubrica table la vista della sotto-rubrica: preferiti
+     * @brief gestore dell'evento relativo al click del pulsante "Finestra -> Contatti Preferiti". Il metodo consente di
+     * aggiornare la TableView mostrando solamente i contatti preferiti presenti in rubrica.
      */
     @FXML
     private void showPreferiti(){
@@ -498,7 +421,8 @@ private void setEditableAll(boolean isEditable) {
         contattiLabel.setText("Preferiti");
     }
     /**
-     * @brief metodo per collegare a rubrica table la vista della sotto-rubrica: contatti d'emergenza
+     * @brief gestore dell'evento relativo al click del pulsante "Finestra -> Contatti Emergenza". Il metodo consente di
+     * aggiornare la TableView mostrando solamente i contatti di emergenza presenti in rubrica.
      */
     @FXML
     private void showEmergenza(){
@@ -507,7 +431,9 @@ private void setEditableAll(boolean isEditable) {
         contattiLabel.setText("Emergenze");
     }
     /**
-     * @brief metodo per aggiungere e rimuovere alla sotto-rubrica preferiti il contatto selezionato
+     * @brief Gestore dell'evento relativo al click sul pulsante "Emergenza". Il metodo consente di inserire e rimuovere
+     * un contatto dai contatti di emergenza. Se il contatto selezionato é giá un contatto di emergenza, allora
+     * il metodo lo rimuove. Se il contatto selezionato non fa parte delle emergenze, il metodo lo inserisce.
      */
     @FXML
     private void toggleEmergenza(){
@@ -521,7 +447,9 @@ private void setEditableAll(boolean isEditable) {
         }
     }
     /**
-     * @brief metodo per rimuovere dalla sotto-rubrica preferiti il contatto selezionato
+     * @brief Gestore dell'evento relativo al click sul pulsante "Preferito". Il metodo consente di inserire e rimuovere
+     * un contatto dai contatti preferiti. Se il contatto selezionato é giá un contatto preferito, allora
+     * il metodo lo rimuove. Se il contatto selezionato non fa parte delle emergenze, il metodo lo inserisce.
      */
     @FXML
     private void togglePreferiti() {
@@ -535,8 +463,8 @@ private void setEditableAll(boolean isEditable) {
         }
     }
     /**
-     * @brief metodo per aprire la web page utilizzando l'URL specificato
-     * @param urlString url della web page da aprire
+     * @brief Gestore dell'evento relativo al click sul pulsante "? -> Github". Il metodo apre la webpage utilizzando l'URL specificato.
+     * @param[in] urlString, URL della pagina web da aprire.
      */
     private static void openWebpage(String urlString) {
         try {
@@ -548,7 +476,7 @@ private void setEditableAll(boolean isEditable) {
         }
     }
     /**
-     * @brief metodo per aprire la repository Git del progetto in una pagina web
+     * @brief metodo per aprire la repository Git del progetto in una pagina web.
      */
     @FXML
     private void openGit(){
@@ -556,7 +484,8 @@ private void setEditableAll(boolean isEditable) {
     }
     
     /**
-     * @brief metodo per l'export della Rubrica in un file .vcf
+     * @brief Gestore dell'evento relativo al click del pulsante "Esporta Rubrica". Il metodo apre una finestra che consente all'utente di selezionare
+     * percorso in cui salvare il file e chiama il metodo responsabile dell'export della rubrica in formato .vcf.
      */
     @FXML
     private void handleExportRubrica(){
@@ -574,8 +503,8 @@ private void setEditableAll(boolean isEditable) {
     }
     
     /**
-     * @brief metodo per la gestione dell'evento "Esporta Contatto". Il metodo apre una finestra che consente all'utente di selezionare un percorso in un cui salvare
-     * il file e chiama il metodo responsabile dell'export in formato .vcf
+     * @brief Gestore dell'evento "Esporta Contatto". Il metodo apre una finestra che consente all'utente di selezionare un percorso in un cui salvare
+     * il file e chiama il metodo responsabile dell'export in formato .vcf.
      */
     @FXML
     public void handleExportContatto(){
@@ -592,6 +521,10 @@ private void setEditableAll(boolean isEditable) {
                 "Il contatto è stato esportato con successo\noutput: " + file.getAbsolutePath() + ".vcf");
     }
 
+    /**
+     * @brief Gestore dell'evento "Importa Rubrica/Contatto". Il metodo apre una finestra che consente all'utente di selezionare un file da importare
+     * e chiama il metodo responsabile dell'import.
+     */
     @FXML
     public void handleImportRubrica() throws IOException {
         FileChooser fileChooser = new FileChooser();

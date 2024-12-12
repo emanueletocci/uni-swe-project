@@ -24,6 +24,7 @@ public class Import {
      * @param r la rubrica in cui importare i contatti
      * @param nomefile il nome del file .vcf da cui importare i contatti
      * @throws IOException se si verifica un errore durante la lettura del file
+     * @return 'true' se la vCard é importata correttamente, 'false' altrimenti
      */
     public void importVcard(Rubrica r, ObservableList lista, String nomefile) throws IOException {
         //aggiunta dello standard utf8 perché è l'unico accettato dai .vcf (fonte stackoverflow)
@@ -40,8 +41,6 @@ public class Import {
             while ((line = br.readLine()) != null) {
                 if (line.startsWith("BEGIN:VCARD")) {
                     contatto = new ContattoEsteso();
-                } else if (line.startsWith("VERSION:3.0")) {
-                    ; //nop
                 } else if (line.startsWith("FN:")) {
                     String[] n = line.substring(3).split(" "); //uso substring per togliere il tag vcard//tramite split al primo incice ho il nome
                     contatto.setNome(n[0]);
@@ -76,7 +75,7 @@ public class Import {
                     System.out.println("\nAggiungo il contatto alla rubrica");
                     if(r.aggiungiContattoEVerifica(contatto))
                         lista.add(contatto);
-                } else System.out.println("\n\nErrore Lettura");
+                }
             }
             // TEST - eliminare in seguito
             System.out.println("\n"+ getClass() + " - import ***\n");
