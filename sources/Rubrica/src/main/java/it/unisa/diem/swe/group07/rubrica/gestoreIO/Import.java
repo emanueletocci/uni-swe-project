@@ -27,14 +27,13 @@ public class Import {
      */
     public void importVcard(Rubrica r, String nomefile) throws IOException {
         //aggiunta dello standard utf8 perché è l'unico accettato dai .vcf (fonte stackoverflow)
-        //nomefile="Alessio.vcf"; //test
+        nomefile="Alessio.vcf"; //test
         System.out.println("import start\n");
         try (BufferedReader br = new BufferedReader(new FileReader(nomefile, StandardCharsets.UTF_8))) {
             if (br.readLine() == null) {
                 System.out.println("Il file è vuoto");
                 return;
             }
-
             String line;
             ContattoEsteso contatto = null;
             String nome = null;
@@ -54,7 +53,7 @@ public class Import {
             DateTimeFormatter dateFormatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
 
             while ((line = br.readLine()) != null) {
-                
+                System.out.println(nome);
                 if (line.startsWith("BEGIN:VCARD")) {
                     ;
                 } else if (line.startsWith("FN:")) {
@@ -87,9 +86,8 @@ public class Import {
                     emergenza = true;
                 } else if (line.startsWith("END:VCARD")) {
                     contatto = new ContattoEsteso(nome, cognome, telefono1, telefono2, telefono3, email1, email2, email3, compleanno, indirizzo, sito, note, preferito, emergenza);
-                    r.aggiungiContatto(contatto);
+                    r.aggiungiContattoEVerifica(contatto);
                 }
-                
             }
             System.out.println("Rubrica importata con successo");
         } catch (IOException e) {

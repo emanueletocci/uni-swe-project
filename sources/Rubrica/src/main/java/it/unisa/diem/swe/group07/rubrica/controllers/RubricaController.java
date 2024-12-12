@@ -593,7 +593,9 @@ private void setEditableAll(boolean isEditable) {
 
     @FXML
     public void importRubrica() throws IOException {
+        System.out.println("avvio controller import");
         Import i=new Import();
         i.importVcard(this.getRubrica(), "RubricaImport.vcf");
+        System.out.println("fine controller import");
     }
 }
