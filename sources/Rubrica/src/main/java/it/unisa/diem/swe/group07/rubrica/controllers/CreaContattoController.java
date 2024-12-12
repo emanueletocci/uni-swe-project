@@ -9,7 +9,6 @@ package it.unisa.diem.swe.group07.rubrica.controllers;
 import it.unisa.diem.swe.group07.rubrica.models.ContattoEsteso;
 import javafx.fxml.FXML;
 import javafx.scene.Node;
-import javafx.scene.control.Button;
 import javafx.scene.control.DatePicker;
 import javafx.scene.control.TextField;
 import javafx.scene.image.ImageView;
@@ -26,50 +25,34 @@ import javafx.stage.FileChooser.ExtensionFilter;
 
 import java.time.LocalDate;
 
-
 public class CreaContattoController extends AbstractController implements Initializable{
     /**
-     * @brief bottone per aggiungere l'email
+     * @brief TextField per il nome del contatto
      */
     @FXML
-    private Button aggiungiEmail;
+    private TextField nome;
     /**
-     * @brief bottone per aggiungere il numero telefonico
-     */
-    @FXML
-    private Button aggiungiTelefono;
-       /**
-     * @brief bottone per effettuare la creazione di un contatto
-     */
-    @FXML
-    private Button pulsanteCrea;
-       /**
-     * @brief bottone per inserire l'immagine
-     */
-    @FXML
-    private Button bottone_imm;
-    /**
-     * @brief  Text Field per il cognome del contatto
+     * @brief  TextField per il cognome del contatto
      */
     @FXML
     private TextField cognome;
     /**
-     * @brief  Text Field per il compleanno del contatto
+     * @brief  TextField per il compleanno del contatto
      */
     @FXML
     private DatePicker compleanno;
-       /**
-     * @brief  Text Field per l'email del contatto
+    /**
+     * @brief  TextField per l'email 1 del contatto
      */
     @FXML
     private TextField email;
     /**
-     * @brief  Text Field per l'email del contatto
+     * @brief  TextField per l'email 2 del contatto
      */
     @FXML
     private TextField email2;
     /**
-     * @brief  Text Field per l'email del contatto
+     * @brief  TextField per l'email 3 del contatto
      */
     @FXML
     private TextField email3;
@@ -79,38 +62,33 @@ public class CreaContattoController extends AbstractController implements Initia
     @FXML
     private ImageView immagine;
     /**
-     * @brief Text Field per l'indirizzo del contatto
+     * @brief TextField per l'indirizzo del contatto
      */
     @FXML
     private TextField indirizzo;
     /**
-     * @brief Text Field per il nome del contatto
-     */
-    @FXML
-    private TextField nome;
-    /**
-     * @brief Text Field per il sito web del contatto
+     * @brief TextField per il sito web del contatto
      */
     @FXML
     private TextField sitoWeb;
     /**
-     * @brief Text Field per il numero telefonico del contatto
+     * @brief TextField per il numero telefonico del contatto
      */
     @FXML
     private TextField telefono;
     /**
-     * @brief Text Field per il numero telefonico del contatto
+     * @brief TextField per il numero telefonico del contatto
      */
     @FXML
     private TextField telefono2;
     /**
-     * @brief Text Field per il numero telefonico del contatto
+     * @brief TextField per il numero telefonico del contatto
      */
     @FXML
     private TextField telefono3;
 
     /**
-     * @brief Text Field per le note
+     * @brief TextField per le note
      */
     @FXML
     private TextField note;
