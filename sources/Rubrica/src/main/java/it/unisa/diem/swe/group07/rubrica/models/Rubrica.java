@@ -1,3 +1,10 @@
+/**
+ * @file Rubrica.java
+ * @brief questo file presenta le informazioni della rubrica
+ * @autor Gruppo07
+ * @date Dicembre, 2024
+ */
+
 package it.unisa.diem.swe.group07.rubrica.models;
 
 
@@ -21,7 +28,7 @@ public class Rubrica {
 
     /**
      * @brief metodo per l'aggiunta di un contatto alla rubrica
-     * @param c: il contatto da aggiungere
+     * @param[in] c: il contatto da aggiungere
      */
     public ContattoEsteso aggiungiContatto(ContattoEsteso c) {
         return rubrica.putIfAbsent(c.getId(), c);
@@ -40,6 +47,7 @@ public class Rubrica {
 
     /**
      * @brief metodo per la rimozione di un contatto dalla rubrica
+     * @param[in] c: il contatto da aggiungere
      * @return contatto rimosso
      */
     public ContattoEsteso rimuoviContatto(ContattoEsteso c){
@@ -77,11 +85,13 @@ public class Rubrica {
         return false;
     }
 
+    /**
+     * @brief metodo toStirng()
+     * @return una rappresentazione in formato stringa della rubrica
+     */
     @Override
     public String toString() {
         return "\nRubrica\n" + getContatti();
     }
-
-
 
 }

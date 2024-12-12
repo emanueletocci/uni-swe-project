@@ -83,6 +83,7 @@ public class Contatto {
     }
 
     /**
+     * @param[] id,
      * @brief metodo setter per l'attributo "id"
      */
     public void setId(Integer id){

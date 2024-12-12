@@ -175,14 +175,14 @@
                                           </HBox>
                                                         <VBox alignment="BASELINE_RIGHT" layoutY="49.0" prefHeight="356.0" prefWidth="288.0" spacing="3.0" AnchorPane.leftAnchor="5.0" AnchorPane.rightAnchor="5.0">
                                                             <children>
-                                                <HBox alignment="CENTER_LEFT" prefHeight="302.0" prefWidth="288.0" spacing="50.0">
+                                                <HBox alignment="CENTER_LEFT" prefHeight="302.0" prefWidth="288.0" spacing="30.0">
                                                    <children>
                                                                       <ImageView fx:id="imgcontatto" fitHeight="72.0" fitWidth="117.0" pickOnBounds="true" preserveRatio="true">
                                                          <image>
                                                             <Image url="@../img/avatarIcon.jpg" />
                                                          </image>
                                                       </ImageView>
-                                                      <Label fx:id="fullname" alignment="BOTTOM_CENTER" prefHeight="63.0" prefWidth="105.0" text="Nome Cognome" textOverrun="CLIP">
+                                                      <Label fx:id="fullname" alignment="BOTTOM_CENTER" prefHeight="48.0" prefWidth="160.0" text="Nome Cognome" textOverrun="CLIP" wrapText="true">
                                                          <font>
                                                             <Font name="System Bold" size="13.0" />
                                                          </font>
@@ -365,7 +365,7 @@
                                                                                 <Insets />
                                                                             </HBox.margin>
                                                                         </Label>
-                                                      <DatePicker fx:id="compleannoField" minHeight="17.0" prefWidth="150.0" promptText="mm/gg/aa" />
+                                                      <DatePicker fx:id="compleannoField" minHeight="17.0" prefWidth="150.0" promptText="gg/mm/aa" showWeekNumbers="true" />
                                                                     </children>
                                                                     <padding>
                                                                         <Insets left="10.0" />
@@ -381,7 +381,7 @@
                                                             <Insets />
                                                          </HBox.margin>
                                                       </Label>
-                                                      <TextField editable="false" prefHeight="11.0" prefWidth="150.0" promptText="facebook.com">
+                                                      <TextField fx:id="linkField" editable="false" prefHeight="11.0" prefWidth="150.0" promptText="facebook.com">
                                                          <font>
                                                             <Font size="9.5" />
                                                          </font>

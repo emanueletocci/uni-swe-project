@@ -58,4 +58,6 @@ public class provaTest {
             System.out.println("Le stringhe sono diverse!");
     }
 
+    Rubrica r2 = new Rubrica();
+    ContattoEsteso mario = new ContattoEsteso("Mario", "Rossi", "+3933333333", "+3933333333", "+3933333333", "prova@gmail.com", "prova@icloud.com", "prova@unisa.it", LocalDate.of(2003, 6, 9), "via Prova", "unisa.it", "note", null, false);
 }
