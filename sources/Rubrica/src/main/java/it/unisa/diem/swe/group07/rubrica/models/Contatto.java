@@ -237,14 +237,14 @@ public class Contatto {
     }
 
     /**
-     * controlla se un contatto è preferito
+     * @brief controlla se un contatto è preferito
      * @return Restituisce la proprietà che indica se il contatto è preferito.
      */
     public BooleanProperty isPreferito() {
         return new SimpleBooleanProperty(getPreferito());
     }
     /**
-     * controlla se un contatto è d'emergenza
+     * @brief controlla se un contatto è d'emergenza
      * @return Restituisce la proprietà che indica se il contatto è d'emergenza.
      */
     public BooleanProperty isEmergenza(){

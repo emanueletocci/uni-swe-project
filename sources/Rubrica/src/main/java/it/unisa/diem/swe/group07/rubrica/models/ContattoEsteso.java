@@ -64,7 +64,7 @@ public class ContattoEsteso extends Contatto {
     }
 
     /**
-     * @brief costruttore della classe Contatto Esteso senza ingressi
+     * @brief costruttore della classe Contatto Esteso senza ingressi, serve per agevolare l'import
      */
     public ContattoEsteso(){
         super();

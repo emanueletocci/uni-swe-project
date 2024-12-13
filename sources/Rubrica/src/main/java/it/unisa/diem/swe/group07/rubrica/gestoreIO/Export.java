@@ -10,16 +10,17 @@ import java.util.Collection;
 import java.util.List;
 import java.util.Map;
 
-/*
+/**
  * @file Export.java
- * @brief esporta i contatti in un file .vcf
+ * @brief  questo file contiene l'implementazione dei metodi utili al export
  * @autor Gruppo07
  * @date Dicembre, 2024
  * @version 1.0
  */
 public class Export {
 /**
-* @brief metodo per ottenere la formattazione conforme allo standard vCard da un contatto
+ * @param[in] c, il contattoEsteso da dove ricavare i dati da salvare nella vcard
+ *@brief metodo per ottenere la formattazione conforme allo standard vCard da un contatto
  * @return ritorna una stringa formattata per il vCard
 */
     public String getVcard(ContattoEsteso c) {
@@ -46,6 +47,7 @@ public class Export {
 
     /**
      * @param[in] r Rubrica presa in ingresso
+     * @param[in] path il percorso dove salvare il file
      * @brief metodo per fornire un file di output conforme allo standard vCard che contiene tutta la rubrica
      */
     public void esportaRubrica(Rubrica r, String path) {
