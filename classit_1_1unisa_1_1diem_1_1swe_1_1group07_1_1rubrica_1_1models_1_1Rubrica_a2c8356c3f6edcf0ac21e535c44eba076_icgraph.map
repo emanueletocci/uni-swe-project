@@ -1,0 +1,5 @@
+<map id="it.unisa.diem.swe.group07.rubrica.models.Rubrica.aggiungiContattoEVerifica" name="it.unisa.diem.swe.group07.rubrica.models.Rubrica.aggiungiContattoEVerifica">
+<area shape="rect" id="node1" title="il metodo aggiunge un contatto alla rubrica e verifica se l&#39;aggiunta é andata a buon fine." alt="" coords="373,37,672,77"/>
+<area shape="rect" id="node2" href="$classit_1_1unisa_1_1diem_1_1swe_1_1group07_1_1rubrica_1_1models_1_1Rubrica.html#a16438865daa9d64349f5f709ce24bbcc" title="il metodo consente di aggiornare un contatto esistente nella rubrica." alt="" coords="16,5,315,45"/>
+<area shape="rect" id="node3" href="$classit_1_1unisa_1_1diem_1_1swe_1_1group07_1_1rubrica_1_1controllers_1_1RubricaController.html#acb62cc49f7e3289ddeb4f246b4f0a199" title="Metodo di inizializzazione della vista e dei dati. Imposta la lista dei contatti, la configurazione d..." alt="" coords="5,69,325,109"/>
+</map>

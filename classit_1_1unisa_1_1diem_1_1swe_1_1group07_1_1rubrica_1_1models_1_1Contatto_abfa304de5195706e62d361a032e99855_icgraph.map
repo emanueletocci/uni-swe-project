@@ -1,0 +1,11 @@
+<map id="it.unisa.diem.swe.group07.rubrica.models.Contatto.getNome" name="it.unisa.diem.swe.group07.rubrica.models.Contatto.getNome">
+<area shape="rect" id="node1" title="metodo getter per l&#39;attributo &quot;nome&quot;." alt="" coords="1067,69,1365,109"/>
+<area shape="rect" id="node2" href="$classit_1_1unisa_1_1diem_1_1swe_1_1group07_1_1rubrica_1_1models_1_1Contatto.html#a4637fd4120a51586a48da343661d1c7f" title=" " alt="" coords="720,5,1019,45"/>
+<area shape="rect" id="node4" href="$classit_1_1unisa_1_1diem_1_1swe_1_1group07_1_1rubrica_1_1models_1_1ContattoEsteso.html#a22bcd762fad3ea80371dce5846c5f310" title=" " alt="" coords="720,69,1019,109"/>
+<area shape="rect" id="node6" href="$classit_1_1unisa_1_1diem_1_1swe_1_1group07_1_1rubrica_1_1gestoreIO_1_1Export.html#afd830265662e1b06d837b54b797996f2" title="metodo per ottenere la formattazione conforme allo standard vCard da un contatto" alt="" coords="721,133,1017,173"/>
+<area shape="rect" id="node3" href="$classit_1_1unisa_1_1diem_1_1swe_1_1group07_1_1rubrica_1_1models_1_1Contatto.html#a00e134153eedae3d10177f7a5566c193" title="costruttore della classe Contatto." alt="" coords="373,5,672,45"/>
+<area shape="rect" id="node5" href="$classit_1_1unisa_1_1diem_1_1swe_1_1group07_1_1rubrica_1_1models_1_1ContattoEsteso.html#a6e86f4f36089e9805f66cd93007b023b" title="costruttore della classe Contatto Esteso" alt="" coords="373,69,672,109"/>
+<area shape="rect" id="node7" href="$classit_1_1unisa_1_1diem_1_1swe_1_1group07_1_1rubrica_1_1gestoreIO_1_1Export.html#a733874ab51e6bb3c67c54fe41f9c1bcf" title="metodo per fornire un file di output conforme allo standard vCard che contiene tutta le informazioni ..." alt="" coords="375,133,671,173"/>
+<area shape="rect" id="node9" href="$classit_1_1unisa_1_1diem_1_1swe_1_1group07_1_1rubrica_1_1gestoreIO_1_1Export.html#a91f65a6e35064ea1af3bbc0168cee290" title="metodo per fornire un file di output conforme allo standard vCard che contiene tutta la rubrica" alt="" coords="375,197,671,237"/>
+<area shape="rect" id="node8" href="$classit_1_1unisa_1_1diem_1_1swe_1_1group07_1_1rubrica_1_1controllers_1_1RubricaController.html#a28f1cd139c6377895c583d8d6edcae27" title="Gestore dell&#39;evento &quot;Esporta Contatto&quot;. Il metodo apre una finestra che consente all&#39;utente di selezi..." alt="" coords="5,133,325,173"/>
+</map>
