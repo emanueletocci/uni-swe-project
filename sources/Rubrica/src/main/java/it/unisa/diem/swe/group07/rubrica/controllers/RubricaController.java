@@ -139,8 +139,11 @@ public class RubricaController extends AbstractController implements Initializab
      */
     @FXML
     private TextField linkField;
-@FXML
-private ImageView  imgcontatto;
+    /**
+     * @brief immagine di profilo del contatto
+     */
+    @FXML
+    private ImageView  imgcontatto;
     /**
      * @brief Contatto selezionato nella Table View.
      */

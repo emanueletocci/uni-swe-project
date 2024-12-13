@@ -67,6 +67,9 @@ public class ContattoEsteso extends Contatto {
         this.setId(generaId());
         this.img=img;
     }
+    /**
+     * @brief metodo getter per l'attributo "immagineProfilo"
+     */
     public Image getImmagineProfilo() {
         return img;
     }

@@ -87,25 +87,29 @@ public class CreaContattoController extends AbstractController implements Initia
     @FXML
     private TextField note;
          /**
-     * @brief immagine da inserire
+     * @brief immagine di profilo del contatto
      */
     @FXML
     private ImageView immagine;
-    
+    /**
+     * @brief pulsante per inserire immagine
+     */
     @FXML
     private Button pulsanteimg;
+   
     /**
- /**
      * @brief fileChooser
      */
     private FileChooser fileChooser = new FileChooser();
+    
      @Override
     public void initialize(URL location, ResourceBundle resources) {
         fileChooser.setInitialDirectory(new File("C:\\Users\\hp\\Desktop\\")); 
     }
 /**
-     * @brief metodo che permette di inserire un immagine di profile nella bottone_imm
-     * @param event evento generato dal click sul pulsante pulsanteImmagine
+     * @brief metodo permette di scegliere un file con estensione del tipo "*.png", "*.jpg", "*.gif" 
+     * tramite un FileChooser e di settarlo nel nel ImageView "immagine" se non è null
+     * @param[in] event evento generato dal click sul pulsante pulsanteImmagine
      */
     @FXML
     void gestioneImmagine(ActionEvent event) {
