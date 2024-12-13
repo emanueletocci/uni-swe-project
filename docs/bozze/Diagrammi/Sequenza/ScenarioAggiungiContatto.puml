@@ -8,12 +8,12 @@ collections Rubrica
 
 activate Utente
 Utente->CreazioneContattoView: [inserisci informazioni]
-Utente->CreaContattoController: [clicca "Crea Contatto"]
+Utente->CreazioneContattoView: [clicca "Crea Contatto"]
 activate CreaContattoController
 CreaContattoController -> CreaContattoController : handleAggiungiCoontatto()
 activate CreaContattoController #3375E0
 
-CreazioneContattoView-> CreaContattoController : [invia informazioni sul contatto]
+CreazioneContattoView <-> CreaContattoController : [comunicazione]
 CreaContattoController-> CreaContattoController:  controllaCampiObbligatori()
 CreaContattoController-> CreaContattoController:  controllaTelefono()
 CreaContattoController-> CreaContattoController:  controllaEmail()
@@ -24,7 +24,7 @@ CreaContattoController-> Rubrica : aggiungiContatto()
 else #pink [vincoli non soddisfatti] 
 CreaContattoController-->Utente: mostraDialog(ERROR)
 deactivate CreaContattoController
-deactivate CreaContattoController
+deactivate CreaContattoControllerv
 deactivate Rubrica
 end
 deactivate Utente
