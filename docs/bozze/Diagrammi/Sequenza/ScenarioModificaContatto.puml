@@ -1,0 +1,23 @@
+@startuml
+title Modifica Contatto
+autonumber
+actor Utente
+participant RubricaView
+participant RubricaController
+collections Rubrica
+activate Utente
+skinparam sequenceMessageAlign center
+Utente->RubricaView: [click pulsante "Modifica]
+activate RubricaView
+RubricaView<-->RubricaController:[comunicazione]
+activate RubricaController
+activate RubricaController #3375E0
+RubricaController -> RubricaController : handleModificaContatto()
+activate Rubrica
+RubricaController -> Rubrica : gestioneSalvaModifiche()
+deactivate RubricaController
+deactivate Rubrica
+deactivate RubricaController
+deactivate RubricaView
+deactivate Utente
+@enduml

@@ -1,0 +1,32 @@
+@startuml
+title Aggiungi Contatto
+autonumber
+actor Utente
+participant CreazioneContattoView
+participant CreaContattoController
+collections Rubrica
+
+activate Utente
+Utente->CreazioneContattoView: [inserisci informazioni]
+Utente->CreazioneContattoView: [clicca "Crea Contatto"]
+activate CreaContattoController
+CreaContattoController -> CreaContattoController : handleAggiungiCoontatto()
+activate CreaContattoController #3375E0
+
+CreazioneContattoView <-> CreaContattoController : [comunicazione]
+CreaContattoController-> CreaContattoController:  controllaCampiObbligatori()
+CreaContattoController-> CreaContattoController:  controllaTelefono()
+CreaContattoController-> CreaContattoController:  controllaEmail()
+
+alt [vincoli soddisfatti]
+activate Rubrica
+CreaContattoController-> Rubrica : aggiungiContatto()
+else #pink [vincoli non soddisfatti] 
+CreaContattoController-->Utente: mostraDialog(ERROR)
+deactivate CreaContattoController
+deactivate CreaContattoControllerv
+deactivate Rubrica
+end
+deactivate Utente
+
+@enduml

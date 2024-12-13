@@ -1,0 +1,42 @@
+@startuml 
+    title Esporta Rubrica
+    autonumber
+
+    participant Utente 
+    participant RubricaViewController
+    collections Rubrica
+    collections FileSystem 
+
+    activate Utente
+    Utente->RubricaViewController:[clicca il tasto "file -> Esporta Rubrica"]
+    activate RubricaViewController
+    RubricaViewController -> RubricaViewController : handleExportRubrica()
+    activate RubricaViewController #3375E0
+    RubricaViewController --> Utente : showSaveDialog()
+    alt [Conferma]
+      RubricaViewController -> RubricaViewController : esportaRubrica()
+      activate RubricaViewController #3375E0
+      RubricaViewController -> Rubrica : getContatti()
+      activate Rubrica
+      activate RubricaViewController #3375E0
+      deactivate Rubrica
+        deactivate RubricaViewController
+        loop n. contatti
+            RubricaViewController -> RubricaViewController : getVCard()
+            activate RubricaViewController #3375E0
+            deactivate RubricaViewController
+        end
+        RubricaViewController -> FileSystem : write()
+        activate RubricaViewController #3375E0
+        deactivate RubricaViewController
+        activate FileSystem
+        deactivate FileSystem
+        deactivate RubricaViewController
+        RubricaViewController --> Utente : mostraDialog(SUCCESS)
+        deactivate RubricaViewController
+
+    else #pink [Annulla]
+      RubricaViewController --> Utente : [mostra home]
+    end
+    deactivate RubricaViewController 
+@enduml

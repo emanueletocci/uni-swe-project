@@ -1,0 +1,152 @@
+@startuml
+package rubrica {
+
+    package controllers{
+        class AbstractController{
+   + AbstractController():
+  - listaContatti: ObservableList<ContattoEsteso>
+  - rubrica: Rubrica
+  + setRubrica(Rubrica): void
+  + mostraDialog(AlertType, String, String): void
+  + getRubrica(): Rubrica
+  + getListaContatti(): ObservableList<ContattoEsteso>
+  + setListaContatti(ObservableList<ContattoEsteso>): void
+            
+        }
+        class RubricaController{
+            + RubricaController()
+            - contattoSelezionato: ContattoEsteso
+            - contattiFiltratiPreferiti: FilteredList<ContattoEsteso>
+            - filteredContatti: FilteredList<ContattoEsteso>
+            - contattiFiltratiEmergenza: FilteredList<ContattoEsteso>
+            + initialize(URL, ResourceBundle): void
+            - filtraContatti(String): void
+            - mostraDettaglioContatti(ContattoEsteso): void
+            - setEditableAll(boolean): void
+            - openWebpage(String): void
+             
+        }
+       
+        class CreaContattoController {
+            + CreaContattoController()
+        }
+
+    }
+
+  class App {
+- root: Parent
+  - scene: Scene
+  + start(Stage): void
+  + main(String[]): void
+        }
+
+    package models{
+
+    class Rubrica{
+  + Rubrica():
+  - rubrica: Map<Integer, ContattoEsteso>
+  + ricercaContatto(ContattoEsteso): ContattoEsteso
+  + getContatti(): Collection<ContattoEsteso>
+  + rimuoviContatto(ContattoEsteso): ContattoEsteso
+  + aggiornaContatto(ContattoEsteso): Boolean
+  + toString(): String
+  + aggiungiContatto(ContattoEsteso): ContattoEsteso
+  + aggiungiContattoEVerifica(ContattoEsteso): Boolean
+        }
+       
+  
+    class Contatto{
+  + Contatto():
+  + Contatto(String, String, String, String, String, Boolean, Boolean):
+  - cognome: String
+  - preferito: Boolean
+  - telefono3: String
+  - nome: String
+  - telefono2: String
+  - telefono1: String
+  - emergenza: Boolean
+  - id: Integer
+  + setTelefono3(String): void
+  + setId(Integer): void
+  + getTelefono2(): String
+  + toString(): String
+  + setTelefono2(String): void
+  + getNome(): String
+  + isEmergenza(): BooleanProperty
+  + getTelefono3(): String
+  + setNome(String): void
+  + setCognome(String): void
+  + setTelefono1(String): void
+  + getEmergenza(): Boolean
+  + hashCode(): int
+  + getId(): Integer
+  + getPreferito(): Boolean
+  + setPreferito(Boolean): void
+  + getCognome(): String
+  + getTelefono1(): String
+  + setEmergenza(Boolean): void
+  + equals(Object): boolean
+  + isPreferito(): BooleanProperty
+        }
+
+   class ContattoEsteso {
+  + ContattoEsteso(String, String, String, String, String, String, String, String, LocalDate, String, String, String, Boolean, Boolean):
+  + ContattoEsteso():
+  - email3: String
+  - email2: String
+  - email1: String
+  - indirizzoResidenza: String
+  - sitoWeb: String
+  - compleanno: LocalDate
+  - note: String
+  + setIndirizzoResidenza(String): void
+  + setEmail3(String): void
+  + toString(): String
+  + setNote(String): void
+  + getEmail2(): String
+  + setCompleanno(LocalDate): void
+  + hashCode(): int
+  + getSitoWeb(): String
+  + getEmail3(): String
+  + getNote(): String
+  - generaId(): Integer
+  + setSitoWeb(String): void
+  + getIndirizzoResidenza(): String
+  + setEmail2(String): void
+  + setEmail1(String): void
+  + getEmail1(): String
+  + equals(Object): boolean
+  + getCompleanno(): LocalDate
+        }
+
+
+    }
+
+  package gestoreIO {
+
+    class Export {
+ + Export():
+  - path: String
+  + getVcard(ContattoEsteso): String
+  + esportaRubrica(Rubrica): void
+  + esportaContatto(ContattoEsteso): void
+    }
+ 
+   class Import {
+      + Import():
+  - path: String
+  + importVcard(Rubrica, String): void
+}
+}
+}
+Rubrica    "1" o-- "0..*"   Contatto
+Contatto     <|--           ContattoEsteso
+AbstractController  <|--   RubricaController
+AbstractController  <|--   CreaContattoController
+Rubrica -- AbstractController
+Import -- RubricaController
+Export -- RubricaController
+App --> RubricaController
+ 
+}
+@enduml

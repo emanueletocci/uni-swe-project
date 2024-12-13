@@ -1,0 +1,34 @@
+@startuml
+title Aggiungi Contatto
+autonumber
+actor Utente
+participant CreaContattoViewController
+collections Rubrica
+
+activate Utente
+Utente->CreaContattoViewController: [inserisce informazioni e clicca "Crea Contatto"]
+activate CreaContattoViewController
+
+CreaContattoViewController -> CreaContattoViewController : handleAggiungiContatto()
+activate CreaContattoViewController #3375E0
+CreaContattoViewController-> CreaContattoViewController:  controllaCampiObbligatori()
+activate CreaContattoViewController #3375E0
+deactivate CreaContattoViewController
+loop 3 iterazioni
+    CreaContattoViewController-> CreaContattoViewController:  controllaTelefono()
+    activate CreaContattoViewController #3375E0
+    deactivate CreaContattoViewController
+    CreaContattoViewController-> CreaContattoViewController:  controllaEmail()
+    activate CreaContattoViewController #3375E0
+    deactivate CreaContattoViewController
+    deactivate CreaContattoViewController
+end
+alt [vincoli soddisfatti]
+    CreaContattoViewController-> Rubrica : aggiungiContatto()
+    activate Rubrica
+else #pink [vincoli non soddisfatti] 
+    CreaContattoViewController-->Utente: mostraDialog(ERROR)
+    deactivate CreaContattoViewController
+    deactivate Rubrica
+end
+@enduml

@@ -1,0 +1,5 @@
+<map id="Grafico della gerarchia delle classi" name="Grafico della gerarchia delle classi">
+<area shape="rect" id="Node000000" href="$classit_1_1unisa_1_1diem_1_1swe_1_1group07_1_1rubrica_1_1models_1_1Contatto.html" title="La classe rappresenta generico Contatto aggiungibile nella rubrica." alt="" coords="5,5,304,50"/>
+<area shape="rect" id="Node000001" href="$classit_1_1unisa_1_1diem_1_1swe_1_1group07_1_1rubrica_1_1models_1_1ContattoEsteso.html" title="La classe é un&#39;estensione della classe &#39;Contatto&#39;. Un &#39;ContattoEsteso&#39; definisce piú parametri rispet..." alt="" coords="352,5,650,50"/>
+<area shape="poly" id="edge5_Node000000_Node000001" title=" " alt="" coords="319,25,351,25,351,30,319,30"/>
+</map>

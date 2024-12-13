@@ -1,0 +1,5 @@
+<map id="it.unisa.diem.swe.group07.rubrica.models.Contatto.isEmergenza" name="it.unisa.diem.swe.group07.rubrica.models.Contatto.isEmergenza">
+<area shape="rect" id="Node000001" title="controlla se un contatto è d&#39;emergenza" alt="" coords="5,5,304,50"/>
+<area shape="rect" id="Node000002" href="$classit_1_1unisa_1_1diem_1_1swe_1_1group07_1_1rubrica_1_1models_1_1Contatto.html#a3c2ccd77eac54f161d7491949053f583" title="metodo getter per l&#39;attributo &quot;emergenza&quot;" alt="" coords="352,5,650,50"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="304,25,336,25,336,30,304,30"/>
+</map>

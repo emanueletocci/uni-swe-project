@@ -1,0 +1,7 @@
+<map id="it.unisa.diem.swe.group07.rubrica.controllers.RubricaController" name="it.unisa.diem.swe.group07.rubrica.controllers.RubricaController">
+<area shape="rect" id="Node000001" title="La classe rappresenta il controllore responsabile della gestione della vista principale." alt="" coords="121,98,441,143"/>
+<area shape="rect" id="Node000002" href="$classit_1_1unisa_1_1diem_1_1swe_1_1group07_1_1rubrica_1_1controllers_1_1AbstractController.html" title="La classe rappresenta un controllore astratto utilizzato nel pattern MVC. Il controllore istanzia un ..." alt="" coords="5,5,325,50"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="206,57,255,95,252,100,203,62"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="348,14,446,42"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="370,53,310,100,307,95,367,49"/>
+</map>

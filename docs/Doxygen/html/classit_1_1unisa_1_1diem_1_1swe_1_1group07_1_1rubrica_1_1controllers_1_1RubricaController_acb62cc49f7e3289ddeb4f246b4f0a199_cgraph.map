@@ -1,0 +1,11 @@
+<map id="it.unisa.diem.swe.group07.rubrica.controllers.RubricaController.initialize" name="it.unisa.diem.swe.group07.rubrica.controllers.RubricaController.initialize">
+<area shape="rect" id="Node000001" title="Metodo di inizializzazione della vista e dei dati. Imposta la lista dei contatti, la configurazione d..." alt="" coords="5,75,325,119"/>
+<area shape="rect" id="Node000002" href="$classit_1_1unisa_1_1diem_1_1swe_1_1group07_1_1rubrica_1_1models_1_1Rubrica.html#a2c8356c3f6edcf0ac21e535c44eba076" title="il metodo aggiunge un contatto alla rubrica e verifica se l&#39;aggiunta é andata a buon fine." alt="" coords="383,5,682,50"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="287,71,395,51,396,56,288,77"/>
+<area shape="rect" id="Node000004" href="$classit_1_1unisa_1_1diem_1_1swe_1_1group07_1_1rubrica_1_1controllers_1_1AbstractController.html#a44c01a5b8e871228a96c90a31e57a08d" title="metodo getter della struttura (lista osservabile)." alt="" coords="373,75,692,119"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="325,94,357,94,357,100,325,100"/>
+<area shape="rect" id="Node000005" href="$classit_1_1unisa_1_1diem_1_1swe_1_1group07_1_1rubrica_1_1controllers_1_1AbstractController.html#ab7e58e22666144ab379d7311e78847cd" title="metodo getter dell&#39;attributo rubrica." alt="" coords="373,144,692,189"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="288,117,396,138,395,143,287,123"/>
+<area shape="rect" id="Node000003" href="$classit_1_1unisa_1_1diem_1_1swe_1_1group07_1_1rubrica_1_1models_1_1Contatto.html#a53ef90855656ba9330f072c5d916522d" title="metodo getter per l&#39;attributo &quot;id&quot;." alt="" coords="740,5,1038,50"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="682,25,724,25,724,30,682,30"/>
+</map>

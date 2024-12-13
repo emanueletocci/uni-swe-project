@@ -1,0 +1,42 @@
+@startuml
+    title Modifica Contatto
+    autonumber
+    actor Utente
+    participant RubricaViewController
+    collections Rubrica
+    
+    activate Utente
+    Utente->RubricaViewController: [click pulsante "Modifica Contatto"]
+    
+    activate RubricaViewController
+    RubricaViewController -> RubricaViewController : handleModificaContatto()
+    activate RubricaViewController #3375E0
+    deactivate RubricaViewController
+    Utente -> RubricaViewController : [modifica le informazioni del contatto e clicca su "Salva"]
+    
+    RubricaViewController -> RubricaViewController : gestioneSalvaModifiche()
+    activate RubricaViewController #3375E0
+    RubricaViewController -> RubricaViewController : controllaCampiObbligatori()
+    activate RubricaViewController #3375E0
+    deactivate RubricaViewController
+    loop 3 iterazioni
+        RubricaViewController -> RubricaViewController : controllaTelefono()
+        activate RubricaViewController #3375E0
+        deactivate RubricaViewController
+        RubricaViewController -> RubricaViewController : controllaEmail()
+        activate RubricaViewController #3375E0
+        deactivate RubricaViewController
+    end
+    alt [vincoli soddisfatti]
+        RubricaViewController-> Rubrica : aggiornaContatto()
+        activate Rubrica
+    else #pink [vincoli non soddisfatti] 
+        RubricaViewController-->Utente: mostraDialog(ERROR)
+        deactivate RubricaViewController
+        deactivate Rubrica
+    end
+
+    deactivate Rubrica
+    deactivate RubricaViewController
+    deactivate Utente
+@enduml
