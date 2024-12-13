@@ -9,12 +9,15 @@
     Utente -> RubricaViewController: [Seleziona la casella di ricerca e digita una stringa]
     activate RubricaViewController
 
-    RubricaViewController -> RubricaViewController: cercaContatto()
+    RubricaViewController -> RubricaViewController: filtraContatti()
     activate RubricaViewController #3375E0
+    opt stringa != null
     RubricaViewController -> Rubrica : getContatto()
     activate Rubrica
+    Rubrica --> RubricaViewController : return listaContatti
     deactivate RubricaViewController
     deactivate Rubrica
     RubricaViewController --> Utente: [Aggiora la TableView]
+end
     deactivate Utente
 @enduml
