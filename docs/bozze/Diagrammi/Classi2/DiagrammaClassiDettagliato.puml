@@ -8,7 +8,7 @@ class App {
   + start(Stage): void
   + main(String[]): void
 }
-}
+
 
 package controllers {
  abstract class AbstractController {
@@ -203,6 +203,7 @@ class Import {
   + importVcard(Rubrica, String): void
 }
 }
+}
 
 Rubrica    "1" o-- "0..*"   Contatto
 Contatto     <|--           ContattoEsteso
@@ -211,4 +212,6 @@ AbstractController  <|--   CreaContattoController
 Rubrica -- AbstractController
 Import -- RubricaController
 Export -- RubricaController
+App --> RubricaController
+
 @enduml
