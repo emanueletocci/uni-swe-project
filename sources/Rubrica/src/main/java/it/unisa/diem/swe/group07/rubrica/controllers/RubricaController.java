@@ -531,7 +531,6 @@ public class RubricaController extends AbstractController implements Initializab
                 "Export completato",
                 "Il contatto è stato esportato con successo\noutput: " + file.getAbsolutePath() + ".vcf");
     }
-
     /**
      * @brief Gestore dell'evento "Importa Rubrica/Contatto". Il metodo apre una finestra che consente all'utente di selezionare un file da importare
      * e chiama il metodo responsabile dell'import.

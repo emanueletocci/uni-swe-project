@@ -1,6 +1,6 @@
 /**
  * @file ContattoEsteso.java
- * @brief questo file aggiunge informazioni aggiuntive al Contatto: compeanno, indirizzo di residenza e socialLinks.
+ * @brief questo file aggiunge informazioni aggiuntive al Contatto: compeanno, indirizzo di residenza e socialLinks; E i suoi metodi
  * @autor Gruppo07
  * @date Dicembre, 2024
  */

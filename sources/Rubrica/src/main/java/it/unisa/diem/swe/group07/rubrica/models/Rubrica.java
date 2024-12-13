@@ -1,10 +1,9 @@
 /**
  * @file Rubrica.java
- * @brief questo file presenta le informazioni della rubrica
+ * @brief in questo file è presente l'implementazione della classe Rubrica con i suoi metodi e attributi
  * @autor Gruppo07
  * @date Dicembre, 2024
  */
-
 package it.unisa.diem.swe.group07.rubrica.models;
 
 
@@ -73,7 +72,7 @@ public class Rubrica {
 
     /**
      *  @brief il metodo consente di aggiornare un contatto esistente nella rubrica.
-     *  @param[in] contattoAggiornato
+     *  @param[in] contattoAggiornato, il contatto con i dati nuovi
      *  @return 'true' se il contatto viene correttamente aggiornato, 'false' altrimenti
      */
     public Boolean aggiornaContatto(ContattoEsteso contattoAggiornato) {

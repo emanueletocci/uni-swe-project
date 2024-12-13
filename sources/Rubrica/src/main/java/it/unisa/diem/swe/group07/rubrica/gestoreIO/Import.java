@@ -71,6 +71,8 @@ public class Import {
                     contatto.setEmergenza(Boolean.parseBoolean(line.substring(9)));
                 } else if (line.startsWith("UID:")) {
                     contatto.setId(Integer.parseInt(line.substring(4)));
+                } else if (line.startsWith("PHOTO;ENCODING=b;TYPE=JPEG:")) {
+                    contatto.setImmagineProfilo(Integer.parseInt(line.substring(27)));
                 } else if (line.startsWith("END:VCARD")) {
                     System.out.println("\nAggiungo il contatto alla rubrica");
                     if(r.aggiungiContattoEVerifica(contatto))

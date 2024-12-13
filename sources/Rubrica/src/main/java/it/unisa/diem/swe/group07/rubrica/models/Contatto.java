@@ -1,11 +1,10 @@
 /**
  * @file Contatto.java
- * @brief questo file contiene l'implementazione del contatto da inserire all'interno della rubrica telefonica
+ * @brief questo file contiene l'implementazione del contatto, da inserire all'interno della rubrica telefonica, e i suoi metodi
  * @autor Gruppo07
  * @date Dicembre, 2024
  * @version 1.0
  */
-
 package it.unisa.diem.swe.group07.rubrica.models;
 
 import javafx.beans.property.BooleanProperty;
@@ -81,7 +80,7 @@ public class Contatto {
     }
 
     /**
-     * @param[] id,
+     * @param[in] id, l'attributo da impostare nel relativo campo di contatto
      * @brief metodo setter per l'attributo "id"
      */
     public void setId(Integer id){
@@ -97,6 +96,7 @@ public class Contatto {
     }
 
     /**
+     * @param[in] nome, l'attributo da impostare nel relativo campo di contatto
      * @brief metodo setter per l'attributo "nome"
      */
     public void setNome(String nome) {
@@ -112,6 +112,7 @@ public class Contatto {
     }
 
     /**
+     * @param[in] cognome, l'attributo da impostare nel relativo campo di contatto
      * @brief metodo setter per l'attributo "cognome"
      */
     public void setCognome(String cognome) {
@@ -127,6 +128,7 @@ public class Contatto {
 
     
     /**
+     * @param[in] telefono1, l'attributo da impostare nel relativo campo di contatto
      * @brief metodo setter per l'attributo "telefono1"
      */
     public void setTelefono1(String telefono1) {
@@ -142,6 +144,7 @@ public class Contatto {
     }
     
     /**
+     * @param[in] telefono2, l'attributo da impostare nel relativo campo di contatto
      * @brief metodo setter per l'attributo "telefono2"
      */
     public void setTelefono2(String telefono2) {
@@ -149,6 +152,7 @@ public class Contatto {
     }
 
      /**
+      * @param[in] telefono3, l'attributo da impostare nel relativo campo di contatto
      * @brief metodo getter per l'attributo "telefono3"
      * @return attributo telefono2
      */
@@ -172,6 +176,7 @@ public class Contatto {
     }
 
     /**
+     * @param[in] emergenza, l'attributoda impostare nella relativa flag di contatto
      * @brief metodo setter per l'attributo "emergenza"
      */
     public void setEmergenza(Boolean emergenza) {
@@ -187,6 +192,7 @@ public class Contatto {
     }
 
     /**
+     * @param[in] preferito, l'attributoda impostare nella relativa flag di contatto
      * @brief metodo setter per l'attributo "preferito"
      */
     public void setPreferito(Boolean preferito) {
