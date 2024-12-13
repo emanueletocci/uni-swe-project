@@ -14,7 +14,7 @@ import java.time.format.DateTimeFormatter;
 /**
  * @file Import.java
  * @brief importa i contatti da un file .vcf e li aggiunge ad una rubrica
- * @autor Gruppo07
+ * @author Gruppo07
  * @date Dicembre, 2024
  * @version 1.0
  */
@@ -83,7 +83,7 @@ public class Import {
                 }
             }
 
-            // TEST 
+            // TEST
             System.out.println("\n"+ getClass() + " - import ***\n");
             System.out.println("\n****RUBRICA***\n" + r.toString());
             System.out.println("\n***LISTA CONTATTI***\n" + lista.toString());

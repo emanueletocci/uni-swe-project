@@ -1,0 +1,7 @@
+<map id="it.unisa.diem.swe.group07.rubrica.models.Contatto.generaId" name="it.unisa.diem.swe.group07.rubrica.models.Contatto.generaId">
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,40,304,85"/>
+<area shape="rect" id="Node000002" href="$classit_1_1unisa_1_1diem_1_1swe_1_1group07_1_1rubrica_1_1models_1_1Contatto.html#a9c2c4132e79ef8782c65bba90c5b3527" title="metodo getter per l&#39;attributo &quot;cognome&quot;" alt="" coords="352,5,650,50"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="304,45,336,41,336,47,304,50"/>
+<area shape="rect" id="Node000003" href="$classit_1_1unisa_1_1diem_1_1swe_1_1group07_1_1rubrica_1_1models_1_1Contatto.html#abfa304de5195706e62d361a032e99855" title="metodo getter per l&#39;attributo &quot;nome&quot;." alt="" coords="352,75,650,119"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="304,75,336,78,336,83,304,80"/>
+</map>

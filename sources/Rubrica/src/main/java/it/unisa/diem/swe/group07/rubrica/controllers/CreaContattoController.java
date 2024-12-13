@@ -1,7 +1,7 @@
 /**
  * @file CreaContattoController.java
  * @brief Il file contiene l'implementazione del controller che gestisce la creazione di un nuovo contatto.
- * @autor Gruppo07
+ * @author Gruppo07
  * @date Dicembre, 2024
  */
 package it.unisa.diem.swe.group07.rubrica.controllers;

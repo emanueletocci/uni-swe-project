@@ -1,7 +1,7 @@
 /**
  * @file Contatto.java
  * @brief questo file contiene l'implementazione del contatto, da inserire all'interno della rubrica telefonica, e i suoi metodi.
- * @autor Gruppo07
+ * @author Gruppo07
  * @date Dicembre, 2024
  * @version 1.0
  */

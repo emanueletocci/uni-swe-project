@@ -1,7 +1,7 @@
 /**
  * @file AbstractController.java
  * @brief Il file contiene l'implementazione di un controller astratto.
- * @autor Gruppo07
+ * @author Gruppo07
  * @date Dicembre, 2024
  */
 

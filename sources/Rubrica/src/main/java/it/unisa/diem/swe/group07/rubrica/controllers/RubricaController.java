@@ -1,7 +1,7 @@
 /**
  * @file RubricaController.java
  * @brief questo file contiene l'implementazione del Controller principale per la gestione della rubrica telefonica.
- * @autor Gruppo07
+ * @author Gruppo07
  * @date Dicembre, 2024
  */
 

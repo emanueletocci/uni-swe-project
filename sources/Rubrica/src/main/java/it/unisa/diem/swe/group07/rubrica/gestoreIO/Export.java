@@ -13,7 +13,7 @@ import java.util.Map;
 /**
  * @file Export.java
  * @brief  questo file contiene l'implementazione dei metodi utili al export
- * @autor Gruppo07
+ * @author Gruppo07
  * @date Dicembre, 2024
  * @version 1.0
  */
