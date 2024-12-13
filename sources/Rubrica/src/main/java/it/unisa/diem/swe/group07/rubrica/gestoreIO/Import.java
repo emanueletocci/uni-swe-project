@@ -25,6 +25,8 @@ public class Import {
      * @param nomefile il nome del file .vcf da cui importare i contatti
      * @throws IOException se si verifica un errore durante la lettura del file
      * @return 'true' se la vCard é importata correttamente, 'false' altrimenti
+     * @see Rubrica
+     * @see Export
      */
     public void importVcard(Rubrica r, ObservableList lista, String nomefile) throws IOException {
         //aggiunta dello standard utf8 perché è l'unico accettato dai .vcf (fonte stackoverflow)
@@ -80,11 +82,12 @@ public class Import {
                         lista.add(contatto);
                 }
             }
-            // TEST - eliminare in seguito
+
+            // TEST 
             System.out.println("\n"+ getClass() + " - import ***\n");
             System.out.println("\n****RUBRICA***\n" + r.toString());
             System.out.println("\n***LISTA CONTATTI***\n" + lista.toString());
-            // FINE TEST - eliminare in seguito
+            // FINE TEST
 
             System.out.println("Rubrica importata con successo");
         } catch (IOException e) {
