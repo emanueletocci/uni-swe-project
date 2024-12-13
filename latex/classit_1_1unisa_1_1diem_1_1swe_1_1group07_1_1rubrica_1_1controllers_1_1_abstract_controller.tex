@@ -1,0 +1,150 @@
+\doxysection{it.\+unisa.\+diem.\+swe.\+group07.\+rubrica.\+controllers.\+Abstract\+Controller Class Reference}
+\hypertarget{classit_1_1unisa_1_1diem_1_1swe_1_1group07_1_1rubrica_1_1controllers_1_1_abstract_controller}{}\label{classit_1_1unisa_1_1diem_1_1swe_1_1group07_1_1rubrica_1_1controllers_1_1_abstract_controller}\index{it.unisa.diem.swe.group07.rubrica.controllers.AbstractController@{it.unisa.diem.swe.group07.rubrica.controllers.AbstractController}}
+Inheritance diagram for it.\+unisa.\+diem.\+swe.\+group07.\+rubrica.\+controllers.\+Abstract\+Controller\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=1.365854cm]{classit_1_1unisa_1_1diem_1_1swe_1_1group07_1_1rubrica_1_1controllers_1_1_abstract_controller}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classit_1_1unisa_1_1diem_1_1swe_1_1group07_1_1rubrica_1_1models_1_1_rubrica}{Rubrica}} \mbox{\hyperlink{classit_1_1unisa_1_1diem_1_1swe_1_1group07_1_1rubrica_1_1controllers_1_1_abstract_controller_ab7e58e22666144ab379d7311e78847cd}{get\+Rubrica}} ()
+\begin{DoxyCompactList}\small\item\em metodo getter dell\textquotesingle{}attributo rubrica. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classit_1_1unisa_1_1diem_1_1swe_1_1group07_1_1rubrica_1_1controllers_1_1_abstract_controller_a7451ffd24e0e1d5c9e2cc7e5cb767985}{set\+Rubrica}} (\mbox{\hyperlink{classit_1_1unisa_1_1diem_1_1swe_1_1group07_1_1rubrica_1_1models_1_1_rubrica}{Rubrica}} rubrica)
+\begin{DoxyCompactList}\small\item\em metodo setter dell\textquotesingle{}attributo rubrica. \end{DoxyCompactList}\item 
+Observable\+List$<$ \mbox{\hyperlink{classit_1_1unisa_1_1diem_1_1swe_1_1group07_1_1rubrica_1_1models_1_1_contatto_esteso}{Contatto\+Esteso}} $>$ \mbox{\hyperlink{classit_1_1unisa_1_1diem_1_1swe_1_1group07_1_1rubrica_1_1controllers_1_1_abstract_controller_a44c01a5b8e871228a96c90a31e57a08d}{get\+Lista\+Contatti}} ()
+\begin{DoxyCompactList}\small\item\em metodo getter della struttura (lista osservabile). \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classit_1_1unisa_1_1diem_1_1swe_1_1group07_1_1rubrica_1_1controllers_1_1_abstract_controller_a4d9ed27334c97cac3f274a3c2a9bbd6f}{set\+Lista\+Contatti}} (Observable\+List$<$ \mbox{\hyperlink{classit_1_1unisa_1_1diem_1_1swe_1_1group07_1_1rubrica_1_1models_1_1_contatto_esteso}{Contatto\+Esteso}} $>$ lista\+Contatti)
+\begin{DoxyCompactList}\small\item\em metodo setter della lista osservabile \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classit_1_1unisa_1_1diem_1_1swe_1_1group07_1_1rubrica_1_1controllers_1_1_abstract_controller_ad638bfbb3c6345b99f03c0d4a38953b7}{mostra\+Dialog}} (Alert.\+Alert\+Type type, String titolo, String messaggio)
+\begin{DoxyCompactList}\small\item\em metodo che consenti di mostrare un generico dialog. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classit_1_1unisa_1_1diem_1_1swe_1_1group07_1_1rubrica_1_1controllers_1_1_abstract_controller_a607d7dd76abbb0a2bb252730a8562b97}\label{classit_1_1unisa_1_1diem_1_1swe_1_1group07_1_1rubrica_1_1controllers_1_1_abstract_controller_a607d7dd76abbb0a2bb252730a8562b97} 
+Boolean {\bfseries controlla\+Campi\+Obbligatori} (String nome, String cognome)
+\begin{DoxyCompactList}\small\item\em metodo verificare che almeno un Text\+Field tra nome e cognome è stato sovrascritto. \end{DoxyCompactList}\item 
+Boolean \mbox{\hyperlink{classit_1_1unisa_1_1diem_1_1swe_1_1group07_1_1rubrica_1_1controllers_1_1_abstract_controller_aa7ba6f967b85192f31d60ba989935d26}{controlla\+Telefono}} (String telefono)
+\begin{DoxyCompactList}\small\item\em metodo per la verifica del numero telefonico del contatto. \end{DoxyCompactList}\item 
+Boolean \mbox{\hyperlink{classit_1_1unisa_1_1diem_1_1swe_1_1group07_1_1rubrica_1_1controllers_1_1_abstract_controller_ad963d5274556084e79632fec78838744}{controlla\+Email}} (String email)
+\begin{DoxyCompactList}\small\item\em metodo per la verifica dell\textquotesingle{}indirizzo email del contatto. Il metodo verifica solamente la presenta della "{}@"{} all\textquotesingle{}interno dell´email inserita. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classit_1_1unisa_1_1diem_1_1swe_1_1group07_1_1rubrica_1_1controllers_1_1_abstract_controller_ad963d5274556084e79632fec78838744}\index{it.unisa.diem.swe.group07.rubrica.controllers.AbstractController@{it.unisa.diem.swe.group07.rubrica.controllers.AbstractController}!controllaEmail@{controllaEmail}}
+\index{controllaEmail@{controllaEmail}!it.unisa.diem.swe.group07.rubrica.controllers.AbstractController@{it.unisa.diem.swe.group07.rubrica.controllers.AbstractController}}
+\doxysubsubsection{\texorpdfstring{controllaEmail()}{controllaEmail()}}
+{\footnotesize\ttfamily \label{classit_1_1unisa_1_1diem_1_1swe_1_1group07_1_1rubrica_1_1controllers_1_1_abstract_controller_ad963d5274556084e79632fec78838744} 
+Boolean it.\+unisa.\+diem.\+swe.\+group07.\+rubrica.\+controllers.\+Abstract\+Controller.\+controlla\+Email (\begin{DoxyParamCaption}\item[{String}]{email}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+metodo per la verifica dell\textquotesingle{}indirizzo email del contatto. Il metodo verifica solamente la presenta della "{}@"{} all\textquotesingle{}interno dell´email inserita. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em email,Stringa} & contenente un indirizzo email. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+"{}true"{} se l\textquotesingle{}email inserita é valida (contiene @), "{}false"{} altrimenti. 
+\end{DoxyReturn}
+\Hypertarget{classit_1_1unisa_1_1diem_1_1swe_1_1group07_1_1rubrica_1_1controllers_1_1_abstract_controller_aa7ba6f967b85192f31d60ba989935d26}\index{it.unisa.diem.swe.group07.rubrica.controllers.AbstractController@{it.unisa.diem.swe.group07.rubrica.controllers.AbstractController}!controllaTelefono@{controllaTelefono}}
+\index{controllaTelefono@{controllaTelefono}!it.unisa.diem.swe.group07.rubrica.controllers.AbstractController@{it.unisa.diem.swe.group07.rubrica.controllers.AbstractController}}
+\doxysubsubsection{\texorpdfstring{controllaTelefono()}{controllaTelefono()}}
+{\footnotesize\ttfamily \label{classit_1_1unisa_1_1diem_1_1swe_1_1group07_1_1rubrica_1_1controllers_1_1_abstract_controller_aa7ba6f967b85192f31d60ba989935d26} 
+Boolean it.\+unisa.\+diem.\+swe.\+group07.\+rubrica.\+controllers.\+Abstract\+Controller.\+controlla\+Telefono (\begin{DoxyParamCaption}\item[{String}]{telefono}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+metodo per la verifica del numero telefonico del contatto. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em telefono,Stringa} & contenente un numero telefonico. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+"{}true"{} se il numero inserito é valido, "{}false"{} altrimenti. 
+\end{DoxyReturn}
+\Hypertarget{classit_1_1unisa_1_1diem_1_1swe_1_1group07_1_1rubrica_1_1controllers_1_1_abstract_controller_a44c01a5b8e871228a96c90a31e57a08d}\index{it.unisa.diem.swe.group07.rubrica.controllers.AbstractController@{it.unisa.diem.swe.group07.rubrica.controllers.AbstractController}!getListaContatti@{getListaContatti}}
+\index{getListaContatti@{getListaContatti}!it.unisa.diem.swe.group07.rubrica.controllers.AbstractController@{it.unisa.diem.swe.group07.rubrica.controllers.AbstractController}}
+\doxysubsubsection{\texorpdfstring{getListaContatti()}{getListaContatti()}}
+{\footnotesize\ttfamily \label{classit_1_1unisa_1_1diem_1_1swe_1_1group07_1_1rubrica_1_1controllers_1_1_abstract_controller_a44c01a5b8e871228a96c90a31e57a08d} 
+Observable\+List$<$ \mbox{\hyperlink{classit_1_1unisa_1_1diem_1_1swe_1_1group07_1_1rubrica_1_1models_1_1_contatto_esteso}{Contatto\+Esteso}} $>$ it.\+unisa.\+diem.\+swe.\+group07.\+rubrica.\+controllers.\+Abstract\+Controller.\+get\+Lista\+Contatti (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+metodo getter della struttura (lista osservabile). 
+
+\begin{DoxyReturn}{Returns}
+lista\+Contatti, La lista osservabile contenente i contatti. 
+\end{DoxyReturn}
+\Hypertarget{classit_1_1unisa_1_1diem_1_1swe_1_1group07_1_1rubrica_1_1controllers_1_1_abstract_controller_ab7e58e22666144ab379d7311e78847cd}\index{it.unisa.diem.swe.group07.rubrica.controllers.AbstractController@{it.unisa.diem.swe.group07.rubrica.controllers.AbstractController}!getRubrica@{getRubrica}}
+\index{getRubrica@{getRubrica}!it.unisa.diem.swe.group07.rubrica.controllers.AbstractController@{it.unisa.diem.swe.group07.rubrica.controllers.AbstractController}}
+\doxysubsubsection{\texorpdfstring{getRubrica()}{getRubrica()}}
+{\footnotesize\ttfamily \label{classit_1_1unisa_1_1diem_1_1swe_1_1group07_1_1rubrica_1_1controllers_1_1_abstract_controller_ab7e58e22666144ab379d7311e78847cd} 
+\mbox{\hyperlink{classit_1_1unisa_1_1diem_1_1swe_1_1group07_1_1rubrica_1_1models_1_1_rubrica}{Rubrica}} it.\+unisa.\+diem.\+swe.\+group07.\+rubrica.\+controllers.\+Abstract\+Controller.\+get\+Rubrica (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+metodo getter dell\textquotesingle{}attributo rubrica. 
+
+\begin{DoxyReturn}{Returns}
+rubrica, Attributo rubrica. 
+\end{DoxyReturn}
+\Hypertarget{classit_1_1unisa_1_1diem_1_1swe_1_1group07_1_1rubrica_1_1controllers_1_1_abstract_controller_ad638bfbb3c6345b99f03c0d4a38953b7}\index{it.unisa.diem.swe.group07.rubrica.controllers.AbstractController@{it.unisa.diem.swe.group07.rubrica.controllers.AbstractController}!mostraDialog@{mostraDialog}}
+\index{mostraDialog@{mostraDialog}!it.unisa.diem.swe.group07.rubrica.controllers.AbstractController@{it.unisa.diem.swe.group07.rubrica.controllers.AbstractController}}
+\doxysubsubsection{\texorpdfstring{mostraDialog()}{mostraDialog()}}
+{\footnotesize\ttfamily \label{classit_1_1unisa_1_1diem_1_1swe_1_1group07_1_1rubrica_1_1controllers_1_1_abstract_controller_ad638bfbb3c6345b99f03c0d4a38953b7} 
+void it.\+unisa.\+diem.\+swe.\+group07.\+rubrica.\+controllers.\+Abstract\+Controller.\+mostra\+Dialog (\begin{DoxyParamCaption}\item[{Alert.\+Alert\+Type}]{type}{, }\item[{String}]{titolo}{, }\item[{String}]{messaggio}{}\end{DoxyParamCaption})}
+
+
+
+metodo che consenti di mostrare un generico dialog. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em type,Tipo} & di Alert. \\
+\hline
+\mbox{\texttt{ in}}  & {\em titolo,Titolo} & della finestra (dialog). \\
+\hline
+\mbox{\texttt{ in}}  & {\em messaggio,Messaggio} & da mostrare nella finestra. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classit_1_1unisa_1_1diem_1_1swe_1_1group07_1_1rubrica_1_1controllers_1_1_abstract_controller_a4d9ed27334c97cac3f274a3c2a9bbd6f}\index{it.unisa.diem.swe.group07.rubrica.controllers.AbstractController@{it.unisa.diem.swe.group07.rubrica.controllers.AbstractController}!setListaContatti@{setListaContatti}}
+\index{setListaContatti@{setListaContatti}!it.unisa.diem.swe.group07.rubrica.controllers.AbstractController@{it.unisa.diem.swe.group07.rubrica.controllers.AbstractController}}
+\doxysubsubsection{\texorpdfstring{setListaContatti()}{setListaContatti()}}
+{\footnotesize\ttfamily \label{classit_1_1unisa_1_1diem_1_1swe_1_1group07_1_1rubrica_1_1controllers_1_1_abstract_controller_a4d9ed27334c97cac3f274a3c2a9bbd6f} 
+void it.\+unisa.\+diem.\+swe.\+group07.\+rubrica.\+controllers.\+Abstract\+Controller.\+set\+Lista\+Contatti (\begin{DoxyParamCaption}\item[{Observable\+List$<$ \mbox{\hyperlink{classit_1_1unisa_1_1diem_1_1swe_1_1group07_1_1rubrica_1_1models_1_1_contatto_esteso}{Contatto\+Esteso}} $>$}]{lista\+Contatti}{}\end{DoxyParamCaption})}
+
+
+
+metodo setter della lista osservabile 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em lista\+Contatti,La} & lista osservabile contenente i contatti \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classit_1_1unisa_1_1diem_1_1swe_1_1group07_1_1rubrica_1_1controllers_1_1_abstract_controller_a7451ffd24e0e1d5c9e2cc7e5cb767985}\index{it.unisa.diem.swe.group07.rubrica.controllers.AbstractController@{it.unisa.diem.swe.group07.rubrica.controllers.AbstractController}!setRubrica@{setRubrica}}
+\index{setRubrica@{setRubrica}!it.unisa.diem.swe.group07.rubrica.controllers.AbstractController@{it.unisa.diem.swe.group07.rubrica.controllers.AbstractController}}
+\doxysubsubsection{\texorpdfstring{setRubrica()}{setRubrica()}}
+{\footnotesize\ttfamily \label{classit_1_1unisa_1_1diem_1_1swe_1_1group07_1_1rubrica_1_1controllers_1_1_abstract_controller_a7451ffd24e0e1d5c9e2cc7e5cb767985} 
+void it.\+unisa.\+diem.\+swe.\+group07.\+rubrica.\+controllers.\+Abstract\+Controller.\+set\+Rubrica (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classit_1_1unisa_1_1diem_1_1swe_1_1group07_1_1rubrica_1_1models_1_1_rubrica}{Rubrica}}}]{rubrica}{}\end{DoxyParamCaption})}
+
+
+
+metodo setter dell\textquotesingle{}attributo rubrica. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em rubrica,Attributo} & rubrica. \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+sources/\+Rubrica/src/main/java/it/unisa/diem/swe/group07/rubrica/controllers/\mbox{\hyperlink{_abstract_controller_8java}{Abstract\+Controller.\+java}}\end{DoxyCompactItemize}

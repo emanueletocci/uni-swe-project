@@ -1,0 +1,76 @@
+\doxysection{it.\+unisa.\+diem.\+swe.\+group07.\+rubrica.\+controllers.\+Rubrica\+Controller Class Reference}
+\hypertarget{classit_1_1unisa_1_1diem_1_1swe_1_1group07_1_1rubrica_1_1controllers_1_1_rubrica_controller}{}\label{classit_1_1unisa_1_1diem_1_1swe_1_1group07_1_1rubrica_1_1controllers_1_1_rubrica_controller}\index{it.unisa.diem.swe.group07.rubrica.controllers.RubricaController@{it.unisa.diem.swe.group07.rubrica.controllers.RubricaController}}
+Inheritance diagram for it.\+unisa.\+diem.\+swe.\+group07.\+rubrica.\+controllers.\+Rubrica\+Controller\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=1.462141cm]{classit_1_1unisa_1_1diem_1_1swe_1_1group07_1_1rubrica_1_1controllers_1_1_rubrica_controller}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classit_1_1unisa_1_1diem_1_1swe_1_1group07_1_1rubrica_1_1controllers_1_1_rubrica_controller_acb62cc49f7e3289ddeb4f246b4f0a199}{initialize}} (URL url, Resource\+Bundle rb)
+\begin{DoxyCompactList}\small\item\em Metodo di inizializzazione della vista e dei dati. Imposta la lista dei contatti, la configurazione delle colonne della Table\+View e i listener per le interazioni dell\textquotesingle{}utente. \end{DoxyCompactList}\item 
+\Hypertarget{classit_1_1unisa_1_1diem_1_1swe_1_1group07_1_1rubrica_1_1controllers_1_1_rubrica_controller_ac42a294519c71cd05537868f89c17a4f}\label{classit_1_1unisa_1_1diem_1_1swe_1_1group07_1_1rubrica_1_1controllers_1_1_rubrica_controller_ac42a294519c71cd05537868f89c17a4f} 
+void {\bfseries handle\+Nuovo\+Contatto} ()
+\begin{DoxyCompactList}\small\item\em Gestore delle\textquotesingle{}evento \textquotesingle{}Nuovo Contatto\textquotesingle{}. Il metodo carica la vista alternativa che consente la creazione del contatto e passa il controllo al "{}\+Crea\+Contatto\+Controller"{}, il controller che consente la creazione del contatto. \end{DoxyCompactList}\item 
+\Hypertarget{classit_1_1unisa_1_1diem_1_1swe_1_1group07_1_1rubrica_1_1controllers_1_1_rubrica_controller_a76dea9db685201c1e89dcd20d8d7840e}\label{classit_1_1unisa_1_1diem_1_1swe_1_1group07_1_1rubrica_1_1controllers_1_1_rubrica_controller_a76dea9db685201c1e89dcd20d8d7840e} 
+void {\bfseries handle\+Elimina\+Contatto} ()
+\begin{DoxyCompactList}\small\item\em Gestore dell\textquotesingle{}evento relativo al click del pulsante "{}\+Elimina Contatto"{}. Il metodo elimina un contatto dalla rubrica ed aggiorna la Table\+View. \end{DoxyCompactList}\item 
+\Hypertarget{classit_1_1unisa_1_1diem_1_1swe_1_1group07_1_1rubrica_1_1controllers_1_1_rubrica_controller_a8f5eef311627f3d103ca4952f783b1e9}\label{classit_1_1unisa_1_1diem_1_1swe_1_1group07_1_1rubrica_1_1controllers_1_1_rubrica_controller_a8f5eef311627f3d103ca4952f783b1e9} 
+void {\bfseries handle\+Modifica\+Contatto} ()
+\begin{DoxyCompactList}\small\item\em Gestore dell\textquotesingle{}evento relativo al click sul pulsante "{}\+Modifica"{}. Abilita i campi di testo per la modifica di un contatto selezionato. \end{DoxyCompactList}\item 
+\Hypertarget{classit_1_1unisa_1_1diem_1_1swe_1_1group07_1_1rubrica_1_1controllers_1_1_rubrica_controller_a28f1cd139c6377895c583d8d6edcae27}\label{classit_1_1unisa_1_1diem_1_1swe_1_1group07_1_1rubrica_1_1controllers_1_1_rubrica_controller_a28f1cd139c6377895c583d8d6edcae27} 
+void {\bfseries handle\+Export\+Contatto} ()
+\begin{DoxyCompactList}\small\item\em Gestore dell\textquotesingle{}evento "{}\+Esporta Contatto"{}. Il metodo apre una finestra che consente all\textquotesingle{}utente di selezionare un percorso in un cui salvare il file e chiama il metodo responsabile dell\textquotesingle{}export in formato .vcf. \end{DoxyCompactList}\item 
+\Hypertarget{classit_1_1unisa_1_1diem_1_1swe_1_1group07_1_1rubrica_1_1controllers_1_1_rubrica_controller_a09a018495d1eb3c281b87e5bdd8a0a8e}\label{classit_1_1unisa_1_1diem_1_1swe_1_1group07_1_1rubrica_1_1controllers_1_1_rubrica_controller_a09a018495d1eb3c281b87e5bdd8a0a8e} 
+void {\bfseries handle\+Import\+Rubrica} ()  throws IOException 
+\begin{DoxyCompactList}\small\item\em Gestore dell\textquotesingle{}evento "{}\+Importa Rubrica/\+Contatto"{}. Il metodo apre una finestra che consente all\textquotesingle{}utente di selezionare un file da importare e chiama il metodo responsabile dell\textquotesingle{}import. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{classit_1_1unisa_1_1diem_1_1swe_1_1group07_1_1rubrica_1_1controllers_1_1_abstract_controller}{it.\+unisa.\+diem.\+swe.\+group07.\+rubrica.\+controllers.\+Abstract\+Controller}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classit_1_1unisa_1_1diem_1_1swe_1_1group07_1_1rubrica_1_1models_1_1_rubrica}{Rubrica}} \mbox{\hyperlink{classit_1_1unisa_1_1diem_1_1swe_1_1group07_1_1rubrica_1_1controllers_1_1_abstract_controller_ab7e58e22666144ab379d7311e78847cd}{get\+Rubrica}} ()
+\begin{DoxyCompactList}\small\item\em metodo getter dell\textquotesingle{}attributo rubrica. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classit_1_1unisa_1_1diem_1_1swe_1_1group07_1_1rubrica_1_1controllers_1_1_abstract_controller_a7451ffd24e0e1d5c9e2cc7e5cb767985}{set\+Rubrica}} (\mbox{\hyperlink{classit_1_1unisa_1_1diem_1_1swe_1_1group07_1_1rubrica_1_1models_1_1_rubrica}{Rubrica}} rubrica)
+\begin{DoxyCompactList}\small\item\em metodo setter dell\textquotesingle{}attributo rubrica. \end{DoxyCompactList}\item 
+Observable\+List$<$ \mbox{\hyperlink{classit_1_1unisa_1_1diem_1_1swe_1_1group07_1_1rubrica_1_1models_1_1_contatto_esteso}{Contatto\+Esteso}} $>$ \mbox{\hyperlink{classit_1_1unisa_1_1diem_1_1swe_1_1group07_1_1rubrica_1_1controllers_1_1_abstract_controller_a44c01a5b8e871228a96c90a31e57a08d}{get\+Lista\+Contatti}} ()
+\begin{DoxyCompactList}\small\item\em metodo getter della struttura (lista osservabile). \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classit_1_1unisa_1_1diem_1_1swe_1_1group07_1_1rubrica_1_1controllers_1_1_abstract_controller_a4d9ed27334c97cac3f274a3c2a9bbd6f}{set\+Lista\+Contatti}} (Observable\+List$<$ \mbox{\hyperlink{classit_1_1unisa_1_1diem_1_1swe_1_1group07_1_1rubrica_1_1models_1_1_contatto_esteso}{Contatto\+Esteso}} $>$ lista\+Contatti)
+\begin{DoxyCompactList}\small\item\em metodo setter della lista osservabile \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classit_1_1unisa_1_1diem_1_1swe_1_1group07_1_1rubrica_1_1controllers_1_1_abstract_controller_ad638bfbb3c6345b99f03c0d4a38953b7}{mostra\+Dialog}} (Alert.\+Alert\+Type type, String titolo, String messaggio)
+\begin{DoxyCompactList}\small\item\em metodo che consenti di mostrare un generico dialog. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Additional Inherited Members}
+\doxysubsection*{Protected Member Functions inherited from \mbox{\hyperlink{classit_1_1unisa_1_1diem_1_1swe_1_1group07_1_1rubrica_1_1controllers_1_1_abstract_controller}{it.\+unisa.\+diem.\+swe.\+group07.\+rubrica.\+controllers.\+Abstract\+Controller}}}
+\begin{DoxyCompactItemize}
+\item 
+Boolean {\bfseries controlla\+Campi\+Obbligatori} (String nome, String cognome)
+\begin{DoxyCompactList}\small\item\em metodo verificare che almeno un Text\+Field tra nome e cognome è stato sovrascritto. \end{DoxyCompactList}\item 
+Boolean \mbox{\hyperlink{classit_1_1unisa_1_1diem_1_1swe_1_1group07_1_1rubrica_1_1controllers_1_1_abstract_controller_aa7ba6f967b85192f31d60ba989935d26}{controlla\+Telefono}} (String telefono)
+\begin{DoxyCompactList}\small\item\em metodo per la verifica del numero telefonico del contatto. \end{DoxyCompactList}\item 
+Boolean \mbox{\hyperlink{classit_1_1unisa_1_1diem_1_1swe_1_1group07_1_1rubrica_1_1controllers_1_1_abstract_controller_ad963d5274556084e79632fec78838744}{controlla\+Email}} (String email)
+\begin{DoxyCompactList}\small\item\em metodo per la verifica dell\textquotesingle{}indirizzo email del contatto. Il metodo verifica solamente la presenta della "{}@"{} all\textquotesingle{}interno dell´email inserita. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classit_1_1unisa_1_1diem_1_1swe_1_1group07_1_1rubrica_1_1controllers_1_1_rubrica_controller_acb62cc49f7e3289ddeb4f246b4f0a199}\index{it.unisa.diem.swe.group07.rubrica.controllers.RubricaController@{it.unisa.diem.swe.group07.rubrica.controllers.RubricaController}!initialize@{initialize}}
+\index{initialize@{initialize}!it.unisa.diem.swe.group07.rubrica.controllers.RubricaController@{it.unisa.diem.swe.group07.rubrica.controllers.RubricaController}}
+\doxysubsubsection{\texorpdfstring{initialize()}{initialize()}}
+{\footnotesize\ttfamily \label{classit_1_1unisa_1_1diem_1_1swe_1_1group07_1_1rubrica_1_1controllers_1_1_rubrica_controller_acb62cc49f7e3289ddeb4f246b4f0a199} 
+void it.\+unisa.\+diem.\+swe.\+group07.\+rubrica.\+controllers.\+Rubrica\+Controller.\+initialize (\begin{DoxyParamCaption}\item[{URL}]{url}{, }\item[{Resource\+Bundle}]{rb}{}\end{DoxyParamCaption})}
+
+
+
+Metodo di inizializzazione della vista e dei dati. Imposta la lista dei contatti, la configurazione delle colonne della Table\+View e i listener per le interazioni dell\textquotesingle{}utente. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em url,URL} & per il caricamento della vista. \\
+\hline
+\mbox{\texttt{ in}}  & {\em rb,Resource\+Bundle} & per il caricamento delle risorse. \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+sources/\+Rubrica/src/main/java/it/unisa/diem/swe/group07/rubrica/controllers/\mbox{\hyperlink{_rubrica_controller_8java}{Rubrica\+Controller.\+java}}\end{DoxyCompactItemize}

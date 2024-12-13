@@ -1,0 +1,22 @@
+var searchData=
+[
+  ['getcognome_0',['getCognome',['../classit_1_1unisa_1_1diem_1_1swe_1_1group07_1_1rubrica_1_1models_1_1_contatto.html#a9c2c4132e79ef8782c65bba90c5b3527',1,'it::unisa::diem::swe::group07::rubrica::models::Contatto']]],
+  ['getcompleanno_1',['getCompleanno',['../classit_1_1unisa_1_1diem_1_1swe_1_1group07_1_1rubrica_1_1models_1_1_contatto_esteso.html#a823a03f6f032bb0de9a24f5ebe15ab76',1,'it::unisa::diem::swe::group07::rubrica::models::ContattoEsteso']]],
+  ['getcontatti_2',['getContatti',['../classit_1_1unisa_1_1diem_1_1swe_1_1group07_1_1rubrica_1_1models_1_1_rubrica.html#a03941492c00302978cae988f4139a7ff',1,'it::unisa::diem::swe::group07::rubrica::models::Rubrica']]],
+  ['getemail1_3',['getEmail1',['../classit_1_1unisa_1_1diem_1_1swe_1_1group07_1_1rubrica_1_1models_1_1_contatto_esteso.html#a9ab7386b8ed76bbd5b906f2cbb65165d',1,'it::unisa::diem::swe::group07::rubrica::models::ContattoEsteso']]],
+  ['getemail2_4',['getEmail2',['../classit_1_1unisa_1_1diem_1_1swe_1_1group07_1_1rubrica_1_1models_1_1_contatto_esteso.html#a8743443e4215421db5e996428ddd6097',1,'it::unisa::diem::swe::group07::rubrica::models::ContattoEsteso']]],
+  ['getemail3_5',['getEmail3',['../classit_1_1unisa_1_1diem_1_1swe_1_1group07_1_1rubrica_1_1models_1_1_contatto_esteso.html#a1e1e8b5da05d600e6f9456ef8d06592a',1,'it::unisa::diem::swe::group07::rubrica::models::ContattoEsteso']]],
+  ['getemergenza_6',['getEmergenza',['../classit_1_1unisa_1_1diem_1_1swe_1_1group07_1_1rubrica_1_1models_1_1_contatto.html#a3c2ccd77eac54f161d7491949053f583',1,'it::unisa::diem::swe::group07::rubrica::models::Contatto']]],
+  ['getid_7',['getId',['../classit_1_1unisa_1_1diem_1_1swe_1_1group07_1_1rubrica_1_1models_1_1_contatto.html#a53ef90855656ba9330f072c5d916522d',1,'it::unisa::diem::swe::group07::rubrica::models::Contatto']]],
+  ['getindirizzoresidenza_8',['getIndirizzoResidenza',['../classit_1_1unisa_1_1diem_1_1swe_1_1group07_1_1rubrica_1_1models_1_1_contatto_esteso.html#ad2039eb15bef84da1619c3d091a181a3',1,'it::unisa::diem::swe::group07::rubrica::models::ContattoEsteso']]],
+  ['getlistacontatti_9',['getListaContatti',['../classit_1_1unisa_1_1diem_1_1swe_1_1group07_1_1rubrica_1_1controllers_1_1_abstract_controller.html#a44c01a5b8e871228a96c90a31e57a08d',1,'it::unisa::diem::swe::group07::rubrica::controllers::AbstractController']]],
+  ['getnome_10',['getNome',['../classit_1_1unisa_1_1diem_1_1swe_1_1group07_1_1rubrica_1_1models_1_1_contatto.html#abfa304de5195706e62d361a032e99855',1,'it::unisa::diem::swe::group07::rubrica::models::Contatto']]],
+  ['getnote_11',['getNote',['../classit_1_1unisa_1_1diem_1_1swe_1_1group07_1_1rubrica_1_1models_1_1_contatto_esteso.html#aafc4646ad9f8de2068aa86895444d10b',1,'it::unisa::diem::swe::group07::rubrica::models::ContattoEsteso']]],
+  ['getpreferito_12',['getPreferito',['../classit_1_1unisa_1_1diem_1_1swe_1_1group07_1_1rubrica_1_1models_1_1_contatto.html#af118bd9ef53084262ccc42c4031ef137',1,'it::unisa::diem::swe::group07::rubrica::models::Contatto']]],
+  ['getrubrica_13',['getRubrica',['../classit_1_1unisa_1_1diem_1_1swe_1_1group07_1_1rubrica_1_1controllers_1_1_abstract_controller.html#ab7e58e22666144ab379d7311e78847cd',1,'it::unisa::diem::swe::group07::rubrica::controllers::AbstractController']]],
+  ['getsitoweb_14',['getSitoWeb',['../classit_1_1unisa_1_1diem_1_1swe_1_1group07_1_1rubrica_1_1models_1_1_contatto_esteso.html#ac373cc1ccc1e04f77fc90227a5f403bf',1,'it::unisa::diem::swe::group07::rubrica::models::ContattoEsteso']]],
+  ['gettelefono1_15',['getTelefono1',['../classit_1_1unisa_1_1diem_1_1swe_1_1group07_1_1rubrica_1_1models_1_1_contatto.html#a02711cece66671e6e805c18d300e0852',1,'it::unisa::diem::swe::group07::rubrica::models::Contatto']]],
+  ['gettelefono2_16',['getTelefono2',['../classit_1_1unisa_1_1diem_1_1swe_1_1group07_1_1rubrica_1_1models_1_1_contatto.html#adf58cd397d8e0699b80420add3a34a80',1,'it::unisa::diem::swe::group07::rubrica::models::Contatto']]],
+  ['gettelefono3_17',['getTelefono3',['../classit_1_1unisa_1_1diem_1_1swe_1_1group07_1_1rubrica_1_1models_1_1_contatto.html#a5a2452ab4b282d49a991245eda51e572',1,'it::unisa::diem::swe::group07::rubrica::models::Contatto']]],
+  ['getvcard_18',['getVcard',['../classit_1_1unisa_1_1diem_1_1swe_1_1group07_1_1rubrica_1_1gestore_i_o_1_1_export.html#afd830265662e1b06d837b54b797996f2',1,'it::unisa::diem::swe::group07::rubrica::gestoreIO::Export']]]
+];
