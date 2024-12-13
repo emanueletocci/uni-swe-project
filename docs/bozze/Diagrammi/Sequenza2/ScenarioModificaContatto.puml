@@ -7,14 +7,16 @@ participant RubricaController
 collections Rubrica
 activate Utente
 skinparam sequenceMessageAlign center
-Utente->RubricaView: [click su pulsanteModifica]
+Utente->RubricaView: [click pulsante "Modifica]
 activate RubricaView
-RubricaView->RubricaController:[ActionEvent per la modifica]
+RubricaView<-->RubricaController:[comunicazione]
 activate RubricaController
-RubricaController -> Rubrica:handleModificaContatto(OnActioneEvent event)
+activate RubricaController #3375E0
+RubricaController -> RubricaController : handleModificaContatto()
 activate Rubrica
+RubricaController -> Rubrica : gestioneSalvaModifiche()
+deactivate RubricaController
 deactivate Rubrica
-RubricaController->RubricaView:[aggiorna view]
 deactivate RubricaController
 deactivate RubricaView
 deactivate Utente
