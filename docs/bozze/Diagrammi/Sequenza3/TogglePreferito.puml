@@ -1,0 +1,22 @@
+@startuml
+title Imposta Contatto Preferito
+autonumber
+actor Utente
+participant RubricaControllerView
+participant Contatto
+
+activate Utente
+Utente->RubricaControllerView: [clicca sull'icona "Preferito"]
+activate RubricaControllerView
+
+RubricaControllerView -> RubricaControllerView : togglePreferiti()
+activate RubricaControllerView #3375E0
+alt Il contatto é giá tra i preferiti
+    RubricaControllerView-> Contatto : setPreferito(false)
+    RubricaControllerView --> Utente : mostraDialog("Rimosso dai preferiti")
+else #pink il contatto non é tra i preferiti
+    RubricaControllerView-> Contatto : setPreferito(true)
+    RubricaControllerView-->Utente: mostraDialog("Aggiunto ai preferiti")
+    deactivate RubricaControllerView
+end
+@enduml

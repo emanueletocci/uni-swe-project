@@ -1,0 +1,20 @@
+@startuml
+    title Ricerca Contatto
+    autonumber
+    actor Utente
+    participant RubricaViewController
+    collections Rubrica
+
+    activate Utente
+    Utente -> RubricaViewController: [Seleziona la casella di ricerca e digita una stringa]
+    activate RubricaViewController
+
+    RubricaViewController -> RubricaViewController: cercaContatto()
+    activate RubricaViewController #3375E0
+    RubricaViewController -> Rubrica : getContatto()
+    activate Rubrica
+    deactivate RubricaViewController
+    deactivate Rubrica
+    RubricaViewController --> Utente: [Aggiora la TableView]
+    deactivate Utente
+@enduml

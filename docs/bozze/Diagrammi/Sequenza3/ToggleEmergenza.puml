@@ -1,0 +1,22 @@
+@startuml
+title Imposta Contatto Emergenza
+autonumber
+actor Utente
+participant RubricaControllerView
+participant Contatto
+
+activate Utente
+Utente->RubricaControllerView: [clicca sull'icona "Emergenza"]
+activate RubricaControllerView
+
+RubricaControllerView -> RubricaControllerView : toggleEmergenza()
+activate RubricaControllerView #3375E0
+alt Il contatto é giá tra le emergenze
+    RubricaControllerView-> Contatto : setEmergenza(false)
+    RubricaControllerView --> Utente : mostraDialog("Rimosso dalle emergenze")
+else #pink il contatto non é tra le emergenze
+    RubricaControllerView-> Contatto : setEmergenza(true)
+    RubricaControllerView-->Utente: mostraDialog("Aggiunto alle emergenze")
+    deactivate RubricaControllerView
+end
+@enduml

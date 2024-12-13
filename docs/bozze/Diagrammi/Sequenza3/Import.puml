@@ -1,0 +1,37 @@
+@startuml
+  title Importa Rubrica/Contatto
+  autonumber
+  
+  actor Utente
+  actor RubricaViewController
+  collections Rubrica
+  collections FileSystem
+  
+  activate Utente
+    Utente->RubricaViewController:[clicca il tasto "file -> Importa Rubrica/Contatto"]
+    activate RubricaViewController
+    RubricaViewController -> RubricaViewController : handleImportRubrica()
+    activate RubricaViewController #3375E0
+    RubricaViewController --> Utente : showOpenDialog()
+    Utente -> FileSystem : [Sceglie un file presente sul computer] 
+    
+    alt [Conferma]
+      Utente -> RubricaViewController : [Conferma di voler importare] 
+      RubricaViewController -> RubricaViewController : importVCard()
+      activate RubricaViewController #3375E0
+        loop EOF
+            RubricaViewController -> Rubrica : aggiungiContatto()
+            activate RubricaViewController #3375E0
+            activate Rubrica
+        end
+      deactivate RubricaViewController 
+      deactivate Rubrica
+      deactivate RubricaViewController 
+      deactivate RubricaViewController 
+
+    else #pink [Annulla]
+      Utente -> RubricaViewController : [clicca "Annulla"]
+      RubricaViewController --> Utente : [mostra home]
+    end
+      deactivate RubricaViewController 
+@enduml

@@ -1,0 +1,34 @@
+@startuml 
+    title Esporta Contatto
+    autonumber
+
+    participant Utente 
+    participant RubricaViewController
+    collections FileSystem 
+
+    activate Utente
+    Utente->RubricaViewController:[clicca il tasto "file -> Esporta Contatto"]
+    activate RubricaViewController
+    RubricaViewController -> RubricaViewController : handleExportContatto()
+    activate RubricaViewController #3375E0
+    RubricaViewController --> Utente : showSaveDialog()
+    alt [Conferma]
+      RubricaViewController -> RubricaViewController : esportaContatto()
+      activate RubricaViewController #3375E0
+      RubricaViewController -> RubricaViewController : getVCard()
+      activate RubricaViewController #3375E0
+      deactivate RubricaViewController
+        RubricaViewController -> FileSystem : write()
+        activate RubricaViewController #3375E0
+        deactivate RubricaViewController
+        activate FileSystem
+        deactivate FileSystem
+        deactivate RubricaViewController
+        RubricaViewController --> Utente : mostraDialog(SUCCESS)
+        deactivate RubricaViewController
+
+    else #pink [Annulla]
+      RubricaViewController --> Utente : [mostra home]
+    end
+    deactivate RubricaViewController 
+@enduml
