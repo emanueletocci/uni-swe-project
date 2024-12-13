@@ -65,6 +65,7 @@ public class Contatto {
         this.telefono3 = telefono3;
         this.emergenza = emergenza;
         this.preferito = preferito;
+        id = generaId();
     }
     /**
      * @brief costruttore della classe Contatto senza ingressi
@@ -228,15 +229,6 @@ public class Contatto {
     }
 
     /**
-     * @brief Calcola il valore hash per l'oggetto basandosi sui campi id, nome, cognome e telefoni
-     * @return valore hash dell'oggetto
-     */
-    @Override
-    public int hashCode() {
-        return Objects.hash(nome, cognome);
-    }
-
-    /**
      * @brief controlla se un contatto è preferito
      * @return Restituisce la proprietà che indica se il contatto è preferito.
      */
@@ -249,5 +241,22 @@ public class Contatto {
      */
     public BooleanProperty isEmergenza(){
         return new SimpleBooleanProperty(getEmergenza());
+    }
+    /**
+     * @brief Calcola il valore hash per l'oggetto basandosi sui campi id, nome, cognome e telefoni
+     * @return valore hash dell'oggetto
+     */
+    @Override
+    public int hashCode() {
+        return Objects.hash(nome, cognome);
+    }
+
+    /**
+     * Calcola un ID numerico univoco utilizzando hashCode().
+     * @return il valore hash dell'oggetto
+     */
+    protected Integer generaId(){
+        String query = this.getNome() + this.getCognome();
+        return query.hashCode();
     }
 }

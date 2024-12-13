@@ -60,7 +60,7 @@ public class ContattoEsteso extends Contatto {
         this.indirizzoResidenza = indirizzoResidenza;
         this.sitoWeb = website;
         this.note=note;
-        this.setId(generaId());
+        this.setId(generaId()); //sovrascrive il campo id presente in "Contatto"
     }
 
     /**
@@ -202,9 +202,9 @@ public class ContattoEsteso extends Contatto {
 
 
     /**
-     * @brief verifica l'uguaglianza tra due oggetti di tipo "ContattoEsteso"
-     * @param[in] o, l'oggetto da confrontare
-     * @return 'true' se gli oggetti sono uguali, 'false' altrimenti
+     * @brief verifica l'uguaglianza tra due oggetti di tipo "ContattoEsteso".
+     * @param[in] o, l'oggetto da confrontare.
+     * @return 'true' se gli oggetti sono uguali, 'false' altrimenti.
      */
 
     @Override
@@ -216,14 +216,21 @@ public class ContattoEsteso extends Contatto {
     }
 
     /**
-     * Calcola il valore hash per l'oggetto basandosi sui campi id, nome, cognome e telefoni.
-     * @return il valore hash dell'oggetto
+     * Calcola il valore hash per l'oggetto basandosi sui campi id, nome, cognome e compleanno.
+     * @return il valore hash dell'oggetto.
      */
     @Override
     public int hashCode() {
         return Objects.hash(super.hashCode(), compleanno);
     }
-    private Integer generaId(){
+
+    /**
+     * Calcola un ID numerico univoco utilizzando hashCode().
+     * @return il valore hash dell'oggetto
+     */
+
+    @Override
+    protected Integer generaId(){
         String query = this.getNome() + this.getCognome() + compleanno;
         return query.hashCode();
     }
