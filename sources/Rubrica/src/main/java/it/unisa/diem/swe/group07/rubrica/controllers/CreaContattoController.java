@@ -104,7 +104,7 @@ public class CreaContattoController extends AbstractController implements Initia
     
      @Override
     public void initialize(URL location, ResourceBundle resources) {
-        fileChooser.setInitialDirectory(new File("C:\\Users\\hp\\Desktop\\")); 
+        fileChooser.setInitialDirectory(new File("C:\\")); 
     }
 /**
      * @brief metodo permette di scegliere un file con estensione del tipo "*.png", "*.jpg", "*.gif" 
