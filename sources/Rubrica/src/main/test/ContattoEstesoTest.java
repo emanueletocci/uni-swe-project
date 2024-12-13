@@ -1,6 +1,3 @@
-
-package it.unisa.diem.swe.group07.rubrica.tests;
-import static org.junit.jupiter.api.Assertions.*;
 import it.unisa.diem.swe.group07.rubrica.models.ContattoEsteso;
 import org.junit.jupiter.api.*;
 import java.time.LocalDate;

@@ -1,5 +1,3 @@
-package it.unisa.diem.swe.group07.rubrica.tests;
-
 import it.unisa.diem.swe.group07.rubrica.gestoreIO.Export;
 import it.unisa.diem.swe.group07.rubrica.models.ContattoEsteso;
 import it.unisa.diem.swe.group07.rubrica.models.Rubrica;
