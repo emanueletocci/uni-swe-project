@@ -4,50 +4,47 @@ autonumber
 actor Utente
 participant RubricaView
 participant RubricaController
-participant Rubrica
+collections Rubrica
 
-Utente->RubricaView:[clicca sulla toolbar il tasto "file"]
+activate Utente
 activate RubricaView
-RubricaView->RubricaController:[notifica la scelta]
+Utente->RubricaView:[clicca sulla toolbar il tasto "file -> Import"]
 activate RubricaController
-RubricaController-->RubricaView:[aggiorna binding]
-deactivate RubricaController
-RubricaView-->Utente:[apre il menu "file"]
+RubricaController<->RubricaView:[comunicazione]
 deactivate RubricaView
-
-Utente->RubricaView:[seleziona import]
-activate RubricaView
-RubricaView->RubricaController:[notifica la scelta]
-activate RubricaController
-RubricaController-->RubricaView:[aggiorna binding]
+RubricaController-->Utente:[Mostra la schermata di importazione]
 deactivate RubricaController
-RubricaView-->Utente:[Mostra la schermata di importazione]
 
 alt [Conferma]
+    activate RubricaView
     Utente->RubricaView:[Conferma di voler importare]
-    RubricaView->RubricaController:[notifica la scelta]
     activate RubricaController
-    RubricaController->Rubrica:[chiede un import]
+    RubricaView<->RubricaController:[comunicazione]
+    RubricaController->RubricaController : handleImportRubrica()
+    deactivate RubricaView
+    activate RubricaController #3375E0
+    RubricaController->RubricaController : importVCard()
+    activate RubricaController #3375E0
     activate Rubrica
-    Rubrica->Rubrica:import()
+    RubricaController->Rubrica : aggiungiContatto()
+    deactivate Rubrica
     alt [import success]
-        Rubrica-->RubricaController:[notifica l'importazione]
-        RubricaController-->RubricaView:[aggiorna binding]
-        RubricaView-->Utente:[mostra un messaggio di conferma e torna alla home]
-    else [import fail]
-        Rubrica-->RubricaController:[notifica l'errore]
-        RubricaController-->RubricaView:[aggiorna binding]
-        RubricaView-->Utente:[mostra un messaggio di errore e torna nella home]
+        RubricaController-->Utente: mostraDialog(SUCCESS)
+    else #pink [import fail] 
+        RubricaController-->Utente: mostraDialog(ERROR)
     end
+    deactivate RubricaController
+    deactivate RubricaController
     deactivate Rubrica
     deactivate RubricaController
-else [annulla]
-    Utente->RubricaView:[seleziona il bottone per annullare]
-    RubricaView->RubricaController:[notifica la scelta]
+    activate RubricaView
+else #pink [annulla]
+    Utente->RubricaView:[click "annulla"]
     activate RubricaController
-    RubricaController-->RubricaView:[aggiorna binding]
+    RubricaView<->RubricaController:[comunicazione]
     deactivate RubricaController
-    RubricaView-->Utente:[torna nella home]
+    RubricaController-->Utente:[torna nella home]
 end
+deactivate RubricaView
 
 @enduml
