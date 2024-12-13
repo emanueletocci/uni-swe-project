@@ -19,8 +19,8 @@ CreaContattoController-> CreaContattoController:  controllaTelefono()
 CreaContattoController-> CreaContattoController:  controllaEmail()
 
 alt [vincoli soddisfatti]
-CreaContattoController-> Rubrica : aggiungiContatto()
 activate Rubrica
+CreaContattoController-> Rubrica : aggiungiContatto()
 else #pink [vincoli non soddisfatti] 
 CreaContattoController-->Utente: mostraDialog(ERROR)
 deactivate CreaContattoController
