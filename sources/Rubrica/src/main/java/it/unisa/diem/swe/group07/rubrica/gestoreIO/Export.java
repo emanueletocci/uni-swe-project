@@ -59,7 +59,6 @@ public class Export {
             System.err.println("Errore durante l'esportazione");
         }
     }
-
     /**
      * @param[in] contatto Il contatto selezionato e scelto per l'export
      * @brief metodo per fornire un file di output conforme allo standard vCard che contiene tutta le informazioni del contatto

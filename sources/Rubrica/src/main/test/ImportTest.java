@@ -30,21 +30,48 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 public class ImportTest {
 
     private Rubrica rubrica;
-    private Import i;
+    private Import importer;
     private ObservableList<ContattoEsteso> list;
 
-    @Test
-    public void testImportVcard() throws IOException{
-        rubrica=new Rubrica();
-        i= new Import();
+    @BeforeEach
+    public void setUp() {
+        rubrica = new Rubrica();
+        importer = new Import();
         list = FXCollections.observableArrayList();
-        ContattoEsteso contatto=new ContattoEsteso("Rossella", "Pale", "+3933333333", "+3933333333", "+3933333333", "prova@gmail.com", "prova@gmail.com", "prova@gmail.com", LocalDate.of(2003, 4, 24),"Fisciano","github.com", "studentessa", true, true);
-        ContattoEsteso contatto2;
-        Export e=new Export();
-        e.esportaContatto(contatto, "./");
-        i.importVcard(rubrica, list, "provaImport.vcf");
-        Rubrica r=new Rubrica();
-        r.aggiungiContatto(contatto);
-        assertEquals(rubrica, r);
+    }
+
+    @Test
+    public void testImportVcard() throws IOException {
+        // Crea un contatto di test
+        ContattoEsteso contatto = new ContattoEsteso(
+                "Rossella",
+                "Pale",
+                "+3933333333",
+                "+3933333333",
+                "+3933333333",
+                "prova@gmail.com",
+                "prova@gmail.com",
+                "prova@gmail.com",
+                LocalDate.of(2003, 4, 24),
+                "Fisciano",
+                "github.com",
+                "studentessa",
+                true,
+                true
+        );
+
+        Export exporter = new Export();
+        String filePath = "provaImport"; //salva come provaImport
+        exporter.esportaContatto(contatto, filePath);
+        filePath = "provaImport.vcf";//importa provaImport.vcf
+        importer.importVcard(rubrica, list, filePath);
+
+        assertEquals(1, rubrica.getContatti().size());
+        assertTrue(rubrica.getContatti().contains(contatto));
+
+        assertEquals(1, list.size());
+        assertTrue(list.contains(contatto));
+
+        Files.delete(Path.of(filePath));
     }
 }
