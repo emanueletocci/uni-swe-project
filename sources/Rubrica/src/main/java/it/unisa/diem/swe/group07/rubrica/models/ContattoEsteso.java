@@ -8,7 +8,7 @@
 package it.unisa.diem.swe.group07.rubrica.models;
 
 import javafx.beans.property.BooleanProperty;
-
+import javafx.scene.image.Image;
 import java.time.LocalDate;
 import java.util.Objects;
 
@@ -47,11 +47,15 @@ public class ContattoEsteso extends Contatto {
      * @brief note contenente informazioni aggiuntive riguardo al contatto
      */
     private String note;
+    /**
+     * @brief immagine del profilo del contatto
+     */
+    private Image img;
 
     /**
      * @brief costruttore della classe Contatto Esteso
      */
-    public ContattoEsteso(String nome, String cognome, String telefono1, String telefono2, String telefono3, String email1, String email2, String email3, LocalDate compleanno, String indirizzoResidenza, String website, String note, Boolean preferito, Boolean emergenza) {
+    public ContattoEsteso(String nome, String cognome, String telefono1, String telefono2, String telefono3, String email1, String email2, String email3, LocalDate compleanno, String indirizzoResidenza, String website, String note, Boolean preferito, Boolean emergenza, Image img) {
         super(nome, cognome, telefono1, telefono2, telefono3, preferito, emergenza);
         this.email1 = email1;
         this.email2 = email2;
@@ -61,6 +65,16 @@ public class ContattoEsteso extends Contatto {
         this.sitoWeb = website;
         this.note=note;
         this.setId(generaId());
+        this.img=img;
+    }
+    public Image getImmagineProfilo() {
+        return img;
+    }
+    /**
+     * @brief metodo setter per l'attributo "immagineProfilo"
+     */
+    public void setimmagineProfilo (Image immagineProfilo){
+        this.img = immagineProfilo;
     }
 
     /**
