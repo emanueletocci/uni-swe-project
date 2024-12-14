@@ -74,6 +74,17 @@ public class ContattoEsteso extends Contatto {
         this.setId(generaId());
         this.img=img;
     }
+    public ContattoEsteso(String nome, String cognome, String telefono1, String telefono2, String telefono3, String email1, String email2, String email3, LocalDate compleanno, String indirizzoResidenza, String website, String note, Boolean preferito, Boolean emergenza) {
+        super(nome, cognome, telefono1, telefono2, telefono3, preferito, emergenza);
+        this.email1 = email1;
+        this.email2 = email2;
+        this.email3 = email3;
+        this.compleanno = compleanno;
+        this.indirizzoResidenza = indirizzoResidenza;
+        this.sitoWeb = website;
+        this.note=note;
+        this.setId(generaId());
+    }
     /**
      * @brief metodo getter per l'attributo "immagineProfilo"
      */
@@ -85,7 +96,6 @@ public class ContattoEsteso extends Contatto {
      */
     public void setimmagineProfilo (Image immagineProfilo){
         this.img = immagineProfilo;
-
     }
 
     /**

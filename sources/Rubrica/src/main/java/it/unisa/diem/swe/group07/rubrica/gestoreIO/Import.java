@@ -5,11 +5,14 @@ import it.unisa.diem.swe.group07.rubrica.models.Rubrica;
 import javafx.collections.ObservableList;
 
 import java.io.BufferedReader;
+import java.io.ByteArrayInputStream;
 import java.io.FileReader;
 import java.io.IOException;
 import java.nio.charset.StandardCharsets;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
+import java.util.Base64;
+import javafx.scene.image.Image;
 
 /**
  * @file Import.java
@@ -73,9 +76,11 @@ public class Import {
                     contatto.setEmergenza(Boolean.parseBoolean(line.substring(9)));
                 } else if (line.startsWith("UID:")) {
                     contatto.setId(Integer.parseInt(line.substring(4)));
-                } //else if (line.startsWith("PHOTO;ENCODING=b;TYPE=JPEG:")) {
-                    //contatto.setImmagineProfilo(Integer.parseInt(line.substring(27)));
-                //}
+                } else if (line.startsWith("PHOTO;ENCODING=b;TYPE=JPEG:")) {
+                    String base64String=line.substring(28);
+                    byte[] imageBytes = Base64.getDecoder().decode(base64String);
+                    contatto.setimmagineProfilo(new Image(new ByteArrayInputStream(imageBytes)));
+                }
             else if (line.startsWith("END:VCARD")) {
                     System.out.println("\nAggiungo il contatto alla rubrica");
                     if(r.aggiungiContattoEVerifica(contatto))
