@@ -15,6 +15,18 @@ import javafx.event.ActionEvent;
 import javafx.stage.Stage;
 import javafx.scene.control.Alert;
 import java.time.LocalDate;
+import javafx.scene.image.Image;
+import javafx.fxml.Initializable;
+import java.io.File;
+import javafx.stage.FileChooser;
+import javafx.stage.FileChooser.ExtensionFilter;
+import javafx.scene.control.Button;
+import javafx.scene.image.ImageView;
+import java.net.URL;
+import java.util.ResourceBundle;
+
+
+public class CreaContattoController extends AbstractController implements Initializable{
 
     /**
      * @brief La classe rappresenta il controllore responsabile della gestione della vista secondaria e della creazione di un nuovo contatto.
@@ -22,7 +34,7 @@ import java.time.LocalDate;
      * @see AbstractController
      * @see RubricaController
      */
-public class CreaContattoController extends AbstractController{
+
     /**
     * @brief TextField per il nome del contatto.
     */
@@ -83,6 +95,41 @@ public class CreaContattoController extends AbstractController{
      */
     @FXML
     private TextField note;
+         /**
+     * @brief immagine di profilo del contatto
+     */
+    @FXML
+    private ImageView immagine;
+    /**
+     * @brief pulsante per inserire immagine
+     */
+    @FXML
+    private Button pulsanteimg;
+   
+    /**
+     * @brief fileChooser
+     */
+    private FileChooser fileChooser = new FileChooser();
+    
+     @Override
+    public void initialize(URL location, ResourceBundle resources) {
+        fileChooser.setInitialDirectory(new File("C:\\")); 
+    }
+/**
+     * @brief metodo permette di scegliere un file con estensione del tipo "*.png", "*.jpg", "*.gif" 
+     * tramite un FileChooser e di settarlo nel nel ImageView "immagine" se non è null
+     * @param[in] event evento generato dal click sul pulsante pulsanteImmagine
+     */
+    @FXML
+    void gestioneImmagine(ActionEvent event) {
+        fileChooser.setTitle("Scegli immagine di profilo:");
+        fileChooser.getExtensionFilters().addAll(new ExtensionFilter("Image Files", "*.png", "*.jpg", "*.gif"));
+        File img = fileChooser.showOpenDialog(new Stage());
+        if (img != null) {
+            Image immagineScelta=new Image(img.toURI().toString());
+            immagine.setImage(immagineScelta);
+        }
+    }
 
     /**
      * @brief Il metodo preleva i valori dai Text Field, crea un contatto temporaneo e, se i valori inseriti dall'utente sono validi, lo aggiunge alla rubrica (e alla lista osservabile,
@@ -105,6 +152,7 @@ public class CreaContattoController extends AbstractController{
         String indirizzoText = indirizzo.getText().trim();
         String sitoWebText = sitoWeb.getText().trim();
         String noteText = note.getText().trim();
+        Image img= immagine.getImage();
 
         // Controlli sui campi inseriti dall'utente nella fase di creazione
         if (!controllaCampiObbligatori (nomeText,cognomeText)){
@@ -131,8 +179,10 @@ public class CreaContattoController extends AbstractController{
             mostraDialog ( Alert.AlertType.ERROR, "Email non valida!", "L'indirizzo email 3 inserito non é valido!" );
             return;
         }
+        
+    
         // Crea il nuovo contatto
-        ContattoEsteso temp = new ContattoEsteso(nomeText, cognomeText, telefonoText, telefono2Text, telefono3Text, emailText, email2Text, email3Text, compleannoText, indirizzoText, sitoWebText, noteText, false, false);
+        ContattoEsteso temp = new ContattoEsteso(nomeText, cognomeText, telefonoText, telefono2Text, telefono3Text, emailText, email2Text, email3Text, compleannoText, indirizzoText, sitoWebText, noteText, false, false, img);
 
         // Se il contatto puó essere aggiunto alla mappa, allora aggiungilo anche alla lista
         if(this.getRubrica().aggiungiContattoEVerifica(temp))

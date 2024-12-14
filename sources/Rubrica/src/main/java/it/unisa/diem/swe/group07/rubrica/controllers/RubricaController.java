@@ -10,6 +10,7 @@ import java.awt.*;
 import java.io.File;
 import java.io.IOException;
 import java.net.URL;
+import javafx.scene.image.ImageView;
 import java.time.LocalDate;
 import java.util.ResourceBundle;
 import it.unisa.diem.swe.group07.rubrica.gestoreIO.Export;
@@ -146,7 +147,11 @@ public class RubricaController extends AbstractController implements Initializab
      */
     @FXML
     private TextField linkField;
-
+    /**
+     * @brief immagine di profilo del contatto
+     */
+    @FXML
+    private ImageView  imgcontatto;
     /**
      * @brief Contatto selezionato nella Table View.
      */
@@ -172,10 +177,10 @@ public class RubricaController extends AbstractController implements Initializab
      */
     @Override
     public void initialize(URL url, ResourceBundle rb){
-        this.getRubrica().aggiungiContattoEVerifica(new ContattoEsteso("Emanuele", "Tocci", "+3933333333", "+3933333333", "+3933333333", "prova@gmail.com", "prova@icloud.com", "prova@unisa.it", LocalDate.of(2003, 6, 9), "via Prova", "unisa.it", "note", false, false));
-        this.getRubrica().aggiungiContattoEVerifica(new ContattoEsteso("Claudia", "Montefusco","+3933333333","+3933333333", "+3933333333", "prova@gmail.com", "prova@icloud.com", "prova@unisa.it", LocalDate.of(2020, 12, 12), "via Prova", "unisa.it", "informazioni aggiuntive", false, false));
-        this.getRubrica().aggiungiContattoEVerifica(new ContattoEsteso("Alessio", "Leo","+3933333333","+3933333333", "+3933333333", "prova@gmail.com", "prova@icloud.com", "prova@unisa.it", LocalDate.of(2020, 12, 12), "via Prova", "unisa.it", "informazioni aggiuntive", false, false));
-        this.getRubrica().aggiungiContattoEVerifica(new ContattoEsteso("Rossella", "Pale","+3933333333","+3933333333", "+3933333333", "prova@gmail.com", "prova@icloud.com", "prova@unisa.it", LocalDate.of(2020, 12, 12), "via Prova", "unisa.it", "informazioni aggiuntive", true, false));
+        this.getRubrica().aggiungiContattoEVerifica(new ContattoEsteso("Emanuele", "Tocci", "+3933333333", "+3933333333", "+3933333333", "prova@gmail.com", "prova@icloud.com", "prova@unisa.it", LocalDate.of(2003, 6, 9), "via Prova", "unisa.it", "note", false, false, null));
+        this.getRubrica().aggiungiContattoEVerifica(new ContattoEsteso("Claudia", "Montefusco","+3933333333","+3933333333", "+3933333333", "prova@gmail.com", "prova@icloud.com", "prova@unisa.it", LocalDate.of(2020, 12, 12), "via Prova", "unisa.it", "informazioni aggiuntive", false, false, null));
+        this.getRubrica().aggiungiContattoEVerifica(new ContattoEsteso("Alessio", "Leo","+3933333333","+3933333333", "+3933333333", "prova@gmail.com", "prova@icloud.com", "prova@unisa.it", LocalDate.of(2020, 12, 12), "via Prova", "unisa.it", "informazioni aggiuntive", false, false, null));
+        this.getRubrica().aggiungiContattoEVerifica(new ContattoEsteso("Rossella", "Pale","+3933333333","+3933333333", "+3933333333", "prova@gmail.com", "prova@icloud.com", "prova@unisa.it", LocalDate.of(2020, 12, 12), "via Prova", "unisa.it", "informazioni aggiuntive", true, false, null));
 
         // Inserire qui funzione Import/autoImport e rimuovere le aggiunte manuali dei contatti presenti sopra
 
@@ -298,6 +303,7 @@ public class RubricaController extends AbstractController implements Initializab
         indirizzoField.setText(contatto.getIndirizzoResidenza());
         compleannoField.setValue(contatto.getCompleanno());
         noteField.setText(contatto.getNote());
+        imgcontatto.setImage(contatto.getImmagineProfilo());
 
         preferitiFlag.opacityProperty().bind(Bindings.when(contattoSelezionato.isPreferito())
                 .then(1.0) // Opacità al 100% quando isPreferiti è true
