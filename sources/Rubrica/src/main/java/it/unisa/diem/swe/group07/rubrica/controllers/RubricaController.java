@@ -14,6 +14,7 @@ import java.time.LocalDate;
 import java.util.ResourceBundle;
 import it.unisa.diem.swe.group07.rubrica.gestoreIO.Export;
 import it.unisa.diem.swe.group07.rubrica.gestoreIO.Import;
+import it.unisa.diem.swe.group07.rubrica.models.Contatto;
 import it.unisa.diem.swe.group07.rubrica.models.Rubrica;
 import javafx.beans.binding.Bindings;
 import javafx.scene.control.*;
@@ -115,7 +116,7 @@ public class RubricaController extends AbstractController implements Initializab
      * @brief Colonna per il cognome del contatto nella TableView.
      */
     @FXML
-    private TableColumn<ContattoEsteso, String> cognomeClm;
+    private TableColumn<Contatto, String> cognomeClm;
      /**
      * @brief Label per visualizzare il nome completo del contatto.
      */
@@ -125,12 +126,12 @@ public class RubricaController extends AbstractController implements Initializab
      * @brief Colonna per il nome del contatto nella TableView.
      */
     @FXML
-    private TableColumn<ContattoEsteso, String> nomeClm;
+    private TableColumn<Contatto, String> nomeClm;
       /**
      * @brief TableView che mostra la lista dei contatti.
      */
     @FXML
-    private TableView<ContattoEsteso> rubricaTable;
+    private TableView<Contatto> rubricaTable;
     /**
      * @brief Pulsante che consente di aggiungere e rimuovere un contatto dai "preferiti".
      */
@@ -150,19 +151,19 @@ public class RubricaController extends AbstractController implements Initializab
     /**
      * @brief Contatto selezionato nella Table View.
      */
-    private ContattoEsteso contattoSelezionato;
+    private Contatto contattoSelezionato;
     /**
      * @brief Lista Filtrata di contatti per la ricerca.
      */
-    private FilteredList<ContattoEsteso> filteredContatti;
+    private FilteredList<Contatto> filteredContatti;
     /**
      * @brief Lista Filtrata di contatti per la sotto-rubrica:preferiti.
      */
-    private FilteredList<ContattoEsteso> contattiFiltratiPreferiti;
+    private FilteredList<Contatto> contattiFiltratiPreferiti;
     /**
      * @brief Lista Filtrata di contatti per la otto-rubrica:contatti d'emergenza.
      */
-    private FilteredList<ContattoEsteso> contattiFiltratiEmergenza;
+    private FilteredList<Contatto> contattiFiltratiEmergenza;
 
     /**
      * @brief Metodo di inizializzazione della vista e dei dati.
@@ -172,10 +173,10 @@ public class RubricaController extends AbstractController implements Initializab
      */
     @Override
     public void initialize(URL url, ResourceBundle rb){
-        this.getRubrica().aggiungiContattoEVerifica(new ContattoEsteso("Emanuele", "Tocci", "+3933333333", "+3933333333", "+3933333333", "prova@gmail.com", "prova@icloud.com", "prova@unisa.it", LocalDate.of(2003, 6, 9), "via Prova", "unisa.it", "note", false, false));
-        this.getRubrica().aggiungiContattoEVerifica(new ContattoEsteso("Claudia", "Montefusco","+3933333333","+3933333333", "+3933333333", "prova@gmail.com", "prova@icloud.com", "prova@unisa.it", LocalDate.of(2020, 12, 12), "via Prova", "unisa.it", "informazioni aggiuntive", false, false));
-        this.getRubrica().aggiungiContattoEVerifica(new ContattoEsteso("Alessio", "Leo","+3933333333","+3933333333", "+3933333333", "prova@gmail.com", "prova@icloud.com", "prova@unisa.it", LocalDate.of(2020, 12, 12), "via Prova", "unisa.it", "informazioni aggiuntive", false, false));
-        this.getRubrica().aggiungiContattoEVerifica(new ContattoEsteso("Rossella", "Pale","+3933333333","+3933333333", "+3933333333", "prova@gmail.com", "prova@icloud.com", "prova@unisa.it", LocalDate.of(2020, 12, 12), "via Prova", "unisa.it", "informazioni aggiuntive", true, false));
+        this.getRubrica().aggiungiContatto(new ContattoEsteso("Emanuele", "Tocci", "+3933333333", "+3933333333", "+3933333333", "prova@gmail.com", "prova@icloud.com", "prova@unisa.it", LocalDate.of(2003, 6, 9), "via Prova", "unisa.it", "note", false, false));
+        this.getRubrica().aggiungiContatto(new ContattoEsteso("Claudia", "Montefusco","+3933333333","+3933333333", "+3933333333", "prova@gmail.com", "prova@icloud.com", "prova@unisa.it", LocalDate.of(2020, 12, 12), "via Prova", "unisa.it", "informazioni aggiuntive", false, false));
+        this.getRubrica().aggiungiContatto(new ContattoEsteso("Alessio", "Leo","+3933333333","+3933333333", "+3933333333", "prova@gmail.com", "prova@icloud.com", "prova@unisa.it", LocalDate.of(2020, 12, 12), "via Prova", "unisa.it", "informazioni aggiuntive", false, false));
+        this.getRubrica().aggiungiContatto(new ContattoEsteso("Rossella", "Pale","+3933333333","+3933333333", "+3933333333", "prova@gmail.com", "prova@icloud.com", "prova@unisa.it", LocalDate.of(2020, 12, 12), "via Prova", "unisa.it", "informazioni aggiuntive", true, false));
 
         // Inserire qui funzione Import/autoImport e rimuovere le aggiunte manuali dei contatti presenti sopra
 
@@ -281,23 +282,22 @@ public class RubricaController extends AbstractController implements Initializab
      * @brief Metodo per mostrare i dettagli di un contatto selezionato nella rubrica.
      * @param[in] contatto, Il contatto selezionato da visualizzare.
      */ 
-    private void mostraDettaglioContatti(ContattoEsteso contatto){
+    private void mostraDettaglioContatti(Contatto contatto){
         this.contattoSelezionato=contatto;
-
-        fullname.setText(contatto.getNome() + " " + contatto.getCognome());
-
-        nomeField.setText(contatto.getNome());
-        cognomeField.setText(contatto.getCognome());
-        email1Field.setText(contatto.getEmail1());
-        email2Field.setText(contatto.getEmail2());
-        email3Field.setText(contatto.getEmail3());
-        telefono1Field.setText(contatto.getTelefono1());
-        telefono2Field.setText(contatto.getTelefono2());
-        telefono3Field.setText(contatto.getTelefono3());
-        linkField.setText(contatto.getSitoWeb());
-        indirizzoField.setText(contatto.getIndirizzoResidenza());
-        compleannoField.setValue(contatto.getCompleanno());
-        noteField.setText(contatto.getNote());
+        ContattoEsteso c = (ContattoEsteso) contatto;
+        fullname.setText(c.getNome() + " " + contatto.getCognome());
+        nomeField.setText(c.getNome());
+        cognomeField.setText(c.getCognome());
+        email1Field.setText(c.getEmail1());
+        email2Field.setText(c.getEmail2());
+        email3Field.setText(c.getEmail3());
+        telefono1Field.setText(c.getTelefono1());
+        telefono2Field.setText(c.getTelefono2());
+        telefono3Field.setText(c.getTelefono3());
+        linkField.setText(c.getSitoWeb());
+        indirizzoField.setText(c.getIndirizzoResidenza());
+        compleannoField.setValue(c.getCompleanno());
+        noteField.setText(c.getNote());
 
         preferitiFlag.opacityProperty().bind(Bindings.when(contattoSelezionato.isPreferito())
                 .then(1.0) // Opacità al 100% quando isPreferiti è true
@@ -330,7 +330,7 @@ public class RubricaController extends AbstractController implements Initializab
      */
     @FXML
     public void handleEliminaContatto() {
-    ContattoEsteso c = rubricaTable.getSelectionModel().getSelectedItem();  //seleziona il contatto dalla TableView
+    Contatto c = rubricaTable.getSelectionModel().getSelectedItem();  //seleziona il contatto dalla TableView
         if (c!=null){
             // Se il contatto puó essere rimosso dalla rubrica allora rifletti le modifiche sulla lista
             if(this.getRubrica().rimuoviContatto(c) != null){
@@ -367,6 +367,7 @@ public class RubricaController extends AbstractController implements Initializab
      */
         @FXML
     private void gestioneSalvaModifiche(){
+            ContattoEsteso c = (ContattoEsteso) contattoSelezionato;
             // Controlli sui campi inseriti dall'utente nella fase di creazione
             if (!controllaCampiObbligatori (nomeField.getText(),cognomeField.getText())){
                 mostraDialog ( Alert.AlertType.ERROR,"Errore di validazione", "Devi inserire almeno un nome o un cognome.");
@@ -393,18 +394,18 @@ public class RubricaController extends AbstractController implements Initializab
                 return;
             } else {
                 // Aggiorna i dati del contatto selezionato
-                contattoSelezionato.setNome(nomeField.getText());
-                contattoSelezionato.setCognome(cognomeField.getText());
-                contattoSelezionato.setEmail1(email1Field.getText());
-                contattoSelezionato.setEmail2(email2Field.getText());
-                contattoSelezionato.setTelefono3(telefono1Field.getText());
-                contattoSelezionato.setTelefono1(telefono2Field.getText());
-                contattoSelezionato.setTelefono2(telefono2Field.getText());
-                contattoSelezionato.setCompleanno(compleannoField.getValue());
-                contattoSelezionato.setIndirizzoResidenza(indirizzoField.getText());
-                contattoSelezionato.setNote(noteField.getText());
-                contattoSelezionato.setSitoWeb(linkField.getText());
-                contattoSelezionato.setNote(noteField.getText());
+                c.setNome(nomeField.getText());
+                c.setCognome(cognomeField.getText());
+                c.setEmail1(email1Field.getText());
+                c.setEmail2(email2Field.getText());
+                c.setTelefono3(telefono1Field.getText());
+                c.setTelefono1(telefono2Field.getText());
+                c.setTelefono2(telefono2Field.getText());
+                c.setCompleanno(compleannoField.getValue());
+                c.setIndirizzoResidenza(indirizzoField.getText());
+                c.setNote(noteField.getText());
+                c.setSitoWeb(linkField.getText());
+                c.setNote(noteField.getText());
             }
 
             //TEST
@@ -459,7 +460,7 @@ public class RubricaController extends AbstractController implements Initializab
      */
     @FXML
     private void toggleEmergenza(){
-        ContattoEsteso c = rubricaTable.getSelectionModel().getSelectedItem();
+        Contatto c = rubricaTable.getSelectionModel().getSelectedItem();
         if (c != null) {
             c.setEmergenza(!c.getEmergenza());
             rubricaTable.refresh();
@@ -475,7 +476,7 @@ public class RubricaController extends AbstractController implements Initializab
      */
     @FXML
     private void togglePreferiti() {
-        ContattoEsteso c = rubricaTable.getSelectionModel().getSelectedItem();
+        Contatto c = rubricaTable.getSelectionModel().getSelectedItem();
         if (c != null) {
             c.setPreferito(!c.getPreferito());
             if(c.getPreferito())
@@ -530,7 +531,7 @@ public class RubricaController extends AbstractController implements Initializab
      */
     @FXML
     public void handleExportContatto(){
-        ContattoEsteso c=rubricaTable.getSelectionModel().getSelectedItem();
+        Contatto c=rubricaTable.getSelectionModel().getSelectedItem();
         FileChooser fileChooser = new FileChooser();
         fileChooser.getExtensionFilters().add(new FileChooser.ExtensionFilter("VCF", "*.vcf"));
         fileChooser.setTitle("Esporta Contatto");

@@ -6,6 +6,7 @@
  */
 
 package it.unisa.diem.swe.group07.rubrica.controllers;
+import it.unisa.diem.swe.group07.rubrica.models.Contatto;
 import it.unisa.diem.swe.group07.rubrica.models.ContattoEsteso;
 import it.unisa.diem.swe.group07.rubrica.models.Rubrica;
 import javafx.collections.FXCollections;
@@ -30,7 +31,7 @@ public abstract class AbstractController {
     /**
      * @brief istanza della lista osservabile.
      */
-    private ObservableList<ContattoEsteso> listaContatti = FXCollections.observableArrayList();
+    private ObservableList<Contatto> listaContatti = FXCollections.observableArrayList();
 
      /**
      * @brief metodo getter dell'attributo rubrica.
@@ -53,7 +54,7 @@ public abstract class AbstractController {
      * @brief metodo getter della struttura (lista osservabile).
      * @return listaContatti La lista osservabile contenente i contatti.
      */
-    public ObservableList<ContattoEsteso> getListaContatti() {
+    public ObservableList<Contatto> getListaContatti() {
         return listaContatti;
     }
 
@@ -61,7 +62,7 @@ public abstract class AbstractController {
      * @brief metodo setter della lista osservabile
      * @param[in] listaContatti La lista osservabile contenente i contatti
      */
-    public void setListaContatti(ObservableList<ContattoEsteso> listaContatti) {
+    public void setListaContatti(ObservableList<Contatto> listaContatti) {
         this.listaContatti = listaContatti;
     }
 

@@ -6,7 +6,6 @@
  */
 package it.unisa.diem.swe.group07.rubrica.models;
 
-
 import java.util.Map;
 import java.util.HashMap;
 import java.util.Collection;
@@ -26,7 +25,7 @@ public class Rubrica {
     /**
      *  @brief struttura dati della rubrica
      */
-    private Map<Integer, ContattoEsteso> rubrica;
+    private Map<Integer, Contatto> rubrica;
 
     /**
      *  @brief costruttore della rubrica
@@ -39,7 +38,7 @@ public class Rubrica {
      * @brief metodo per l'aggiunta di un contatto alla rubrica
      * @param[in] c: il contatto da aggiungere
      */
-    public ContattoEsteso aggiungiContatto(ContattoEsteso c) {
+    public Contatto aggiungiContatto(Contatto c) {
         return rubrica.putIfAbsent(c.getId(), c);
     }
 
@@ -48,7 +47,7 @@ public class Rubrica {
      * @param[in] c: il contatto da aggiungere
      * @return 'true' se l'aggiunta del contatto nella rubrica va a buon fine, 'false' altrimenti
      */
-    public Boolean aggiungiContattoEVerifica(ContattoEsteso c){
+    public Boolean aggiungiContattoEVerifica(Contatto c){
         if (rubrica.putIfAbsent(c.getId(), c) == null)
             return true;
         return false;
@@ -59,7 +58,7 @@ public class Rubrica {
      * @param[in] c: il contatto da aggiungere
      * @return Il contatto rimosso
      */
-    public ContattoEsteso rimuoviContatto(ContattoEsteso c){
+    public Contatto rimuoviContatto(Contatto c){
         return rubrica.remove(c.getId());
     }
 
@@ -69,14 +68,14 @@ public class Rubrica {
      *  @return Il contatto trovato
      */
 
-    public ContattoEsteso ricercaContatto(ContattoEsteso c){
+    public Contatto ricercaContatto(Contatto c){
         return rubrica.get(c.getId());
     }
     /**
      *  @brief metodo restituisce tutti i contatti come una Collection
      *  @return Collection<ContattoEsteso>: una lista dei contatti della rubrica
      */
-    public Collection<ContattoEsteso> getContatti(){
+    public Collection<Contatto> getContatti(){
         return rubrica.values();
     }
 
@@ -85,7 +84,7 @@ public class Rubrica {
      *  @param[in] contattoAggiornato Il contatto con i dati nuovi
      *  @return 'true' se il contatto viene correttamente aggiornato, 'false' altrimenti
      */
-    public Boolean aggiornaContatto(ContattoEsteso contattoAggiornato) {
+    public Boolean aggiornaContatto(Contatto contattoAggiornato) {
         // Trova il contatto nella rubrica e sostituiscilo
         if (rubrica.containsKey(contattoAggiornato.getId())) {
             aggiungiContattoEVerifica(contattoAggiornato);
@@ -102,5 +101,4 @@ public class Rubrica {
     public String toString() {
         return "\nRubrica\n" + getContatti();
     }
-
 }

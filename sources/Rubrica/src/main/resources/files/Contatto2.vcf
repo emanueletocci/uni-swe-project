@@ -1,0 +1,17 @@
+BEGIN:VCARD
+VERSION:3.0
+FN:Antonio Rossi
+TEL;TYPE=cell:+0234798123
+TEL;TYPE=home:
+TEL;TYPE=work:+3933333333
+EMAIL;TYPE=work:
+EMAIL;TYPE=home:prova@icloud.com
+EMAIL;TYPE=other:prova@unisa.it
+BDAY:2001-06-09
+ADR;TYPE=home:via Prova
+URL:unisa.it
+NOTE:note
+X-PREF:1
+X-EMERG:1
+UID:-563794654
+END:VCARD

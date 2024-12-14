@@ -1,14 +1,11 @@
 package it.unisa.diem.swe.group07.rubrica.gestoreIO;
 
+import it.unisa.diem.swe.group07.rubrica.models.Contatto;
 import it.unisa.diem.swe.group07.rubrica.models.ContattoEsteso;
 import it.unisa.diem.swe.group07.rubrica.models.Rubrica;
 
 import java.io.*;
 import java.nio.charset.StandardCharsets;
-import java.util.ArrayList;
-import java.util.Collection;
-import java.util.List;
-import java.util.Map;
 
 /**
  * @file Export.java
@@ -25,7 +22,8 @@ public class Export {
  * @see Rubrica
  * @see Import
 */
-    public String getVcard(ContattoEsteso c) {
+    public String getVcard(Contatto contatto) {
+        ContattoEsteso c = (ContattoEsteso) contatto;
         StringBuilder sb = new StringBuilder();
         sb.append("BEGIN:VCARD\n");
         sb.append("VERSION:3.0\n");
@@ -55,7 +53,7 @@ public class Export {
      */
     public void esportaRubrica(Rubrica r, String path) {
         try (BufferedWriter writer = new BufferedWriter(new FileWriter(path + ".vcf", StandardCharsets.UTF_8))) {
-            for (ContattoEsteso contatto : r.getContatti()) {
+            for (Contatto contatto : r.getContatti()) {
                 String vcard = getVcard(contatto);
                 writer.write(vcard);
             }
@@ -69,7 +67,7 @@ public class Export {
      * @brief metodo per fornire un file di output conforme allo standard vCard che contiene tutta le informazioni del contatto.
      * @pre path, Il percorso di salvataggio deve essere un percorso valido.
      */
-    public void esportaContatto(ContattoEsteso contatto, String path){
+    public void esportaContatto(Contatto contatto, String path){
         try (BufferedWriter writer = new BufferedWriter(new FileWriter(path + ".vcf", StandardCharsets.UTF_8))) {
             String vcard = getVcard(contatto);
             writer.write(vcard);

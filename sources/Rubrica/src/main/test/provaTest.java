@@ -11,8 +11,6 @@ public class provaTest {
     public static void main(String[] args) {
         Rubrica r = new Rubrica();
         ContattoEsteso emanuele = new ContattoEsteso("Emanuele", "Tocci", "+3933333333", "+3933333333", "+3933333333", "prova@gmail.com", "prova@icloud.com", "prova@unisa.it", LocalDate.of(2003, 6, 9), "via Prova", "unisa.it", "note", false, false);
-        Contatto claudia = new Contatto("Claudia", "MOntefusco", "10", "10", "10",false, true);
-        r.aggiungiContatto(claudia);
     }
 
 }

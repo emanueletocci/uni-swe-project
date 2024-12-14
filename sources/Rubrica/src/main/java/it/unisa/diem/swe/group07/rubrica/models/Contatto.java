@@ -16,7 +16,7 @@ import java.util.Objects;
  * @see Rubrica
  * @see ContattoEsteso
  */
-public class Contatto {
+public abstract class Contatto {
 
     /**
      * @brief identificativo univoco (key) del contatto.
