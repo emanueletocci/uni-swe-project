@@ -1,8 +1,7 @@
 /**
  * @file AbstractController.java
- * @brief Il file contiene l'implementazione di un controller astratto che contiene il riferimento alla rubrica e alla lista osservabile. Il controller predispone
- * alcuni metodi pubblici (mutator e 'mostraDialog'), direttamente accessibili dalle sottoclassi
- * @autor Gruppo07
+ * @brief Il file contiene l'implementazione di un controller astratto.
+ * @author Gruppo07
  * @date Dicembre, 2024
  */
 
@@ -13,6 +12,14 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.scene.control.Alert;
 
+/**
+ * @brief La classe rappresenta un controllore astratto utilizzato nel pattern MVC. Il controllore istanzia un oggetto di tipo "Rubrica"
+ * , una lista osservabile usata per l'aggiornamento di una TableView di JavaFX e predispone alcuni metodi pubblici direttamente
+ * accessibili dalle sottoclassi.
+ * @see Rubrica
+ * @see CreaContattoController
+ * @see RubricaController
+ */
 public abstract class AbstractController {
 
     /**
@@ -27,7 +34,8 @@ public abstract class AbstractController {
 
      /**
      * @brief metodo getter dell'attributo rubrica.
-     * @return rubrica, Attributo rubrica.
+     * @return rubrica Attributo rubrica.
+     * @pre L'attributo rubrica deve essere stato inizializzato.
      */
     public Rubrica getRubrica() {
         return rubrica;
@@ -35,7 +43,7 @@ public abstract class AbstractController {
 
     /**
      * @brief metodo setter dell'attributo rubrica.
-     * @param[in] rubrica, Attributo rubrica.
+     * @param[in] rubrica Attributo rubrica.
      */
     public void setRubrica(Rubrica rubrica) {
         this.rubrica = rubrica;
@@ -43,15 +51,15 @@ public abstract class AbstractController {
 
      /**
      * @brief metodo getter della struttura (lista osservabile).
-     * @return listaContatti, La lista osservabile contenente i contatti.
-     */ 
+     * @return listaContatti La lista osservabile contenente i contatti.
+     */
     public ObservableList<ContattoEsteso> getListaContatti() {
         return listaContatti;
     }
 
     /**
-     * @brief metodo setter della lista osservabile 
-     * @param[in] listaContatti, La lista osservabile contenente i contatti
+     * @brief metodo setter della lista osservabile
+     * @param[in] listaContatti La lista osservabile contenente i contatti
      */
     public void setListaContatti(ObservableList<ContattoEsteso> listaContatti) {
         this.listaContatti = listaContatti;
@@ -59,9 +67,11 @@ public abstract class AbstractController {
 
     /**
      * @brief metodo che consenti di mostrare un generico dialog.
-     * @param[in] type, Tipo di Alert.
-     * @param[in] titolo, Titolo della finestra (dialog).
-     * @param[in] messaggio, Messaggio da mostrare nella finestra.
+     * @pre type Deve essere un valore valido di Alert.AlertType. Le possibili scelte sono: 'CONFIRMATION', 'WARNING', 'NONE'
+     * 'INFORMATION' , 'ERROR'.
+     * @param[in] type Tipo di Alert.
+     * @param[in] titolo Titolo della finestra (dialog).
+     * @param[in] messaggio Messaggio da mostrare nella finestra.
      */
     public void mostraDialog(Alert.AlertType type, String titolo, String messaggio) {
         Alert alert = new Alert(type);
@@ -70,7 +80,8 @@ public abstract class AbstractController {
         alert.showAndWait();
     }
     /**
-     * @brief metodo verificare che almeno un TextField tra nome e cognome è stato sovrascritto.
+     * @brief metodo verificare che almeno un TextField tra nome e cognome è stato riempito dall'utente.
+     * @return true se almeno uno tra nome e cognome è valido, false altrimenti.
      */
     protected Boolean controllaCampiObbligatori(String nome, String cognome) {
         // Verifica che almeno uno tra nome o cognome sia valido
@@ -78,7 +89,7 @@ public abstract class AbstractController {
 
     /**
      * @brief metodo per la verifica del numero telefonico del contatto.
-     * @param[in] telefono, Stringa contenente un numero telefonico.
+     * @param[in] telefono Stringa contenente un numero telefonico.
      * @return "true" se il numero inserito é valido, "false" altrimenti.
      */
     protected Boolean controllaTelefono(String telefono){
@@ -90,7 +101,7 @@ public abstract class AbstractController {
 
     /**
      * @brief metodo per la verifica dell'indirizzo email del contatto. Il metodo verifica solamente la presenta della "@" all'interno dell´email inserita.
-     * @param[in] email, Stringa contenente un indirizzo email.
+     * @param[in] email Stringa contenente un indirizzo email.
      * @return "true" se l'email inserita é valida (contiene @), "false" altrimenti.
      */
     protected Boolean controllaEmail(String email) {

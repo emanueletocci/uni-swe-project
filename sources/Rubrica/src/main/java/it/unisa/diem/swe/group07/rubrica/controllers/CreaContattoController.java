@@ -1,11 +1,12 @@
 /**
  * @file CreaContattoController.java
- * @brief Il file contiene l'implementazione del controller per la creazione di un nuovo contatto e l'aggiunta alla rubrica.
- * @autor Gruppo07
+ * @brief Il file contiene l'implementazione del controller che gestisce la creazione di un nuovo contatto.
+ * @author Gruppo07
  * @date Dicembre, 2024
  */
 package it.unisa.diem.swe.group07.rubrica.controllers;
 import it.unisa.diem.swe.group07.rubrica.models.ContattoEsteso;
+import it.unisa.diem.swe.group07.rubrica.models.Rubrica;
 import javafx.fxml.FXML;
 import javafx.scene.Node;
 import javafx.scene.control.DatePicker;
@@ -26,6 +27,14 @@ import java.util.ResourceBundle;
 
 
 public class CreaContattoController extends AbstractController implements Initializable{
+
+    /**
+     * @brief La classe rappresenta il controllore responsabile della gestione della vista secondaria e della creazione di un nuovo contatto.
+     * @see Rubrica
+     * @see AbstractController
+     * @see RubricaController
+     */
+
     /**
     * @brief TextField per il nome del contatto.
     */
@@ -125,7 +134,7 @@ public class CreaContattoController extends AbstractController implements Initia
     /**
      * @brief Il metodo preleva i valori dai Text Field, crea un contatto temporaneo e, se i valori inseriti dall'utente sono validi, lo aggiunge alla rubrica (e alla lista osservabile,
      * di conseguenza aggiorna la TableView).
-     * @param[in] event evento generato dal click sul pulsante "Crea Contatto".
+     * @param[in] event Evento generato dal click sul pulsante "Crea Contatto".
      */
     @FXML
     public void handleAggiungiContatto(ActionEvent event) {

@@ -1,70 +1,77 @@
-///*
-// * To change this license header, choose License Headers in Project Properties.
-// * To change this template file, choose Tools | Templates
-// * and open the template in the editor.
-// */
-//package it.unisa.diem.swe.group07.rubrica.gestoreIO;
-//
-//import org.junit.jupiter.api.AfterEach;
-//import org.junit.jupiter.api.AfterAll;
-//import org.junit.jupiter.api.BeforeEach;
-//import org.junit.jupiter.api.BeforeAll;
-//import org.junit.jupiter.api.Test;
-//import static org.junit.jupiter.api.Assertions.*;
-//import java.io.IOException;
-//import java.nio.file.Files;
-//import java.nio.file.Path;
-//import java.nio.file.Paths;
-//
-///**
-// *
-// * @author hp
-// */
-//public class ImportTest {
-//
-//    @BeforeEach
-//    public void setUp() {
-//        rubrica=new Rubrica();
-//        Import i= new Import();
-//
-//    }
-//    @Test
-//    public void testImportVcard() throws IOException{
-//        Path testFile = Files.createTempFile("testImport", ".vcf");
-//        String vcardContent =
-//                "BEGIN:VCARD\n" +
-//                "FN:Rossella Pale " +
-//                "TEL;TYPE=cell:+3933333333" +
-//                "TEL;TYPE=home:+3933333333 "+
-//                "TEL;TYPE=work:+3933333333 "+
-//                "EMAIL;TYPE=work:prova@gmail.com " +
-//                "EMAIL;TYPE=home:prova@gmail.com "+
-//                "EMAIL;TYPE=other:prova@gmail.com "+
-//                "BDAY: 2003/04/24 "+
-//                "ADR;TYPE=home: Fisciano "+
-//                "URL: github.com "+
-//                "NOTE: studentessa "+
-//                "X-PREF:1 "+
-//                "X-EMERG:1 "+
-//                "END:VCARD\n";
-//        Files.write(testFile, vcardContent.getBytes(StandardCharsets.UTF_8));
-//        i.importVcard(rubrica, testFile.toString());
-//        assertEquals(1, rubrica.getContatti().size());
-//        ContattoEsteso contatto = rubrica.getContatti().get(0);
-//        assertEquals("Rossella", contatto.getNome());
-//        assertEquals("Pale", contatto.getCognome());
-//        assertEquals("+3933333333", contatto.getTelefono1());
-//        assertEquals("+3933333333", contatto.getTelefono2());
-//        assertEquals("+3933333333", contatto.getTelefono3());
-//        assertEquals("prova@gmail.com", contatto.getEmail1());
-//        assertEquals("prova@gmail.com", contatto.getEmail2());
-//        assertEquals("prova@gmail.com", contatto.getEmail3());
-//        assertEquals("2003/04/24", contatto.getCompleanno());
-//        assertEquals("Fisciano", contatto.getIndirizzoResidenza());
-//        assertEquals("github.com", contatto.getSitoWeb());
-//        assertEquals("studentessa", contatto.getNote());
-//        assertEquals("1", contatto.getIsPrefetito());
-//        assertEquals("1", contatto.getIsEmergenza());
-//        Files.delete(testFile);
-//    }
-//}
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+
+import it.unisa.diem.swe.group07.rubrica.gestoreIO.Export;
+import it.unisa.diem.swe.group07.rubrica.gestoreIO.Import;
+import it.unisa.diem.swe.group07.rubrica.models.ContattoEsteso;
+import it.unisa.diem.swe.group07.rubrica.models.Rubrica;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
+import javafx.collections.ObservableListBase;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
+
+import java.io.IOException;
+import java.nio.charset.StandardCharsets;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.time.LocalDate;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertTrue;
+
+/**
+ *
+ * @author gruppo 07
+ */
+public class ImportTest {
+
+    private Rubrica rubrica;
+    private Import importer;
+    private ObservableList<ContattoEsteso> list;
+
+    @BeforeEach
+    public void setUp() {
+        rubrica = new Rubrica();
+        importer = new Import();
+        list = FXCollections.observableArrayList();
+    }
+
+    @Test
+    public void testImportVcard() throws IOException {
+        // Crea un contatto di test
+        ContattoEsteso contatto = new ContattoEsteso(
+                "Rossella",
+                "Pale",
+                "+3933333333",
+                "+3933333333",
+                "+3933333333",
+                "prova@gmail.com",
+                "prova@gmail.com",
+                "prova@gmail.com",
+                LocalDate.of(2003, 4, 24),
+                "Fisciano",
+                "github.com",
+                "studentessa",
+                true,
+                true
+        );
+
+        Export exporter = new Export();
+        String filePath = "provaImport"; //salva come provaImport
+        exporter.esportaContatto(contatto, filePath);
+        filePath = "provaImport.vcf";//importa provaImport.vcf
+        importer.importVcard(rubrica, list, filePath);
+
+        assertEquals(1, rubrica.getContatti().size());
+        assertTrue(rubrica.getContatti().contains(contatto));
+
+        assertEquals(1, list.size());
+        assertTrue(list.contains(contatto));
+
+        Files.delete(Path.of(filePath));
+    }
+}

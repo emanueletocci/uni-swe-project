@@ -10,17 +10,20 @@ import java.util.Collection;
 import java.util.List;
 import java.util.Map;
 
-/*
+/**
  * @file Export.java
- * @brief esporta i contatti in un file .vcf
- * @autor Gruppo07
+ * @brief  questo file contiene l'implementazione dei metodi utili al export
+ * @author Gruppo07
  * @date Dicembre, 2024
  * @version 1.0
  */
 public class Export {
 /**
-* @brief metodo per ottenere la formattazione conforme allo standard vCard da un contatto
+ * @param[in] c, il contattoEsteso da dove ricavare i dati da salvare nella vcard
+ * @brief metodo per ottenere la formattazione conforme allo standard vCard da un contatto
  * @return ritorna una stringa formattata per il vCard
+ * @see Rubrica
+ * @see Import
 */
     public String getVcard(ContattoEsteso c) {
         StringBuilder sb = new StringBuilder();
@@ -47,7 +50,9 @@ public class Export {
 
     /**
      * @param[in] r Rubrica presa in ingresso
+     * @param[in] path il percorso dove salvare il file
      * @brief metodo per fornire un file di output conforme allo standard vCard che contiene tutta la rubrica
+     * @pre path, Il percorso di salvataggio deve essere un percorso valido.
      */
     public void esportaRubrica(Rubrica r, String path) {
         try (BufferedWriter writer = new BufferedWriter(new FileWriter(path + ".vcf", StandardCharsets.UTF_8))) {
@@ -60,10 +65,10 @@ public class Export {
             System.err.println("Errore durante l'esportazione");
         }
     }
-
     /**
      * @param[in] contatto Il contatto selezionato e scelto per l'export
-     * @brief metodo per fornire un file di output conforme allo standard vCard che contiene tutta le informazioni del contatto
+     * @brief metodo per fornire un file di output conforme allo standard vCard che contiene tutta le informazioni del contatto.
+     * @pre path, Il percorso di salvataggio deve essere un percorso valido.
      */
     public void esportaContatto(ContattoEsteso contatto, String path){
         try (BufferedWriter writer = new BufferedWriter(new FileWriter(path + ".vcf", StandardCharsets.UTF_8))) {

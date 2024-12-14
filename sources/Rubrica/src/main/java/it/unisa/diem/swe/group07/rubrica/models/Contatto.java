@@ -1,62 +1,66 @@
 /**
  * @file Contatto.java
- * @brief questo file contiene l'implementazione del contatto da inserire all'interno della rubrica telefonica
- * @autor Gruppo07
+ * @brief questo file contiene l'implementazione del contatto, da inserire all'interno della rubrica telefonica, e i suoi metodi.
+ * @author Gruppo07
  * @date Dicembre, 2024
  * @version 1.0
  */
-
 package it.unisa.diem.swe.group07.rubrica.models;
 
 import javafx.beans.property.BooleanProperty;
 import javafx.beans.property.SimpleBooleanProperty;
 import java.util.Objects;
 
+/**
+ * @brief La classe rappresenta generico Contatto aggiungibile nella rubrica.
+ * @see Rubrica
+ * @see ContattoEsteso
+ */
 public class Contatto {
 
     /**
-     * @brief identificativo univoco (key) del contatto
+     * @brief identificativo univoco (key) del contatto.
      */
     private Integer id;
 
     /**
-     * @brief nome del contatto
+     * @brief nome del contatto.
      */
     private String nome;
 
     /**
-     * @brief cognome del contatto
+     * @brief cognome del contatto.
      */
     private String cognome;
 
     /**
      *
-     * @brief numeri telefonici del contatto
+     * @brief numero telefonico 1 del contatto.
      */
     private String telefono1;
 
     /**
-     * @brief numeri telefonici del contatto
+     * @brief numero telefonico 2 del contatto.
      */
     private String telefono2;
 
     /**
-     * @brief numeri telefonici del contatto
+     * @brief numero telefonico 3 del contatto.
      */
     private String telefono3;
 
     /**
-     * @brief attributo booleano che indica se il contatto é un "contatto di emergenza" oppure no
+     * @brief attributo booleano che indica se il contatto é un "contatto di emergenza" oppure no.
      */
     private Boolean emergenza;
 
     /**
-     * @brief attributo booleano che indica se il contatto é un "contatto preferito" oppure no
+     * @brief attributo booleano che indica se il contatto é un "contatto preferito" oppure no.
      */
     private Boolean preferito;
 
     /**
-     * @brief costruttore della classe Contatto
+     * @brief costruttore della classe Contatto.
      */
     public Contatto(String nome, String cognome, String telefono1, String telefono2, String telefono3, Boolean preferito, Boolean emergenza) {
         this.nome = nome;
@@ -66,38 +70,41 @@ public class Contatto {
         this.telefono3 = telefono3;
         this.emergenza = emergenza;
         this.preferito = preferito;
+        id = generaId();
     }
     /**
      * @brief costruttore della classe Contatto senza ingressi
+     * @post Il contatto istanziato é vuoto.
      */
     public Contatto(){};
 
     /**
-     * @brief metodo getter per l'attributo "id"
-     * @return attributo id
+     * @brief metodo getter per l'attributo "id".
+     * @return id Attributo id.
      */
     public Integer getId(){
         return id;
     }
 
     /**
-     * @param[] id,
-     * @brief metodo setter per l'attributo "id"
+     * @param[in] id L'attributo da impostare nel relativo campo di contatto.
+     * @brief metodo setter per l'attributo "id".
      */
     public void setId(Integer id){
         this.id=id;
     }
 
     /**
-     * @brief metodo getter per l'attributo "nome"
-     * @return attributo nome
+     * @brief metodo getter per l'attributo "nome".
+     * @return nome Attributo nome.
      */
     public String getNome() {
         return nome;
     }
 
     /**
-     * @brief metodo setter per l'attributo "nome"
+     * @param[in] nome L'attributo da impostare nel relativo campo di contatto.
+     * @brief metodo setter per l'attributo "nome".
      */
     public void setNome(String nome) {
         this.nome = nome;
@@ -112,14 +119,15 @@ public class Contatto {
     }
 
     /**
-     * @brief metodo setter per l'attributo "cognome"
+     * @param[in] cognome L'attributo da impostare nel relativo campo di contatto.
+     * @brief metodo setter per l'attributo "cognome".
      */
     public void setCognome(String cognome) {
         this.cognome = cognome;
     }
      /**
-     * @brief metodo getter per l'attributo "telefono1"
-     * @return attributo telefono1
+     * @brief metodo getter per l'attributo "telefono1".
+     * @return attributo telefono1.
      */
     public String getTelefono1() {
         return telefono1;
@@ -127,37 +135,40 @@ public class Contatto {
 
     
     /**
-     * @brief metodo setter per l'attributo "telefono1"
+     * @param[in] telefono1, l'attributo da impostare nel relativo campo di contatto.
+     * @brief metodo setter per l'attributo "telefono1".
      */
     public void setTelefono1(String telefono1) {
         this.telefono1 = telefono1;
     }
 
     /**
-     * @brief metodo getter per l'attributo "telefono2"
-     * @return attributo telefono2
+     * @brief metodo getter per l'attributo "telefono2".
+     * @return attributo telefono2.
      */
     public String getTelefono2() {
         return telefono2;
     }
     
     /**
-     * @brief metodo setter per l'attributo "telefono2"
+     * @param[in] telefono2, l'attributo da impostare nel relativo campo di contatto.
+     * @brief metodo setter per l'attributo "telefono2".
      */
     public void setTelefono2(String telefono2) {
         this.telefono2 = telefono2;
     }
 
      /**
-     * @brief metodo getter per l'attributo "telefono3"
-     * @return attributo telefono2
+     * @param[in] telefono3 L'attributo da impostare nel relativo campo di contatto.
+     * @brief metodo getter per l'attributo "telefono3".
+     * @return attributo telefono2.
      */
     public String getTelefono3() {
         return telefono3;
     }
     
     /**
-     * @brief metodo setter per l'attributo "telefono3"
+     * @brief metodo setter per l'attributo "telefono3".
      */
     public void setTelefono3(String telefono3) {
         this.telefono3 = telefono3;
@@ -172,6 +183,7 @@ public class Contatto {
     }
 
     /**
+     * @param[in] emergenza, l'attributoda impostare nella relativa flag di contatto
      * @brief metodo setter per l'attributo "emergenza"
      */
     public void setEmergenza(Boolean emergenza) {
@@ -179,15 +191,16 @@ public class Contatto {
     }
 
     /**
-     * @brief metodo getter per l'attributo "preferito"
-     * @return attributo preferito
+     * @brief metodo getter per l'attributo "preferito".
+     * @return attributo preferito.
      */
     public Boolean getPreferito() {
         return preferito;
     }
 
     /**
-     * @brief metodo setter per l'attributo "preferito"
+     * @param[in] preferito, l'attributoda impostare nella relativa flag di contatto.
+     * @brief metodo setter per l'attributo "preferito".
      */
     public void setPreferito(Boolean preferito) {
         this.preferito = preferito;
@@ -195,8 +208,9 @@ public class Contatto {
 
 
     /**
-     * @brief metodo per la stampa degli attributi 
-     * @return attributi nome, cognome, telefono1, telefono2, telefono3
+     * @brief metodo per la stampa degli attributi .
+     * @param[out] id, nome, cognome, telefono1, telefono2, telefono3, preferito, emergenza.
+     * @return Rappresentazione in forma di stringa del contatto.
      */
     @Override
     public String toString() {
@@ -213,6 +227,7 @@ public class Contatto {
     /**
      * @brief metodo che consente di confrontare 2 contatti
      * @return 'true' se i due contatti confrontati sono uguali, 'false' se sono diversi
+     * @param[in] o Oggetto generico.
      */
     @Override
     public boolean equals(Object o) {
@@ -222,8 +237,22 @@ public class Contatto {
     }
 
     /**
-     * @brief Calcola il valore hash per l'oggetto basandosi sui campi id, nome, cognome e telefoni
-     * @return valore hash dell'oggetto
+     * @brief controlla se un contatto è preferito.
+     * @return Restituisce la proprietà che indica se il contatto è preferito.
+     */
+    public BooleanProperty isPreferito() {
+        return new SimpleBooleanProperty(getPreferito());
+    }
+    /**
+     * @brief controlla se un contatto è d'emergenza
+     * @return Restituisce la proprietà che indica se il contatto è d'emergenza.
+     */
+    public BooleanProperty isEmergenza(){
+        return new SimpleBooleanProperty(getEmergenza());
+    }
+    /**
+     * @brief Calcola il valore hash per l'oggetto basandosi sui campi id, nome, cognome.
+     * @return valore hash dell'oggetto.
      */
     @Override
     public int hashCode() {
@@ -231,17 +260,11 @@ public class Contatto {
     }
 
     /**
-     * controlla se un contatto è preferito
-     * @return Restituisce la proprietà che indica se il contatto è preferito.
+     * Calcola un ID numerico univoco utilizzando hashCode().
+     * @return il valore hash dell'oggetto.
      */
-    public BooleanProperty isPreferito() {
-        return new SimpleBooleanProperty(getPreferito());
-    }
-    /**
-     * controlla se un contatto è d'emergenza
-     * @return Restituisce la proprietà che indica se il contatto è d'emergenza.
-     */
-    public BooleanProperty isEmergenza(){
-        return new SimpleBooleanProperty(getEmergenza());
+    protected Integer generaId(){
+        String query = this.getNome() + this.getCognome();
+        return query.hashCode();
     }
 }

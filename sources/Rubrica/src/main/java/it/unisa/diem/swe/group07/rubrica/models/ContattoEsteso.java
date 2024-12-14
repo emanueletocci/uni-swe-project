@@ -1,50 +1,57 @@
 /**
  * @file ContattoEsteso.java
- * @brief questo file aggiunge informazioni aggiuntive al Contatto: compeanno, indirizzo di residenza e socialLinks.
- * @autor Gruppo07
+ * @brief questo file aggiunge informazioni aggiuntive al Contatto: compeanno, indirizzo di residenza e socialLinks; E i suoi metodi
+ * @author Gruppo07
  * @date Dicembre, 2024
  */
 
 package it.unisa.diem.swe.group07.rubrica.models;
 
+
 import javafx.beans.property.BooleanProperty;
 import javafx.scene.image.Image;
+
 import java.time.LocalDate;
 import java.util.Objects;
 
+/**
+ * @brief La classe é un'estensione della classe 'Contatto'. Un 'ContattoEsteso' definisce piú parametri rispetto ad un classico 'Contatto'.
+ * @see Rubrica
+ * @see Contatto
+ */
 public class ContattoEsteso extends Contatto {
     /**
-     * @brief indirizzi email del contatto
+     * @brief indirizzo email del contatto.
      */
     private String email1;
 
     /**
-     * @brief indirizzi email del contatto
+     * @brief indirizzo email 2 del contatto.
      */
     private String email2;
 
     /**
-     * @brief indirizzi email del contatto
+     * @brief indirizzo email 3 del contatto.
      */
     private String email3;
 
     /**
-     * @brief data di compleanno del contatto esteso
+     * @brief data di compleanno del contatto esteso.
      */
     private LocalDate compleanno;
 
     /**
-     * @brief indirizzo di residenza del contatto esteso
+     * @brief indirizzo di residenza del contatto esteso.
      */
     private String indirizzoResidenza;
 
     /**
-     * @brief link relativo al social del contatto esteso
+     * @brief link relativo al sito web del contatto esteso.
      */
     private String sitoWeb;
     
     /**
-     * @brief note contenente informazioni aggiuntive riguardo al contatto
+     * @brief note contenente informazioni aggiuntive riguardo al contatto.
      */
     private String note;
     /**
@@ -78,10 +85,12 @@ public class ContattoEsteso extends Contatto {
      */
     public void setimmagineProfilo (Image immagineProfilo){
         this.img = immagineProfilo;
+
     }
 
     /**
-     * @brief costruttore della classe Contatto Esteso senza ingressi
+     * @brief costruttore della classe Contatto Esteso senza ingressi, serve per agevolare l'import
+     * @post Il 'ContattoEsteso' istanziato é vuoto.
      */
     public ContattoEsteso(){
         super();
@@ -89,7 +98,7 @@ public class ContattoEsteso extends Contatto {
 
     /**
      * @brief metodo getter per l'attributo "compleanno"
-     * @return attributo compleanno
+     * @return compleanno, Attributo compleanno.
      */
     public LocalDate getCompleanno(){
         return compleanno;
@@ -97,7 +106,7 @@ public class ContattoEsteso extends Contatto {
 
     /**
      * @param[in] compleanno, l'attributo da impostare nel relativo campo di contatto
-     * @brief metodo setter per l'attributo "compleanno"
+     * @brief metodo setter per l'attributo "compleanno".
      */
     public void setCompleanno (LocalDate compleanno){
         this.compleanno = compleanno;
@@ -105,15 +114,15 @@ public class ContattoEsteso extends Contatto {
 
     /**
      * @brief metodo getter per l'attributo "indirizzoResidenza"
-     * @return attributo indirizzoResidenza
+     * @return attributo indirizzoResidenza.
      */
     public String getIndirizzoResidenza () {
         return indirizzoResidenza;
     }
 
     /**
-     * @param[in] indirizzoResidenza, l'attributo da impostare nel relativo campo di contatto
-     * @brief metodo setter per l'attributo "indirizzoResidenza"
+     * @param[in] indirizzoResidenza, l'attributo da impostare nel relativo campo di contatto.
+     * @brief metodo setter per l'attributo "indirizzoResidenza".
      */
     public void setIndirizzoResidenza (String indirizzoResidenza){
         this.indirizzoResidenza = indirizzoResidenza;
@@ -121,7 +130,7 @@ public class ContattoEsteso extends Contatto {
 
     /**
      * @brief metodo getter per l'attributo "sitoWeb"
-     * @return attributo sitoWeb
+     * @return attributo sitoWeb.
      */
     public String getSitoWeb() {
         return sitoWeb;
@@ -219,9 +228,9 @@ public class ContattoEsteso extends Contatto {
 
 
     /**
-     * @brief verifica l'uguaglianza tra due oggetti di tipo "ContattoEsteso"
-     * @param[in] o, l'oggetto da confrontare
-     * @return 'true' se gli oggetti sono uguali, 'false' altrimenti
+     * @brief verifica l'uguaglianza tra due oggetti di tipo "ContattoEsteso".
+     * @param[in] o, l'oggetto da confrontare.
+     * @return 'true' se gli oggetti sono uguali, 'false' altrimenti.
      */
 
     @Override
@@ -233,14 +242,20 @@ public class ContattoEsteso extends Contatto {
     }
 
     /**
-     * Calcola il valore hash per l'oggetto basandosi sui campi id, nome, cognome e telefoni.
-     * @return il valore hash dell'oggetto
+     * Calcola il valore hash per l'oggetto basandosi sui campi id, nome, cognome e compleanno.
+     * @return il valore hash dell'oggetto.
      */
     @Override
     public int hashCode() {
         return Objects.hash(super.hashCode(), compleanno);
     }
-    private Integer generaId(){
+
+    /**
+     * Calcola un ID numerico univoco utilizzando hashCode().
+     * @return il valore hash dell'oggetto
+     */
+    @Override
+    protected Integer generaId(){
         String query = this.getNome() + this.getCognome() + compleanno;
         return query.hashCode();
     }

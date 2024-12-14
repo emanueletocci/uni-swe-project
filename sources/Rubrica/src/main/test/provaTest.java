@@ -1,4 +1,5 @@
 import it.unisa.diem.swe.group07.rubrica.gestoreIO.Export;
+import it.unisa.diem.swe.group07.rubrica.models.Contatto;
 import it.unisa.diem.swe.group07.rubrica.models.ContattoEsteso;
 import it.unisa.diem.swe.group07.rubrica.models.Rubrica;
 import javafx.collections.FXCollections;
@@ -54,8 +55,19 @@ public class provaTest {
             System.out.println("\nLe stringhe sono uguali!");
         else
             System.out.println("Le stringhe sono diverse!");
+        Rubrica r2 = new Rubrica();
+        ContattoEsteso mario = new ContattoEsteso("Mario", "Rossi", "+3933333333", "+3933333333", "+3933333333", "prova@gmail.com", "prova@icloud.com", "prova@unisa.it", LocalDate.of(2003, 6, 9), "via Prova", "unisa.it", "note", null, false);
+
+        System.out.println("\nTEST ID: \n");
+        Contatto cont1 = new Contatto("Rossella", "Pale", "+3933333333", "+3933333333", "+3933333333", true, true);
+        Contatto cont2 = new Contatto("Rossella", "Pale", "+3933333333", "+3933333333", "+3933333333", true, true);
+        ContattoEsteso cont3 = new ContattoEsteso("Rossella", "Pale", "+3933333333", "+3933333333", "+3933333333", "prova@gmail.com", "prova@icloud.com", "prova@unisa.it", LocalDate.of(2020, 12, 12), "via Prova", "unisa.it", "note", true, true);
+
+        System.out.println(cont1);
+        System.out.println(cont2);
+        System.out.println(cont3);
+
+
     }
 
-    Rubrica r2 = new Rubrica();
-    ContattoEsteso mario = new ContattoEsteso("Mario", "Rossi", "+3933333333", "+3933333333", "+3933333333", "prova@gmail.com", "prova@icloud.com", "prova@unisa.it", LocalDate.of(2003, 6, 9), "via Prova", "unisa.it", "note", null, false);
 }

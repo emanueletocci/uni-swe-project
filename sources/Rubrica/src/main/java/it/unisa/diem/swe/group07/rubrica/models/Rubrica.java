@@ -1,10 +1,9 @@
 /**
  * @file Rubrica.java
- * @brief questo file presenta le informazioni della rubrica
- * @autor Gruppo07
+ * @brief in questo file è presente l'implementazione della classe Rubrica con i suoi metodi e attributi
+ * @author Gruppo07
  * @date Dicembre, 2024
  */
-
 package it.unisa.diem.swe.group07.rubrica.models;
 
 
@@ -12,6 +11,16 @@ import java.util.Map;
 import java.util.HashMap;
 import java.util.Collection;
 
+/**
+ * @class Rubrica
+ * @brief Classe che rappresenta una rubrica di contatti.
+ *
+ * La classe Rubrica gestisce una collezione di contatti estesi, permettendo operazioni
+ * come l'aggiunta, la rimozione, la ricerca e l'aggiornamento dei contatti.
+ *
+ * @see Contatto
+ * @see ContattoEsteso
+ */
 public class Rubrica {
 
     /**
@@ -48,7 +57,7 @@ public class Rubrica {
     /**
      * @brief metodo per la rimozione di un contatto dalla rubrica
      * @param[in] c: il contatto da aggiungere
-     * @return contatto rimosso
+     * @return Il contatto rimosso
      */
     public ContattoEsteso rimuoviContatto(ContattoEsteso c){
         return rubrica.remove(c.getId());
@@ -57,7 +66,7 @@ public class Rubrica {
     /**
      *  @brief metodo ricerca di un contatto in rubrica
      *  @pre il contatto deve essere presente in rubrica
-     *  @return contatto trovato
+     *  @return Il contatto trovato
      */
 
     public ContattoEsteso ricercaContatto(ContattoEsteso c){
@@ -73,7 +82,7 @@ public class Rubrica {
 
     /**
      *  @brief il metodo consente di aggiornare un contatto esistente nella rubrica.
-     *  @param[in] contattoAggiornato
+     *  @param[in] contattoAggiornato Il contatto con i dati nuovi
      *  @return 'true' se il contatto viene correttamente aggiornato, 'false' altrimenti
      */
     public Boolean aggiornaContatto(ContattoEsteso contattoAggiornato) {

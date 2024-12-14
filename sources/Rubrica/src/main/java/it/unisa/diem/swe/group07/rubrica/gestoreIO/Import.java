@@ -14,7 +14,7 @@ import java.time.format.DateTimeFormatter;
 /**
  * @file Import.java
  * @brief importa i contatti da un file .vcf e li aggiunge ad una rubrica
- * @autor Gruppo07
+ * @author Gruppo07
  * @date Dicembre, 2024
  * @version 1.0
  */
@@ -25,6 +25,8 @@ public class Import {
      * @param nomefile il nome del file .vcf da cui importare i contatti
      * @throws IOException se si verifica un errore durante la lettura del file
      * @return 'true' se la vCard é importata correttamente, 'false' altrimenti
+     * @see Rubrica
+     * @see Export
      */
     public void importVcard(Rubrica r, ObservableList lista, String nomefile) throws IOException {
         //aggiunta dello standard utf8 perché è l'unico accettato dai .vcf (fonte stackoverflow)
@@ -71,17 +73,21 @@ public class Import {
                     contatto.setEmergenza(Boolean.parseBoolean(line.substring(9)));
                 } else if (line.startsWith("UID:")) {
                     contatto.setId(Integer.parseInt(line.substring(4)));
-                } else if (line.startsWith("END:VCARD")) {
+                } //else if (line.startsWith("PHOTO;ENCODING=b;TYPE=JPEG:")) {
+                    //contatto.setImmagineProfilo(Integer.parseInt(line.substring(27)));
+                //}
+            else if (line.startsWith("END:VCARD")) {
                     System.out.println("\nAggiungo il contatto alla rubrica");
                     if(r.aggiungiContattoEVerifica(contatto))
                         lista.add(contatto);
                 }
             }
-            // TEST - eliminare in seguito
+
+            // TEST
             System.out.println("\n"+ getClass() + " - import ***\n");
             System.out.println("\n****RUBRICA***\n" + r.toString());
             System.out.println("\n***LISTA CONTATTI***\n" + lista.toString());
-            // FINE TEST - eliminare in seguito
+            // FINE TEST
 
             System.out.println("Rubrica importata con successo");
         } catch (IOException e) {

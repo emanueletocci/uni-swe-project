@@ -1,7 +1,7 @@
 /**
  * @file RubricaController.java
  * @brief questo file contiene l'implementazione del Controller principale per la gestione della rubrica telefonica.
- * @autor Gruppo07
+ * @author Gruppo07
  * @date Dicembre, 2024
  */
 
@@ -15,6 +15,7 @@ import java.time.LocalDate;
 import java.util.ResourceBundle;
 import it.unisa.diem.swe.group07.rubrica.gestoreIO.Export;
 import it.unisa.diem.swe.group07.rubrica.gestoreIO.Import;
+import it.unisa.diem.swe.group07.rubrica.models.Rubrica;
 import javafx.beans.binding.Bindings;
 import javafx.scene.control.*;
 import it.unisa.diem.swe.group07.rubrica.models.ContattoEsteso;
@@ -31,6 +32,13 @@ import javafx.scene.control.TextField;
 import javafx.stage.FileChooser;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
+
+/**
+ * @brief La classe rappresenta il controllore responsabile della gestione della vista principale.
+ * @see Rubrica
+ * @see CreaContattoController
+ * @see AbstractController
+ */
 
 public class RubricaController extends AbstractController implements Initializable{
      /**
@@ -358,7 +366,10 @@ public class RubricaController extends AbstractController implements Initializab
     }
 
     /**
-     * @brief Gestisce il salvataggio delle modifiche apportate a un contatto esistente.
+     * @brief Gestisce il salvataggio delle modifiche apportate a un contatto esistente, effettuando i controlli sui campi obbligatori (nome e cognome),
+     * indirizzi email e numeri telefonici. Nel caso in cui uno dei controlli dovesse fallire, il metodo mostra un dialog di errore e non consente il
+     * salvataggio del contatto modificato.
+     *
      */
         @FXML
     private void gestioneSalvaModifiche(){
@@ -402,7 +413,7 @@ public class RubricaController extends AbstractController implements Initializab
                 contattoSelezionato.setNote(noteField.getText());
             }
 
-            //TEST - rimuovere in seguito
+            //TEST
             System.out.println("\n"+ getClass() + " - gestioneSalvaModifiche ***\n");
             System.out.println("\n****RUBRICA***\n" + this.getRubrica().toString());
             System.out.println("\n***LISTA CONTATTI***\n" + this.getListaContatti().toString());
@@ -537,10 +548,10 @@ public class RubricaController extends AbstractController implements Initializab
                 "Export completato",
                 "Il contatto è stato esportato con successo\noutput: " + file.getAbsolutePath() + ".vcf");
     }
-
     /**
      * @brief Gestore dell'evento "Importa Rubrica/Contatto". Il metodo apre una finestra che consente all'utente di selezionare un file da importare
      * e chiama il metodo responsabile dell'import.
+     * @throws IOException
      */
     @FXML
     public void handleImportRubrica() throws IOException {
