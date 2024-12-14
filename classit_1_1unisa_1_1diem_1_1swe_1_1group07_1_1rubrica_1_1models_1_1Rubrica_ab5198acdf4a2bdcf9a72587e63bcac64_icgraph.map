@@ -1,0 +1,5 @@
+<map id="it.unisa.diem.swe.group07.rubrica.models.Rubrica.getContatti" name="it.unisa.diem.swe.group07.rubrica.models.Rubrica.getContatti">
+<area shape="rect" id="node1" title="metodo restituisce tutti i contatti come una Collection" alt="" coords="352,37,651,77"/>
+<area shape="rect" id="node2" href="$classit_1_1unisa_1_1diem_1_1swe_1_1group07_1_1rubrica_1_1gestoreIO_1_1Export.html#a91f65a6e35064ea1af3bbc0168cee290" title="metodo per fornire un file di output conforme allo standard vCard che contiene tutta la rubrica" alt="" coords="7,5,303,45"/>
+<area shape="rect" id="node3" href="$classit_1_1unisa_1_1diem_1_1swe_1_1group07_1_1rubrica_1_1models_1_1Rubrica.html#ab387b79086ac69e5ffdb01fcfd8697b9" title="metodo toStirng()" alt="" coords="5,69,304,109"/>
+</map>

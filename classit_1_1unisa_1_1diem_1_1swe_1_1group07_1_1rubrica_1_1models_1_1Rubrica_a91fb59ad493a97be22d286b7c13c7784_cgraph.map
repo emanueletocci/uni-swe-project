@@ -1,0 +1,4 @@
+<map id="it.unisa.diem.swe.group07.rubrica.models.Rubrica.aggiungiContattoEVerifica" name="it.unisa.diem.swe.group07.rubrica.models.Rubrica.aggiungiContattoEVerifica">
+<area shape="rect" id="node1" title="il metodo aggiunge un contatto alla rubrica e verifica se l&#39;aggiunta é andata a buon fine." alt="" coords="5,5,304,45"/>
+<area shape="rect" id="node2" href="$classit_1_1unisa_1_1diem_1_1swe_1_1group07_1_1rubrica_1_1models_1_1Contatto.html#a53ef90855656ba9330f072c5d916522d" title="metodo getter per l&#39;attributo &quot;id&quot;." alt="" coords="352,5,651,45"/>
+</map>

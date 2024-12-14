@@ -1,5 +1,8 @@
 <map id="it.unisa.diem.swe.group07.rubrica.models.Rubrica.aggiornaContatto" name="it.unisa.diem.swe.group07.rubrica.models.Rubrica.aggiornaContatto">
-<area shape="rect" id="node1" title="il metodo consente di aggiornare un contatto esistente nella rubrica." alt="" coords="5,35,304,75"/>
-<area shape="rect" id="node2" href="$classit_1_1unisa_1_1diem_1_1swe_1_1group07_1_1rubrica_1_1models_1_1Rubrica.html#a2c8356c3f6edcf0ac21e535c44eba076" title="il metodo aggiunge un contatto alla rubrica e verifica se l&#39;aggiunta é andata a buon fine." alt="" coords="352,5,651,45"/>
-<area shape="rect" id="node3" href="$classit_1_1unisa_1_1diem_1_1swe_1_1group07_1_1rubrica_1_1models_1_1Contatto.html#a53ef90855656ba9330f072c5d916522d" title="metodo getter per l&#39;attributo &quot;id&quot;." alt="" coords="699,35,997,75"/>
+<area shape="rect" id="Node000001" title="il metodo consente di aggiornare un contatto esistente nella rubrica." alt="" coords="5,36,304,81"/>
+<area shape="rect" id="Node000002" href="$classit_1_1unisa_1_1diem_1_1swe_1_1group07_1_1rubrica_1_1models_1_1Rubrica.html#a2c8356c3f6edcf0ac21e535c44eba076" title="il metodo aggiunge un contatto alla rubrica e verifica se l&#39;aggiunta é andata a buon fine." alt="" coords="352,5,650,50"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="304,42,336,40,336,45,304,48"/>
+<area shape="rect" id="Node000003" href="$classit_1_1unisa_1_1diem_1_1swe_1_1group07_1_1rubrica_1_1models_1_1Contatto.html#a53ef90855656ba9330f072c5d916522d" title="metodo getter per l&#39;attributo &quot;id&quot;." alt="" coords="698,36,996,81"/>
+<area shape="poly" id="edge3_Node000001_Node000003" title=" " alt="" coords="304,59,352,60,650,60,683,59,683,65,650,65,352,65,304,64"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="651,38,683,41,682,46,650,44"/>
 </map>

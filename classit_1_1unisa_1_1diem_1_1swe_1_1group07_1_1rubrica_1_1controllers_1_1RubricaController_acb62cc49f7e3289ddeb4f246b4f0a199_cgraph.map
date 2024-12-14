@@ -1,7 +1,7 @@
 <map id="it.unisa.diem.swe.group07.rubrica.controllers.RubricaController.initialize" name="it.unisa.diem.swe.group07.rubrica.controllers.RubricaController.initialize">
 <area shape="rect" id="node1" title="Metodo di inizializzazione della vista e dei dati. Imposta la lista dei contatti, la configurazione d..." alt="" coords="5,69,325,109"/>
-<area shape="rect" id="node2" href="$classit_1_1unisa_1_1diem_1_1swe_1_1group07_1_1rubrica_1_1models_1_1Rubrica.html#a2c8356c3f6edcf0ac21e535c44eba076" title="il metodo aggiunge un contatto alla rubrica e verifica se l&#39;aggiunta é andata a buon fine." alt="" coords="384,5,683,45"/>
-<area shape="rect" id="node4" href="$classit_1_1unisa_1_1diem_1_1swe_1_1group07_1_1rubrica_1_1controllers_1_1AbstractController.html#a44c01a5b8e871228a96c90a31e57a08d" title="metodo getter della struttura (lista osservabile)." alt="" coords="373,69,693,109"/>
+<area shape="rect" id="node2" href="$classit_1_1unisa_1_1diem_1_1swe_1_1group07_1_1rubrica_1_1models_1_1Rubrica.html#a99087d372fbc453195e1ae33e53a7e0f" title="metodo per l&#39;aggiunta di un contatto alla rubrica" alt="" coords="384,5,683,45"/>
+<area shape="rect" id="node4" href="$classit_1_1unisa_1_1diem_1_1swe_1_1group07_1_1rubrica_1_1controllers_1_1AbstractController.html#ab6dfbd5909251b1bcbced4d2e7efc6b1" title="metodo getter della struttura (lista osservabile)." alt="" coords="373,69,693,109"/>
 <area shape="rect" id="node5" href="$classit_1_1unisa_1_1diem_1_1swe_1_1group07_1_1rubrica_1_1controllers_1_1AbstractController.html#ab7e58e22666144ab379d7311e78847cd" title="metodo getter dell&#39;attributo rubrica." alt="" coords="373,133,693,173"/>
 <area shape="rect" id="node3" href="$classit_1_1unisa_1_1diem_1_1swe_1_1group07_1_1rubrica_1_1models_1_1Contatto.html#a53ef90855656ba9330f072c5d916522d" title="metodo getter per l&#39;attributo &quot;id&quot;." alt="" coords="741,5,1040,45"/>
 </map>
