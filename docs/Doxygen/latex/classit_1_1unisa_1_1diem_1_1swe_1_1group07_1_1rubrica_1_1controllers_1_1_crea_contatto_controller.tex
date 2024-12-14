@@ -1,0 +1,62 @@
+\doxysection{Riferimenti per la classe it.\+unisa.\+diem.\+swe.\+group07.\+rubrica.\+controllers.\+Crea\+Contatto\+Controller}
+\hypertarget{classit_1_1unisa_1_1diem_1_1swe_1_1group07_1_1rubrica_1_1controllers_1_1_crea_contatto_controller}{}\label{classit_1_1unisa_1_1diem_1_1swe_1_1group07_1_1rubrica_1_1controllers_1_1_crea_contatto_controller}\index{it.unisa.diem.swe.group07.rubrica.controllers.CreaContattoController@{it.unisa.diem.swe.group07.rubrica.controllers.CreaContattoController}}
+
+
+Diagramma delle classi per it.\+unisa.\+diem.\+swe.\+group07.\+rubrica.\+controllers.\+Crea\+Contatto\+Controller
+% FIG 0
+\doxysubsubsection*{Membri pubblici}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classit_1_1unisa_1_1diem_1_1swe_1_1group07_1_1rubrica_1_1controllers_1_1_crea_contatto_controller_a0c03cf551a62935611cbecba9a89fbbc}\label{classit_1_1unisa_1_1diem_1_1swe_1_1group07_1_1rubrica_1_1controllers_1_1_crea_contatto_controller_a0c03cf551a62935611cbecba9a89fbbc} 
+void {\bfseries initialize} (URL location, Resource\+Bundle resources)
+\item 
+void \mbox{\hyperlink{classit_1_1unisa_1_1diem_1_1swe_1_1group07_1_1rubrica_1_1controllers_1_1_crea_contatto_controller_a16d9eaa6b2dcf48fa2e33e168a17e0c2}{handle\+Aggiungi\+Contatto}} (Action\+Event event)
+\begin{DoxyCompactList}\small\item\em Il metodo preleva i valori dai Text Field, crea un contatto temporaneo e, se i valori inseriti dall\textquotesingle{}utente sono validi, lo aggiunge alla rubrica (e alla lista osservabile, di conseguenza aggiorna la Table\+View). \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Membri pubblici ereditati da \mbox{\hyperlink{classit_1_1unisa_1_1diem_1_1swe_1_1group07_1_1rubrica_1_1controllers_1_1_abstract_controller}{it.\+unisa.\+diem.\+swe.\+group07.\+rubrica.\+controllers.\+Abstract\+Controller}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classit_1_1unisa_1_1diem_1_1swe_1_1group07_1_1rubrica_1_1models_1_1_rubrica}{Rubrica}} \mbox{\hyperlink{classit_1_1unisa_1_1diem_1_1swe_1_1group07_1_1rubrica_1_1controllers_1_1_abstract_controller_ab7e58e22666144ab379d7311e78847cd}{get\+Rubrica}} ()
+\begin{DoxyCompactList}\small\item\em metodo getter dell\textquotesingle{}attributo rubrica. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classit_1_1unisa_1_1diem_1_1swe_1_1group07_1_1rubrica_1_1controllers_1_1_abstract_controller_a7451ffd24e0e1d5c9e2cc7e5cb767985}{set\+Rubrica}} (\mbox{\hyperlink{classit_1_1unisa_1_1diem_1_1swe_1_1group07_1_1rubrica_1_1models_1_1_rubrica}{Rubrica}} rubrica)
+\begin{DoxyCompactList}\small\item\em metodo setter dell\textquotesingle{}attributo rubrica. \end{DoxyCompactList}\item 
+Observable\+List$<$ \mbox{\hyperlink{classit_1_1unisa_1_1diem_1_1swe_1_1group07_1_1rubrica_1_1models_1_1_contatto_esteso}{Contatto\+Esteso}} $>$ \mbox{\hyperlink{classit_1_1unisa_1_1diem_1_1swe_1_1group07_1_1rubrica_1_1controllers_1_1_abstract_controller_a44c01a5b8e871228a96c90a31e57a08d}{get\+Lista\+Contatti}} ()
+\begin{DoxyCompactList}\small\item\em metodo getter della struttura (lista osservabile). \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classit_1_1unisa_1_1diem_1_1swe_1_1group07_1_1rubrica_1_1controllers_1_1_abstract_controller_a4d9ed27334c97cac3f274a3c2a9bbd6f}{set\+Lista\+Contatti}} (Observable\+List$<$ \mbox{\hyperlink{classit_1_1unisa_1_1diem_1_1swe_1_1group07_1_1rubrica_1_1models_1_1_contatto_esteso}{Contatto\+Esteso}} $>$ lista\+Contatti)
+\begin{DoxyCompactList}\small\item\em metodo setter della lista osservabile \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classit_1_1unisa_1_1diem_1_1swe_1_1group07_1_1rubrica_1_1controllers_1_1_abstract_controller_ad638bfbb3c6345b99f03c0d4a38953b7}{mostra\+Dialog}} (Alert.\+Alert\+Type type, String titolo, String messaggio)
+\begin{DoxyCompactList}\small\item\em metodo che consenti di mostrare un generico dialog. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Altri membri ereditati}
+\doxysubsection*{Membri protetti ereditati da \mbox{\hyperlink{classit_1_1unisa_1_1diem_1_1swe_1_1group07_1_1rubrica_1_1controllers_1_1_abstract_controller}{it.\+unisa.\+diem.\+swe.\+group07.\+rubrica.\+controllers.\+Abstract\+Controller}}}
+\begin{DoxyCompactItemize}
+\item 
+Boolean \mbox{\hyperlink{classit_1_1unisa_1_1diem_1_1swe_1_1group07_1_1rubrica_1_1controllers_1_1_abstract_controller_a607d7dd76abbb0a2bb252730a8562b97}{controlla\+Campi\+Obbligatori}} (String nome, String cognome)
+\begin{DoxyCompactList}\small\item\em metodo verificare che almeno un Text\+Field tra nome e cognome è stato riempito dall\textquotesingle{}utente. \end{DoxyCompactList}\item 
+Boolean \mbox{\hyperlink{classit_1_1unisa_1_1diem_1_1swe_1_1group07_1_1rubrica_1_1controllers_1_1_abstract_controller_aa7ba6f967b85192f31d60ba989935d26}{controlla\+Telefono}} (String telefono)
+\begin{DoxyCompactList}\small\item\em metodo per la verifica del numero telefonico del contatto. \end{DoxyCompactList}\item 
+Boolean \mbox{\hyperlink{classit_1_1unisa_1_1diem_1_1swe_1_1group07_1_1rubrica_1_1controllers_1_1_abstract_controller_ad963d5274556084e79632fec78838744}{controlla\+Email}} (String email)
+\begin{DoxyCompactList}\small\item\em metodo per la verifica dell\textquotesingle{}indirizzo email del contatto. Il metodo verifica solamente la presenta della "{}@"{} all\textquotesingle{}interno dell´email inserita. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Documentazione delle funzioni membro}
+\Hypertarget{classit_1_1unisa_1_1diem_1_1swe_1_1group07_1_1rubrica_1_1controllers_1_1_crea_contatto_controller_a16d9eaa6b2dcf48fa2e33e168a17e0c2}\index{it.unisa.diem.swe.group07.rubrica.controllers.CreaContattoController@{it.unisa.diem.swe.group07.rubrica.controllers.CreaContattoController}!handleAggiungiContatto@{handleAggiungiContatto}}
+\index{handleAggiungiContatto@{handleAggiungiContatto}!it.unisa.diem.swe.group07.rubrica.controllers.CreaContattoController@{it.unisa.diem.swe.group07.rubrica.controllers.CreaContattoController}}
+\doxysubsubsection{\texorpdfstring{handleAggiungiContatto()}{handleAggiungiContatto()}}
+{\footnotesize\ttfamily \label{classit_1_1unisa_1_1diem_1_1swe_1_1group07_1_1rubrica_1_1controllers_1_1_crea_contatto_controller_a16d9eaa6b2dcf48fa2e33e168a17e0c2} 
+void it.\+unisa.\+diem.\+swe.\+group07.\+rubrica.\+controllers.\+Crea\+Contatto\+Controller.\+handle\+Aggiungi\+Contatto (\begin{DoxyParamCaption}\item[{Action\+Event}]{event}{}\end{DoxyParamCaption})}
+
+
+
+Il metodo preleva i valori dai Text Field, crea un contatto temporaneo e, se i valori inseriti dall\textquotesingle{}utente sono validi, lo aggiunge alla rubrica (e alla lista osservabile, di conseguenza aggiorna la Table\+View). 
+
+
+\begin{DoxyParams}[1]{Parametri}
+\mbox{\texttt{ in}}  & {\em event} & Evento generato dal click sul pulsante "{}\+Crea Contatto"{}. \\
+\hline
+\end{DoxyParams}
+Questo è il grafo delle chiamate per questa funzione\+:
+% FIG 1
+
+
+La documentazione per questa classe è stata generata a partire dal seguente file\+:\begin{DoxyCompactItemize}
+\item 
+sources/\+Rubrica/src/main/java/it/unisa/diem/swe/group07/rubrica/controllers/\mbox{\hyperlink{_crea_contatto_controller_8java}{Crea\+Contatto\+Controller.\+java}}\end{DoxyCompactItemize}

@@ -1,0 +1,11 @@
+digraph "it.unisa.diem.swe.group07.rubrica.controllers.AbstractController.controllaEmail"
+{
+ // LATEX_PDF_SIZE
+  bgcolor="transparent";
+  edge [fontname=Helvetica,fontsize=10,labelfontname=Helvetica,labelfontsize=10];
+  node [fontname=Helvetica,fontsize=10,shape=box,height=0.2,width=0.4];
+  rankdir="RL";
+  Node1 [id="Node000001",label="it.unisa.diem.swe.group07.rubrica.controllers.\lAbstractController.controllaEmail",height=0.2,width=0.4,color="gray40", fillcolor="grey60", style="filled", fontcolor="black",tooltip="metodo per la verifica dell'indirizzo email del contatto. Il metodo verifica solamente la presenta de..."];
+  Node1 -> Node2 [id="edge2_Node000001_Node000002",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node2 [id="Node000002",label="it.unisa.diem.swe.group07.rubrica.controllers.\lCreaContattoController.handleAggiungiContatto",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classit_1_1unisa_1_1diem_1_1swe_1_1group07_1_1rubrica_1_1controllers_1_1_crea_contatto_controller.html#a16d9eaa6b2dcf48fa2e33e168a17e0c2",tooltip="Il metodo preleva i valori dai Text Field, crea un contatto temporaneo e, se i valori inseriti dall'u..."];
+}

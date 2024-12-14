@@ -1,0 +1,32 @@
+digraph "it.unisa.diem.swe.group07.rubrica.models.Contatto.getId"
+{
+ // LATEX_PDF_SIZE
+  bgcolor="transparent";
+  edge [fontname=Helvetica,fontsize=10,labelfontname=Helvetica,labelfontsize=10];
+  node [fontname=Helvetica,fontsize=10,shape=box,height=0.2,width=0.4];
+  rankdir="RL";
+  Node1 [id="Node000001",label="it.unisa.diem.swe.group07.rubrica.models.\lContatto.getId",height=0.2,width=0.4,color="gray40", fillcolor="grey60", style="filled", fontcolor="black",tooltip="metodo getter per l'attributo \"id\"."];
+  Node1 -> Node2 [id="edge1_Node000001_Node000002",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node2 [id="Node000002",label="it.unisa.diem.swe.group07.rubrica.models.\lRubrica.aggiornaContatto",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classit_1_1unisa_1_1diem_1_1swe_1_1group07_1_1rubrica_1_1models_1_1_rubrica.html#a16438865daa9d64349f5f709ce24bbcc",tooltip="il metodo consente di aggiornare un contatto esistente nella rubrica."];
+  Node1 -> Node3 [id="edge2_Node000001_Node000003",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node3 [id="Node000003",label="it.unisa.diem.swe.group07.rubrica.models.\lRubrica.aggiungiContatto",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classit_1_1unisa_1_1diem_1_1swe_1_1group07_1_1rubrica_1_1models_1_1_rubrica.html#afef4a769c6e64c535ce612ae8769f8b3",tooltip="metodo per l'aggiunta di un contatto alla rubrica"];
+  Node1 -> Node4 [id="edge3_Node000001_Node000004",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node4 [id="Node000004",label="it.unisa.diem.swe.group07.rubrica.models.\lRubrica.aggiungiContattoEVerifica",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classit_1_1unisa_1_1diem_1_1swe_1_1group07_1_1rubrica_1_1models_1_1_rubrica.html#a2c8356c3f6edcf0ac21e535c44eba076",tooltip="il metodo aggiunge un contatto alla rubrica e verifica se l'aggiunta é andata a buon fine."];
+  Node4 -> Node2 [id="edge4_Node000004_Node000002",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node4 -> Node5 [id="edge5_Node000004_Node000005",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node5 [id="Node000005",label="it.unisa.diem.swe.group07.rubrica.controllers.\lRubricaController.initialize",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classit_1_1unisa_1_1diem_1_1swe_1_1group07_1_1rubrica_1_1controllers_1_1_rubrica_controller.html#acb62cc49f7e3289ddeb4f246b4f0a199",tooltip="Metodo di inizializzazione della vista e dei dati. Imposta la lista dei contatti, la configurazione d..."];
+  Node1 -> Node6 [id="edge6_Node000001_Node000006",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node6 [id="Node000006",label="it.unisa.diem.swe.group07.rubrica.gestore\lIO.Export.getVcard",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classit_1_1unisa_1_1diem_1_1swe_1_1group07_1_1rubrica_1_1gestore_i_o_1_1_export.html#afd830265662e1b06d837b54b797996f2",tooltip="metodo per ottenere la formattazione conforme allo standard vCard da un contatto"];
+  Node6 -> Node7 [id="edge7_Node000006_Node000007",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node7 [id="Node000007",label="it.unisa.diem.swe.group07.rubrica.gestore\lIO.Export.esportaContatto",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classit_1_1unisa_1_1diem_1_1swe_1_1group07_1_1rubrica_1_1gestore_i_o_1_1_export.html#a733874ab51e6bb3c67c54fe41f9c1bcf",tooltip="metodo per fornire un file di output conforme allo standard vCard che contiene tutta le informazioni ..."];
+  Node7 -> Node8 [id="edge8_Node000007_Node000008",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node8 [id="Node000008",label="it.unisa.diem.swe.group07.rubrica.controllers.\lRubricaController.handleExportContatto",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classit_1_1unisa_1_1diem_1_1swe_1_1group07_1_1rubrica_1_1controllers_1_1_rubrica_controller.html#a28f1cd139c6377895c583d8d6edcae27",tooltip="Gestore dell'evento \"Esporta Contatto\". Il metodo apre una finestra che consente all'utente di selezi..."];
+  Node6 -> Node9 [id="edge9_Node000006_Node000009",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node9 [id="Node000009",label="it.unisa.diem.swe.group07.rubrica.gestore\lIO.Export.esportaRubrica",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classit_1_1unisa_1_1diem_1_1swe_1_1group07_1_1rubrica_1_1gestore_i_o_1_1_export.html#a91f65a6e35064ea1af3bbc0168cee290",tooltip="metodo per fornire un file di output conforme allo standard vCard che contiene tutta la rubrica"];
+  Node1 -> Node10 [id="edge10_Node000001_Node000010",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node10 [id="Node000010",label="it.unisa.diem.swe.group07.rubrica.controllers.\lCreaContattoController.handleAggiungiContatto",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classit_1_1unisa_1_1diem_1_1swe_1_1group07_1_1rubrica_1_1controllers_1_1_crea_contatto_controller.html#a16d9eaa6b2dcf48fa2e33e168a17e0c2",tooltip="Il metodo preleva i valori dai Text Field, crea un contatto temporaneo e, se i valori inseriti dall'u..."];
+  Node1 -> Node11 [id="edge11_Node000001_Node000011",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node11 [id="Node000011",label="it.unisa.diem.swe.group07.rubrica.models.\lRubrica.ricercaContatto",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classit_1_1unisa_1_1diem_1_1swe_1_1group07_1_1rubrica_1_1models_1_1_rubrica.html#a691001da4a545f21d47e133f8866adfb",tooltip="metodo ricerca di un contatto in rubrica"];
+  Node1 -> Node12 [id="edge12_Node000001_Node000012",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node12 [id="Node000012",label="it.unisa.diem.swe.group07.rubrica.models.\lRubrica.rimuoviContatto",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classit_1_1unisa_1_1diem_1_1swe_1_1group07_1_1rubrica_1_1models_1_1_rubrica.html#abd1a9eb5fb73d4ffe2f60c08540d3a62",tooltip="metodo per la rimozione di un contatto dalla rubrica"];
+}
