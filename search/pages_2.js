@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['organizzazionecodice_0',['OrganizzazioneCodice',['../md_docs_bozze_Diagrammi_Package_OrganizzazioneCodice.html',1,'']]]
+  ['pag_5fexample_0',['pag_example',['../pag_example.html',1,'']]]
 ];
