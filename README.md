@@ -28,6 +28,7 @@
 - [Documentazione Latex](docs/Documentazione.pdf) 
 - [Mockup GUI](https://www.figma.com/design/yRfKYzcJxZzwm7U6lgOw9i/Rubrica-Telefonica?node-id=5-8&t=NYnUuBUaWFlwxWm4-1)
 - [Bozze di progetto](https://docs.google.com/document/d/1jKyEV_gxnbgjILj21dkqXaTgSgP6dwEA0LxO7k3-BeE/edit?usp=sharing)
+- [Documentazione Doxygen](https://emanueletocci.github.io/uni-swe-project/)
 
 <h2 id="collab">🧑‍🤝‍🧑 Membri</h2>
 
