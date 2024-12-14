@@ -25,7 +25,7 @@ public class Export {
  * @see Rubrica
  * @see Import
 */
-    public String getVcard(ContattoEsteso c) throws IOException {
+    public String getVcard(ContattoEsteso c){
         StringBuilder sb = new StringBuilder();
         sb.append("BEGIN:VCARD\n");
         sb.append("VERSION:3.0\n");
@@ -42,9 +42,9 @@ public class Export {
         if (c.getNote() != null) sb.append("NOTE:").append(c.getNote()).append("\n");
         if (c.getPreferito() != null) sb.append("X-PREF:1\n");
         if (c.getEmergenza() != null) sb.append("X-EMERG:1\n");
-        if (c.getImmagineProfilo() != null) {
+        if (c.getImmagineProfilo() != null) //{
             //non funzionava perchè c'era un immagine statica in base64, dobbiamo capire come codificarla al momento del export
-            sb.append("PHOTO;ENCODING=b;TYPE=JPEG:").append(base64String).append("\n");}
+            //sb.append("PHOTO;ENCODING=b;TYPE=JPEG:").append(base64String).append("\n");}
         sb.append("UID:").append (c.getId()).append("\n");
         sb.append("END:VCARD\n");
         return sb.toString();
