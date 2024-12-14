@@ -182,11 +182,11 @@ public class RubricaController extends AbstractController implements Initializab
         // La lista osservabile é inizializzata a partire dagli elementi presenti nella rubrica
         this.getListaContatti().addAll(this.getRubrica().getContatti());
 
-        // TEST - eliminare in seguito
+        // TEST
         System.out.println("\n"+ getClass() + " - initialize ***\n");
         System.out.println("\n****RUBRICA***\n" + this.getRubrica().toString());
         System.out.println("\n***LISTA CONTATTI***\n" + this.getListaContatti().toString());
-        // FINE TEST - eliminare in seguito
+        // FINE TEST
 
         nomeClm.setResizable(false);
         cognomeClm.setResizable(false);
@@ -339,11 +339,11 @@ public class RubricaController extends AbstractController implements Initializab
             // Aggiorna la TableView (opzionale, perché ObservableList lo fa automaticamente)
             rubricaTable.refresh();
 
-            // TEST - rimuovere in seguito
+            // TEST
             System.out.println("\n"+ getClass() + " - handleEliminaContatto ***\n");
             System.out.println("\n****RUBRICA***\n" + this.getRubrica().toString());
             System.out.println("\n***LISTA CONTATTI***\n" + this.getListaContatti().toString());
-            // FINE TEST - rimuovere in seguito
+            // FINE TEST
         }
     }
 

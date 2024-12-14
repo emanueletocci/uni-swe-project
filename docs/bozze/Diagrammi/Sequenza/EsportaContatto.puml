@@ -2,7 +2,7 @@
     title Esporta Contatto
     autonumber
 
-    participant Utente 
+    actor Utente 
     participant RubricaViewController
     collections FileSystem 
 

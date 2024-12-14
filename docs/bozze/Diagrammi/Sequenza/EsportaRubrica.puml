@@ -2,7 +2,7 @@
     title Esporta Rubrica
     autonumber
 
-    participant Utente 
+    actor Utente 
     participant RubricaViewController
     collections Rubrica
     collections FileSystem 

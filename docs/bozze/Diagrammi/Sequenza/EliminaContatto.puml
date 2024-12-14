@@ -1,0 +1,17 @@
+@startuml RimozioneContatto
+    title Rimuovi Contatto
+    autonumber 
+    actor Utente
+    participant CreaContattoViewController
+    collections Rubrica
+
+    activate Utente
+    Utente -> CreaContattoViewController : [clicca sull'icona "Elimina"]
+    activate CreaContattoViewController
+    CreaContattoViewController -> CreaContattoViewController : handleEliminaContatto() 
+    activate CreaContattoViewController #3375E0
+    CreaContattoViewController -> Rubrica : rimuoviContatto()
+    activate Rubrica
+    deactivate CreaContattoViewController
+    deactivate Rubrica
+@enduml

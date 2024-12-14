@@ -3,7 +3,7 @@
   autonumber
   
   actor Utente
-  actor RubricaViewController
+  participant RubricaViewController
   collections Rubrica
   collections FileSystem
   
