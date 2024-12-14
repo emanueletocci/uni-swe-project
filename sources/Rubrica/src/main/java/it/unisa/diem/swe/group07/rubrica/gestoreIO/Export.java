@@ -2,13 +2,13 @@ package it.unisa.diem.swe.group07.rubrica.gestoreIO;
 
 import it.unisa.diem.swe.group07.rubrica.models.ContattoEsteso;
 import it.unisa.diem.swe.group07.rubrica.models.Rubrica;
+import javafx.scene.image.Image;
 
+import javax.imageio.ImageIO;
+import java.awt.image.BufferedImage;
 import java.io.*;
 import java.nio.charset.StandardCharsets;
-import java.util.ArrayList;
-import java.util.Collection;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 /**
  * @file Export.java
@@ -25,7 +25,7 @@ public class Export {
  * @see Rubrica
  * @see Import
 */
-    public String getVcard(ContattoEsteso c) {
+    public String getVcard(ContattoEsteso c) throws IOException {
         StringBuilder sb = new StringBuilder();
         sb.append("BEGIN:VCARD\n");
         sb.append("VERSION:3.0\n");
@@ -42,7 +42,9 @@ public class Export {
         if (c.getNote() != null) sb.append("NOTE:").append(c.getNote()).append("\n");
         if (c.getPreferito() != null) sb.append("X-PREF:1\n");
         if (c.getEmergenza() != null) sb.append("X-EMERG:1\n");
-        if (c.getImmagineProfilo() != null) sb.append("PHOTO;ENCODING=b;TYPE=JPEG:").;
+        if (c.getImmagineProfilo() != null) {
+            //non funzionava perchè c'era un immagine statica in base64, dobbiamo capire come codificarla al momento del export
+            sb.append("PHOTO;ENCODING=b;TYPE=JPEG:").append(base64String).append("\n");}
         sb.append("UID:").append (c.getId()).append("\n");
         sb.append("END:VCARD\n");
         return sb.toString();
