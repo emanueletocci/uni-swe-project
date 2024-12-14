@@ -1,4 +1,4 @@
-@startuml
+@startuml RicercaContatto
     title Ricerca Contatto
     autonumber
     actor Utente

@@ -1,4 +1,4 @@
-@startuml
+@startuml ToggleEmergenza
 title Imposta Contatto Emergenza
 autonumber
 actor Utente

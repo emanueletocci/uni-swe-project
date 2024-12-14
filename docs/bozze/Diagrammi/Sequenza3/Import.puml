@@ -1,4 +1,4 @@
-@startuml
+@startuml Import
   title Importa Rubrica/Contatto
   autonumber
   
@@ -21,12 +21,10 @@
       activate RubricaViewController #3375E0
         loop EOF
             RubricaViewController -> Rubrica : aggiungiContatto()
-            activate RubricaViewController #3375E0
             activate Rubrica
+            deactivate RubricaViewController 
+            deactivate Rubrica
         end
-      deactivate RubricaViewController 
-      deactivate Rubrica
-      deactivate RubricaViewController 
       deactivate RubricaViewController 
 
     else #pink [Annulla]

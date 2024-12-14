@@ -1,4 +1,4 @@
-@startuml
+@startuml TogglePreferiti
 title Imposta Contatto Preferito
 autonumber
 actor Utente
