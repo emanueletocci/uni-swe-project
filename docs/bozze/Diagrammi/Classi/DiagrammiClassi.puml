@@ -2,17 +2,17 @@
 package rubrica {
 
     package controllers{
-        class AbstractController{
-   + AbstractController():
-  - listaContatti: ObservableList<ContattoEsteso>
-  - rubrica: Rubrica
-  + setRubrica(Rubrica): void
-  + mostraDialog(AlertType, String, String): void
-  + getRubrica(): Rubrica
-  + getListaContatti(): ObservableList<ContattoEsteso>
-  + setListaContatti(ObservableList<ContattoEsteso>): void
-            
-        }
+       class GenericController{
+            + GenericController():
+            - listaContatti: ObservableList<ContattoEsteso>
+            - rubrica: Rubrica
+            + mostraDialog(AlertType, String, String): void
+            + controllaCampiObbligatori(String, String) : boolean
+            + controllaTelelfono(String) : boolean
+            + controllaEmail(String) : boolean
+
+    }
+
         class RubricaController{
             + RubricaController()
             - contattoSelezionato: ContattoEsteso
@@ -29,94 +29,68 @@ package rubrica {
        
         class CreaContattoController {
             + CreaContattoController()
+            + initialize (URL, ResourceBundle) : void
         }
 
     }
 
-  class App {
-- root: Parent
-  - scene: Scene
-  + start(Stage): void
-  + main(String[]): void
+        class App {
+           - root: Parent
+           - scene: Scene
+           + start(Stage): void
+           + main(String[]): void
         }
 
     package models{
 
     class Rubrica{
-  + Rubrica():
-  - rubrica: Map<Integer, ContattoEsteso>
-  + ricercaContatto(ContattoEsteso): ContattoEsteso
-  + getContatti(): Collection<ContattoEsteso>
-  + rimuoviContatto(ContattoEsteso): ContattoEsteso
-  + aggiornaContatto(ContattoEsteso): Boolean
-  + toString(): String
-  + aggiungiContatto(ContattoEsteso): ContattoEsteso
-  + aggiungiContattoEVerifica(ContattoEsteso): Boolean
+          + Rubrica():
+          - rubrica: Map<Integer, ContattoEsteso>
+          + ricercaContatto(ContattoEsteso): ContattoEsteso
+          + rimuoviContatto(ContattoEsteso): ContattoEsteso
+          + aggiornaContatto(ContattoEsteso): Boolean
+          + toString(): String
+          + aggiungiContatto(ContattoEsteso): ContattoEsteso
+          + aggiungiContattoEVerifica(ContattoEsteso): Boolean
         }
        
   
-    class Contatto{
-  + Contatto():
-  + Contatto(String, String, String, String, String, Boolean, Boolean):
-  - cognome: String
-  - preferito: Boolean
-  - telefono3: String
-  - nome: String
-  - telefono2: String
-  - telefono1: String
-  - emergenza: Boolean
-  - id: Integer
-  + setTelefono3(String): void
-  + setId(Integer): void
-  + getTelefono2(): String
-  + toString(): String
-  + setTelefono2(String): void
-  + getNome(): String
-  + isEmergenza(): BooleanProperty
-  + getTelefono3(): String
-  + setNome(String): void
-  + setCognome(String): void
-  + setTelefono1(String): void
-  + getEmergenza(): Boolean
-  + hashCode(): int
-  + getId(): Integer
-  + getPreferito(): Boolean
-  + setPreferito(Boolean): void
-  + getCognome(): String
-  + getTelefono1(): String
-  + setEmergenza(Boolean): void
-  + equals(Object): boolean
-  + isPreferito(): BooleanProperty
+   class Contatto{
+          + Contatto():
+          + Contatto(String, String, String, String, String, Boolean, Boolean):
+          - cognome: String
+          - preferito: Boolean
+          - telefono3: String
+          - nome: String
+          - telefono2: String
+          - telefono1: String
+          - emergenza: Boolean
+          - id: Integer
+          + toString(): String
+          + isEmergenza(): BooleanProperty
+          + hashCode(): int
+          + equals(Object): boolean
+          + isPreferito(): BooleanProperty
+          + generaId() : Integer       
         }
 
    class ContattoEsteso {
-  + ContattoEsteso(String, String, String, String, String, String, String, String, LocalDate, String, String, String, Boolean, Boolean):
-  + ContattoEsteso():
-  - email3: String
-  - email2: String
-  - email1: String
-  - indirizzoResidenza: String
-  - sitoWeb: String
-  - compleanno: LocalDate
-  - note: String
-  + setIndirizzoResidenza(String): void
-  + setEmail3(String): void
-  + toString(): String
-  + setNote(String): void
-  + getEmail2(): String
-  + setCompleanno(LocalDate): void
-  + hashCode(): int
-  + getSitoWeb(): String
-  + getEmail3(): String
-  + getNote(): String
-  - generaId(): Integer
-  + setSitoWeb(String): void
-  + getIndirizzoResidenza(): String
-  + setEmail2(String): void
-  + setEmail1(String): void
-  + getEmail1(): String
-  + equals(Object): boolean
-  + getCompleanno(): LocalDate
+         + ContattoEsteso():
+         + ContattoEsteso(String, String, String, String, String, String, String, 
+                     String, LocalDate, String, String, String, Boolean, Boolean, Image)
+         - email3: String
+         - email2: String
+         - email1: String
+         - indirizzoResidenza: String
+         - sitoWeb: String
+         - compleanno: LocalDate
+         - note: String
+         - img : Image
+         + toString(): String
+         + hashCode(): int
+         - generaId(): Integer
+         + equals(Object): boolean
+  
         }
 
 
@@ -125,20 +99,21 @@ package rubrica {
   package gestoreIO {
 
     class Export {
- + Export():
-  - path: String
-  + getVcard(ContattoEsteso): String
-  + esportaRubrica(Rubrica): void
-  + esportaContatto(ContattoEsteso): void
+        + Export():
+        - path: String
+        + getVcard(ContattoEsteso): String
+        + esportaRubrica(Rubrica): void
+        + esportaContatto(ContattoEsteso): void
     }
  
    class Import {
       + Import():
-  - path: String
-  + importVcard(Rubrica, String): void
+      - path: String
+      + importVcard(Rubrica, String): void
 }
 }
 }
+
 Rubrica    "1" o-- "0..*"   Contatto
 Contatto     <|--           ContattoEsteso
 AbstractController  <|--   RubricaController
