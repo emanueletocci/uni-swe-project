@@ -1,5 +1,3 @@
-package java;
-
 import it.unisa.diem.swe.group07.rubrica.models.ContattoEsteso;
 import it.unisa.diem.swe.group07.rubrica.gestoreIO.Export;
 import it.unisa.diem.swe.group07.rubrica.models.Rubrica;
@@ -27,7 +25,7 @@ class ExportTest {
         c2 = new ContattoEsteso("Antonio", "Rossi", "+0234798123", "", "+3933333333", "", "prova@icloud.com", "prova@unisa.it", LocalDate.of(2001, 6, 9), "via Prova", "unisa.it", "note", false, false);
         e = new Export();
         sb = new StringBuffer();
-        path = "src/main/test/resources/";
+        path = "src/test/resources/";
         sb.append("BEGIN:VCARD\n")
                 .append("VERSION:3.0\n")
                 .append("FN:Emanuele Tocci\n")
