@@ -1,23 +1,21 @@
-@startuml
+@startuml DiagrammaClassi
 package rubrica {
 
     package controllers{
-       class GenericController{
-            + GenericController():
+       abstract class GenericController{
             - listaContatti: ObservableList<Contatto>
             - rubrica: Rubrica
             + mostraDialog(AlertType, String, String): void
-            + controllaCampiObbligatori(String, String) : boolean
-            + controllaTelelfono(String) : boolean
-            + controllaEmail(String) : boolean
+            # controllaCampiObbligatori(String, String) : boolean
+            # controllaTelelfono(String) : boolean
+            # controllaEmail(String) : boolean
 
     }
 
         class RubricaController{
-            + RubricaController()
             - contattoSelezionato: Contatto
-            - contattiFiltratiPreferiti: FilteredList<Contatto>
             - filteredContatti: FilteredList<Contatto>
+            - contattiFiltratiPreferiti: FilteredList<Contatto>
             - contattiFiltratiEmergenza: FilteredList<Contatto>
             + initialize(URL, ResourceBundle): void
             + handleNuovoContatto():void
@@ -34,17 +32,14 @@ package rubrica {
             - toggleEmergenza():void
             - togglePreferiti(): void
             - openGit():void
-            - handleImportRubrica():void
-            - handleExportRubrica(): void
-            - handleExportContatto(): void
-             
+            + handleImportRubrica():void
+            + handleExportRubrica(): void
+            + handleExportContatto(): void
         }
        
         class CreaContattoController {
             +handleAggiungiContatto(ActionEvent): void
-        
         }
-
     }
 
         class App {
@@ -57,51 +52,48 @@ package rubrica {
     package models{
 
     class Rubrica{
-          + Rubrica():
           - rubrica: Map<Integer, Contatto>
+          + aggiungiContatto(Contatto): Contatto
           + ricercaContatto(Contatto): Contatto
           + rimuoviContatto(Contatto): Contatto
           + aggiornaContatto(Contatto): Boolean
           + toString(): String
-          + aggiungiContatto(Contatto): Contatto
 
         }
        
   
    abstract class Contatto{
-          + Contatto():
           + Contatto(String, String, String, String, String, Boolean, Boolean):
-          - cognome: String
-          - preferito: Boolean
-          - telefono3: String
-          - nome: String
-          - telefono2: String
-          - telefono1: String
           - emergenza: Boolean
+          - nome: String
+          - cognome: String
+          - telefono1: String
+          - telefono2: String
+          - telefono3: String
+          - preferito: Boolean
           - id: Integer
           + toString(): String
           + isEmergenza(): BooleanProperty
           + hashCode(): int
           + equals(Object): boolean
           + isPreferito(): BooleanProperty
-          + generaId() : Integer       
+          # generaId() : Integer       
         }
 
    class ContattoEsteso {
-         + ContattoEsteso():
          + ContattoEsteso(String, String, String, String, String, String, String, 
-                     String, LocalDate, String, String, String, Boolean, Boolean, Image)
-         - email3: String
-         - email2: String
+                     String, LocalDate, String, String, String, Boolean, Boolean)
          - email1: String
+         - email2: String
+         - email3: String
          - indirizzoResidenza: String
          - sitoWeb: String
          - compleanno: LocalDate
          - note: String
-         - img : Image
          + toString(): String
+         + equals(Object) : boolean
          + hashCode(): int
-         - generaId(): Integer
+         # generaId(): Integer
   
         }
 
@@ -112,12 +104,12 @@ package rubrica {
 
     class Export {
         + getVcard(Contatto): String
-        + esportaRubrica(Rubrica): void
-        + esportaContatto(Contatto): void
+        + esportaRubrica(Rubrica, String): void
+        + esportaContatto(Contatto, String): void
     }
  
    class Import {
-      + importVcard(Rubrica, String): void
+      + importVcard(Rubrica, ObservableList, String): void
 }
 }
 }

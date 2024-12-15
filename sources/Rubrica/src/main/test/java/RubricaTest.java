@@ -1,3 +1,5 @@
+package java;
+
 import it.unisa.diem.swe.group07.rubrica.models.*;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;

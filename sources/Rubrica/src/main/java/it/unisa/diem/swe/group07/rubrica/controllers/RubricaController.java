@@ -509,7 +509,7 @@ public class RubricaController extends GenericController implements Initializabl
      * percorso in cui salvare il file e chiama il metodo responsabile dell'export della rubrica in formato .vcf.
      */
     @FXML
-    private void handleExportRubrica(){
+    public void handleExportRubrica(){
         FileChooser fileChooser = new FileChooser();
         fileChooser.getExtensionFilters().add(new FileChooser.ExtensionFilter("VCF", "*.vcf"));
         fileChooser.setTitle("Esporta Rubrica");
@@ -539,7 +539,7 @@ public class RubricaController extends GenericController implements Initializabl
         e.esportaContatto(c, file.getAbsolutePath());
         mostraDialog(Alert.AlertType.INFORMATION,
                 "Export completato",
-                "Il contatto è stato esportato con successo\noutput: " + file.getAbsolutePath());
+                "Il contatto è stato esportato con successo\noutput: " + file.getAbsolutePath() + ".vcf");
     }
     /**
      * @brief Gestore dell'evento "Importa Rubrica/Contatto". Il metodo apre una finestra che consente all'utente di selezionare un file da importare
