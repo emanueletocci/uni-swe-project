@@ -16,42 +16,36 @@ public class RubricaTest {
         r = new Rubrica();
     }
 
-    @Test
-    void TestAggiungiContatto() {
-        assertNull(r.ricercaContatto(c));
-        r.aggiungiContatto(c);
-        assertEquals(c, r.ricercaContatto(c));
-    }
 
     @Test
-    void TestAggiungiContatto() {
+    void testAggiungiContatto() {
         assertTrue(r.aggiungiContatto(c));
         assertFalse(r.aggiungiContatto(c));
     }
 
     @Test
-    void TestRimuoviContatto() {
+    void testRimuoviContatto() {
         assertNull(r.rimuoviContatto(c));
         r.aggiungiContatto(c);
         assertEquals(c, r.rimuoviContatto(c));
     }
 
     @Test
-    void TestRicercaContatto() {
+    void testRicercaContatto() {
         assertNull(r.ricercaContatto(c));
         r.aggiungiContatto(c);
         assertEquals(c, r.ricercaContatto(c));
     }
 
     @Test
-    void TestGetContatti() {
+    void testGetContatti() {
         assertFalse(r.getContatti().contains(c));
         r.aggiungiContatto(c);
         assertTrue(r.getContatti().contains(c));
     }
 
     @Test
-    void TestAggiornaContatto() {
+    void testAggiornaContatto() {
         assertFalse(r.aggiornaContatto(c));
         r.aggiungiContatto(c);
         assertTrue(r.aggiornaContatto(c));
@@ -62,7 +56,7 @@ public class RubricaTest {
     }
 
     @Test
-    void TestToString() {
+    void testToString() {
         r.aggiungiContatto(c);
         String s = "\nRubrica\n" + r.getContatti();
         assertEquals(s, r.toString());

@@ -1,7 +1,6 @@
 import it.unisa.diem.swe.group07.rubrica.models.ContattoEsteso;
 import it.unisa.diem.swe.group07.rubrica.gestoreIO.Export;
 import it.unisa.diem.swe.group07.rubrica.models.Rubrica;
-import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
@@ -59,7 +58,7 @@ class ExportTest {
 
     @Test
     void testEsportaRubrica() {
-        BufferedReader br = null;
+        BufferedReader br;
         String lineaCorrente;
         StringBuffer lettura = new StringBuffer();
         StringBuffer sb = new StringBuffer();
@@ -129,7 +128,7 @@ class ExportTest {
 
     @Test
     void testEsportaContatto() {
-        BufferedReader br = null;
+        BufferedReader br;
         String lineaCorrente;
         StringBuffer lettura = new StringBuffer();
         String valoreAtteso = sb.toString();

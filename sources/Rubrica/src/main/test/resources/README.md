@@ -1,0 +1,1 @@
+Questa cartella contiene file temporanei utilizzati da Junit5 durante la fase di testing.
