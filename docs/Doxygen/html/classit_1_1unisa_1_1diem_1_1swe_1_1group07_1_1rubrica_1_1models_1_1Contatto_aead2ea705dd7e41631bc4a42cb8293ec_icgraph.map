@@ -1,9 +1,11 @@
 <map id="it.unisa.diem.swe.group07.rubrica.models.Contatto.setId" name="it.unisa.diem.swe.group07.rubrica.models.Contatto.setId">
-<area shape="rect" id="Node000001" title="metodo setter per l&#39;attributo &quot;id&quot;." alt="" coords="719,40,1017,85"/>
-<area shape="rect" id="Node000002" href="$classit_1_1unisa_1_1diem_1_1swe_1_1group07_1_1rubrica_1_1models_1_1ContattoEsteso.html#a6e86f4f36089e9805f66cd93007b023b" title="costruttore della classe Contatto Esteso" alt="" coords="373,5,671,50"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="703,49,671,45,672,40,704,43"/>
-<area shape="rect" id="Node000003" href="$classit_1_1unisa_1_1diem_1_1swe_1_1group07_1_1rubrica_1_1gestoreIO_1_1Import.html#ae7512cecb7fae2b890edec350d5b9ccd" title="metodo per importare i contatti da un file vCard (.vcf) e aggiungerli a una rubrica" alt="" coords="374,75,670,119"/>
-<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="704,81,670,85,670,80,703,76"/>
-<area shape="rect" id="Node000004" href="$classit_1_1unisa_1_1diem_1_1swe_1_1group07_1_1rubrica_1_1controllers_1_1RubricaController.html#a09a018495d1eb3c281b87e5bdd8a0a8e" title="Gestore dell&#39;evento &quot;Importa Rubrica/Contatto&quot;. Il metodo apre una finestra che consente all&#39;utente d..." alt="" coords="5,75,325,119"/>
-<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="359,100,325,100,325,94,359,94"/>
+<area shape="rect" id="Node000001" title="metodo setter per l&#39;attributo &quot;id&quot;." alt="" coords="719,75,1017,119"/>
+<area shape="rect" id="Node000002" href="$classit_1_1unisa_1_1diem_1_1swe_1_1group07_1_1rubrica_1_1models_1_1ContattoEsteso.html#af9c3a11cd034951e518811e52605aa6a" title="costruttore della classe Contatto Esteso senza ingressi, serve per agevolare l&#39;import" alt="" coords="373,5,671,50"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="738,74,636,53,637,48,739,68"/>
+<area shape="rect" id="Node000003" href="$classit_1_1unisa_1_1diem_1_1swe_1_1group07_1_1rubrica_1_1models_1_1ContattoEsteso.html#a6e86f4f36089e9805f66cd93007b023b" title="costruttore della classe Contatto Esteso" alt="" coords="373,75,671,119"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="704,100,671,100,671,94,704,94"/>
+<area shape="rect" id="Node000004" href="$classit_1_1unisa_1_1diem_1_1swe_1_1group07_1_1rubrica_1_1gestoreIO_1_1Import.html#ae7512cecb7fae2b890edec350d5b9ccd" title="metodo per importare i contatti da un file vCard (.vcf) e aggiungerli a una rubrica" alt="" coords="374,144,670,189"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="739,126,637,146,636,141,738,120"/>
+<area shape="rect" id="Node000005" href="$classit_1_1unisa_1_1diem_1_1swe_1_1group07_1_1rubrica_1_1controllers_1_1RubricaController.html#a09a018495d1eb3c281b87e5bdd8a0a8e" title="Gestore dell&#39;evento &quot;Importa Rubrica/Contatto&quot;. Il metodo apre una finestra che consente all&#39;utente d..." alt="" coords="5,144,325,189"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="359,169,325,169,325,164,359,164"/>
 </map>

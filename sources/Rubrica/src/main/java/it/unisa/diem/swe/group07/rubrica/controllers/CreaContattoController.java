@@ -19,10 +19,10 @@ import java.time.LocalDate;
     /**
      * @brief La classe rappresenta il controllore responsabile della gestione della vista secondaria e della creazione di un nuovo contatto.
      * @see Rubrica
-     * @see AbstractController
+     * @see GenericController
      * @see RubricaController
      */
-public class CreaContattoController extends AbstractController{
+public class CreaContattoController extends GenericController {
     /**
     * @brief TextField per il nome del contatto.
     */
@@ -135,7 +135,7 @@ public class CreaContattoController extends AbstractController{
         ContattoEsteso temp = new ContattoEsteso(nomeText, cognomeText, telefonoText, telefono2Text, telefono3Text, emailText, email2Text, email3Text, compleannoText, indirizzoText, sitoWebText, noteText, false, false);
 
         // Se il contatto puó essere aggiunto alla mappa, allora aggiungilo anche alla lista
-        if(this.getRubrica().aggiungiContattoEVerifica(temp))
+        if(this.getRubrica().aggiungiContatto(temp))
             this.getListaContatti().add(temp);
         else
             mostraDialog( Alert.AlertType.ERROR,"Contatto Duplicato!", "Il contatto che si sta cercando di aggiungere é giá presente in rubrica!");

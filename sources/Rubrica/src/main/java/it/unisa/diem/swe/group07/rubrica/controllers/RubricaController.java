@@ -37,10 +37,10 @@ import javafx.stage.Stage;
  * @brief La classe rappresenta il controllore responsabile della gestione della vista principale.
  * @see Rubrica
  * @see CreaContattoController
- * @see AbstractController
+ * @see GenericController
  */
 
-public class RubricaController extends AbstractController implements Initializable{
+public class RubricaController extends GenericController implements Initializable{
      /**
      * @brief Text Field per il nome del contatto nella Rubrica.
      */
@@ -206,9 +206,6 @@ public class RubricaController extends AbstractController implements Initializab
         setEditableAll(false);
         pulsanteSalva.setDisable(true);
 
-        // Collegamento della lista filtrata alla TableView
-        filteredContatti = new FilteredList<>(this.getListaContatti(), p -> true);
-        rubricaTable.setItems(filteredContatti);
         // Listener sulla barra di ricerca
         barraRicerca.textProperty().addListener((observable, oldValue, newValue) -> {
             filtraContatti(newValue);
@@ -218,7 +215,6 @@ public class RubricaController extends AbstractController implements Initializab
     /**
      * @brief Gestore delle'evento 'Nuovo Contatto'. Il metodo carica la vista alternativa che consente la creazione del contatto e passa il controllo al "CreaContattoController", il controller che consente la creazione del contatto.
      */
-
     @FXML
     public void handleNuovoContatto() {
         try {
@@ -252,9 +248,11 @@ public class RubricaController extends AbstractController implements Initializab
      * @brief Metodo per filtrare i contatti in base al nome o al cognome.
      * @param[in] c, Stringa di ricerca.
      */
-
     //metodo per la ricerca del contatto
      private void filtraContatti(String c) {
+         // Collegamento della lista filtrata alla TableView
+         filteredContatti = new FilteredList<>(this.getListaContatti(), p -> true);
+         rubricaTable.setItems(filteredContatti);
          if((c != null) || (c.trim().isEmpty())){
             String lowerCaseQuery = c.toLowerCase(); // Converte la query in minuscolo per rendere la ricerca case-insensitive
 

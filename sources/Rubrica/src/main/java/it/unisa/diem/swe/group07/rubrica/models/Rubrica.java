@@ -1,6 +1,6 @@
 /**
  * @file Rubrica.java
- * @brief in questo file è presente l'implementazione della classe Rubrica con i suoi metodi e attributi
+ * @brief in questo file è presente l'implementazione della classe Rubrica con i suoi metodi e attributi.
  * @author Gruppo07
  * @date Dicembre, 2024
  */
@@ -14,7 +14,7 @@ import java.util.Collection;
  * @class Rubrica
  * @brief Classe che rappresenta una rubrica di contatti.
  *
- * La classe Rubrica gestisce una collezione di contatti estesi, permettendo operazioni
+ * La classe Rubrica gestisce una collezione di contatti, permettendo operazioni
  * come l'aggiunta, la rimozione, la ricerca e l'aggiornamento dei contatti.
  *
  * @see Contatto
@@ -35,19 +35,11 @@ public class Rubrica {
     }
 
     /**
-     * @brief metodo per l'aggiunta di un contatto alla rubrica
-     * @param[in] c: il contatto da aggiungere
-     */
-    public Contatto aggiungiContatto(Contatto c) {
-        return rubrica.putIfAbsent(c.getId(), c);
-    }
-
-    /**
      * @brief il metodo aggiunge un contatto alla rubrica e verifica se l'aggiunta é andata a buon fine.
-     * @param[in] c: il contatto da aggiungere
+     * @param[in] c Il contatto da aggiungere
      * @return 'true' se l'aggiunta del contatto nella rubrica va a buon fine, 'false' altrimenti
      */
-    public Boolean aggiungiContattoEVerifica(Contatto c){
+    public Boolean aggiungiContatto(Contatto c) {
         if (rubrica.putIfAbsent(c.getId(), c) == null)
             return true;
         return false;
@@ -55,7 +47,7 @@ public class Rubrica {
 
     /**
      * @brief metodo per la rimozione di un contatto dalla rubrica
-     * @param[in] c: il contatto da aggiungere
+     * @param[in] c Il contatto da aggiungere
      * @return Il contatto rimosso
      */
     public Contatto rimuoviContatto(Contatto c){
@@ -67,13 +59,12 @@ public class Rubrica {
      *  @pre il contatto deve essere presente in rubrica
      *  @return Il contatto trovato
      */
-
     public Contatto ricercaContatto(Contatto c){
         return rubrica.get(c.getId());
     }
     /**
      *  @brief metodo restituisce tutti i contatti come una Collection
-     *  @return Collection<ContattoEsteso>: una lista dei contatti della rubrica
+     *  @return Collection<Contatto>: una lista dei contatti della rubrica
      */
     public Collection<Contatto> getContatti(){
         return rubrica.values();
@@ -87,7 +78,7 @@ public class Rubrica {
     public Boolean aggiornaContatto(Contatto contattoAggiornato) {
         // Trova il contatto nella rubrica e sostituiscilo
         if (rubrica.containsKey(contattoAggiornato.getId())) {
-            aggiungiContattoEVerifica(contattoAggiornato);
+            aggiungiContatto(contattoAggiornato);
             return true;
         }
         return false;

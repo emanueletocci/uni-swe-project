@@ -7,7 +7,8 @@ La classe rappresenta il controllore responsabile della gestione della vista pri
 
 
 
-Diagramma delle classi per it.\+unisa.\+diem.\+swe.\+group07.\+rubrica.\+controllers.\+Rubrica\+Controller\nopagebreak
+Diagramma delle classi per it.\+unisa.\+diem.\+swe.\+group07.\+rubrica.\+controllers.\+Rubrica\+Controller
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -33,28 +34,28 @@ void {\bfseries handle\+Export\+Contatto} ()
 \begin{DoxyCompactList}\small\item\em Gestore dell\textquotesingle{}evento "{}\+Esporta Contatto"{}. Il metodo apre una finestra che consente all\textquotesingle{}utente di selezionare un percorso in un cui salvare il file e chiama il metodo responsabile dell\textquotesingle{}export in formato .vcf. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{classit_1_1unisa_1_1diem_1_1swe_1_1group07_1_1rubrica_1_1controllers_1_1RubricaController_a09a018495d1eb3c281b87e5bdd8a0a8e}{handle\+Import\+Rubrica}} ()  throws IOException 
 \begin{DoxyCompactList}\small\item\em Gestore dell\textquotesingle{}evento "{}\+Importa Rubrica/\+Contatto"{}. Il metodo apre una finestra che consente all\textquotesingle{}utente di selezionare un file da importare e chiama il metodo responsabile dell\textquotesingle{}import. \end{DoxyCompactList}\end{DoxyCompactItemize}
-\doxysubsection*{Membri pubblici ereditati da \mbox{\hyperlink{classit_1_1unisa_1_1diem_1_1swe_1_1group07_1_1rubrica_1_1controllers_1_1AbstractController}{it.\+unisa.\+diem.\+swe.\+group07.\+rubrica.\+controllers.\+Abstract\+Controller}}}
+\doxysubsection*{Membri pubblici ereditati da \mbox{\hyperlink{classit_1_1unisa_1_1diem_1_1swe_1_1group07_1_1rubrica_1_1controllers_1_1GenericController}{it.\+unisa.\+diem.\+swe.\+group07.\+rubrica.\+controllers.\+Generic\+Controller}}}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\hyperlink{classit_1_1unisa_1_1diem_1_1swe_1_1group07_1_1rubrica_1_1models_1_1Rubrica}{Rubrica}} \mbox{\hyperlink{classit_1_1unisa_1_1diem_1_1swe_1_1group07_1_1rubrica_1_1controllers_1_1AbstractController_ab7e58e22666144ab379d7311e78847cd}{get\+Rubrica}} ()
+\mbox{\hyperlink{classit_1_1unisa_1_1diem_1_1swe_1_1group07_1_1rubrica_1_1models_1_1Rubrica}{Rubrica}} \mbox{\hyperlink{classit_1_1unisa_1_1diem_1_1swe_1_1group07_1_1rubrica_1_1controllers_1_1GenericController_a224c3322a29288a8a1a4dc6b9c40bee7}{get\+Rubrica}} ()
 \begin{DoxyCompactList}\small\item\em metodo getter dell\textquotesingle{}attributo rubrica. \end{DoxyCompactList}\item 
-void \mbox{\hyperlink{classit_1_1unisa_1_1diem_1_1swe_1_1group07_1_1rubrica_1_1controllers_1_1AbstractController_a7451ffd24e0e1d5c9e2cc7e5cb767985}{set\+Rubrica}} (\mbox{\hyperlink{classit_1_1unisa_1_1diem_1_1swe_1_1group07_1_1rubrica_1_1models_1_1Rubrica}{Rubrica}} rubrica)
+void \mbox{\hyperlink{classit_1_1unisa_1_1diem_1_1swe_1_1group07_1_1rubrica_1_1controllers_1_1GenericController_a5f6770389af1ad6f0385f46f57ee9f1c}{set\+Rubrica}} (\mbox{\hyperlink{classit_1_1unisa_1_1diem_1_1swe_1_1group07_1_1rubrica_1_1models_1_1Rubrica}{Rubrica}} rubrica)
 \begin{DoxyCompactList}\small\item\em metodo setter dell\textquotesingle{}attributo rubrica. \end{DoxyCompactList}\item 
-Observable\+List$<$ \mbox{\hyperlink{classit_1_1unisa_1_1diem_1_1swe_1_1group07_1_1rubrica_1_1models_1_1ContattoEsteso}{Contatto\+Esteso}} $>$ \mbox{\hyperlink{classit_1_1unisa_1_1diem_1_1swe_1_1group07_1_1rubrica_1_1controllers_1_1AbstractController_a44c01a5b8e871228a96c90a31e57a08d}{get\+Lista\+Contatti}} ()
+Observable\+List$<$ \mbox{\hyperlink{classit_1_1unisa_1_1diem_1_1swe_1_1group07_1_1rubrica_1_1models_1_1Contatto}{Contatto}} $>$ \mbox{\hyperlink{classit_1_1unisa_1_1diem_1_1swe_1_1group07_1_1rubrica_1_1controllers_1_1GenericController_a3eac439a72130840f569e6c24fb0b080}{get\+Lista\+Contatti}} ()
 \begin{DoxyCompactList}\small\item\em metodo getter della struttura (lista osservabile). \end{DoxyCompactList}\item 
-void \mbox{\hyperlink{classit_1_1unisa_1_1diem_1_1swe_1_1group07_1_1rubrica_1_1controllers_1_1AbstractController_a4d9ed27334c97cac3f274a3c2a9bbd6f}{set\+Lista\+Contatti}} (Observable\+List$<$ \mbox{\hyperlink{classit_1_1unisa_1_1diem_1_1swe_1_1group07_1_1rubrica_1_1models_1_1ContattoEsteso}{Contatto\+Esteso}} $>$ lista\+Contatti)
+void \mbox{\hyperlink{classit_1_1unisa_1_1diem_1_1swe_1_1group07_1_1rubrica_1_1controllers_1_1GenericController_a1d6261730678af5406c4fd0a7b495d15}{set\+Lista\+Contatti}} (Observable\+List$<$ \mbox{\hyperlink{classit_1_1unisa_1_1diem_1_1swe_1_1group07_1_1rubrica_1_1models_1_1Contatto}{Contatto}} $>$ lista\+Contatti)
 \begin{DoxyCompactList}\small\item\em metodo setter della lista osservabile \end{DoxyCompactList}\item 
-void \mbox{\hyperlink{classit_1_1unisa_1_1diem_1_1swe_1_1group07_1_1rubrica_1_1controllers_1_1AbstractController_ad638bfbb3c6345b99f03c0d4a38953b7}{mostra\+Dialog}} (Alert.\+Alert\+Type type, String titolo, String messaggio)
+void \mbox{\hyperlink{classit_1_1unisa_1_1diem_1_1swe_1_1group07_1_1rubrica_1_1controllers_1_1GenericController_a3dce84bf1033f4d481d90298859be9bc}{mostra\+Dialog}} (Alert.\+Alert\+Type type, String titolo, String messaggio)
 \begin{DoxyCompactList}\small\item\em metodo che consenti di mostrare un generico dialog. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsubsection*{Altri membri ereditati}
-\doxysubsection*{Membri protetti ereditati da \mbox{\hyperlink{classit_1_1unisa_1_1diem_1_1swe_1_1group07_1_1rubrica_1_1controllers_1_1AbstractController}{it.\+unisa.\+diem.\+swe.\+group07.\+rubrica.\+controllers.\+Abstract\+Controller}}}
+\doxysubsection*{Membri protetti ereditati da \mbox{\hyperlink{classit_1_1unisa_1_1diem_1_1swe_1_1group07_1_1rubrica_1_1controllers_1_1GenericController}{it.\+unisa.\+diem.\+swe.\+group07.\+rubrica.\+controllers.\+Generic\+Controller}}}
 \begin{DoxyCompactItemize}
 \item 
-Boolean \mbox{\hyperlink{classit_1_1unisa_1_1diem_1_1swe_1_1group07_1_1rubrica_1_1controllers_1_1AbstractController_a607d7dd76abbb0a2bb252730a8562b97}{controlla\+Campi\+Obbligatori}} (String nome, String cognome)
+Boolean \mbox{\hyperlink{classit_1_1unisa_1_1diem_1_1swe_1_1group07_1_1rubrica_1_1controllers_1_1GenericController_a9806ce658896c438e3efe40e86a5db81}{controlla\+Campi\+Obbligatori}} (String nome, String cognome)
 \begin{DoxyCompactList}\small\item\em metodo verificare che almeno un Text\+Field tra nome e cognome è stato riempito dall\textquotesingle{}utente. \end{DoxyCompactList}\item 
-Boolean \mbox{\hyperlink{classit_1_1unisa_1_1diem_1_1swe_1_1group07_1_1rubrica_1_1controllers_1_1AbstractController_aa7ba6f967b85192f31d60ba989935d26}{controlla\+Telefono}} (String telefono)
+Boolean \mbox{\hyperlink{classit_1_1unisa_1_1diem_1_1swe_1_1group07_1_1rubrica_1_1controllers_1_1GenericController_a1564025fd13eb5d6ee0a1242b92d6fb8}{controlla\+Telefono}} (String telefono)
 \begin{DoxyCompactList}\small\item\em metodo per la verifica del numero telefonico del contatto. \end{DoxyCompactList}\item 
-Boolean \mbox{\hyperlink{classit_1_1unisa_1_1diem_1_1swe_1_1group07_1_1rubrica_1_1controllers_1_1AbstractController_ad963d5274556084e79632fec78838744}{controlla\+Email}} (String email)
+Boolean \mbox{\hyperlink{classit_1_1unisa_1_1diem_1_1swe_1_1group07_1_1rubrica_1_1controllers_1_1GenericController_aeb6d1d4051a7065841b6dbdbd52fde55}{controlla\+Email}} (String email)
 \begin{DoxyCompactList}\small\item\em metodo per la verifica dell\textquotesingle{}indirizzo email del contatto. Il metodo verifica solamente la presenta della "{}@"{} all\textquotesingle{}interno dell´email inserita. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
@@ -66,7 +67,7 @@ Rubrica
 
 \doxylink{classit_1_1unisa_1_1diem_1_1swe_1_1group07_1_1rubrica_1_1controllers_1_1CreaContattoController}{Crea\+Contatto\+Controller} 
 
-\doxylink{classit_1_1unisa_1_1diem_1_1swe_1_1group07_1_1rubrica_1_1controllers_1_1AbstractController}{Abstract\+Controller} 
+\doxylink{classit_1_1unisa_1_1diem_1_1swe_1_1group07_1_1rubrica_1_1controllers_1_1GenericController}{Generic\+Controller} 
 \end{DoxySeeAlso}
 
 
@@ -86,7 +87,8 @@ Gestore dell\textquotesingle{}evento "{}\+Importa Rubrica/\+Contatto"{}. Il meto
 {\em IOException} & \\
 \hline
 \end{DoxyExceptions}
-Questo è il grafo delle chiamate per questa funzione\+:\nopagebreak
+Questo è il grafo delle chiamate per questa funzione\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -110,7 +112,8 @@ Metodo di inizializzazione della vista e dei dati. Imposta la lista dei contatti
 \mbox{\texttt{ in}}  & {\em rb,Resource\+Bundle} & per il caricamento delle risorse. \\
 \hline
 \end{DoxyParams}
-Questo è il grafo delle chiamate per questa funzione\+:\nopagebreak
+Questo è il grafo delle chiamate per questa funzione\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode

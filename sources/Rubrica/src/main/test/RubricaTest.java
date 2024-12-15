@@ -24,9 +24,9 @@ public class RubricaTest {
     }
 
     @Test
-    void TestAggiungiContattoEVerifica() {
-        assertTrue(r.aggiungiContattoEVerifica(c));
-        assertFalse(r.aggiungiContattoEVerifica(c));
+    void TestAggiungiContatto() {
+        assertTrue(r.aggiungiContatto(c));
+        assertFalse(r.aggiungiContatto(c));
     }
 
     @Test

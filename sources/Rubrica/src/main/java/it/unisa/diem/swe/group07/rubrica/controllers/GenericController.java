@@ -7,7 +7,6 @@
 
 package it.unisa.diem.swe.group07.rubrica.controllers;
 import it.unisa.diem.swe.group07.rubrica.models.Contatto;
-import it.unisa.diem.swe.group07.rubrica.models.ContattoEsteso;
 import it.unisa.diem.swe.group07.rubrica.models.Rubrica;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -21,7 +20,7 @@ import javafx.scene.control.Alert;
  * @see CreaContattoController
  * @see RubricaController
  */
-public abstract class AbstractController {
+public abstract class GenericController {
 
     /**
      * @brief istanza della rubrica (Map).

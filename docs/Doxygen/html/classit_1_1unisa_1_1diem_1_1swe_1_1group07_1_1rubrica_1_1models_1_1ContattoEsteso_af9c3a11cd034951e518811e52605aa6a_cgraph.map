@@ -1,0 +1,11 @@
+<map id="it.unisa.diem.swe.group07.rubrica.models.ContattoEsteso.ContattoEsteso" name="it.unisa.diem.swe.group07.rubrica.models.ContattoEsteso.ContattoEsteso">
+<area shape="rect" id="Node000001" title="costruttore della classe Contatto Esteso senza ingressi, serve per agevolare l&#39;import" alt="" coords="5,75,304,119"/>
+<area shape="rect" id="Node000002" href="$classit_1_1unisa_1_1diem_1_1swe_1_1group07_1_1rubrica_1_1models_1_1ContattoEsteso.html#a22bcd762fad3ea80371dce5846c5f310" title=" " alt="" coords="352,40,650,85"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="304,79,336,76,336,81,304,85"/>
+<area shape="rect" id="Node000005" href="$classit_1_1unisa_1_1diem_1_1swe_1_1group07_1_1rubrica_1_1models_1_1Contatto.html#aead2ea705dd7e41631bc4a42cb8293ec" title="metodo setter per l&#39;attributo &quot;id&quot;." alt="" coords="352,109,650,154"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="304,109,336,113,336,118,304,115"/>
+<area shape="rect" id="Node000003" href="$classit_1_1unisa_1_1diem_1_1swe_1_1group07_1_1rubrica_1_1models_1_1Contatto.html#a9c2c4132e79ef8782c65bba90c5b3527" title="metodo getter per l&#39;attributo &quot;cognome&quot;" alt="" coords="698,5,996,50"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="650,45,682,41,683,47,651,50"/>
+<area shape="rect" id="Node000004" href="$classit_1_1unisa_1_1diem_1_1swe_1_1group07_1_1rubrica_1_1models_1_1Contatto.html#abfa304de5195706e62d361a032e99855" title="metodo getter per l&#39;attributo &quot;nome&quot;." alt="" coords="698,75,996,119"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="651,75,683,78,682,83,650,80"/>
+</map>

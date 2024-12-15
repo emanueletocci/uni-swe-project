@@ -78,7 +78,7 @@ public class Import {
                 //}
             else if (line.startsWith("END:VCARD")) {
                     System.out.println("\nAggiungo il contatto alla rubrica");
-                    if(r.aggiungiContattoEVerifica(contatto))
+                    if(r.aggiungiContatto(contatto))
                         lista.add(contatto);
                 }
             }

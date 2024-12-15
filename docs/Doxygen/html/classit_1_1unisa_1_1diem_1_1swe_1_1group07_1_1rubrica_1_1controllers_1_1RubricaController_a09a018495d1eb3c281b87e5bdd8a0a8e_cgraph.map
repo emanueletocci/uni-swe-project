@@ -1,8 +1,8 @@
 <map id="it.unisa.diem.swe.group07.rubrica.controllers.RubricaController.handleImportRubrica" name="it.unisa.diem.swe.group07.rubrica.controllers.RubricaController.handleImportRubrica">
 <area shape="rect" id="Node000001" title="Gestore dell&#39;evento &quot;Importa Rubrica/Contatto&quot;. Il metodo apre una finestra che consente all&#39;utente d..." alt="" coords="5,421,325,466"/>
-<area shape="rect" id="Node000002" href="$classit_1_1unisa_1_1diem_1_1swe_1_1group07_1_1rubrica_1_1controllers_1_1AbstractController.html#a44c01a5b8e871228a96c90a31e57a08d" title="metodo getter della struttura (lista osservabile)." alt="" coords="373,352,692,397"/>
+<area shape="rect" id="Node000002" href="$classit_1_1unisa_1_1diem_1_1swe_1_1group07_1_1rubrica_1_1controllers_1_1GenericController.html#a3eac439a72130840f569e6c24fb0b080" title="metodo getter della struttura (lista osservabile)." alt="" coords="373,352,692,397"/>
 <area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="287,418,395,397,396,403,288,423"/>
-<area shape="rect" id="Node000003" href="$classit_1_1unisa_1_1diem_1_1swe_1_1group07_1_1rubrica_1_1controllers_1_1AbstractController.html#ab7e58e22666144ab379d7311e78847cd" title="metodo getter dell&#39;attributo rubrica." alt="" coords="373,421,692,466"/>
+<area shape="rect" id="Node000003" href="$classit_1_1unisa_1_1diem_1_1swe_1_1group07_1_1rubrica_1_1controllers_1_1GenericController.html#a224c3322a29288a8a1a4dc6b9c40bee7" title="metodo getter dell&#39;attributo rubrica." alt="" coords="373,421,692,466"/>
 <area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="325,441,357,441,357,446,325,446"/>
 <area shape="rect" id="Node000004" href="$classit_1_1unisa_1_1diem_1_1swe_1_1group07_1_1rubrica_1_1gestoreIO_1_1Import.html#ae7512cecb7fae2b890edec350d5b9ccd" title="metodo per importare i contatti da un file vCard (.vcf) e aggiungerli a una rubrica" alt="" coords="385,491,680,535"/>
 <area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="288,464,396,485,395,490,287,469"/>
