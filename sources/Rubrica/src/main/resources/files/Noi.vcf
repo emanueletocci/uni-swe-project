@@ -1,0 +1,68 @@
+BEGIN:VCARD
+VERSION:3.0
+FN:Emanuele Tocci
+TEL;TYPE=cell:+3933333333
+TEL;TYPE=home:+3933333333
+TEL;TYPE=work:+3933333333
+EMAIL;TYPE=work:prova@gmail.com
+EMAIL;TYPE=home:prova@icloud.com
+EMAIL;TYPE=other:prova@unisa.it
+BDAY:2003-06-09
+ADR;TYPE=home:via Prova
+URL:unisa.it
+NOTE:note
+X-PREF:1
+X-EMERG:1
+UID:-1332681484
+END:VCARD
+BEGIN:VCARD
+VERSION:3.0
+FN:Claudia Montefusco
+TEL;TYPE=cell:+3933333333
+TEL;TYPE=home:+3933333333
+TEL;TYPE=work:+3933333333
+EMAIL;TYPE=work:prova@gmail.com
+EMAIL;TYPE=home:prova@icloud.com
+EMAIL;TYPE=other:prova@unisa.it
+BDAY:2003-06-16
+ADR;TYPE=home:via Prova
+URL:unisa.it
+NOTE:informazioni aggiuntive
+X-PREF:1
+X-EMERG:1
+UID:1613182866
+END:VCARD
+BEGIN:VCARD
+VERSION:3.0
+FN:Rossella Pale
+TEL;TYPE=cell:+3933333333
+TEL;TYPE=home:+3933333333
+TEL;TYPE=work:+3933333333
+EMAIL;TYPE=work:prova@gmail.com
+EMAIL;TYPE=home:prova@icloud.com
+EMAIL;TYPE=other:prova@unisa.it
+BDAY:2003-12-12
+ADR;TYPE=home:via Prova
+URL:unisa.it
+NOTE:informazioni aggiuntive
+X-PREF:1
+X-EMERG:1
+UID:-1841165404
+END:VCARD
+BEGIN:VCARD
+VERSION:3.0
+FN:Alessio Leo
+TEL;TYPE=cell:+3933333333
+TEL;TYPE=home:+3933333333
+TEL;TYPE=work:+3933333333
+EMAIL;TYPE=work:prova@gmail.com
+EMAIL;TYPE=home:prova@icloud.com
+EMAIL;TYPE=other:prova@unisa.it
+BDAY:2003-12-19
+ADR;TYPE=home:via Prova
+URL:unisa.it
+NOTE:informazioni aggiuntive
+X-PREF:1
+X-EMERG:1
+UID:-1165880386
+END:VCARD

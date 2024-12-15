@@ -173,15 +173,6 @@ public class RubricaController extends GenericController implements Initializabl
      */
     @Override
     public void initialize(URL url, ResourceBundle rb){
-        this.getRubrica().aggiungiContatto(new ContattoEsteso("Emanuele", "Tocci", "+3933333333", "+3933333333", "+3933333333", "prova@gmail.com", "prova@icloud.com", "prova@unisa.it", LocalDate.of(2003, 6, 9), "via Prova", "unisa.it", "note", false, true));
-        this.getRubrica().aggiungiContatto(new ContattoEsteso("Claudia", "Montefusco","+3933333333","+3933333333", "+3933333333", "prova@gmail.com", "prova@icloud.com", "prova@unisa.it", LocalDate.of(2003, 6, 16), "via Prova", "unisa.it", "informazioni aggiuntive", false, false));
-        this.getRubrica().aggiungiContatto(new ContattoEsteso("Alessio", "Leo","+3933333333","+3933333333", "+3933333333", "prova@gmail.com", "prova@icloud.com", "prova@unisa.it", LocalDate.of(2003, 12, 19), "via Prova", "unisa.it", "informazioni aggiuntive", false, false));
-        this.getRubrica().aggiungiContatto(new ContattoEsteso("Rossella", "Pale","+3933333333","+3933333333", "+3933333333", "prova@gmail.com", "prova@icloud.com", "prova@unisa.it", LocalDate.of(2003, 12, 12), "via Prova", "unisa.it", "informazioni aggiuntive", true, false));
-
-        // Inserire qui funzione Import/autoImport e rimuovere le aggiunte manuali dei contatti presenti sopra
-
-        // La lista osservabile é inizializzata a partire dagli elementi presenti nella rubrica
-        this.getListaContatti().addAll(this.getRubrica().getContatti());
 
         // TEST
         System.out.println("\n"+ getClass() + " - initialize ***\n");
