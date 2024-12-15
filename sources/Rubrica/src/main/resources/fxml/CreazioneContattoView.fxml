@@ -16,7 +16,7 @@
             <children>
                 <ImageView fx:id="immagine" cache="true" fitHeight="116.0" fitWidth="79.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@../img/avatarIcon2.jpg" />
+                  <Image url="@../img/avatarIcon.jpg" />
                </image>
             </ImageView>
             <HBox alignment="TOP_CENTER" prefHeight="26.0" prefWidth="414.0">

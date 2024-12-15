@@ -32,12 +32,14 @@ public class ImportTest {
     private Rubrica rubrica;
     private Import importer;
     private ObservableList<ContattoEsteso> list;
+    String path;
 
     @BeforeEach
     public void setUp() {
         rubrica = new Rubrica();
         importer = new Import();
         list = FXCollections.observableArrayList();
+        path = "src/main/test/resources/";
     }
 
     @Test
@@ -61,9 +63,8 @@ public class ImportTest {
         );
 
         Export exporter = new Export();
-        String filePath = "provaImport"; //salva come provaImport
-        exporter.esportaContatto(contatto, filePath);
-        filePath = "provaImport.vcf";//importa provaImport.vcf
+        exporter.esportaContatto(contatto, path + "provaImport");
+        String filePath = path + "provaImport.vcf";//importa provaImport.vcf
         importer.importVcard(rubrica, list, filePath);
 
         assertEquals(1, rubrica.getContatti().size());

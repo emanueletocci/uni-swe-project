@@ -1,6 +1,7 @@
 import it.unisa.diem.swe.group07.rubrica.models.ContattoEsteso;
 import it.unisa.diem.swe.group07.rubrica.gestoreIO.Export;
 import it.unisa.diem.swe.group07.rubrica.models.Rubrica;
+import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
@@ -8,6 +9,8 @@ import static org.junit.jupiter.api.Assertions.*;
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Path;
 import java.time.LocalDate;
 
 class ExportTest {
@@ -23,7 +26,7 @@ class ExportTest {
         c2 = new ContattoEsteso("Antonio", "Rossi", "+0234798123", "", "+3933333333", "", "prova@icloud.com", "prova@unisa.it", LocalDate.of(2001, 6, 9), "via Prova", "unisa.it", "note", false, false);
         e = new Export();
         sb = new StringBuffer();
-        path = "src/main/resources/files/";
+        path = "src/main/test/resources/";
         sb.append("BEGIN:VCARD\n")
                 .append("VERSION:3.0\n")
                 .append("FN:Emanuele Tocci\n")
@@ -115,6 +118,12 @@ class ExportTest {
         }
         String valoreAttuale = lettura.toString();
         assertEquals(valoreAtteso, valoreAttuale);
+
+        try {
+            Files.delete(Path.of(path + "RubricaExport.vcf"));
+        } catch (IOException e){
+            e.printStackTrace();
+        }
     }
 
 
@@ -154,5 +163,11 @@ class ExportTest {
         }
         String valoreAttuale2 = lettura.toString();
         assertNotEquals(valoreAtteso, valoreAttuale2);
+        try {
+            Files.delete(Path.of(path + "Contatto1.vcf"));
+            Files.delete(Path.of(path + "Contatto2.vcf"));
+        } catch (IOException e){
+            e.printStackTrace();
+        }
     }
 }
