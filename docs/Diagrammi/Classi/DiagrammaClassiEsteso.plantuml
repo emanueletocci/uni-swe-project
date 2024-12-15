@@ -1,0 +1,185 @@
+@startuml
+
+top to bottom direction
+
+class App {
+  + App(): 
+  - root: Parent
+  - scene: Scene
+  + main(String[]): void
+  + start(Stage): void
+}
+abstract class Contatto {
+  + Contatto(): 
+  + Contatto(String, String, String, String, String, Boolean, Boolean): 
+  - telefono1: String
+  - telefono3: String
+  - id: Integer
+  - nome: String
+  - telefono2: String
+  - cognome: String
+  - emergenza: Boolean
+  - preferito: Boolean
+  + setPreferito(Boolean): void
+  + isEmergenza(): BooleanProperty
+  # generaId(): Integer
+  + getTelefono3(): String
+  + getPreferito(): Boolean
+  + toString(): String
+  + hashCode(): int
+  + getNome(): String
+  + isPreferito(): BooleanProperty
+  + getTelefono1(): String
+  + getId(): Integer
+  + setTelefono2(String): void
+  + setNome(String): void
+  + setEmergenza(Boolean): void
+  + setId(Integer): void
+  + equals(Object): boolean
+  + getCognome(): String
+  + getEmergenza(): Boolean
+  + setTelefono1(String): void
+  + setTelefono3(String): void
+  + setCognome(String): void
+  + getTelefono2(): String
+}
+class ContattoEsteso {
+  + ContattoEsteso(String, String, String, String, String, String, String, String, LocalDate, String, String, String, Boolean, Boolean): 
+  + ContattoEsteso(String, String, String, String, String, Boolean, Boolean): 
+  + ContattoEsteso(): 
+  - compleanno: LocalDate
+  - email3: String
+  - email2: String
+  - indirizzoResidenza: String
+  - note: String
+  - email1: String
+  - sitoWeb: String
+  + getEmail2(): String
+  + hashCode(): int
+  + setEmail1(String): void
+  + setSitoWeb(String): void
+  + setEmail3(String): void
+  + setNote(String): void
+  + setEmail2(String): void
+  + getSitoWeb(): String
+  # generaId(): Integer
+  + setCompleanno(LocalDate): void
+  + setIndirizzoResidenza(String): void
+  + equals(Object): boolean
+  + getIndirizzoResidenza(): String
+  + getEmail3(): String
+  + toString(): String
+  + getNote(): String
+  + getCompleanno(): LocalDate
+  + getEmail1(): String
+}
+class CreaContattoController {
+  + CreaContattoController(): 
+  - email3: TextField
+  - indirizzo: TextField
+  - cognome: TextField
+  - note: TextField
+  - telefono2: TextField
+  - telefono3: TextField
+  - email2: TextField
+  - sitoWeb: TextField
+  - email: TextField
+  - compleanno: DatePicker
+  - telefono: TextField
+  - nome: TextField
+  + handleAggiungiContatto(ActionEvent): void
+}
+class Export {
+  + Export(): 
+  + esportaContatto(Contatto, String): void
+  + getVcard(Contatto): String
+  + esportaRubrica(Rubrica, String): void
+}
+abstract class GenericController {
+  + GenericController(): 
+  - rubrica: Rubrica
+  - listaContatti: ObservableList<Contatto>
+  + mostraDialog(AlertType, String, String): void
+  # controllaEmail(String): Boolean
+  + setRubrica(Rubrica): void
+  + getRubrica(): Rubrica
+  # controllaTelefono(String): Boolean
+  + setListaContatti(ObservableList<Contatto>): void
+  # controllaCampiObbligatori(String, String): Boolean
+  + getListaContatti(): ObservableList<Contatto>
+}
+class Import {
+  + Import(): 
+  + importVcard(Rubrica, ObservableList, String): void
+}
+class Rubrica {
+  + Rubrica(): 
+  - rubrica: Map<Integer, Contatto>
+  + getContatti(): Collection<Contatto>
+  + toString(): String
+  + aggiornaContatto(Contatto): Boolean
+  + rimuoviContatto(Contatto): Contatto
+  + ricercaContatto(Contatto): Contatto
+  + aggiungiContatto(Contatto): Boolean
+}
+class RubricaController {
+  + RubricaController(): 
+  - nomeClm: TableColumn<Contatto, String>
+  - rubricaTable: TableView<Contatto>
+  - contattoSelezionato: Contatto
+  - email3Field: TextField
+  - preferitiFlag: Button
+  - telefono2Field: TextField
+  - emergenzaFlag: Button
+  - fullname: Label
+  - filteredContatti: FilteredList<Contatto>
+  - noteField: TextField
+  - cognomeField: TextField
+  - email1Field: TextField
+  - pulsanteSalva: Button
+  - contattiLabel: Label
+  - linkField: TextField
+  - barraRicerca: TextField
+  - cognomeClm: TableColumn<Contatto, String>
+  - email2Field: TextField
+  - compleannoField: DatePicker
+  - telefono3Field: TextField
+  - contattiFiltratiEmergenza: FilteredList<Contatto>
+  - nomeField: TextField
+  - contattiFiltratiPreferiti: FilteredList<Contatto>
+  - telefono1Field: TextField
+  - indirizzoField: TextField
+  - filtraContatti(String): void
+  - showRubrica(): void
+  - setEditableAll(boolean): void
+  + initialize(URL, ResourceBundle): void
+  - showPreferiti(): void
+  + handleImportRubrica(): void
+  - showEmergenza(): void
+  - gestioneSalvaModifiche(): void
+  + handleNuovoContatto(): void
+  - openWebpage(String): void
+  - mostraDettaglioContatti(Contatto): void
+  + handleEliminaContatto(): void
+  - toggleEmergenza(): void
+  - togglePreferiti(): void
+  - handleExportRubrica(): void
+  + handleModificaContatto(): void
+  + handleExportContatto(): void
+  - openGit(): void
+}
+
+ContattoEsteso          -[#000082,plain]-^  Contatto               
+CreaContattoController  -[#595959,dashed]->  ContattoEsteso         : "«create»"
+CreaContattoController  -[#000082,plain]-^  GenericController      
+GenericController      "1" *-[#595959,plain]-> "listaContatti\n*" Contatto               
+GenericController       -[#595959,dashed]->  Rubrica                : "«create»"
+GenericController      "1" *-[#595959,plain]-> "rubrica\n1" Rubrica                
+Import                  -[#595959,dashed]->  ContattoEsteso         : "«create»"
+Rubrica                "1" *-[#595959,plain]-> "rubrica\n*" Contatto               
+RubricaController      "1" *-[#595959,plain]-> "contattoSelezionato\n1" Contatto               
+RubricaController       -[#595959,dashed]->  ContattoEsteso         : "«create»"
+RubricaController       -[#595959,dashed]->  Export                 : "«create»"
+RubricaController       -[#000082,plain]-^  GenericController      
+RubricaController       -[#595959,dashed]->  Import                 : "«create»"
+@enduml
