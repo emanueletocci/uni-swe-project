@@ -173,10 +173,10 @@ public class RubricaController extends GenericController implements Initializabl
      */
     @Override
     public void initialize(URL url, ResourceBundle rb){
-        this.getRubrica().aggiungiContatto(new ContattoEsteso("Emanuele", "Tocci", "+3933333333", "+3933333333", "+3933333333", "prova@gmail.com", "prova@icloud.com", "prova@unisa.it", LocalDate.of(2003, 6, 9), "via Prova", "unisa.it", "note", false, false));
-        this.getRubrica().aggiungiContatto(new ContattoEsteso("Claudia", "Montefusco","+3933333333","+3933333333", "+3933333333", "prova@gmail.com", "prova@icloud.com", "prova@unisa.it", LocalDate.of(2020, 12, 12), "via Prova", "unisa.it", "informazioni aggiuntive", false, false));
-        this.getRubrica().aggiungiContatto(new ContattoEsteso("Alessio", "Leo","+3933333333","+3933333333", "+3933333333", "prova@gmail.com", "prova@icloud.com", "prova@unisa.it", LocalDate.of(2020, 12, 12), "via Prova", "unisa.it", "informazioni aggiuntive", false, false));
-        this.getRubrica().aggiungiContatto(new ContattoEsteso("Rossella", "Pale","+3933333333","+3933333333", "+3933333333", "prova@gmail.com", "prova@icloud.com", "prova@unisa.it", LocalDate.of(2020, 12, 12), "via Prova", "unisa.it", "informazioni aggiuntive", true, false));
+        this.getRubrica().aggiungiContatto(new ContattoEsteso("Emanuele", "Tocci", "+3933333333", "+3933333333", "+3933333333", "prova@gmail.com", "prova@icloud.com", "prova@unisa.it", LocalDate.of(2003, 6, 9), "via Prova", "unisa.it", "note", false, true));
+        this.getRubrica().aggiungiContatto(new ContattoEsteso("Claudia", "Montefusco","+3933333333","+3933333333", "+3933333333", "prova@gmail.com", "prova@icloud.com", "prova@unisa.it", LocalDate.of(2003, 6, 16), "via Prova", "unisa.it", "informazioni aggiuntive", false, false));
+        this.getRubrica().aggiungiContatto(new ContattoEsteso("Alessio", "Leo","+3933333333","+3933333333", "+3933333333", "prova@gmail.com", "prova@icloud.com", "prova@unisa.it", LocalDate.of(2003, 12, 19), "via Prova", "unisa.it", "informazioni aggiuntive", false, false));
+        this.getRubrica().aggiungiContatto(new ContattoEsteso("Rossella", "Pale","+3933333333","+3933333333", "+3933333333", "prova@gmail.com", "prova@icloud.com", "prova@unisa.it", LocalDate.of(2003, 12, 12), "via Prova", "unisa.it", "informazioni aggiuntive", true, false));
 
         // Inserire qui funzione Import/autoImport e rimuovere le aggiunte manuali dei contatti presenti sopra
 
@@ -320,7 +320,7 @@ public class RubricaController extends GenericController implements Initializabl
             indirizzoField.setEditable(isEditable);
             compleannoField.setEditable(isEditable);
             noteField.setEditable(isEditable);
-            compleannoField.setEditable(isEditable);
+            linkField.setEditable(isEditable);
     }
     /**
      * @brief Gestore dell'evento relativo al click del pulsante "Elimina Contatto". Il metodo elimina un contatto dalla rubrica ed aggiorna
@@ -539,7 +539,7 @@ public class RubricaController extends GenericController implements Initializabl
         e.esportaContatto(c, file.getAbsolutePath());
         mostraDialog(Alert.AlertType.INFORMATION,
                 "Export completato",
-                "Il contatto è stato esportato con successo\noutput: " + file.getAbsolutePath() + ".vcf");
+                "Il contatto è stato esportato con successo\noutput: " + file.getAbsolutePath());
     }
     /**
      * @brief Gestore dell'evento "Importa Rubrica/Contatto". Il metodo apre una finestra che consente all'utente di selezionare un file da importare

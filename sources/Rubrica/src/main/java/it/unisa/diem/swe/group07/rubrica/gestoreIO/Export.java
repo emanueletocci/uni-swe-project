@@ -52,7 +52,7 @@ public class Export {
      * @pre path, Il percorso di salvataggio deve essere un percorso valido.
      */
     public void esportaRubrica(Rubrica r, String path) {
-        try (BufferedWriter writer = new BufferedWriter(new FileWriter(path + ".vcf", StandardCharsets.UTF_8))) {
+        try (BufferedWriter writer = new BufferedWriter(new FileWriter(path, StandardCharsets.UTF_8))) {
             for (Contatto contatto : r.getContatti()) {
                 String vcard = getVcard(contatto);
                 writer.write(vcard);
@@ -68,7 +68,7 @@ public class Export {
      * @pre path, Il percorso di salvataggio deve essere un percorso valido.
      */
     public void esportaContatto(Contatto contatto, String path){
-        try (BufferedWriter writer = new BufferedWriter(new FileWriter(path + ".vcf", StandardCharsets.UTF_8))) {
+        try (BufferedWriter writer = new BufferedWriter(new FileWriter(path, StandardCharsets.UTF_8))) {
             String vcard = getVcard(contatto);
             writer.write(vcard);
             System.out.println("Contatto esportato con successo");
