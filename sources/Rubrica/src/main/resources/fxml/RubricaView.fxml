@@ -35,7 +35,7 @@
                                 </Menu>
                                 <Menu mnemonicParsing="false" text="Modifica">
                                     <items>
-                                        <MenuItem fx:id="editBtn" mnemonicParsing="false" onAction="#handleEliminaContatto" text="Modifica contatto" />
+                                        <MenuItem fx:id="editBtn" mnemonicParsing="false" onAction="#handleModificaContatto" text="Modifica contatto" />
                                         <MenuItem fx:id="del" mnemonicParsing="false" onAction="#handleEliminaContatto" text="Elimina contatto" />
                                     </items>
                                 </Menu>
