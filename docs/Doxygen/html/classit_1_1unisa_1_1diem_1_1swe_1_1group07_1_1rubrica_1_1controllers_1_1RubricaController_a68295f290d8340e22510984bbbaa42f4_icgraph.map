@@ -1,0 +1,9 @@
+<map id="it.unisa.diem.swe.group07.rubrica.controllers.RubricaController.setEditableAll" name="it.unisa.diem.swe.group07.rubrica.controllers.RubricaController.setEditableAll">
+<area shape="rect" id="Node000001" title="Imposta se tutti i campi di testo sono editabili o meno." alt="" coords="373,75,692,119"/>
+<area shape="rect" id="Node000002" href="$classit_1_1unisa_1_1diem_1_1swe_1_1group07_1_1rubrica_1_1controllers_1_1RubricaController.html#ab12066a907fca0078d984a32e641ba6f" title="Gestisce il salvataggio delle modifiche apportate a un contatto esistente, effettuando i controlli su..." alt="" coords="5,5,325,50"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="395,74,286,53,287,48,396,69"/>
+<area shape="rect" id="Node000003" href="$classit_1_1unisa_1_1diem_1_1swe_1_1group07_1_1rubrica_1_1controllers_1_1RubricaController.html#a8f5eef311627f3d103ca4952f783b1e9" title="Gestore dell&#39;evento relativo al click sul pulsante &quot;Modifica&quot;. Abilita i campi di testo per la modifi..." alt="" coords="5,75,325,119"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="357,100,325,100,325,94,357,94"/>
+<area shape="rect" id="Node000004" href="$classit_1_1unisa_1_1diem_1_1swe_1_1group07_1_1rubrica_1_1controllers_1_1RubricaController.html#acb62cc49f7e3289ddeb4f246b4f0a199" title="Metodo di inizializzazione della vista e dei dati. Imposta la lista dei contatti, la configurazione d..." alt="" coords="5,144,325,189"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="396,125,287,146,286,141,395,120"/>
+</map>

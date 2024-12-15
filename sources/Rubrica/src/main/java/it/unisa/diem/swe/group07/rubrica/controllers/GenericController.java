@@ -1,5 +1,5 @@
 /**
- * @file AbstractController.java
+ * @file GenericController.java
  * @brief Il file contiene l'implementazione di un controller astratto.
  * @author Gruppo07
  * @date Dicembre, 2024

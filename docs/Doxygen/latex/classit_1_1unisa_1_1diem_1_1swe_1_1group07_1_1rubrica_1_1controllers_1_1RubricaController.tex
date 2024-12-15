@@ -7,8 +7,7 @@ La classe rappresenta il controllore responsabile della gestione della vista pri
 
 
 
-Diagramma delle classi per it.\+unisa.\+diem.\+swe.\+group07.\+rubrica.\+controllers.\+Rubrica\+Controller
-\nopagebreak
+Diagramma delle classi per it.\+unisa.\+diem.\+swe.\+group07.\+rubrica.\+controllers.\+Rubrica\+Controller\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -39,14 +38,130 @@ void \mbox{\hyperlink{classit_1_1unisa_1_1diem_1_1swe_1_1group07_1_1rubrica_1_1c
 \item 
 \mbox{\hyperlink{classit_1_1unisa_1_1diem_1_1swe_1_1group07_1_1rubrica_1_1models_1_1Rubrica}{Rubrica}} \mbox{\hyperlink{classit_1_1unisa_1_1diem_1_1swe_1_1group07_1_1rubrica_1_1controllers_1_1GenericController_a224c3322a29288a8a1a4dc6b9c40bee7}{get\+Rubrica}} ()
 \begin{DoxyCompactList}\small\item\em metodo getter dell\textquotesingle{}attributo rubrica. \end{DoxyCompactList}\item 
-void \mbox{\hyperlink{classit_1_1unisa_1_1diem_1_1swe_1_1group07_1_1rubrica_1_1controllers_1_1GenericController_a5f6770389af1ad6f0385f46f57ee9f1c}{set\+Rubrica}} (\mbox{\hyperlink{classit_1_1unisa_1_1diem_1_1swe_1_1group07_1_1rubrica_1_1models_1_1Rubrica}{Rubrica}} rubrica)
+void \mbox{\hyperlink{classit_1_1unisa_1_1diem_1_1swe_1_1group07_1_1rubrica_1_1controllers_1_1GenericController_a5f6770389af1ad6f0385f46f57ee9f1c}{set\+Rubrica}} (\mbox{\hyperlink{classit_1_1unisa_1_1diem_1_1swe_1_1group07_1_1rubrica_1_1models_1_1Rubrica}{Rubrica}} \mbox{\hyperlink{classit_1_1unisa_1_1diem_1_1swe_1_1group07_1_1rubrica_1_1controllers_1_1GenericController_a72fb63afd2f9c03809e256228b7f0b04}{rubrica}})
 \begin{DoxyCompactList}\small\item\em metodo setter dell\textquotesingle{}attributo rubrica. \end{DoxyCompactList}\item 
 Observable\+List$<$ \mbox{\hyperlink{classit_1_1unisa_1_1diem_1_1swe_1_1group07_1_1rubrica_1_1models_1_1Contatto}{Contatto}} $>$ \mbox{\hyperlink{classit_1_1unisa_1_1diem_1_1swe_1_1group07_1_1rubrica_1_1controllers_1_1GenericController_a3eac439a72130840f569e6c24fb0b080}{get\+Lista\+Contatti}} ()
 \begin{DoxyCompactList}\small\item\em metodo getter della struttura (lista osservabile). \end{DoxyCompactList}\item 
-void \mbox{\hyperlink{classit_1_1unisa_1_1diem_1_1swe_1_1group07_1_1rubrica_1_1controllers_1_1GenericController_a1d6261730678af5406c4fd0a7b495d15}{set\+Lista\+Contatti}} (Observable\+List$<$ \mbox{\hyperlink{classit_1_1unisa_1_1diem_1_1swe_1_1group07_1_1rubrica_1_1models_1_1Contatto}{Contatto}} $>$ lista\+Contatti)
+void \mbox{\hyperlink{classit_1_1unisa_1_1diem_1_1swe_1_1group07_1_1rubrica_1_1controllers_1_1GenericController_a1d6261730678af5406c4fd0a7b495d15}{set\+Lista\+Contatti}} (Observable\+List$<$ \mbox{\hyperlink{classit_1_1unisa_1_1diem_1_1swe_1_1group07_1_1rubrica_1_1models_1_1Contatto}{Contatto}} $>$ \mbox{\hyperlink{classit_1_1unisa_1_1diem_1_1swe_1_1group07_1_1rubrica_1_1controllers_1_1GenericController_a37a84eada7c5d800509f7b19c6f8e56c}{lista\+Contatti}})
 \begin{DoxyCompactList}\small\item\em metodo setter della lista osservabile \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{classit_1_1unisa_1_1diem_1_1swe_1_1group07_1_1rubrica_1_1controllers_1_1GenericController_a3dce84bf1033f4d481d90298859be9bc}{mostra\+Dialog}} (Alert.\+Alert\+Type type, String titolo, String messaggio)
 \begin{DoxyCompactList}\small\item\em metodo che consenti di mostrare un generico dialog. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Membri privati}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classit_1_1unisa_1_1diem_1_1swe_1_1group07_1_1rubrica_1_1controllers_1_1RubricaController_a5055117e4f13ea618542b7b5a3edc48e}{filtra\+Contatti}} (String c)
+\begin{DoxyCompactList}\small\item\em Metodo per filtrare i contatti in base al nome o al cognome. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classit_1_1unisa_1_1diem_1_1swe_1_1group07_1_1rubrica_1_1controllers_1_1RubricaController_a0a4f915570de16fd62412c1d5cf9e07d}{mostra\+Dettaglio\+Contatti}} (\mbox{\hyperlink{classit_1_1unisa_1_1diem_1_1swe_1_1group07_1_1rubrica_1_1models_1_1Contatto}{Contatto}} contatto)
+\begin{DoxyCompactList}\small\item\em Metodo per mostrare i dettagli di un contatto selezionato nella rubrica. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classit_1_1unisa_1_1diem_1_1swe_1_1group07_1_1rubrica_1_1controllers_1_1RubricaController_a68295f290d8340e22510984bbbaa42f4}{set\+Editable\+All}} (boolean is\+Editable)
+\begin{DoxyCompactList}\small\item\em Imposta se tutti i campi di testo sono editabili o meno. \end{DoxyCompactList}\item 
+\Hypertarget{classit_1_1unisa_1_1diem_1_1swe_1_1group07_1_1rubrica_1_1controllers_1_1RubricaController_ab12066a907fca0078d984a32e641ba6f}\label{classit_1_1unisa_1_1diem_1_1swe_1_1group07_1_1rubrica_1_1controllers_1_1RubricaController_ab12066a907fca0078d984a32e641ba6f} 
+void {\bfseries gestione\+Salva\+Modifiche} ()
+\begin{DoxyCompactList}\small\item\em Gestisce il salvataggio delle modifiche apportate a un contatto esistente, effettuando i controlli sui campi obbligatori (nome e cognome), indirizzi email e numeri telefonici. Nel caso in cui uno dei controlli dovesse fallire, il metodo mostra un dialog di errore e non consente il salvataggio del contatto modificato. \end{DoxyCompactList}\item 
+\Hypertarget{classit_1_1unisa_1_1diem_1_1swe_1_1group07_1_1rubrica_1_1controllers_1_1RubricaController_ad1b2eb09f67cace455ebc4b779c7dd7a}\label{classit_1_1unisa_1_1diem_1_1swe_1_1group07_1_1rubrica_1_1controllers_1_1RubricaController_ad1b2eb09f67cace455ebc4b779c7dd7a} 
+void {\bfseries show\+Rubrica} ()
+\begin{DoxyCompactList}\small\item\em gestore dell\textquotesingle{}evento relativo al click del pulsante "{}\+Finestra -\/$>$ Rubrica Standard"{}. Il metodo consente di aggiornare la Table\+View mostrando la "{}\+Rubrica Standard"{} ossia tutti i contatti presenti in rubrica. \end{DoxyCompactList}\item 
+\Hypertarget{classit_1_1unisa_1_1diem_1_1swe_1_1group07_1_1rubrica_1_1controllers_1_1RubricaController_a766b28da52a4653a6f3ed6d80c9ab8b3}\label{classit_1_1unisa_1_1diem_1_1swe_1_1group07_1_1rubrica_1_1controllers_1_1RubricaController_a766b28da52a4653a6f3ed6d80c9ab8b3} 
+void {\bfseries show\+Preferiti} ()
+\begin{DoxyCompactList}\small\item\em gestore dell\textquotesingle{}evento relativo al click del pulsante "{}\+Finestra -\/$>$ Contatti Preferiti"{}. Il metodo consente di aggiornare la Table\+View mostrando solamente i contatti preferiti presenti in rubrica. \end{DoxyCompactList}\item 
+\Hypertarget{classit_1_1unisa_1_1diem_1_1swe_1_1group07_1_1rubrica_1_1controllers_1_1RubricaController_a999bf74bb4283a5166c6190e883115af}\label{classit_1_1unisa_1_1diem_1_1swe_1_1group07_1_1rubrica_1_1controllers_1_1RubricaController_a999bf74bb4283a5166c6190e883115af} 
+void {\bfseries show\+Emergenza} ()
+\begin{DoxyCompactList}\small\item\em gestore dell\textquotesingle{}evento relativo al click del pulsante "{}\+Finestra -\/$>$ Contatti Emergenza"{}. Il metodo consente di aggiornare la Table\+View mostrando solamente i contatti di emergenza presenti in rubrica. \end{DoxyCompactList}\item 
+\Hypertarget{classit_1_1unisa_1_1diem_1_1swe_1_1group07_1_1rubrica_1_1controllers_1_1RubricaController_a07b1923c49777490bf16290f7ee9cc89}\label{classit_1_1unisa_1_1diem_1_1swe_1_1group07_1_1rubrica_1_1controllers_1_1RubricaController_a07b1923c49777490bf16290f7ee9cc89} 
+void {\bfseries toggle\+Emergenza} ()
+\begin{DoxyCompactList}\small\item\em Gestore dell\textquotesingle{}evento relativo al click sul pulsante "{}\+Emergenza"{}. Il metodo consente di inserire e rimuovere un contatto dai contatti di emergenza. Se il contatto selezionato é giá un contatto di emergenza, allora il metodo lo rimuove. Se il contatto selezionato non fa parte delle emergenze, il metodo lo inserisce. \end{DoxyCompactList}\item 
+\Hypertarget{classit_1_1unisa_1_1diem_1_1swe_1_1group07_1_1rubrica_1_1controllers_1_1RubricaController_a5c9fafbbec5fb1773da3f8cbb5aa378d}\label{classit_1_1unisa_1_1diem_1_1swe_1_1group07_1_1rubrica_1_1controllers_1_1RubricaController_a5c9fafbbec5fb1773da3f8cbb5aa378d} 
+void {\bfseries toggle\+Preferiti} ()
+\begin{DoxyCompactList}\small\item\em Gestore dell\textquotesingle{}evento relativo al click sul pulsante "{}\+Preferito"{}. Il metodo consente di inserire e rimuovere un contatto dai contatti preferiti. Se il contatto selezionato é giá un contatto preferito, allora il metodo lo rimuove. Se il contatto selezionato non fa parte delle emergenze, il metodo lo inserisce. \end{DoxyCompactList}\item 
+\Hypertarget{classit_1_1unisa_1_1diem_1_1swe_1_1group07_1_1rubrica_1_1controllers_1_1RubricaController_a486d9f68821b65c8805d3b11cd1ea80d}\label{classit_1_1unisa_1_1diem_1_1swe_1_1group07_1_1rubrica_1_1controllers_1_1RubricaController_a486d9f68821b65c8805d3b11cd1ea80d} 
+void {\bfseries open\+Git} ()
+\begin{DoxyCompactList}\small\item\em metodo per aprire la repository Git del progetto in una pagina web. \end{DoxyCompactList}\item 
+\Hypertarget{classit_1_1unisa_1_1diem_1_1swe_1_1group07_1_1rubrica_1_1controllers_1_1RubricaController_abeefa96d3b060c12c1a51c405e6ff179}\label{classit_1_1unisa_1_1diem_1_1swe_1_1group07_1_1rubrica_1_1controllers_1_1RubricaController_abeefa96d3b060c12c1a51c405e6ff179} 
+void {\bfseries handle\+Export\+Rubrica} ()
+\begin{DoxyCompactList}\small\item\em Gestore dell\textquotesingle{}evento relativo al click del pulsante "{}\+Esporta Rubrica"{}. Il metodo apre una finestra che consente all\textquotesingle{}utente di selezionare percorso in cui salvare il file e chiama il metodo responsabile dell\textquotesingle{}export della rubrica in formato .vcf. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Membri privati statici}
+\begin{DoxyCompactItemize}
+\item 
+static void \mbox{\hyperlink{classit_1_1unisa_1_1diem_1_1swe_1_1group07_1_1rubrica_1_1controllers_1_1RubricaController_ad0abf16e9cc08422c9c5f53b3c778cc8}{open\+Webpage}} (String url\+String)
+\begin{DoxyCompactList}\small\item\em Gestore dell\textquotesingle{}evento relativo al click sul pulsante "{}? -\/$>$ Github"{}. Il metodo apre la webpage utilizzando l\textquotesingle{}URL specificato. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Attributi privati}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classit_1_1unisa_1_1diem_1_1swe_1_1group07_1_1rubrica_1_1controllers_1_1RubricaController_a6a2edac7bff823cf419c6980fd6ffa95}\label{classit_1_1unisa_1_1diem_1_1swe_1_1group07_1_1rubrica_1_1controllers_1_1RubricaController_a6a2edac7bff823cf419c6980fd6ffa95} 
+Text\+Field {\bfseries nome\+Field}
+\begin{DoxyCompactList}\small\item\em Text Field per il nome del contatto nella Rubrica. \end{DoxyCompactList}\item 
+\Hypertarget{classit_1_1unisa_1_1diem_1_1swe_1_1group07_1_1rubrica_1_1controllers_1_1RubricaController_a24f3ee4f545577e69f21605d358ff47f}\label{classit_1_1unisa_1_1diem_1_1swe_1_1group07_1_1rubrica_1_1controllers_1_1RubricaController_a24f3ee4f545577e69f21605d358ff47f} 
+Text\+Field {\bfseries cognome\+Field}
+\begin{DoxyCompactList}\small\item\em Text Field per il cognome del contatto nella Rubrica. \end{DoxyCompactList}\item 
+\Hypertarget{classit_1_1unisa_1_1diem_1_1swe_1_1group07_1_1rubrica_1_1controllers_1_1RubricaController_a561aa998464b5f14b905eebbe155b9f8}\label{classit_1_1unisa_1_1diem_1_1swe_1_1group07_1_1rubrica_1_1controllers_1_1RubricaController_a561aa998464b5f14b905eebbe155b9f8} 
+Text\+Field {\bfseries telefono1\+Field}
+\begin{DoxyCompactList}\small\item\em Text Field per il telefono del contatto nella Rubrica. \end{DoxyCompactList}\item 
+\Hypertarget{classit_1_1unisa_1_1diem_1_1swe_1_1group07_1_1rubrica_1_1controllers_1_1RubricaController_a615296658cc8b4b73200bdd6757c3f03}\label{classit_1_1unisa_1_1diem_1_1swe_1_1group07_1_1rubrica_1_1controllers_1_1RubricaController_a615296658cc8b4b73200bdd6757c3f03} 
+Text\+Field {\bfseries telefono2\+Field}
+\begin{DoxyCompactList}\small\item\em Text Field per il telefono2 del contatto nella Rubrica. \end{DoxyCompactList}\item 
+\Hypertarget{classit_1_1unisa_1_1diem_1_1swe_1_1group07_1_1rubrica_1_1controllers_1_1RubricaController_a95815cdd862af39830ddd253614b20b0}\label{classit_1_1unisa_1_1diem_1_1swe_1_1group07_1_1rubrica_1_1controllers_1_1RubricaController_a95815cdd862af39830ddd253614b20b0} 
+Text\+Field {\bfseries telefono3\+Field}
+\begin{DoxyCompactList}\small\item\em Text Field per il telefono3 del contatto nella Rubrica. \end{DoxyCompactList}\item 
+\Hypertarget{classit_1_1unisa_1_1diem_1_1swe_1_1group07_1_1rubrica_1_1controllers_1_1RubricaController_afe2856bdbbac39b43c7140eec0864c94}\label{classit_1_1unisa_1_1diem_1_1swe_1_1group07_1_1rubrica_1_1controllers_1_1RubricaController_afe2856bdbbac39b43c7140eec0864c94} 
+Text\+Field {\bfseries email1\+Field}
+\begin{DoxyCompactList}\small\item\em Text Field per l\textquotesingle{}email del contatto nella Rubrica. \end{DoxyCompactList}\item 
+\Hypertarget{classit_1_1unisa_1_1diem_1_1swe_1_1group07_1_1rubrica_1_1controllers_1_1RubricaController_a1304d340b68329b437e9a895ef8d2aff}\label{classit_1_1unisa_1_1diem_1_1swe_1_1group07_1_1rubrica_1_1controllers_1_1RubricaController_a1304d340b68329b437e9a895ef8d2aff} 
+Text\+Field {\bfseries email2\+Field}
+\begin{DoxyCompactList}\small\item\em Text Field per l\textquotesingle{}email2 del contatto nella Rubrica. \end{DoxyCompactList}\item 
+\Hypertarget{classit_1_1unisa_1_1diem_1_1swe_1_1group07_1_1rubrica_1_1controllers_1_1RubricaController_adb0b14dcb5a714c59daea017df3c2050}\label{classit_1_1unisa_1_1diem_1_1swe_1_1group07_1_1rubrica_1_1controllers_1_1RubricaController_adb0b14dcb5a714c59daea017df3c2050} 
+Text\+Field {\bfseries email3\+Field}
+\begin{DoxyCompactList}\small\item\em Text Field per l\textquotesingle{}email3 del contatto nella Rubrica. \end{DoxyCompactList}\item 
+\Hypertarget{classit_1_1unisa_1_1diem_1_1swe_1_1group07_1_1rubrica_1_1controllers_1_1RubricaController_a0c62653c68302eaca3a75b91f848fd5e}\label{classit_1_1unisa_1_1diem_1_1swe_1_1group07_1_1rubrica_1_1controllers_1_1RubricaController_a0c62653c68302eaca3a75b91f848fd5e} 
+Date\+Picker {\bfseries compleanno\+Field}
+\begin{DoxyCompactList}\small\item\em Text Field per il compleanno del contatto nella Rubrica. \end{DoxyCompactList}\item 
+\Hypertarget{classit_1_1unisa_1_1diem_1_1swe_1_1group07_1_1rubrica_1_1controllers_1_1RubricaController_a4173d3deaf14f18ac1ccb57f75a4b5ff}\label{classit_1_1unisa_1_1diem_1_1swe_1_1group07_1_1rubrica_1_1controllers_1_1RubricaController_a4173d3deaf14f18ac1ccb57f75a4b5ff} 
+Text\+Field {\bfseries indirizzo\+Field}
+\begin{DoxyCompactList}\small\item\em Text Field per l\textquotesingle{}indirizzo del contatto nella Rubrica. \end{DoxyCompactList}\item 
+\Hypertarget{classit_1_1unisa_1_1diem_1_1swe_1_1group07_1_1rubrica_1_1controllers_1_1RubricaController_a9d800df3bd78bceb722b6bb0daad5086}\label{classit_1_1unisa_1_1diem_1_1swe_1_1group07_1_1rubrica_1_1controllers_1_1RubricaController_a9d800df3bd78bceb722b6bb0daad5086} 
+Text\+Field {\bfseries note\+Field}
+\begin{DoxyCompactList}\small\item\em Text Field per le note nella Rubrica. \end{DoxyCompactList}\item 
+\Hypertarget{classit_1_1unisa_1_1diem_1_1swe_1_1group07_1_1rubrica_1_1controllers_1_1RubricaController_ae85c9dfc809435f23cc84d7e7616e5ac}\label{classit_1_1unisa_1_1diem_1_1swe_1_1group07_1_1rubrica_1_1controllers_1_1RubricaController_ae85c9dfc809435f23cc84d7e7616e5ac} 
+Label {\bfseries contatti\+Label}
+\begin{DoxyCompactList}\small\item\em Label "{}\+Contatti"{}. \end{DoxyCompactList}\item 
+\Hypertarget{classit_1_1unisa_1_1diem_1_1swe_1_1group07_1_1rubrica_1_1controllers_1_1RubricaController_ae6c5305c45712d488da4ea0492b1ed3f}\label{classit_1_1unisa_1_1diem_1_1swe_1_1group07_1_1rubrica_1_1controllers_1_1RubricaController_ae6c5305c45712d488da4ea0492b1ed3f} 
+Text\+Field {\bfseries barra\+Ricerca}
+\begin{DoxyCompactList}\small\item\em Barra di ricerca. Consente di cercare un contatto nella Rubrica. \end{DoxyCompactList}\item 
+\Hypertarget{classit_1_1unisa_1_1diem_1_1swe_1_1group07_1_1rubrica_1_1controllers_1_1RubricaController_adc90fe969b0019863288c95f5e40fd4d}\label{classit_1_1unisa_1_1diem_1_1swe_1_1group07_1_1rubrica_1_1controllers_1_1RubricaController_adc90fe969b0019863288c95f5e40fd4d} 
+Button {\bfseries pulsante\+Salva}
+\begin{DoxyCompactList}\small\item\em Pulsante che consente di salvare le modifiche apportate ad un contatto giá presente in rubrica. \end{DoxyCompactList}\item 
+\Hypertarget{classit_1_1unisa_1_1diem_1_1swe_1_1group07_1_1rubrica_1_1controllers_1_1RubricaController_a0662f91cbb19c74221482c17f51aed4c}\label{classit_1_1unisa_1_1diem_1_1swe_1_1group07_1_1rubrica_1_1controllers_1_1RubricaController_a0662f91cbb19c74221482c17f51aed4c} 
+Table\+Column$<$ \mbox{\hyperlink{classit_1_1unisa_1_1diem_1_1swe_1_1group07_1_1rubrica_1_1models_1_1Contatto}{Contatto}}, String $>$ {\bfseries cognome\+Clm}
+\begin{DoxyCompactList}\small\item\em Colonna per il cognome del contatto nella Table\+View. \end{DoxyCompactList}\item 
+\Hypertarget{classit_1_1unisa_1_1diem_1_1swe_1_1group07_1_1rubrica_1_1controllers_1_1RubricaController_ae5905d6bef3b402760bff3508a30b371}\label{classit_1_1unisa_1_1diem_1_1swe_1_1group07_1_1rubrica_1_1controllers_1_1RubricaController_ae5905d6bef3b402760bff3508a30b371} 
+Label {\bfseries fullname}
+\begin{DoxyCompactList}\small\item\em Label per visualizzare il nome completo del contatto. \end{DoxyCompactList}\item 
+\Hypertarget{classit_1_1unisa_1_1diem_1_1swe_1_1group07_1_1rubrica_1_1controllers_1_1RubricaController_ae14398a9b948da60bb1d582df3b96906}\label{classit_1_1unisa_1_1diem_1_1swe_1_1group07_1_1rubrica_1_1controllers_1_1RubricaController_ae14398a9b948da60bb1d582df3b96906} 
+Table\+Column$<$ \mbox{\hyperlink{classit_1_1unisa_1_1diem_1_1swe_1_1group07_1_1rubrica_1_1models_1_1Contatto}{Contatto}}, String $>$ {\bfseries nome\+Clm}
+\begin{DoxyCompactList}\small\item\em Colonna per il nome del contatto nella Table\+View. \end{DoxyCompactList}\item 
+\Hypertarget{classit_1_1unisa_1_1diem_1_1swe_1_1group07_1_1rubrica_1_1controllers_1_1RubricaController_ab48d0cbc18b96b17e47515cb6c7e051a}\label{classit_1_1unisa_1_1diem_1_1swe_1_1group07_1_1rubrica_1_1controllers_1_1RubricaController_ab48d0cbc18b96b17e47515cb6c7e051a} 
+Table\+View$<$ \mbox{\hyperlink{classit_1_1unisa_1_1diem_1_1swe_1_1group07_1_1rubrica_1_1models_1_1Contatto}{Contatto}} $>$ {\bfseries rubrica\+Table}
+\begin{DoxyCompactList}\small\item\em Table\+View che mostra la lista dei contatti. \end{DoxyCompactList}\item 
+\Hypertarget{classit_1_1unisa_1_1diem_1_1swe_1_1group07_1_1rubrica_1_1controllers_1_1RubricaController_a3bf9be7eeb3d0e358a8d751a0a01b17b}\label{classit_1_1unisa_1_1diem_1_1swe_1_1group07_1_1rubrica_1_1controllers_1_1RubricaController_a3bf9be7eeb3d0e358a8d751a0a01b17b} 
+Button {\bfseries preferiti\+Flag}
+\begin{DoxyCompactList}\small\item\em Pulsante che consente di aggiungere e rimuovere un contatto dai "{}preferiti"{}. \end{DoxyCompactList}\item 
+\Hypertarget{classit_1_1unisa_1_1diem_1_1swe_1_1group07_1_1rubrica_1_1controllers_1_1RubricaController_a979ca3e769919ae98be0186a7fea8160}\label{classit_1_1unisa_1_1diem_1_1swe_1_1group07_1_1rubrica_1_1controllers_1_1RubricaController_a979ca3e769919ae98be0186a7fea8160} 
+Button {\bfseries emergenza\+Flag}
+\begin{DoxyCompactList}\small\item\em Pulsante che consente di aggiungere e rimuovere un contatto dalle "{}emergenze"{}. \end{DoxyCompactList}\item 
+\Hypertarget{classit_1_1unisa_1_1diem_1_1swe_1_1group07_1_1rubrica_1_1controllers_1_1RubricaController_a27121c6cbdd780b0abbe16b563b82a6c}\label{classit_1_1unisa_1_1diem_1_1swe_1_1group07_1_1rubrica_1_1controllers_1_1RubricaController_a27121c6cbdd780b0abbe16b563b82a6c} 
+Text\+Field {\bfseries link\+Field}
+\begin{DoxyCompactList}\small\item\em Text Field per il sito web del contatto nella Rubrica. \end{DoxyCompactList}\item 
+\Hypertarget{classit_1_1unisa_1_1diem_1_1swe_1_1group07_1_1rubrica_1_1controllers_1_1RubricaController_a3e47fbc163c2d37e5354e675b164985c}\label{classit_1_1unisa_1_1diem_1_1swe_1_1group07_1_1rubrica_1_1controllers_1_1RubricaController_a3e47fbc163c2d37e5354e675b164985c} 
+\mbox{\hyperlink{classit_1_1unisa_1_1diem_1_1swe_1_1group07_1_1rubrica_1_1models_1_1Contatto}{Contatto}} {\bfseries contatto\+Selezionato}
+\begin{DoxyCompactList}\small\item\em Contatto selezionato nella Table View. \end{DoxyCompactList}\item 
+\Hypertarget{classit_1_1unisa_1_1diem_1_1swe_1_1group07_1_1rubrica_1_1controllers_1_1RubricaController_a49e0cc3cedcf11acdba3906ff4c708c3}\label{classit_1_1unisa_1_1diem_1_1swe_1_1group07_1_1rubrica_1_1controllers_1_1RubricaController_a49e0cc3cedcf11acdba3906ff4c708c3} 
+Filtered\+List$<$ \mbox{\hyperlink{classit_1_1unisa_1_1diem_1_1swe_1_1group07_1_1rubrica_1_1models_1_1Contatto}{Contatto}} $>$ {\bfseries filtered\+Contatti}
+\begin{DoxyCompactList}\small\item\em Lista Filtrata di contatti per la ricerca. \end{DoxyCompactList}\item 
+\Hypertarget{classit_1_1unisa_1_1diem_1_1swe_1_1group07_1_1rubrica_1_1controllers_1_1RubricaController_a825328518fc1bfa6928edd0bef33af61}\label{classit_1_1unisa_1_1diem_1_1swe_1_1group07_1_1rubrica_1_1controllers_1_1RubricaController_a825328518fc1bfa6928edd0bef33af61} 
+Filtered\+List$<$ \mbox{\hyperlink{classit_1_1unisa_1_1diem_1_1swe_1_1group07_1_1rubrica_1_1models_1_1Contatto}{Contatto}} $>$ {\bfseries contatti\+Filtrati\+Preferiti}
+\begin{DoxyCompactList}\small\item\em Lista Filtrata di contatti per la sotto-\/rubrica\+:preferiti. \end{DoxyCompactList}\item 
+\Hypertarget{classit_1_1unisa_1_1diem_1_1swe_1_1group07_1_1rubrica_1_1controllers_1_1RubricaController_aa683d654ae0bbd93540ef78285e39598}\label{classit_1_1unisa_1_1diem_1_1swe_1_1group07_1_1rubrica_1_1controllers_1_1RubricaController_aa683d654ae0bbd93540ef78285e39598} 
+Filtered\+List$<$ \mbox{\hyperlink{classit_1_1unisa_1_1diem_1_1swe_1_1group07_1_1rubrica_1_1models_1_1Contatto}{Contatto}} $>$ {\bfseries contatti\+Filtrati\+Emergenza}
+\begin{DoxyCompactList}\small\item\em Lista Filtrata di contatti per la otto-\/rubrica\+:contatti d\textquotesingle{}emergenza. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsubsection*{Altri membri ereditati}
 \doxysubsection*{Membri protetti ereditati da \mbox{\hyperlink{classit_1_1unisa_1_1diem_1_1swe_1_1group07_1_1rubrica_1_1controllers_1_1GenericController}{it.\+unisa.\+diem.\+swe.\+group07.\+rubrica.\+controllers.\+Generic\+Controller}}}
 \begin{DoxyCompactItemize}
@@ -72,6 +187,35 @@ Rubrica
 
 
 \doxysubsection{Documentazione delle funzioni membro}
+\Hypertarget{classit_1_1unisa_1_1diem_1_1swe_1_1group07_1_1rubrica_1_1controllers_1_1RubricaController_a5055117e4f13ea618542b7b5a3edc48e}\index{it.unisa.diem.swe.group07.rubrica.controllers.RubricaController@{it.unisa.diem.swe.group07.rubrica.controllers.RubricaController}!filtraContatti@{filtraContatti}}
+\index{filtraContatti@{filtraContatti}!it.unisa.diem.swe.group07.rubrica.controllers.RubricaController@{it.unisa.diem.swe.group07.rubrica.controllers.RubricaController}}
+\doxysubsubsection{\texorpdfstring{filtraContatti()}{filtraContatti()}}
+{\footnotesize\ttfamily \label{classit_1_1unisa_1_1diem_1_1swe_1_1group07_1_1rubrica_1_1controllers_1_1RubricaController_a5055117e4f13ea618542b7b5a3edc48e} 
+void it.\+unisa.\+diem.\+swe.\+group07.\+rubrica.\+controllers.\+Rubrica\+Controller.\+filtra\+Contatti (\begin{DoxyParamCaption}\item[{String}]{c}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Metodo per filtrare i contatti in base al nome o al cognome. 
+
+
+\begin{DoxyParams}[1]{Parametri}
+\mbox{\texttt{ in}}  & {\em c,Stringa} & di ricerca. \\
+\hline
+\end{DoxyParams}
+Questo è il grafo delle chiamate per questa funzione\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classit_1_1unisa_1_1diem_1_1swe_1_1group07_1_1rubrica_1_1controllers_1_1RubricaController_a5055117e4f13ea618542b7b5a3edc48e_cgraph}
+\end{center}
+\end{figure}
+Questo è il grafo dei chiamanti di questa funzione\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classit_1_1unisa_1_1diem_1_1swe_1_1group07_1_1rubrica_1_1controllers_1_1RubricaController_a5055117e4f13ea618542b7b5a3edc48e_icgraph}
+\end{center}
+\end{figure}
 \Hypertarget{classit_1_1unisa_1_1diem_1_1swe_1_1group07_1_1rubrica_1_1controllers_1_1RubricaController_a09a018495d1eb3c281b87e5bdd8a0a8e}\index{it.unisa.diem.swe.group07.rubrica.controllers.RubricaController@{it.unisa.diem.swe.group07.rubrica.controllers.RubricaController}!handleImportRubrica@{handleImportRubrica}}
 \index{handleImportRubrica@{handleImportRubrica}!it.unisa.diem.swe.group07.rubrica.controllers.RubricaController@{it.unisa.diem.swe.group07.rubrica.controllers.RubricaController}}
 \doxysubsubsection{\texorpdfstring{handleImportRubrica()}{handleImportRubrica()}}
@@ -87,8 +231,7 @@ Gestore dell\textquotesingle{}evento "{}\+Importa Rubrica/\+Contatto"{}. Il meto
 {\em IOException} & \\
 \hline
 \end{DoxyExceptions}
-Questo è il grafo delle chiamate per questa funzione\+:
-\nopagebreak
+Questo è il grafo delle chiamate per questa funzione\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -112,12 +255,84 @@ Metodo di inizializzazione della vista e dei dati. Imposta la lista dei contatti
 \mbox{\texttt{ in}}  & {\em rb,Resource\+Bundle} & per il caricamento delle risorse. \\
 \hline
 \end{DoxyParams}
-Questo è il grafo delle chiamate per questa funzione\+:
-\nopagebreak
+Questo è il grafo delle chiamate per questa funzione\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
 \includegraphics[width=350pt]{classit_1_1unisa_1_1diem_1_1swe_1_1group07_1_1rubrica_1_1controllers_1_1RubricaController_acb62cc49f7e3289ddeb4f246b4f0a199_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classit_1_1unisa_1_1diem_1_1swe_1_1group07_1_1rubrica_1_1controllers_1_1RubricaController_a0a4f915570de16fd62412c1d5cf9e07d}\index{it.unisa.diem.swe.group07.rubrica.controllers.RubricaController@{it.unisa.diem.swe.group07.rubrica.controllers.RubricaController}!mostraDettaglioContatti@{mostraDettaglioContatti}}
+\index{mostraDettaglioContatti@{mostraDettaglioContatti}!it.unisa.diem.swe.group07.rubrica.controllers.RubricaController@{it.unisa.diem.swe.group07.rubrica.controllers.RubricaController}}
+\doxysubsubsection{\texorpdfstring{mostraDettaglioContatti()}{mostraDettaglioContatti()}}
+{\footnotesize\ttfamily \label{classit_1_1unisa_1_1diem_1_1swe_1_1group07_1_1rubrica_1_1controllers_1_1RubricaController_a0a4f915570de16fd62412c1d5cf9e07d} 
+void it.\+unisa.\+diem.\+swe.\+group07.\+rubrica.\+controllers.\+Rubrica\+Controller.\+mostra\+Dettaglio\+Contatti (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classit_1_1unisa_1_1diem_1_1swe_1_1group07_1_1rubrica_1_1models_1_1Contatto}{Contatto}}}]{contatto}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Metodo per mostrare i dettagli di un contatto selezionato nella rubrica. 
+
+
+\begin{DoxyParams}[1]{Parametri}
+\mbox{\texttt{ in}}  & {\em contatto,Il} & contatto selezionato da visualizzare. \\
+\hline
+\end{DoxyParams}
+Questo è il grafo delle chiamate per questa funzione\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classit_1_1unisa_1_1diem_1_1swe_1_1group07_1_1rubrica_1_1controllers_1_1RubricaController_a0a4f915570de16fd62412c1d5cf9e07d_cgraph}
+\end{center}
+\end{figure}
+Questo è il grafo dei chiamanti di questa funzione\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classit_1_1unisa_1_1diem_1_1swe_1_1group07_1_1rubrica_1_1controllers_1_1RubricaController_a0a4f915570de16fd62412c1d5cf9e07d_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classit_1_1unisa_1_1diem_1_1swe_1_1group07_1_1rubrica_1_1controllers_1_1RubricaController_ad0abf16e9cc08422c9c5f53b3c778cc8}\index{it.unisa.diem.swe.group07.rubrica.controllers.RubricaController@{it.unisa.diem.swe.group07.rubrica.controllers.RubricaController}!openWebpage@{openWebpage}}
+\index{openWebpage@{openWebpage}!it.unisa.diem.swe.group07.rubrica.controllers.RubricaController@{it.unisa.diem.swe.group07.rubrica.controllers.RubricaController}}
+\doxysubsubsection{\texorpdfstring{openWebpage()}{openWebpage()}}
+{\footnotesize\ttfamily \label{classit_1_1unisa_1_1diem_1_1swe_1_1group07_1_1rubrica_1_1controllers_1_1RubricaController_ad0abf16e9cc08422c9c5f53b3c778cc8} 
+static void it.\+unisa.\+diem.\+swe.\+group07.\+rubrica.\+controllers.\+Rubrica\+Controller.\+open\+Webpage (\begin{DoxyParamCaption}\item[{String}]{url\+String}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
+
+
+
+Gestore dell\textquotesingle{}evento relativo al click sul pulsante "{}? -\/$>$ Github"{}. Il metodo apre la webpage utilizzando l\textquotesingle{}URL specificato. 
+
+
+\begin{DoxyParams}[1]{Parametri}
+\mbox{\texttt{ in}}  & {\em url\+String,URL} & della pagina web da aprire. \\
+\hline
+\end{DoxyParams}
+Questo è il grafo dei chiamanti di questa funzione\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classit_1_1unisa_1_1diem_1_1swe_1_1group07_1_1rubrica_1_1controllers_1_1RubricaController_ad0abf16e9cc08422c9c5f53b3c778cc8_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classit_1_1unisa_1_1diem_1_1swe_1_1group07_1_1rubrica_1_1controllers_1_1RubricaController_a68295f290d8340e22510984bbbaa42f4}\index{it.unisa.diem.swe.group07.rubrica.controllers.RubricaController@{it.unisa.diem.swe.group07.rubrica.controllers.RubricaController}!setEditableAll@{setEditableAll}}
+\index{setEditableAll@{setEditableAll}!it.unisa.diem.swe.group07.rubrica.controllers.RubricaController@{it.unisa.diem.swe.group07.rubrica.controllers.RubricaController}}
+\doxysubsubsection{\texorpdfstring{setEditableAll()}{setEditableAll()}}
+{\footnotesize\ttfamily \label{classit_1_1unisa_1_1diem_1_1swe_1_1group07_1_1rubrica_1_1controllers_1_1RubricaController_a68295f290d8340e22510984bbbaa42f4} 
+void it.\+unisa.\+diem.\+swe.\+group07.\+rubrica.\+controllers.\+Rubrica\+Controller.\+set\+Editable\+All (\begin{DoxyParamCaption}\item[{boolean}]{is\+Editable}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Imposta se tutti i campi di testo sono editabili o meno. 
+
+
+\begin{DoxyParams}[1]{Parametri}
+\mbox{\texttt{ in}}  & {\em is\+Editable,Se} & \textquotesingle{}true\textquotesingle{}, i campi di testo sono resi editabili; se \textquotesingle{}false\textquotesingle{}, sono resi non editabili. \\
+\hline
+\end{DoxyParams}
+Questo è il grafo dei chiamanti di questa funzione\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classit_1_1unisa_1_1diem_1_1swe_1_1group07_1_1rubrica_1_1controllers_1_1RubricaController_a68295f290d8340e22510984bbbaa42f4_icgraph}
 \end{center}
 \end{figure}
 

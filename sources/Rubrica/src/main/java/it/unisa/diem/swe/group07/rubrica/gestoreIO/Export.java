@@ -1,3 +1,10 @@
+/**
+ * @file Export.java
+ * @brief  questo file contiene l'implementazione dei metodi utili al export
+ * @author Gruppo07
+ * @date Dicembre, 2024
+ * @version 1.0
+ */
 package it.unisa.diem.swe.group07.rubrica.gestoreIO;
 
 import it.unisa.diem.swe.group07.rubrica.models.Contatto;
@@ -7,13 +14,6 @@ import it.unisa.diem.swe.group07.rubrica.models.Rubrica;
 import java.io.*;
 import java.nio.charset.StandardCharsets;
 
-/**
- * @file Export.java
- * @brief  questo file contiene l'implementazione dei metodi utili al export
- * @author Gruppo07
- * @date Dicembre, 2024
- * @version 1.0
- */
 public class Export {
 /**
  * @param[in] c, il contattoEsteso da dove ricavare i dati da salvare nella vcard

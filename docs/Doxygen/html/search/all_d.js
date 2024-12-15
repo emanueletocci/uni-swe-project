@@ -1,4 +1,12 @@
 var searchData=
 [
-  ['tostring_0',['toString',['../classit_1_1unisa_1_1diem_1_1swe_1_1group07_1_1rubrica_1_1models_1_1Contatto.html#a255417cff3c6c2612181af2d44ab2333',1,'it.unisa.diem.swe.group07.rubrica.models.Contatto.toString()'],['../classit_1_1unisa_1_1diem_1_1swe_1_1group07_1_1rubrica_1_1models_1_1ContattoEsteso.html#aa9da7b9875b3dccaed4948d2ce4d296d',1,'it.unisa.diem.swe.group07.rubrica.models.ContattoEsteso.toString()'],['../classit_1_1unisa_1_1diem_1_1swe_1_1group07_1_1rubrica_1_1models_1_1Rubrica.html#ab387b79086ac69e5ffdb01fcfd8697b9',1,'it.unisa.diem.swe.group07.rubrica.models.Rubrica.toString()']]]
+  ['ricercacontatto_0',['ricercaContatto',['../classit_1_1unisa_1_1diem_1_1swe_1_1group07_1_1rubrica_1_1models_1_1Rubrica.html#aeb6463bdf05a6a16e0635edae7c0a4bf',1,'it::unisa::diem::swe::group07::rubrica::models::Rubrica']]],
+  ['rimuovicontatto_1',['rimuoviContatto',['../classit_1_1unisa_1_1diem_1_1swe_1_1group07_1_1rubrica_1_1models_1_1Rubrica.html#adfade3b396138d21829007118365fe2e',1,'it::unisa::diem::swe::group07::rubrica::models::Rubrica']]],
+  ['rubrica_2',['Rubrica',['../classit_1_1unisa_1_1diem_1_1swe_1_1group07_1_1rubrica_1_1models_1_1Rubrica.html',1,'it.unisa.diem.swe.group07.rubrica.models.Rubrica'],['../classit_1_1unisa_1_1diem_1_1swe_1_1group07_1_1rubrica_1_1models_1_1Rubrica.html#a883f3706ce6faf301db2460d48e15c31',1,'it.unisa.diem.swe.group07.rubrica.models.Rubrica.Rubrica()']]],
+  ['rubrica_3',['rubrica',['../classit_1_1unisa_1_1diem_1_1swe_1_1group07_1_1rubrica_1_1controllers_1_1GenericController.html#a72fb63afd2f9c03809e256228b7f0b04',1,'it.unisa.diem.swe.group07.rubrica.controllers.GenericController.rubrica'],['../classit_1_1unisa_1_1diem_1_1swe_1_1group07_1_1rubrica_1_1models_1_1Rubrica.html#a9b4c8d5aea51a378023f4b3f11b67fef',1,'it.unisa.diem.swe.group07.rubrica.models.Rubrica.rubrica']]],
+  ['rubrica_2ejava_4',['Rubrica.java',['../Rubrica_8java.html',1,'']]],
+  ['rubricacontroller_5',['RubricaController',['../classit_1_1unisa_1_1diem_1_1swe_1_1group07_1_1rubrica_1_1controllers_1_1RubricaController.html',1,'it::unisa::diem::swe::group07::rubrica::controllers']]],
+  ['rubricacontroller_2ejava_6',['RubricaController.java',['../RubricaController_8java.html',1,'']]],
+  ['rubricatable_7',['rubricaTable',['../classit_1_1unisa_1_1diem_1_1swe_1_1group07_1_1rubrica_1_1controllers_1_1RubricaController.html#ab48d0cbc18b96b17e47515cb6c7e051a',1,'it::unisa::diem::swe::group07::rubrica::controllers::RubricaController']]],
+  ['rubricatest_8',['RubricaTest',['../classRubricaTest.html',1,'']]]
 ];

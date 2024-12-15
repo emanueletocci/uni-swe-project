@@ -1,0 +1,7 @@
+<map id="it.unisa.diem.swe.group07.rubrica.models.Contatto.isEmergenza" name="it.unisa.diem.swe.group07.rubrica.models.Contatto.isEmergenza">
+<area shape="rect" id="Node000001" title="controlla se un contatto è d&#39;emergenza" alt="" coords="740,5,1038,50"/>
+<area shape="rect" id="Node000002" href="$classit_1_1unisa_1_1diem_1_1swe_1_1group07_1_1rubrica_1_1controllers_1_1RubricaController.html#a0a4f915570de16fd62412c1d5cf9e07d" title="Metodo per mostrare i dettagli di un contatto selezionato nella rubrica." alt="" coords="373,5,692,50"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="725,30,693,30,693,25,725,25"/>
+<area shape="rect" id="Node000003" href="$classit_1_1unisa_1_1diem_1_1swe_1_1group07_1_1rubrica_1_1controllers_1_1RubricaController.html#acb62cc49f7e3289ddeb4f246b4f0a199" title="Metodo di inizializzazione della vista e dei dati. Imposta la lista dei contatti, la configurazione d..." alt="" coords="5,5,325,50"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="357,30,325,30,325,25,357,25"/>
+</map>

@@ -1,6 +1,5 @@
 var searchData=
 [
-  ['ricercacontatto_0',['ricercaContatto',['../classit_1_1unisa_1_1diem_1_1swe_1_1group07_1_1rubrica_1_1models_1_1Rubrica.html#aeb6463bdf05a6a16e0635edae7c0a4bf',1,'it::unisa::diem::swe::group07::rubrica::models::Rubrica']]],
-  ['rimuovicontatto_1',['rimuoviContatto',['../classit_1_1unisa_1_1diem_1_1swe_1_1group07_1_1rubrica_1_1models_1_1Rubrica.html#adfade3b396138d21829007118365fe2e',1,'it::unisa::diem::swe::group07::rubrica::models::Rubrica']]],
-  ['rubrica_2',['Rubrica',['../classit_1_1unisa_1_1diem_1_1swe_1_1group07_1_1rubrica_1_1models_1_1Rubrica.html#a883f3706ce6faf301db2460d48e15c31',1,'it::unisa::diem::swe::group07::rubrica::models::Rubrica']]]
+  ['mostradettagliocontatti_0',['mostraDettaglioContatti',['../classit_1_1unisa_1_1diem_1_1swe_1_1group07_1_1rubrica_1_1controllers_1_1RubricaController.html#a0a4f915570de16fd62412c1d5cf9e07d',1,'it::unisa::diem::swe::group07::rubrica::controllers::RubricaController']]],
+  ['mostradialog_1',['mostraDialog',['../classit_1_1unisa_1_1diem_1_1swe_1_1group07_1_1rubrica_1_1controllers_1_1GenericController.html#a3dce84bf1033f4d481d90298859be9bc',1,'it::unisa::diem::swe::group07::rubrica::controllers::GenericController']]]
 ];

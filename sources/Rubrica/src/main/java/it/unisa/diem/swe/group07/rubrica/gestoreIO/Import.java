@@ -1,3 +1,10 @@
+/**
+ * @file Import.java
+ * @brief importa i contatti da un file .vcf e li aggiunge ad una rubrica
+ * @author Gruppo07
+ * @date Dicembre, 2024
+ * @version 1.0
+ */
 package it.unisa.diem.swe.group07.rubrica.gestoreIO;
 
 import it.unisa.diem.swe.group07.rubrica.models.ContattoEsteso;
@@ -11,13 +18,6 @@ import java.nio.charset.StandardCharsets;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 
-/**
- * @file Import.java
- * @brief importa i contatti da un file .vcf e li aggiunge ad una rubrica
- * @author Gruppo07
- * @date Dicembre, 2024
- * @version 1.0
- */
 public class Import {
     /**
      * @brief metodo per importare i contatti da un file vCard (.vcf) e aggiungerli a una rubrica

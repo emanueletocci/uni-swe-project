@@ -71,7 +71,7 @@ public class ContattoEsteso extends Contatto {
      */
     public ContattoEsteso(){
         super();
-    };
+    }
 
     /**
      * @brief costruttore della classe Contatto Esteso senza ingressi, serve per agevolare l'import
@@ -80,7 +80,7 @@ public class ContattoEsteso extends Contatto {
     public ContattoEsteso(String nome, String cognome, String telefono1, String telefono2, String telefono3, Boolean preferito, Boolean emergenza){
         super(nome, cognome, telefono1, telefono2, telefono3, preferito, emergenza);
         this.setId(generaId()); //sovrascrive il campo id presente in "Contatto"
-    };
+    }
 
     /**
      * @brief metodo getter per l'attributo "compleanno"

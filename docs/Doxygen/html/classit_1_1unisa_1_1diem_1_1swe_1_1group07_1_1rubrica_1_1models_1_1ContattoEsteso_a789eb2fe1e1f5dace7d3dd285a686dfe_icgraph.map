@@ -1,7 +1,9 @@
 <map id="it.unisa.diem.swe.group07.rubrica.models.ContattoEsteso.setNote" name="it.unisa.diem.swe.group07.rubrica.models.ContattoEsteso.setNote">
-<area shape="rect" id="Node000001" title="metodo setter per l&#39;attributo &quot;note&quot;" alt="" coords="716,5,1014,50"/>
-<area shape="rect" id="Node000002" href="$classit_1_1unisa_1_1diem_1_1swe_1_1group07_1_1rubrica_1_1gestoreIO_1_1Import.html#ae7512cecb7fae2b890edec350d5b9ccd" title="metodo per importare i contatti da un file vCard (.vcf) e aggiungerli a una rubrica" alt="" coords="373,5,668,50"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="701,30,668,30,668,25,701,25"/>
-<area shape="rect" id="Node000003" href="$classit_1_1unisa_1_1diem_1_1swe_1_1group07_1_1rubrica_1_1controllers_1_1RubricaController.html#a09a018495d1eb3c281b87e5bdd8a0a8e" title="Gestore dell&#39;evento &quot;Importa Rubrica/Contatto&quot;. Il metodo apre una finestra che consente all&#39;utente d..." alt="" coords="5,5,325,50"/>
-<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="357,30,325,30,325,25,357,25"/>
+<area shape="rect" id="Node000001" title="metodo setter per l&#39;attributo &quot;note&quot;" alt="" coords="740,40,1038,85"/>
+<area shape="rect" id="Node000002" href="$classit_1_1unisa_1_1diem_1_1swe_1_1group07_1_1rubrica_1_1controllers_1_1RubricaController.html#ab12066a907fca0078d984a32e641ba6f" title="Gestisce il salvataggio delle modifiche apportate a un contatto esistente, effettuando i controlli su..." alt="" coords="373,5,692,50"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="724,49,692,46,693,41,725,44"/>
+<area shape="rect" id="Node000003" href="$classit_1_1unisa_1_1diem_1_1swe_1_1group07_1_1rubrica_1_1gestoreIO_1_1Import.html#ae7512cecb7fae2b890edec350d5b9ccd" title="metodo per importare i contatti da un file vCard (.vcf) e aggiungerli a una rubrica" alt="" coords="385,75,680,119"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="725,81,681,85,680,80,724,76"/>
+<area shape="rect" id="Node000004" href="$classit_1_1unisa_1_1diem_1_1swe_1_1group07_1_1rubrica_1_1controllers_1_1RubricaController.html#a09a018495d1eb3c281b87e5bdd8a0a8e" title="Gestore dell&#39;evento &quot;Importa Rubrica/Contatto&quot;. Il metodo apre una finestra che consente all&#39;utente d..." alt="" coords="5,75,325,119"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="369,100,325,100,325,94,369,94"/>
 </map>

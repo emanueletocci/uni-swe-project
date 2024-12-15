@@ -1,5 +1,7 @@
 <map id="it.unisa.diem.swe.group07.rubrica.controllers.GenericController.controllaCampiObbligatori" name="it.unisa.diem.swe.group07.rubrica.controllers.GenericController.controllaCampiObbligatori">
-<area shape="rect" id="Node000001" title="metodo verificare che almeno un TextField tra nome e cognome è stato riempito dall&#39;utente." alt="" coords="385,5,704,50"/>
-<area shape="rect" id="Node000002" href="$classit_1_1unisa_1_1diem_1_1swe_1_1group07_1_1rubrica_1_1controllers_1_1CreaContattoController.html#a16d9eaa6b2dcf48fa2e33e168a17e0c2" title="Il metodo preleva i valori dai Text Field, crea un contatto temporaneo e, se i valori inseriti dall&#39;u..." alt="" coords="5,5,337,50"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="369,30,337,30,337,25,369,25"/>
+<area shape="rect" id="Node000001" title="metodo verificare che almeno un TextField tra nome e cognome è stato riempito dall&#39;utente." alt="" coords="385,40,704,85"/>
+<area shape="rect" id="Node000002" href="$classit_1_1unisa_1_1diem_1_1swe_1_1group07_1_1rubrica_1_1controllers_1_1RubricaController.html#ab12066a907fca0078d984a32e641ba6f" title="Gestisce il salvataggio delle modifiche apportate a un contatto esistente, effettuando i controlli su..." alt="" coords="11,5,331,50"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="369,49,331,45,331,40,369,43"/>
+<area shape="rect" id="Node000003" href="$classit_1_1unisa_1_1diem_1_1swe_1_1group07_1_1rubrica_1_1controllers_1_1CreaContattoController.html#a16d9eaa6b2dcf48fa2e33e168a17e0c2" title="Il metodo preleva i valori dai Text Field, crea un contatto temporaneo e, se i valori inseriti dall&#39;u..." alt="" coords="5,75,337,119"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="369,81,338,84,337,79,369,76"/>
 </map>

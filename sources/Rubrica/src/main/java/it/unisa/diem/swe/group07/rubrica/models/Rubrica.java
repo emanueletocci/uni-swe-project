@@ -11,7 +11,6 @@ import java.util.HashMap;
 import java.util.Collection;
 
 /**
- * @class Rubrica
  * @brief Classe che rappresenta una rubrica di contatti.
  *
  * La classe Rubrica gestisce una collezione di contatti, permettendo operazioni

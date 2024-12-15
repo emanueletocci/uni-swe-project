@@ -1,0 +1,5 @@
+<map id="it.unisa.diem.swe.group07.rubrica.controllers.RubricaController.filtraContatti" name="it.unisa.diem.swe.group07.rubrica.controllers.RubricaController.filtraContatti">
+<area shape="rect" id="Node000001" title="Metodo per filtrare i contatti in base al nome o al cognome." alt="" coords="5,5,325,50"/>
+<area shape="rect" id="Node000002" href="$classit_1_1unisa_1_1diem_1_1swe_1_1group07_1_1rubrica_1_1controllers_1_1GenericController.html#a3eac439a72130840f569e6c24fb0b080" title="metodo getter della struttura (lista osservabile)." alt="" coords="373,5,692,50"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="325,25,357,25,357,30,325,30"/>
+</map>
