@@ -328,7 +328,7 @@ public class RubricaController extends AbstractController implements Initializab
             indirizzoField.setEditable(isEditable);
             compleannoField.setEditable(isEditable);
             noteField.setEditable(isEditable);
-            compleannoField.setEditable(isEditable);
+            linkField.setEditable(isEditable);
     }
     /**
      * @brief Gestore dell'evento relativo al click del pulsante "Elimina Contatto". Il metodo elimina un contatto dalla rubrica ed aggiorna

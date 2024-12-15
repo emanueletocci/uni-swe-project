@@ -11,6 +11,8 @@ BDAY:2003-06-09
 ADR;TYPE=home:via Prova
 URL:unisa.it
 NOTE:note
+X-PREF:1
+X-EMERG:1
 END:VCARD
 BEGIN:VCARD
 VERSION:3.0
@@ -25,4 +27,6 @@ BDAY:2001-06-09
 ADR;TYPE=home:via Prova
 URL:unisa.it
 NOTE:note
+X-PREF:1
+X-EMERG:1
 END:VCARD
