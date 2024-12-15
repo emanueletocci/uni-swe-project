@@ -1,0 +1,4 @@
+<map id="it.unisa.diem.swe.group07.rubrica.gestoreIO.Export.esportaRubrica" name="it.unisa.diem.swe.group07.rubrica.gestoreIO.Export.esportaRubrica">
+<area shape="rect" id="node1" title="metodo per fornire un file di output conforme allo standard vCard che contiene tutta la rubrica" alt="" coords="373,5,669,45"/>
+<area shape="rect" id="node2" href="$classit_1_1unisa_1_1diem_1_1swe_1_1group07_1_1rubrica_1_1controllers_1_1RubricaController.html#abeefa96d3b060c12c1a51c405e6ff179" title="Gestore dell&#39;evento relativo al click del pulsante &quot;Esporta Rubrica&quot;. Il metodo apre una finestra che..." alt="" coords="5,5,325,45"/>
+</map>

@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['objref_0',['objRef',['../structObject.html#a71225073d06a793b9a6ea9263ed37b12',1,'Object']]],
-  ['objunref_1',['objUnref',['../structObject.html#a924ee0cecc906d148022b3f0d6325cfb',1,'Object']]],
-  ['open_2',['open',['../structcmd_8h.html#a2c4414339f388561554c2deab11a1a07',1,'structcmd.h']]]
+  ['toggleemergenza_0',['toggleEmergenza',['../classit_1_1unisa_1_1diem_1_1swe_1_1group07_1_1rubrica_1_1controllers_1_1RubricaController.html#a07b1923c49777490bf16290f7ee9cc89',1,'it::unisa::diem::swe::group07::rubrica::controllers::RubricaController']]],
+  ['togglepreferiti_1',['togglePreferiti',['../classit_1_1unisa_1_1diem_1_1swe_1_1group07_1_1rubrica_1_1controllers_1_1RubricaController.html#a5c9fafbbec5fb1773da3f8cbb5aa378d',1,'it::unisa::diem::swe::group07::rubrica::controllers::RubricaController']]],
+  ['tostring_2',['toString',['../classit_1_1unisa_1_1diem_1_1swe_1_1group07_1_1rubrica_1_1models_1_1Contatto.html#a255417cff3c6c2612181af2d44ab2333',1,'it.unisa.diem.swe.group07.rubrica.models.Contatto.toString()'],['../classit_1_1unisa_1_1diem_1_1swe_1_1group07_1_1rubrica_1_1models_1_1ContattoEsteso.html#aa9da7b9875b3dccaed4948d2ce4d296d',1,'it.unisa.diem.swe.group07.rubrica.models.ContattoEsteso.toString()'],['../classit_1_1unisa_1_1diem_1_1swe_1_1group07_1_1rubrica_1_1models_1_1Rubrica.html#ab387b79086ac69e5ffdb01fcfd8697b9',1,'it.unisa.diem.swe.group07.rubrica.models.Rubrica.toString()']]]
 ];

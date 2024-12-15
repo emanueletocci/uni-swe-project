@@ -1,9 +1,11 @@
 var searchData=
 [
-  ['func_0',['func',['../namespacedocstring.html#aec1a168f6e16b33f87fe6a37b9208957',1,'docstring.func()'],['../group__group1.html#ga24f647174760cac13d2624b5ad74b00c',1,'func():&#160;group.cpp'],['../namespacepyexample.html#a2daf35288bc9d0a1d4233ab18b553451',1,'pyexample.func()']]],
-  ['func1ingroup1_1',['func1InGroup1',['../classMemgrp__Test.html#a5052066c03efb51395b5334da4255cd2',1,'Memgrp_Test']]],
-  ['func1ingroup2_2',['func1InGroup2',['../classMemgrp__Test.html#ab0e6553ddc36ac3cef0ac229c5dd4cdb',1,'Memgrp_Test']]],
-  ['func2_3',['func2',['../group__group1.html#ga053929c0809a5f56f7548fd7d9968f31',1,'group.cpp']]],
-  ['func2ingroup2_4',['func2InGroup2',['../classMemgrp__Test.html#a9ce862049bb543596343e81ad3ddddff',1,'Memgrp_Test']]],
-  ['func3_5',['func3',['../group__group1.html#gadbf675591ff057ec48ce35b0d5cdf755',1,'group.cpp']]]
+  ['handleaggiungicontatto_0',['handleAggiungiContatto',['../classit_1_1unisa_1_1diem_1_1swe_1_1group07_1_1rubrica_1_1controllers_1_1CreaContattoController.html#a16d9eaa6b2dcf48fa2e33e168a17e0c2',1,'it::unisa::diem::swe::group07::rubrica::controllers::CreaContattoController']]],
+  ['handleeliminacontatto_1',['handleEliminaContatto',['../classit_1_1unisa_1_1diem_1_1swe_1_1group07_1_1rubrica_1_1controllers_1_1RubricaController.html#a76dea9db685201c1e89dcd20d8d7840e',1,'it::unisa::diem::swe::group07::rubrica::controllers::RubricaController']]],
+  ['handleexportcontatto_2',['handleExportContatto',['../classit_1_1unisa_1_1diem_1_1swe_1_1group07_1_1rubrica_1_1controllers_1_1RubricaController.html#a28f1cd139c6377895c583d8d6edcae27',1,'it::unisa::diem::swe::group07::rubrica::controllers::RubricaController']]],
+  ['handleexportrubrica_3',['handleExportRubrica',['../classit_1_1unisa_1_1diem_1_1swe_1_1group07_1_1rubrica_1_1controllers_1_1RubricaController.html#abeefa96d3b060c12c1a51c405e6ff179',1,'it::unisa::diem::swe::group07::rubrica::controllers::RubricaController']]],
+  ['handleimportrubrica_4',['handleImportRubrica',['../classit_1_1unisa_1_1diem_1_1swe_1_1group07_1_1rubrica_1_1controllers_1_1RubricaController.html#a09a018495d1eb3c281b87e5bdd8a0a8e',1,'it::unisa::diem::swe::group07::rubrica::controllers::RubricaController']]],
+  ['handlemodificacontatto_5',['handleModificaContatto',['../classit_1_1unisa_1_1diem_1_1swe_1_1group07_1_1rubrica_1_1controllers_1_1RubricaController.html#a8f5eef311627f3d103ca4952f783b1e9',1,'it::unisa::diem::swe::group07::rubrica::controllers::RubricaController']]],
+  ['handlenuovocontatto_6',['handleNuovoContatto',['../classit_1_1unisa_1_1diem_1_1swe_1_1group07_1_1rubrica_1_1controllers_1_1RubricaController.html#ac42a294519c71cd05537868f89c17a4f',1,'it::unisa::diem::swe::group07::rubrica::controllers::RubricaController']]],
+  ['hashcode_7',['hashCode',['../classit_1_1unisa_1_1diem_1_1swe_1_1group07_1_1rubrica_1_1models_1_1Contatto.html#aa61f9fea9462309f29e19858851031e0',1,'it.unisa.diem.swe.group07.rubrica.models.Contatto.hashCode()'],['../classit_1_1unisa_1_1diem_1_1swe_1_1group07_1_1rubrica_1_1models_1_1ContattoEsteso.html#a825cc1bc06671299213ed6f41603f6c8',1,'it.unisa.diem.swe.group07.rubrica.models.ContattoEsteso.hashCode()']]]
 ];

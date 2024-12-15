@@ -1,7 +1,5 @@
 var searchData=
 [
-  ['importvcard_0',['importVcard',['../classit_1_1unisa_1_1diem_1_1swe_1_1group07_1_1rubrica_1_1gestoreIO_1_1Import.html#ae7512cecb7fae2b890edec350d5b9ccd',1,'it::unisa::diem::swe::group07::rubrica::gestoreIO::Import']]],
-  ['initialize_1',['initialize',['../classit_1_1unisa_1_1diem_1_1swe_1_1group07_1_1rubrica_1_1controllers_1_1RubricaController.html#acb62cc49f7e3289ddeb4f246b4f0a199',1,'it::unisa::diem::swe::group07::rubrica::controllers::RubricaController']]],
-  ['isemergenza_2',['isEmergenza',['../classit_1_1unisa_1_1diem_1_1swe_1_1group07_1_1rubrica_1_1models_1_1Contatto.html#ae45dfded28545cdef6b40895b1a30162',1,'it::unisa::diem::swe::group07::rubrica::models::Contatto']]],
-  ['ispreferito_3',['isPreferito',['../classit_1_1unisa_1_1diem_1_1swe_1_1group07_1_1rubrica_1_1models_1_1Contatto.html#a2ce97cff6a914d4f9b350a0dc8d835f2',1,'it::unisa::diem::swe::group07::rubrica::models::Contatto']]]
+  ['opengit_0',['openGit',['../classit_1_1unisa_1_1diem_1_1swe_1_1group07_1_1rubrica_1_1controllers_1_1RubricaController.html#a486d9f68821b65c8805d3b11cd1ea80d',1,'it::unisa::diem::swe::group07::rubrica::controllers::RubricaController']]],
+  ['openwebpage_1',['openWebpage',['../classit_1_1unisa_1_1diem_1_1swe_1_1group07_1_1rubrica_1_1controllers_1_1RubricaController.html#ad0abf16e9cc08422c9c5f53b3c778cc8',1,'it::unisa::diem::swe::group07::rubrica::controllers::RubricaController']]]
 ];

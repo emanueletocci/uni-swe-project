@@ -1,4 +1,3 @@
 <map id="it.unisa.diem.swe.group07.rubrica.models.Contatto.equals" name="it.unisa.diem.swe.group07.rubrica.models.Contatto.equals">
-<area shape="rect" id="Node000001" title="metodo che consente di confrontare 2 contatti" alt="" coords="5,29,304,74"/>
-<area shape="poly" id="edge1_Node000001_Node000001" title=" " alt="" coords="203,16,185,10,154,8,126,10,109,15,102,21,103,28,98,29,97,19,106,10,125,5,155,3,186,5,205,11"/>
+<area shape="rect" id="node1" title="metodo che consente di confrontare 2 contatti" alt="" coords="5,29,304,69"/>
 </map>

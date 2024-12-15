@@ -1,5 +1,6 @@
 <map id="it.unisa.diem.swe.group07.rubrica.models.ContattoEsteso.setEmail1" name="it.unisa.diem.swe.group07.rubrica.models.ContattoEsteso.setEmail1">
-<area shape="rect" id="node1" title="metodo setter per l&#39;attributo &quot;email1&quot;" alt="" coords="717,5,1016,45"/>
-<area shape="rect" id="node2" href="$classit_1_1unisa_1_1diem_1_1swe_1_1group07_1_1rubrica_1_1gestoreIO_1_1Import.html#ae7512cecb7fae2b890edec350d5b9ccd" title="metodo per importare i contatti da un file vCard (.vcf) e aggiungerli a una rubrica" alt="" coords="373,5,669,45"/>
-<area shape="rect" id="node3" href="$classit_1_1unisa_1_1diem_1_1swe_1_1group07_1_1rubrica_1_1controllers_1_1RubricaController.html#a09a018495d1eb3c281b87e5bdd8a0a8e" title="Gestore dell&#39;evento &quot;Importa Rubrica/Contatto&quot;. Il metodo apre una finestra che consente all&#39;utente d..." alt="" coords="5,5,325,45"/>
+<area shape="rect" id="node1" title="metodo setter per l&#39;attributo &quot;email1&quot;" alt="" coords="741,37,1040,77"/>
+<area shape="rect" id="node2" href="$classit_1_1unisa_1_1diem_1_1swe_1_1group07_1_1rubrica_1_1controllers_1_1RubricaController.html#ab12066a907fca0078d984a32e641ba6f" title="Gestisce il salvataggio delle modifiche apportate a un contatto esistente, effettuando i controlli su..." alt="" coords="373,5,693,45"/>
+<area shape="rect" id="node3" href="$classit_1_1unisa_1_1diem_1_1swe_1_1group07_1_1rubrica_1_1gestoreIO_1_1Import.html#ae7512cecb7fae2b890edec350d5b9ccd" title="metodo per importare i contatti da un file vCard (.vcf) e aggiungerli a una rubrica" alt="" coords="385,69,681,109"/>
+<area shape="rect" id="node4" href="$classit_1_1unisa_1_1diem_1_1swe_1_1group07_1_1rubrica_1_1controllers_1_1RubricaController.html#a09a018495d1eb3c281b87e5bdd8a0a8e" title="Gestore dell&#39;evento &quot;Importa Rubrica/Contatto&quot;. Il metodo apre una finestra che consente all&#39;utente d..." alt="" coords="5,69,325,109"/>
 </map>

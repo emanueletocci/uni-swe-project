@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['publicvar_0',['publicVar',['../classJavadoc__Test.html#a44a516fbc3a4865e2dcae34649c9df6a',1,'Javadoc_Test::publicVar()'],['../classQTstyle__Test.html#aabf7b2e9ed83ea44aca4d213baae06d3',1,'QTstyle_Test::publicVar()']]]
+  ['sitoweb_0',['sitoWeb',['../classit_1_1unisa_1_1diem_1_1swe_1_1group07_1_1rubrica_1_1controllers_1_1CreaContattoController.html#a62d0553ec60002893f15169d5a1b0114',1,'it.unisa.diem.swe.group07.rubrica.controllers.CreaContattoController.sitoWeb()'],['../classit_1_1unisa_1_1diem_1_1swe_1_1group07_1_1rubrica_1_1models_1_1ContattoEsteso.html#af604ebd406131ff91367a372bf4a0a40',1,'it.unisa.diem.swe.group07.rubrica.models.ContattoEsteso.sitoWeb()']]]
 ];

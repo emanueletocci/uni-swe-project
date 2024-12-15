@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['lista_20dei_20bug_0',['Lista dei bug',['../bug.html',1,'']]]
+  ['inserire_20qui_20la_20documentazione_0',['Inserire qui la documentazione',['../md_docs_2README.html',1,'']]]
 ];

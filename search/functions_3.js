@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['drawrect_0',['drawRect',['../classOverload__Test.html#a840305784a1944b4de9826a1f4204365',1,'Overload_Test::drawRect(int, int, int, int)'],['../classOverload__Test.html#a7a613f50092cbc0ef830a818d9f3409c',1,'Overload_Test::drawRect(const Rect &amp;r)']]]
+  ['filtracontatti_0',['filtraContatti',['../classit_1_1unisa_1_1diem_1_1swe_1_1group07_1_1rubrica_1_1controllers_1_1RubricaController.html#a5055117e4f13ea618542b7b5a3edc48e',1,'it::unisa::diem::swe::group07::rubrica::controllers::RubricaController']]]
 ];
