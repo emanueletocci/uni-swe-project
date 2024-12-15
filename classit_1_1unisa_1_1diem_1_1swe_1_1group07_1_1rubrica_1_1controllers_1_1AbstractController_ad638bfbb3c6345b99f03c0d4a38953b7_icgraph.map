@@ -1,6 +1,9 @@
 <map id="it.unisa.diem.swe.group07.rubrica.controllers.AbstractController.mostraDialog" name="it.unisa.diem.swe.group07.rubrica.controllers.AbstractController.mostraDialog">
-<area shape="rect" id="node1" title="metodo che consenti di mostrare un generico dialog." alt="" coords="385,69,705,109"/>
-<area shape="rect" id="node2" href="$classit_1_1unisa_1_1diem_1_1swe_1_1group07_1_1rubrica_1_1controllers_1_1CreaContattoController.html#a16d9eaa6b2dcf48fa2e33e168a17e0c2" title="Il metodo preleva i valori dai Text Field, crea un contatto temporaneo e, se i valori inseriti dall&#39;u..." alt="" coords="5,5,337,45"/>
-<area shape="rect" id="node3" href="$classit_1_1unisa_1_1diem_1_1swe_1_1group07_1_1rubrica_1_1controllers_1_1RubricaController.html#a76dea9db685201c1e89dcd20d8d7840e" title="Gestore dell&#39;evento relativo al click del pulsante &quot;Elimina Contatto&quot;. Il metodo elimina un contatto ..." alt="" coords="11,69,331,109"/>
-<area shape="rect" id="node4" href="$classit_1_1unisa_1_1diem_1_1swe_1_1group07_1_1rubrica_1_1controllers_1_1RubricaController.html#a28f1cd139c6377895c583d8d6edcae27" title="Gestore dell&#39;evento &quot;Esporta Contatto&quot;. Il metodo apre una finestra che consente all&#39;utente di selezi..." alt="" coords="11,133,331,173"/>
+<area shape="rect" id="Node000001" title="metodo che consenti di mostrare un generico dialog." alt="" coords="385,75,704,119"/>
+<area shape="rect" id="Node000002" href="$classit_1_1unisa_1_1diem_1_1swe_1_1group07_1_1rubrica_1_1controllers_1_1CreaContattoController.html#a16d9eaa6b2dcf48fa2e33e168a17e0c2" title="Il metodo preleva i valori dai Text Field, crea un contatto temporaneo e, se i valori inseriti dall&#39;u..." alt="" coords="5,5,337,50"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="405,74,294,53,295,48,406,69"/>
+<area shape="rect" id="Node000003" href="$classit_1_1unisa_1_1diem_1_1swe_1_1group07_1_1rubrica_1_1controllers_1_1RubricaController.html#a76dea9db685201c1e89dcd20d8d7840e" title="Gestore dell&#39;evento relativo al click del pulsante &quot;Elimina Contatto&quot;. Il metodo elimina un contatto ..." alt="" coords="11,75,331,119"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="369,100,331,100,331,94,369,94"/>
+<area shape="rect" id="Node000004" href="$classit_1_1unisa_1_1diem_1_1swe_1_1group07_1_1rubrica_1_1controllers_1_1RubricaController.html#a28f1cd139c6377895c583d8d6edcae27" title="Gestore dell&#39;evento &quot;Esporta Contatto&quot;. Il metodo apre una finestra che consente all&#39;utente di selezi..." alt="" coords="11,144,331,189"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="406,125,295,146,294,141,405,120"/>
 </map>

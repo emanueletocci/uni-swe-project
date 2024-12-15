@@ -8,7 +8,7 @@ var searchData=
   ['memgrp_2ecpp_5',['memgrp.cpp',['../memgrp_8cpp.html',1,'']]],
   ['memgrp_5ftest_6',['Memgrp_Test',['../classMemgrp__Test.html',1,'']]],
   ['min_7',['MIN',['../define_8h.html#a74e75242132eaabbc1c512488a135926',1,'define.h']]],
-  ['mostradialog_8',['mostraDialog',['../classit_1_1unisa_1_1diem_1_1swe_1_1group07_1_1rubrica_1_1controllers_1_1AbstractController.html#ad638bfbb3c6345b99f03c0d4a38953b7',1,'it::unisa::diem::swe::group07::rubrica::controllers::AbstractController']]],
+  ['mostradialog_8',['mostraDialog',['../classit_1_1unisa_1_1diem_1_1swe_1_1group07_1_1rubrica_1_1controllers_1_1GenericController.html#a3dce84bf1033f4d481d90298859be9bc',1,'it::unisa::diem::swe::group07::rubrica::controllers::GenericController']]],
   ['mux_2evhdl_9',['mux.vhdl',['../mux_8vhdl.html',1,'']]],
   ['mux_5fout_10',['mux_out',['../classmux__using__with.html#a6258515f40573285292fdb0b9663c422',1,'mux_using_with']]],
   ['mux_5fusing_5fwith_11',['mux_using_with',['../classmux__using__with.html',1,'']]]
