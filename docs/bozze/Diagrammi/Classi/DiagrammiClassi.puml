@@ -116,12 +116,9 @@ package rubrica {
 
 Rubrica    "1" o-- "0..*"   Contatto
 Contatto     <|--           ContattoEsteso
-AbstractController  <|--   RubricaController
-AbstractController  <|--   CreaContattoController
-Rubrica -- AbstractController
+GenericController  <|--   RubricaController
+GenericController  <|--   CreaContattoController
+Rubrica -- GenericController
 Import -- RubricaController
 Export -- RubricaController
 App --> RubricaController
- 
-}
-@enduml
