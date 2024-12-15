@@ -4,7 +4,7 @@ package rubrica {
     package controllers{
        class GenericController{
             + GenericController():
-            - listaContatti: ObservableList<ContattoEsteso>
+            - listaContatti: ObservableList<Contatto>
             - rubrica: Rubrica
             + mostraDialog(AlertType, String, String): void
             + controllaCampiObbligatori(String, String) : boolean
@@ -15,21 +15,34 @@ package rubrica {
 
         class RubricaController{
             + RubricaController()
-            - contattoSelezionato: ContattoEsteso
-            - contattiFiltratiPreferiti: FilteredList<ContattoEsteso>
-            - filteredContatti: FilteredList<ContattoEsteso>
-            - contattiFiltratiEmergenza: FilteredList<ContattoEsteso>
+            - contattoSelezionato: Contatto
+            - contattiFiltratiPreferiti: FilteredList<Contatto>
+            - filteredContatti: FilteredList<Contatto>
+            - contattiFiltratiEmergenza: FilteredList<Contatto>
             + initialize(URL, ResourceBundle): void
+            + handleNuovoContatto():void
             - filtraContatti(String): void
-            - mostraDettaglioContatti(ContattoEsteso): void
-            - setEditableAll(boolean): void
+            - mostraDettaglioContatti(Contatto): void
             - openWebpage(String): void
+            - setEditableAll(boolean): void
+            + handleEliminaContatto(): void
+            + handleModificaContatto(): void
+            - gestioneSalvaModifiche():void
+            - showRubrica():void
+            - showPreferiti():void
+            - showEmergenza():void
+            - toggleEmergenza():void
+            - togglePreferiti(): void
+            - openGit():void
+            - handleImportRubrica():void
+            - handleExportRubrica(): void
+            - handleExportContatto(): void
              
         }
        
         class CreaContattoController {
-            + CreaContattoController()
-            + initialize (URL, ResourceBundle) : void
+            +handleAggiungiContatto(ActionEvent): void
+        
         }
 
     }
@@ -45,17 +58,17 @@ package rubrica {
 
     class Rubrica{
           + Rubrica():
-          - rubrica: Map<Integer, ContattoEsteso>
-          + ricercaContatto(ContattoEsteso): ContattoEsteso
-          + rimuoviContatto(ContattoEsteso): ContattoEsteso
-          + aggiornaContatto(ContattoEsteso): Boolean
+          - rubrica: Map<Integer, Contatto>
+          + ricercaContatto(Contatto): Contatto
+          + rimuoviContatto(Contatto): Contatto
+          + aggiornaContatto(Contatto): Boolean
           + toString(): String
-          + aggiungiContatto(ContattoEsteso): ContattoEsteso
-          + aggiungiContattoEVerifica(ContattoEsteso): Boolean
+          + aggiungiContatto(Contatto): Contatto
+
         }
        
   
-   class Contatto{
+   abstract class Contatto{
           + Contatto():
           + Contatto(String, String, String, String, String, Boolean, Boolean):
           - cognome: String
@@ -89,7 +102,6 @@ package rubrica {
          + toString(): String
          + hashCode(): int
          - generaId(): Integer
-         + equals(Object): boolean
   
         }
 
@@ -99,16 +111,12 @@ package rubrica {
   package gestoreIO {
 
     class Export {
-        + Export():
-        - path: String
-        + getVcard(ContattoEsteso): String
+        + getVcard(Contatto): String
         + esportaRubrica(Rubrica): void
-        + esportaContatto(ContattoEsteso): void
+        + esportaContatto(Contatto): void
     }
  
    class Import {
-      + Import():
-      - path: String
       + importVcard(Rubrica, String): void
 }
 }
