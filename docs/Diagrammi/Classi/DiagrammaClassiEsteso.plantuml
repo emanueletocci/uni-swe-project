@@ -117,7 +117,7 @@ class Rubrica {
   - rubrica: Map<Integer, Contatto>
   + getContatti(): Collection<Contatto>
   + toString(): String
-  + aggiornaContatto(Contatto): Boolean
+  + aggiornaContatto(Contatto, Contatto): Boolean
   + rimuoviContatto(Contatto): Contatto
   + ricercaContatto(Contatto): Contatto
   + aggiungiContatto(Contatto): Boolean

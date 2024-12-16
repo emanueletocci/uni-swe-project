@@ -56,7 +56,7 @@ package rubrica {
           + aggiungiContatto(Contatto): Contatto
           + ricercaContatto(Contatto): Contatto
           + rimuoviContatto(Contatto): Contatto
-          + aggiornaContatto(Contatto): Boolean
+          + aggiornaContatto(Contatto, Contatto): Boolean
           + toString(): String
 
         }
