@@ -44,6 +44,8 @@ A questo punto é possibile:
 - Cancellare i file prodotti dalle precedenti compilazioni: `mvn clean`
 - Eseguire l'applicazione: `mvn javafx:run`
 
+Nella directory `src/main/resources/files` é presente il file `Noi.vcf` precompilato, che puó essere importato nella rubrica per testarne le funzionalitá. La validitá del file puó essere testata mediante un [tool online](https://freefileviewers.com/) oppure semplicemente importandolo in un software simile, compatibile con lo standard vCard, come per esempio l'app "Rubrica" dello smartphone o del computer.
+
 Se non si vuole seguire l'approccio da riga di comando é comunque possibile importare il progetto (`sources/Rubrica`) in un IDE come IntelliJ o netbeans, caricando il file `pom.xml` fornito.
 
 Qualora ci fosse qualche problema con lo script Maven (`pom.xml`) fornito, é comunque possibile compilare ed eseguire l'applicazione scaricando manualmente la SDK di javaFX e specificando il suo percorso, come spiegato nella [wiki ufficiale](https://openjfx.io/openjfx-docs/#install-javafx).
