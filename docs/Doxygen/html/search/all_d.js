@@ -8,5 +8,5 @@ var searchData=
   ['rubricacontroller_5',['RubricaController',['../classit_1_1unisa_1_1diem_1_1swe_1_1group07_1_1rubrica_1_1controllers_1_1RubricaController.html',1,'it::unisa::diem::swe::group07::rubrica::controllers']]],
   ['rubricacontroller_2ejava_6',['RubricaController.java',['../RubricaController_8java.html',1,'']]],
   ['rubricatable_7',['rubricaTable',['../classit_1_1unisa_1_1diem_1_1swe_1_1group07_1_1rubrica_1_1controllers_1_1RubricaController.html#ab48d0cbc18b96b17e47515cb6c7e051a',1,'it::unisa::diem::swe::group07::rubrica::controllers::RubricaController']]],
-  ['rubricatest_8',['RubricaTest',['../classjava_1_1RubricaTest.html',1,'java']]]
+  ['rubricatest_8',['RubricaTest',['../classRubricaTest.html',1,'']]]
 ];

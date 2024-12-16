@@ -70,13 +70,15 @@ public class Rubrica {
     }
 
     /**
-     *  @brief il metodo consente di aggiornare un contatto esistente nella rubrica.
+     *  @brief il metodo consente di aggiornare un contatto esistente nella rubrica. L'aggiornamento consiste sostanzialmente nella
+     *  rimozione del vecchio contatto e nell'aggiunta di uno nuovo.
      *  @param[in] contattoAggiornato Il contatto con i dati nuovi
+     *  @param[in] vecchioContatto Il contatto con i vecchi dati
      *  @return 'true' se il contatto viene correttamente aggiornato, 'false' altrimenti
      */
-    public Boolean aggiornaContatto(Contatto contattoAggiornato) {
-        // Trova il contatto nella rubrica e sostituiscilo
-        if (rubrica.containsKey(contattoAggiornato.getId())) {
+    public Boolean aggiornaContatto(Contatto vecchioContatto, Contatto contattoAggiornato) {
+        if (rubrica.containsKey(vecchioContatto.getId())){
+            rimuoviContatto(vecchioContatto);
             aggiungiContatto(contattoAggiornato);
             return true;
         }

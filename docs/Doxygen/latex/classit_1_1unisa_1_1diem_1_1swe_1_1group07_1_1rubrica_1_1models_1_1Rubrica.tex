@@ -19,8 +19,8 @@ Boolean \mbox{\hyperlink{classit_1_1unisa_1_1diem_1_1swe_1_1group07_1_1rubrica_1
 \begin{DoxyCompactList}\small\item\em metodo ricerca di un contatto in rubrica \end{DoxyCompactList}\item 
 Collection$<$ \mbox{\hyperlink{classit_1_1unisa_1_1diem_1_1swe_1_1group07_1_1rubrica_1_1models_1_1Contatto}{Contatto}} $>$ \mbox{\hyperlink{classit_1_1unisa_1_1diem_1_1swe_1_1group07_1_1rubrica_1_1models_1_1Rubrica_ab5198acdf4a2bdcf9a72587e63bcac64}{get\+Contatti}} ()
 \begin{DoxyCompactList}\small\item\em metodo restituisce tutti i contatti come una Collection \end{DoxyCompactList}\item 
-Boolean \mbox{\hyperlink{classit_1_1unisa_1_1diem_1_1swe_1_1group07_1_1rubrica_1_1models_1_1Rubrica_ab7e78976d01eea65240b5dcdb8f1f5e3}{aggiorna\+Contatto}} (\mbox{\hyperlink{classit_1_1unisa_1_1diem_1_1swe_1_1group07_1_1rubrica_1_1models_1_1Contatto}{Contatto}} contatto\+Aggiornato)
-\begin{DoxyCompactList}\small\item\em il metodo consente di aggiornare un contatto esistente nella rubrica. \end{DoxyCompactList}\item 
+Boolean \mbox{\hyperlink{classit_1_1unisa_1_1diem_1_1swe_1_1group07_1_1rubrica_1_1models_1_1Rubrica_aa6e44fcf22c150d4369b26f19fdb39ac}{aggiorna\+Contatto}} (\mbox{\hyperlink{classit_1_1unisa_1_1diem_1_1swe_1_1group07_1_1rubrica_1_1models_1_1Contatto}{Contatto}} vecchio\+Contatto, \mbox{\hyperlink{classit_1_1unisa_1_1diem_1_1swe_1_1group07_1_1rubrica_1_1models_1_1Contatto}{Contatto}} contatto\+Aggiornato)
+\begin{DoxyCompactList}\small\item\em il metodo consente di aggiornare un contatto esistente nella rubrica. L\textquotesingle{}aggiornamento consiste sostanzialmente nella rimozione del vecchio contatto e nell\textquotesingle{}aggiunta di uno nuovo. \end{DoxyCompactList}\item 
 String \mbox{\hyperlink{classit_1_1unisa_1_1diem_1_1swe_1_1group07_1_1rubrica_1_1models_1_1Rubrica_ab387b79086ac69e5ffdb01fcfd8697b9}{to\+String}} ()
 \begin{DoxyCompactList}\small\item\em metodo to\+Stirng() \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsubsection*{Attributi privati}
@@ -44,29 +44,32 @@ La classe \doxylink{classit_1_1unisa_1_1diem_1_1swe_1_1group07_1_1rubrica_1_1mod
 
 
 \doxysubsection{Documentazione delle funzioni membro}
-\Hypertarget{classit_1_1unisa_1_1diem_1_1swe_1_1group07_1_1rubrica_1_1models_1_1Rubrica_ab7e78976d01eea65240b5dcdb8f1f5e3}\index{it.unisa.diem.swe.group07.rubrica.models.Rubrica@{it.unisa.diem.swe.group07.rubrica.models.Rubrica}!aggiornaContatto@{aggiornaContatto}}
+\Hypertarget{classit_1_1unisa_1_1diem_1_1swe_1_1group07_1_1rubrica_1_1models_1_1Rubrica_aa6e44fcf22c150d4369b26f19fdb39ac}\index{it.unisa.diem.swe.group07.rubrica.models.Rubrica@{it.unisa.diem.swe.group07.rubrica.models.Rubrica}!aggiornaContatto@{aggiornaContatto}}
 \index{aggiornaContatto@{aggiornaContatto}!it.unisa.diem.swe.group07.rubrica.models.Rubrica@{it.unisa.diem.swe.group07.rubrica.models.Rubrica}}
 \doxysubsubsection{\texorpdfstring{aggiornaContatto()}{aggiornaContatto()}}
-{\footnotesize\ttfamily \label{classit_1_1unisa_1_1diem_1_1swe_1_1group07_1_1rubrica_1_1models_1_1Rubrica_ab7e78976d01eea65240b5dcdb8f1f5e3} 
-Boolean it.\+unisa.\+diem.\+swe.\+group07.\+rubrica.\+models.\+Rubrica.\+aggiorna\+Contatto (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classit_1_1unisa_1_1diem_1_1swe_1_1group07_1_1rubrica_1_1models_1_1Contatto}{Contatto}}}]{contatto\+Aggiornato}{}\end{DoxyParamCaption})}
+{\footnotesize\ttfamily \label{classit_1_1unisa_1_1diem_1_1swe_1_1group07_1_1rubrica_1_1models_1_1Rubrica_aa6e44fcf22c150d4369b26f19fdb39ac} 
+Boolean it.\+unisa.\+diem.\+swe.\+group07.\+rubrica.\+models.\+Rubrica.\+aggiorna\+Contatto (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classit_1_1unisa_1_1diem_1_1swe_1_1group07_1_1rubrica_1_1models_1_1Contatto}{Contatto}}}]{vecchio\+Contatto}{, }\item[{\mbox{\hyperlink{classit_1_1unisa_1_1diem_1_1swe_1_1group07_1_1rubrica_1_1models_1_1Contatto}{Contatto}}}]{contatto\+Aggiornato}{}\end{DoxyParamCaption})}
 
 
 
-il metodo consente di aggiornare un contatto esistente nella rubrica. 
+il metodo consente di aggiornare un contatto esistente nella rubrica. L\textquotesingle{}aggiornamento consiste sostanzialmente nella rimozione del vecchio contatto e nell\textquotesingle{}aggiunta di uno nuovo. 
 
 
 \begin{DoxyParams}[1]{Parametri}
 \mbox{\texttt{ in}}  & {\em contatto\+Aggiornato} & Il contatto con i dati nuovi \\
 \hline
+\mbox{\texttt{ in}}  & {\em vecchio\+Contatto} & Il contatto con i vecchi dati \\
+\hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Restituisce}
 \textquotesingle{}true\textquotesingle{} se il contatto viene correttamente aggiornato, \textquotesingle{}false\textquotesingle{} altrimenti 
 \end{DoxyReturn}
-Questo è il grafo delle chiamate per questa funzione\+:\nopagebreak
+Questo è il grafo delle chiamate per questa funzione\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=350pt]{classit_1_1unisa_1_1diem_1_1swe_1_1group07_1_1rubrica_1_1models_1_1Rubrica_ab7e78976d01eea65240b5dcdb8f1f5e3_cgraph}
+\includegraphics[width=350pt]{classit_1_1unisa_1_1diem_1_1swe_1_1group07_1_1rubrica_1_1models_1_1Rubrica_aa6e44fcf22c150d4369b26f19fdb39ac_cgraph}
 \end{center}
 \end{figure}
 \Hypertarget{classit_1_1unisa_1_1diem_1_1swe_1_1group07_1_1rubrica_1_1models_1_1Rubrica_aff024ceff1028798221cec28058c14d5}\index{it.unisa.diem.swe.group07.rubrica.models.Rubrica@{it.unisa.diem.swe.group07.rubrica.models.Rubrica}!aggiungiContatto@{aggiungiContatto}}
@@ -94,7 +97,8 @@ Questo è il grafo delle chiamate per questa funzione\+:\nopagebreak
 \includegraphics[width=350pt]{classit_1_1unisa_1_1diem_1_1swe_1_1group07_1_1rubrica_1_1models_1_1Rubrica_aff024ceff1028798221cec28058c14d5_cgraph}
 \end{center}
 \end{figure}
-Questo è il grafo dei chiamanti di questa funzione\+:\nopagebreak
+Questo è il grafo dei chiamanti di questa funzione\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -167,6 +171,14 @@ Questo è il grafo delle chiamate per questa funzione\+:\nopagebreak
 \begin{center}
 \leavevmode
 \includegraphics[width=350pt]{classit_1_1unisa_1_1diem_1_1swe_1_1group07_1_1rubrica_1_1models_1_1Rubrica_adfade3b396138d21829007118365fe2e_cgraph}
+\end{center}
+\end{figure}
+Questo è il grafo dei chiamanti di questa funzione\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classit_1_1unisa_1_1diem_1_1swe_1_1group07_1_1rubrica_1_1models_1_1Rubrica_adfade3b396138d21829007118365fe2e_icgraph}
 \end{center}
 \end{figure}
 \Hypertarget{classit_1_1unisa_1_1diem_1_1swe_1_1group07_1_1rubrica_1_1models_1_1Rubrica_ab387b79086ac69e5ffdb01fcfd8697b9}\index{it.unisa.diem.swe.group07.rubrica.models.Rubrica@{it.unisa.diem.swe.group07.rubrica.models.Rubrica}!toString@{toString}}

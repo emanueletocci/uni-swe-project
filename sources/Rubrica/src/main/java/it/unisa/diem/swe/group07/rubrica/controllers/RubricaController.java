@@ -152,6 +152,7 @@ public class RubricaController extends GenericController implements Initializabl
      * @brief Contatto selezionato nella Table View.
      */
     private Contatto contattoSelezionato;
+
     /**
      * @brief Lista Filtrata di contatti per la ricerca.
      */
@@ -189,9 +190,7 @@ public class RubricaController extends GenericController implements Initializabl
 
         // Listener per la selezione di un contatto
         rubricaTable.getSelectionModel().selectedItemProperty().addListener((observable, oldValue, newValue) -> {
-            if (newValue != null) {
                 mostraDettaglioContatti(newValue);
-            }
         });
 
         setEditableAll(false);
@@ -257,11 +256,12 @@ public class RubricaController extends GenericController implements Initializabl
                 if(contatto.getCognome()!=null){
                     cognome=contatto.getCognome();
                 }
-                
+
                 String nomecognome= nome + " "+cognome;
                 boolean matchesNomecognome=nomecognome.toLowerCase().startsWith(lowerCaseQuery);
                 String cognomenome= cognome+" "+nome;
                 boolean matchesCognomenome=cognomenome.toLowerCase().startsWith(lowerCaseQuery);
+
                 return matchesNomecognome||matchesCognomenome;
             });
         }
@@ -272,29 +272,45 @@ public class RubricaController extends GenericController implements Initializabl
      * @param[in] contatto, Il contatto selezionato da visualizzare.
      */ 
     private void mostraDettaglioContatti(Contatto contatto){
-        this.contattoSelezionato=contatto;
-        ContattoEsteso c = (ContattoEsteso) contatto;
-        fullname.setText(c.getNome() + " " + contatto.getCognome());
-        nomeField.setText(c.getNome());
-        cognomeField.setText(c.getCognome());
-        email1Field.setText(c.getEmail1());
-        email2Field.setText(c.getEmail2());
-        email3Field.setText(c.getEmail3());
-        telefono1Field.setText(c.getTelefono1());
-        telefono2Field.setText(c.getTelefono2());
-        telefono3Field.setText(c.getTelefono3());
-        linkField.setText(c.getSitoWeb());
-        indirizzoField.setText(c.getIndirizzoResidenza());
-        compleannoField.setValue(c.getCompleanno());
-        noteField.setText(c.getNote());
+        contattoSelezionato =rubricaTable.getSelectionModel().getSelectedItem();
+        if(contattoSelezionato!=null) {
+            ContattoEsteso c = (ContattoEsteso) contatto;
+            fullname.setText(c.getNome() + " " + contatto.getCognome());
+            nomeField.setText(c.getNome());
+            cognomeField.setText(c.getCognome());
+            email1Field.setText(c.getEmail1());
+            email2Field.setText(c.getEmail2());
+            email3Field.setText(c.getEmail3());
+            telefono1Field.setText(c.getTelefono1());
+            telefono2Field.setText(c.getTelefono2());
+            telefono3Field.setText(c.getTelefono3());
+            linkField.setText(c.getSitoWeb());
+            indirizzoField.setText(c.getIndirizzoResidenza());
+            compleannoField.setValue(c.getCompleanno());
+            noteField.setText(c.getNote());
+            preferitiFlag.opacityProperty().bind(Bindings.when(contattoSelezionato.isPreferito())
+                    .then(1.0) // Opacità al 100% quando isPreferiti è true
+                    .otherwise(0.3)); // Opacità al 50% quando isPreferiti è false
+            emergenzaFlag.opacityProperty().bind(Bindings.when(contattoSelezionato.isEmergenza())
+                    .then(1.0)
+                    .otherwise(0.3));
+        } else {
+            // svuota i TextField
+            fullname.setText("Nome Cognome");
+            nomeField.clear();
+            cognomeField.clear();
+            email1Field.clear();
+            email2Field.clear();
+            email3Field.clear();
+            telefono1Field.clear();
+            telefono2Field.clear();
+            telefono3Field.clear();
+            linkField.clear();
+            indirizzoField.clear();
+            compleannoField.getEditor().clear();
+            noteField.clear();   }
+    }
 
-        preferitiFlag.opacityProperty().bind(Bindings.when(contattoSelezionato.isPreferito())
-                .then(1.0) // Opacità al 100% quando isPreferiti è true
-                .otherwise(0.5)); // Opacità al 50% quando isPreferiti è false
-        emergenzaFlag.opacityProperty().bind(Bindings.when(contattoSelezionato.isEmergenza())
-                .then(1.0)
-                .otherwise(0.5));
-}
      /**
      * @brief Imposta se tutti i campi di testo sono editabili o meno.
      * @param[in] isEditable, Se 'true', i campi di testo sono resi editabili; se 'false', sono resi non editabili.
@@ -354,9 +370,14 @@ public class RubricaController extends GenericController implements Initializabl
      * salvataggio del contatto modificato.
      *
      */
-        @FXML
+    @FXML
     private void gestioneSalvaModifiche(){
             ContattoEsteso c = (ContattoEsteso) contattoSelezionato;
+            Boolean wasPreferito = contattoSelezionato.getPreferito();
+            Boolean wasEmergenza = contattoSelezionato.getEmergenza();
+
+            ContattoEsteso nuovoContatto = new ContattoEsteso(nomeField.getText(),cognomeField.getText(),telefono1Field.getText(),telefono2Field.getText(), telefono3Field.getText(),email1Field.getText(),email2Field.getText(),email3Field.getText(),compleannoField.getValue(),indirizzoField.getText(),linkField.getText(),noteField.getText(),wasPreferito, wasEmergenza);
+
             // Controlli sui campi inseriti dall'utente nella fase di creazione
             if (!controllaCampiObbligatori (nomeField.getText(),cognomeField.getText())){
                 mostraDialog ( Alert.AlertType.ERROR,"Errore di validazione", "Devi inserire almeno un nome o un cognome.");
@@ -383,18 +404,10 @@ public class RubricaController extends GenericController implements Initializabl
                 return;
             } else {
                 // Aggiorna i dati del contatto selezionato
-                c.setNome(nomeField.getText());
-                c.setCognome(cognomeField.getText());
-                c.setEmail1(email1Field.getText());
-                c.setEmail2(email2Field.getText());
-                c.setTelefono3(telefono1Field.getText());
-                c.setTelefono1(telefono2Field.getText());
-                c.setTelefono2(telefono2Field.getText());
-                c.setCompleanno(compleannoField.getValue());
-                c.setIndirizzoResidenza(indirizzoField.getText());
-                c.setNote(noteField.getText());
-                c.setSitoWeb(linkField.getText());
-                c.setNote(noteField.getText());
+                if(this.getRubrica().aggiornaContatto(c, nuovoContatto)) {
+                    this.getListaContatti().remove(c);
+                    this.getListaContatti().add(nuovoContatto);
+                }
             }
 
             //TEST
@@ -403,14 +416,13 @@ public class RubricaController extends GenericController implements Initializabl
             System.out.println("\n***LISTA CONTATTI***\n" + this.getListaContatti().toString());
             // FINE TEST
 
-            // Se il contatto selezionato puó essere aggiornato dalla rubrica (Map), allora aggiorna la TableView
-            if(this.getRubrica().aggiornaContatto(contattoSelezionato)) {
-                // Aggiorna la TableView e disabilita i TextField
-                rubricaTable.refresh(); //la tableView si aggiorna automaticamente!
-                mostraDialog (Alert.AlertType.INFORMATION, "Salvataggio Modifiche", "Il contatto selezionato é stato correttamente aggiornato" );
-                pulsanteSalva.setDisable(true);
-                setEditableAll(false);
-            } else mostraDialog ( Alert.AlertType.ERROR, "Errore salvataggio modifiche", "Si é verificato un errore durante la modifica del contatto" );
+            // Aggiorna la TableView e disabilita i TextField
+            fullname.setText(nuovoContatto.getNome() + " " + nuovoContatto.getCognome());   //Aggiorna la label fullname
+            mostraDialog (Alert.AlertType.INFORMATION, "Salvataggio Modifiche", "Il contatto selezionato é stato correttamente aggiornato" );
+            rubricaTable.refresh(); //opzionale, la tableView si aggiorna automaticamente!
+
+            pulsanteSalva.setDisable(true);
+            setEditableAll(false);
     }
 
     /**
@@ -501,17 +513,21 @@ public class RubricaController extends GenericController implements Initializabl
      */
     @FXML
     public void handleExportRubrica(){
-        FileChooser fileChooser = new FileChooser();
-        fileChooser.getExtensionFilters().add(new FileChooser.ExtensionFilter("VCF", "*.vcf"));
-        fileChooser.setTitle("Esporta Rubrica");
-        File file = fileChooser.showSaveDialog(new Stage());
+        if (!this.getRubrica().getContatti().isEmpty()) {
+            FileChooser fileChooser = new FileChooser();
+            fileChooser.getExtensionFilters().add(new FileChooser.ExtensionFilter("VCF", "*.vcf"));
+            fileChooser.setTitle("Esporta Rubrica");
+            File file = fileChooser.showSaveDialog(new Stage());
 
-        Export e = new Export();
-        e.esportaRubrica(this.getRubrica(), file.getAbsolutePath());
+            Export e = new Export();
+            e.esportaRubrica(this.getRubrica(), file.getAbsolutePath());
 
-        mostraDialog( Alert.AlertType.INFORMATION,
-                "Export completato",
-                "La rubrica è stata esportato con successo\noutput: " + file.getAbsolutePath()+".vcf");
+            mostraDialog(Alert.AlertType.INFORMATION,
+                    "Export completato",
+                    "La rubrica è stata esportato con successo\noutput: " + file.getAbsolutePath() + ".vcf");
+        } else {
+            mostraDialog(Alert.AlertType.ERROR, "Rubrica Vuota!", "Export fallito. La rubrica é vuota!");
+        }
     }
     
     /**
@@ -521,16 +537,18 @@ public class RubricaController extends GenericController implements Initializabl
     @FXML
     public void handleExportContatto(){
         Contatto c=rubricaTable.getSelectionModel().getSelectedItem();
-        FileChooser fileChooser = new FileChooser();
-        fileChooser.getExtensionFilters().add(new FileChooser.ExtensionFilter("VCF", "*.vcf"));
-        fileChooser.setTitle("Esporta Contatto");
-        File file = fileChooser.showSaveDialog(new Stage());
+        if(c!=null) {
+            FileChooser fileChooser = new FileChooser();
+            fileChooser.getExtensionFilters().add(new FileChooser.ExtensionFilter("VCF", "*.vcf"));
+            fileChooser.setTitle("Esporta Contatto");
+            File file = fileChooser.showSaveDialog(new Stage());
 
-        Export e = new Export();
-        e.esportaContatto(c, file.getAbsolutePath());
-        mostraDialog(Alert.AlertType.INFORMATION,
-                "Export completato",
-                "Il contatto è stato esportato con successo\noutput: " + file.getAbsolutePath() + ".vcf");
+            Export e = new Export();
+            e.esportaContatto(c, file.getAbsolutePath());
+            mostraDialog(Alert.AlertType.INFORMATION,
+                    "Export completato",
+                    "Il contatto è stato esportato con successo\noutput: " + file.getAbsolutePath() + ".vcf");
+        } else mostraDialog(Alert.AlertType.ERROR, "Errore Export", "Per esportare un contatto devi prima selezionare un contatto dalla tabella!");
     }
     /**
      * @brief Gestore dell'evento "Importa Rubrica/Contatto". Il metodo apre una finestra che consente all'utente di selezionare un file da importare

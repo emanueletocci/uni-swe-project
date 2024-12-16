@@ -263,7 +263,7 @@ public abstract class Contatto {
      * Calcola un ID numerico univoco utilizzando hashCode().
      * @return il valore hash dell'oggetto.
      */
-    protected Integer generaId(){
+    public Integer generaId(){
         String query = this.getNome() + this.getCognome();
         return query.hashCode();
     }

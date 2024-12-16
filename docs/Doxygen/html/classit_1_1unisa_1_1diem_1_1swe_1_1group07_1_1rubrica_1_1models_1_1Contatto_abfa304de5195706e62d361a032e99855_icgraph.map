@@ -1,27 +1,29 @@
 <map id="it.unisa.diem.swe.group07.rubrica.models.Contatto.getNome" name="it.unisa.diem.swe.group07.rubrica.models.Contatto.getNome">
-<area shape="rect" id="Node000001" title="metodo getter per l&#39;attributo &quot;nome&quot;." alt="" coords="1107,179,1406,223"/>
-<area shape="rect" id="Node000002" href="$classit_1_1unisa_1_1diem_1_1swe_1_1group07_1_1rubrica_1_1models_1_1Contatto.html#a4637fd4120a51586a48da343661d1c7f" title=" " alt="" coords="750,40,1049,85"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="1182,175,959,88,961,83,1184,170"/>
-<area shape="rect" id="Node000004" href="$classit_1_1unisa_1_1diem_1_1swe_1_1group07_1_1rubrica_1_1models_1_1ContattoEsteso.html#a22bcd762fad3ea80371dce5846c5f310" title=" " alt="" coords="750,144,1049,189"/>
-<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="1092,188,1049,183,1049,178,1092,182"/>
-<area shape="rect" id="Node000007" href="$classit_1_1unisa_1_1diem_1_1swe_1_1group07_1_1rubrica_1_1gestoreIO_1_1Export.html#a3304f558b87c2094133dea6bf8e1088d" title="metodo per ottenere la formattazione conforme allo standard vCard da un contatto" alt="" coords="752,213,1047,258"/>
-<area shape="poly" id="edge6_Node000001_Node000007" title=" " alt="" coords="1092,220,1048,224,1048,219,1092,214"/>
-<area shape="rect" id="Node000012" href="$classit_1_1unisa_1_1diem_1_1swe_1_1group07_1_1rubrica_1_1controllers_1_1RubricaController.html#a0a4f915570de16fd62412c1d5cf9e07d" title="Metodo per mostrare i dettagli di un contatto selezionato nella rubrica." alt="" coords="740,317,1059,362"/>
-<area shape="poly" id="edge11_Node000001_Node000012" title=" " alt="" coords="1184,232,961,319,959,314,1182,227"/>
+<area shape="rect" id="Node000001" title="metodo getter per l&#39;attributo &quot;nome&quot;." alt="" coords="1107,196,1406,241"/>
+<area shape="rect" id="Node000002" href="$classit_1_1unisa_1_1diem_1_1swe_1_1group07_1_1rubrica_1_1models_1_1Contatto.html#a4637fd4120a51586a48da343661d1c7f" title=" " alt="" coords="750,23,1049,67"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="1200,191,1058,117,955,70,957,65,1060,112,1202,186"/>
+<area shape="rect" id="Node000004" href="$classit_1_1unisa_1_1diem_1_1swe_1_1group07_1_1rubrica_1_1models_1_1ContattoEsteso.html#a22bcd762fad3ea80371dce5846c5f310" title=" " alt="" coords="750,127,1049,171"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="1123,195,1018,175,1019,169,1124,190"/>
+<area shape="rect" id="Node000007" href="$classit_1_1unisa_1_1diem_1_1swe_1_1group07_1_1rubrica_1_1controllers_1_1RubricaController.html#ab12066a907fca0078d984a32e641ba6f" title="Gestisce il salvataggio delle modifiche apportate a un contatto esistente, effettuando i controlli su..." alt="" coords="740,196,1059,241"/>
+<area shape="poly" id="edge6_Node000001_Node000007" title=" " alt="" coords="1092,221,1060,221,1060,216,1092,216"/>
+<area shape="rect" id="Node000008" href="$classit_1_1unisa_1_1diem_1_1swe_1_1group07_1_1rubrica_1_1gestoreIO_1_1Export.html#a3304f558b87c2094133dea6bf8e1088d" title="metodo per ottenere la formattazione conforme allo standard vCard da un contatto" alt="" coords="752,265,1047,310"/>
+<area shape="poly" id="edge7_Node000001_Node000008" title=" " alt="" coords="1124,247,1019,267,1018,262,1123,242"/>
+<area shape="rect" id="Node000013" href="$classit_1_1unisa_1_1diem_1_1swe_1_1group07_1_1rubrica_1_1controllers_1_1RubricaController.html#a0a4f915570de16fd62412c1d5cf9e07d" title="Metodo per mostrare i dettagli di un contatto selezionato nella rubrica." alt="" coords="740,335,1059,379"/>
+<area shape="poly" id="edge12_Node000001_Node000013" title=" " alt="" coords="1208,251,1139,289,1060,325,1023,337,1021,332,1058,320,1137,285,1205,247"/>
 <area shape="rect" id="Node000003" href="$classit_1_1unisa_1_1diem_1_1swe_1_1group07_1_1rubrica_1_1models_1_1Contatto.html#a00e134153eedae3d10177f7a5566c193" title="costruttore della classe Contatto." alt="" coords="383,5,682,50"/>
-<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="735,49,682,44,682,39,735,44"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="735,40,682,37,682,32,735,35"/>
 <area shape="rect" id="Node000005" href="$classit_1_1unisa_1_1diem_1_1swe_1_1group07_1_1rubrica_1_1models_1_1ContattoEsteso.html#af9c3a11cd034951e518811e52605aa6a" title="costruttore della classe Contatto Esteso senza ingressi, serve per agevolare l&#39;import" alt="" coords="383,75,682,119"/>
-<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="762,143,654,123,655,117,763,138"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="735,128,681,121,682,115,736,123"/>
 <area shape="rect" id="Node000006" href="$classit_1_1unisa_1_1diem_1_1swe_1_1group07_1_1rubrica_1_1models_1_1ContattoEsteso.html#a6e86f4f36089e9805f66cd93007b023b" title="costruttore della classe Contatto Esteso" alt="" coords="383,144,682,189"/>
-<area shape="poly" id="edge5_Node000004_Node000006" title=" " alt="" coords="735,169,682,169,682,164,735,164"/>
-<area shape="rect" id="Node000008" href="$classit_1_1unisa_1_1diem_1_1swe_1_1group07_1_1rubrica_1_1gestoreIO_1_1Export.html#a17c7095e7bf7f45587ec1b8d528a40ea" title="metodo per fornire un file di output conforme allo standard vCard che contiene tutta le informazioni ..." alt="" coords="385,213,680,258"/>
-<area shape="poly" id="edge7_Node000007_Node000008" title=" " alt="" coords="737,238,680,238,680,233,737,233"/>
-<area shape="rect" id="Node000010" href="$classit_1_1unisa_1_1diem_1_1swe_1_1group07_1_1rubrica_1_1gestoreIO_1_1Export.html#a91f65a6e35064ea1af3bbc0168cee290" title="metodo per fornire un file di output conforme allo standard vCard che contiene tutta la rubrica" alt="" coords="385,283,680,327"/>
-<area shape="poly" id="edge9_Node000007_Node000010" title=" " alt="" coords="763,264,655,285,654,279,762,259"/>
-<area shape="rect" id="Node000009" href="$classit_1_1unisa_1_1diem_1_1swe_1_1group07_1_1rubrica_1_1controllers_1_1RubricaController.html#a28f1cd139c6377895c583d8d6edcae27" title="Gestore dell&#39;evento &quot;Esporta Contatto&quot;. Il metodo apre una finestra che consente all&#39;utente di selezi..." alt="" coords="5,213,325,258"/>
-<area shape="poly" id="edge8_Node000008_Node000009" title=" " alt="" coords="369,238,325,238,325,233,369,233"/>
-<area shape="rect" id="Node000011" href="$classit_1_1unisa_1_1diem_1_1swe_1_1group07_1_1rubrica_1_1controllers_1_1RubricaController.html#abeefa96d3b060c12c1a51c405e6ff179" title="Gestore dell&#39;evento relativo al click del pulsante &quot;Esporta Rubrica&quot;. Il metodo apre una finestra che..." alt="" coords="5,283,325,327"/>
-<area shape="poly" id="edge10_Node000010_Node000011" title=" " alt="" coords="369,308,325,308,325,302,369,302"/>
-<area shape="rect" id="Node000013" href="$classit_1_1unisa_1_1diem_1_1swe_1_1group07_1_1rubrica_1_1controllers_1_1RubricaController.html#acb62cc49f7e3289ddeb4f246b4f0a199" title="Metodo di inizializzazione della vista e dei dati. Imposta la lista dei contatti, la configurazione d..." alt="" coords="373,352,692,397"/>
-<area shape="poly" id="edge12_Node000012_Node000013" title=" " alt="" coords="725,359,693,362,692,357,724,354"/>
+<area shape="poly" id="edge5_Node000004_Node000006" title=" " alt="" coords="735,159,682,162,682,157,735,154"/>
+<area shape="rect" id="Node000009" href="$classit_1_1unisa_1_1diem_1_1swe_1_1group07_1_1rubrica_1_1gestoreIO_1_1Export.html#a17c7095e7bf7f45587ec1b8d528a40ea" title="metodo per fornire un file di output conforme allo standard vCard che contiene tutta le informazioni ..." alt="" coords="385,213,680,258"/>
+<area shape="poly" id="edge8_Node000008_Node000009" title=" " alt="" coords="736,267,680,259,680,254,737,262"/>
+<area shape="rect" id="Node000011" href="$classit_1_1unisa_1_1diem_1_1swe_1_1group07_1_1rubrica_1_1gestoreIO_1_1Export.html#a91f65a6e35064ea1af3bbc0168cee290" title="metodo per fornire un file di output conforme allo standard vCard che contiene tutta la rubrica" alt="" coords="385,283,680,327"/>
+<area shape="poly" id="edge10_Node000008_Node000011" title=" " alt="" coords="737,298,680,301,680,295,736,293"/>
+<area shape="rect" id="Node000010" href="$classit_1_1unisa_1_1diem_1_1swe_1_1group07_1_1rubrica_1_1controllers_1_1RubricaController.html#a28f1cd139c6377895c583d8d6edcae27" title="Gestore dell&#39;evento &quot;Esporta Contatto&quot;. Il metodo apre una finestra che consente all&#39;utente di selezi..." alt="" coords="5,213,325,258"/>
+<area shape="poly" id="edge9_Node000009_Node000010" title=" " alt="" coords="369,238,325,238,325,233,369,233"/>
+<area shape="rect" id="Node000012" href="$classit_1_1unisa_1_1diem_1_1swe_1_1group07_1_1rubrica_1_1controllers_1_1RubricaController.html#abeefa96d3b060c12c1a51c405e6ff179" title="Gestore dell&#39;evento relativo al click del pulsante &quot;Esporta Rubrica&quot;. Il metodo apre una finestra che..." alt="" coords="5,283,325,327"/>
+<area shape="poly" id="edge11_Node000011_Node000012" title=" " alt="" coords="369,308,325,308,325,302,369,302"/>
+<area shape="rect" id="Node000014" href="$classit_1_1unisa_1_1diem_1_1swe_1_1group07_1_1rubrica_1_1controllers_1_1RubricaController.html#acb62cc49f7e3289ddeb4f246b4f0a199" title="Metodo di inizializzazione della vista e dei dati. Imposta la lista dei contatti, la configurazione d..." alt="" coords="373,352,692,397"/>
+<area shape="poly" id="edge13_Node000013_Node000014" title=" " alt="" coords="725,368,693,369,692,364,724,363"/>
 </map>

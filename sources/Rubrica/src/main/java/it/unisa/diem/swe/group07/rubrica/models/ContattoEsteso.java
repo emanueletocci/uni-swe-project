@@ -241,7 +241,7 @@ public class ContattoEsteso extends Contatto {
      * @return il valore hash dell'oggetto
      */
     @Override
-    protected Integer generaId(){
+    public Integer generaId(){
         String query = this.getNome() + this.getCognome() + compleanno;
         return query.hashCode();
     }

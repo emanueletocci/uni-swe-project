@@ -117,9 +117,9 @@ Membri pubblici</h2></td></tr>
 <tr class="memitem:ab5198acdf4a2bdcf9a72587e63bcac64" id="r_ab5198acdf4a2bdcf9a72587e63bcac64"><td class="memItemLeft" align="right" valign="top">Collection&lt; <a class="el" href="classit_1_1unisa_1_1diem_1_1swe_1_1group07_1_1rubrica_1_1models_1_1Contatto.html">Contatto</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab5198acdf4a2bdcf9a72587e63bcac64">getContatti</a> ()</td></tr>
 <tr class="memdesc:ab5198acdf4a2bdcf9a72587e63bcac64"><td class="mdescLeft">&#160;</td><td class="mdescRight">metodo restituisce tutti i contatti come una Collection  <br /></td></tr>
 <tr class="separator:ab5198acdf4a2bdcf9a72587e63bcac64"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab7e78976d01eea65240b5dcdb8f1f5e3" id="r_ab7e78976d01eea65240b5dcdb8f1f5e3"><td class="memItemLeft" align="right" valign="top">Boolean&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab7e78976d01eea65240b5dcdb8f1f5e3">aggiornaContatto</a> (<a class="el" href="classit_1_1unisa_1_1diem_1_1swe_1_1group07_1_1rubrica_1_1models_1_1Contatto.html">Contatto</a> contattoAggiornato)</td></tr>
-<tr class="memdesc:ab7e78976d01eea65240b5dcdb8f1f5e3"><td class="mdescLeft">&#160;</td><td class="mdescRight">il metodo consente di aggiornare un contatto esistente nella rubrica.  <br /></td></tr>
-<tr class="separator:ab7e78976d01eea65240b5dcdb8f1f5e3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa6e44fcf22c150d4369b26f19fdb39ac" id="r_aa6e44fcf22c150d4369b26f19fdb39ac"><td class="memItemLeft" align="right" valign="top">Boolean&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa6e44fcf22c150d4369b26f19fdb39ac">aggiornaContatto</a> (<a class="el" href="classit_1_1unisa_1_1diem_1_1swe_1_1group07_1_1rubrica_1_1models_1_1Contatto.html">Contatto</a> vecchioContatto, <a class="el" href="classit_1_1unisa_1_1diem_1_1swe_1_1group07_1_1rubrica_1_1models_1_1Contatto.html">Contatto</a> contattoAggiornato)</td></tr>
+<tr class="memdesc:aa6e44fcf22c150d4369b26f19fdb39ac"><td class="mdescLeft">&#160;</td><td class="mdescRight">il metodo consente di aggiornare un contatto esistente nella rubrica. L'aggiornamento consiste sostanzialmente nella rimozione del vecchio contatto e nell'aggiunta di uno nuovo.  <br /></td></tr>
+<tr class="separator:aa6e44fcf22c150d4369b26f19fdb39ac"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab387b79086ac69e5ffdb01fcfd8697b9" id="r_ab387b79086ac69e5ffdb01fcfd8697b9"><td class="memItemLeft" align="right" valign="top">String&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab387b79086ac69e5ffdb01fcfd8697b9">toString</a> ()</td></tr>
 <tr class="memdesc:ab387b79086ac69e5ffdb01fcfd8697b9"><td class="mdescLeft">&#160;</td><td class="mdescRight">metodo toStirng()  <br /></td></tr>
 <tr class="separator:ab387b79086ac69e5ffdb01fcfd8697b9"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -138,8 +138,8 @@ Map&lt; Integer, <a class="el" href="classit_1_1unisa_1_1diem_1_1swe_1_1group07_
 <dd>
 <a class="el" href="classit_1_1unisa_1_1diem_1_1swe_1_1group07_1_1rubrica_1_1models_1_1ContattoEsteso.html" title="La classe é un&#39;estensione della classe &#39;Contatto&#39;. Un &#39;ContattoEsteso&#39; definisce piú parametri rispet...">ContattoEsteso</a> </dd></dl>
 </div><h2 class="groupheader">Documentazione delle funzioni membro</h2>
-<a id="ab7e78976d01eea65240b5dcdb8f1f5e3" name="ab7e78976d01eea65240b5dcdb8f1f5e3"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ab7e78976d01eea65240b5dcdb8f1f5e3">&#9670;&#160;</a></span>aggiornaContatto()</h2>
+<a id="aa6e44fcf22c150d4369b26f19fdb39ac" name="aa6e44fcf22c150d4369b26f19fdb39ac"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa6e44fcf22c150d4369b26f19fdb39ac">&#9670;&#160;</a></span>aggiornaContatto()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -147,16 +147,21 @@ Map&lt; Integer, <a class="el" href="classit_1_1unisa_1_1diem_1_1swe_1_1group07_
         <tr>
           <td class="memname">Boolean it.unisa.diem.swe.group07.rubrica.models.Rubrica.aggiornaContatto </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="classit_1_1unisa_1_1diem_1_1swe_1_1group07_1_1rubrica_1_1models_1_1Contatto.html">Contatto</a></td>          <td class="paramname"><span class="paramname"><em>contattoAggiornato</em></span></td><td>)</td>
+          <td class="paramtype"><a class="el" href="classit_1_1unisa_1_1diem_1_1swe_1_1group07_1_1rubrica_1_1models_1_1Contatto.html">Contatto</a></td>          <td class="paramname"><span class="paramname"><em>vecchioContatto</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
           <td></td>
+          <td class="paramtype"><a class="el" href="classit_1_1unisa_1_1diem_1_1swe_1_1group07_1_1rubrica_1_1models_1_1Contatto.html">Contatto</a></td>          <td class="paramname"><span class="paramname"><em>contattoAggiornato</em></span>&#160;)</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>il metodo consente di aggiornare un contatto esistente nella rubrica. </p>
+<p>il metodo consente di aggiornare un contatto esistente nella rubrica. L'aggiornamento consiste sostanzialmente nella rimozione del vecchio contatto e nell'aggiunta di uno nuovo. </p>
 <dl class="params"><dt>Parametri</dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">contattoAggiornato</td><td>Il contatto con i dati nuovi </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">vecchioContatto</td><td>Il contatto con i vecchi dati </td></tr>
   </table>
   </dd>
 </dl>
@@ -164,14 +169,17 @@ Map&lt; Integer, <a class="el" href="classit_1_1unisa_1_1diem_1_1swe_1_1group07_
 <div class="dynheader">
 Questo è il grafo delle chiamate per questa funzione:</div>
 <div class="dyncontent">
-<div class="center"><img src="classit_1_1unisa_1_1diem_1_1swe_1_1group07_1_1rubrica_1_1models_1_1Rubrica_ab7e78976d01eea65240b5dcdb8f1f5e3_cgraph.png" border="0" usemap="#aclassit_1_1unisa_1_1diem_1_1swe_1_1group07_1_1rubrica_1_1models_1_1Rubrica_ab7e78976d01eea65240b5dcdb8f1f5e3_cgraph" alt=""/></div>
-<map name="aclassit_1_1unisa_1_1diem_1_1swe_1_1group07_1_1rubrica_1_1models_1_1Rubrica_ab7e78976d01eea65240b5dcdb8f1f5e3_cgraph" id="aclassit_1_1unisa_1_1diem_1_1swe_1_1group07_1_1rubrica_1_1models_1_1Rubrica_ab7e78976d01eea65240b5dcdb8f1f5e3_cgraph">
-<area shape="rect" title="il metodo consente di aggiornare un contatto esistente nella rubrica." alt="" coords="5,36,304,81"/>
+<div class="center"><img src="classit_1_1unisa_1_1diem_1_1swe_1_1group07_1_1rubrica_1_1models_1_1Rubrica_aa6e44fcf22c150d4369b26f19fdb39ac_cgraph.png" border="0" usemap="#aclassit_1_1unisa_1_1diem_1_1swe_1_1group07_1_1rubrica_1_1models_1_1Rubrica_aa6e44fcf22c150d4369b26f19fdb39ac_cgraph" alt=""/></div>
+<map name="aclassit_1_1unisa_1_1diem_1_1swe_1_1group07_1_1rubrica_1_1models_1_1Rubrica_aa6e44fcf22c150d4369b26f19fdb39ac_cgraph" id="aclassit_1_1unisa_1_1diem_1_1swe_1_1group07_1_1rubrica_1_1models_1_1Rubrica_aa6e44fcf22c150d4369b26f19fdb39ac_cgraph">
+<area shape="rect" title="il metodo consente di aggiornare un contatto esistente nella rubrica. L&#39;aggiornamento consiste sostan..." alt="" coords="5,65,304,110"/>
 <area shape="rect" href="classit_1_1unisa_1_1diem_1_1swe_1_1group07_1_1rubrica_1_1models_1_1Rubrica.html#aff024ceff1028798221cec28058c14d5" title="il metodo aggiunge un contatto alla rubrica e verifica se l&#39;aggiunta é andata a buon fine." alt="" coords="352,5,650,50"/>
-<area shape="poly" title=" " alt="" coords="304,42,336,40,336,45,304,48"/>
-<area shape="rect" href="classit_1_1unisa_1_1diem_1_1swe_1_1group07_1_1rubrica_1_1models_1_1Contatto.html#a53ef90855656ba9330f072c5d916522d" title="metodo getter per l&#39;attributo &quot;id&quot;." alt="" coords="698,36,996,81"/>
-<area shape="poly" title=" " alt="" coords="304,59,352,60,650,60,683,59,683,65,650,65,352,65,304,64"/>
-<area shape="poly" title=" " alt="" coords="651,38,683,41,682,46,650,44"/>
+<area shape="poly" title=" " alt="" coords="287,62,353,51,354,56,288,67"/>
+<area shape="rect" href="classit_1_1unisa_1_1diem_1_1swe_1_1group07_1_1rubrica_1_1models_1_1Contatto.html#a53ef90855656ba9330f072c5d916522d" title="metodo getter per l&#39;attributo &quot;id&quot;." alt="" coords="698,65,996,110"/>
+<area shape="poly" title=" " alt="" coords="304,85,682,85,682,90,304,90"/>
+<area shape="rect" href="classit_1_1unisa_1_1diem_1_1swe_1_1group07_1_1rubrica_1_1models_1_1Rubrica.html#adfade3b396138d21829007118365fe2e" title="metodo per la rimozione di un contatto dalla rubrica" alt="" coords="352,125,650,170"/>
+<area shape="poly" title=" " alt="" coords="288,108,354,119,353,125,287,113"/>
+<area shape="poly" title=" " alt="" coords="634,48,700,59,699,65,633,53"/>
+<area shape="poly" title=" " alt="" coords="633,122,699,111,700,116,634,127"/>
 </map>
 </div>
 
@@ -215,11 +223,9 @@ Questo è il grafo dei chiamanti di questa funzione:</div>
 <div class="dyncontent">
 <div class="center"><img src="classit_1_1unisa_1_1diem_1_1swe_1_1group07_1_1rubrica_1_1models_1_1Rubrica_aff024ceff1028798221cec28058c14d5_icgraph.png" border="0" usemap="#aclassit_1_1unisa_1_1diem_1_1swe_1_1group07_1_1rubrica_1_1models_1_1Rubrica_aff024ceff1028798221cec28058c14d5_icgraph" alt=""/></div>
 <map name="aclassit_1_1unisa_1_1diem_1_1swe_1_1group07_1_1rubrica_1_1models_1_1Rubrica_aff024ceff1028798221cec28058c14d5_icgraph" id="aclassit_1_1unisa_1_1diem_1_1swe_1_1group07_1_1rubrica_1_1models_1_1Rubrica_aff024ceff1028798221cec28058c14d5_icgraph">
-<area shape="rect" title="il metodo aggiunge un contatto alla rubrica e verifica se l&#39;aggiunta é andata a buon fine." alt="" coords="373,40,671,85"/>
-<area shape="rect" href="classit_1_1unisa_1_1diem_1_1swe_1_1group07_1_1rubrica_1_1models_1_1Rubrica.html#ab7e78976d01eea65240b5dcdb8f1f5e3" title="il metodo consente di aggiornare un contatto esistente nella rubrica." alt="" coords="16,5,314,50"/>
-<area shape="poly" title=" " alt="" coords="357,49,314,45,315,40,358,44"/>
-<area shape="rect" href="classit_1_1unisa_1_1diem_1_1swe_1_1group07_1_1rubrica_1_1controllers_1_1RubricaController.html#acb62cc49f7e3289ddeb4f246b4f0a199" title="Metodo di inizializzazione della vista e dei dati. Imposta la lista dei contatti, la configurazione d..." alt="" coords="5,75,325,119"/>
-<area shape="poly" title=" " alt="" coords="358,81,326,84,325,79,357,76"/>
+<area shape="rect" title="il metodo aggiunge un contatto alla rubrica e verifica se l&#39;aggiunta é andata a buon fine." alt="" coords="352,5,650,50"/>
+<area shape="rect" href="classit_1_1unisa_1_1diem_1_1swe_1_1group07_1_1rubrica_1_1models_1_1Rubrica.html#aa6e44fcf22c150d4369b26f19fdb39ac" title="il metodo consente di aggiornare un contatto esistente nella rubrica. L&#39;aggiornamento consiste sostan..." alt="" coords="5,5,304,50"/>
+<area shape="poly" title=" " alt="" coords="336,30,304,30,304,25,336,25"/>
 </map>
 </div>
 
@@ -321,6 +327,16 @@ Questo è il grafo delle chiamate per questa funzione:</div>
 <area shape="rect" title="metodo per la rimozione di un contatto dalla rubrica" alt="" coords="5,5,304,50"/>
 <area shape="rect" href="classit_1_1unisa_1_1diem_1_1swe_1_1group07_1_1rubrica_1_1models_1_1Contatto.html#a53ef90855656ba9330f072c5d916522d" title="metodo getter per l&#39;attributo &quot;id&quot;." alt="" coords="352,5,650,50"/>
 <area shape="poly" title=" " alt="" coords="304,25,336,25,336,30,304,30"/>
+</map>
+</div>
+<div class="dynheader">
+Questo è il grafo dei chiamanti di questa funzione:</div>
+<div class="dyncontent">
+<div class="center"><img src="classit_1_1unisa_1_1diem_1_1swe_1_1group07_1_1rubrica_1_1models_1_1Rubrica_adfade3b396138d21829007118365fe2e_icgraph.png" border="0" usemap="#aclassit_1_1unisa_1_1diem_1_1swe_1_1group07_1_1rubrica_1_1models_1_1Rubrica_adfade3b396138d21829007118365fe2e_icgraph" alt=""/></div>
+<map name="aclassit_1_1unisa_1_1diem_1_1swe_1_1group07_1_1rubrica_1_1models_1_1Rubrica_adfade3b396138d21829007118365fe2e_icgraph" id="aclassit_1_1unisa_1_1diem_1_1swe_1_1group07_1_1rubrica_1_1models_1_1Rubrica_adfade3b396138d21829007118365fe2e_icgraph">
+<area shape="rect" title="metodo per la rimozione di un contatto dalla rubrica" alt="" coords="352,5,650,50"/>
+<area shape="rect" href="classit_1_1unisa_1_1diem_1_1swe_1_1group07_1_1rubrica_1_1models_1_1Rubrica.html#aa6e44fcf22c150d4369b26f19fdb39ac" title="il metodo consente di aggiornare un contatto esistente nella rubrica. L&#39;aggiornamento consiste sostan..." alt="" coords="5,5,304,50"/>
+<area shape="poly" title=" " alt="" coords="336,30,304,30,304,25,336,25"/>
 </map>
 </div>
 
