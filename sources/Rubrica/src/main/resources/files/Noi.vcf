@@ -2,15 +2,15 @@ BEGIN:VCARD
 VERSION:3.0
 FN:Emanuele Tocci
 TEL;TYPE=cell:+3933333333
-TEL;TYPE=home:+3933333333
-TEL;TYPE=work:+3933333333
-EMAIL;TYPE=work:prova@gmail.com
-EMAIL;TYPE=home:prova@icloud.com
-EMAIL;TYPE=other:prova@unisa.it
+TEL;TYPE=home:0890890890
+TEL;TYPE=work:
+EMAIL;TYPE=work:emanueletocci@gmail.com
+EMAIL;TYPE=home:emanueletocci@icloud.com
+EMAIL;TYPE=other:emanueletocci@unisa.it
 BDAY:2003-06-09
-ADR;TYPE=home:via Prova
-URL:unisa.it
-NOTE:note
+ADR;TYPE=home: Via Giovanni Paolo II, 132, 84084 Fisciano SA
+URL:https://github.com/emanueletocci/uni-swe-project
+NOTE:
 X-PREF:1
 X-EMERG:1
 UID:-1332681484
@@ -20,14 +20,14 @@ VERSION:3.0
 FN:Claudia Montefusco
 TEL;TYPE=cell:+3933333333
 TEL;TYPE=home:+3933333333
-TEL;TYPE=work:+3933333333
-EMAIL;TYPE=work:prova@gmail.com
-EMAIL;TYPE=home:prova@icloud.com
-EMAIL;TYPE=other:prova@unisa.it
+TEL;TYPE=work:0890890891
+EMAIL;TYPE=work:
+EMAIL;TYPE=home:
+EMAIL;TYPE=other:claudiamontefusco@unisa.it
 BDAY:2003-06-16
-ADR;TYPE=home:via Prova
-URL:unisa.it
-NOTE:informazioni aggiuntive
+ADR;TYPE=home: Via Giovanni Paolo II, 132, 84084 Fisciano SA
+URL:https://github.com/ClaudiaMontefusco3
+NOTE:
 X-PREF:1
 X-EMERG:1
 UID:1613182866
@@ -36,15 +36,15 @@ BEGIN:VCARD
 VERSION:3.0
 FN:Rossella Pale
 TEL;TYPE=cell:+3933333333
-TEL;TYPE=home:+3933333333
-TEL;TYPE=work:+3933333333
-EMAIL;TYPE=work:prova@gmail.com
-EMAIL;TYPE=home:prova@icloud.com
-EMAIL;TYPE=other:prova@unisa.it
+TEL;TYPE=home:
+TEL;TYPE=work:
+EMAIL;TYPE=work:rossellapale@gmail.com
+EMAIL;TYPE=home:
+EMAIL;TYPE=other:rossellapale@unisa.it
 BDAY:2003-12-12
-ADR;TYPE=home:via Prova
-URL:unisa.it
-NOTE:informazioni aggiuntive
+ADR;TYPE=home: Via Giovanni Paolo II, 132, 84084 Fisciano SA
+URL:https://github.com/rossellapale
+NOTE:
 X-PREF:1
 X-EMERG:1
 UID:-1841165404
@@ -54,14 +54,14 @@ VERSION:3.0
 FN:Alessio Leo
 TEL;TYPE=cell:+3933333333
 TEL;TYPE=home:+3933333333
-TEL;TYPE=work:+3933333333
-EMAIL;TYPE=work:prova@gmail.com
-EMAIL;TYPE=home:prova@icloud.com
-EMAIL;TYPE=other:prova@unisa.it
+TEL;TYPE=work:
+EMAIL;TYPE=work:
+EMAIL;TYPE=home:alessioleo@icloud.com
+EMAIL;TYPE=other:alessioleo@unisa.it
 BDAY:2003-12-19
-ADR;TYPE=home:via Prova
-URL:unisa.it
-NOTE:informazioni aggiuntive
+ADR;TYPE=home: Via Giovanni Paolo II, 132, 84084 Fisciano SA
+URL:https://github.com/Al3Leo
+NOTE:ricorda di prendere più di 18 per passare l'esame
 X-PREF:1
 X-EMERG:1
 UID:-1165880386

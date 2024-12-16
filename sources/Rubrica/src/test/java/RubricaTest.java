@@ -8,6 +8,7 @@ import static org.junit.jupiter.api.Assertions.*;
 public class RubricaTest {
 
     private ContattoEsteso c;
+    private ContattoEsteso c2;
     private Rubrica r;
 
     @BeforeEach
@@ -15,7 +16,6 @@ public class RubricaTest {
         c = new ContattoEsteso("nome", "cognome", "num1", "num2", "num3", "em1", "em2", "em3", LocalDate.of(1970, 1, 1), "adr", "link", "note", true, true);
         r = new Rubrica();
     }
-
 
     @Test
     void testAggiungiContatto() {
@@ -46,13 +46,19 @@ public class RubricaTest {
 
     @Test
     void testAggiornaContatto() {
-        assertFalse(r.aggiornaContatto(c));
+        c2 = new ContattoEsteso("Emanuele", "Tocci", "333333333", "444444444", "55555555", "em1@gmail.com", "em2@outlook.com", "em3@libero.it", LocalDate.of(2003, 1, 1), "adr", "facebook", "note", false, false);
+
+        assertFalse(r.aggiornaContatto(c,c2));
         r.aggiungiContatto(c);
-        assertTrue(r.aggiornaContatto(c));
-        assertEquals("nome", c.getNome());
-        c.setNome("nome2");
-        r.aggiornaContatto(c);
-        assertEquals("nome2", r.ricercaContatto(c).getNome());
+        assertTrue(r.aggiornaContatto(c,c2));
+
+        assertNull(r.ricercaContatto(c));
+        assertEquals("Emanuele", r.ricercaContatto(c2).getNome());
+
+        r.aggiornaContatto(c2, c);
+
+        assertNull(r.ricercaContatto(c2));
+        assertEquals("nome", r.ricercaContatto(c).getNome());
     }
 
     @Test
